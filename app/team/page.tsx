@@ -63,8 +63,7 @@ export default function TeamPage() {
                 Experienced leaders who help teams move complex work forward
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-                Amalgam stays intentionally small and experienced. The team spans product,
-                architecture, engineering, delivery, operations, and leadership.
+                Amalgam stays intentionally small. The team spans product, architecture, engineering, delivery, operations, and leadership.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
@@ -206,7 +205,7 @@ export default function TeamPage() {
                         </p>
 
                         <div className="mt-4 flex flex-wrap gap-2">
-                          {member.specialties.slice(0, 3).map((specialty) => (
+                          {member.specialties.slice(0, 2).map((specialty) => (
                             <span
                               key={specialty}
                               className="rounded-full border border-border bg-muted/70 px-2.5 py-1 text-xs text-muted-foreground"
@@ -215,12 +214,6 @@ export default function TeamPage() {
                             </span>
                           ))}
                         </div>
-
-                        {member.funFact ? (
-                          <p className="mt-4 border-t border-border pt-4 text-xs italic text-muted-foreground">
-                            {member.funFact}
-                          </p>
-                        ) : null}
                       </div>
                     </div>
                   ))}

@@ -17,7 +17,11 @@ import {
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { JsonLd } from "@/components/json-ld"
-import { caseStudies, getCaseStudyBySlug } from "@/lib/case-studies-data"
+import {
+  caseStudies,
+  getCaseStudyBySlug,
+  summarizeCaseStudyText,
+} from "@/lib/case-studies-data"
 import { withBasePath } from "@/lib/site-config"
 
 interface PageProps {
@@ -156,7 +160,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
               className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               <ArrowLeft className="h-4 w-4" />
-              All Case Studies
+              Back to case studies
             </Link>
 
             <div className="mb-6 flex flex-wrap items-center gap-4">
@@ -185,7 +189,10 @@ export default async function CaseStudyPage({ params }: PageProps) {
                   {caseStudy.headline}
                 </h1>
                 <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-                  {caseStudy.overview}
+                  {summarizeCaseStudyText(caseStudy.overview, {
+                    maxSentences: 2,
+                    maxChars: 360,
+                  })}
                 </p>
                 <div className="mt-8 overflow-hidden rounded-[32px] border border-border bg-secondary/35">
                   <div className="relative aspect-[16/10] w-full">
@@ -225,7 +232,10 @@ export default async function CaseStudyPage({ params }: PageProps) {
                       Situation
                     </p>
                     <p className="mt-2 text-sm leading-relaxed text-foreground">
-                      {caseStudy.problem}
+                      {summarizeCaseStudyText(caseStudy.problem, {
+                        maxSentences: 1,
+                        maxChars: 185,
+                      })}
                     </p>
                   </div>
                   <div className="rounded-2xl border border-border bg-background px-4 py-4">
@@ -233,7 +243,10 @@ export default async function CaseStudyPage({ params }: PageProps) {
                       Amalgam&apos;s role
                     </p>
                     <p className="mt-2 text-sm leading-relaxed text-foreground">
-                      {caseStudy.approach}
+                      {summarizeCaseStudyText(caseStudy.approach, {
+                        maxSentences: 1,
+                        maxChars: 185,
+                      })}
                     </p>
                   </div>
                   <div className="rounded-2xl border border-border bg-background px-4 py-4">
@@ -241,7 +254,10 @@ export default async function CaseStudyPage({ params }: PageProps) {
                       What changed
                     </p>
                     <p className="mt-2 text-sm leading-relaxed font-medium text-foreground">
-                      {caseStudy.outcome}
+                      {summarizeCaseStudyText(caseStudy.outcome, {
+                        maxSentences: 1,
+                        maxChars: 185,
+                      })}
                     </p>
                   </div>
                 </div>
@@ -260,7 +276,12 @@ export default async function CaseStudyPage({ params }: PageProps) {
                     Client context
                   </p>
                 </div>
-                <p className="leading-relaxed text-foreground">{caseStudy.problem}</p>
+                <p className="leading-relaxed text-foreground">
+                  {summarizeCaseStudyText(caseStudy.problem, {
+                    maxSentences: 1,
+                    maxChars: 200,
+                  })}
+                </p>
               </div>
 
               <div className="rounded-[28px] border border-border bg-background p-6">
@@ -281,7 +302,10 @@ export default async function CaseStudyPage({ params }: PageProps) {
                   </p>
                 </div>
                 <p className="font-medium leading-relaxed text-foreground">
-                  {caseStudy.outcome}
+                  {summarizeCaseStudyText(caseStudy.outcome, {
+                    maxSentences: 1,
+                    maxChars: 185,
+                  })}
                 </p>
               </div>
             </div>
@@ -402,7 +426,12 @@ export default async function CaseStudyPage({ params }: PageProps) {
                       {study.industry}
                     </p>
                     <p className="mt-2 text-lg font-semibold text-foreground">{study.client}</p>
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{study.outcome}</p>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                      {summarizeCaseStudyText(study.outcome, {
+                        maxSentences: 1,
+                        maxChars: 145,
+                      })}
+                    </p>
                   </Link>
                 ))}
               </div>

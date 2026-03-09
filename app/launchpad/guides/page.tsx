@@ -14,7 +14,7 @@ import {
 export const metadata: Metadata = {
   title: "Launchpad Guides",
   description:
-    "Field guidance for founders, executives, and technical leaders dealing with delivery drag, fragile systems, AI readiness, unclear sequencing, and integration complexity.",
+    "Field guidance for teams dealing with delivery drag, fragile systems, AI readiness, and integration complexity.",
   alternates: {
     canonical: "/launchpad/guides",
   },
@@ -34,7 +34,7 @@ export default function LaunchpadGuidesPage() {
               Practical field guidance for leaders trying to act, not just read
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              For teams under pressure that need practical guidance grouped by the situation in front of them.
+              Practical guidance grouped by the pressure in front of you.
             </p>
           </div>
         </section>

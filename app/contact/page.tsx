@@ -75,7 +75,7 @@ export default function ContactPage() {
                       Free strategy call
                     </p>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                      Best when you need an experienced second set of eyes before committing to deeper work.
+                      Best when you need a clear read before committing to deeper work.
                     </p>
                   </div>
                   <div className="contact-path-card support-panel p-5">
@@ -83,7 +83,7 @@ export default function ContactPage() {
                       Execution Sprint
                     </p>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                      Best when the diagnosis is visible and the business needs sequence, not more debate.
+                      Best when the diagnosis is visible and the team needs sequence.
                     </p>
                   </div>
                   <div className="contact-path-card support-panel p-5">
@@ -91,7 +91,7 @@ export default function ContactPage() {
                       Outcome Partnership
                     </p>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                      Best when the roadmap exists and direct follow-through protects momentum.
+                      Best when the roadmap exists and follow-through protects momentum.
                     </p>
                   </div>
                 </div>
@@ -205,13 +205,13 @@ export default function ContactPage() {
                   Start with a free strategy call
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-background/70">
-                  If delivery is slowing down and the root cause is still unclear, this is the cleanest first move.
+                  If delivery is slowing and the root cause is still unclear, this is the cleanest first move.
                 </p>
                 <div className="contact-review-points mt-6 space-y-3">
                   {[
                     "60-minute strategy call",
                     "Clear recommendation on what to do next",
-                    "Useful even if you keep execution internal",
+                    "Useful even if you keep delivery internal",
                   ].map((item) => (
                     <div
                       key={item}

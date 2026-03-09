@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: "Amalgam",
-    title: "Amalgam - Complex systems, clearer decisions, faster execution.",
+    title: "Amalgam - When delivery gets messy, we help teams move again.",
     description:
       "Experienced support helping teams bring clarity to complex systems and move execution forward.",
     images: [
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Amalgam - Complex systems, clearer decisions, faster execution.",
+    title: "Amalgam - When delivery gets messy, we help teams move again.",
     description:
       "Experienced support helping teams bring clarity to complex systems and move execution forward.",
     images: [absoluteUrl("/opengraph-image")],

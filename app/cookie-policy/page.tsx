@@ -20,9 +20,8 @@ export default function CookiePolicyPage() {
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold text-foreground">What Cookies Are</h2>
         <p className="leading-relaxed text-muted-foreground">
-          Cookies are small text files stored on a device when a visitor accesses a
-          website. They are commonly used to help sites function properly, remember
-          settings, and understand general usage patterns.
+          Cookies are small text files stored on your device when you visit a website.
+          We use them to help the site run, remember settings, and understand usage patterns.
         </p>
       </section>
 
@@ -39,8 +38,7 @@ export default function CookiePolicyPage() {
           <div className="rounded-[24px] border border-border bg-secondary/25 p-5">
             <p className="font-medium text-foreground">Analytics-related cookies</p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              These may help us understand how visitors use the site so we can
-              improve clarity, performance, and usability over time.
+              We use these to understand site usage and improve clarity, performance, and usability over time.
             </p>
           </div>
           <div className="rounded-[24px] border border-border bg-secondary/25 p-5">

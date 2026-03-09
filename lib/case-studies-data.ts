@@ -849,3 +849,26 @@ export function getFeaturedCaseStudies(): CaseStudy[] {
 
 // Unique industries from case studies for filtering
 export const industries = [...new Set(caseStudies.map((cs) => cs.industry))]
+
+export function summarizeCaseStudyText(
+  text: string,
+  { maxSentences = 1, maxChars = 170 }: { maxSentences?: number; maxChars?: number } = {},
+) {
+  const normalized = text.replace(/\s+/g, " ").trim()
+  if (!normalized) {
+    return ""
+  }
+
+  const sentenceParts = normalized.match(/[^.!?]+[.!?]?/g) ?? [normalized]
+  const sentenceLimited = sentenceParts.slice(0, maxSentences).join(" ").trim()
+  const candidate = sentenceLimited || normalized
+
+  if (candidate.length <= maxChars) {
+    return candidate
+  }
+
+  const trimmed = candidate.slice(0, maxChars).trim()
+  const safeCut = trimmed.lastIndexOf(" ")
+  const base = safeCut > 60 ? trimmed.slice(0, safeCut) : trimmed
+  return `${base}…`
+}

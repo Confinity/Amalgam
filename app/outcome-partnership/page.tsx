@@ -39,7 +39,7 @@ const whatWeProvide = [
     icon: Target,
     title: "Shared accountability",
     description:
-      "The work stays tied to outcomes, sequencing, and shipped progress instead of drifting into generic advisory theater.",
+      "The work stays tied to outcomes, sequencing, and shipped progress instead of drifting into generic advisory work.",
   },
   {
     icon: Zap,
@@ -93,9 +93,7 @@ export default function OutcomePartnershipPage() {
                 Ongoing experienced support to keep momentum real
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                The Outcome Partnership carries the roadmap into execution. It is for
-                teams that need direct support in the room as work meets reality,
-                priorities shift, and important decisions cannot drift.
+                The Outcome Partnership carries the roadmap into execution for teams that need direct support as priorities shift and decisions cannot drift.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Link
@@ -268,18 +266,13 @@ export default function OutcomePartnershipPage() {
               </h2>
               <div className="mt-6 space-y-4 leading-relaxed text-muted-foreground">
                 <p>
-                  The hardest part is often not deciding what should happen. It is
-                  keeping good decisions intact as execution pressure, constraints,
-                  and real-world complexity start pulling them apart.
+                  The hardest part is often not deciding what should happen. It is keeping good decisions intact as execution pressure and constraints start pulling them apart.
                 </p>
                 <p>
-                  The Outcome Partnership exists for that stage. It keeps experienced
-                  judgment close to the work so the roadmap remains usable under
-                  pressure instead of becoming shelfware.
+                  The Outcome Partnership is for that stage. It keeps judgment close to the work so the roadmap stays usable under pressure.
                 </p>
                 <p>
-                  The standard is simple: more clarity, less drag, and stronger
-                  internal capability by the time the work is done.
+                  The standard is simple: more clarity, less drag, and stronger internal capability by the time the work is done.
                 </p>
               </div>
             </div>
@@ -301,10 +294,10 @@ export default function OutcomePartnershipPage() {
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
-                  href="/execution-sprint"
+                  href="/services"
                   className="inline-flex min-h-11 items-center justify-center rounded-xl border border-background/15 px-6 py-3 font-medium text-background transition-colors hover:bg-background/10"
                 >
-                  See the Execution Sprint
+                  See how we can help
                 </Link>
               </div>
             </div>

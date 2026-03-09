@@ -10,7 +10,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { CaseStudiesFeaturedGrid } from "@/components/case-studies-featured-grid"
 import { TestimonialStrip } from "@/components/testimonial-strip"
-import { caseStudies, industries } from "@/lib/case-studies-data"
+import { caseStudies, industries, summarizeCaseStudyText } from "@/lib/case-studies-data"
 
 export const metadata: Metadata = {
   title: "Case Studies",
@@ -58,7 +58,7 @@ export default function CaseStudiesPage() {
                 Real client work, explained clearly
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-                These examples show how complex systems work changes when the right structure and judgment are applied.
+                See what the situation was, what we changed, and why it mattered.
               </p>
               <div className="mt-10 grid gap-4 sm:grid-cols-3">
                 <div className="rounded-2xl border border-border bg-background/90 px-5 py-5 shadow-sm">
@@ -101,7 +101,7 @@ export default function CaseStudiesPage() {
                 </h2>
               </div>
               <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-                Featured studies rotate each page load.
+                Featured examples rotate each page load.
               </p>
             </div>
             <CaseStudiesFeaturedGrid featuredStudies={featuredStudies} />
@@ -127,7 +127,7 @@ export default function CaseStudiesPage() {
                 </h2>
               </div>
               <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-                Each page shows the context, the work, and what changed.
+                Each page gives you the context, the work, and the outcome.
               </p>
             </div>
 
@@ -165,15 +165,23 @@ export default function CaseStudiesPage() {
                       <p className="mb-1.5 text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
                         Situation
                       </p>
-                      <p className="line-clamp-3 text-sm text-foreground">{study.problem}</p>
-                    </div>
+                    <p className="line-clamp-3 text-sm text-foreground">
+                      {summarizeCaseStudyText(study.problem, {
+                        maxSentences: 1,
+                        maxChars: 155,
+                      })}
+                    </p>
+                  </div>
 
-                    <div className="rounded-2xl border border-border bg-secondary/30 p-4">
+                  <div className="rounded-2xl border border-border bg-secondary/30 p-4">
                       <p className="mb-1.5 text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
                         What changed
                       </p>
                       <p className="line-clamp-3 text-sm font-medium text-foreground">
-                        {study.outcome}
+                        {summarizeCaseStudyText(study.outcome, {
+                          maxSentences: 1,
+                          maxChars: 155,
+                        })}
                       </p>
                     </div>
                   </div>
@@ -200,7 +208,7 @@ export default function CaseStudiesPage() {
                 Recently added
               </p>
               <h2 className="text-2xl font-semibold text-foreground">
-                Additional financial services examples
+                Additional financial services case studies
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 Short reads with conservative public detail for high-sensitivity engagements.

@@ -20,7 +20,7 @@ import { TestimonialStrip } from "@/components/testimonial-strip"
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Amalgam helps teams bring order to complex delivery work with clear diagnosis, practical sequencing, and steady follow-through.",
+    "Amalgam helps teams bring order to complex delivery work with clear diagnosis, practical sequencing, and direct follow-through.",
   alternates: {
     canonical: "/services",
   },
@@ -222,7 +222,7 @@ export default function ServicesPage() {
                   Where We Step In
                 </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Where systems judgment creates leverage quickly
+                Where we usually help first
               </h2>
               </div>
               <p className="max-w-[52ch] leading-relaxed text-muted-foreground lg:justify-self-end">
@@ -286,7 +286,7 @@ export default function ServicesPage() {
               </h2>
               </div>
               <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-                These offers are intentionally ordered around how real situations become clear, then move. Clarity first. Sequencing next. Ongoing support only when it adds leverage.
+                Start with clarity, move into sequence, then add continuity only when it clearly adds leverage.
               </p>
             </div>
 
@@ -396,14 +396,14 @@ export default function ServicesPage() {
                 Why Amalgam
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Built for teams that want practical help, not consultant overhead
+                Built for teams that want practical help
               </h2>
               <div className="mt-6 max-w-[48ch] space-y-4 leading-relaxed text-muted-foreground">
                 <p>
-                  We are a small experienced team built for situations where the business needs clarity, sequencing, and direct follow-through.
+                  We are a focused team built for messy, high-stakes situations where the business needs clarity, sequence, and direct follow-through.
                 </p>
                 <p>
-                  That is why the offers are simple: diagnose first, sequence next, stay involved only when it adds leverage.
+                  That is why the model stays simple: diagnose first, sequence next, stay involved only when it helps.
                 </p>
               </div>
             </div>

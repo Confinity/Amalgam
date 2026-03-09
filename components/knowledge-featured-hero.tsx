@@ -41,7 +41,7 @@ export function KnowledgeFeaturedHero({
       <div className="flex flex-wrap items-center justify-between gap-3">
         <span className="inline-flex items-center gap-2 rounded-full border border-teal/20 bg-teal/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-teal">
           <Sparkles className="h-3.5 w-3.5" />
-          Featured perspective
+          Featured article
         </span>
         <span className="text-sm text-muted-foreground">{active.readTime}</span>
       </div>
@@ -51,15 +51,15 @@ export function KnowledgeFeaturedHero({
       <h2 className="mt-3 text-2xl font-semibold text-foreground text-balance">
         {active.title}
       </h2>
-      <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{active.summary}</p>
+      <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{active.description}</p>
       <div className="mt-6 rounded-[24px] border border-border bg-secondary/35 p-4">
         <p className="text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
           Why this matters
         </p>
         <p className="mt-2 text-sm leading-relaxed text-foreground">{active.takeaway}</p>
       </div>
-      <div className="mt-6 grid gap-3 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
-        {active.keyTakeaways.slice(0, 3).map((item) => (
+      <div className="mt-6 grid gap-3 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+        {active.keyTakeaways.slice(0, 2).map((item) => (
           <div
             key={item}
             className="rounded-2xl border border-border bg-background px-4 py-4 text-sm leading-relaxed text-foreground"

@@ -92,13 +92,11 @@ export default function OpenGraphImage() {
                 fontWeight: 700,
               }}
             >
-              <span>Complex systems.</span>
-              <span style={{ color: "#00bfa6" }}>{" Clearer decisions."}</span>
-              <span style={{ color: "#6a5cff" }}>{" Faster execution."}</span>
+              <span>When delivery gets messy,</span>
+              <span style={{ color: "#00bfa6" }}>{" we help teams move again."}</span>
             </div>
             <div style={{ fontSize: 30, lineHeight: 1.35, color: "#4b5563", maxWidth: 900 }}>
-              Experienced support helping founders, executives, and technical leaders move through architecture,
-              data, integrations, and delivery friction.
+              Experienced support for architecture, data, integrations, and delivery friction.
             </div>
           </div>
 

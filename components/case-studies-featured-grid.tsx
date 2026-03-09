@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { ArrowRight, Compass, ShieldCheck } from "lucide-react"
-import type { CaseStudy } from "@/lib/case-studies-data"
+import { summarizeCaseStudyText, type CaseStudy } from "@/lib/case-studies-data"
 
 type CaseStudiesFeaturedGridProps = {
   featuredStudies: CaseStudy[]
@@ -49,7 +49,7 @@ export function CaseStudiesFeaturedGrid({ featuredStudies }: CaseStudiesFeatured
             </span>
           </div>
           <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-            {study.problem}
+            {summarizeCaseStudyText(study.problem, { maxSentences: 1, maxChars: 150 })}
           </p>
           <div className="mt-6 space-y-3">
             <div className="rounded-2xl border border-border bg-secondary/35 px-4 py-4">
@@ -58,7 +58,7 @@ export function CaseStudiesFeaturedGrid({ featuredStudies }: CaseStudiesFeatured
                 <p className="font-medium text-foreground">How we approached it</p>
               </div>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {study.approach}
+                {summarizeCaseStudyText(study.approach, { maxSentences: 1, maxChars: 150 })}
               </p>
             </div>
             <div className="rounded-2xl border border-border bg-secondary/35 px-4 py-4">
@@ -67,7 +67,7 @@ export function CaseStudiesFeaturedGrid({ featuredStudies }: CaseStudiesFeatured
                 <p className="font-medium text-foreground">What changed</p>
               </div>
               <p className="mt-2 text-sm leading-relaxed text-foreground">
-                {study.outcome}
+                {summarizeCaseStudyText(study.outcome, { maxSentences: 1, maxChars: 150 })}
               </p>
             </div>
           </div>

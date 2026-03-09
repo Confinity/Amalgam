@@ -14,15 +14,14 @@ export default function TermsPage() {
   return (
     <LegalPageShell
       title="Terms and Conditions"
-      description="These terms govern use of the Amalgam website. Specific commercial terms for consulting work are defined separately in statements of work and service agreements."
+      description="These terms govern use of the Amalgam website. Commercial terms for consulting work are defined separately in statements of work and service agreements."
       lastUpdated="March 9, 2026"
     >
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold text-foreground">Agreement to Terms</h2>
         <p className="leading-relaxed text-muted-foreground">
-          By accessing or using the Amalgam website, you agree to be bound by these
-          Terms and Conditions. If you do not agree to these terms, please do not
-          use the website.
+          By using the Amalgam website, you agree to these Terms and Conditions.
+          If you do not agree, please do not use the website.
         </p>
       </section>
 

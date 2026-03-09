@@ -44,7 +44,7 @@ export default function LaunchpadPage() {
                 Tools and guidance for teams dealing with delivery drag
               </h1>
               <p className="mt-6 max-w-[34ch] text-lg leading-relaxed text-muted-foreground">
-                A practical place to self-locate, test what is causing drag, and choose the next move.
+                Self-locate, test what is causing drag, and pick the right next move.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <TrackedLink
@@ -62,11 +62,11 @@ export default function LaunchpadPage() {
                   eventData={{ source: "launchpad_hero", target: "tools_index" }}
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-border px-6 py-3 font-medium text-foreground transition-colors hover:bg-secondary"
                 >
-                  Explore tools
+                  Explore diagnostics
                 </TrackedLink>
               </div>
               <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-                Best for leaders and teams who want structured signal before deeper work begins.
+                Best when you want clearer signal before deciding what help you need.
               </p>
             </div>
 
@@ -93,8 +93,7 @@ export default function LaunchpadPage() {
                 Pick the path that matches your situation
               </h2>
               <p className="mt-4 leading-relaxed text-muted-foreground">
-                These are decision routes into the right tool, guide set, program,
-                or conversation.
+                These are decision routes into the right tool, guide set, program, or conversation.
               </p>
             </div>
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
@@ -134,7 +133,7 @@ export default function LaunchpadPage() {
                 eventData={{ source: "launchpad_featured_tools", target: "tools_index" }}
                 className="inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
               >
-                See all tools
+                Explore diagnostics
                 <ArrowRight className="h-4 w-4" />
               </TrackedLink>
             </div>
@@ -257,7 +256,7 @@ export default function LaunchpadPage() {
                 eventData={{ source: "launchpad_programs", target: "programs_index" }}
                 className="inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
               >
-                See the program map
+                See how we can help
                 <ArrowRight className="h-4 w-4" />
               </TrackedLink>
             </div>
@@ -308,8 +307,7 @@ export default function LaunchpadPage() {
                 Not every next step sits inside Amalgam&apos;s core work
               </h2>
               <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
-                If the right move sits adjacent to our core work, we can usually
-                point you to the right introduction or next step directly.
+                If the right move sits adjacent to our core work, we can point you to the right introduction or next step.
               </p>
             </div>
             <div className="rounded-[30px] border border-border bg-background p-7">
@@ -344,8 +342,7 @@ export default function LaunchpadPage() {
                 Practical signal for leaders and teams carrying systems complexity
               </h2>
               <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
-                Signal is for practical notes on delivery drag, architecture
-                decisions, and next-step judgment under pressure.
+                Practical notes on delivery drag, architecture decisions, and next-step judgment under pressure.
               </p>
               <div className="mt-8 grid gap-4 md:grid-cols-3">
                 {signalArticles.map((article) => (

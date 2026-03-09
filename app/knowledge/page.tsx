@@ -16,7 +16,7 @@ import { knowledgeBriefs, knowledgeCategories } from "@/lib/knowledge-briefs"
 export const metadata: Metadata = {
   title: "Knowledge Base",
   description:
-    "A practical knowledge base for leaders navigating architecture, delivery, data, and organizational complexity.",
+    "A practical knowledge base for teams navigating architecture, delivery, data, and organizational complexity.",
   alternates: {
     canonical: "/knowledge",
   },
@@ -106,8 +106,7 @@ export default function KnowledgePage() {
                 </span>
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-                Practical articles on architecture, data, and execution
-                decisions that affect momentum.
+                Practical articles on architecture, data, delivery, and decisions that affect momentum.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
@@ -234,8 +233,7 @@ export default function KnowledgePage() {
                   A library organized by real pressure points
                 </h2>
                 <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">
-                  Start with the area that feels most constrained, then follow
-                  connected articles to build a clearer view of the system.
+                  Start with the area that feels most constrained, then follow connected articles to build a clearer view of the system.
                 </p>
               </div>
               <div className="grid gap-3 rounded-[24px] border border-border bg-secondary/40 p-5">
@@ -277,56 +275,74 @@ export default function KnowledgePage() {
             </div>
 
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-              {filteredBriefs.map((brief) => {
-                const category = knowledgeCategories.find(
-                  (item) => item.id === brief.category
-                )
+              {filteredBriefs.length > 0 ? (
+                filteredBriefs.map((brief) => {
+                  const category = knowledgeCategories.find(
+                    (item) => item.id === brief.category
+                  )
 
-                return (
+                  return (
+                    <Link
+                      key={brief.slug}
+                      href={`/knowledge/${brief.slug}`}
+                      className="group flex h-full flex-col rounded-[28px] border border-border bg-background p-7 transition-all hover:-translate-y-1 hover:border-teal/40 hover:shadow-xl hover:shadow-teal/5"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <span className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
+                          {category?.label}
+                        </span>
+                        <span className="shrink-0 text-xs text-muted-foreground">
+                          {brief.readTime}
+                        </span>
+                      </div>
+                      <h3 className="mt-4 text-2xl font-semibold text-foreground text-balance transition-colors group-hover:text-teal">
+                        {brief.title}
+                      </h3>
+                      <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                        {brief.description}
+                      </p>
+                      <div className="mt-6 rounded-2xl border border-border bg-secondary/40 p-4">
+                        <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+                          Best for
+                        </p>
+                        <p className="mt-2 text-sm leading-relaxed text-foreground">
+                          {brief.takeaway}
+                        </p>
+                      </div>
+                      <div className="mt-6 grid gap-2">
+                        {brief.keyTakeaways.slice(0, 2).map((point) => (
+                          <div
+                            key={point}
+                            className="rounded-2xl border border-border/70 bg-background px-4 py-3 text-sm text-muted-foreground"
+                          >
+                            {point}
+                          </div>
+                        ))}
+                      </div>
+                      <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors group-hover:text-foreground">
+                        Read article
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </span>
+                    </Link>
+                  )
+                })
+              ) : (
+                <div className="md:col-span-2 xl:col-span-3 rounded-[28px] border border-dashed border-border bg-background p-7">
+                  <h3 className="text-xl font-semibold text-foreground">
+                    No articles in this category yet
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    Switch to another area or view all articles.
+                  </p>
                   <Link
-                    key={brief.slug}
-                    href={`/knowledge/${brief.slug}`}
-                    className="group flex h-full flex-col rounded-[28px] border border-border bg-background p-7 transition-all hover:-translate-y-1 hover:border-teal/40 hover:shadow-xl hover:shadow-teal/5"
+                    href="/knowledge"
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
                   >
-                    <div className="flex items-start justify-between gap-4">
-                      <span className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                        {category?.label}
-                      </span>
-                      <span className="shrink-0 text-xs text-muted-foreground">
-                        {brief.readTime}
-                      </span>
-                    </div>
-                    <h3 className="mt-4 text-2xl font-semibold text-foreground text-balance transition-colors group-hover:text-teal">
-                      {brief.title}
-                    </h3>
-                    <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                      {brief.description}
-                    </p>
-                    <div className="mt-6 rounded-2xl border border-border bg-secondary/40 p-4">
-                      <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                        Best for
-                      </p>
-                      <p className="mt-2 text-sm leading-relaxed text-foreground">
-                        {brief.takeaway}
-                      </p>
-                    </div>
-                    <div className="mt-6 grid gap-2">
-                      {brief.keyTakeaways.slice(0, 2).map((point) => (
-                        <div
-                          key={point}
-                          className="rounded-2xl border border-border/70 bg-background px-4 py-3 text-sm text-muted-foreground"
-                        >
-                          {point}
-                        </div>
-                      ))}
-                    </div>
-                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors group-hover:text-foreground">
-                      Read article
-                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </span>
+                    View all articles
+                    <ArrowRight className="h-4 w-4" />
                   </Link>
-                )
-              })}
+                </div>
+              )}
             </div>
           </div>
         </section>

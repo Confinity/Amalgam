@@ -29,9 +29,10 @@ export function TestimonialStrip({
           {testimonials.map((item) => (
             <article
               key={item.id}
-              className="rounded-[28px] border border-border bg-background p-6 shadow-sm"
+              className="rounded-[28px] border border-border bg-[linear-gradient(160deg,rgba(255,255,255,0.95),rgba(244,246,248,0.7))] p-6 shadow-sm"
             >
-              <p className="text-sm leading-relaxed text-foreground">&ldquo;{item.quote}&rdquo;</p>
+              <div className="text-2xl leading-none text-teal/60">&ldquo;</div>
+              <p className="mt-2 text-sm leading-relaxed text-foreground">{item.quote}</p>
               <div className="mt-5 flex items-center gap-3 border-t border-border pt-4">
                 <div className="relative h-12 w-12 overflow-hidden rounded-full border border-border/70 bg-secondary/40">
                   <Image

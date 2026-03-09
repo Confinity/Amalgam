@@ -21,7 +21,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "mooney-cleanitsupply",
     quote:
-      "We've worked with many consulting firms, but finding one that delivers excellent results and genuinely cares about our success is extremely rare. The Amalgam team has been delightful, smooth to work with, and responsive to every change we needed.",
+      "We've worked with many consulting firms, but finding one that delivers strong results and genuinely cares about our success is rare. The Amalgam team was responsive and easy to work with.",
     name: "Mike Mooney",
     title: "Chief Technology Officer",
     company: "CleanItSupply",
@@ -30,7 +30,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "mendez-pearlx",
     quote:
-      "Amalgam helped us build the virtual power plant that helped us raise over $100 million to date. They've been loyal allies since our early days and remain our sole development partner.",
+      "Amalgam helped us build the virtual power plant that supported our growth. They have been trusted allies since our early days and remain our development partner.",
     name: "Peter Mendez",
     title: "Co-Founder and President",
     company: "PearlX Infrastructure",

@@ -9,7 +9,7 @@ import { getFeaturedLaunchpadTools } from "@/lib/launchpad"
 export const metadata: Metadata = {
   title: "Launchpad Tools",
   description:
-    "Structured diagnostics for delivery drag, AI readiness, and stack posture. Use Launchpad tools to get a first-pass read before deeper work begins.",
+    "Structured diagnostics for delivery drag, AI readiness, and stack posture.",
   alternates: {
     canonical: "/launchpad/tools",
   },
@@ -31,7 +31,7 @@ export default function LaunchpadToolsPage() {
               Diagnostics that create useful clarity before you decide what kind of help you need
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              For leaders and teams who need a fast first-pass read before choosing deeper support.
+              Use these to get a fast first-pass read before choosing deeper support.
             </p>
           </div>
         </section>

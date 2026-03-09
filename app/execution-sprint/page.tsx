@@ -17,7 +17,7 @@ import { Navigation } from "@/components/navigation"
 export const metadata: Metadata = {
   title: "Execution Sprint",
   description:
-    "A focused engagement to map systems, define constraints, and produce an execution roadmap leadership can trust.",
+    "A focused engagement to map systems, define constraints, and produce an execution plan teams can use.",
   alternates: {
     canonical: "/execution-sprint",
   },
@@ -107,9 +107,7 @@ export default function ExecutionSprintPage() {
                 Turn a clear diagnosis into an execution plan teams can use
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                The Execution Sprint is for teams that need more than a diagnosis.
-                It maps the current state, clarifies constraints, and turns work
-                into a sequence the business can move on.
+                The Execution Sprint maps the current state, clarifies constraints, and turns work into a sequence teams can move on.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Link
@@ -252,18 +250,13 @@ export default function ExecutionSprintPage() {
               </h2>
               <div className="mt-6 space-y-4 leading-relaxed text-muted-foreground">
                 <p>
-                  Many roadmapping exercises fail because they sequence work before
-                  the architecture, operating model, and hidden constraints are
-                  legible enough to sequence honestly.
+                  Many roadmapping efforts fail because teams sequence work before architecture, ownership, and constraints are clear enough.
                 </p>
                 <p>
-                  The Execution Sprint exists to fix that. It produces a plan based
-                  on what the system can actually support, what the business needs
-                  most, and what risks should be removed first.
+                  The Execution Sprint fixes that with a plan based on what the system can support now and what risk should be removed first.
                 </p>
                 <p>
-                  The result should be a roadmap that is easier to defend, easier to
-                  communicate, and harder to destabilize the moment execution begins.
+                  The result is a roadmap that is easier to defend, communicate, and execute.
                 </p>
               </div>
             </div>

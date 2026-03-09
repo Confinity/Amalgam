@@ -22,7 +22,7 @@ export function Footer() {
                 Chesterbrook, PA
               </span>
               <span className="credential-chip rounded-full border border-border bg-background px-3 py-1.5">
-                Small experienced team
+                Small focused team
               </span>
             </div>
             <Link
@@ -104,7 +104,7 @@ export function Footer() {
                 Best fit
               </p>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Founders, business leaders, and technical teams carrying complexity.
+                Business leaders, product leaders, and technical teams carrying complexity.
               </p>
 
               <div className="mt-5 space-y-3 text-sm">

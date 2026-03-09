@@ -115,8 +115,7 @@ export default function FounderReviewPage() {
                 Fast clarity when something is stuck and the cause is still unclear
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                A two-week focused diagnostic that shows what is slowing delivery,
-                where risk is building, and what should move first.
+                A two-week diagnostic that shows what is slowing delivery, where risk is building, and what should move first.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Link
@@ -161,8 +160,7 @@ export default function FounderReviewPage() {
                 </p>
               </div>
               <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-                For most teams, this is still the cleanest front door into working
-                with Amalgam.
+                For many teams, this is the cleanest front door into working with Amalgam.
               </p>
               <div className="mt-5 rounded-2xl border border-border bg-secondary/35 p-4">
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
@@ -197,9 +195,7 @@ export default function FounderReviewPage() {
                 The right starting point when leadership needs signal, not noise
               </h2>
               <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
-                The Diagnostic Review is designed for teams that do not need another
-                opinion pile. They need a sharper view of what is actually creating
-                drag across the system.
+                The Diagnostic Review is for teams that need a sharper view of what is actually creating drag across the system.
               </p>
               <div className="mt-8 grid gap-3">
                 {signals.map((signal) => (
@@ -344,7 +340,7 @@ export default function FounderReviewPage() {
                 Why It Works
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Not a vague discovery process dressed up as strategy
+                Built to produce signal, not more noise
               </h2>
               <div className="mt-6 space-y-4 leading-relaxed text-muted-foreground">
                 <p>
@@ -379,7 +375,7 @@ export default function FounderReviewPage() {
                   href="/services"
                   className="inline-flex min-h-11 items-center justify-center rounded-xl border border-background/15 px-6 py-3 font-medium text-background transition-colors hover:bg-background/10"
                 >
-                  See all services
+                  See how we can help
                 </Link>
               </div>
             </div>

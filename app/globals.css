@@ -78,9 +78,9 @@
   body {
     @apply bg-background text-foreground;
     background-image:
-      radial-gradient(circle at top right, rgba(0, 191, 166, 0.13), transparent 30%),
-      radial-gradient(circle at 18% 28%, rgba(106, 92, 255, 0.09), transparent 25%),
-      radial-gradient(circle at bottom left, rgba(106, 92, 255, 0.1), transparent 28%),
+      radial-gradient(circle at top right, rgba(0, 191, 166, 0.16), transparent 32%),
+      radial-gradient(circle at 18% 28%, rgba(106, 92, 255, 0.11), transparent 26%),
+      radial-gradient(circle at bottom left, rgba(106, 92, 255, 0.11), transparent 29%),
       linear-gradient(180deg, rgba(252, 252, 250, 1) 0%, rgba(250, 252, 255, 0.92) 100%);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -165,15 +165,17 @@
         rgba(255, 255, 255, 0.78) 0%,
         rgba(244, 246, 248, 0.76) 100%
       );
-    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.04);
+    box-shadow:
+      0 12px 28px rgba(15, 23, 42, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.28);
   }
 
   .section-warm {
     position: relative;
     overflow: hidden;
     background:
-      radial-gradient(circle at 12% 14%, rgba(0, 191, 166, 0.08), rgba(0, 191, 166, 0) 34%),
-      radial-gradient(circle at 88% 86%, rgba(106, 92, 255, 0.07), rgba(106, 92, 255, 0) 36%),
+      radial-gradient(circle at 12% 14%, rgba(0, 191, 166, 0.1), rgba(0, 191, 166, 0) 34%),
+      radial-gradient(circle at 88% 86%, rgba(106, 92, 255, 0.09), rgba(106, 92, 255, 0) 36%),
       linear-gradient(180deg, rgba(250, 252, 255, 0.64), rgba(252, 252, 250, 0.4));
   }
 

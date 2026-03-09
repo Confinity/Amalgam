@@ -23,7 +23,7 @@ import { caseStudies } from "@/lib/case-studies-data"
 import { knowledgeBriefs, knowledgeCategories } from "@/lib/knowledge-briefs"
 
 export const metadata: Metadata = {
-  title: "Complex systems. Clearer decisions. Faster execution.",
+  title: "When delivery gets messy, we help teams move again.",
   description:
     "Amalgam helps teams bring clarity to complex systems and move delivery forward with confidence.",
   alternates: {
@@ -50,7 +50,7 @@ function Hero() {
               </span>
             </h1>
             <p className="hero-body mt-6 text-lg leading-relaxed text-muted-foreground">
-              For teams dealing with architecture, data, integrations, and delivery pressure at the same time.
+              Architecture, data, integrations, and delivery pressure at the same time? We help you sort it and move.
             </p>
             <div className="hero-cta-row mt-3">
               <Link
@@ -72,7 +72,7 @@ function Hero() {
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[14px] text-muted-foreground">
                 <span>Founded 2012</span>
                 <span className="h-1 w-1 rounded-full bg-border" />
-                <span>Small experienced team</span>
+                <span>Small focused team</span>
                 <span className="h-1 w-1 rounded-full bg-border" />
                 <span>Deep systems experience</span>
               </div>
@@ -123,7 +123,7 @@ function WhatWeDo() {
             What Amalgam does
           </p>
           <h2 className="mb-4 text-3xl font-semibold text-foreground">
-            Experienced help for systems, decisions, and execution
+            Clear help for systems, decisions, and execution
           </h2>
           <p className="max-w-2xl leading-relaxed text-muted-foreground">
             We work with teams that need clearer judgment, better structure, and steadier forward motion.
@@ -163,7 +163,7 @@ function WhoWeHelp() {
               </h3>
             </div>
             <p className="mb-5 text-muted-foreground">
-              When growth adds complexity and delivery starts slowing down.
+              When growth adds complexity and work starts slowing down.
             </p>
             <ul className="space-y-3">
               {[
@@ -324,7 +324,7 @@ function Offers() {
         <div className="mb-10 max-w-3xl">
           <h2 className="mb-4 text-2xl font-semibold text-foreground">Start here</h2>
           <p className="text-muted-foreground">
-            One clear first step, then deeper support only when it adds real value.
+            One clear first step, then deeper support only when it clearly helps.
           </p>
         </div>
         <div className="grid gap-8 lg:grid-cols-2">
@@ -442,7 +442,7 @@ function KnowledgePreview() {
               Practical thinking for work under pressure
             </h2>
             <p className="max-w-xl text-muted-foreground">
-              Notes on architecture, delivery, data, and decisions when the work starts getting messy.
+              Practical notes on architecture, delivery, data, and leadership decisions under pressure.
             </p>
           </div>
           <Link
@@ -501,7 +501,7 @@ function FinalCTA() {
             Get a clear read on what&apos;s slowing delivery
           </h2>
           <p className="max-w-2xl text-background/70">
-            Start with a free strategy call. We&apos;ll help you figure out what is stuck and where to move first.
+            Start with a free strategy call. We&apos;ll help you see what is stuck and where to move first.
           </p>
         </div>
         <div className="homepage-final-cta-panel rounded-[24px] border border-background/12 bg-background/[0.04] p-6">

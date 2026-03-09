@@ -20,10 +20,8 @@ export default function PrivacyPolicyPage() {
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold text-foreground">Overview</h2>
         <p className="leading-relaxed text-muted-foreground">
-          Amalgam Inc. (&quot;Amalgam,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) respects your privacy and
-          is committed to handling personal information responsibly. This Privacy
-          Policy explains how we collect, use, disclose, and protect information
-          when you visit our website or contact us about our services.
+          Amalgam Inc. (&quot;Amalgam,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) respects your privacy.
+          This policy explains how we collect, use, and protect information when you visit our website or contact us.
         </p>
       </section>
 
@@ -31,8 +29,7 @@ export default function PrivacyPolicyPage() {
         <h2 className="text-2xl font-semibold text-foreground">Information We Collect</h2>
         <div className="space-y-4 text-muted-foreground">
           <p className="leading-relaxed">
-            We may collect information in a few different ways depending on how you
-            interact with the site.
+            We collect information based on how you use the site.
           </p>
           <div className="space-y-3">
             <div className="rounded-[24px] border border-border bg-secondary/25 p-5">

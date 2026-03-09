@@ -27,7 +27,7 @@ import { withBasePath } from "@/lib/site-config"
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Founded in 2012, Amalgam is a small experienced team that helps business and technical leaders bring clarity to complex systems and restore delivery momentum.",
+    "Founded in 2012, Amalgam is a focused team that helps business and technical leaders bring clarity to complex systems and restore delivery momentum.",
   alternates: {
     canonical: "/about",
   },
@@ -124,7 +124,7 @@ export default function AboutPage() {
                   About Amalgam
                 </p>
                 <h1 className="text-4xl font-semibold leading-tight tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                  A small experienced team for complex moments that need clear decisions.
+                  A focused team for complex moments that need clear decisions.
                 </h1>
                 <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                   Amalgam helps business and technical leaders bring clarity to
@@ -173,13 +173,10 @@ export default function AboutPage() {
                 <h2 className="mb-6 text-2xl font-semibold text-foreground">A note from our founder</h2>
                 <blockquote className="space-y-4 text-lg leading-relaxed text-muted-foreground">
                   <p>
-                    &ldquo;I started Amalgam to keep work practical and honest.
+                    I started Amalgam to keep the work practical and honest.
                   </p>
                   <p>
-                    Too many projects create dependency instead of progress.
-                  </p>
-                  <p>
-                    We focus on what is slowing the business down, make the next move clear, and help teams move again.&rdquo;
+                    Too many projects create dependency instead of progress. We focus on what is slowing the business down, make the next move clear, and help teams move again.
                   </p>
                 </blockquote>
                 <p className="mt-6 font-medium text-foreground">{founder.fullName ?? founder.name}</p>
@@ -264,7 +261,7 @@ export default function AboutPage() {
               <div>
                 <h2 className="text-2xl font-semibold text-foreground">The team</h2>
                 <p className="mt-2 text-muted-foreground">
-                  Experienced support across systems, architecture, and delivery.
+                  Focused support across systems, architecture, and delivery.
                 </p>
               </div>
               <Link href="/team" className="flex items-center gap-1 text-sm font-medium text-teal hover:underline">

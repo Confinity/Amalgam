@@ -86,6 +86,19 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
   const previousBrief = articleIndex > 0 ? knowledgeBriefs[articleIndex - 1] : null
   const nextBrief =
     articleIndex < knowledgeBriefs.length - 1 ? knowledgeBriefs[articleIndex + 1] : null
+  const introPreview = (() => {
+    const normalized = brief.intro.replace(/\s+/g, " ").trim()
+    const sentences = normalized.match(/[^.!?]+[.!?]?/g) ?? [normalized]
+    const condensed = sentences.slice(0, 2).join(" ").trim()
+    if (condensed.length <= 300) {
+      return condensed
+    }
+
+    const trimmed = condensed.slice(0, 300).trim()
+    const lastSpace = trimmed.lastIndexOf(" ")
+    return `${lastSpace > 100 ? trimmed.slice(0, lastSpace) : trimmed}…`
+  })()
+  const displayIntroPreview = introPreview.replace("â€¦", "...")
   const canonicalUrl = `https://amalgam-inc.com/knowledge/${brief.slug}`
   const schema = [
     {
@@ -178,7 +191,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                   {brief.title}
                 </h1>
                 <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                  {brief.intro}
+                  {displayIntroPreview}
                 </p>
               </div>
 
@@ -233,7 +246,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                     {section.paragraphs.map((paragraph) => (
                       <p
                         key={paragraph}
-                        className="text-[17px] leading-8 text-muted-foreground"
+                        className="text-base leading-7 text-muted-foreground"
                       >
                         {paragraph}
                       </p>

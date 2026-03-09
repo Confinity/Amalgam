@@ -138,8 +138,7 @@ export function Navigation() {
               </div>
               <hr className="my-5 border-border" />
               <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-                If delivery is slowing down and the root cause still feels fuzzy,
-                start with a strategy call.
+                If delivery is slowing and the root cause is still fuzzy, start with a strategy call.
               </p>
               <div className="grid gap-3">
                 <Link

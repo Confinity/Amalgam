@@ -9,7 +9,7 @@ import { launchpadPrograms } from "@/lib/launchpad"
 export const metadata: Metadata = {
   title: "Launchpad Programs",
   description:
-    "Understand how Diagnostic Review, Execution Sprint, and Outcome Partnership map to the clarity, sequencing, and follow-through your team needs now.",
+    "See how Diagnostic Review, Execution Sprint, and Outcome Partnership map to what your team needs now.",
   alternates: {
     canonical: "/launchpad/programs",
   },
@@ -47,10 +47,10 @@ export default function LaunchpadProgramsPage() {
               Launchpad Programs
             </p>
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl">
-              If the tools or guides suggest deeper help is needed, this is how the work usually begins
+              If tools or guides point to deeper help, this is how the work usually starts
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              For teams that have clearer signal and now need the right level of support.
+              For teams with clearer signal that now need the right level of support.
             </p>
           </div>
         </section>
@@ -114,7 +114,7 @@ export default function LaunchpadProgramsPage() {
                   <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
                   <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
                   <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-teal">
-                    Go there
+                    Explore this path
                     <ArrowRight className="h-4 w-4" />
                   </span>
                 </TrackedLink>

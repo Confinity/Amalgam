@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
-import type { CaseStudy } from "@/lib/case-studies-data"
+import { summarizeCaseStudyText, type CaseStudy } from "@/lib/case-studies-data"
 
 type HomeFeaturedCaseStudiesProps = {
   featuredStudies: CaseStudy[]
@@ -50,7 +50,7 @@ export function HomeFeaturedCaseStudies({ featuredStudies }: HomeFeaturedCaseStu
             {flagship.industry}
           </p>
           <p className="mt-5 max-w-[52ch] text-base leading-relaxed text-muted-foreground">
-            {flagship.problem}
+            {summarizeCaseStudyText(flagship.problem, { maxSentences: 1, maxChars: 180 })}
           </p>
         </div>
         <div className="support-panel rounded-[26px] p-6">
@@ -58,13 +58,13 @@ export function HomeFeaturedCaseStudies({ featuredStudies }: HomeFeaturedCaseStu
             What changed
           </p>
           <p className="mt-3 text-sm leading-relaxed text-foreground">
-            {flagship.outcome}
+            {summarizeCaseStudyText(flagship.outcome, { maxSentences: 1, maxChars: 170 })}
           </p>
           <p className="mt-4 text-xs uppercase tracking-[0.22em] text-muted-foreground">
             How we approached it
           </p>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-            {flagship.approach}
+            {summarizeCaseStudyText(flagship.approach, { maxSentences: 1, maxChars: 170 })}
           </p>
         </div>
         <span className="inline-flex items-center gap-1 text-sm font-medium text-foreground transition-colors group-hover:text-teal">
@@ -87,14 +87,14 @@ export function HomeFeaturedCaseStudies({ featuredStudies }: HomeFeaturedCaseStu
               {study.client}
             </h3>
             <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-              {study.problem}
+              {summarizeCaseStudyText(study.problem, { maxSentences: 1, maxChars: 145 })}
             </p>
             <div className="support-panel rounded-[22px] p-4">
               <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
                 Outcome
               </p>
               <p className="mt-2 text-sm leading-relaxed text-foreground">
-                {study.outcome}
+                {summarizeCaseStudyText(study.outcome, { maxSentences: 1, maxChars: 145 })}
               </p>
             </div>
             <span className="inline-flex items-center gap-1 pt-5 text-sm font-medium text-foreground transition-colors group-hover:text-teal">

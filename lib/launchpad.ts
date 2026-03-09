@@ -249,7 +249,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
     description:
       "Pressure-test whether shipping slowdowns are really coming from architecture complexity, coordination overhead, data visibility, or sequencing drag.",
     audience:
-      "For leaders and teams who know delivery is slower than it should be, but still need a sharper read on why.",
+      "For teams that know delivery is slower than it should be and need a sharper read on why.",
     estimatedTime: "4-5 minutes",
     outputLabel: "Likely drag profile",
     completionLabel: "You now have a first-pass read on the likely shape of the drag.",
@@ -516,9 +516,9 @@ const launchpadTools: LaunchpadToolDefinition[] = [
     shortTitle: "AI Readiness",
     kicker: "Operator checklist",
     description:
-      "Assess whether the company is genuinely ready for meaningful AI usage or still needs better workflows, ownership, and system foundations first.",
+      "Assess whether the company is actually ready for meaningful AI usage or still needs better workflows, ownership, and system foundations first.",
     audience:
-      "For leaders and teams who want a sober read on whether AI will create leverage or simply amplify fragmentation.",
+      "For teams that want a sober read on whether AI will create leverage or simply amplify fragmentation.",
     estimatedTime: "4 minutes",
     outputLabel: "Current readiness posture",
     completionLabel:
@@ -784,7 +784,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
     description:
       "Get a credible first-pass view of whether the stack is coherent, fragmented, overgrown, risky, or simply under-documented for the current stage.",
     audience:
-      "For leaders and teams who can feel technical drag, integration burden, or platform risk but need a sharper read on the system posture first.",
+      "For teams that can feel technical drag, integration burden, or platform risk but need a sharper read on system posture first.",
     estimatedTime: "5 minutes",
     outputLabel: "Likely stack posture",
     completionLabel:
@@ -948,7 +948,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
       },
       {
         id: "onboarding",
-        prompt: "How fast can a new strong engineer become genuinely useful in the current system?",
+        prompt: "How fast can a strong new engineer become productively useful in the current system?",
         helper: "This is often one of the clearest tests of stack legibility.",
         options: [
           {

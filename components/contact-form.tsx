@@ -121,20 +121,20 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
           <div className="contact-intake-note-item rounded-2xl bg-background px-4 py-4">
             <p className="text-sm font-medium text-foreground">Best for serious situations</p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Use this when the business is genuinely stuck and you want the message to land clearly.
+              Use this when the business is stuck and you want to send clear context.
             </p>
           </div>
           <div className="contact-intake-note-item rounded-2xl bg-background px-4 py-4">
             <p className="text-sm font-medium text-foreground">No black-box handoff</p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              The form drafts the email so your exact context stays visible and reusable.
+              The form drafts the email so your exact context stays visible.
             </p>
           </div>
         </div>
       </div>
       <h2 className="mb-2 text-xl font-semibold text-foreground">Send us a message</h2>
       <p className="mb-6 text-sm text-muted-foreground">
-        This opens a drafted email to hello@amalgam-inc.com with your notes already formatted.
+        This opens a draft email to hello@amalgam-inc.com with your notes formatted.
       </p>
 
       <form className="space-y-5" onSubmit={handleSubmit}>
@@ -305,7 +305,7 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
                 </p>
                 <p>
                   {copied
-                    ? "The message details were also copied to your clipboard as a fallback."
+                    ? "Your message was also copied to clipboard as backup."
                     : "If the draft did not open, use the direct email link below."}
                 </p>
               </div>
@@ -341,7 +341,7 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
 
       <div className="contact-control-note mt-4 inline-flex items-center gap-2 text-xs text-muted-foreground">
         <Copy className="h-3.5 w-3.5" />
-        No black-box submission flow. You stay in control, and the message can be copied if your mail app does not open.
+        No black-box submission flow. You stay in control, and your message can be copied if your mail app does not open.
       </div>
     </div>
   )

@@ -28,14 +28,14 @@ export const teamGroups = [
     eyebrow: "Architecture & Engineering",
     title: "Technical architecture and engineering",
     description:
-      "Hands-on architects and builders working across systems, platforms, data, and real-world delivery constraints.",
+      "Hands-on architects and builders working across systems, platforms, data, and real delivery constraints.",
   },
   {
     id: "delivery",
     eyebrow: "Delivery & People",
     title: "Execution, cadence, and team effectiveness",
     description:
-      "Leaders focused on cadence, hiring, and team effectiveness so strong plans become reliable execution.",
+      "Leaders focused on cadence, hiring, and team effectiveness so strong plans turn into reliable execution.",
   },
 ] as const satisfies ReadonlyArray<{
   id: TeamGroupId
@@ -51,9 +51,9 @@ export const teamMembers: TeamMember[] = [
     role: "CEO & Founder",
     group: "leadership",
     shortBio:
-      "25 years of experience in startups, financial services, and software development. Founded Amalgam to build a client-first consulting practice that values clarity and execution over theater.",
+      "Built Amalgam after years across startups, financial services, and software delivery. Focused on clarity, structure, and real execution.",
     bio:
-      "Neeraj founded Amalgam with 25 years of experience across startups, financial services, and software development. He guides the team with a strong bias toward clear thinking, systems judgment, and practical execution.",
+      "Neeraj founded Amalgam after years in startups, financial services, and software development. He keeps the team focused on clear thinking, sound systems judgment, and practical execution.",
     specialties: ["Strategic Leadership", "Financial Services", "Startup Advisory"],
     funFact: "Avid reader, dabbles in writing, and loves to travel.",
     image: "/team/neeraj.webp",
@@ -65,9 +65,9 @@ export const teamMembers: TeamMember[] = [
     role: "Head of Growth & Innovation",
     group: "leadership",
     shortBio:
-      "Leads growth and operations across Amalgam's commercial systems, client experience, and day-to-day operating rhythm.",
+      "Leads growth and operations across Amalgam's commercial systems, client experience, and day-to-day rhythm.",
     bio:
-      "Ryan Ward leads growth and operations at Amalgam, helping shape the firm's commercial motion, client experience, and operating cadence. He keeps the business side of delivery disciplined so engagements start clearly and move cleanly.",
+      "Ryan leads growth and operations at Amalgam. He keeps the business side of delivery disciplined so engagements start clearly and move cleanly.",
     specialties: ["Growth", "Operations", "Client Experience"],
     image: "/team/ryan-ward.png",
     imageAlt: "Portrait of Ryan Ward",
@@ -80,9 +80,9 @@ export const teamMembers: TeamMember[] = [
     role: "Chief Architect",
     group: "architecture",
     shortBio:
-      "20+ years specializing in large-scale enterprise applications, data pipelines, and service integration. Former Sun Microsystems, Oracle, OpenText, and Software AG.",
+      "Architect with deep experience in enterprise applications, data pipelines, and service integration.",
     bio:
-      "Vikas specializes in the architecture and development of very large-scale enterprise applications, data pipelines, and service integration platforms. He has over 20 years of experience at Sun Microsystems, Software AG, OpenText, and Oracle.",
+      "Vikas specializes in enterprise architecture, large-scale data flows, and service integration. He brings decades of experience across global technology organizations.",
     specialties: ["Enterprise Architecture", "Data Pipelines", "Service Integration"],
     funFact: "Loves to visit new places and explore.",
     image: "/team/vikas.webp",
@@ -93,9 +93,9 @@ export const teamMembers: TeamMember[] = [
     role: "Enterprise Architect",
     group: "architecture",
     shortBio:
-      "20+ years building cloud-compliant applications using open-source and emerging technologies across finance, retail, telecom, CPG, and pharma.",
+      "Builds cloud-ready applications and enterprise products across regulated and high-volume industries.",
     bio:
-      "Naren is an experienced technical leader with deep experience building cloud-based applications using open-source technologies. He has spent more than 20 years creating enterprise products across finance, retail, telecom, CPG, and pharma.",
+      "Naren is a technical leader with long experience building cloud applications and enterprise products across finance, retail, telecom, and healthcare-adjacent sectors.",
     specialties: ["Cloud Architecture", "Open Source", "Enterprise Applications"],
     funFact: "Loves to play badminton.",
     image: "/team/naren.webp",
@@ -106,9 +106,9 @@ export const teamMembers: TeamMember[] = [
     role: "Architect & DevOps Lead",
     group: "architecture",
     shortBio:
-      "12+ years leading development and deployment of large-scale web and mobile applications with a focus on Docker, Kubernetes, and AWS.",
+      "Leads development and platform delivery for large-scale web and mobile applications.",
     bio:
-      "Oleg has led DevOps at Amalgam for the last 5 years with a focus on Docker, Kubernetes, and AWS. He has more than 12 years of experience leading the development and deployment of large-scale web and mobile applications.",
+      "Oleg leads DevOps at Amalgam with a focus on reliable delivery across Docker, Kubernetes, and AWS-based environments.",
     specialties: ["DevOps", "Kubernetes", "AWS", "Docker"],
     funFact: "Loves spending time with his children and playing table tennis.",
     image: "/team/oleg.webp",
@@ -119,9 +119,9 @@ export const teamMembers: TeamMember[] = [
     role: "Lead Developer",
     group: "architecture",
     shortBio:
-      "20 years finding breakthrough technical solutions for retail, financial, and insurance businesses. Full-stack developer and stellar problem-solver.",
+      "Full-stack developer known for practical problem solving across retail, financial, and insurance systems.",
     bio:
-      "Over the last 20 years, Jub has found breakthrough technical solutions to business problems for major names in the retail, financial, and insurance industries. He has built a reputation as a stellar problem-solver and a proficient full-stack developer.",
+      "Jub has spent two decades solving hard technical problems for major retail, financial, and insurance organizations.",
     specialties: ["Full-Stack Development", "Problem Solving", "Technical Architecture"],
     funFact: "Listens to music and plays with his daughter.",
     image: "/team/jub.webp",
@@ -132,9 +132,9 @@ export const teamMembers: TeamMember[] = [
     role: "Agile Practice Lead",
     group: "delivery",
     shortBio:
-      "Experience spanning QA, development, project management, and Scrum Master roles across telecommunications, pharmaceutical, and insurance sectors.",
+      "Leads agile delivery with experience across QA, development, and project leadership.",
     bio:
-      "Lisa's experience includes quality assurance testing, development, project management, and scrum master roles utilizing Waterfall and Agile methodologies in the telecommunications, pharmaceutical, and insurance spaces.",
+      "Lisa brings delivery leadership experience across QA, development, project management, and agile coaching in telecom, pharma, and insurance environments.",
     specialties: ["Agile", "QA Testing", "Project Management", "Scrum"],
     funFact: "Amateur photographer, nature lover, and fitness enthusiast.",
     image: "/team/lisa.webp",
@@ -145,9 +145,9 @@ export const teamMembers: TeamMember[] = [
     role: "Software Developer",
     group: "architecture",
     shortBio:
-      "Former Marine Corps team member turned developer, working across React, MongoDB, Express, Node, and React Native.",
+      "Developer with a disciplined execution mindset and full-stack product experience.",
     bio:
-      "Ruben brings a strong technical background and disciplined mindset to the team. He served in the Marine Corps for 8 years before pursuing web development in React, MongoDB, Express, Node, and React Native.",
+      "Ruben brings strong technical range and disciplined execution to product development across React, Node, and mobile-friendly stacks.",
     specialties: ["React", "Node.js", "MongoDB", "React Native"],
     funFact: "Active runner, overlanding enthusiast, anime fan, and Brooklyn Nets supporter.",
     image: "/team/ruben.webp",
@@ -158,9 +158,9 @@ export const teamMembers: TeamMember[] = [
     role: "Partner - Legal & HR",
     group: "leadership",
     shortBio:
-      "Business and legal leadership that keeps Amalgam's daily operations, agreements, and client engagements running smoothly.",
+      "Business and legal leadership that keeps operations, agreements, and client engagements running smoothly.",
     bio:
-      "Sumita's business and legal acumen keeps daily operations running smoothly at Amalgam. She uses her law background to oversee agreements and define terms of work with clients.",
+      "Sumita combines business and legal judgment to keep daily operations steady and client terms clear.",
     specialties: ["Legal", "HR Operations", "Contract Management"],
     funFact: "Loves creating dishes in the kitchen for family, friends, and colleagues.",
     image: "/team/sumita.webp",
@@ -171,9 +171,9 @@ export const teamMembers: TeamMember[] = [
     role: "Human Resources Consultant",
     group: "delivery",
     shortBio:
-      "HR consultant focused on connecting talent with the right roles and building strong, future-ready teams.",
+      "HR consultant focused on matching talent to the right roles and building strong teams.",
     bio:
-      "With several years of experience as an HR consultant and genuine passion for working with people, Parul creates opportunities that connect talent with the right roles.",
+      "Parul supports hiring and people operations with a practical, people-first approach to team building.",
     specialties: ["HR Consulting", "Talent Acquisition", "Team Building"],
     funFact: "Loves to cook and watch movies with her son.",
     image: "/team/parul.webp",
