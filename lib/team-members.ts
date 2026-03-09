@@ -187,6 +187,7 @@ export const unifiedTeamPortraitBackgroundClass =
   "bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.2),transparent_44%),linear-gradient(180deg,#8098a2_0%,#627a84_100%)]"
 
 export const unifiedTeamPortraits: Record<string, string> = {
+  Neeraj: "/team/about-cutouts/neeraj.webp",
   Ryan: "/team/about-cutouts/ryan-ward.webp",
   Vikas: "/team/about-cutouts/vikas.webp",
   Naren: "/team/about-cutouts/naren.webp",
@@ -199,6 +200,7 @@ export const unifiedTeamPortraits: Record<string, string> = {
 }
 
 export const unifiedTeamPortraitClasses: Record<string, string> = {
+  Neeraj: "object-contain object-bottom px-6 pt-6 pb-0 scale-[0.97] md:px-7 md:pt-7",
   Ryan: "object-contain object-bottom px-5 pt-7 pb-0 scale-[0.99] md:px-6 md:pt-8",
   Sumita: "object-contain object-bottom px-6 pt-6 pb-0 scale-[0.95] md:px-7 md:pt-7",
   Vikas: "object-contain object-bottom px-5 pt-5 pb-0 scale-[0.98] md:px-6 md:pt-6",

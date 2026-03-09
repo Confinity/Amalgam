@@ -39,6 +39,7 @@ const practiceAreas = [
 ]
 
 const nonFounderTeamMembers = teamMembers.filter((member) => member.name !== "Neeraj")
+const founderName = "Neeraj"
 
 export default function TeamPage() {
   return (
@@ -141,7 +142,7 @@ export default function TeamPage() {
         </section>
 
         {teamGroups.map((group, groupIndex) => {
-          const members = nonFounderTeamMembers.filter((member) => member.group === group.id)
+          const members = teamMembers.filter((member) => member.group === group.id)
 
           return (
             <section
@@ -189,6 +190,11 @@ export default function TeamPage() {
                         <p className="text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
                           {group.eyebrow}
                         </p>
+                        {member.name === founderName ? (
+                          <p className="mt-2 inline-flex rounded-full border border-teal/25 bg-teal/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-teal">
+                            Founder
+                          </p>
+                        ) : null}
                         <h3 className="mt-3 text-xl font-bold text-foreground">
                           {member.fullName ?? member.name}
                         </h3>
