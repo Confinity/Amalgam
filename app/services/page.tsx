@@ -58,7 +58,7 @@ const engagements = [
     title: "Outcome Partnership",
     subtitle: "Ongoing momentum",
     description:
-      "Senior follow-through to carry the roadmap forward, unblock execution, and sustain momentum where the work still needs adult supervision.",
+      "Senior follow-through to carry the roadmap forward, unblock execution, and sustain momentum where the work still needs close support.",
     href: "/outcome-partnership",
     highlights: [
       "Embedded senior operators",

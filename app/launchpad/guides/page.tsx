@@ -34,7 +34,7 @@ export default function LaunchpadGuidesPage() {
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
               Knowledge is the editorial library. Launchpad guides are grouped by
-              the situations teams actually need help thinking through.
+              the situations teams are actively working through.
             </p>
           </div>
         </section>

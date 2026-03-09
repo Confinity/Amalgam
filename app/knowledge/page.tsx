@@ -121,7 +121,7 @@ export default function KnowledgePage() {
                   href="/contact?interest=strategy-session"
                   className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-border px-6 py-3 font-medium text-foreground transition-colors hover:bg-secondary"
                 >
-                  Book a strategy call
+                  Book a free strategy call
                 </Link>
               </div>
               <Link

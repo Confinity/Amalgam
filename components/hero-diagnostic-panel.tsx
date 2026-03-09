@@ -623,7 +623,7 @@ export function HeroDiagnosticPanel() {
                 onClick={() =>
                   activeNode === node.key ? closeTooltip(node.key) : openTooltip(node.key)
                 }
-                className={`flex h-full w-full items-center justify-center rounded-[10px] border bg-white/72 px-3 text-center backdrop-blur-md transition-all duration-200 ease-out focus-visible:outline-none ${
+                className={`flex h-full w-full items-center justify-center rounded-[10px] border bg-background/75 px-3 text-center backdrop-blur-md transition-all duration-200 ease-out focus-visible:outline-none ${
                   node.isCore
                     ? "border-teal/28 shadow-[0_0_0_1px_rgba(0,191,166,0.08)]"
                     : "border-black/5"
@@ -654,7 +654,7 @@ export function HeroDiagnosticPanel() {
 
       <div
         ref={insetRef}
-        className={`founder-review-inset absolute z-[3] w-[220px] rounded-[18px] border bg-white/80 px-[18px] py-[16px] shadow-[0_8px_20px_rgba(15,23,42,0.06)] backdrop-blur-xl transition-colors duration-500 sm:w-[270px] sm:py-[18px] lg:w-[290px] ${
+        className={`founder-review-inset absolute z-[3] w-[220px] rounded-[18px] border bg-background/85 px-[18px] py-[16px] shadow-[0_8px_20px_rgba(15,23,42,0.06)] backdrop-blur-xl transition-colors duration-500 sm:w-[270px] sm:py-[18px] lg:w-[290px] ${
           phase === "activate"
             ? "border-teal/28"
             : "border-teal/18"

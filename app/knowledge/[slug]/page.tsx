@@ -427,7 +427,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                     href="/contact?interest=strategy-session"
                     className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-background px-4 py-3 text-sm font-medium text-foreground transition-opacity hover:opacity-90"
                   >
-                    Book a strategy call
+                    Book a free strategy call
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                   <Link

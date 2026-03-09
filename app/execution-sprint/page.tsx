@@ -10,6 +10,7 @@ import {
   Target,
   Users,
 } from "lucide-react"
+import { ContextualTestimonial } from "@/components/contextual-testimonial"
 import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
 
@@ -107,7 +108,7 @@ export default function ExecutionSprintPage() {
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 The Execution Sprint is for teams that need more than a diagnosis.
-                It maps the current state, clarifies constraints, and turns the work
+                It maps the current state, clarifies constraints, and turns work
                 into a sequence the business can move on.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -122,7 +123,7 @@ export default function ExecutionSprintPage() {
                   href="/contact?interest=founder-review"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-border px-6 py-3 font-medium text-foreground transition-all hover:bg-secondary"
                 >
-                  Book a strategy call
+                  Book a free strategy call
                 </Link>
               </div>
             </div>
@@ -284,12 +285,19 @@ export default function ExecutionSprintPage() {
                   href="/contact?interest=founder-review"
                   className="inline-flex min-h-11 items-center justify-center rounded-xl border border-background/15 px-6 py-3 font-medium text-background transition-colors hover:bg-background/10"
                 >
-                  Book a strategy call
+                  Book a free strategy call
                 </Link>
               </div>
             </div>
           </div>
         </section>
+
+        <ContextualTestimonial
+          className="deferred-section border-t border-border py-20 lg:py-24"
+          eyebrow="Client perspective"
+          title="What teams notice when sequencing gets clearer"
+          testimonialId="fitzmier-jtf"
+        />
       </main>
       <Footer />
     </>

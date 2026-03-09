@@ -92,7 +92,7 @@ export const launchpadPaths: LaunchpadPathCard[] = [
   {
     title: "I need clarity",
     description:
-      "The drag is visible, but the root cause still feels tangled across systems, teams, and decisions.",
+      "The drag is visible, but the root cause still feels unclear across systems, teams, and decisions.",
     href: "/launchpad/delivery-drag-diagnostic",
     nextStep: "Best next step: Delivery Drag Diagnostic",
   },
@@ -152,7 +152,7 @@ export const launchpadPrograms: LaunchpadProgramCard[] = [
     id: "outcome-partnership",
     title: "Outcome Partnership",
     description:
-      "Senior follow-through for situations where the path is real, but execution still needs adult supervision to protect momentum.",
+      "Senior follow-through for situations where the path is real, but execution still needs close support to protect momentum.",
     whenItsRight:
       "Best when clarity exists and the business needs continuity, unblockers, and direct decision support over time.",
     href: "/outcome-partnership",
@@ -264,7 +264,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         whyItMatters:
           "This usually means pressure is accumulating at the foundation layer. The right next move is to clarify the current state and identify the few structural decisions that are distorting delivery.",
         nextStep: {
-          label: "Book a strategy call",
+          label: "Book a free strategy call",
           href: "/contact?interest=founder-review",
           note: "The root cause still needs a direct diagnostic read.",
         },
@@ -300,7 +300,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         whyItMatters:
           "This usually produces noise that looks like weak execution. In reality, the system may be under-specified in its decision rights, workflow ownership, or operating rhythm.",
         nextStep: {
-          label: "Book a strategy call",
+          label: "Book a free strategy call",
           href: "/contact?interest=founder-review",
           note: "The operating model likely needs a senior read before planning continues.",
         },
@@ -318,7 +318,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         whyItMatters:
           "When truth is hard to access, every planning cycle gets noisier. The business can rarely fix this with one more dashboard alone.",
         nextStep: {
-          label: "Book a strategy call",
+          label: "Book a free strategy call",
           href: "/contact?interest=founder-review",
           note: "A direct diagnostic can separate reporting symptoms from system causes.",
         },
@@ -534,7 +534,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         whyItMatters:
           "AI tends to amplify ambiguity. If the operating model is still fuzzy, the first gain usually comes from making the system more legible before automating anything meaningful.",
         nextStep: {
-          label: "Book a strategy call",
+          label: "Book a free strategy call",
           href: "/contact?interest=founder-review",
           note: "The system likely needs diagnosis before AI decisions become useful.",
         },
@@ -818,7 +818,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         whyItMatters:
           "This is where stack complexity starts shaping product speed, support load, and confidence in change. The business often needs a sharper diagnostic before it can simplify responsibly.",
         nextStep: {
-          label: "Book a strategy call",
+          label: "Book a free strategy call",
           href: "/contact?interest=founder-review",
           note: "A direct diagnostic can separate platform symptoms from the real architecture and workflow issues.",
         },
@@ -836,7 +836,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         whyItMatters:
           "This posture often looks acceptable until a raise, replatform, enterprise customer, or high-stakes rollout suddenly exposes the cost of undocumented or brittle decisions.",
         nextStep: {
-          label: "Book a strategy call",
+          label: "Book a free strategy call",
           href: "/contact?interest=founder-review",
           note: "A senior read can clarify which risks actually matter before the business overreacts.",
         },

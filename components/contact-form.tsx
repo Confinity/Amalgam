@@ -106,13 +106,13 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
           <div className="contact-intake-note-item rounded-2xl bg-background px-4 py-4">
             <p className="text-sm font-medium text-foreground">Best for serious situations</p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Use this when the business is genuinely stuck and you want the message to land cleanly.
+              Use this when the business is genuinely stuck and you want the message to land clearly.
             </p>
           </div>
           <div className="contact-intake-note-item rounded-2xl bg-background px-4 py-4">
             <p className="text-sm font-medium text-foreground">No black-box handoff</p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              The form drafts the email for you so the exact context is visible and reusable.
+              The form drafts the email so your exact context stays visible and reusable.
             </p>
           </div>
         </div>

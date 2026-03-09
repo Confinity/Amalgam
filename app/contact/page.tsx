@@ -12,6 +12,7 @@ import {
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { ContactForm } from "@/components/contact-form"
+import { ContextualTestimonial } from "@/components/contextual-testimonial"
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -83,7 +84,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                       Free strategy session
                     </p>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                      Best when you need a senior second set of eyes before committing to a larger engagement.
+                      Best when you need a senior second set of eyes before committing to deeper work.
                     </p>
                   </div>
                   <div className="contact-path-card support-panel p-5">
@@ -99,7 +100,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                       Outcome Partnership
                     </p>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                      Best when the roadmap exists and senior follow-through is what protects momentum.
+                      Best when the roadmap exists and senior follow-through protects momentum.
                     </p>
                   </div>
                 </div>
@@ -171,6 +172,13 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
           </div>
         </section>
 
+        <ContextualTestimonial
+          className="deferred-section border-b border-border py-20 lg:py-24"
+          eyebrow="Client perspective"
+          title="How clients describe the way we show up"
+          testimonialId="fitzmier-jtf"
+        />
+
         <section className="contact-next-section py-16 lg:py-20">
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="contact-next-layout grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
@@ -209,7 +217,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                   Start with a free strategy session
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-background/70">
-                  If delivery is slowing down and the root cause is still fuzzy, this is the cleanest first move.
+                  If delivery is slowing down and the root cause is still unclear, this is the cleanest first move.
                 </p>
                 <div className="contact-review-points mt-6 space-y-3">
                   {[

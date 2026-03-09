@@ -9,6 +9,7 @@ import {
   Users,
   Zap,
 } from "lucide-react"
+import { ContextualTestimonial } from "@/components/contextual-testimonial"
 import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
 
@@ -94,7 +95,7 @@ export default function OutcomePartnershipPage() {
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 The Outcome Partnership carries the roadmap into execution. It is for
                 teams that need senior operators in the room as work meets reality,
-                priorities shift, and important decisions cannot afford to drift.
+                priorities shift, and important decisions cannot drift.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Link
@@ -108,7 +109,7 @@ export default function OutcomePartnershipPage() {
                   href="/contact?interest=founder-review"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-border px-6 py-3 font-medium text-foreground transition-all hover:bg-secondary"
                 >
-                  Book a strategy call
+                  Book a free strategy call
                 </Link>
               </div>
             </div>
@@ -309,6 +310,13 @@ export default function OutcomePartnershipPage() {
             </div>
           </div>
         </section>
+
+        <ContextualTestimonial
+          className="deferred-section border-t border-border py-20 lg:py-24"
+          eyebrow="Client perspective"
+          title="How this model feels during real execution pressure"
+          testimonialId="mendez-pearlx"
+        />
       </main>
       <Footer />
     </>

@@ -10,6 +10,7 @@ import {
   Users,
   Zap,
 } from "lucide-react"
+import { ContextualTestimonial } from "@/components/contextual-testimonial"
 import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
 
@@ -115,7 +116,7 @@ export default function FounderReviewPage() {
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 The Founder Review is a senior-led diagnostic. In two weeks, you get
-                a clearer read on what is slowing delivery, what is creating risk,
+                a clear read on what is slowing delivery, what is creating risk,
                 and what should move first.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -123,7 +124,7 @@ export default function FounderReviewPage() {
                   href="/contact?interest=founder-review"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 font-medium text-background transition-all hover:opacity-90"
                 >
-                  Book a strategy call
+                  Book a free strategy call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
@@ -137,7 +138,7 @@ export default function FounderReviewPage() {
                 href="/launchpad/delivery-drag-diagnostic"
                 className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
               >
-                Not sure if the Founder Review is the right place to start? Try a Launchpad diagnostic first
+                Not sure this is the right place to start? Try a Launchpad diagnostic first
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -157,7 +158,7 @@ export default function FounderReviewPage() {
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   This is a paid diagnostic, not a free consultation. It is built
-                  to produce real clarity fast, not another vague discovery cycle.
+                  to produce real clarity fast.
                 </p>
               </div>
               <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
@@ -348,9 +349,9 @@ export default function FounderReviewPage() {
               </h2>
               <div className="mt-6 space-y-4 leading-relaxed text-muted-foreground">
                 <p>
-                  The Founder Review is built for situations where the cost of fuzzy
-                  thinking is already rising. It is built to produce a real diagnosis,
-                  not another abstract discussion about possibilities.
+                  The Founder Review is built for situations where unclear
+                  decisions are already getting expensive. It is built to produce
+                  a real diagnosis.
                 </p>
                 <p>
                   You get senior judgment from day one, a cleaner view of the system,
@@ -372,7 +373,7 @@ export default function FounderReviewPage() {
                   href="/contact?interest=founder-review"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-background px-6 py-3 font-medium text-foreground transition-opacity hover:opacity-90"
                 >
-                  Book a strategy call
+                  Book a free strategy call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
@@ -385,6 +386,13 @@ export default function FounderReviewPage() {
             </div>
           </div>
         </section>
+
+        <ContextualTestimonial
+          className="deferred-section border-t border-border py-20 lg:py-24"
+          eyebrow="Client perspective"
+          title="What this work feels like for leadership teams"
+          testimonialId="mooney-cleanitsupply"
+        />
       </main>
       <Footer />
     </>

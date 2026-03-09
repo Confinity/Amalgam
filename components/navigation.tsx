@@ -86,7 +86,7 @@ export function Navigation() {
             prefetch={false}
             className="inline-flex items-center gap-2 rounded-lg bg-foreground px-4 py-2.5 text-sm font-medium text-background transition-all hover:opacity-90 focus-visible:outline-none"
           >
-            Book a strategy call
+            Book a free strategy call
             <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         </div>
@@ -148,7 +148,7 @@ export function Navigation() {
                   className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-2xl bg-foreground px-4 py-3 text-sm font-medium text-background"
                   onClick={() => setMobileOpen(false)}
                 >
-                  Book a strategy call
+                  Book a free strategy call
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
                 <Link

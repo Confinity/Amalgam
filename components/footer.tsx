@@ -31,7 +31,7 @@ export function Footer() {
               prefetch={false}
               className="footer-cta mt-5 inline-flex items-center gap-2 rounded-xl bg-foreground px-5 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
             >
-              Book a strategy call
+              Book a free strategy call
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

@@ -28,13 +28,13 @@ export default function LaunchpadSignalsPage() {
               <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
                 Launchpad Signals
               </p>
-            <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl">
+              <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl">
                 Practical signal for leaders navigating systems complexity
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                This is not generic motivation content. Expect sober notes on
-                delivery drag, architecture judgment, execution friction, and
-                next-step decisions under pressure.
+                No generic motivation content. Expect sober notes on delivery
+                drag, architecture judgment, execution friction, and next-step
+                decisions under pressure.
               </p>
             </div>
             <div className="rounded-[30px] border border-border bg-foreground p-8">
@@ -45,7 +45,8 @@ export default function LaunchpadSignalsPage() {
                 Get practical operator signal
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-background/72">
-                Useful notes on systems clarity, architecture choices, execution drag, and what to do next when complexity is slowing the business down.
+                Useful notes on systems clarity, architecture choices, execution
+                drag, and what to do next when complexity is slowing the business.
               </p>
               <SignalsSubscribeForm
                 source="launchpad_signals_page"

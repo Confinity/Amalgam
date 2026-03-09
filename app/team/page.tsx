@@ -69,7 +69,7 @@ export default function TeamPage() {
                   href="/contact?interest=strategy-session"
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 font-medium text-background transition-all hover:bg-foreground/90"
                 >
-                  Book a strategy call
+                  Book a free strategy call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
@@ -237,7 +237,7 @@ export default function TeamPage() {
                 href="/contact?interest=strategy-session"
                 className="inline-flex items-center gap-2 rounded-lg bg-background px-6 py-3 font-medium text-foreground transition-colors hover:bg-background/90"
               >
-                Book a strategy call
+                Book a free strategy call
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

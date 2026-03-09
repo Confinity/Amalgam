@@ -30,8 +30,8 @@ export default function LaunchpadToolsPage() {
               Diagnostics that create useful clarity before you commit to deeper work
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              These are structured assessments, not gimmicks. Each one helps you
-              pressure-test a problem shape and choose a credible next move.
+              Structured assessments, not gimmicks. Each one helps you
+              pressure-test the situation and choose a credible next move.
             </p>
           </div>
         </section>

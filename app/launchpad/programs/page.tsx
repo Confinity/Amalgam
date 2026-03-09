@@ -28,7 +28,7 @@ const decisionMap = [
     href: "/execution-sprint",
   },
   {
-    title: "Momentum needs adult supervision",
+    title: "Momentum needs senior continuity",
     description:
       "If the path exists but execution still needs senior follow-through, Outcome Partnership becomes the continuity layer.",
     href: "/outcome-partnership",
@@ -49,8 +49,8 @@ export default function LaunchpadProgramsPage() {
               If the tools or guides suggest deeper help is needed, this is how the work usually begins
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              These are structured interventions, ordered around how serious
-              situations become clear and then move.
+              Structured interventions, ordered around how serious situations
+              become clear and then move.
             </p>
           </div>
         </section>

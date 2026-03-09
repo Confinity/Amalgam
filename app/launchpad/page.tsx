@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 import { ArrowRight, Compass, Sparkles, Wrench } from "lucide-react"
+import { ContextualTestimonial } from "@/components/contextual-testimonial"
 import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
 import { SignalsSubscribeForm } from "@/components/signals-subscribe-form"
@@ -67,8 +68,8 @@ export default function LaunchpadPage() {
                 </TrackedLink>
               </div>
               <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-                Best for leaders and operators who know the drag is real and want
-                structured signal before deeper work begins.
+                Best for leaders and operators who want structured signal before
+                deeper work begins.
               </p>
             </div>
 
@@ -196,7 +197,7 @@ export default function LaunchpadPage() {
                   Featured guides
                 </p>
                 <h2 className="text-3xl font-semibold text-foreground text-balance">
-                  Practical guide groupings for the pressure points founders, executives, and technical leaders actually carry
+                  Practical guide groupings for the pressure points teams usually carry
                 </h2>
               </div>
               <TrackedLink
@@ -310,9 +311,8 @@ export default function LaunchpadPage() {
                 Not every next step sits inside Amalgam&apos;s core work
               </h2>
               <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
-                Launchpad is not a marketplace. If the right move sits adjacent
-                to our core work, we can usually point you to the right
-                introduction or next step directly.
+                If the right move sits adjacent to our core work, we can usually
+                point you to the right introduction or next step directly.
               </p>
             </div>
             <div className="rounded-[30px] border border-border bg-background p-7">
@@ -403,14 +403,21 @@ export default function LaunchpadPage() {
           </div>
         </section>
 
+        <ContextualTestimonial
+          className="deferred-section border-t border-border py-20 lg:py-24"
+          eyebrow="Client perspective"
+          title="What teams say after using practical diagnostics first"
+          testimonialId="mendez-pearlx"
+        />
+
         <section className="deferred-section bg-foreground py-20 lg:py-24">
           <div className="mx-auto max-w-[900px] px-6 text-center">
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
               Best next move
             </p>
-            <h2 className="text-3xl font-semibold text-background text-balance md:text-4xl">
-              Launchpad helps you get clear quickly. If deeper work is needed, start with a strategy call.
-            </h2>
+              <h2 className="text-3xl font-semibold text-background text-balance md:text-4xl">
+                Launchpad helps you get clear quickly. If deeper help is needed, start with a strategy call.
+              </h2>
             <p className="mx-auto mt-4 max-w-2xl text-background/72">
               Use the tools and guides first. If the problem still needs senior
               diagnosis, we will point you to the right engagement.
