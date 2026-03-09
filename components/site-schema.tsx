@@ -1,10 +1,12 @@
+import { SITE_URL, absoluteUrl } from "@/lib/site-config"
+
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "Amalgam",
-  url: "https://amalgam-inc.com",
-  image: "https://amalgam-inc.com/opengraph-image",
-  logo: "https://amalgam-inc.com/brand/amalgam-logo.webp",
+  url: SITE_URL,
+  image: absoluteUrl("/opengraph-image"),
+  logo: absoluteUrl("/brand/amalgam-logo.webp"),
   description:
     "Senior operators helping founders and versatilists untangle complex systems and restore delivery velocity.",
   email: "hello@amalgam-inc.com",
@@ -24,7 +26,7 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Amalgam",
-  url: "https://amalgam-inc.com",
+  url: SITE_URL,
   description:
     "Senior operators helping founders and versatilists untangle complex systems and restore delivery velocity.",
 }

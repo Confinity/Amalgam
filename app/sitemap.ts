@@ -2,12 +2,11 @@ import { MetadataRoute } from "next"
 import { caseStudies } from "@/lib/case-studies-data"
 import { knowledgeBriefs } from "@/lib/knowledge-briefs"
 import { launchpadStaticRoutes } from "@/lib/launchpad"
+import { absoluteUrl } from "@/lib/site-config"
 
 export const dynamic = "force-static"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://amalgam-inc.com"
-
   const staticPages = [
     "",
     "/about",
@@ -26,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const allStaticPages = [...staticPages, ...launchpadStaticRoutes]
 
   const staticRoutes: MetadataRoute.Sitemap = allStaticPages.map((route) => ({
-    url: `${baseUrl}${route}`,
+    url: absoluteUrl(route || "/"),
     lastModified: new Date(),
     changeFrequency: route === "" ? "weekly" : "monthly",
     priority:
@@ -40,14 +39,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   const caseStudyRoutes: MetadataRoute.Sitemap = caseStudies.map((study) => ({
-    url: `${baseUrl}/case-studies/${study.slug}`,
+    url: absoluteUrl(`/case-studies/${study.slug}`),
     lastModified: new Date(),
     changeFrequency: "monthly",
     priority: 0.7,
   }))
 
   const knowledgeRoutes: MetadataRoute.Sitemap = knowledgeBriefs.map((brief) => ({
-    url: `${baseUrl}/knowledge/${brief.slug}`,
+    url: absoluteUrl(`/knowledge/${brief.slug}`),
     lastModified: new Date(),
     changeFrequency: "monthly",
     priority: 0.7,

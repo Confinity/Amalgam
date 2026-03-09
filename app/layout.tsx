@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next"
 import { Manrope } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { SiteSchema } from "@/components/site-schema"
+import { SITE_URL, absoluteUrl, withBasePath } from "@/lib/site-config"
 import "./globals.css"
 
 const manrope = Manrope({
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   applicationName: "Amalgam",
   description:
     "We help founders and versatilists untangle complex systems and restore delivery velocity. Start with the Founder Review - a focused diagnostic that reveals what is broken and what to fix first.",
-  metadataBase: new URL("https://amalgam-inc.com"),
+  metadataBase: new URL(SITE_URL),
   category: "technology consulting",
   formatDetection: {
     email: false,
@@ -27,9 +28,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   icons: {
-    icon: "/brand/amalgam-favicon.png",
-    shortcut: "/brand/amalgam-favicon.png",
-    apple: "/brand/amalgam-favicon.png",
+    icon: withBasePath("/brand/amalgam-favicon.png"),
+    shortcut: withBasePath("/brand/amalgam-favicon.png"),
+    apple: withBasePath("/brand/amalgam-favicon.png"),
   },
   keywords: [
     "systems consulting",
@@ -48,14 +49,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://amalgam-inc.com",
+    url: SITE_URL,
     siteName: "Amalgam",
     title: "Amalgam - Untangle complex systems. Ship again.",
     description:
       "We help founders and versatilists untangle complex systems and restore delivery velocity.",
     images: [
       {
-        url: "/opengraph-image",
+        url: absoluteUrl("/opengraph-image"),
         width: 1200,
         height: 630,
         alt: "Amalgam - Senior operators for complex systems",
@@ -67,7 +68,7 @@ export const metadata: Metadata = {
     title: "Amalgam - Untangle complex systems. Ship again.",
     description:
       "We help founders and versatilists untangle complex systems and restore delivery velocity.",
-    images: ["/opengraph-image"],
+    images: [absoluteUrl("/opengraph-image")],
     creator: "@amalgam_inc",
   },
   robots: {

@@ -1,15 +1,16 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next"
+import { SITE_URL, absoluteUrl } from "@/lib/site-config"
 
 export const dynamic = "force-static"
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    host: 'https://amalgam-inc.com',
+    host: SITE_URL,
     rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: ['/api/', '/_next/'],
+      userAgent: "*",
+      allow: "/",
+      disallow: ["/api/", "/_next/"],
     },
-    sitemap: 'https://amalgam-inc.com/sitemap.xml',
+    sitemap: absoluteUrl("/sitemap.xml"),
   }
 }

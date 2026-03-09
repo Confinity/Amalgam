@@ -9,6 +9,15 @@ const nextConfig = {
   trailingSlash: true,
   basePath,
   assetPrefix: basePath ? `${basePath}/` : undefined,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+    NEXT_PUBLIC_SITE_ORIGIN: isGithubActions
+      ? "https://confinity.github.io"
+      : "https://amalgam-inc.com",
+    NEXT_PUBLIC_SITE_URL: isGithubActions
+      ? `https://confinity.github.io/${repositoryName}`
+      : "https://amalgam-inc.com",
+  },
   images: {
     unoptimized: true,
   },

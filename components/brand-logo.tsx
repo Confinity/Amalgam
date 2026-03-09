@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { withBasePath } from "@/lib/site-config"
 
 type BrandLogoProps = {
   priority?: boolean
@@ -8,7 +9,7 @@ type BrandLogoProps = {
 export function BrandLogo({ priority = false, className = "" }: BrandLogoProps) {
   return (
     <Image
-      src="/brand/amalgam-logo.webp"
+      src={withBasePath("/brand/amalgam-logo.webp")}
       alt="Amalgam"
       width={168}
       height={36}
