@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy Public Site
 
 on:
   push:
@@ -7,12 +7,13 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: "pages"
+  group: "public-site-deploy"
   cancel-in-progress: true
+
+env:
+  PUBLIC_SITE_REPOSITORY: Confinity/Amalgam
 
 jobs:
   build:
@@ -39,20 +40,36 @@ jobs:
         env:
           GITHUB_ACTIONS: "true"
           GITHUB_REPOSITORY: ${{ github.repository }}
+          SITE_REPOSITORY: ${{ env.PUBLIC_SITE_REPOSITORY }}
         run: pnpm build
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./out
+      - name: Publish static files to public repo
+        env:
+          DEPLOY_TOKEN: ${{ secrets.PUBLIC_SITE_DEPLOY_TOKEN }}
+        run: |
+          set -euo pipefail
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          if [ -z "${DEPLOY_TOKEN}" ]; then
+            echo "PUBLIC_SITE_DEPLOY_TOKEN is not set."
+            exit 1
+          fi
+
+          TARGET_DIR="${RUNNER_TEMP}/public-site"
+          git clone "https://x-access-token:${DEPLOY_TOKEN}@github.com/${PUBLIC_SITE_REPOSITORY}.git" "${TARGET_DIR}"
+
+          find "${TARGET_DIR}" -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+          cp -R out/. "${TARGET_DIR}/"
+          touch "${TARGET_DIR}/.nojekyll"
+
+          cd "${TARGET_DIR}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "No deploy changes detected."
+            exit 0
+          fi
+
+          git add -A
+          git commit -m "Deploy site from ${GITHUB_REPOSITORY}@${GITHUB_SHA}"
+          git push origin main

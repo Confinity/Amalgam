@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const isGithubActions = process.env.GITHUB_ACTIONS === "true"
-const repository = process.env.GITHUB_REPOSITORY ?? "Confinity/Amalgam"
+const repository =
+  process.env.SITE_REPOSITORY ?? process.env.GITHUB_REPOSITORY ?? "Confinity/Amalgam"
 const repositoryName = repository.split("/")[1] ?? "Amalgam"
 const basePath = isGithubActions ? `/${repositoryName}` : ""
 
