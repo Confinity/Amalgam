@@ -12,7 +12,8 @@ export function Footer() {
               <BrandLogo className="h-8 w-auto" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Senior operators helping founders untangle complex systems and restore delivery velocity.
+              Senior operators helping teams bring clarity to complex systems and
+              move execution forward.
             </p>
             <div className="footer-credentials text-sm text-muted-foreground">
               <span className="credential-chip rounded-full border border-border bg-background px-3 py-1.5">
@@ -26,11 +27,11 @@ export function Footer() {
               </span>
             </div>
             <Link
-              href="/founder-review"
+              href="/contact?interest=strategy-session"
               prefetch={false}
               className="footer-cta mt-5 inline-flex items-center gap-2 rounded-xl bg-foreground px-5 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
             >
-              Start the Founder Review
+              Book a strategy call
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -38,6 +39,11 @@ export function Footer() {
           <div>
             <h4 className="mb-4 text-sm font-semibold text-foreground">Start Here</h4>
             <ul className="space-y-3">
+              <li>
+                <Link href="/contact?interest=strategy-session" prefetch={false} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                  Strategy Call
+                </Link>
+              </li>
               <li>
                 <Link href="/founder-review" prefetch={false} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
                   Founder Review
@@ -104,7 +110,7 @@ export function Footer() {
                 Best fit
               </p>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Founders, fractional CTOs, product leaders, and cross-functional operators carrying complexity.
+                Founders, executives, and technical leaders carrying complexity.
               </p>
 
               <div className="mt-5 space-y-3 text-sm">
@@ -138,11 +144,11 @@ export function Footer() {
             <Link href="/privacy-policy" prefetch={false} className="text-xs text-muted-foreground transition-colors hover:text-foreground">
               Privacy Policy
             </Link>
-            <span className="text-xs text-muted-foreground/50" aria-hidden="true">•</span>
+            <span className="text-xs text-muted-foreground/50" aria-hidden="true">&middot;</span>
             <Link href="/terms-and-conditions" prefetch={false} className="text-xs text-muted-foreground transition-colors hover:text-foreground">
               Terms
             </Link>
-            <span className="text-xs text-muted-foreground/50" aria-hidden="true">•</span>
+            <span className="text-xs text-muted-foreground/50" aria-hidden="true">&middot;</span>
             <Link href="/cookie-policy" prefetch={false} className="text-xs text-muted-foreground transition-colors hover:text-foreground">
               Cookies
             </Link>

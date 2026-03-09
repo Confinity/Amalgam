@@ -49,7 +49,7 @@ const nextConfig = {
       },
       {
         source: "/schedule",
-        destination: "/contact?interest=founder-review",
+        destination: "/contact?interest=strategy-session",
         permanent: false,
       },
     ]
@@ -57,10 +57,6 @@ const nextConfig = {
   cleanDistDir: true,
   typescript: {
     ignoreBuildErrors: true,
-  },
-  experimental: {
-    workerThreads: false,
-    webpackBuildWorker: false,
   },
 }
 

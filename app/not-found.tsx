@@ -32,10 +32,10 @@ export default function NotFound() {
               </p>
               <div className="flex flex-col justify-center gap-4 sm:flex-row">
                 <Link
-                  href="/founder-review"
+                  href="/contact?interest=strategy-session"
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 font-medium text-background transition-all hover:opacity-90"
                 >
-                  Start the Founder Review
+                  Book a strategy call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link

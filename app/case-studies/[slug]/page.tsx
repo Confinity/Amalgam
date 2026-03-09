@@ -423,10 +423,10 @@ export default async function CaseStudyPage({ params }: PageProps) {
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
-                href="/founder-review"
+                href="/contact?interest=strategy-session"
                 className="inline-flex items-center gap-2 rounded-lg bg-background px-6 py-3 font-medium text-foreground transition-colors hover:bg-background/90"
               >
-                Start the Founder Review
+                Book a free strategy call
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

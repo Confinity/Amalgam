@@ -16,7 +16,7 @@ import { ContactForm } from "@/components/contact-form"
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Amalgam. Whether you're ready to start the Founder Review or have questions, we're here to help.",
+    "Talk with Amalgam about what is slowing delivery and get a clear recommendation on the best next step.",
   alternates: {
     canonical: "/contact",
   },
@@ -26,21 +26,30 @@ const nextSteps = [
   {
     title: "You share the situation",
     description:
-      "Tell us what is slowing delivery down, where the system feels tangled, or which engagement path seems closest.",
+      "Tell us what is slowing delivery and where decisions feel stuck.",
   },
   {
     title: "Amalgam replies directly",
     description:
-      "You hear back from the team, not a sales queue, so the response can actually address the situation you described.",
+      "You hear back from the team, not a sales queue.",
   },
   {
     title: "We point to the right next step",
     description:
-      "That may be the Founder Review, a deeper conversation, or a recommendation to keep the work internal for now.",
+      "That may be a free strategy session, a focused diagnostic, or a practical internal next move.",
   },
 ]
 
-export default function ContactPage() {
+type ContactPageProps = {
+  searchParams?: Promise<{
+    interest?: string
+  }>
+}
+
+export default async function ContactPage({ searchParams }: ContactPageProps) {
+  const params = searchParams ? await searchParams : undefined
+  const initialInterest = params?.interest ?? ""
+
   return (
     <>
       <Navigation />
@@ -58,8 +67,7 @@ export default function ContactPage() {
                   Start the conversation
                 </h1>
                 <p className="contact-hero-body mt-6 text-lg leading-relaxed text-muted-foreground">
-                  Whether you already know the likely path or just need a quick
-                  fit check, we will point you to the right next step.
+                  Tell us what is stuck. We will give you a clear next step.
                 </p>
                 <Link
                   href="/launchpad/tools"
@@ -72,10 +80,10 @@ export default function ContactPage() {
                 <div className="contact-path-grid mt-8 grid gap-4 sm:grid-cols-3">
                   <div className="contact-path-card support-panel p-5">
                     <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                      Founder Review
+                      Free strategy session
                     </p>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                      Best when the root problem is still unclear and leadership needs a sharper read fast.
+                      Best when you need a senior second set of eyes before committing to a larger engagement.
                     </p>
                   </div>
                   <div className="contact-path-card support-panel p-5">
@@ -156,8 +164,8 @@ export default function ContactPage() {
               </div>
 
               <ContactForm
-                key=""
-                initialInterest=""
+                key={initialInterest}
+                initialInterest={initialInterest}
               />
             </div>
           </div>
@@ -198,16 +206,15 @@ export default function ContactPage() {
                   Best first move
                 </p>
                 <h2 className="mt-3 text-2xl font-semibold text-background">
-                  Start with the Founder Review
+                  Start with a free strategy session
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-background/70">
-                  If you know something in the business is slowing down but the
-                  root cause is still fuzzy, that remains the cleanest entry point.
+                  If delivery is slowing down and the root cause is still fuzzy, this is the cleanest first move.
                 </p>
                 <div className="contact-review-points mt-6 space-y-3">
                   {[
-                    "Two-week senior diagnostic",
-                    "Clear diagnosis and next step",
+                    "60-minute senior strategy call",
+                    "Clear recommendation on what to do next",
                     "Useful even if you keep execution internal",
                   ].map((item) => (
                     <div
@@ -220,17 +227,17 @@ export default function ContactPage() {
                   ))}
                 </div>
                 <Link
-                  href="/founder-review"
+                  href="/contact?interest=strategy-session"
                   className="mt-6 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl bg-background px-6 py-3 font-medium text-foreground transition-opacity hover:opacity-90"
                 >
-                  See the Founder Review
+                  Book the strategy call
                   <Compass className="h-4 w-4" />
                 </Link>
                 <Link
-                  href="/contact?interest=founder-review"
+                  href="/founder-review"
                   className="mt-3 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl border border-background/15 px-6 py-3 font-medium text-background transition-colors hover:bg-background/10"
                 >
-                  Start the conversation
+                  See the diagnostic option
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link

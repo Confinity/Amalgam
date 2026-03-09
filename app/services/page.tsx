@@ -15,11 +15,12 @@ import {
 import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
 import { ClientLogoWall } from "@/components/client-logo-wall"
+import { TestimonialStrip } from "@/components/testimonial-strip"
 
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Amalgam helps founders and versatilists restore momentum through the Founder Review, Execution Sprint, and Outcome Partnership.",
+    "Amalgam helps business and technical leaders restore momentum through focused diagnosis, sequencing support, and senior follow-through.",
   alternates: {
     canonical: "/services",
   },
@@ -155,7 +156,7 @@ export default function ServicesPage() {
                 Senior help for the systems, decisions, and delivery friction that slow companies down
               </h1>
               <p className="mt-6 max-w-[32ch] text-lg leading-relaxed text-muted-foreground">
-                Amalgam helps founders and versatilists bring order to complex systems,
+                Amalgam helps founders, executives, and technical leaders bring order to complex systems,
                 restore delivery momentum, and move forward with a path leadership can trust.
               </p>
               <p className="mt-5 max-w-[34ch] text-sm font-medium leading-relaxed text-foreground/72">
@@ -163,10 +164,10 @@ export default function ServicesPage() {
               </p>
               <div className="mt-6 flex flex-col gap-4 sm:flex-row">
                 <Link
-                  href="/founder-review"
+                  href="/contact?interest=strategy-session"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 font-medium text-background transition-all hover:opacity-90"
                 >
-                  Start the Founder Review
+                  Book a free strategy call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
@@ -208,7 +209,8 @@ export default function ServicesPage() {
                 ))}
               </div>
               <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-                Most teams begin with the Founder Review, then move deeper only when the work has become legible enough to sequence honestly.
+                Most teams start with a focused diagnostic, then go deeper only
+                when the work is clear enough to sequence with confidence.
               </p>
             </div>
           </div>
@@ -351,7 +353,7 @@ export default function ServicesPage() {
                 Selected Depth
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Breadth where it matters, without turning into a generic consultancy
+                Breadth where it matters, without trying to do everything
               </h2>
               <p className="mt-4 leading-relaxed text-muted-foreground">
                 The work usually spans architecture, data, delivery, and operating
@@ -387,6 +389,11 @@ export default function ServicesPage() {
           description="Selected experience across financial services, enterprise operations, philanthropy, and growth-stage environments where bad sequencing gets expensive fast."
         />
 
+        <TestimonialStrip
+          className="deferred-section border-b border-border py-20 lg:py-24"
+          compact
+        />
+
         <section className="deferred-section py-24 lg:py-28">
           <div className="mx-auto grid max-w-[1200px] gap-10 px-6 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-start">
             <div className="max-w-3xl">
@@ -394,7 +401,7 @@ export default function ServicesPage() {
                 Why Amalgam
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Built for companies that need calm, senior help instead of advisory theater
+                Built for teams that need calm, senior help instead of advisory theater
               </h2>
               <div className="mt-6 max-w-[48ch] space-y-4 leading-relaxed text-muted-foreground">
                 <p>
@@ -414,25 +421,25 @@ export default function ServicesPage() {
                 Best next step
               </p>
               <h3 className="mt-4 text-2xl font-semibold text-background">
-                Start with the Founder Review
+                Best next move
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-background/72">
-                If you know something is slowing the business down but the root
-                cause is still unclear, that is the clearest way to begin.
+                If something is slowing the business down and the root cause is
+                still unclear, start with a strategy call.
               </p>
               <div className="mt-6 flex flex-col gap-3">
                 <Link
-                  href="/founder-review"
+                  href="/contact?interest=strategy-session"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-background px-6 py-3 font-medium text-foreground transition-opacity hover:opacity-90"
                 >
-                  Start the Founder Review
+                  Book a free strategy call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
-                  href="/contact"
+                  href="/founder-review"
                   className="inline-flex min-h-11 items-center justify-center rounded-xl border border-background/15 px-6 py-3 font-medium text-background transition-colors hover:bg-background/10"
                 >
-                  Start a conversation
+                  See the Founder Review
                 </Link>
               </div>
             </div>

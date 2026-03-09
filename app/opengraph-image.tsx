@@ -92,12 +92,12 @@ export default function OpenGraphImage() {
                 fontWeight: 700,
               }}
             >
-              <span>Untangle complex systems.</span>
-              <span style={{ color: "#00bfa6" }}>{" Ship"}</span>
-              <span style={{ color: "#6a5cff" }}>{" again."}</span>
+              <span>Complex systems.</span>
+              <span style={{ color: "#00bfa6" }}>{" Clearer decisions."}</span>
+              <span style={{ color: "#6a5cff" }}>{" Faster execution."}</span>
             </div>
             <div style={{ fontSize: 30, lineHeight: 1.35, color: "#4b5563", maxWidth: 900 }}>
-              Senior operators for founders and versatilists navigating architecture,
+              Senior operators helping founders, executives, and technical leaders move through architecture,
               data, integrations, and delivery friction.
             </div>
           </div>

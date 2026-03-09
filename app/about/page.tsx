@@ -14,6 +14,7 @@ import {
 } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { ClientLogoWall } from "@/components/client-logo-wall"
+import { TestimonialStrip } from "@/components/testimonial-strip"
 import { Footer } from "@/components/footer"
 import {
   teamMembers,
@@ -26,7 +27,7 @@ import { withBasePath } from "@/lib/site-config"
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Founded in 2012, Amalgam is a small senior team that helps founders and versatilists untangle complex systems and restore delivery velocity.",
+    "Founded in 2012, Amalgam is a small senior team that helps business and technical leaders bring clarity to complex systems and restore delivery momentum.",
   alternates: {
     canonical: "/about",
   },
@@ -126,9 +127,10 @@ export default function AboutPage() {
                   A small senior team for moments when the business needs a path it can trust.
                 </h1>
                 <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                  Amalgam helps founders and versatilists untangle complex systems and
-                  restore delivery velocity. We step in when architecture, integrations,
-                  data, and operating decisions start to drag execution down.
+                  Amalgam helps business and technical leaders bring clarity to
+                  complex systems and restore delivery momentum. We step in when
+                  architecture, integrations, data, and operating decisions start
+                  slowing execution down.
                 </p>
               </div>
               <div className="support-panel rounded-[28px] p-7">
@@ -181,8 +183,9 @@ export default function AboutPage() {
                     produce decks instead of decisions. They bill hours instead of shipping outcomes.
                   </p>
                   <p>
-                    We built Amalgam differently. Our job is to untangle what&apos;s stuck,
-                    clarify what&apos;s unclear, and help the business move again.&rdquo;
+                    We built Amalgam differently. Our job is to find what is
+                    slowing the business down, make the path forward clear, and
+                    help teams move again.&rdquo;
                   </p>
                 </blockquote>
                 <p className="mt-6 font-medium text-foreground">{founder.fullName ?? founder.name}</p>
@@ -196,22 +199,21 @@ export default function AboutPage() {
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="max-w-3xl">
               <p className="mb-4 text-sm font-medium uppercase tracking-widest text-teal">
-                The era we&apos;re in
+                Why this model works now
               </p>
               <h2 className="mb-6 text-3xl font-semibold text-foreground text-balance">
-                The rise of the versatilist
+                Modern delivery pressure crosses every boundary
               </h2>
               <div className="space-y-4 leading-relaxed text-muted-foreground">
                 <p>
-                  Modern companies no longer win through isolated specialists alone. They win
-                  through people who can connect strategy, product, operations, technology, and
-                  execution.
+                  Most delivery problems are no longer confined to one team or one
+                  function. Architecture, product, operations, and decision-making
+                  are usually all involved.
                 </p>
                 <p>
-                  These are the versatilists&mdash;technical founders, product leaders, fractional
-                  CTOs, and cross-functional builders who carry the burden of alignment. Amalgam
-                  exists to help them move with more clarity and less chaos because we&apos;ve
-                  carried that weight ourselves.
+                  That is where Amalgam is most useful: when leaders need senior
+                  judgment that can connect the full system and create a path
+                  teams can execute with confidence.
                 </p>
               </div>
             </div>
@@ -322,28 +324,30 @@ export default function AboutPage() {
           description="The kinds of complex environments this team has operated in across regulated institutions, operationally demanding companies, and high-growth teams where systems quality directly affects delivery."
         />
 
+        <TestimonialStrip className="deferred-section border-t border-border py-20 lg:py-24" />
+
         <section className="deferred-section bg-foreground py-20 lg:py-24">
           <div className="mx-auto max-w-[1200px] px-6 text-center">
             <h2 className="mb-4 text-3xl font-semibold text-background text-balance md:text-4xl">
-              Ready to make the system legible again?
+              Need a clear read on what is slowing the business down?
             </h2>
             <p className="mx-auto mb-8 max-w-xl text-background/70">
-              Start with the Founder Review&mdash;a focused diagnostic to clarify what&apos;s stuck and
-              what to do next.
+              Start with a free strategy call. If deeper support is needed, we
+              will recommend the right engagement.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link
-                href="/founder-review"
+                href="/contact?interest=strategy-session"
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-background px-6 py-3 font-medium text-foreground transition-all hover:opacity-90"
               >
-                Start the Founder Review
+                Book a free strategy call
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href="/case-studies"
+                href="/services"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-background/30 px-6 py-3 font-medium text-background transition-all hover:bg-background/10"
               >
-                See Case Studies
+                Explore services
               </Link>
             </div>
           </div>

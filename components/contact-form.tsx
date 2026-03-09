@@ -23,7 +23,8 @@ const initialState: FormState = {
 
 const interestLabels: Record<string, string> = {
   "": "General inquiry",
-  "founder-review": "Founder Review",
+  "strategy-session": "Free strategy session",
+  "founder-review": "Diagnostic review",
   "execution-sprint": "Execution Sprint",
   "outcome-partnership": "Outcome Partnership",
   general: "General inquiry",
@@ -118,7 +119,7 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
       </div>
       <h2 className="mb-2 text-xl font-semibold text-foreground">Send us a message</h2>
       <p className="mb-6 text-sm text-muted-foreground">
-        This opens a drafted email to hello@amalgam-inc.com with your details already formatted.
+        This opens a drafted email to hello@amalgam-inc.com with your notes already formatted.
       </p>
 
       <form className="space-y-5" onSubmit={handleSubmit}>
@@ -126,7 +127,8 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
           <p className="mb-3 text-sm font-medium text-foreground">Common paths</p>
           <div className="contact-common-paths flex flex-wrap gap-2">
             {[
-              { value: "founder-review", label: "Founder Review" },
+              { value: "strategy-session", label: "Free strategy session" },
+              { value: "founder-review", label: "Diagnostic review" },
               { value: "execution-sprint", label: "Execution Sprint" },
               { value: "outcome-partnership", label: "Outcome Partnership" },
               { value: "general", label: "General inquiry" },
@@ -233,7 +235,8 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
             className="contact-field w-full rounded-lg border border-border bg-background px-4 py-2.5 text-foreground focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/20"
           >
             <option value="">Select an option</option>
-            <option value="founder-review">Founder Review</option>
+            <option value="strategy-session">Free strategy session</option>
+            <option value="founder-review">Diagnostic review</option>
             <option value="execution-sprint">Execution Sprint</option>
             <option value="outcome-partnership">Outcome Partnership</option>
             <option value="general">General inquiry</option>
@@ -297,7 +300,7 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
           type="submit"
           className="contact-primary-cta inline-flex w-full items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 font-medium text-background transition-all hover:opacity-90"
         >
-          Draft the email
+          Open drafted email
           <ArrowRight className="h-4 w-4" />
         </button>
       </form>

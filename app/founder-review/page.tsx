@@ -123,7 +123,7 @@ export default function FounderReviewPage() {
                   href="/contact?interest=founder-review"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 font-medium text-background transition-all hover:opacity-90"
                 >
-                  Start the Review
+                  Book a strategy call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
@@ -156,8 +156,8 @@ export default function FounderReviewPage() {
                   Important
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  This is a paid diagnostic, not a free consultation. The point is
-                  to produce real clarity fast, not to schedule another vague discovery cycle.
+                  This is a paid diagnostic, not a free consultation. It is built
+                  to produce real clarity fast, not another vague discovery cycle.
                 </p>
               </div>
               <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
@@ -349,7 +349,7 @@ export default function FounderReviewPage() {
               <div className="mt-6 space-y-4 leading-relaxed text-muted-foreground">
                 <p>
                   The Founder Review is built for situations where the cost of fuzzy
-                  thinking is already rising. The point is to produce a real diagnosis,
+                  thinking is already rising. It is built to produce a real diagnosis,
                   not another abstract discussion about possibilities.
                 </p>
                 <p>
@@ -372,7 +372,7 @@ export default function FounderReviewPage() {
                   href="/contact?interest=founder-review"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-background px-6 py-3 font-medium text-foreground transition-opacity hover:opacity-90"
                 >
-                  Start the Founder Review
+                  Book a strategy call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link

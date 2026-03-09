@@ -131,7 +131,7 @@ export const launchpadPrograms: LaunchpadProgramCard[] = [
     id: "founder-review",
     title: "Founder Review",
     description:
-      "A senior-led diagnostic for situations where the drag is real but the system is still too tangled to sequence honestly.",
+      "A senior-led diagnostic for situations where the drag is real but the system is still too fuzzy to sequence honestly.",
     whenItsRight:
       "Best when architecture, workflow, integrations, and operating friction are all colliding at once.",
     href: "/founder-review",
@@ -249,8 +249,8 @@ const launchpadTools: LaunchpadToolDefinition[] = [
     description:
       "Pressure-test whether shipping slowdowns are really coming from architecture complexity, coordination overhead, data visibility, or sequencing drag.",
     audience:
-      "For founders, fractional CTOs, and operators who know delivery is slower than it should be, but still need a sharper read on why.",
-    estimatedTime: "4–5 minutes",
+      "For leaders and operators who know delivery is slower than it should be, but still need a sharper read on why.",
+    estimatedTime: "4-5 minutes",
     outputLabel: "Likely drag profile",
     completionLabel: "You now have a first-pass read on the likely shape of the drag.",
     questionIntro:
@@ -264,8 +264,8 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         whyItMatters:
           "This usually means pressure is accumulating at the foundation layer. The right next move is to clarify the current state and identify the few structural decisions that are distorting delivery.",
         nextStep: {
-          label: "Start the Founder Review",
-          href: "/founder-review",
+          label: "Book a strategy call",
+          href: "/contact?interest=founder-review",
           note: "The root cause still needs a direct diagnostic read.",
         },
         relatedGuideSlugs: [
@@ -300,8 +300,8 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         whyItMatters:
           "This usually produces noise that looks like weak execution. In reality, the system may be under-specified in its decision rights, workflow ownership, or operating rhythm.",
         nextStep: {
-          label: "Start the Founder Review",
-          href: "/founder-review",
+          label: "Book a strategy call",
+          href: "/contact?interest=founder-review",
           note: "The operating model likely needs a senior read before planning continues.",
         },
         relatedGuideSlugs: [
@@ -318,8 +318,8 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         whyItMatters:
           "When truth is hard to access, every planning cycle gets noisier. The business can rarely fix this with one more dashboard alone.",
         nextStep: {
-          label: "Open the Founder Review",
-          href: "/founder-review",
+          label: "Book a strategy call",
+          href: "/contact?interest=founder-review",
           note: "A direct diagnostic can separate reporting symptoms from system causes.",
         },
         relatedGuideSlugs: [
@@ -518,7 +518,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
     description:
       "Assess whether the company is genuinely ready for meaningful AI usage or still needs better workflows, ownership, and system foundations first.",
     audience:
-      "For founders and operators who want a sober read on whether AI will create leverage or simply amplify fragmentation.",
+      "For leaders and operators who want a sober read on whether AI will create leverage or simply amplify fragmentation.",
     estimatedTime: "4 minutes",
     outputLabel: "Current readiness posture",
     completionLabel:
@@ -534,8 +534,8 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         whyItMatters:
           "AI tends to amplify ambiguity. If the operating model is still fuzzy, the first gain usually comes from making the system more legible before automating anything meaningful.",
         nextStep: {
-          label: "Start the Founder Review",
-          href: "/founder-review",
+          label: "Book a strategy call",
+          href: "/contact?interest=founder-review",
           note: "The system likely needs diagnosis before AI decisions become useful.",
         },
         relatedGuideSlugs: [
@@ -784,7 +784,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
     description:
       "Get a credible first-pass view of whether the stack is coherent, fragmented, overgrown, risky, or simply under-documented for the current stage.",
     audience:
-      "For founders and operators who can feel technical drag, integration burden, or platform risk but need a sharper read on the system posture first.",
+      "For leaders and operators who can feel technical drag, integration burden, or platform risk but need a sharper read on the system posture first.",
     estimatedTime: "5 minutes",
     outputLabel: "Likely stack posture",
     completionLabel:
@@ -818,8 +818,8 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         whyItMatters:
           "This is where stack complexity starts shaping product speed, support load, and confidence in change. The business often needs a sharper diagnostic before it can simplify responsibly.",
         nextStep: {
-          label: "Start the Founder Review",
-          href: "/founder-review",
+          label: "Book a strategy call",
+          href: "/contact?interest=founder-review",
           note: "A direct diagnostic can separate platform symptoms from the real architecture and workflow issues.",
         },
         relatedGuideSlugs: [
@@ -836,8 +836,8 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         whyItMatters:
           "This posture often looks acceptable until a raise, replatform, enterprise customer, or high-stakes rollout suddenly exposes the cost of undocumented or brittle decisions.",
         nextStep: {
-          label: "Open the Founder Review",
-          href: "/founder-review",
+          label: "Book a strategy call",
+          href: "/contact?interest=founder-review",
           note: "A senior read can clarify which risks actually matter before the business overreacts.",
         },
         relatedGuideSlugs: [
@@ -996,13 +996,13 @@ const launchpadTools: LaunchpadToolDefinition[] = [
           },
           {
             id: "too-heavy",
-            label: "It feels overbuilt for the company’s current needs.",
+            label: "It feels overbuilt for the company's current needs.",
             description: "The business may be paying complexity tax without enough leverage in return.",
             weights: { "over-complex-for-current-stage": 3 },
           },
           {
             id: "hard-to-read",
-            label: "We cannot really judge because the system’s behavior is hard to observe cleanly.",
+            label: "We cannot really judge because the system's behavior is hard to observe cleanly.",
             description: "Operational signal is too weak to evaluate fit confidently.",
             weights: { "under-instrumented-for-reliable-delivery": 3 },
           },

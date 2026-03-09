@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "Launchpad Guides",
   description:
-    "Field guidance for founders and versatilists dealing with delivery drag, fragile systems, AI readiness, unclear sequencing, and integration complexity.",
+    "Field guidance for founders, executives, and technical leaders dealing with delivery drag, fragile systems, AI readiness, unclear sequencing, and integration complexity.",
   alternates: {
     canonical: "/launchpad/guides",
   },
@@ -30,10 +30,11 @@ export default function LaunchpadGuidesPage() {
               Launchpad Guides
             </p>
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl">
-              Selected field guidance for founders and versatilists trying to act, not just read
+              Practical field guidance for leaders trying to act, not just read
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              Knowledge is the editorial library. Launchpad guides are the practical layer: grouped around the situations people actually need help thinking through.
+              Knowledge is the editorial library. Launchpad guides are grouped by
+              the situations teams actually need help thinking through.
             </p>
           </div>
         </section>

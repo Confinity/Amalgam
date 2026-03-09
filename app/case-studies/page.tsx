@@ -3,35 +3,45 @@ import Link from "next/link"
 import {
   ArrowRight,
   Building2,
-  Compass,
-  Filter,
   MapPin,
-  ShieldCheck,
   Sparkles,
 } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { CaseStudiesFeaturedGrid } from "@/components/case-studies-featured-grid"
+import { TestimonialStrip } from "@/components/testimonial-strip"
 import { caseStudies, industries } from "@/lib/case-studies-data"
 
 export const metadata: Metadata = {
   title: "Case Studies",
   description:
-    "Real client work across banking, fintech, energy, retail, and enterprise systems - with concrete problems, approaches, and outcomes.",
+    "Real client work across banking, fintech, energy, retail, and enterprise systems with clear context, approach, and outcomes.",
   alternates: {
     canonical: "/case-studies",
   },
 }
 
-const featuredCount = caseStudies.filter((study) => study.featured).length
-const featuredStudies = caseStudies.filter((study) => study.featured).slice(0, 3)
+const featuredStudies = caseStudies.filter((study) => study.featured)
+
+const additionalRelationships = [
+  {
+    name: "Moody's",
+    href: "https://www.moodys.com/",
+    note: "Public case study not published yet.",
+  },
+  {
+    name: "SoFi",
+    href: "https://www.sofi.com/",
+    note: "Public case study not published yet.",
+  },
+  {
+    name: "TIA Bank",
+    href: "https://www.tiaabank.com/",
+    note: "Public case study not published yet.",
+  },
+]
 
 export default function CaseStudiesPage() {
-  const selectedIndustry: string | null = null
-
-  const filteredStudies = selectedIndustry
-    ? caseStudies.filter((study) => study.industry === selectedIndustry)
-    : caseStudies
-
   return (
     <>
       <Navigation />
@@ -45,175 +55,85 @@ export default function CaseStudiesPage() {
                 Case Studies
               </p>
               <h1 className="text-4xl font-semibold leading-tight tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Proof that stays grounded in the real work
+                Work we can stand behind
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-                These are not abstract capability pages. They show the kinds of
-                systems, constraints, and outcomes Amalgam has handled across regulated,
-                operationally demanding, and growth-stage environments.
+                These are real situations where systems quality, delivery judgment,
+                and execution decisions directly affected outcomes.
               </p>
               <div className="mt-10 grid gap-4 sm:grid-cols-3">
                 <div className="rounded-2xl border border-border bg-background/90 px-5 py-5 shadow-sm">
                   <p className="text-3xl font-semibold text-foreground">{caseStudies.length}</p>
-                  <p className="mt-2 text-sm text-muted-foreground">Published case studies</p>
+                  <p className="mt-2 text-sm text-muted-foreground">Published studies</p>
                 </div>
                 <div className="rounded-2xl border border-border bg-background/90 px-5 py-5 shadow-sm">
-                  <p className="text-3xl font-semibold text-foreground">{featuredCount}</p>
-                  <p className="mt-2 text-sm text-muted-foreground">Featured deep dives</p>
+                  <p className="text-3xl font-semibold text-foreground">{featuredStudies.length}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">Featured examples</p>
                 </div>
                 <div className="rounded-2xl border border-border bg-background/90 px-5 py-5 shadow-sm">
                   <p className="text-3xl font-semibold text-foreground">{industries.length}</p>
-                  <p className="mt-2 text-sm text-muted-foreground">Industries represented</p>
+                  <p className="mt-2 text-sm text-muted-foreground">Industries</p>
                 </div>
               </div>
             </div>
 
             <div className="rounded-[32px] border border-border bg-background/95 p-7 shadow-sm">
               <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                What you will see here
+                How to use this page
               </p>
-              <div className="mt-5 space-y-4">
-                <div className="rounded-2xl border border-border bg-secondary/35 px-4 py-4">
-                  <div className="flex items-center gap-3">
-                    <Compass className="h-5 w-5 text-teal" />
-                    <p className="font-medium text-foreground">Client context and constraints</p>
-                  </div>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    Enough detail to understand the environment, not just the headline outcome.
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-border bg-secondary/35 px-4 py-4">
-                  <div className="flex items-center gap-3">
-                    <ShieldCheck className="h-5 w-5 text-teal" />
-                    <p className="font-medium text-foreground">Calm proof, not inflated claims</p>
-                  </div>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    Each study focuses on the situation, the work, and why it mattered.
-                  </p>
-                </div>
+              <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
+                <p>Start with the featured examples for a fast read.</p>
+                <p>Use the full library to find situations close to your own.</p>
+                <p>If it feels similar, book a strategy call and we can review your case directly.</p>
               </div>
-              <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-                If a situation feels similar to yours, the clearest next step is still a direct conversation.
-              </p>
             </div>
           </div>
         </section>
 
-        <section className="border-b border-border bg-secondary/25 px-6 py-6 md:sticky md:top-[72px] md:z-40 md:backdrop-blur-sm">
+        <section className="deferred-section px-6 py-16 md:py-20">
           <div className="mx-auto max-w-[1200px]">
-            <div className="flex items-center gap-4 overflow-x-auto pb-2 md:pb-0">
-              <div className="flex shrink-0 items-center gap-2 text-sm text-muted-foreground">
-                <Filter className="h-4 w-4" />
-                <span>{selectedIndustry ? `Filtered by ${selectedIndustry}` : "Browse by industry"}</span>
+            <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+              <div className="max-w-3xl">
+                <p className="mb-3 text-xs font-medium uppercase tracking-[0.22em] text-teal">
+                  Featured work
+                </p>
+                <h2 className="text-3xl font-semibold text-foreground">
+                  A quick read on representative engagements
+                </h2>
               </div>
-              <div className="flex items-center gap-2">
-                <Link
-                  href="/case-studies"
-                  className={`shrink-0 rounded-full px-4 py-2 text-sm font-medium transition-all ${
-                    selectedIndustry === null
-                      ? "bg-foreground text-background"
-                      : "border border-border bg-background text-muted-foreground hover:border-teal/50 hover:text-foreground"
-                  }`}
-                >
-                  All
-                </Link>
-                {industries.map((industry) => (
-                  <Link
-                    key={industry}
-                    href={`/case-studies?industry=${encodeURIComponent(industry)}`}
-                    className={`shrink-0 rounded-full px-4 py-2 text-sm font-medium transition-all ${
-                      selectedIndustry === industry
-                        ? "bg-foreground text-background"
-                        : "border border-border bg-background text-muted-foreground hover:border-teal/50 hover:text-foreground"
-                    }`}
-                  >
-                    {industry}
-                  </Link>
-                ))}
-              </div>
+              <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
+                Featured studies rotate each page load.
+              </p>
             </div>
+            <CaseStudiesFeaturedGrid featuredStudies={featuredStudies} />
           </div>
         </section>
 
-        {!selectedIndustry ? (
-          <section className="deferred-section px-6 py-16 md:py-20">
-            <div className="mx-auto max-w-[1200px]">
-              <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-                <div className="max-w-3xl">
-                  <p className="mb-3 text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                    Featured work
-                  </p>
-                  <h2 className="text-3xl font-semibold text-foreground">
-                    A quick read on the strongest public examples
-                  </h2>
-                </div>
-                <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-                  Use these as the fastest way to understand the kinds of situations
-                  Amalgam has stepped into and improved.
-                </p>
-              </div>
-              <div className="grid gap-6 lg:grid-cols-3">
-                {featuredStudies.map((study) => (
-                  <Link
-                    key={study.id}
-                    href={`/case-studies/${study.slug}`}
-                    className="group flex h-full flex-col rounded-[30px] border border-border bg-background p-7 transition-all hover:-translate-y-1 hover:border-teal/40 hover:shadow-xl hover:shadow-teal/5"
-                  >
-                    <div className="flex items-start justify-between gap-4">
-                      <div>
-                        <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                          {study.industry}
-                        </p>
-                        <h3 className="mt-3 text-2xl font-semibold text-foreground transition-colors group-hover:text-teal">
-                          {study.client}
-                        </h3>
-                      </div>
-                      <span className="rounded-full bg-secondary px-3 py-1 text-xs text-muted-foreground">
-                        {study.location}
-                      </span>
-                    </div>
-                    <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-                      {study.problem}
-                    </p>
-                    <div className="mt-6 rounded-2xl border border-border bg-secondary/35 p-4">
-                      <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                        Outcome
-                      </p>
-                      <p className="mt-2 text-sm leading-relaxed text-foreground">
-                        {study.outcome}
-                      </p>
-                    </div>
-                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors group-hover:text-foreground">
-                      Read case study
-                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </section>
-        ) : null}
+        <TestimonialStrip
+          className="deferred-section border-t border-border bg-secondary/35 py-20 lg:py-24"
+          eyebrow="Client feedback"
+          title="What clients noticed in the work"
+          compact
+        />
 
         <section className="deferred-section px-6 py-16 md:py-24">
           <div className="mx-auto max-w-[1200px]">
             <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
               <div>
                 <p className="mb-3 text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                  {selectedIndustry ? `${selectedIndustry} work` : "All case studies"}
+                  Full library
                 </p>
                 <h2 className="text-3xl font-semibold text-foreground">
-                  {selectedIndustry
-                    ? `Work in ${selectedIndustry}`
-                    : "The full case study library"}
+                  Browse all published case studies
                 </h2>
               </div>
               <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-                Every study is structured around context, problem, approach, and outcome so the value is easy to assess quickly.
+                Each page shows the context, the work, and what changed.
               </p>
             </div>
 
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {filteredStudies.map((study) => (
+              {caseStudies.map((study) => (
                 <Link
                   key={study.id}
                   href={`/case-studies/${study.slug}`}
@@ -244,23 +164,14 @@ export default function CaseStudiesPage() {
                   <div className="flex flex-1 flex-col gap-4 p-6">
                     <div>
                       <p className="mb-1.5 text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
-                        Client context
+                        Situation
                       </p>
-                      <p className="line-clamp-2 text-sm text-foreground">{study.problem}</p>
+                      <p className="line-clamp-3 text-sm text-foreground">{study.problem}</p>
                     </div>
 
                     <div className="rounded-2xl border border-border bg-secondary/30 p-4">
                       <p className="mb-1.5 text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
-                        Approach
-                      </p>
-                      <p className="line-clamp-3 text-sm text-muted-foreground">
-                        {study.approach}
-                      </p>
-                    </div>
-
-                    <div className="mt-auto border-t border-border pt-4">
-                      <p className="mb-1.5 text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                        Outcome
+                        What changed
                       </p>
                       <p className="line-clamp-3 text-sm font-medium text-foreground">
                         {study.outcome}
@@ -280,38 +191,53 @@ export default function CaseStudiesPage() {
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
 
-            {filteredStudies.length === 0 ? (
-              <div className="py-16 text-center">
-                <p className="text-muted-foreground">
-                  No case studies found for this industry.
-                </p>
-                <Link
-                  href="/case-studies"
-                  className="mt-4 inline-flex text-sm font-medium text-teal hover:underline"
+        <section className="deferred-section border-t border-border bg-secondary/35 px-6 py-16 md:py-20">
+          <div className="mx-auto max-w-[1200px]">
+            <div className="mb-8 max-w-3xl">
+              <p className="mb-3 text-xs font-medium uppercase tracking-[0.22em] text-teal">
+                Additional client relationships
+              </p>
+              <h2 className="text-2xl font-semibold text-foreground">
+                Not every engagement has a public case study
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                We also support organizations where details are private or not yet published.
+              </p>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {additionalRelationships.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-2xl border border-border bg-background px-5 py-5 transition-colors hover:border-teal/35"
                 >
-                  View all case studies
-                </Link>
-              </div>
-            ) : null}
+                  <p className="text-lg font-semibold text-foreground">{item.name}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{item.note}</p>
+                </a>
+              ))}
+            </div>
           </div>
         </section>
 
         <section className="bg-foreground px-6 py-20">
           <div className="mx-auto max-w-[900px] text-center">
             <h2 className="text-3xl font-bold text-background text-balance md:text-4xl">
-              Facing similar complexity?
+              Need a second set of eyes on your situation?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-background/70">
-              Start with the Founder Review to get clarity on what is stuck, what
-              is risky, and where to move first.
+              Start with a free strategy call and we will recommend the clearest next step.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
-                href="/founder-review"
+                href="/contact?interest=strategy-session"
                 className="inline-flex items-center gap-2 rounded-lg bg-background px-6 py-3 font-medium text-foreground transition-colors hover:bg-background/90"
               >
-                Start the Founder Review
+                Book a free strategy call
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

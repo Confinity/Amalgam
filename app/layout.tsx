@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   applicationName: "Amalgam",
   description:
-    "We help founders and versatilists untangle complex systems and restore delivery velocity. Start with the Founder Review - a focused diagnostic that reveals what is broken and what to fix first.",
+    "Amalgam helps founders, executives, and technical leaders bring clarity to complex systems, improve delivery, and move forward with confidence.",
   metadataBase: new URL(SITE_URL),
   category: "technology consulting",
   formatDetection: {
@@ -35,13 +35,15 @@ export const metadata: Metadata = {
   keywords: [
     "systems consulting",
     "technical consulting",
-    "founder consulting",
+    "strategy consulting",
+    "technical leadership",
+    "operating systems",
     "execution",
     "delivery velocity",
     "architecture",
     "technical debt",
     "enterprise modernization",
-    "versatilists",
+    "operators",
   ],
   authors: [{ name: "Amalgam Inc." }],
   creator: "Amalgam Inc.",
@@ -51,9 +53,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: "Amalgam",
-    title: "Amalgam - Untangle complex systems. Ship again.",
+    title: "Amalgam - Complex systems, clearer decisions, faster execution.",
     description:
-      "We help founders and versatilists untangle complex systems and restore delivery velocity.",
+      "Senior operators helping teams bring clarity to complex systems and move execution forward.",
     images: [
       {
         url: absoluteUrl("/opengraph-image"),
@@ -65,9 +67,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Amalgam - Untangle complex systems. Ship again.",
+    title: "Amalgam - Complex systems, clearer decisions, faster execution.",
     description:
-      "We help founders and versatilists untangle complex systems and restore delivery velocity.",
+      "Senior operators helping teams bring clarity to complex systems and move execution forward.",
     images: [absoluteUrl("/opengraph-image")],
     creator: "@amalgam_inc",
   },

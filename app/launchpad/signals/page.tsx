@@ -9,7 +9,7 @@ import { getLaunchpadSignalArticles } from "@/lib/launchpad"
 export const metadata: Metadata = {
   title: "Launchpad Signals",
   description:
-    "Subscribe for practical signal on systems clarity, execution drag, architecture choices, and operator judgment for founders and versatilists.",
+    "Subscribe for practical signal on systems clarity, execution drag, architecture choices, and operator judgment for founders, executives, and technical leaders.",
   alternates: {
     canonical: "/launchpad/signals",
   },
@@ -28,11 +28,13 @@ export default function LaunchpadSignalsPage() {
               <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
                 Launchpad Signals
               </p>
-              <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl">
-                Practical signal for founders and versatilists navigating systems complexity
+            <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl">
+                Practical signal for leaders navigating systems complexity
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                This is not generic founder motivation. Expect sober notes on delivery drag, architecture judgment, execution friction, and the next-step decisions teams keep getting wrong under pressure.
+                This is not generic motivation content. Expect sober notes on
+                delivery drag, architecture judgment, execution friction, and
+                next-step decisions under pressure.
               </p>
             </div>
             <div className="rounded-[30px] border border-border bg-foreground p-8">

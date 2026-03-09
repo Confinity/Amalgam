@@ -10,12 +10,13 @@ import {
 } from "lucide-react"
 import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
+import { KnowledgeFeaturedHero } from "@/components/knowledge-featured-hero"
 import { knowledgeBriefs, knowledgeCategories } from "@/lib/knowledge-briefs"
 
 export const metadata: Metadata = {
   title: "Knowledge Base",
   description:
-    "A practical knowledge base for founders and operators navigating architecture, delivery, data, and organizational complexity.",
+    "A practical knowledge base for leaders navigating architecture, delivery, data, and organizational complexity.",
   alternates: {
     canonical: "/knowledge",
   },
@@ -55,20 +56,12 @@ const readingPaths = [
 ]
 
 function getCategoryHref(categoryId?: string) {
-  return categoryId ? `/knowledge?category=${categoryId}` : "/knowledge"
+  return categoryId ? `/knowledge#${categoryId}` : "/knowledge"
 }
 
 export default function KnowledgePage() {
-  const selectedCategoryId = process.env.NEXT_PUBLIC_KNOWLEDGE_CATEGORY ?? ""
-  const selectedCategory =
-    knowledgeCategories.find((category) => category.id === selectedCategoryId) ?? null
-
-  const filteredBriefs = selectedCategory
-    ? knowledgeBriefs.filter((brief) => brief.category === selectedCategory.id)
-    : knowledgeBriefs
-
-  const heroBrief =
-    filteredBriefs.find((brief) => brief.featured) ?? filteredBriefs[0] ?? knowledgeBriefs[0]
+  const featuredCandidates = knowledgeBriefs.filter((brief) => brief.featured)
+  const filteredBriefs = knowledgeBriefs
 
   const articleCollections = knowledgeCategories.map((category) => ({
     category,
@@ -103,7 +96,7 @@ export default function KnowledgePage() {
                   Knowledge Base
                 </span>
                 <span className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                  Field notes for founders and senior operators
+                  Field notes for teams doing hard systems work
                 </span>
               </div>
               <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
@@ -113,23 +106,22 @@ export default function KnowledgePage() {
                 </span>
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-                Long-form articles on architecture, data, execution, operating design,
-                and the decisions that determine whether a business regains momentum or
-                stays trapped in coordination drag.
+                Practical articles on architecture, data, execution, and operating
+                decisions that affect momentum.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
-                  href={heroBrief ? `/knowledge/${heroBrief.slug}` : "/knowledge"}
+                  href={featuredCandidates[0] ? `/knowledge/${featuredCandidates[0].slug}` : "/knowledge"}
                   className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-foreground px-6 py-3 font-medium text-background transition-opacity hover:opacity-90"
                 >
                   Start with the featured article
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
-                  href="/founder-review"
+                  href="/contact?interest=strategy-session"
                   className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-border px-6 py-3 font-medium text-foreground transition-colors hover:bg-secondary"
                 >
-                  Start the Founder Review
+                  Book a strategy call
                 </Link>
               </div>
               <Link
@@ -149,57 +141,12 @@ export default function KnowledgePage() {
                   focus areas
                 </div>
                 <div className="rounded-full border border-border bg-background/90 px-4 py-2 text-sm text-muted-foreground shadow-sm">
-                  Written for founders and senior operators
+                  Written for business and technical leaders
                 </div>
               </div>
             </div>
 
-            {heroBrief ? (
-              <div className="relative overflow-hidden rounded-[32px] border border-border bg-background/95 p-7 shadow-sm">
-                <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-r from-teal/10 via-transparent to-purple/10" />
-                <div className="flex flex-wrap items-center justify-between gap-3">
-                  <span className="inline-flex items-center gap-2 rounded-full border border-teal/20 bg-teal/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-teal">
-                    <Sparkles className="h-3.5 w-3.5" />
-                    Featured perspective
-                  </span>
-                  <span className="text-sm text-muted-foreground">{heroBrief.readTime}</span>
-                </div>
-                <p className="mt-6 text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
-                  {knowledgeCategories.find((category) => category.id === heroBrief.category)?.label}
-                </p>
-                <h2 className="mt-3 text-2xl font-semibold text-foreground text-balance">
-                  {heroBrief.title}
-                </h2>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  {heroBrief.summary}
-                </p>
-                <div className="mt-6 rounded-[24px] border border-border bg-secondary/35 p-4">
-                  <p className="text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
-                    Why this matters
-                  </p>
-                  <p className="mt-2 text-sm leading-relaxed text-foreground">
-                    {heroBrief.takeaway}
-                  </p>
-                </div>
-                <div className="mt-6 grid gap-3 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
-                  {heroBrief.keyTakeaways.slice(0, 3).map((item) => (
-                    <div
-                      key={item}
-                      className="rounded-2xl border border-border bg-background px-4 py-4 text-sm leading-relaxed text-foreground"
-                    >
-                      {item}
-                    </div>
-                  ))}
-                </div>
-                <Link
-                  href={`/knowledge/${heroBrief.slug}`}
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
-                >
-                  Open article
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            ) : null}
+            <KnowledgeFeaturedHero candidates={featuredCandidates} categories={knowledgeCategories} />
           </div>
         </section>
 
@@ -208,19 +155,12 @@ export default function KnowledgePage() {
             <div className="flex flex-col gap-4">
               <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
                 <Filter className="h-4 w-4" />
-                <span>Browse the library by area</span>
+                <span>Browse by area</span>
               </div>
               <div className="flex flex-wrap gap-3">
-                <Link
-                  href="/knowledge"
-                  className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                    selectedCategory
-                      ? "border border-border bg-background text-muted-foreground hover:text-foreground"
-                      : "bg-foreground text-background"
-                  }`}
-                >
+                <span className="rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background">
                   All articles
-                </Link>
+                </span>
                 {knowledgeCategories.map((category) => {
                   const count = knowledgeBriefs.filter(
                     (brief) => brief.category === category.id
@@ -230,20 +170,10 @@ export default function KnowledgePage() {
                     <Link
                       key={category.id}
                       href={getCategoryHref(category.id)}
-                      className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                        selectedCategory?.id === category.id
-                          ? "bg-foreground text-background"
-                          : "border border-border bg-background text-muted-foreground hover:text-foreground"
-                      }`}
+                      className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {category.shortLabel}
-                      <span
-                        className={`rounded-full px-2 py-0.5 text-xs ${
-                          selectedCategory?.id === category.id
-                            ? "bg-background/15 text-background"
-                            : "bg-secondary text-muted-foreground"
-                        }`}
-                      >
+                      <span className="rounded-full bg-secondary px-2 py-0.5 text-xs text-muted-foreground">
                         {count}
                       </span>
                     </Link>
@@ -256,58 +186,53 @@ export default function KnowledgePage() {
 
         <section className="deferred-section px-6 py-16 md:px-8 md:py-20">
           <div className="mx-auto max-w-[1200px]">
-            {!selectedCategory ? (
-              <div className="mb-10 grid gap-6 lg:grid-cols-3">
-                {curatedPaths.map((path) => (
-                  <div
-                    key={path.title}
-                    className="flex h-full flex-col rounded-[30px] border border-border bg-background p-7"
-                  >
-                    <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                      Start here if...
-                    </p>
-                    <h2 className="mt-3 text-2xl font-semibold text-foreground text-balance">
-                      {path.title}
-                    </h2>
-                    <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                      {path.description}
-                    </p>
-                    <div className="mt-6 space-y-3">
-                      {path.articles.map((article, index) => (
-                        <Link
-                          key={article.slug}
-                          href={`/knowledge/${article.slug}`}
-                          className="flex items-center justify-between gap-4 rounded-2xl border border-border bg-secondary/25 px-4 py-4 text-sm transition-colors hover:border-teal/40"
-                        >
-                          <div>
-                            <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                              Step {index + 1}
-                            </p>
-                            <p className="mt-1 font-medium text-foreground">{article.title}</p>
-                          </div>
-                          <ArrowRight className="h-4 w-4 shrink-0 text-teal" />
-                        </Link>
-                      ))}
-                    </div>
+            <div className="mb-10 grid gap-6 lg:grid-cols-3">
+              {curatedPaths.map((path) => (
+                <div
+                  key={path.title}
+                  className="flex h-full flex-col rounded-[30px] border border-border bg-background p-7"
+                >
+                  <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
+                    Start here if...
+                  </p>
+                  <h2 className="mt-3 text-2xl font-semibold text-foreground text-balance">
+                    {path.title}
+                  </h2>
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                    {path.description}
+                  </p>
+                  <div className="mt-6 space-y-3">
+                    {path.articles.map((article, index) => (
+                      <Link
+                        key={article.slug}
+                        href={`/knowledge/${article.slug}`}
+                        className="flex items-center justify-between gap-4 rounded-2xl border border-border bg-secondary/25 px-4 py-4 text-sm transition-colors hover:border-teal/40"
+                      >
+                        <div>
+                          <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+                            Step {index + 1}
+                          </p>
+                          <p className="mt-1 font-medium text-foreground">{article.title}</p>
+                        </div>
+                        <ArrowRight className="h-4 w-4 shrink-0 text-teal" />
+                      </Link>
+                    ))}
                   </div>
-                ))}
-              </div>
-            ) : null}
+                </div>
+              ))}
+            </div>
 
             <div className="mb-10 grid gap-6 rounded-[32px] border border-border bg-background p-8 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
               <div>
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                  {selectedCategory ? selectedCategory.label : "Library overview"}
+                  Library overview
                 </p>
                 <h2 className="mt-3 text-3xl font-semibold text-foreground text-balance">
-                  {selectedCategory
-                    ? `Articles in ${selectedCategory.label}`
-                    : "A library organized around the real pressure points"}
+                  A library organized around real pressure points
                 </h2>
                 <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">
-                  {selectedCategory
-                    ? selectedCategory.description
-                    : "Use the knowledge base the same way leaders use us in practice: start with the area that feels most constrained, then follow the connected articles to build a clearer picture of the system."}
+                  Start with the area that feels most constrained, then follow the
+                  connected articles to build a clearer view of the system.
                 </p>
               </div>
               <div className="grid gap-3 rounded-[24px] border border-border bg-secondary/40 p-5">
@@ -408,9 +333,8 @@ export default function KnowledgePage() {
             <div className="mb-10 max-w-3xl">
               <h2 className="text-2xl font-semibold text-foreground">Explore by area</h2>
               <p className="mt-3 text-muted-foreground">
-                Each collection is built around one kind of problem pressure. Use this
-                view if you want to stay inside a single topic instead of browsing the
-                full library.
+                Each collection is built around one kind of pressure. Use this
+                view if you want to stay inside a single topic.
               </p>
             </div>
             <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
@@ -473,17 +397,15 @@ export default function KnowledgePage() {
                 Need these ideas applied to your actual system?
               </h2>
               <p className="mt-4 max-w-2xl text-background/70">
-                The library is here to sharpen judgment. If you need a direct
-                diagnosis, the fastest next step is still a focused conversation about
-                where the business is stuck and what should move first.
+                If you want a direct read on your own situation, start with a free strategy call.
               </p>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row lg:justify-end">
               <Link
-                href="/founder-review"
+                href="/contact?interest=strategy-session"
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-background px-6 py-3 font-medium text-foreground transition-opacity hover:opacity-90"
               >
-                Start the Founder Review
+                Book a free strategy call
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

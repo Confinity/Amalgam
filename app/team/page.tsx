@@ -56,19 +56,20 @@ export default function TeamPage() {
                 Our Team
               </span>
               <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Senior operators who know how to move tangled systems forward
+                Senior operators who know how to move complex systems forward
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
                 Amalgam is intentionally small and senior. The team spans growth,
-                operations, architecture, engineering, DevOps, agile delivery, legal, and people operations so
-                clients get judgment, execution, and continuity in one room.
+                operations, architecture, engineering, DevOps, agile delivery,
+                legal, and people operations so clients get judgment, execution,
+                and continuity in one room.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
-                  href="/founder-review"
+                  href="/contact?interest=strategy-session"
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 font-medium text-background transition-all hover:bg-foreground/90"
                 >
-                  Work with the team
+                  Book a strategy call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
@@ -228,15 +229,15 @@ export default function TeamPage() {
               Need senior operators in the room?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-background/70">
-              Start with the Founder Review if your systems are slowing the business
+              Start with a strategy call if your systems are slowing the business
               down, or reach out directly if you already know where you need help.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
-                href="/founder-review"
+                href="/contact?interest=strategy-session"
                 className="inline-flex items-center gap-2 rounded-lg bg-background px-6 py-3 font-medium text-foreground transition-colors hover:bg-background/90"
               >
-                Start the Founder Review
+                Book a strategy call
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

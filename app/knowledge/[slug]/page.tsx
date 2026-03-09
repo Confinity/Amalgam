@@ -424,17 +424,17 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                 </p>
                 <div className="mt-5 flex flex-col gap-3">
                   <Link
-                    href="/founder-review"
+                    href="/contact?interest=strategy-session"
                     className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-background px-4 py-3 text-sm font-medium text-foreground transition-opacity hover:opacity-90"
                   >
-                    Start the Founder Review
+                    Book a strategy call
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                   <Link
-                    href="/contact"
+                    href="/founder-review"
                     className="inline-flex min-h-11 items-center justify-center rounded-xl border border-background/15 px-4 py-3 text-sm font-medium text-background transition-colors hover:bg-background/10"
                   >
-                    Start a conversation
+                    See Founder Review
                   </Link>
                 </div>
               </div>

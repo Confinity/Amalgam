@@ -82,11 +82,11 @@ export function Navigation() {
 
         <div className="hidden items-center gap-4 md:flex">
           <Link
-            href="/founder-review"
+            href="/contact?interest=strategy-session"
             prefetch={false}
             className="inline-flex items-center gap-2 rounded-lg bg-foreground px-4 py-2.5 text-sm font-medium text-background transition-all hover:opacity-90 focus-visible:outline-none"
           >
-            Start the Founder Review
+            Book a strategy call
             <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         </div>
@@ -138,17 +138,17 @@ export function Navigation() {
               </div>
               <hr className="my-5 border-border" />
               <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-                Start with the Founder Review if you need fast clarity on what is
-                actually slowing delivery down.
+                If delivery is slowing down and the root cause still feels fuzzy,
+                start with a strategy call.
               </p>
               <div className="grid gap-3">
                 <Link
-                  href="/founder-review"
+                  href="/contact?interest=strategy-session"
                   prefetch={false}
                   className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-2xl bg-foreground px-4 py-3 text-sm font-medium text-background"
                   onClick={() => setMobileOpen(false)}
                 >
-                  Start the Founder Review
+                  Book a strategy call
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
                 <Link

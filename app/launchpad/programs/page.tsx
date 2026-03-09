@@ -8,7 +8,7 @@ import { launchpadPrograms } from "@/lib/launchpad"
 export const metadata: Metadata = {
   title: "Launchpad Programs",
   description:
-    "Understand how Founder Review, Execution Sprint, and Outcome Partnership map to the kind of clarity, sequencing, and follow-through the business needs.",
+    "Understand how Founder Review, Execution Sprint, and Outcome Partnership map to the clarity, sequencing, and follow-through your team needs.",
   alternates: {
     canonical: "/launchpad/programs",
   },
@@ -49,7 +49,8 @@ export default function LaunchpadProgramsPage() {
               If the tools or guides suggest deeper help is needed, this is how the work usually begins
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              These are not generic service tiers. They are structured interventions, ordered around how serious situations usually become legible and then move.
+              These are structured interventions, ordered around how serious
+              situations become clear and then move.
             </p>
           </div>
         </section>
@@ -98,7 +99,7 @@ export default function LaunchpadProgramsPage() {
                 Which one is right?
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Choose based on what the system needs next, not on how much help sounds comfortable
+                Choose based on what the system needs next
               </h2>
             </div>
             <div className="grid gap-6 lg:grid-cols-3">

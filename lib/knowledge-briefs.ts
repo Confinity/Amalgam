@@ -478,7 +478,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
         title: "Where friction actually lives",
         paragraphs: [
           "Friction tends to cluster in a few places: handoffs between teams, high-risk architectural boundaries, unclear product or data ownership, and work that enters execution before requirements or constraints are legible enough.",
-          "The point is not to remove all complexity. It is to stop pretending the team has a performance problem when the system around them is still organized in a way that manufactures delay.",
+          "You are not trying to remove all complexity. You are trying to stop treating this as a performance problem when the system is still set up to manufacture delay.",
         ],
         bullets: [
           "Too many cross-functional approvals.",
@@ -656,7 +656,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
         id: "what-good-looks-like",
         title: "What good decision rights look like",
         paragraphs: [
-          "Good decision rights are specific enough that people know when they can act and when they must escalate. They define scope, not just titles. The point is not to document every edge case. It is to remove the recurring ambiguity that keeps slowing work.",
+          "Good decision rights are specific enough that people know when they can act and when they must escalate. They define scope, not just titles. You do not need to document every edge case. You need to remove the recurring ambiguity that keeps slowing work.",
           "This is particularly important in cross-functional areas like platform investment, data quality, workflow changes, and delivery sequencing, where technical and operational decisions overlap.",
         ],
         bullets: [

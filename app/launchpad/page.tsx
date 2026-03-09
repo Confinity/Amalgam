@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: "Launchpad",
   description:
-    "Practical diagnostics, tools, and field guides for founders and versatilists navigating delivery drag, systems complexity, and next-step decisions.",
+    "Practical diagnostics, tools, and field guides for founders, executives, and technical leaders navigating delivery drag, systems complexity, and next-step decisions.",
   alternates: {
     canonical: "/launchpad",
   },
@@ -40,12 +40,12 @@ export default function LaunchpadPage() {
                 Launchpad
               </p>
               <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Practical tools, diagnostics, and next steps for founders and versatilists
+                Practical tools, diagnostics, and next steps for founders, executives, and technical leaders
               </h1>
               <p className="mt-6 max-w-[34ch] text-lg leading-relaxed text-muted-foreground">
-                Launchpad is Amalgam&apos;s practical founder-and-operator layer:
-                a place to self-locate, pressure-test complexity, and choose the
-                right next move before committing blindly.
+                Launchpad is Amalgam&apos;s practical operating layer: a place to
+                self-locate, test what is causing drag, and choose the right next
+                move before committing to deeper work.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <TrackedLink
@@ -67,7 +67,8 @@ export default function LaunchpadPage() {
                 </TrackedLink>
               </div>
               <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-                Best for founders, fractional CTOs, and operators who know the drag is real and want structured signal before deeper work begins.
+                Best for leaders and operators who know the drag is real and want
+                structured signal before deeper work begins.
               </p>
             </div>
 
@@ -78,7 +79,7 @@ export default function LaunchpadPage() {
               <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
                 <p>Structured self-location for teams carrying real systems complexity.</p>
                 <p>Tool-shaped diagnostics and field guides that create value before contact.</p>
-                <p>Natural escalation into Founder Review or conversation when senior judgment is the next move.</p>
+                <p>Natural escalation into a strategy call or focused engagement when needed.</p>
               </div>
             </div>
           </div>
@@ -94,7 +95,8 @@ export default function LaunchpadPage() {
                 Start where the situation feels most true right now
               </h2>
               <p className="mt-4 leading-relaxed text-muted-foreground">
-                Launchpad works best when it removes ambiguity fast. These paths are not categories for browsing. They are decision routes into the right tool, guide set, program, or conversation.
+                These are decision routes into the right tool, guide set, program,
+                or conversation.
               </p>
             </div>
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
@@ -194,7 +196,7 @@ export default function LaunchpadPage() {
                   Featured guides
                 </p>
                 <h2 className="text-3xl font-semibold text-foreground text-balance">
-                  Practical guide groupings for the pressure points founders and versatilists actually carry
+                  Practical guide groupings for the pressure points founders, executives, and technical leaders actually carry
                 </h2>
               </div>
               <TrackedLink
@@ -343,7 +345,7 @@ export default function LaunchpadPage() {
                 Signals
               </p>
               <h2 className="mt-4 text-3xl font-semibold text-foreground text-balance">
-                Practical signal for founders and operators carrying systems complexity
+                Practical signal for leaders and operators carrying systems complexity
               </h2>
               <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
                 Signal is the audience layer, not a media vanity project. Expect sober notes on delivery drag, architecture decisions, operator judgment, and the kinds of next-step calls teams keep getting wrong under pressure.
@@ -406,19 +408,20 @@ export default function LaunchpadPage() {
               Best next move
             </p>
             <h2 className="text-3xl font-semibold text-background text-balance md:text-4xl">
-              Launchpad exists to make the system more legible. The Founder Review is still the clearest way to begin deeper work.
+              Launchpad helps you get clear quickly. If deeper work is needed, start with a strategy call.
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-background/72">
-              Use the tools and guides to create signal. If the problem still needs senior diagnosis, start there.
+              Use the tools and guides first. If the problem still needs senior
+              diagnosis, we will point you to the right engagement.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
               <TrackedLink
-                href="/founder-review"
+                href="/contact?interest=strategy-session"
                 eventName="launchpad_path_click"
-                eventData={{ source: "launchpad_final_cta", target: "founder_review" }}
+                eventData={{ source: "launchpad_final_cta", target: "strategy_call" }}
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-background px-6 py-3 font-medium text-foreground transition-opacity hover:opacity-90"
               >
-                Start the Founder Review
+                Book a free strategy call
                 <Compass className="h-4 w-4" />
               </TrackedLink>
               <TrackedLink

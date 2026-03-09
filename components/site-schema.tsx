@@ -8,7 +8,7 @@ const organizationSchema = {
   image: absoluteUrl("/opengraph-image"),
   logo: absoluteUrl("/brand/amalgam-logo.webp"),
   description:
-    "Senior operators helping founders and versatilists untangle complex systems and restore delivery velocity.",
+    "Senior operators helping teams bring clarity to complex systems and move execution forward.",
   email: "hello@amalgam-inc.com",
   telephone: "+1-484-354-8498",
   foundingDate: "2012",
@@ -28,7 +28,7 @@ const websiteSchema = {
   name: "Amalgam",
   url: SITE_URL,
   description:
-    "Senior operators helping founders and versatilists untangle complex systems and restore delivery velocity.",
+    "Senior operators helping teams bring clarity to complex systems and move execution forward.",
 }
 
 export function SiteSchema() {
