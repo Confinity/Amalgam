@@ -507,7 +507,7 @@ function FinalCTA() {
         <div className="homepage-final-cta-panel rounded-[24px] border border-background/12 bg-background/[0.04] p-6">
           <div className="space-y-3">
             {[
-              "Direct conversation with an experienced leader",
+              "Direct conversation with the team",
               "Clear recommendation on what to do next",
             ].map((item) => (
               <div

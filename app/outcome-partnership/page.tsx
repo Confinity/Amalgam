@@ -16,7 +16,7 @@ import { Navigation } from "@/components/navigation"
 export const metadata: Metadata = {
   title: "Outcome Partnership",
   description:
-    "Experienced support to carry the roadmap forward, unblock execution, and sustain delivery momentum over time.",
+    "Ongoing support to carry the roadmap forward, unblock execution, and sustain delivery momentum over time.",
   alternates: {
     canonical: "/outcome-partnership",
   },
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 const whatWeProvide = [
   {
     icon: Users,
-    title: "Experienced support in the work",
+    title: "Direct support in the work",
     description:
       "People who can make sense of the situation quickly and contribute real judgment instead of adding overhead.",
   },
@@ -90,7 +90,7 @@ export default function OutcomePartnershipPage() {
                 Outcome Partnership
               </p>
               <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Ongoing experienced support to keep momentum real
+                Ongoing support to keep momentum real
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 The Outcome Partnership carries the roadmap into execution for teams that need direct support as priorities shift and decisions cannot drift.
@@ -147,7 +147,7 @@ export default function OutcomePartnershipPage() {
                 What We Provide
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Experienced support tied to real execution, not ornamental advisory work
+                Direct support tied to real execution, not ornamental advisory work
               </h2>
             </div>
             <div className="grid gap-6 md:grid-cols-2">
@@ -279,7 +279,7 @@ export default function OutcomePartnershipPage() {
             <div className="rounded-[30px] border border-border bg-foreground p-8">
               <Shield className="h-6 w-6 text-teal" />
               <h3 className="mt-4 text-2xl font-semibold text-background">
-                Need experienced support during execution?
+                Need focused support during execution?
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-background/70">
                 If the business already has direction but the work still needs

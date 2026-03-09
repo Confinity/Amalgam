@@ -98,7 +98,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
     const lastSpace = trimmed.lastIndexOf(" ")
     return `${lastSpace > 100 ? trimmed.slice(0, lastSpace) : trimmed}…`
   })()
-  const displayIntroPreview = introPreview.replace("â€¦", "...")
+  const displayIntroPreview = introPreview.replace(/[^\u0000-\u007F]+$/u, "...")
   const canonicalUrl = `https://amalgam-inc.com/knowledge/${brief.slug}`
   const schema = [
     {

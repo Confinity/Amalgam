@@ -413,7 +413,7 @@ export default function LaunchpadPage() {
                 Launchpad helps you get clear quickly. If deeper help is needed, start with a strategy call.
               </h2>
             <p className="mx-auto mt-4 max-w-2xl text-background/72">
-              Use the tools and guides first. If the problem still needs experienced
+              Use the tools and guides first. If the problem still needs direct
               diagnosis, we will point you to the right engagement.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">

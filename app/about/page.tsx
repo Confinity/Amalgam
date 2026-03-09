@@ -44,7 +44,7 @@ const principles = [
     icon: Shield,
     title: "Rigor",
     description:
-      "You work with experienced people who have handled this before.",
+      "You work with people who have handled this before.",
   },
   {
     icon: Zap,

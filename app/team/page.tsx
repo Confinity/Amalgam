@@ -226,7 +226,7 @@ export default function TeamPage() {
         <section className="deferred-section border-t border-border bg-foreground px-6 py-20">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-bold text-background md:text-4xl">
-              Need experienced support in the room?
+              Need focused support in the room?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-background/70">
               Start with a strategy call if your systems are slowing the business

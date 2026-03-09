@@ -106,7 +106,7 @@ export const launchpadPaths: LaunchpadPathCard[] = [
   {
     title: "I need follow-through",
     description:
-      "The direction exists, but momentum still needs experienced judgment close enough to protect the work.",
+      "The direction exists, but momentum still needs clear judgment close enough to protect the work.",
     href: "/launchpad/programs",
     nextStep: "Best next step: Outcome Partnership path",
   },

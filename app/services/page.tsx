@@ -58,10 +58,10 @@ const engagements = [
     title: "Outcome Partnership",
     subtitle: "Ongoing momentum",
     description:
-      "Ongoing experienced support to keep momentum real.",
+      "Ongoing support to keep momentum real.",
     href: "/outcome-partnership",
     highlights: [
-      "Embedded experienced support",
+      "Embedded execution support",
       "Execution and decision support",
       "Accountability for follow-through",
     ],
