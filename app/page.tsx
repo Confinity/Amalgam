@@ -41,7 +41,7 @@ function Hero() {
         <div className="hero-layout">
           <div className="max-w-3xl">
             <p className="mb-5 text-sm font-medium uppercase tracking-[0.22em] text-teal">
-              Senior operators for complex delivery moments
+              Senior help for high-friction delivery moments
             </p>
             <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight text-foreground text-balance sm:text-5xl lg:text-[58px]">
               Complex systems.{" "}
@@ -54,9 +54,8 @@ function Hero() {
               and what to do next.
             </p>
             <p className="hero-fit-line mt-5">
-              Best for founders, business leaders, and technical teams carrying
-              architecture, data, integration, and execution drag at the same
-              time.
+              Best for leaders and teams carrying architecture, data,
+              integration, and delivery drag at the same time.
             </p>
             <div className="hero-cta-row mt-3">
               <Link
@@ -135,7 +134,7 @@ function WhatWeDo() {
             Senior help for systems, decisions, and delivery
           </h2>
           <p className="max-w-2xl leading-relaxed text-muted-foreground">
-            We work at the system level so teams can stop guessing and start moving.
+            We work at the system level so teams can stop guessing and move.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -318,7 +317,7 @@ function Offers() {
       description:
         "When the work needs deeper diagnosis, sequencing, or follow-through, we move into the right engagement model.",
       points: [
-        "Founder Review for diagnosis",
+        "Diagnostic review for root-cause clarity",
         "Execution Sprint for sequencing",
         "Outcome Partnership for follow-through",
       ],

@@ -416,10 +416,10 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
 
               <div className="rounded-[28px] border border-border bg-foreground p-6">
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                  Need a direct diagnosis?
+                  Need a direct read?
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-background/75">
-                  Articles can sharpen judgment. They cannot replace a real read on
+                  Articles sharpen judgment. They do not replace a real read on
                   your architecture, operating model, and delivery constraints.
                 </p>
                 <div className="mt-5 flex flex-col gap-3">
@@ -434,7 +434,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                     href="/founder-review"
                     className="inline-flex min-h-11 items-center justify-center rounded-xl border border-background/15 px-4 py-3 text-sm font-medium text-background transition-colors hover:bg-background/10"
                   >
-                    See Founder Review
+                    See diagnostic option
                   </Link>
                 </div>
               </div>

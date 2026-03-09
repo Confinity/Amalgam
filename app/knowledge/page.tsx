@@ -106,7 +106,7 @@ export default function KnowledgePage() {
                 </span>
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-                Practical articles on architecture, data, execution, and operating
+                Practical articles on architecture, data, and execution
                 decisions that affect momentum.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
@@ -114,7 +114,7 @@ export default function KnowledgePage() {
                   href={featuredCandidates[0] ? `/knowledge/${featuredCandidates[0].slug}` : "/knowledge"}
                   className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-foreground px-6 py-3 font-medium text-background transition-opacity hover:opacity-90"
                 >
-                  Start with the featured article
+                  Read featured perspective
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
@@ -231,7 +231,7 @@ export default function KnowledgePage() {
                   A library organized around real pressure points
                 </h2>
                 <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">
-                  Start with the area that feels most constrained, then follow the
+                  Start with the area that feels most constrained, then follow
                   connected articles to build a clearer view of the system.
                 </p>
               </div>
@@ -333,8 +333,7 @@ export default function KnowledgePage() {
             <div className="mb-10 max-w-3xl">
               <h2 className="text-2xl font-semibold text-foreground">Explore by area</h2>
               <p className="mt-3 text-muted-foreground">
-                Each collection is built around one kind of pressure. Use this
-                view if you want to stay inside a single topic.
+                Each collection is built around one kind of pressure.
               </p>
             </div>
             <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">

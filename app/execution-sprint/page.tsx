@@ -122,7 +122,7 @@ export default function ExecutionSprintPage() {
                   href="/contact?interest=founder-review"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-border px-6 py-3 font-medium text-foreground transition-all hover:bg-secondary"
                 >
-                  Book a strategy call first
+                  Book a strategy call
                 </Link>
               </div>
             </div>
@@ -284,7 +284,7 @@ export default function ExecutionSprintPage() {
                   href="/contact?interest=founder-review"
                   className="inline-flex min-h-11 items-center justify-center rounded-xl border border-background/15 px-6 py-3 font-medium text-background transition-colors hover:bg-background/10"
                 >
-                  Book a strategy call first
+                  Book a strategy call
                 </Link>
               </div>
             </div>

@@ -156,11 +156,11 @@ export default function ServicesPage() {
                 Senior help for the systems, decisions, and delivery friction that slow companies down
               </h1>
               <p className="mt-6 max-w-[32ch] text-lg leading-relaxed text-muted-foreground">
-                Amalgam helps founders, executives, and technical leaders bring order to complex systems,
-                restore delivery momentum, and move forward with a path leadership can trust.
+                Amalgam helps leaders bring order to complex systems, restore
+                delivery momentum, and move with a plan leadership can trust.
               </p>
               <p className="mt-5 max-w-[34ch] text-sm font-medium leading-relaxed text-foreground/72">
-                Best when delivery friction is visible but the root cause is still unclear.
+                Best when delivery friction is visible but the root cause is still fuzzy.
               </p>
               <div className="mt-6 flex flex-col gap-4 sm:flex-row">
                 <Link
@@ -210,7 +210,7 @@ export default function ServicesPage() {
               </div>
               <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
                 Most teams start with a focused diagnostic, then go deeper only
-                when the work is clear enough to sequence with confidence.
+                when the path is clear enough to sequence with confidence.
               </p>
             </div>
           </div>
@@ -356,9 +356,9 @@ export default function ServicesPage() {
                 Breadth where it matters, without trying to do everything
               </h2>
               <p className="mt-4 leading-relaxed text-muted-foreground">
-                The work usually spans architecture, data, delivery, and operating
-                model at the same time. We stay focused on the areas that actually
-                change the situation, rather than expanding into everything.
+                  The work usually spans architecture, data, delivery, and operating
+                model at the same time. We stay focused on the areas that change
+                the situation, rather than expanding into everything.
               </p>
             </div>
             <div className="grid gap-6 lg:grid-cols-3">
@@ -439,7 +439,7 @@ export default function ServicesPage() {
                   href="/founder-review"
                   className="inline-flex min-h-11 items-center justify-center rounded-xl border border-background/15 px-6 py-3 font-medium text-background transition-colors hover:bg-background/10"
                 >
-                  See the Founder Review
+                  See the diagnostic option
                 </Link>
               </div>
             </div>

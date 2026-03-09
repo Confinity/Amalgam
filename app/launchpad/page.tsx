@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: "Launchpad",
   description:
-    "Practical diagnostics, tools, and field guides for founders, executives, and technical leaders navigating delivery drag, systems complexity, and next-step decisions.",
+    "Practical diagnostics, tools, and field guides for leaders navigating delivery drag, systems complexity, and next-step decisions.",
   alternates: {
     canonical: "/launchpad",
   },
@@ -40,7 +40,7 @@ export default function LaunchpadPage() {
                 Launchpad
               </p>
               <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Practical tools, diagnostics, and next steps for founders, executives, and technical leaders
+                Practical tools, diagnostics, and next steps for leaders and teams
               </h1>
               <p className="mt-6 max-w-[34ch] text-lg leading-relaxed text-muted-foreground">
                 Launchpad is Amalgam&apos;s practical operating layer: a place to
@@ -310,10 +310,9 @@ export default function LaunchpadPage() {
                 Not every next step sits inside Amalgam&apos;s core work
               </h2>
               <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
-                Launchpad is not a marketplace, but it is a practical entry layer.
-                If the right move sits adjacent to architecture and delivery work,
-                we can often point you toward the right introduction or direct next
-                step without turning that into another vague referral process.
+                Launchpad is not a marketplace. If the right move sits adjacent
+                to our core work, we can usually point you to the right
+                introduction or next step directly.
               </p>
             </div>
             <div className="rounded-[30px] border border-border bg-background p-7">
@@ -348,7 +347,8 @@ export default function LaunchpadPage() {
                 Practical signal for leaders and operators carrying systems complexity
               </h2>
               <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
-                Signal is the audience layer, not a media vanity project. Expect sober notes on delivery drag, architecture decisions, operator judgment, and the kinds of next-step calls teams keep getting wrong under pressure.
+                Signal is for practical notes on delivery drag, architecture
+                decisions, and next-step judgment under pressure.
               </p>
               <div className="mt-8 grid gap-4 md:grid-cols-3">
                 {signalArticles.map((article) => (
@@ -382,7 +382,8 @@ export default function LaunchpadPage() {
                 Get practical Launchpad signal
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-background/72">
-                Useful notes on systems clarity, execution drag, architecture judgment, and the next move when complexity starts slowing the business down.
+                Useful notes on systems clarity, execution drag, and next moves
+                when complexity starts slowing the business down.
               </p>
               <SignalsSubscribeForm
                 source="launchpad_page"

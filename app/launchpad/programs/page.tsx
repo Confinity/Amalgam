@@ -8,7 +8,7 @@ import { launchpadPrograms } from "@/lib/launchpad"
 export const metadata: Metadata = {
   title: "Launchpad Programs",
   description:
-    "Understand how Founder Review, Execution Sprint, and Outcome Partnership map to the clarity, sequencing, and follow-through your team needs.",
+    "Understand how Founder Review, Execution Sprint, and Outcome Partnership map to the clarity, sequencing, and follow-through your team needs now.",
   alternates: {
     canonical: "/launchpad/programs",
   },
@@ -18,7 +18,7 @@ const decisionMap = [
   {
     title: "Root cause unclear",
     description:
-      "If the drag is visible but the system still needs a direct read, Founder Review is the cleanest front door.",
+      "If the drag is visible but the system still needs a direct read, Founder Review is the cleanest entry point.",
     href: "/founder-review",
   },
   {
