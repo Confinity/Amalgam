@@ -86,6 +86,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/careers" prefetch={false} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+                  Careers
+                </Link>
+              </li>
+              <li>
                 <Link href="/case-studies" prefetch={false} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
                   Case Studies
                 </Link>

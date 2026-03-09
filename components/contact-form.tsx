@@ -27,6 +27,7 @@ const interestLabels: Record<string, string> = {
   "founder-review": "Diagnostic review",
   "execution-sprint": "Execution Sprint",
   "outcome-partnership": "Outcome Partnership",
+  careers: "Careers",
   general: "General inquiry",
 }
 
@@ -131,6 +132,7 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
               { value: "founder-review", label: "Diagnostic review" },
               { value: "execution-sprint", label: "Execution Sprint" },
               { value: "outcome-partnership", label: "Outcome Partnership" },
+              { value: "careers", label: "Careers" },
               { value: "general", label: "General inquiry" },
             ].map((option) => {
               const selected = form.interest === option.value
@@ -239,6 +241,7 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
             <option value="founder-review">Diagnostic review</option>
             <option value="execution-sprint">Execution Sprint</option>
             <option value="outcome-partnership">Outcome Partnership</option>
+            <option value="careers">Careers</option>
             <option value="general">General inquiry</option>
           </select>
           <p className="mt-2 text-xs text-muted-foreground">

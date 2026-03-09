@@ -62,7 +62,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Ryan",
     fullName: "Ryan Ward",
-    role: "Head of Growth & Operations",
+    role: "Head of Growth & Innovation",
     group: "leadership",
     shortBio:
       "Leads growth and operations across Amalgam's commercial systems, client experience, and day-to-day operating rhythm.",

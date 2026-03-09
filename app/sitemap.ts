@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/outcome-partnership",
     "/case-studies",
     "/knowledge",
+    "/careers",
     "/contact",
     "/privacy-policy",
     "/terms-and-conditions",
