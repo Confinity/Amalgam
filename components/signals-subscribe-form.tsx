@@ -1,13 +1,8 @@
 "use client"
 
-import { useActionState, useEffect, useRef } from "react"
+import { FormEvent, useState } from "react"
 import { track } from "@vercel/analytics"
 import { ArrowRight, MailCheck } from "lucide-react"
-import { subscribeToSignals, type SignalsActionState } from "@/app/launchpad/actions"
-
-const initialState: SignalsActionState = {
-  status: "idle",
-}
 
 type SignalsSubscribeFormProps = {
   source: string
@@ -20,31 +15,73 @@ export function SignalsSubscribeForm({
   buttonLabel = "Subscribe for signal",
   className,
 }: SignalsSubscribeFormProps) {
-  const [state, formAction, pending] = useActionState(subscribeToSignals, initialState)
-  const trackedStatus = useRef<string | null>(null)
+  const [email, setEmail] = useState("")
+  const [pending, setPending] = useState(false)
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle")
+  const [message, setMessage] = useState("")
 
-  useEffect(() => {
-    if (state.status !== "success" || trackedStatus.current === state.message) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    const normalizedEmail = email.trim().toLowerCase()
+
+    if (!normalizedEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) {
+      setStatus("error")
+      setMessage("Please enter a valid work email address.")
       return
     }
 
-    trackedStatus.current = state.message ?? "success"
-    track("signals_signup_success", { source })
-  }, [source, state.message, state.status])
+    setPending(true)
+    setStatus("idle")
+    setMessage("")
+
+    const webhook = process.env.NEXT_PUBLIC_SIGNALS_WEBHOOK_URL
+
+    try {
+      if (webhook) {
+        const response = await fetch(webhook, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: normalizedEmail,
+            source,
+            createdAt: new Date().toISOString(),
+          }),
+        })
+
+        if (!response.ok) {
+          throw new Error(`Webhook returned ${response.status}`)
+        }
+      }
+
+      setStatus("success")
+      setMessage("You are in. We will send practical signal when it is worth your attention.")
+      track("signals_signup_success", { source })
+      setEmail("")
+    } catch {
+      setStatus("error")
+      setMessage(
+        "We could not submit right now. Email hello@amalgam-inc.com and we will add you manually.",
+      )
+    } finally {
+      setPending(false)
+    }
+  }
 
   return (
-    <form action={formAction} className={className ?? "space-y-4"}>
-      <input type="hidden" name="source" value={source} />
+    <form onSubmit={handleSubmit} className={className ?? "space-y-4"}>
       <label className="block">
         <span className="mb-2 block text-sm font-medium text-foreground">
           Work email
         </span>
         <input
           type="email"
-          name="email"
           autoComplete="email"
           required
           placeholder="you@company.com"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
           className="contact-field min-h-11 w-full rounded-xl border px-4 py-3 text-sm text-foreground"
         />
       </label>
@@ -57,14 +94,14 @@ export function SignalsSubscribeForm({
         <ArrowRight className="h-4 w-4" />
       </button>
       <div aria-live="polite" className="min-h-6">
-        {state.status === "success" ? (
+        {status === "success" ? (
           <p className="inline-flex items-start gap-2 text-sm text-teal">
             <MailCheck className="mt-0.5 h-4 w-4 shrink-0" />
-            <span>{state.message}</span>
+            <span>{message}</span>
           </p>
         ) : null}
-        {state.status === "error" ? (
-          <p className="text-sm text-destructive">{state.message}</p>
+        {status === "error" ? (
+          <p className="text-sm text-destructive">{message}</p>
         ) : null}
       </div>
     </form>

@@ -22,20 +22,11 @@ export const metadata: Metadata = {
   },
 }
 
-type PageProps = {
-  searchParams?: Promise<{
-    industry?: string
-  }>
-}
-
 const featuredCount = caseStudies.filter((study) => study.featured).length
 const featuredStudies = caseStudies.filter((study) => study.featured).slice(0, 3)
 
-export default async function CaseStudiesPage({ searchParams }: PageProps) {
-  const resolvedParams = (await searchParams) ?? {}
-  const selectedIndustry = industries.includes(resolvedParams.industry ?? "")
-    ? resolvedParams.industry ?? null
-    : null
+export default function CaseStudiesPage() {
+  const selectedIndustry: string | null = null
 
   const filteredStudies = selectedIndustry
     ? caseStudies.filter((study) => study.industry === selectedIndustry)

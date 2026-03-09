@@ -21,12 +21,6 @@ export const metadata: Metadata = {
   },
 }
 
-type PageProps = {
-  searchParams?: Promise<{
-    category?: string
-  }>
-}
-
 const readingPaths = [
   {
     title: "Shipping slowed after growth",
@@ -64,11 +58,10 @@ function getCategoryHref(categoryId?: string) {
   return categoryId ? `/knowledge?category=${categoryId}` : "/knowledge"
 }
 
-export default async function KnowledgePage({ searchParams }: PageProps) {
-  const resolvedParams = (await searchParams) ?? {}
-  const selectedCategory = knowledgeCategories.find(
-    (category) => category.id === resolvedParams.category
-  )
+export default function KnowledgePage() {
+  const selectedCategoryId = process.env.NEXT_PUBLIC_KNOWLEDGE_CATEGORY ?? ""
+  const selectedCategory =
+    knowledgeCategories.find((category) => category.id === selectedCategoryId) ?? null
 
   const filteredBriefs = selectedCategory
     ? knowledgeBriefs.filter((brief) => brief.category === selectedCategory.id)

@@ -3,6 +3,8 @@ import { caseStudies } from "@/lib/case-studies-data"
 import { knowledgeBriefs } from "@/lib/knowledge-briefs"
 import { launchpadStaticRoutes } from "@/lib/launchpad"
 
+export const dynamic = "force-static"
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://amalgam-inc.com"
 

@@ -22,12 +22,6 @@ export const metadata: Metadata = {
   },
 }
 
-type ContactPageProps = {
-  searchParams?: Promise<{
-    interest?: string
-  }>
-}
-
 const nextSteps = [
   {
     title: "You share the situation",
@@ -46,9 +40,7 @@ const nextSteps = [
   },
 ]
 
-export default async function ContactPage({ searchParams }: ContactPageProps) {
-  const resolvedParams = (await searchParams) ?? {}
-
+export default function ContactPage() {
   return (
     <>
       <Navigation />
@@ -164,8 +156,8 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
               </div>
 
               <ContactForm
-                key={resolvedParams.interest ?? ""}
-                initialInterest={resolvedParams.interest}
+                key=""
+                initialInterest=""
               />
             </div>
           </div>

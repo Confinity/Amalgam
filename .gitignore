@@ -11,6 +11,7 @@ node_modules/
 .vercel
 .codex-artifacts/
 tmp/
+out/
 *.log
 *.err.log
 *.tsbuildinfo
