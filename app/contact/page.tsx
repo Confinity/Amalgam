@@ -41,16 +41,7 @@ const nextSteps = [
   },
 ]
 
-type ContactPageProps = {
-  searchParams?: Promise<{
-    interest?: string
-  }>
-}
-
-export default async function ContactPage({ searchParams }: ContactPageProps) {
-  const params = searchParams ? await searchParams : undefined
-  const initialInterest = params?.interest ?? ""
-
+export default function ContactPage() {
   return (
     <>
       <Navigation />
@@ -164,10 +155,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                 </div>
               </div>
 
-              <ContactForm
-                key={initialInterest}
-                initialInterest={initialInterest}
-              />
+              <ContactForm />
             </div>
           </div>
         </section>

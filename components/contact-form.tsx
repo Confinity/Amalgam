@@ -36,10 +36,24 @@ type ContactFormProps = {
 }
 
 export function ContactForm({ initialInterest = "" }: ContactFormProps) {
-  const normalizedInterest = initialInterest in interestLabels ? initialInterest : ""
+  const normalizeInterest = (value: string) => (value in interestLabels ? value : "")
+  const getInitialInterest = () => {
+    const seededInterest = normalizeInterest(initialInterest)
+    if (seededInterest) {
+      return seededInterest
+    }
+
+    if (typeof window === "undefined") {
+      return ""
+    }
+
+    const urlInterest = new URLSearchParams(window.location.search).get("interest") ?? ""
+    return normalizeInterest(urlInterest)
+  }
+
   const [form, setForm] = useState<FormState>({
     ...initialState,
-    interest: normalizedInterest,
+    interest: getInitialInterest(),
   })
   const [error, setError] = useState("")
   const [submitted, setSubmitted] = useState(false)
