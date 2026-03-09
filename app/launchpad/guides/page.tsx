@@ -25,7 +25,9 @@ export default function LaunchpadGuidesPage() {
     <>
       <Navigation />
       <main id="main-content" className="min-h-screen bg-background pt-20">
-        <section className="border-b border-border py-20 lg:py-24">
+        <section className="relative overflow-hidden border-b border-border py-20 lg:py-24">
+          <div className="pointer-events-none absolute right-0 top-0 h-72 w-72 rounded-full bg-teal/10 blur-3xl" />
+          <div className="pointer-events-none absolute left-8 top-20 h-56 w-56 rounded-full bg-purple/8 blur-3xl" />
           <div className="mx-auto max-w-[1200px] px-6">
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
               Launchpad Guides
@@ -34,7 +36,7 @@ export default function LaunchpadGuidesPage() {
               Practical field guidance for leaders trying to act, not just read
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              Practical guidance grouped by the pressure in front of you.
+              Guidance grouped by the pressure in front of you.
             </p>
           </div>
         </section>

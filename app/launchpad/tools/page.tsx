@@ -22,16 +22,18 @@ export default function LaunchpadToolsPage() {
     <>
       <Navigation />
       <main id="main-content" className="min-h-screen bg-background pt-20">
-        <section className="border-b border-border py-20 lg:py-24">
+        <section className="relative overflow-hidden border-b border-border py-20 lg:py-24">
+          <div className="pointer-events-none absolute right-0 top-0 h-72 w-72 rounded-full bg-teal/10 blur-3xl" />
+          <div className="pointer-events-none absolute left-6 top-20 h-56 w-56 rounded-full bg-purple/8 blur-3xl" />
           <div className="mx-auto max-w-[1200px] px-6">
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
               Launchpad Tools
             </p>
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl">
-              Diagnostics that create useful clarity before you decide what kind of help you need
+              Diagnostics that create clarity before you decide what help you need
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              Use these to get a fast first-pass read before choosing deeper support.
+              Use these for a fast first-pass read before deeper support.
             </p>
           </div>
         </section>

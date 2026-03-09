@@ -201,7 +201,7 @@ export default function TeamPage() {
                         <p className="mt-1 text-sm font-medium text-teal">{member.role}</p>
 
                         <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                          {member.bio}
+                          {member.shortBio}
                         </p>
 
                         <div className="mt-4 flex flex-wrap gap-2">

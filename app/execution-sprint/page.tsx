@@ -107,7 +107,7 @@ export default function ExecutionSprintPage() {
                 Turn a clear diagnosis into an execution plan teams can use
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                The Execution Sprint maps the current state, clarifies constraints, and turns work into a sequence teams can move on.
+                We map the current state, clarify constraints, and turn work into a sequence teams can move on.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Link
@@ -133,7 +133,7 @@ export default function ExecutionSprintPage() {
               </div>
               <div className="mt-4 flex items-center gap-3">
                 <Users className="h-5 w-5 text-teal" />
-                <span className="font-medium text-foreground">Experienced team, direct access</span>
+                <span className="font-medium text-foreground">Direct access to the team</span>
               </div>
               <div className="mt-6 rounded-2xl border border-border bg-secondary/35 p-4">
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">

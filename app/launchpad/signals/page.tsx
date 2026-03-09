@@ -23,7 +23,9 @@ export default function LaunchpadSignalsPage() {
     <>
       <Navigation />
       <main id="main-content" className="min-h-screen bg-background pt-20">
-        <section className="border-b border-border py-20 lg:py-24">
+        <section className="relative overflow-hidden border-b border-border py-20 lg:py-24">
+          <div className="pointer-events-none absolute right-0 top-0 h-72 w-72 rounded-full bg-teal/10 blur-3xl" />
+          <div className="pointer-events-none absolute left-8 top-20 h-56 w-56 rounded-full bg-purple/8 blur-3xl" />
           <div className="mx-auto grid max-w-[1200px] gap-10 px-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
             <div className="max-w-3xl">
               <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
@@ -44,8 +46,7 @@ export default function LaunchpadSignalsPage() {
                 Get practical updates
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-background/72">
-                Useful notes on systems clarity, architecture choices, execution
-                drag, and what to do next when complexity is slowing the business.
+                Useful notes on systems clarity, architecture choices, and what to do next when complexity is slowing the business.
               </p>
               <SignalsSubscribeForm
                 source="launchpad_signals_page"

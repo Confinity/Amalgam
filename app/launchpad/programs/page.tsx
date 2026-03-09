@@ -41,16 +41,18 @@ export default function LaunchpadProgramsPage() {
     <>
       <Navigation />
       <main id="main-content" className="min-h-screen bg-background pt-20">
-        <section className="border-b border-border py-20 lg:py-24">
+        <section className="relative overflow-hidden border-b border-border py-20 lg:py-24">
+          <div className="pointer-events-none absolute right-0 top-0 h-72 w-72 rounded-full bg-teal/10 blur-3xl" />
+          <div className="pointer-events-none absolute left-8 top-20 h-56 w-56 rounded-full bg-purple/8 blur-3xl" />
           <div className="mx-auto max-w-[1200px] px-6">
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
               Launchpad Programs
             </p>
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl">
-              If tools or guides point to deeper help, this is how the work usually starts
+              If tools or guides point to deeper help, this is how work usually starts
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              For teams with clearer signal that now need the right level of support.
+              For teams with clear signal that now need the right level of support.
             </p>
           </div>
         </section>

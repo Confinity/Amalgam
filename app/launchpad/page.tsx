@@ -53,7 +53,7 @@ export default function LaunchpadPage() {
                   eventData={{ source: "launchpad_hero", target: "tools" }}
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 font-medium text-background transition-opacity hover:opacity-90"
                 >
-                  Start with a diagnostic
+                  Explore diagnostics
                   <ArrowRight className="h-4 w-4" />
                 </TrackedLink>
                 <TrackedLink
