@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 import { ArrowRight, TimerReset, Wrench } from "lucide-react"
+import { ContextualTestimonial } from "@/components/contextual-testimonial"
 import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
 import { TrackedLink } from "@/components/tracked-link"
@@ -83,6 +84,13 @@ export default function LaunchpadToolsPage() {
             </div>
           </div>
         </section>
+
+        <ContextualTestimonial
+          className="deferred-section border-t border-border py-20 lg:py-24"
+          eyebrow="Client perspective"
+          title="What teams value after using diagnostics first"
+          testimonialId="fitzmier-jtf"
+        />
       </main>
       <Footer />
     </>

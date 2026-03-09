@@ -44,9 +44,7 @@ export default function LaunchpadPage() {
                 Practical tools, diagnostics, and next steps for leaders and teams
               </h1>
               <p className="mt-6 max-w-[34ch] text-lg leading-relaxed text-muted-foreground">
-                Launchpad is Amalgam&apos;s practical operating layer: a place to
-                self-locate, test what is causing drag, and choose the right next
-                move before committing to deeper work.
+                Launchpad is a practical place to self-locate, test what is causing drag, and choose the next move before committing to deeper work.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <TrackedLink
@@ -68,8 +66,7 @@ export default function LaunchpadPage() {
                 </TrackedLink>
               </div>
               <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-                Best for leaders and operators who want structured signal before
-                deeper work begins.
+                Best for leaders and operators who want structured signal before deeper work begins.
               </p>
             </div>
 
@@ -79,7 +76,7 @@ export default function LaunchpadPage() {
               </p>
               <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
                 <p>Structured self-location for teams carrying real systems complexity.</p>
-                <p>Tool-shaped diagnostics and field guides that create value before contact.</p>
+                <p>Tool-shaped diagnostics and field guides that deliver value before contact.</p>
                 <p>Natural escalation into a strategy call or focused engagement when needed.</p>
               </div>
             </div>

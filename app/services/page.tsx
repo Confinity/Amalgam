@@ -153,14 +153,13 @@ export default function ServicesPage() {
                 Services
               </p>
               <h1 className="text-4xl font-semibold leading-tight tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Senior help for the systems, decisions, and delivery friction that slow companies down
+                Senior help for systems, decisions, and delivery friction
               </h1>
               <p className="mt-6 max-w-[32ch] text-lg leading-relaxed text-muted-foreground">
-                Amalgam helps leaders bring order to complex systems, restore
-                delivery momentum, and move with a plan leadership can trust.
+                We help leaders bring order to complex systems, recover momentum, and move with a plan they can trust.
               </p>
               <p className="mt-5 max-w-[34ch] text-sm font-medium leading-relaxed text-foreground/72">
-                Best when delivery friction is visible but the root cause is still fuzzy.
+                Best when the drag is visible but the root cause is still unclear.
               </p>
               <div className="mt-6 flex flex-col gap-4 sm:flex-row">
                 <Link
@@ -223,9 +222,9 @@ export default function ServicesPage() {
                 <p className="mb-4 text-sm font-medium uppercase tracking-widest text-teal">
                   Where We Step In
                 </p>
-                <h2 className="text-3xl font-semibold text-foreground text-balance">
-                  The situations where senior systems judgment creates leverage fast
-                </h2>
+              <h2 className="text-3xl font-semibold text-foreground text-balance">
+                Where senior systems judgment creates leverage quickly
+              </h2>
               </div>
               <p className="max-w-[52ch] leading-relaxed text-muted-foreground lg:justify-self-end">
                 We are most useful when the business is no longer dealing with a
@@ -289,9 +288,7 @@ export default function ServicesPage() {
                 </h2>
               </div>
               <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-                These offers are intentionally ordered around how serious situations
-                actually become legible, then move. Clarity first. Sequencing next.
-                Ongoing support only when it creates real leverage.
+                These offers are intentionally ordered around how real situations become clear, then move. Clarity first. Sequencing next. Ongoing support only when it adds leverage.
               </p>
             </div>
 
@@ -405,14 +402,10 @@ export default function ServicesPage() {
               </h2>
               <div className="mt-6 max-w-[48ch] space-y-4 leading-relaxed text-muted-foreground">
                 <p>
-                  We are not trying to be a giant transformation firm. We are a
-                  small senior team designed for situations where the business needs
-                  clarity, sharper sequencing, and direct follow-through.
+                  We are not trying to be a giant transformation firm. We are a small senior team built for situations where the business needs clarity, sharper sequencing, and direct follow-through.
                 </p>
                 <p>
-                  That is why the offers are simple. Diagnose first. Plan honestly.
-                  Stay involved only when it creates real leverage. The goal is to
-                  make the next decisions clearer and the path forward less fragile.
+                  That is why the offers are simple. Diagnose first. Plan honestly. Stay involved only when it creates real leverage.
                 </p>
               </div>
             </div>

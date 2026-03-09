@@ -41,7 +41,7 @@ function Hero() {
         <div className="hero-layout">
           <div className="max-w-3xl">
             <p className="mb-5 text-sm font-medium uppercase tracking-[0.22em] text-teal">
-              Senior help for high-friction delivery moments
+              Senior support for high-friction delivery moments
             </p>
             <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight text-foreground text-balance sm:text-5xl lg:text-[58px]">
               Complex systems.{" "}
@@ -50,12 +50,10 @@ function Hero() {
               </span>
             </h1>
             <p className="hero-body mt-6 text-lg leading-relaxed text-muted-foreground">
-              When delivery slows down, we help you see what is really causing it
-              and what to do next.
+              When delivery slows, we help you see what is causing it and what to do next.
             </p>
             <p className="hero-fit-line mt-5">
-              Best for leaders and teams carrying architecture, data,
-              integration, and delivery drag at the same time.
+              For teams carrying architecture, data, integration, and delivery pressure at once.
             </p>
             <div className="hero-cta-row mt-3">
               <Link
@@ -131,10 +129,10 @@ function WhatWeDo() {
             What Amalgam does
           </p>
           <h2 className="mb-4 text-3xl font-semibold text-foreground">
-            Senior help for systems, decisions, and delivery
+            Senior help for systems, decisions, and execution
           </h2>
           <p className="max-w-2xl leading-relaxed text-muted-foreground">
-            We work at the system level so teams can stop guessing and move.
+            We work at the system level so teams stop guessing and start moving.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -266,8 +264,7 @@ function TypicalTriggers() {
               When teams usually reach out
             </h2>
             <p className="leading-relaxed text-muted-foreground">
-              These patterns show up before most teams call us. Each one links to
-              a practical article so you can pressure-test the situation first.
+              These patterns show up before most teams call us. Each one links to a practical article so you can pressure-test the situation first.
             </p>
             <Link
               href="/contact?interest=strategy-session"
@@ -508,11 +505,10 @@ function FinalCTA() {
             Next step
           </p>
           <h2 className="mb-4 text-3xl font-semibold text-background text-balance">
-            Get a senior second set of eyes on what is slowing delivery
+            Get a senior read on what is slowing delivery
           </h2>
           <p className="max-w-2xl text-background/70">
-            Start with a free strategy call. If deeper work is needed, we will
-            recommend the right path.
+            Start with a free strategy call. If deeper help is needed, we will recommend the right path.
           </p>
         </div>
         <div className="homepage-final-cta-panel rounded-[24px] border border-background/12 bg-background/[0.04] p-6">

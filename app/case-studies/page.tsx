@@ -26,18 +26,18 @@ const featuredStudies = caseStudies.filter((study) => study.featured)
 const additionalRelationships = [
   {
     name: "Moody's",
-    href: "https://www.moodys.com/",
-    note: "Public case study not published yet.",
+    href: "/case-studies/moodys",
+    note: "White-label name intelligence and transliteration-heavy screening support.",
   },
   {
     name: "SoFi",
-    href: "https://www.sofi.com/",
-    note: "Public case study not published yet.",
+    href: "/case-studies/sofi",
+    note: "Operational screening and decision-support adaptation in fintech workflows.",
   },
   {
-    name: "TIA Bank",
-    href: "https://www.tiaabank.com/",
-    note: "Public case study not published yet.",
+    name: "TIAA",
+    href: "/case-studies/tiaa",
+    note: "Technical delivery and systems support in a banking environment.",
   },
 ]
 
@@ -198,27 +198,25 @@ export default function CaseStudiesPage() {
           <div className="mx-auto max-w-[1200px]">
             <div className="mb-8 max-w-3xl">
               <p className="mb-3 text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                Additional client relationships
+                Recently added
               </p>
               <h2 className="text-2xl font-semibold text-foreground">
-                Not every engagement has a public case study
+                Additional financial-services case studies
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                We also support organizations where details are private or not yet published.
+                Short reads with conservative public detail for high-sensitivity engagements.
               </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {additionalRelationships.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
-                  target="_blank"
-                  rel="noreferrer"
                   className="rounded-2xl border border-border bg-background px-5 py-5 transition-colors hover:border-teal/35"
                 >
                   <p className="text-lg font-semibold text-foreground">{item.name}</p>
                   <p className="mt-2 text-sm text-muted-foreground">{item.note}</p>
-                </a>
+                </Link>
               ))}
             </div>
           </div>

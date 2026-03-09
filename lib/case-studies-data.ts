@@ -604,6 +604,187 @@ export const caseStudies: CaseStudy[] = [
   },
 
   {
+    id: "moodys",
+    slug: "moodys",
+    client: "Moody's",
+    industry: "Financial Services",
+    location: "United States",
+    headline: "Building a white-label name intelligence layer for enterprise risk workflows",
+    heroImageSrc: "/clients/moodys.webp",
+    heroImageAlt: "Moody's brand mark used as representative context for the engagement",
+    problem: "Name matching across transliterations and fragmented source data created real screening friction in risk-sensitive workflows.",
+    approach: "We designed and delivered a white-label name intelligence system focused on transliteration-aware matching, search precision, and practical review workflows across multiple data sources.",
+    outcome: "The platform gave enterprise teams a more usable way to examine name-based risk signals and make higher-confidence screening decisions in complex global datasets.",
+    overview: "This engagement centered on the practical problem of name intelligence at enterprise scale. The work required balancing transliteration complexity, search quality, and workflow usability in a way that could be adopted inside established risk operations.",
+    challenges: [
+      "Name matching quality dropped quickly when transliteration and spelling variation increased",
+      "Analysts needed more precise search and review behavior across multiple source streams",
+      "Risk workflows required clear handling of low-confidence and ambiguous matches",
+      "The product had to work as a white-label software layer in enterprise settings"
+    ],
+    solution: [
+      {
+        title: "Name Intelligence Architecture",
+        description: "Designed a system model for transliteration-aware matching, alias handling, and confidence-based result grouping."
+      },
+      {
+        title: "Search and Review Experience",
+        description: "Built screening flows that made it easier to review potential matches, compare alternatives, and move through high-volume queues."
+      },
+      {
+        title: "Data and Signal Normalization",
+        description: "Structured ingestion and normalization patterns so signals from different sources could be examined consistently."
+      },
+      {
+        title: "White-Label Delivery",
+        description: "Packaged the platform for enterprise use as a licensable/white-label solution with flexible integration options."
+      }
+    ],
+    results: [
+      {
+        metric: "Matching quality",
+        value: "More reliable",
+        description: "Teams gained a clearer way to evaluate ambiguous name matches in transliteration-heavy scenarios."
+      },
+      {
+        metric: "Workflow",
+        value: "Faster reviews",
+        description: "Screening teams could move through candidate results with less manual friction and less re-checking."
+      },
+      {
+        metric: "Adoption",
+        value: "Enterprise-ready",
+        description: "The white-label approach made the solution usable in larger institutional environments."
+      },
+      {
+        metric: "Decision support",
+        value: "Clearer signal",
+        description: "Risk-related search and matching decisions were based on more structured, explainable outputs."
+      }
+    ],
+    technologies: ["Name Matching", "Transliteration Logic", "Search Engineering", "Risk Workflow Design"],
+    featured: true
+  },
+
+  {
+    id: "sofi",
+    slug: "sofi",
+    client: "SoFi",
+    industry: "Fintech",
+    location: "United States",
+    headline: "Adapting name-screening and decision-support workflows for a digital financial environment",
+    heroImageSrc: "/clients/sofi.webp",
+    heroImageAlt: "SoFi brand mark used as representative context for the engagement",
+    problem: "Financial workflows needed practical screening and signal review support without slowing operational decisions.",
+    approach: "We applied proven name-intelligence and workflow patterns to a fintech operating context, adapting matching behavior, review logic, and operational integration needs for a fast-moving financial environment.",
+    outcome: "The engagement improved how risk-relevant signals could be reviewed in day-to-day operations while keeping the workflow practical for teams under delivery pressure.",
+    overview: "This work focused on adapting screening-oriented product lineage into a different financial operating context. The goal was not abstract architecture, but a practical system that teams could actually use in real workflows.",
+    challenges: [
+      "Risk-related checks needed to fit high-throughput financial operations",
+      "Signal review quality had to improve without creating heavy process drag",
+      "Workflow design needed to support practical decision speed and consistency",
+      "Implementation had to stay aligned with existing operational and technical constraints"
+    ],
+    solution: [
+      {
+        title: "Workflow Adaptation",
+        description: "Mapped screening and review logic to the realities of a digital financial operations environment."
+      },
+      {
+        title: "Matching and Signal Tuning",
+        description: "Refined matching behaviors and review paths so teams could evaluate potential risk indicators with better consistency."
+      },
+      {
+        title: "Operational Fit",
+        description: "Shaped the implementation to support day-to-day decision support instead of creating a heavyweight standalone process."
+      }
+    ],
+    results: [
+      {
+        metric: "Operations",
+        value: "Better fit",
+        description: "Risk-support behavior aligned more cleanly with real financial workflows."
+      },
+      {
+        metric: "Review quality",
+        value: "More consistent",
+        description: "Teams had clearer review pathways for evaluating screening outputs."
+      },
+      {
+        metric: "Decision support",
+        value: "Higher confidence",
+        description: "Signal interpretation became easier to apply in practical day-to-day decisions."
+      },
+      {
+        metric: "Delivery rhythm",
+        value: "Less friction",
+        description: "Teams were able to run core workflows with fewer avoidable interruptions."
+      }
+    ],
+    technologies: ["Workflow Engineering", "Screening Support", "Signal Review Design", "Fintech Operations"],
+    featured: true
+  },
+
+  {
+    id: "tiaa",
+    slug: "tiaa",
+    client: "TIAA",
+    industry: "Banking and Financial Services",
+    location: "United States",
+    headline: "Supporting technical execution in a regulated banking environment",
+    heroImageSrc: "/clients/tiaa.webp",
+    heroImageAlt: "TIAA brand mark used as representative context for the engagement",
+    problem: "Banking operations required technical support that respected existing systems, regulatory constraints, and delivery timelines.",
+    approach: "We provided practical technical and systems support across banking-focused workflows, helping teams move critical work forward with clearer structure and lower delivery friction.",
+    outcome: "The engagement improved execution reliability in a complex financial setting where architecture quality and operational coordination directly affected delivery outcomes.",
+    overview: "This work sat at the intersection of financial-services operations and technical execution. The focus was disciplined support: help teams improve how systems work together while maintaining practical momentum.",
+    challenges: [
+      "Technical changes had to be delivered within strict operational constraints",
+      "Systems coordination and handoffs increased execution complexity",
+      "Teams needed support that improved reliability without introducing new process overhead",
+      "The environment required conservative, implementation-focused decision making"
+    ],
+    solution: [
+      {
+        title: "Systems and Workflow Support",
+        description: "Worked directly with teams to improve technical workflows and reduce avoidable operational friction."
+      },
+      {
+        title: "Execution Structure",
+        description: "Helped shape practical implementation sequencing so delivery could move with fewer avoidable stalls."
+      },
+      {
+        title: "Cross-Team Coordination",
+        description: "Supported clearer coordination patterns between technical and operational stakeholders."
+      }
+    ],
+    results: [
+      {
+        metric: "Delivery",
+        value: "More reliable",
+        description: "Execution moved with better consistency in a high-constraint environment."
+      },
+      {
+        metric: "Systems quality",
+        value: "Improved coordination",
+        description: "Technical and operational interactions became more predictable and easier to manage."
+      },
+      {
+        metric: "Operating cadence",
+        value: "Steadier momentum",
+        description: "Teams were able to sustain progress with clearer implementation structure."
+      },
+      {
+        metric: "Coordination",
+        value: "Clearer handoffs",
+        description: "Cross-team execution became easier to manage with fewer surprises."
+      }
+    ],
+    technologies: ["Banking Systems Support", "Technical Delivery", "Workflow Coordination"],
+    featured: false
+  },
+
+  {
     id: "finra",
     slug: "finra",
     client: "FINRA",

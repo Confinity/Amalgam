@@ -22,39 +22,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  async redirects() {
-    if (basePath) {
-      return []
-    }
-
-    return [
-      {
-        source: "/aboutus",
-        destination: "/about",
-        permanent: true,
-      },
-      {
-        source: "/contactus",
-        destination: "/contact",
-        permanent: true,
-      },
-      {
-        source: "/ourwork",
-        destination: "/case-studies",
-        permanent: true,
-      },
-      {
-        source: "/careers",
-        destination: "/team",
-        permanent: true,
-      },
-      {
-        source: "/schedule",
-        destination: "/contact?interest=strategy-session",
-        permanent: false,
-      },
-    ]
-  },
   cleanDistDir: true,
   typescript: {
     ignoreBuildErrors: true,

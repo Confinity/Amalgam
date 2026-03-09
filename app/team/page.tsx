@@ -38,8 +38,11 @@ const practiceAreas = [
   "Legal and HR",
 ]
 
-const nonFounderTeamMembers = teamMembers.filter((member) => member.name !== "Neeraj")
 const founderName = "Neeraj"
+const heroShowcaseOrder = ["Neeraj", "Ryan", "Sumita", "Vikas", "Naren", "Parul"] as const
+const heroShowcaseMembers = heroShowcaseOrder
+  .map((name) => teamMembers.find((member) => member.name === name))
+  .filter((member): member is (typeof teamMembers)[number] => Boolean(member))
 
 export default function TeamPage() {
   return (
@@ -95,7 +98,7 @@ export default function TeamPage() {
 
             <div className="relative">
               <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-                {nonFounderTeamMembers.slice(0, 6).map((member, index) => (
+                {heroShowcaseMembers.map((member, index) => (
                   <div
                     key={member.name}
                     className={`overflow-hidden rounded-[28px] border border-border bg-background shadow-sm ${

@@ -175,17 +175,13 @@ export default function AboutPage() {
                 <h2 className="mb-6 text-2xl font-semibold text-foreground">A note from our founder</h2>
                 <blockquote className="space-y-4 text-lg leading-relaxed text-muted-foreground">
                   <p>
-                    &ldquo;When I founded Amalgam, I wanted to build a practice that reflected my
-                    ethos: put clients first, always. We made one promise and have kept it.
+                    &ldquo;When I founded Amalgam, I wanted to build a practice that truly puts clients first.
                   </p>
                   <p>
-                    Too many consulting engagements create dependency instead of progress. They
-                    produce decks instead of decisions. They bill hours instead of shipping outcomes.
+                    Too many consulting engagements create dependency instead of progress. They produce decks instead of decisions.
                   </p>
                   <p>
-                    We built Amalgam differently. Our job is to find what is
-                    slowing the business down, make the path forward clear, and
-                    help teams move again.&rdquo;
+                    We built Amalgam differently. Our job is to find what is slowing the business down, make the path forward clear, and help teams move again.&rdquo;
                   </p>
                 </blockquote>
                 <p className="mt-6 font-medium text-foreground">{founder.fullName ?? founder.name}</p>
@@ -206,14 +202,10 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 leading-relaxed text-muted-foreground">
                 <p>
-                  Most delivery problems are no longer confined to one team or one
-                  function. Architecture, product, operations, and decision-making
-                  are usually all involved.
+                  Most delivery problems are no longer confined to one team. Architecture, product, operations, and decision-making are usually all involved.
                 </p>
                 <p>
-                  That is where Amalgam is most useful: when leaders need senior
-                  judgment that can connect the full system and create a path
-                  teams can execute with confidence.
+                  That is where Amalgam is most useful: when leaders need senior judgment that connects the full system and creates a path teams can execute with confidence.
                 </p>
               </div>
             </div>

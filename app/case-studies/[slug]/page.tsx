@@ -70,6 +70,20 @@ export default async function CaseStudyPage({ params }: PageProps) {
   const currentIndex = caseStudies.findIndex((study) => study.slug === slug)
   const prevStudy = currentIndex > 0 ? caseStudies[currentIndex - 1] : null
   const nextStudy = currentIndex < caseStudies.length - 1 ? caseStudies[currentIndex + 1] : null
+  const isBrandMarkHero = caseStudy.heroImageSrc.startsWith("/clients/")
+  const relatedStudies = caseStudies
+    .filter((study) => study.slug !== caseStudy.slug)
+    .sort((left, right) => {
+      const leftScore = left.industry === caseStudy.industry ? 0 : 1
+      const rightScore = right.industry === caseStudy.industry ? 0 : 1
+
+      if (leftScore !== rightScore) {
+        return leftScore - rightScore
+      }
+
+      return left.client.localeCompare(right.client)
+    })
+    .slice(0, 3)
   const canonicalUrl = `https://amalgam-inc.com/case-studies/${caseStudy.slug}`
   const schema = [
     {
@@ -181,7 +195,11 @@ export default async function CaseStudyPage({ params }: PageProps) {
                       fill
                       priority
                       sizes="(min-width: 1024px) 720px, 100vw"
-                      className="object-cover object-center"
+                      className={`${
+                        isBrandMarkHero
+                          ? "object-contain object-center p-8"
+                          : "object-cover object-center"
+                      }`}
                     />
                   </div>
                   <div className="support-panel px-5 py-4">
@@ -189,8 +207,9 @@ export default async function CaseStudyPage({ params }: PageProps) {
                       Visual context
                     </p>
                     <p className="mt-2 text-sm leading-relaxed text-foreground">
-                      Representative project imagery drawn from public client context
-                      and Amalgam&apos;s published case-study materials.
+                      {isBrandMarkHero
+                        ? "Client brand mark shown as context where public project imagery is limited."
+                        : "Representative project imagery drawn from public client context and Amalgam&apos;s published case-study materials."}
                     </p>
                   </div>
                 </div>
@@ -361,6 +380,30 @@ export default async function CaseStudyPage({ params }: PageProps) {
                   >
                     {tech}
                   </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="mb-16">
+              <div className="mb-6 max-w-3xl">
+                <p className="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-teal">
+                  Related proof
+                </p>
+                <h2 className="text-2xl font-bold text-foreground">More situations with similar pressure</h2>
+              </div>
+              <div className="grid gap-4 md:grid-cols-3">
+                {relatedStudies.map((study) => (
+                  <Link
+                    key={study.slug}
+                    href={`/case-studies/${study.slug}`}
+                    className="rounded-[24px] border border-border bg-background px-5 py-5 transition-colors hover:border-teal/35"
+                  >
+                    <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+                      {study.industry}
+                    </p>
+                    <p className="mt-2 text-lg font-semibold text-foreground">{study.client}</p>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{study.outcome}</p>
+                  </Link>
                 ))}
               </div>
             </div>
