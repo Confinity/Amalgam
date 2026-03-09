@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { additionalClientNames, clientLogos } from "@/lib/client-logos"
+import { withBasePath } from "@/lib/site-config"
 
 type ClientLogoWallProps = {
   eyebrow?: string
@@ -44,7 +45,7 @@ export function ClientLogoWall({
                 }`}
               >
                 <Image
-                  src={logo.src}
+                  src={withBasePath(logo.src)}
                   alt={logo.alt}
                   fill
                   sizes="(min-width: 1024px) 220px, (min-width: 640px) 40vw, 100vw"

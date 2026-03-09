@@ -21,6 +21,7 @@ import {
   unifiedTeamPortraitClasses,
   unifiedTeamPortraits,
 } from "@/lib/team-members"
+import { withBasePath } from "@/lib/site-config"
 
 export const metadata: Metadata = {
   title: "About",
@@ -160,7 +161,7 @@ export default function AboutPage() {
             <div className="grid gap-10 lg:grid-cols-[320px_minmax(0,1fr)] lg:items-center">
               <div className="relative mx-auto aspect-[4/4.2] w-full max-w-sm overflow-hidden rounded-3xl border border-border bg-secondary/50">
                 <Image
-                  src={founder.image}
+                  src={withBasePath(founder.image)}
                   alt={founder.imageAlt}
                   fill
                   sizes="(min-width: 1024px) 320px, 100vw"
@@ -286,7 +287,7 @@ export default function AboutPage() {
                     className={`relative aspect-[4/4.15] overflow-hidden ${unifiedTeamPortraitBackgroundClass}`}
                   >
                     <Image
-                      src={unifiedTeamPortraits[member.name] ?? member.image}
+                      src={withBasePath(unifiedTeamPortraits[member.name] ?? member.image)}
                       alt={member.imageAlt}
                       fill
                       sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"

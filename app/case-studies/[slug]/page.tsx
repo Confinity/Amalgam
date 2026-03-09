@@ -18,6 +18,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { JsonLd } from "@/components/json-ld"
 import { caseStudies, getCaseStudyBySlug } from "@/lib/case-studies-data"
+import { withBasePath } from "@/lib/site-config"
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -175,7 +176,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                 <div className="mt-8 overflow-hidden rounded-[32px] border border-border bg-secondary/35">
                   <div className="relative aspect-[16/10] w-full">
                     <Image
-                      src={caseStudy.heroImageSrc}
+                      src={withBasePath(caseStudy.heroImageSrc)}
                       alt={caseStudy.heroImageAlt}
                       fill
                       priority

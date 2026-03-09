@@ -11,6 +11,7 @@ import {
   unifiedTeamPortraitClasses,
   unifiedTeamPortraits,
 } from "@/lib/team-members"
+import { withBasePath } from "@/lib/site-config"
 
 export const metadata: Metadata = {
   title: "Team",
@@ -103,7 +104,7 @@ export default function TeamPage() {
                       className={`relative aspect-[4/4.3] overflow-hidden ${unifiedTeamPortraitBackgroundClass}`}
                     >
                       <Image
-                        src={unifiedTeamPortraits[member.name] ?? member.image}
+                        src={withBasePath(unifiedTeamPortraits[member.name] ?? member.image)}
                         alt={member.imageAlt}
                         fill
                         sizes="(min-width: 1024px) 220px, (min-width: 640px) 33vw, 50vw"
@@ -174,7 +175,7 @@ export default function TeamPage() {
                         className={`relative aspect-[4/4.2] overflow-hidden ${unifiedTeamPortraitBackgroundClass}`}
                       >
                         <Image
-                          src={unifiedTeamPortraits[member.name] ?? member.image}
+                          src={withBasePath(unifiedTeamPortraits[member.name] ?? member.image)}
                           alt={member.imageAlt}
                           fill
                           sizes="(min-width: 1280px) 28vw, (min-width: 768px) 50vw, 100vw"
