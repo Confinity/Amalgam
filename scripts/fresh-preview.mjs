@@ -6,7 +6,6 @@ import process from "node:process"
 const port = process.argv[2] ?? "3001"
 const root = process.cwd()
 const logPath = path.join(root, `.preview-${port}.log`)
-const nextBinPath = path.join(root, "node_modules", "next", "dist", "bin", "next")
 
 function run(command, args, options = {}) {
   const result = spawnSync(command, args, {
@@ -101,12 +100,37 @@ function stopExistingServer(targetPort) {
 
 function startPreview(targetPort) {
   const fd = openSync(logPath, "w")
-  const child = spawn(process.execPath, [nextBinPath, "start", "-H", "127.0.0.1", "-p", targetPort], {
-    cwd: root,
-    detached: true,
-    stdio: ["ignore", fd, fd],
-    shell: false,
-  })
+  const child =
+    process.platform === "win32"
+      ? spawn(
+          "cmd.exe",
+          [
+            "/c",
+            "pnpm",
+            "dlx",
+            "serve",
+            "out",
+            "-l",
+            String(targetPort),
+            "--no-clipboard",
+          ],
+          {
+            cwd: root,
+            detached: true,
+            stdio: ["ignore", fd, fd],
+            shell: false,
+          },
+        )
+      : spawn(
+          "pnpm",
+          ["dlx", "serve", "out", "-l", String(targetPort), "--no-clipboard"],
+          {
+            cwd: root,
+            detached: true,
+            stdio: ["ignore", fd, fd],
+            shell: false,
+          },
+        )
 
   child.unref()
   closeSync(fd)
@@ -123,6 +147,7 @@ async function waitForHealthyPreview(targetPort) {
   const healthRoutes = [
     "/",
     "/services",
+    "/case-studies",
     "/knowledge",
     "/launchpad",
     "/launchpad/tools",
