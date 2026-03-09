@@ -28,7 +28,7 @@ export default function CareersPage() {
                 Careers
               </p>
               <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Build meaningful work with a small senior team
+                Join a small team doing meaningful client work
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 We care about clear thinking, strong execution, and real client outcomes.
@@ -39,7 +39,7 @@ export default function CareersPage() {
                   href="/contact?interest=careers"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 font-medium text-background transition-opacity hover:opacity-90"
                 >
-                  Contact us about roles
+                  Ask about this role
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <a
@@ -124,7 +124,7 @@ export default function CareersPage() {
                       href="/contact?interest=careers"
                       className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
                     >
-                      Contact us about this role
+                      Ask about this role
                       <ArrowRight className="h-4 w-4" />
                     </Link>
                     <a
@@ -144,7 +144,7 @@ export default function CareersPage() {
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="mb-10 max-w-3xl">
               <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
-                You&apos;ll love it here if
+                You&apos;ll fit well here if
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
                 You value ownership, clarity, and client outcomes
@@ -180,7 +180,7 @@ export default function CareersPage() {
                 href="/contact?interest=careers"
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-background px-6 py-3 font-medium text-foreground transition-opacity hover:opacity-90"
               >
-                Go to contact page
+                Start a conversation
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <a

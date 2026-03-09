@@ -14,12 +14,12 @@ const analyticsEnabled = process.env.NEXT_PUBLIC_VERCEL_ANALYTICS === "1"
 
 export const metadata: Metadata = {
   title: {
-    default: "Amalgam | Senior operators for complex systems",
+    default: "Amalgam | Experienced support for complex systems",
     template: "%s | Amalgam",
   },
   applicationName: "Amalgam",
   description:
-    "Amalgam helps founders, executives, and technical leaders bring clarity to complex systems, improve delivery, and move forward with confidence.",
+    "Amalgam helps teams bring clarity to complex systems, improve delivery, and move forward with confidence.",
   metadataBase: new URL(SITE_URL),
   category: "technology consulting",
   formatDetection: {
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     "architecture",
     "technical debt",
     "enterprise modernization",
-    "operators",
+    "systems leadership",
   ],
   authors: [{ name: "Amalgam Inc." }],
   creator: "Amalgam Inc.",
@@ -55,13 +55,13 @@ export const metadata: Metadata = {
     siteName: "Amalgam",
     title: "Amalgam - Complex systems, clearer decisions, faster execution.",
     description:
-      "Senior operators helping teams bring clarity to complex systems and move execution forward.",
+      "Experienced support helping teams bring clarity to complex systems and move execution forward.",
     images: [
       {
         url: absoluteUrl("/opengraph-image"),
         width: 1200,
         height: 630,
-        alt: "Amalgam - Senior operators for complex systems",
+        alt: "Amalgam - Experienced support for complex systems",
       },
     ],
   },
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Amalgam - Complex systems, clearer decisions, faster execution.",
     description:
-      "Senior operators helping teams bring clarity to complex systems and move execution forward.",
+      "Experienced support helping teams bring clarity to complex systems and move execution forward.",
     images: [absoluteUrl("/opengraph-image")],
     creator: "@amalgam_inc",
   },

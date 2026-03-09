@@ -9,7 +9,7 @@ import { launchpadPrograms } from "@/lib/launchpad"
 export const metadata: Metadata = {
   title: "Launchpad Programs",
   description:
-    "Understand how Founder Review, Execution Sprint, and Outcome Partnership map to the clarity, sequencing, and follow-through your team needs now.",
+    "Understand how Diagnostic Review, Execution Sprint, and Outcome Partnership map to the clarity, sequencing, and follow-through your team needs now.",
   alternates: {
     canonical: "/launchpad/programs",
   },
@@ -17,10 +17,10 @@ export const metadata: Metadata = {
 
 const decisionMap = [
   {
-    title: "Root cause unclear",
-    description:
-      "If the drag is visible but the system still needs a direct read, Founder Review is the cleanest entry point.",
-    href: "/founder-review",
+      title: "Root cause unclear",
+      description:
+      "If the drag is visible but the system still needs a direct read, Diagnostic Review is the cleanest entry point.",
+      href: "/founder-review",
   },
   {
     title: "Situation legible, sequencing needed",
@@ -29,9 +29,9 @@ const decisionMap = [
     href: "/execution-sprint",
   },
   {
-    title: "Momentum needs senior continuity",
+    title: "Momentum needs continuity",
     description:
-      "If the path exists but execution still needs senior follow-through, Outcome Partnership becomes the continuity layer.",
+      "If the path exists but execution still needs close follow-through, Outcome Partnership becomes the continuity layer.",
     href: "/outcome-partnership",
   },
 ]
@@ -50,8 +50,7 @@ export default function LaunchpadProgramsPage() {
               If the tools or guides suggest deeper help is needed, this is how the work usually begins
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              Structured interventions, ordered around how serious situations
-              become clear and then move.
+              For teams that have clearer signal and now need the right level of support.
             </p>
           </div>
         </section>

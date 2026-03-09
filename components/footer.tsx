@@ -12,8 +12,7 @@ export function Footer() {
               <BrandLogo className="h-8 w-auto" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Senior operators helping teams bring clarity to complex systems and
-              move execution forward.
+              Experienced support helping teams bring clarity to complex systems and move execution forward.
             </p>
             <div className="footer-credentials text-sm text-muted-foreground">
               <span className="credential-chip rounded-full border border-border bg-background px-3 py-1.5">
@@ -23,7 +22,7 @@ export function Footer() {
                 Chesterbrook, PA
               </span>
               <span className="credential-chip rounded-full border border-border bg-background px-3 py-1.5">
-                Small senior team
+                Small experienced team
               </span>
             </div>
             <Link
@@ -40,13 +39,8 @@ export function Footer() {
             <h4 className="mb-4 text-sm font-semibold text-foreground">Start Here</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/contact?interest=strategy-session" prefetch={false} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  Strategy Call
-                </Link>
-              </li>
-              <li>
                 <Link href="/founder-review" prefetch={false} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  Founder Review
+                  Diagnostic Review
                 </Link>
               </li>
               <li>
@@ -100,11 +94,6 @@ export function Footer() {
                   Knowledge
                 </Link>
               </li>
-              <li>
-                <Link href="/contact" prefetch={false} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  Contact
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -115,7 +104,7 @@ export function Footer() {
                 Best fit
               </p>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Founders, executives, and technical leaders carrying complexity.
+                Founders, business leaders, and technical teams carrying complexity.
               </p>
 
               <div className="mt-5 space-y-3 text-sm">

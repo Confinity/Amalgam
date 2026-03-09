@@ -72,7 +72,7 @@ export function KnowledgeFeaturedHero({
         href={`/knowledge/${active.slug}`}
         className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
       >
-        Open article
+        Start with this article
         <ArrowRight className="h-4 w-4" />
       </Link>
     </div>

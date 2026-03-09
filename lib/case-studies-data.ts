@@ -165,7 +165,7 @@ export const caseStudies: CaseStudy[] = [
     heroImageSrc: "/case-studies/confinity.webp",
     heroImageAlt: "Confinity product image representing the platform's family memory-preservation experience",
     problem: "Confinity needed more than implementation help. As a seed-stage company building a private platform for families to preserve memories and stories, it needed support across funding readiness, architecture, and day-to-day product development without the overhead of building a full engineering organization too early.",
-    approach: "We partnered from the beginning as a senior product and engineering extension, helping shape the technical plan behind the business, define the architecture, and provide hands-on development support through contributors including Oleg and Ruben. The relationship stayed close and responsive as product, funding, and launch priorities evolved.",
+    approach: "We partnered from the beginning as an experienced product and engineering extension, helping shape the technical plan behind the business, define the architecture, and provide hands-on development support through contributors including Oleg and Ruben. The relationship stayed close and responsive as product, funding, and launch priorities evolved.",
     outcome: "Confinity moved forward with a clearer product foundation, a working platform direction, and an always-available technical partner who could support architecture, delivery, and engineering judgment as the company matured.",
     overview: "Confinity is a Delaware company building a private platform for families to capture milestones, organize memories, and preserve stories across generations. As the company took shape, it needed a partner that could help translate early conviction into a real product and an architecture the team could grow with.",
     challenges: [
@@ -202,7 +202,7 @@ export const caseStudies: CaseStudy[] = [
       {
         metric: "Delivery",
         value: "Embedded Capacity",
-        description: "The founding team had immediate access to senior technical help without having to assemble a full internal engineering function too early."
+        description: "The founding team had immediate access to experienced technical help without having to assemble a full internal engineering function too early."
       },
       {
         metric: "Decisions",

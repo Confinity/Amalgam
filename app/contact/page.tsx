@@ -37,7 +37,7 @@ const nextSteps = [
   {
     title: "We point to the right next step",
     description:
-      "That may be a free strategy session, a focused diagnostic, or a practical internal next move.",
+      "That may be a free strategy call, a focused diagnostic, or a practical internal next move.",
   },
 ]
 
@@ -59,23 +59,23 @@ export default function ContactPage() {
                   Start the conversation
                 </h1>
                 <p className="contact-hero-body mt-6 text-lg leading-relaxed text-muted-foreground">
-                  Tell us what is stuck. We will give you a clear next step.
+                  Tell us what&apos;s stuck. We&apos;ll give you a clear next step.
                 </p>
                 <Link
                   href="/launchpad/tools"
                   className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
                 >
-                  Not ready to reach out yet? Start with a diagnostic
+                  Not ready to reach out yet? Explore diagnostics
                   <ArrowRight className="h-4 w-4" />
                 </Link>
 
                 <div className="contact-path-grid mt-8 grid gap-4 sm:grid-cols-3">
                   <div className="contact-path-card support-panel p-5">
                     <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                      Free strategy session
+                      Free strategy call
                     </p>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                      Best when you need a senior second set of eyes before committing to deeper work.
+                      Best when you need an experienced second set of eyes before committing to deeper work.
                     </p>
                   </div>
                   <div className="contact-path-card support-panel p-5">
@@ -91,7 +91,7 @@ export default function ContactPage() {
                       Outcome Partnership
                     </p>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                      Best when the roadmap exists and senior follow-through protects momentum.
+                      Best when the roadmap exists and direct follow-through protects momentum.
                     </p>
                   </div>
                 </div>
@@ -167,7 +167,7 @@ export default function ContactPage() {
           testimonialId="fitzmier-jtf"
         />
 
-        <section className="contact-next-section py-16 lg:py-20">
+        <section className="contact-next-section section-warm py-16 lg:py-20">
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="contact-next-layout grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
               <div className="contact-next-panel rounded-[32px] border border-border bg-secondary/30 p-8 md:p-12">
@@ -175,7 +175,7 @@ export default function ContactPage() {
                   What happens next
                 </p>
                 <h2 className="mt-3 text-3xl font-semibold text-foreground">
-                  A direct path, not a lead funnel
+                  A direct path to the right next step
                 </h2>
                 <div className="contact-next-steps mt-8 grid gap-4 md:grid-cols-3">
                   {nextSteps.map((step, index) => (
@@ -202,14 +202,14 @@ export default function ContactPage() {
                   Best first move
                 </p>
                 <h2 className="mt-3 text-2xl font-semibold text-background">
-                  Start with a free strategy session
+                  Start with a free strategy call
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-background/70">
                   If delivery is slowing down and the root cause is still unclear, this is the cleanest first move.
                 </p>
                 <div className="contact-review-points mt-6 space-y-3">
                   {[
-                    "60-minute senior strategy call",
+                    "60-minute strategy call",
                     "Clear recommendation on what to do next",
                     "Useful even if you keep execution internal",
                   ].map((item) => (
@@ -226,21 +226,21 @@ export default function ContactPage() {
                   href="/contact?interest=strategy-session"
                   className="mt-6 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl bg-background px-6 py-3 font-medium text-foreground transition-opacity hover:opacity-90"
                 >
-                  Book the strategy call
+                  Book a free strategy call
                   <Compass className="h-4 w-4" />
                 </Link>
                 <Link
                   href="/founder-review"
                   className="mt-3 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl border border-background/15 px-6 py-3 font-medium text-background transition-colors hover:bg-background/10"
                 >
-                  See the diagnostic option
+                  See how the diagnostic works
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   href="/launchpad/tools"
                   className="mt-3 inline-flex min-h-11 w-full items-center justify-center rounded-xl border border-background/15 px-6 py-3 text-sm font-medium text-background transition-colors hover:bg-background/10"
                 >
-                  Start with a diagnostic instead
+                  Explore diagnostics
                 </Link>
               </div>
             </div>

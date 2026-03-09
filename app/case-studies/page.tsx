@@ -55,11 +55,10 @@ export default function CaseStudiesPage() {
                 Case Studies
               </p>
               <h1 className="text-4xl font-semibold leading-tight tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Work we can stand behind
+                Real client work, explained clearly
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-                These are real situations where systems quality, delivery judgment,
-                and execution decisions directly affected outcomes.
+                These examples show how complex systems work changes when the right structure and judgment are applied.
               </p>
               <div className="mt-10 grid gap-4 sm:grid-cols-3">
                 <div className="rounded-2xl border border-border bg-background/90 px-5 py-5 shadow-sm">
@@ -98,7 +97,7 @@ export default function CaseStudiesPage() {
                   Featured work
                 </p>
                 <h2 className="text-3xl font-semibold text-foreground">
-                  A quick read on representative engagements
+                  Start with a few representative engagements
                 </h2>
               </div>
               <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
@@ -116,7 +115,7 @@ export default function CaseStudiesPage() {
           compact
         />
 
-        <section className="deferred-section px-6 py-16 md:py-24">
+        <section className="deferred-section section-warm px-6 py-16 md:py-24">
           <div className="mx-auto max-w-[1200px]">
             <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
               <div>
@@ -124,7 +123,7 @@ export default function CaseStudiesPage() {
                   Full library
                 </p>
                 <h2 className="text-3xl font-semibold text-foreground">
-                  Browse all published case studies
+                  Browse all case studies
                 </h2>
               </div>
               <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
@@ -201,7 +200,7 @@ export default function CaseStudiesPage() {
                 Recently added
               </p>
               <h2 className="text-2xl font-semibold text-foreground">
-                Additional financial-services case studies
+                Additional financial services examples
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 Short reads with conservative public detail for high-sensitivity engagements.

@@ -27,7 +27,7 @@ import { withBasePath } from "@/lib/site-config"
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Founded in 2012, Amalgam is a small senior team that helps business and technical leaders bring clarity to complex systems and restore delivery momentum.",
+    "Founded in 2012, Amalgam is a small experienced team that helps business and technical leaders bring clarity to complex systems and restore delivery momentum.",
   alternates: {
     canonical: "/about",
   },
@@ -38,37 +38,37 @@ const principles = [
     icon: Target,
     title: "Clarity",
     description:
-      "We cut through complexity to find the path forward. No vague recommendations or abstract frameworks.",
+      "We focus on what matters and make the next move clear.",
   },
   {
     icon: Shield,
     title: "Rigor",
     description:
-      "We bring senior judgment and technical depth. Every engagement is led by people who have done this before.",
+      "You work with experienced people who have handled this before.",
   },
   {
     icon: Zap,
     title: "Momentum",
     description:
-      "We help teams move faster, not slower. Our job is to unblock, not to create new dependencies.",
+      "We remove blockers so teams can move with less drag.",
   },
   {
     icon: Eye,
     title: "Transparency",
     description:
-      "Clear communication, honest assessment, no surprises. We say what we see and explain what we recommend.",
+      "We say what we see and explain every recommendation clearly.",
   },
   {
     icon: Users,
     title: "Client-first",
     description:
-      "Your outcomes matter more than our hours. We measure success by what gets shipped, not time spent.",
+      "Outcomes matter more than hours. We care about what gets shipped.",
   },
   {
     icon: Clock,
     title: "Pragmatism",
     description:
-      "We work with what you have. Perfect is the enemy of shipped. We find the 80/20 path to real progress.",
+      "We work with your real constraints and focus on practical progress.",
   },
 ]
 
@@ -84,7 +84,7 @@ const aboutPreviewTeamMembers = teamMembers
   .sort((a, b) => groupOrder[a.group] - groupOrder[b.group])
 const aboutStats = [
   { value: "2012", label: "Founded" },
-  { value: String(teamMembers.length), label: "Senior team members" },
+  { value: String(teamMembers.length), label: "Team members" },
   { value: "3", label: "Core ways to engage" },
 ]
 
@@ -124,13 +124,11 @@ export default function AboutPage() {
                   About Amalgam
                 </p>
                 <h1 className="text-4xl font-semibold leading-tight tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                  A small senior team for moments when the business needs a path it can trust.
+                  A small experienced team for complex moments that need clear decisions.
                 </h1>
                 <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                   Amalgam helps business and technical leaders bring clarity to
-                  complex systems and restore delivery momentum. We step in when
-                  architecture, integrations, data, and operating decisions start
-                  slowing execution down.
+                  complex systems and restore delivery momentum.
                 </p>
               </div>
               <div className="support-panel rounded-[28px] p-7">
@@ -138,7 +136,7 @@ export default function AboutPage() {
                   What clients hire us for
                 </p>
                 <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
-                  <p>Fast senior diagnosis when the root problem is still unclear.</p>
+                  <p>Fast diagnostic clarity when the root problem is still unclear.</p>
                   <p>Clear sequencing when teams need a roadmap they can trust.</p>
                   <p>Hands-on follow-through when momentum needs to be sustained.</p>
                 </div>
@@ -158,7 +156,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="py-20 lg:py-24">
+        <section className="section-warm py-20 lg:py-24">
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="grid gap-10 lg:grid-cols-[320px_minmax(0,1fr)] lg:items-center">
               <div className="relative mx-auto aspect-[4/4.2] w-full max-w-sm overflow-hidden rounded-3xl border border-border bg-secondary/50">
@@ -175,13 +173,13 @@ export default function AboutPage() {
                 <h2 className="mb-6 text-2xl font-semibold text-foreground">A note from our founder</h2>
                 <blockquote className="space-y-4 text-lg leading-relaxed text-muted-foreground">
                   <p>
-                    &ldquo;When I founded Amalgam, I wanted to build a practice that truly puts clients first.
+                    &ldquo;I started Amalgam to keep work practical and honest.
                   </p>
                   <p>
-                    Too many consulting engagements create dependency instead of progress. They produce decks instead of decisions.
+                    Too many projects create dependency instead of progress.
                   </p>
                   <p>
-                    We built Amalgam differently. Our job is to find what is slowing the business down, make the path forward clear, and help teams move again.&rdquo;
+                    We focus on what is slowing the business down, make the next move clear, and help teams move again.&rdquo;
                   </p>
                 </blockquote>
                 <p className="mt-6 font-medium text-foreground">{founder.fullName ?? founder.name}</p>
@@ -198,14 +196,14 @@ export default function AboutPage() {
                 Why this model works now
               </p>
               <h2 className="mb-6 text-3xl font-semibold text-foreground text-balance">
-                Modern delivery pressure crosses every boundary
+                Today&apos;s delivery problems cross team boundaries
               </h2>
               <div className="space-y-4 leading-relaxed text-muted-foreground">
                 <p>
                   Most delivery problems are no longer confined to one team. Architecture, product, operations, and decision-making are usually all involved.
                 </p>
                 <p>
-                  That is where Amalgam is most useful: when leaders need senior judgment that connects the full system and creates a path teams can execute with confidence.
+                  That is where Amalgam is most useful: when leaders need clear judgment that connects the full system and creates a path teams can execute with confidence.
                 </p>
               </div>
             </div>
@@ -239,12 +237,11 @@ export default function AboutPage() {
                 Operating Model
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                How Amalgam works when the situation is high-stakes and messy
+                How we work in high-stakes situations
               </h2>
               <p className="mt-4 leading-relaxed text-muted-foreground">
-                We are not trying to look large. We are trying to be useful where the work is hardest. The
-                model is intentionally senior, direct, and grounded in the actual
-                system in front of us.
+                We are intentionally small and direct. The model is built for
+                hard, high-constraint situations where decisions need to move.
               </p>
             </div>
             <div className="grid gap-6 lg:grid-cols-3">
@@ -261,13 +258,13 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="deferred-section border-t border-border py-20 lg:py-24">
+        <section className="deferred-section section-warm border-t border-border py-20 lg:py-24">
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="mb-12 flex items-end justify-between gap-6">
               <div>
                 <h2 className="text-2xl font-semibold text-foreground">The team</h2>
                 <p className="mt-2 text-muted-foreground">
-                  Senior operators across systems, architecture, and delivery.
+                  Experienced support across systems, architecture, and delivery.
                 </p>
               </div>
               <Link href="/team" className="flex items-center gap-1 text-sm font-medium text-teal hover:underline">
@@ -339,7 +336,7 @@ export default function AboutPage() {
                 href="/services"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-background/30 px-6 py-3 font-medium text-background transition-all hover:bg-background/10"
               >
-                Explore services
+                See how we can help
               </Link>
             </div>
           </div>

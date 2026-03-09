@@ -15,9 +15,9 @@ import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
 
 export const metadata: Metadata = {
-  title: "Founder Review",
+  title: "Diagnostic Review",
   description:
-    "A senior-led diagnostic that reveals what is stuck, what is driving risk, and what to fix first.",
+    "A focused diagnostic that reveals what is stuck, what is driving risk, and what to fix first.",
   alternates: {
     canonical: "/founder-review",
   },
@@ -81,7 +81,7 @@ const process = [
     step: "04",
     title: "Readout and next step",
     description:
-      "You get a senior readout, concrete recommendations, and a clean discussion about what should happen next.",
+      "You get a direct readout, concrete recommendations, and a clean discussion about what should happen next.",
   },
 ]
 
@@ -94,7 +94,7 @@ const fitSignals = {
   notYet: [
     "The diagnosis is already trusted and the real need is roadmap sequencing.",
     "The work is narrowly scoped and the constraints are already obvious to everyone involved.",
-    "The business mainly needs delivery capacity, not senior diagnosis.",
+    "The business mainly needs delivery capacity, not diagnostic support.",
   ],
 }
 
@@ -109,15 +109,14 @@ export default function FounderReviewPage() {
           <div className="mx-auto grid max-w-[1200px] gap-10 px-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-end">
             <div className="max-w-3xl">
               <p className="mb-4 text-sm font-medium uppercase tracking-widest text-teal">
-                Founder Review
+                Diagnostic Review
               </p>
               <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Fast clarity when the business knows something is stuck but not yet why
+                Fast clarity when something is stuck and the cause is still unclear
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                The Founder Review is a senior-led diagnostic. In two weeks, you get
-                a clear read on what is slowing delivery, what is creating risk,
-                and what should move first.
+                A two-week focused diagnostic that shows what is slowing delivery,
+                where risk is building, and what should move first.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Link
@@ -131,7 +130,7 @@ export default function FounderReviewPage() {
                   href="/case-studies"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-border px-6 py-3 font-medium text-foreground transition-all hover:bg-secondary"
                 >
-                  See Case Studies
+                  See case studies
                 </Link>
               </div>
               <Link
@@ -150,7 +149,7 @@ export default function FounderReviewPage() {
               </div>
               <div className="mt-4 flex items-center gap-3">
                 <Users className="h-5 w-5 text-teal" />
-                <span className="font-medium text-foreground">Senior-led from day one</span>
+                <span className="font-medium text-foreground">Direct support from day one</span>
               </div>
               <div className="mt-6 rounded-2xl border border-border bg-secondary/35 p-4">
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
@@ -198,7 +197,7 @@ export default function FounderReviewPage() {
                 The right starting point when leadership needs signal, not noise
               </h2>
               <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
-                The Founder Review is designed for teams that do not need another
+                The Diagnostic Review is designed for teams that do not need another
                 opinion pile. They need a sharper view of what is actually creating
                 drag across the system.
               </p>
@@ -229,7 +228,7 @@ export default function FounderReviewPage() {
                 <div className="rounded-2xl border border-border bg-background px-4 py-4">
                   <p className="font-medium text-foreground">Outcome Partnership</p>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    Stay engaged when the business needs senior follow-through.
+                    Stay engaged when the business needs steady follow-through.
                   </p>
                 </div>
                 <div className="rounded-2xl border border-border bg-background px-4 py-4">
@@ -349,12 +348,12 @@ export default function FounderReviewPage() {
               </h2>
               <div className="mt-6 space-y-4 leading-relaxed text-muted-foreground">
                 <p>
-                  The Founder Review is built for situations where unclear
+                  The Diagnostic Review is built for situations where unclear
                   decisions are already getting expensive. It is built to produce
                   a real diagnosis.
                 </p>
                 <p>
-                  You get senior judgment from day one, a cleaner view of the system,
+                  You get clear judgment from day one, a cleaner view of the system,
                   and a more honest conversation about what should happen next.
                 </p>
                 <p>

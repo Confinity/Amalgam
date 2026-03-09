@@ -85,7 +85,7 @@ const executionFit = {
   ],
   notYet: [
     "The business still cannot explain what is actually creating the drag.",
-    "The real need is ongoing senior follow-through rather than a time-boxed roadmap effort.",
+    "The real need is ongoing follow-through rather than a time-boxed roadmap effort.",
     "The team wants a planning artifact without doing the system-level work underneath it.",
   ],
 }
@@ -104,7 +104,7 @@ export default function ExecutionSprintPage() {
                 Execution Sprint
               </p>
               <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Turn diagnosis into a roadmap leadership can actually trust
+                Turn a clear diagnosis into an execution plan teams can use
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 The Execution Sprint is for teams that need more than a diagnosis.
@@ -116,7 +116,7 @@ export default function ExecutionSprintPage() {
                   href="/contact?interest=execution-sprint"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 font-medium text-background transition-all hover:opacity-90"
                 >
-                  Start the conversation
+                  Start a conversation
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
@@ -135,14 +135,14 @@ export default function ExecutionSprintPage() {
               </div>
               <div className="mt-4 flex items-center gap-3">
                 <Users className="h-5 w-5 text-teal" />
-                <span className="font-medium text-foreground">Senior team, direct access</span>
+                <span className="font-medium text-foreground">Experienced team, direct access</span>
               </div>
               <div className="mt-6 rounded-2xl border border-border bg-secondary/35 p-4">
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
                   Best use
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  Most teams arrive here after the Founder Review, but it can also
+                  Most teams arrive here after the Diagnostic Review, but it can also
                   stand alone if the diagnosis is already clear and the business now
                   needs sequence.
                 </p>
@@ -278,7 +278,7 @@ export default function ExecutionSprintPage() {
                   href="/contact?interest=execution-sprint"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-background px-6 py-3 font-medium text-foreground transition-opacity hover:opacity-90"
                 >
-                  Start the conversation
+                  Start a conversation
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link

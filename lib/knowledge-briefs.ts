@@ -38,8 +38,8 @@ export const knowledgeCategories = [
   },
   {
     id: "operations",
-    label: "Operations",
-    shortLabel: "Operations",
+    label: "Systems Strategy",
+    shortLabel: "Systems Strategy",
     description:
       "Operating friction, workflow complexity, and the hidden tax that appears when growth outruns coordination.",
   },
@@ -52,15 +52,15 @@ export const knowledgeCategories = [
   },
   {
     id: "execution",
-    label: "Execution",
-    shortLabel: "Execution",
+    label: "Delivery",
+    shortLabel: "Delivery",
     description:
       "Roadmaps, sequencing, and the practical mechanics of turning diagnosis into momentum.",
   },
   {
     id: "org-design",
-    label: "Org Design",
-    shortLabel: "Org Design",
+    label: "Leadership",
+    shortLabel: "Leadership",
     description:
       "Decision rights, ownership, and the way team structure either reinforces or fights the system underneath it.",
   },
@@ -649,7 +649,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
         title: "How decision blur happens",
         paragraphs: [
           "As systems and teams expand, authority becomes easier to imply than define. Product thinks engineering owns the decision. Engineering thinks it needs leadership alignment. Operations assumes the answer depends on downstream constraints. Everyone is being reasonable, but the system has stopped making authority obvious.",
-          "The result is predictable: issues float upward, decisions are delayed, and recurring work keeps returning to senior forums because nobody trusts the boundary.",
+          "The result is predictable: issues float upward, decisions are delayed, and recurring work keeps returning to leadership forums because nobody trusts the boundary.",
         ],
       },
       {
@@ -670,14 +670,14 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
         title: "How to tighten the system",
         paragraphs: [
           "Start with the decisions that recur most often and create the most delay. Document who decides, who is consulted, what inputs are required, and what constitutes enough information to move forward. Then test those boundaries in live work rather than treating them as static policy.",
-          "The real proof is behavioral. If the same question still returns to the same senior meeting every two weeks, the decision right is not actually clear yet.",
+          "The real proof is behavioral. If the same question still returns to the same leadership meeting every two weeks, the decision right is not actually clear yet.",
         ],
       },
       {
         id: "outcome",
         title: "What changes when this is working",
         paragraphs: [
-          "Teams move faster, leaders spend less time arbitrating routine issues, and cross-functional forums focus on the trade-offs that actually deserve senior attention. That is what clearer authority buys: less friction, not more hierarchy.",
+          "Teams move faster, leaders spend less time arbitrating routine issues, and cross-functional forums focus on the trade-offs that actually deserve leadership attention. That is what clearer authority buys: less friction, not more hierarchy.",
         ],
       },
     ],

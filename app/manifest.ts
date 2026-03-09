@@ -8,7 +8,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Amalgam",
     short_name: "Amalgam",
     description:
-      "Senior operators helping teams bring clarity to complex systems and move execution forward.",
+      "Experienced support helping teams bring clarity to complex systems and move execution forward.",
     start_url: withBasePath("/"),
     display: "standalone",
     background_color: "#FCFCFA",

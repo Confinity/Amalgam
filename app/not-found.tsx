@@ -27,8 +27,7 @@ export default function NotFound() {
                 Page not found
               </h1>
               <p className="mx-auto mb-8 max-w-xl text-muted-foreground">
-                The page you&apos;re looking for doesn&apos;t exist or has moved. If you were
-                trying to find a service, case study, or article, these are the most useful places to go next.
+                The page you&apos;re looking for doesn&apos;t exist or has moved. Try one of these pages next.
               </p>
               <div className="flex flex-col justify-center gap-4 sm:flex-row">
                 <Link
@@ -42,7 +41,7 @@ export default function NotFound() {
                   href="/case-studies"
                   className="inline-flex items-center justify-center gap-2 rounded-lg border border-border px-6 py-3 font-medium text-foreground transition-all hover:bg-secondary"
                 >
-                  See Case Studies
+                  See case studies
                 </Link>
               </div>
             </div>

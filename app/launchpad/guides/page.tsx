@@ -34,8 +34,7 @@ export default function LaunchpadGuidesPage() {
               Practical field guidance for leaders trying to act, not just read
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              Knowledge is the editorial library. Launchpad guides are grouped by
-              the situations teams are actively working through.
+              For teams under pressure that need practical guidance grouped by the situation in front of them.
             </p>
           </div>
         </section>

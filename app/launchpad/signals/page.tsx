@@ -10,7 +10,7 @@ import { getLaunchpadSignalArticles } from "@/lib/launchpad"
 export const metadata: Metadata = {
   title: "Launchpad Signals",
   description:
-    "Subscribe for practical signal on systems clarity, execution drag, architecture choices, and operator judgment for founders, executives, and technical leaders.",
+    "Subscribe for practical updates on systems clarity, execution drag, architecture choices, and decision quality for founders, executives, and technical leaders.",
   alternates: {
     canonical: "/launchpad/signals",
   },
@@ -33,9 +33,7 @@ export default function LaunchpadSignalsPage() {
                 Practical signal for leaders navigating systems complexity
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                No generic motivation content. Expect sober notes on delivery
-                drag, architecture judgment, execution friction, and next-step
-                decisions under pressure.
+                For leaders and teams who want useful updates on delivery drag, architecture decisions, and what to do next.
               </p>
             </div>
             <div className="rounded-[30px] border border-border bg-foreground p-8">
@@ -43,7 +41,7 @@ export default function LaunchpadSignalsPage() {
                 Subscribe
               </p>
               <h2 className="mt-4 text-2xl font-semibold text-background">
-                Get practical operator signal
+                Get practical updates
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-background/72">
                 Useful notes on systems clarity, architecture choices, execution
@@ -94,7 +92,7 @@ export default function LaunchpadSignalsPage() {
                 eventData={{ source: "launchpad_signals_page", target: "knowledge" }}
                 className="inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
               >
-                Browse the knowledge base
+                Explore knowledge
                 <ArrowRight className="h-4 w-4" />
               </TrackedLink>
             </div>

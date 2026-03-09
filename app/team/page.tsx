@@ -16,7 +16,7 @@ import { withBasePath } from "@/lib/site-config"
 export const metadata: Metadata = {
   title: "Team",
   description:
-    "Meet the Amalgam team of senior operators across architecture, engineering, delivery, legal, and HR.",
+    "Meet the Amalgam team across architecture, engineering, delivery, legal, and HR.",
   alternates: {
     canonical: "/team",
   },
@@ -26,7 +26,7 @@ const stats = [
   { value: "2012", label: "Founded" },
   { value: String(teamMembers.length), label: "Core team members" },
   { value: "3", label: "Operating groups" },
-  { value: "Senior", label: "Default level of engagement" },
+  { value: "Experienced", label: "Default level of engagement" },
 ]
 
 const practiceAreas = [
@@ -60,13 +60,11 @@ export default function TeamPage() {
                 Our Team
               </span>
               <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Senior operators who know how to move complex systems forward
+                Experienced leaders who help teams move complex work forward
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-                Amalgam is intentionally small and senior. The team spans growth,
-                operations, architecture, engineering, DevOps, agile delivery,
-                legal, and people operations so clients get judgment, execution,
-                and continuity in one room.
+                Amalgam stays intentionally small and experienced. The team spans product,
+                architecture, engineering, delivery, operations, and leadership.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
@@ -150,7 +148,7 @@ export default function TeamPage() {
           return (
             <section
               key={group.id}
-              className={`deferred-section px-6 py-20 ${groupIndex % 2 === 1 ? "bg-secondary/45" : ""}`}
+              className={`deferred-section px-6 py-20 ${groupIndex % 2 === 1 ? "bg-secondary/45" : "section-warm"}`}
             >
               <div className="mx-auto max-w-[1200px]">
                 <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
@@ -235,7 +233,7 @@ export default function TeamPage() {
         <section className="deferred-section border-t border-border bg-foreground px-6 py-20">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-bold text-background md:text-4xl">
-              Need senior operators in the room?
+              Need experienced support in the room?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-background/70">
               Start with a strategy call if your systems are slowing the business
@@ -253,7 +251,7 @@ export default function TeamPage() {
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-lg border border-background/30 px-6 py-3 font-medium text-background transition-colors hover:bg-background/10"
               >
-                Contact Amalgam
+                Start a conversation
               </Link>
             </div>
           </div>

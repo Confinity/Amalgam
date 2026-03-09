@@ -669,16 +669,16 @@ export function HeroDiagnosticPanel() {
           Start here
         </p>
         <h2 className="mt-2 text-[17px] font-semibold text-foreground">
-          Strategy Review Call
+          Free strategy call
         </h2>
         <p className="mt-1 text-[13px] text-muted-foreground">
-          Direct senior read on what is slowing delivery
+          Direct read on what is slowing delivery
         </p>
         <Link
           href="/contact?interest=strategy-session"
           className="mt-4 inline-flex items-center gap-2 text-[13px] font-medium text-teal transition-colors hover:text-foreground"
         >
-          Book the call
+          Book a free strategy call
           <ArrowRight className="h-3.5 w-3.5" />
         </Link>
       </div>

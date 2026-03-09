@@ -155,7 +155,7 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
             onClick={handleStart}
             className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-foreground px-6 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
           >
-            Start assessment
+            Start diagnostic
             <ArrowRight className="h-4 w-4" />
           </button>
         </div>

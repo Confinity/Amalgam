@@ -296,7 +296,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                   Constraints
                 </p>
                 <h2 className="text-2xl font-bold text-foreground">
-                  The conditions that made this work real
+                  The real constraints
                 </h2>
               </div>
               <div className="grid gap-3">
@@ -316,7 +316,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                 <p className="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-teal">
                   Execution
                 </p>
-                <h2 className="text-2xl font-bold text-foreground">How Amalgam approached the work</h2>
+                <h2 className="text-2xl font-bold text-foreground">What we did</h2>
               </div>
               <div className="grid gap-6 md:grid-cols-2">
                 {caseStudy.solution.map((item) => (
@@ -341,7 +341,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                   <p className="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-teal">
                     Results
                   </p>
-                  <h2 className="text-2xl font-bold text-foreground">What changed and why it mattered</h2>
+                  <h2 className="text-2xl font-bold text-foreground">What changed</h2>
                 </div>
                 <div className="rounded-[28px] border border-border bg-secondary/30 p-5">
                   <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
@@ -457,7 +457,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
         <section className="bg-foreground px-6 py-20">
           <div className="mx-auto max-w-[800px] text-center">
             <h2 className="text-3xl font-bold text-background text-balance md:text-4xl">
-              Facing similar challenges?
+              Seeing something similar?
             </h2>
             <p className="mt-4 text-lg text-background/70">
               If the shape of this situation feels familiar, the clearest next step

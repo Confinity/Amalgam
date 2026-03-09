@@ -20,7 +20,7 @@ import { TestimonialStrip } from "@/components/testimonial-strip"
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Amalgam helps business and technical leaders restore momentum through focused diagnosis, sequencing support, and senior follow-through.",
+    "Amalgam helps teams bring order to complex delivery work with clear diagnosis, practical sequencing, and steady follow-through.",
   alternates: {
     canonical: "/services",
   },
@@ -29,10 +29,10 @@ export const metadata: Metadata = {
 const engagements = [
   {
     icon: Compass,
-    title: "Founder Review",
+    title: "Diagnostic Review",
     subtitle: "Clarity in 2 weeks",
     description:
-      "A senior-led diagnostic for teams that know delivery is dragging but need a sharper read on what is actually broken.",
+      "Fast clarity when something is stuck and the cause is still unclear.",
     href: "/founder-review",
     highlights: [
       "Systems and delivery diagnosis",
@@ -45,7 +45,7 @@ const engagements = [
     title: "Execution Sprint",
     subtitle: "Roadmap in 4-6 weeks",
     description:
-      "A focused engagement to map the current state, define constraints, and produce an execution plan leadership can trust.",
+      "Turn a clear diagnosis into an execution plan teams can use.",
     href: "/execution-sprint",
     highlights: [
       "Current-state system mapping",
@@ -58,10 +58,10 @@ const engagements = [
     title: "Outcome Partnership",
     subtitle: "Ongoing momentum",
     description:
-      "Senior follow-through to carry the roadmap forward, unblock execution, and sustain momentum where the work still needs close support.",
+      "Ongoing experienced support to keep momentum real.",
     href: "/outcome-partnership",
     highlights: [
-      "Embedded senior operators",
+      "Embedded experienced support",
       "Execution and decision support",
       "Accountability for follow-through",
     ],
@@ -153,10 +153,10 @@ export default function ServicesPage() {
                 Services
               </p>
               <h1 className="text-4xl font-semibold leading-tight tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Senior help for systems, decisions, and delivery friction
+                Practical support for complex delivery challenges
               </h1>
               <p className="mt-6 max-w-[32ch] text-lg leading-relaxed text-muted-foreground">
-                We help leaders bring order to complex systems, recover momentum, and move with a plan they can trust.
+                We help teams bring order to complex systems work, delivery pressure, and decisions that need to move.
               </p>
               <p className="mt-5 max-w-[34ch] text-sm font-medium leading-relaxed text-foreground/72">
                 Best when the drag is visible but the root cause is still unclear.
@@ -173,14 +173,14 @@ export default function ServicesPage() {
                   href="/case-studies"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-border px-6 py-3 font-medium text-foreground transition-all hover:bg-secondary"
                 >
-                  See Case Studies
+                  See case studies
                 </Link>
               </div>
               <Link
                 href="/launchpad"
                 className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
               >
-                Prefer tools and diagnostics first? Explore Launchpad
+                Prefer tools first? Explore diagnostics
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -208,14 +208,13 @@ export default function ServicesPage() {
                 ))}
               </div>
               <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-                Most teams start with a focused diagnostic, then go deeper only
-                when the path is clear enough to sequence with confidence.
+                Most work starts with a clearer read on the problem before it turns into broader support.
               </p>
             </div>
           </div>
         </section>
 
-        <section className="deferred-section py-20 lg:py-24">
+        <section className="deferred-section section-warm py-20 lg:py-24">
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="mb-12 grid gap-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1fr)] lg:items-end">
               <div className="max-w-3xl">
@@ -223,13 +222,12 @@ export default function ServicesPage() {
                   Where We Step In
                 </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Where senior systems judgment creates leverage quickly
+                Where systems judgment creates leverage quickly
               </h2>
               </div>
               <p className="max-w-[52ch] leading-relaxed text-muted-foreground lg:justify-self-end">
-                We are most useful when the business is no longer dealing with a
-                clean technical problem. The drag now sits across architecture,
-                tooling, data, operating rhythm, and decision-making.
+                We are most useful when the drag sits across architecture,
+                tooling, data, operating rhythm, and decisions.
               </p>
             </div>
             <div className="mb-8 flex flex-wrap gap-3">
@@ -280,12 +278,12 @@ export default function ServicesPage() {
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="mb-12 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
               <div className="max-w-3xl">
-                <p className="mb-4 text-sm font-medium uppercase tracking-widest text-teal">
-                  Offer Ladder
-                </p>
-                <h2 className="text-3xl font-semibold text-foreground text-balance">
-                  Three ways to engage, ordered from clarity to sustained execution
-                </h2>
+              <p className="mb-4 text-sm font-medium uppercase tracking-widest text-teal">
+                Ways to work with us
+              </p>
+              <h2 className="text-3xl font-semibold text-foreground text-balance">
+                Three ways to work together
+              </h2>
               </div>
               <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
                 These offers are intentionally ordered around how real situations become clear, then move. Clarity first. Sequencing next. Ongoing support only when it adds leverage.
@@ -391,21 +389,21 @@ export default function ServicesPage() {
           compact
         />
 
-        <section className="deferred-section py-24 lg:py-28">
+        <section className="deferred-section section-warm py-24 lg:py-28">
           <div className="mx-auto grid max-w-[1200px] gap-10 px-6 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-start">
             <div className="max-w-3xl">
               <p className="mb-4 text-sm font-medium uppercase tracking-widest text-teal">
                 Why Amalgam
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Built for teams that need calm, senior help instead of advisory theater
+                Built for teams that want practical help, not consultant overhead
               </h2>
               <div className="mt-6 max-w-[48ch] space-y-4 leading-relaxed text-muted-foreground">
                 <p>
-                  We are not trying to be a giant transformation firm. We are a small senior team built for situations where the business needs clarity, sharper sequencing, and direct follow-through.
+                  We are a small experienced team built for situations where the business needs clarity, sequencing, and direct follow-through.
                 </p>
                 <p>
-                  That is why the offers are simple. Diagnose first. Plan honestly. Stay involved only when it creates real leverage.
+                  That is why the offers are simple: diagnose first, sequence next, stay involved only when it adds leverage.
                 </p>
               </div>
             </div>
@@ -414,7 +412,7 @@ export default function ServicesPage() {
                 Best next step
               </p>
               <h3 className="mt-4 text-2xl font-semibold text-background">
-                Best next move
+                Start with a free strategy call
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-background/72">
                 If something is slowing the business down and the root cause is
@@ -432,7 +430,7 @@ export default function ServicesPage() {
                   href="/founder-review"
                   className="inline-flex min-h-11 items-center justify-center rounded-xl border border-background/15 px-6 py-3 font-medium text-background transition-colors hover:bg-background/10"
                 >
-                  See the diagnostic option
+                  See how the diagnostic works
                 </Link>
               </div>
             </div>

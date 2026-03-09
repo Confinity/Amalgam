@@ -17,7 +17,7 @@ import {
 export const metadata: Metadata = {
   title: "Launchpad",
   description:
-    "Practical diagnostics, tools, and field guides for leaders navigating delivery drag, systems complexity, and next-step decisions.",
+    "Tools and guidance for teams dealing with delivery drag, systems complexity, and next-step decisions.",
   alternates: {
     canonical: "/launchpad",
   },
@@ -41,10 +41,10 @@ export default function LaunchpadPage() {
                 Launchpad
               </p>
               <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Practical tools, diagnostics, and next steps for leaders and teams
+                Tools and guidance for teams dealing with delivery drag
               </h1>
               <p className="mt-6 max-w-[34ch] text-lg leading-relaxed text-muted-foreground">
-                Launchpad is a practical place to self-locate, test what is causing drag, and choose the next move before committing to deeper work.
+                A practical place to self-locate, test what is causing drag, and choose the next move.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <TrackedLink
@@ -66,7 +66,7 @@ export default function LaunchpadPage() {
                 </TrackedLink>
               </div>
               <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-                Best for leaders and operators who want structured signal before deeper work begins.
+                Best for leaders and teams who want structured signal before deeper work begins.
               </p>
             </div>
 
@@ -83,14 +83,14 @@ export default function LaunchpadPage() {
           </div>
         </section>
 
-        <section className="deferred-section py-20 lg:py-24">
+        <section className="deferred-section section-warm py-20 lg:py-24">
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="mb-12 max-w-3xl">
               <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
                 Choose your path
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Start where the situation feels most true right now
+                Pick the path that matches your situation
               </h2>
               <p className="mt-4 leading-relaxed text-muted-foreground">
                 These are decision routes into the right tool, guide set, program,
@@ -125,7 +125,7 @@ export default function LaunchpadPage() {
                   Featured tools
                 </p>
                 <h2 className="text-3xl font-semibold text-foreground text-balance">
-                  Tool-shaped ways to pressure-test the situation before you commit
+                  Use these tools to pressure-test the situation before committing
                 </h2>
               </div>
               <TrackedLink
@@ -177,7 +177,7 @@ export default function LaunchpadPage() {
                     eventData={{ source: "launchpad_featured_tools", target: tool.id }}
                     className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
                   >
-                    Start tool
+                    Start diagnostic
                     <ArrowRight className="h-4 w-4" />
                   </TrackedLink>
                 </div>
@@ -186,7 +186,7 @@ export default function LaunchpadPage() {
           </div>
         </section>
 
-        <section className="deferred-section py-20 lg:py-24">
+        <section className="deferred-section section-warm py-20 lg:py-24">
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="mb-12 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
               <div className="max-w-3xl">
@@ -341,7 +341,7 @@ export default function LaunchpadPage() {
                 Signals
               </p>
               <h2 className="mt-4 text-3xl font-semibold text-foreground text-balance">
-                Practical signal for leaders and operators carrying systems complexity
+                Practical signal for leaders and teams carrying systems complexity
               </h2>
               <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
                 Signal is for practical notes on delivery drag, architecture
@@ -410,13 +410,13 @@ export default function LaunchpadPage() {
         <section className="deferred-section bg-foreground py-20 lg:py-24">
           <div className="mx-auto max-w-[900px] px-6 text-center">
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
-              Best next move
+              Best next step
             </p>
               <h2 className="text-3xl font-semibold text-background text-balance md:text-4xl">
                 Launchpad helps you get clear quickly. If deeper help is needed, start with a strategy call.
               </h2>
             <p className="mx-auto mt-4 max-w-2xl text-background/72">
-              Use the tools and guides first. If the problem still needs senior
+              Use the tools and guides first. If the problem still needs experienced
               diagnosis, we will point you to the right engagement.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">

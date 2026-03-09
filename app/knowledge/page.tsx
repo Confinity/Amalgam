@@ -56,7 +56,7 @@ const readingPaths = [
 ]
 
 function getCategoryHref(categoryId?: string) {
-  return categoryId ? `/knowledge#${categoryId}` : "/knowledge"
+  return categoryId ? `/knowledge?category=${categoryId}` : "/knowledge"
 }
 
 export default function KnowledgePage() {
@@ -96,13 +96,13 @@ export default function KnowledgePage() {
                   Knowledge Base
                 </span>
                 <span className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                  Field notes for teams doing hard systems work
+                  Notes and perspectives on architecture, systems, delivery, and leadership
                 </span>
               </div>
               <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Clear thinking for leaders{" "}
+                Practical reads for teams{" "}
                 <span className="bg-gradient-to-r from-teal via-teal to-purple bg-clip-text text-transparent">
-                  operating inside complex systems
+                  under delivery pressure
                 </span>
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
@@ -114,7 +114,7 @@ export default function KnowledgePage() {
                   href={featuredCandidates[0] ? `/knowledge/${featuredCandidates[0].slug}` : "/knowledge"}
                   className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-foreground px-6 py-3 font-medium text-background transition-opacity hover:opacity-90"
                 >
-                  Read featured perspective
+                  Start with a featured article
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
@@ -128,7 +128,7 @@ export default function KnowledgePage() {
                 href="/launchpad"
                 className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
               >
-                Prefer structured diagnostics and tools? Explore Launchpad
+                Prefer structured diagnostics and tools? Explore diagnostics
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <div className="mt-10 flex flex-wrap gap-3">
@@ -158,9 +158,12 @@ export default function KnowledgePage() {
                 <span>Browse by area</span>
               </div>
               <div className="flex flex-wrap gap-3">
-                <span className="rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background">
+                <Link
+                  href="/knowledge"
+                  className="rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background"
+                >
                   All articles
-                </span>
+                </Link>
                 {knowledgeCategories.map((category) => {
                   const count = knowledgeBriefs.filter(
                     (brief) => brief.category === category.id
@@ -228,7 +231,7 @@ export default function KnowledgePage() {
                   Library overview
                 </p>
                 <h2 className="mt-3 text-3xl font-semibold text-foreground text-balance">
-                  A library organized around real pressure points
+                  A library organized by real pressure points
                 </h2>
                 <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">
                   Start with the area that feels most constrained, then follow
@@ -255,7 +258,7 @@ export default function KnowledgePage() {
                   <div>
                     <p className="text-sm font-medium text-foreground">Built by area</p>
                     <p className="text-sm text-muted-foreground">
-                      Architecture, operations, data, execution, and org design
+                      Architecture, systems strategy, data, delivery, and leadership
                     </p>
                   </div>
                 </div>
@@ -393,7 +396,7 @@ export default function KnowledgePage() {
           <div className="mx-auto grid max-w-[1200px] gap-8 rounded-[32px] border border-border bg-foreground px-8 py-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
               <h2 className="text-3xl font-semibold text-background text-balance">
-                Need these ideas applied to your actual system?
+                Need help applying this to your situation?
               </h2>
               <p className="mt-4 max-w-2xl text-background/70">
                 If you want a direct read on your own situation, start with a free strategy call.

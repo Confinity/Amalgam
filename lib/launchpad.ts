@@ -106,7 +106,7 @@ export const launchpadPaths: LaunchpadPathCard[] = [
   {
     title: "I need follow-through",
     description:
-      "The direction exists, but momentum still needs senior judgment close enough to protect the work.",
+      "The direction exists, but momentum still needs experienced judgment close enough to protect the work.",
     href: "/launchpad/programs",
     nextStep: "Best next step: Outcome Partnership path",
   },
@@ -129,9 +129,9 @@ export const launchpadPaths: LaunchpadPathCard[] = [
 export const launchpadPrograms: LaunchpadProgramCard[] = [
   {
     id: "founder-review",
-    title: "Founder Review",
+    title: "Diagnostic Review",
     description:
-      "A senior-led diagnostic for situations where the drag is real but the system is still too fuzzy to sequence honestly.",
+      "A focused diagnostic for situations where the drag is real but the system is still too fuzzy to sequence honestly.",
     whenItsRight:
       "Best when architecture, workflow, integrations, and operating friction are all colliding at once.",
     href: "/founder-review",
@@ -152,7 +152,7 @@ export const launchpadPrograms: LaunchpadProgramCard[] = [
     id: "outcome-partnership",
     title: "Outcome Partnership",
     description:
-      "Senior follow-through for situations where the path is real, but execution still needs close support to protect momentum.",
+      "Steady follow-through for situations where the path is real, but execution still needs close support to protect momentum.",
     whenItsRight:
       "Best when clarity exists and the business needs continuity, unblockers, and direct decision support over time.",
     href: "/outcome-partnership",
@@ -249,7 +249,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
     description:
       "Pressure-test whether shipping slowdowns are really coming from architecture complexity, coordination overhead, data visibility, or sequencing drag.",
     audience:
-      "For leaders and operators who know delivery is slower than it should be, but still need a sharper read on why.",
+      "For leaders and teams who know delivery is slower than it should be, but still need a sharper read on why.",
     estimatedTime: "4-5 minutes",
     outputLabel: "Likely drag profile",
     completionLabel: "You now have a first-pass read on the likely shape of the drag.",
@@ -302,7 +302,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         nextStep: {
           label: "Book a free strategy call",
           href: "/contact?interest=founder-review",
-          note: "The operating model likely needs a senior read before planning continues.",
+          note: "The operating model likely needs a direct read before planning continues.",
         },
         relatedGuideSlugs: [
           "operating-rhythm-after-growth",
@@ -479,7 +479,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         options: [
           {
             id: "diagnosis",
-            label: "A senior read on what is actually creating the drag.",
+            label: "A direct read on what is actually creating the drag.",
             description: "The situation still needs diagnosis more than planning.",
             weights: {
               "structural-delivery-drag": 2,
@@ -518,7 +518,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
     description:
       "Assess whether the company is genuinely ready for meaningful AI usage or still needs better workflows, ownership, and system foundations first.",
     audience:
-      "For leaders and operators who want a sober read on whether AI will create leverage or simply amplify fragmentation.",
+      "For leaders and teams who want a sober read on whether AI will create leverage or simply amplify fragmentation.",
     estimatedTime: "4 minutes",
     outputLabel: "Current readiness posture",
     completionLabel:
@@ -784,7 +784,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
     description:
       "Get a credible first-pass view of whether the stack is coherent, fragmented, overgrown, risky, or simply under-documented for the current stage.",
     audience:
-      "For leaders and operators who can feel technical drag, integration burden, or platform risk but need a sharper read on the system posture first.",
+      "For leaders and teams who can feel technical drag, integration burden, or platform risk but need a sharper read on the system posture first.",
     estimatedTime: "5 minutes",
     outputLabel: "Likely stack posture",
     completionLabel:
@@ -838,7 +838,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         nextStep: {
           label: "Book a free strategy call",
           href: "/contact?interest=founder-review",
-          note: "A senior read can clarify which risks actually matter before the business overreacts.",
+          note: "A direct read can clarify which risks actually matter before the business overreacts.",
         },
         relatedGuideSlugs: [
           "modernize-vs-rebuild",
@@ -1033,7 +1033,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
           },
           {
             id: "validate-risk",
-            label: "A senior read on whether the current posture is risky or just messy.",
+            label: "A direct read on whether the current posture is risky or just messy.",
             description: "The business needs judgment more than a generic stack cleanup list.",
             weights: { "scaling-with-risk": 3, "fragmented-and-fragile": 1 },
           },

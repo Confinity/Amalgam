@@ -184,7 +184,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
 
               <div className="rounded-[28px] border border-border bg-background/95 p-6 shadow-sm">
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                  Article summary
+                  Quick summary
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   {brief.summary}
@@ -243,7 +243,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                   {section.bullets ? (
                     <div className="mt-7 border-t border-border pt-7">
                       <p className="mb-4 text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
-                        What to hold onto
+                        Key takeaways
                       </p>
                       <ul className="space-y-3">
                         {section.bullets.map((bullet) => (
@@ -394,7 +394,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                     href={`/launchpad/${recommendedTool.slug}`}
                     className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
                   >
-                    Start the diagnostic
+                    Explore diagnostics
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
@@ -416,7 +416,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
 
               <div className="rounded-[28px] border border-border bg-foreground p-6">
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                  Need a direct read?
+                  Need help with your specific situation?
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-background/75">
                   Articles sharpen judgment. They do not replace a real read on
@@ -434,7 +434,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                     href="/founder-review"
                     className="inline-flex min-h-11 items-center justify-center rounded-xl border border-background/15 px-4 py-3 text-sm font-medium text-background transition-colors hover:bg-background/10"
                   >
-                    See diagnostic option
+                    See how the diagnostic works
                   </Link>
                 </div>
               </div>

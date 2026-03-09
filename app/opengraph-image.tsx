@@ -97,7 +97,7 @@ export default function OpenGraphImage() {
               <span style={{ color: "#6a5cff" }}>{" Faster execution."}</span>
             </div>
             <div style={{ fontSize: 30, lineHeight: 1.35, color: "#4b5563", maxWidth: 900 }}>
-              Senior operators helping founders, executives, and technical leaders move through architecture,
+              Experienced support helping founders, executives, and technical leaders move through architecture,
               data, integrations, and delivery friction.
             </div>
           </div>
@@ -111,7 +111,7 @@ export default function OpenGraphImage() {
             }}
           >
             <div>Founded 2012</div>
-            <div>Senior operators</div>
+            <div>Experienced support</div>
             <div>Complex systems expertise</div>
           </div>
         </div>

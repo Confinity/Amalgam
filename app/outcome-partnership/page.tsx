@@ -16,7 +16,7 @@ import { Navigation } from "@/components/navigation"
 export const metadata: Metadata = {
   title: "Outcome Partnership",
   description:
-    "Senior support to carry the roadmap forward, unblock execution, and sustain delivery momentum over time.",
+    "Experienced support to carry the roadmap forward, unblock execution, and sustain delivery momentum over time.",
   alternates: {
     canonical: "/outcome-partnership",
   },
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 const whatWeProvide = [
   {
     icon: Users,
-    title: "Senior operators in the work",
+    title: "Experienced support in the work",
     description:
       "People who can make sense of the situation quickly and contribute real judgment instead of adding overhead.",
   },
@@ -52,7 +52,7 @@ const whatWeProvide = [
 const whatThisLooksLike = [
   "Working alongside your team during planning, execution, and review cycles",
   "Supporting architecture and sequencing decisions as the roadmap meets reality",
-  "Helping leadership and operators stay aligned when cross-functional friction rises",
+  "Helping leadership and teams stay aligned when cross-functional friction rises",
   "Keeping delivery moving while building internal clarity rather than dependence on outside help",
 ]
 
@@ -65,13 +65,13 @@ const notThis = [
 
 const partnershipFit = {
   right: [
-    "The roadmap exists, but execution pressure is likely to distort it without senior support.",
+    "The roadmap exists, but execution pressure is likely to distort it without close support.",
     "Leadership wants judgment close to the work while priorities, constraints, and trade-offs keep shifting.",
     "The team needs help preserving momentum and cross-functional alignment, not just planning the work once.",
   ],
   notYet: [
     "The root problem is still too fuzzy and needs diagnosis first.",
-    "The business mainly needs a time-boxed roadmap rather than ongoing senior involvement.",
+    "The business mainly needs a time-boxed roadmap rather than ongoing involvement.",
     "The actual ask is generic staff augmentation without accountability for the shape of the work.",
   ],
 }
@@ -90,11 +90,11 @@ export default function OutcomePartnershipPage() {
                 Outcome Partnership
               </p>
               <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Senior follow-through for teams that need momentum sustained, not just planned
+                Ongoing experienced support to keep momentum real
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 The Outcome Partnership carries the roadmap into execution. It is for
-                teams that need senior operators in the room as work meets reality,
+                teams that need direct support in the room as work meets reality,
                 priorities shift, and important decisions cannot drift.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -102,7 +102,7 @@ export default function OutcomePartnershipPage() {
                   href="/contact?interest=outcome-partnership"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 font-medium text-background transition-all hover:opacity-90"
                 >
-                  Start the conversation
+                  Start a conversation
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
@@ -122,7 +122,7 @@ export default function OutcomePartnershipPage() {
                 <div className="rounded-2xl border border-border bg-secondary/35 px-4 py-4">
                   <p className="font-medium text-foreground">After diagnosis</p>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    Most teams reach this point after the Founder Review or Execution Sprint.
+                    Most teams reach this point after the Diagnostic Review or Execution Sprint.
                   </p>
                 </div>
                 <div className="rounded-2xl border border-border bg-secondary/35 px-4 py-4">
@@ -149,7 +149,7 @@ export default function OutcomePartnershipPage() {
                 What We Provide
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Senior support tied to real execution, not ornamental advisory work
+                Experienced support tied to real execution, not ornamental advisory work
               </h2>
             </div>
             <div className="grid gap-6 md:grid-cols-2">
@@ -193,7 +193,7 @@ export default function OutcomePartnershipPage() {
                 What It Is Not
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                The line between useful partnership and expensive noise
+                What this is not
               </h2>
               <div className="mt-6 space-y-3">
                 {notThis.map((item) => (
@@ -273,7 +273,7 @@ export default function OutcomePartnershipPage() {
                   and real-world complexity start pulling them apart.
                 </p>
                 <p>
-                  The Outcome Partnership exists for that stage. It keeps senior
+                  The Outcome Partnership exists for that stage. It keeps experienced
                   judgment close to the work so the roadmap remains usable under
                   pressure instead of becoming shelfware.
                 </p>
@@ -286,7 +286,7 @@ export default function OutcomePartnershipPage() {
             <div className="rounded-[30px] border border-border bg-foreground p-8">
               <Shield className="h-6 w-6 text-teal" />
               <h3 className="mt-4 text-2xl font-semibold text-background">
-                Need senior support during execution?
+                Need experienced support during execution?
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-background/70">
                 If the business already has direction but the work still needs
@@ -297,7 +297,7 @@ export default function OutcomePartnershipPage() {
                   href="/contact?interest=outcome-partnership"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-background px-6 py-3 font-medium text-foreground transition-opacity hover:opacity-90"
                 >
-                  Start the conversation
+                  Start a conversation
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link

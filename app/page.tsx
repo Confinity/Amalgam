@@ -25,7 +25,7 @@ import { knowledgeBriefs, knowledgeCategories } from "@/lib/knowledge-briefs"
 export const metadata: Metadata = {
   title: "Complex systems. Clearer decisions. Faster execution.",
   description:
-    "Amalgam helps founders, executives, and technical leaders bring clarity to complex systems and restore delivery momentum.",
+    "Amalgam helps teams bring clarity to complex systems and move delivery forward with confidence.",
   alternates: {
     canonical: "/",
   },
@@ -41,19 +41,16 @@ function Hero() {
         <div className="hero-layout">
           <div className="max-w-3xl">
             <p className="mb-5 text-sm font-medium uppercase tracking-[0.22em] text-teal">
-              Senior support for high-friction delivery moments
+              For teams under delivery pressure
             </p>
             <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight text-foreground text-balance sm:text-5xl lg:text-[58px]">
-              Complex systems.{" "}
+              When delivery gets messy,{" "}
               <span className="bg-gradient-to-r from-teal to-purple bg-clip-text text-transparent">
-                Clearer decisions. Faster execution.
+                we help you get moving again.
               </span>
             </h1>
             <p className="hero-body mt-6 text-lg leading-relaxed text-muted-foreground">
-              When delivery slows, we help you see what is causing it and what to do next.
-            </p>
-            <p className="hero-fit-line mt-5">
-              For teams carrying architecture, data, integration, and delivery pressure at once.
+              For teams dealing with architecture, data, integrations, and delivery pressure at the same time.
             </p>
             <div className="hero-cta-row mt-3">
               <Link
@@ -75,13 +72,12 @@ function Hero() {
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[14px] text-muted-foreground">
                 <span>Founded 2012</span>
                 <span className="h-1 w-1 rounded-full bg-border" />
-                <span>Small senior team</span>
+                <span>Small experienced team</span>
                 <span className="h-1 w-1 rounded-full bg-border" />
                 <span>Deep systems experience</span>
               </div>
               <p className="mt-3 text-[13px] leading-relaxed text-muted-foreground/90">
-                You get direct senior attention, clear thinking, and practical
-                next steps.
+                You get direct support, clear thinking, and practical next steps.
               </p>
             </div>
           </div>
@@ -99,40 +95,38 @@ function WhatWeDo() {
   const outcomes = [
     {
       icon: Compass,
-      title: "Get a clean read",
-      description: "Find what is actually slowing delivery and where risk is building.",
+      title: "Get a clear read",
+      description: "See what is actually slowing the work down before more time gets burned.",
     },
     {
       icon: Layers,
-      title: "Stabilize the system",
-      description:
-        "Reduce architecture and integration friction so teams can move with less noise.",
+      title: "Steady the system",
+      description: "Find the weak points in the system before they create more drag.",
     },
     {
       icon: Zap,
-      title: "Recover momentum",
-      description: "Turn stuck work into a practical sequence leadership can trust.",
+      title: "Remove momentum blockers",
+      description: "Spot what keeps slowing delivery, decisions, and handoffs.",
     },
     {
       icon: Target,
-      title: "Support follow-through",
-      description:
-        "Stay close through execution when decisions need senior judgment in real time.",
+      title: "Support leaders through uncertainty",
+      description: "Give leaders something solid to work from when the picture is messy.",
     },
   ]
 
   return (
-    <section className="homepage-core-offer-section border-t border-border py-20 lg:py-24">
+    <section className="homepage-core-offer-section section-warm border-t border-border py-20 lg:py-24">
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="mb-12 max-w-3xl">
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
             What Amalgam does
           </p>
           <h2 className="mb-4 text-3xl font-semibold text-foreground">
-            Senior help for systems, decisions, and execution
+            Experienced help for systems, decisions, and execution
           </h2>
           <p className="max-w-2xl leading-relaxed text-muted-foreground">
-            We work at the system level so teams stop guessing and start moving.
+            We work with teams that need clearer judgment, better structure, and steadier forward motion.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -169,14 +163,14 @@ function WhoWeHelp() {
               </h3>
             </div>
             <p className="mb-5 text-muted-foreground">
-              When growth increases complexity and delivery starts slowing down.
+              When growth adds complexity and delivery starts slowing down.
             </p>
             <ul className="space-y-3">
               {[
-                "Shipping slowed after growth or a raise",
-                "Execution feels noisier than it should",
-                "Teams are working hard but outcomes slip",
-                "Roadmap confidence keeps dropping",
+                "Shipping slows after growth",
+                "The stack is getting harder to trust",
+                "Decisions are blocked by technical ambiguity",
+                "Too many tools, not enough clarity",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-teal" />
@@ -192,7 +186,7 @@ function WhoWeHelp() {
                 <Shield className="h-5 w-5 text-teal" />
               </div>
               <h3 className="text-xl font-semibold text-foreground">
-                Technical and product operators
+                Technical and product leaders
               </h3>
             </div>
             <p className="mb-5 text-muted-foreground">
@@ -200,10 +194,10 @@ function WhoWeHelp() {
             </p>
             <ul className="space-y-3">
               {[
-                "Hidden integration cost keeps growing",
-                "Ownership is split across too many teams",
-                "Important decisions are blocked by ambiguity",
-                "Execution depends on too few people",
+                "Architecture has become fragile",
+                "Data no longer feels reliable",
+                "Integration work keeps expanding",
+                "Teams spend too much time verifying work",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-teal" />
@@ -264,13 +258,13 @@ function TypicalTriggers() {
               When teams usually reach out
             </h2>
             <p className="leading-relaxed text-muted-foreground">
-              These patterns show up before most teams call us. Each one links to a practical article so you can pressure-test the situation first.
+              Teams usually come to us when delivery slows down and the root cause is no longer obvious.
             </p>
             <Link
               href="/contact?interest=strategy-session"
               className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
             >
-              Talk to us
+              Start a conversation
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -298,28 +292,28 @@ function Offers() {
       title: "Free strategy call",
       subtitle: "60 minutes",
       description:
-        "A direct call to review what is happening and decide the right next move.",
+        "A short strategy call to help you see what is slowing things down and where to move first.",
       points: [
-        "Senior second set of eyes",
+        "Experienced second set of eyes",
         "Fast fit check",
         "Clear recommendation",
       ],
       href: "/contact?interest=strategy-session",
-      ctaLabel: "Book the call",
+      ctaLabel: "Book a free strategy call",
       primary: true,
     },
     {
-      title: "Focused delivery support",
+      title: "Deeper support when you need it",
       subtitle: "Paid engagements",
       description:
-        "When the work needs deeper diagnosis, sequencing, or follow-through, we move into the right engagement model.",
+        "When the issue is clearer and you need help moving it forward.",
       points: [
         "Diagnostic review for root-cause clarity",
         "Execution Sprint for sequencing",
         "Outcome Partnership for follow-through",
       ],
       href: "/services",
-      ctaLabel: "See service options",
+      ctaLabel: "See how we can help",
       primary: false,
     },
   ]
@@ -328,7 +322,7 @@ function Offers() {
     <section className="homepage-offers-section deferred-section border-y border-border bg-secondary/45 py-20 lg:py-24">
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="mb-10 max-w-3xl">
-          <h2 className="mb-4 text-2xl font-semibold text-foreground">Start simple</h2>
+          <h2 className="mb-4 text-2xl font-semibold text-foreground">Start here</h2>
           <p className="text-muted-foreground">
             One clear first step, then deeper support only when it adds real value.
           </p>
@@ -394,7 +388,7 @@ function FeaturedCaseStudies() {
   const featured = caseStudies.filter((cs) => cs.featured)
 
   return (
-    <section className="homepage-case-studies-section deferred-section border-t border-border py-20 lg:py-24">
+    <section className="homepage-case-studies-section deferred-section section-warm border-t border-border py-20 lg:py-24">
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="mb-12 flex items-end justify-between">
           <div>
@@ -402,17 +396,17 @@ function FeaturedCaseStudies() {
               Case studies
             </p>
             <h2 className="mb-2 text-3xl font-semibold text-foreground">
-              Real situations. Real constraints. Real outcomes.
+              Work we can stand behind
             </h2>
             <p className="text-muted-foreground">
-              Featured examples rotate on each load.
+              A few examples of how we&apos;ve helped in real operating conditions.
             </p>
           </div>
           <Link
             href="/case-studies"
             className="hidden items-center gap-2 text-sm font-medium text-foreground transition-colors hover:text-teal sm:inline-flex"
           >
-            View all case studies
+            See case studies
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -424,7 +418,7 @@ function FeaturedCaseStudies() {
             href="/case-studies"
             className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors hover:text-teal"
           >
-            View all case studies
+            See case studies
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -445,18 +439,17 @@ function KnowledgePreview() {
               Knowledge
             </p>
             <h2 className="mb-2 text-3xl font-semibold text-foreground">
-              Practical thinking for messy systems work
+              Practical thinking for work under pressure
             </h2>
             <p className="max-w-xl text-muted-foreground">
-              Clear, field-tested articles on execution drag, architecture choices,
-              and decision quality.
+              Notes on architecture, delivery, data, and decisions when the work starts getting messy.
             </p>
           </div>
           <Link
             href="/knowledge"
             className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-border px-6 py-3 font-medium text-foreground transition-all hover:bg-background"
           >
-            Browse knowledge
+            Explore knowledge
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -505,16 +498,16 @@ function FinalCTA() {
             Next step
           </p>
           <h2 className="mb-4 text-3xl font-semibold text-background text-balance">
-            Get a senior read on what is slowing delivery
+            Get a clear read on what&apos;s slowing delivery
           </h2>
           <p className="max-w-2xl text-background/70">
-            Start with a free strategy call. If deeper help is needed, we will recommend the right path.
+            Start with a free strategy call. We&apos;ll help you figure out what is stuck and where to move first.
           </p>
         </div>
         <div className="homepage-final-cta-panel rounded-[24px] border border-background/12 bg-background/[0.04] p-6">
           <div className="space-y-3">
             {[
-              "Direct conversation with a senior operator",
+              "Direct conversation with an experienced leader",
               "Clear recommendation on what to do next",
             ].map((item) => (
               <div
@@ -538,7 +531,7 @@ function FinalCTA() {
               href="/services"
               className="inline-flex items-center justify-center gap-2 rounded-lg border border-background/30 px-6 py-3 font-medium text-background transition-all hover:bg-background/10"
             >
-              Explore services
+              See how we can help
             </Link>
           </div>
         </div>

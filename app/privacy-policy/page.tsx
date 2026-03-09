@@ -14,7 +14,7 @@ export default function PrivacyPolicyPage() {
   return (
     <LegalPageShell
       title="Privacy Policy"
-      description="This policy explains how Amalgam collects, uses, and protects personal information shared through our website and during early-stage conversations about our services."
+      description="This policy explains how Amalgam collects, uses, and protects personal information shared through our website and service conversations."
       lastUpdated="March 9, 2026"
     >
       <section className="space-y-4">

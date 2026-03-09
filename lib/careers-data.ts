@@ -42,9 +42,9 @@ export const careerRoles: CareerRole[] = [
     ],
   },
   {
-    id: "senior-ux-ui-designer",
+    id: "ux-ui-designer",
     team: "Design",
-    title: "Senior UX/UI Designer (Remote)",
+    title: "UX/UI Designer (Remote)",
     location: "Remote",
     employmentType: "Full-time",
     compensationRange: "$80,000-$120,000",

@@ -14,7 +14,7 @@ export default function CookiePolicyPage() {
   return (
     <LegalPageShell
       title="Cookie Policy"
-      description="This page explains what cookies are, how they may be used on the Amalgam website, and what choices visitors have through their browser settings."
+      description="This page explains what cookies are, how we use them on the Amalgam website, and what choices visitors have through browser settings."
       lastUpdated="March 9, 2026"
     >
       <section className="space-y-4">
@@ -27,7 +27,7 @@ export default function CookiePolicyPage() {
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-2xl font-semibold text-foreground">How Cookies May Be Used</h2>
+        <h2 className="text-2xl font-semibold text-foreground">How We Use Cookies</h2>
         <div className="space-y-3">
           <div className="rounded-[24px] border border-border bg-secondary/25 p-5">
             <p className="font-medium text-foreground">Essential cookies</p>

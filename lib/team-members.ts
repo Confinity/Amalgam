@@ -19,23 +19,23 @@ export const teamGroups = [
   {
     id: "leadership",
     eyebrow: "Leadership",
-    title: "Client leadership, growth, operations, and stewardship",
+    title: "Leadership, growth, and operations",
     description:
-      "The people setting direction, shaping engagements, and keeping the business side of complex delivery disciplined.",
+      "The team setting direction, shaping engagements, and keeping delivery tied to business outcomes.",
   },
   {
     id: "architecture",
     eyebrow: "Architecture & Engineering",
-    title: "Deep technical operators across systems, platforms, and delivery",
+    title: "Technical architecture and engineering",
     description:
-      "Senior architects and builders with hands-on experience in enterprise systems, cloud platforms, data, and shipping under real constraints.",
+      "Hands-on architects and builders working across systems, platforms, data, and real-world delivery constraints.",
   },
   {
     id: "delivery",
     eyebrow: "Delivery & People",
     title: "Execution, cadence, and team effectiveness",
     description:
-      "Operators focused on agile delivery, recruiting, team health, and making sure strong plans become sustainable execution.",
+      "Leaders focused on cadence, hiring, and team effectiveness so strong plans become reliable execution.",
   },
 ] as const satisfies ReadonlyArray<{
   id: TeamGroupId
@@ -95,7 +95,7 @@ export const teamMembers: TeamMember[] = [
     shortBio:
       "20+ years building cloud-compliant applications using open-source and emerging technologies across finance, retail, telecom, CPG, and pharma.",
     bio:
-      "Naren is a senior technical leader with deep experience building cloud-based applications using open-source technologies. He has spent more than 20 years creating enterprise products across finance, retail, telecom, CPG, and pharma.",
+      "Naren is an experienced technical leader with deep experience building cloud-based applications using open-source technologies. He has spent more than 20 years creating enterprise products across finance, retail, telecom, CPG, and pharma.",
     specialties: ["Cloud Architecture", "Open Source", "Enterprise Applications"],
     funFact: "Loves to play badminton.",
     image: "/team/naren.webp",

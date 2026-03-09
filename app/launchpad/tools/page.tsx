@@ -28,11 +28,10 @@ export default function LaunchpadToolsPage() {
               Launchpad Tools
             </p>
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl">
-              Diagnostics that create useful clarity before you commit to deeper work
+              Diagnostics that create useful clarity before you decide what kind of help you need
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              Structured assessments, not gimmicks. Each one helps you
-              pressure-test the situation and choose a credible next move.
+              For leaders and teams who need a fast first-pass read before choosing deeper support.
             </p>
           </div>
         </section>
@@ -76,7 +75,7 @@ export default function LaunchpadToolsPage() {
                     eventData={{ source: "launchpad_tools_index", target: tool.id }}
                     className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
                   >
-                    Start assessment
+                    Start diagnostic
                     <ArrowRight className="h-4 w-4" />
                   </TrackedLink>
                 </article>

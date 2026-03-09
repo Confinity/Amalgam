@@ -103,7 +103,7 @@ export function ClientLogoWall({
               href="/case-studies"
               className="inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
             >
-              See selected case studies
+              See case studies
             </Link>
           </div>
         ) : null}

@@ -23,8 +23,8 @@ const initialState: FormState = {
 
 const interestLabels: Record<string, string> = {
   "": "General inquiry",
-  "strategy-session": "Free strategy session",
-  "founder-review": "Diagnostic review",
+  "strategy-session": "Free strategy call",
+  "founder-review": "Diagnostic Review",
   "execution-sprint": "Execution Sprint",
   "outcome-partnership": "Outcome Partnership",
   careers: "Careers",
@@ -142,8 +142,8 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
           <p className="mb-3 text-sm font-medium text-foreground">Common paths</p>
           <div className="contact-common-paths flex flex-wrap gap-2">
             {[
-              { value: "strategy-session", label: "Free strategy session" },
-              { value: "founder-review", label: "Diagnostic review" },
+              { value: "strategy-session", label: "Free strategy call" },
+              { value: "founder-review", label: "Diagnostic Review" },
               { value: "execution-sprint", label: "Execution Sprint" },
               { value: "outcome-partnership", label: "Outcome Partnership" },
               { value: "careers", label: "Careers" },
@@ -251,8 +251,8 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
             className="contact-field w-full rounded-lg border border-border bg-background px-4 py-2.5 text-foreground focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/20"
           >
             <option value="">Select an option</option>
-            <option value="strategy-session">Free strategy session</option>
-            <option value="founder-review">Diagnostic review</option>
+            <option value="strategy-session">Free strategy call</option>
+            <option value="founder-review">Diagnostic Review</option>
             <option value="execution-sprint">Execution Sprint</option>
             <option value="outcome-partnership">Outcome Partnership</option>
             <option value="careers">Careers</option>
@@ -317,7 +317,7 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
           type="submit"
           className="contact-primary-cta inline-flex w-full items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 font-medium text-background transition-all hover:opacity-90"
         >
-          Open drafted email
+          Open email draft
           <ArrowRight className="h-4 w-4" />
         </button>
       </form>

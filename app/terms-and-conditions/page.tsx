@@ -14,7 +14,7 @@ export default function TermsPage() {
   return (
     <LegalPageShell
       title="Terms and Conditions"
-      description="These terms govern use of the Amalgam website. Specific commercial terms for consulting work are handled separately through statements of work and service agreements."
+      description="These terms govern use of the Amalgam website. Specific commercial terms for consulting work are defined separately in statements of work and service agreements."
       lastUpdated="March 9, 2026"
     >
       <section className="space-y-4">
@@ -29,10 +29,10 @@ export default function TermsPage() {
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold text-foreground">Services</h2>
         <p className="leading-relaxed text-muted-foreground">
-          Amalgam provides consulting services that may include Founder Review
-          diagnostic engagements, Execution Sprint roadmapping work, Outcome
-          Partnership support, systems architecture consulting, and related
-          technical advisory services.
+          Amalgam provides consulting services that may include Diagnostic Review
+          engagements, Execution Sprint roadmapping work, Outcome Partnership
+          support, systems architecture consulting, and related technical
+          advisory services.
         </p>
         <p className="leading-relaxed text-muted-foreground">
           Specific terms, fees, deliverables, and responsibilities for any paid
