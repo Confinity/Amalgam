@@ -26,6 +26,16 @@ type DragState = {
 }
 
 const REVIEW_MODE_STORAGE_KEY = "amalgam_review_mode"
+const REVIEW_REMOTE_NOTES_URL =
+  process.env.NEXT_PUBLIC_REVIEW_NOTES_URL?.trim() ||
+  "https://jsonblob.com/api/jsonBlob/019cd9ac-4875-7fa4-9d22-d380a855b21b"
+const REMOTE_SYNC_DEBOUNCE_MS = 700
+
+type ReviewRemoteStore = {
+  version: 1
+  updatedAt: string
+  pages: Record<string, ReviewNote[]>
+}
 
 const categoryMeta: Record<
   ReviewCategory,
@@ -57,6 +67,132 @@ function noteStorageKey(pageUrl: string) {
   return `review_notes:${pageUrl}`
 }
 
+function normalizeReviewNote(raw: unknown, fallbackPageUrl?: string): ReviewNote | null {
+  if (!raw || typeof raw !== "object") {
+    return null
+  }
+
+  const note = raw as Partial<ReviewNote>
+  if (
+    typeof note.id !== "string" ||
+    typeof note.x !== "number" ||
+    typeof note.y !== "number" ||
+    typeof note.text !== "string"
+  ) {
+    return null
+  }
+
+  const category: ReviewCategory =
+    note.category === "urgent" ||
+    note.category === "needs-review" ||
+    note.category === "suggestion" ||
+    note.category === "idea"
+      ? note.category
+      : "needs-review"
+
+  const pageUrl = typeof note.pageUrl === "string" ? note.pageUrl : fallbackPageUrl
+  if (!pageUrl) {
+    return null
+  }
+
+  return {
+    id: note.id,
+    pageUrl,
+    x: note.x,
+    y: note.y,
+    title: typeof note.title === "string" ? note.title : "",
+    text: note.text,
+    category,
+    collapsed: Boolean(note.collapsed),
+    createdAt: typeof note.createdAt === "string" ? note.createdAt : new Date().toISOString(),
+    updatedAt: typeof note.updatedAt === "string" ? note.updatedAt : new Date().toISOString(),
+  }
+}
+
+function normalizeReviewNotes(raw: unknown, fallbackPageUrl?: string): ReviewNote[] {
+  if (!Array.isArray(raw)) {
+    return []
+  }
+
+  return raw
+    .map((note) => normalizeReviewNote(note, fallbackPageUrl))
+    .filter((note): note is ReviewNote => Boolean(note))
+}
+
+function createEmptyRemoteStore(): ReviewRemoteStore {
+  return {
+    version: 1,
+    updatedAt: new Date().toISOString(),
+    pages: {},
+  }
+}
+
+function normalizeRemoteStore(raw: unknown): ReviewRemoteStore {
+  if (!raw || typeof raw !== "object") {
+    return createEmptyRemoteStore()
+  }
+
+  const parsed = raw as {
+    version?: number
+    updatedAt?: string
+    pages?: Record<string, unknown>
+  }
+
+  const pages: Record<string, ReviewNote[]> = {}
+  if (parsed.pages && typeof parsed.pages === "object") {
+    for (const [key, value] of Object.entries(parsed.pages)) {
+      if (!key) {
+        continue
+      }
+      pages[key] = normalizeReviewNotes(value, key)
+    }
+  }
+
+  return {
+    version: 1,
+    updatedAt:
+      typeof parsed.updatedAt === "string" && parsed.updatedAt.length > 0
+        ? parsed.updatedAt
+        : new Date().toISOString(),
+    pages,
+  }
+}
+
+async function fetchRemoteStore(): Promise<ReviewRemoteStore | null> {
+  try {
+    const response = await fetch(REVIEW_REMOTE_NOTES_URL, {
+      method: "GET",
+      cache: "no-store",
+      headers: {
+        Accept: "application/json",
+      },
+    })
+    if (!response.ok) {
+      return null
+    }
+    const payload = (await response.json()) as unknown
+    return normalizeRemoteStore(payload)
+  } catch {
+    return null
+  }
+}
+
+async function saveRemoteStore(store: ReviewRemoteStore): Promise<boolean> {
+  try {
+    const response = await fetch(REVIEW_REMOTE_NOTES_URL, {
+      method: "PUT",
+      cache: "no-store",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(store),
+    })
+    return response.ok
+  } catch {
+    return false
+  }
+}
+
 function getPageUrlForNotes() {
   if (typeof window === "undefined") {
     return "/"
@@ -79,19 +215,8 @@ function loadNotes(pageUrl: string): ReviewNote[] {
     if (!raw) {
       return []
     }
-    const parsed = JSON.parse(raw) as ReviewNote[]
-    if (!Array.isArray(parsed)) {
-      return []
-    }
-
-    return parsed.filter(
-      (note) =>
-        typeof note.id === "string" &&
-        typeof note.pageUrl === "string" &&
-        typeof note.x === "number" &&
-        typeof note.y === "number" &&
-        typeof note.text === "string"
-    )
+    const parsed = JSON.parse(raw) as unknown
+    return normalizeReviewNotes(parsed, pageUrl)
   } catch {
     return []
   }
@@ -160,11 +285,9 @@ export function ReviewMode() {
     height: number
   } | null>(null)
   const pressedKeysRef = useRef<Set<string>>(new Set())
-  const latestNotesRef = useRef<ReviewNote[]>([])
-
-  useEffect(() => {
-    latestNotesRef.current = notes
-  }, [notes])
+  const remoteStoreRef = useRef<ReviewRemoteStore | null>(null)
+  const remoteHydratedPageRef = useRef<string>("")
+  const syncTimeoutRef = useRef<number | null>(null)
 
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -188,11 +311,84 @@ export function ReviewMode() {
     }
 
     const currentPage = getPageUrlForNotes()
+    const cachedNotes = loadNotes(currentPage)
     queueMicrotask(() => {
       setPageUrl(currentPage)
-      setNotes(loadNotes(currentPage))
+      setNotes(cachedNotes)
     })
+    remoteHydratedPageRef.current = ""
+
+    let cancelled = false
+    void (async () => {
+      const store = await fetchRemoteStore()
+      if (cancelled) {
+        return
+      }
+
+      remoteHydratedPageRef.current = currentPage
+      if (!store) {
+        remoteStoreRef.current = null
+        return
+      }
+
+      remoteStoreRef.current = store
+      const remoteNotes = store.pages[currentPage] ?? []
+      setNotes(remoteNotes)
+      saveNotes(currentPage, remoteNotes, { allowEmpty: true })
+    })()
+
+    return () => {
+      cancelled = true
+    }
   }, [active, pathname])
+
+  useEffect(() => {
+    if (!active) {
+      return
+    }
+
+    const pageNotes = notes.filter((note) => note.pageUrl === pageUrl)
+    saveNotes(pageUrl, pageNotes, { allowEmpty: true })
+
+    if (remoteHydratedPageRef.current !== pageUrl) {
+      return
+    }
+
+    if (syncTimeoutRef.current !== null) {
+      window.clearTimeout(syncTimeoutRef.current)
+    }
+
+    syncTimeoutRef.current = window.setTimeout(() => {
+      void (async () => {
+        const baseStore = remoteStoreRef.current ?? (await fetchRemoteStore()) ?? createEmptyRemoteStore()
+        const nextPages = { ...baseStore.pages }
+
+        if (pageNotes.length > 0) {
+          nextPages[pageUrl] = pageNotes
+        } else {
+          delete nextPages[pageUrl]
+        }
+
+        const nextStore: ReviewRemoteStore = {
+          ...baseStore,
+          updatedAt: new Date().toISOString(),
+          pages: nextPages,
+        }
+
+        const saved = await saveRemoteStore(nextStore)
+        if (saved) {
+          remoteStoreRef.current = nextStore
+        }
+      })()
+    }, REMOTE_SYNC_DEBOUNCE_MS)
+
+    return () => {
+      if (syncTimeoutRef.current !== null) {
+        window.clearTimeout(syncTimeoutRef.current)
+        syncTimeoutRef.current = null
+      }
+    }
+  }, [active, notes, pageUrl])
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -304,9 +500,7 @@ export function ReviewMode() {
       }
 
       setNotes((previous) => {
-        const next = [...previous, nextNote]
-        saveNotes(pageUrl, next)
-        return next
+        return [...previous, nextNote]
       })
     }
 
@@ -340,7 +534,6 @@ export function ReviewMode() {
     }
 
     const onPointerUp = () => {
-      saveNotes(pageUrl, latestNotesRef.current)
       setDragging(null)
     }
 
@@ -357,14 +550,9 @@ export function ReviewMode() {
     [notes, notesVisible, pageUrl]
   )
 
-  const updateNotes = (
-    updater: ReviewNote[] | ((previous: ReviewNote[]) => ReviewNote[]),
-    options: { allowEmpty?: boolean } = {}
-  ) => {
+  const updateNotes = (updater: ReviewNote[] | ((previous: ReviewNote[]) => ReviewNote[])) => {
     setNotes((previous) => {
-      const next = typeof updater === "function" ? updater(previous) : updater
-      saveNotes(pageUrl, next, options)
-      return next
+      return typeof updater === "function" ? updater(previous) : updater
     })
   }
 
@@ -377,9 +565,7 @@ export function ReviewMode() {
   }
 
   const deleteNote = (id: string) => {
-    updateNotes((previous) => previous.filter((note) => note.id !== id), {
-      allowEmpty: true,
-    })
+    updateNotes((previous) => previous.filter((note) => note.id !== id))
   }
 
   const clearCurrentPageNotes = () => {
@@ -389,9 +575,7 @@ export function ReviewMode() {
     if (!shouldClear) {
       return
     }
-    updateNotes((previous) => previous.filter((note) => note.pageUrl !== pageUrl), {
-      allowEmpty: true,
-    })
+    updateNotes((previous) => previous.filter((note) => note.pageUrl !== pageUrl))
   }
 
   const exitReviewMode = () => {
