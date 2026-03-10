@@ -53,16 +53,16 @@ export default function LaunchpadPage() {
                   eventData={{ source: "launchpad_hero", target: "tools" }}
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 font-medium text-background transition-opacity hover:opacity-90"
                 >
-                  Explore diagnostics
+                  Start with a diagnostic
                   <ArrowRight className="h-4 w-4" />
                 </TrackedLink>
                 <TrackedLink
-                  href="/launchpad/tools"
+                  href="/launchpad/guides"
                   eventName="launchpad_path_click"
-                  eventData={{ source: "launchpad_hero", target: "tools_index" }}
+                  eventData={{ source: "launchpad_hero", target: "guides_index" }}
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-border px-6 py-3 font-medium text-foreground transition-colors hover:bg-secondary"
                 >
-                  Explore diagnostics
+                  Browse practical guides
                 </TrackedLink>
               </div>
               <p className="mt-5 text-sm leading-relaxed text-muted-foreground">

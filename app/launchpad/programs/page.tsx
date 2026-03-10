@@ -17,10 +17,10 @@ export const metadata: Metadata = {
 
 const decisionMap = [
   {
-      title: "Root cause unclear",
-      description:
+    title: "Root cause unclear",
+    description:
       "If the drag is visible but the system still needs a direct read, Diagnostic Review is the cleanest entry point.",
-      href: "/founder-review",
+    href: "/founder-review",
   },
   {
     title: "Situation legible, sequencing needed",
