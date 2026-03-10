@@ -2,7 +2,39 @@ import Link from "next/link"
 import { ArrowRight, CalendarDays, Mail, MapPin, Phone } from "lucide-react"
 import { BrandLogo } from "@/components/brand-logo"
 
-export function Footer() {
+type FooterProps = {
+  variant?: "default" | "how-we-work"
+}
+
+export function Footer({ variant = "default" }: FooterProps) {
+  const isHowWeWork = variant === "how-we-work"
+
+  const startHereLinks = isHowWeWork
+    ? [
+        { href: "/contact?interest=strategy-session", label: "15-minute triage call" },
+        { href: "/contact?interest=strategy-session", label: "Strategy call" },
+        { href: "/services#how-work-usually-begins", label: "Diagnostic review" },
+        { href: "/services#how-work-usually-begins", label: "Execution support" },
+      ]
+    : [
+        { href: "/founder-review", label: "Diagnostic Review" },
+        { href: "/execution-sprint", label: "Execution Sprint" },
+        { href: "/outcome-partnership", label: "Outcome Partnership" },
+        { href: "/contact", label: "Contact" },
+      ]
+
+  const footerCtaLabel = isHowWeWork
+    ? "Book a 15-minute call"
+    : "Book a free strategy call"
+
+  const footerIntro = isHowWeWork
+    ? "Start with a short call. Go deeper only when the situation needs it."
+    : "We help teams make complex systems clearer and execution steadier."
+
+  const bestFitText = isHowWeWork
+    ? "For teams that need a clearer read on what is slowing delivery."
+    : "For teams carrying delivery and systems complexity."
+
   return (
     <footer className="border-t border-border bg-background">
       <div className="mx-auto max-w-[1200px] px-6 py-16">
@@ -12,7 +44,7 @@ export function Footer() {
               <BrandLogo className="h-8 w-auto" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              We help teams make complex systems clearer and execution steadier.
+              {footerIntro}
             </p>
             <div className="footer-credentials text-sm text-muted-foreground">
               <span className="credential-chip rounded-full border border-border bg-background px-3 py-1.5">
@@ -30,34 +62,27 @@ export function Footer() {
               prefetch={false}
               className="footer-cta mt-5 inline-flex items-center gap-2 rounded-xl bg-foreground px-5 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
             >
-              Book a free strategy call
+              {footerCtaLabel}
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 
           <div>
-            <h4 className="mb-4 text-sm font-semibold text-foreground">Start Here</h4>
+            <h4 className="mb-4 text-sm font-semibold text-foreground">
+              {isHowWeWork ? "How Work Starts" : "Start Here"}
+            </h4>
             <ul className="space-y-3">
-              <li>
-                <Link href="/founder-review" prefetch={false} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  Diagnostic Review
-                </Link>
-              </li>
-              <li>
-                <Link href="/execution-sprint" prefetch={false} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  Execution Sprint
-                </Link>
-              </li>
-              <li>
-                <Link href="/outcome-partnership" prefetch={false} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  Outcome Partnership
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" prefetch={false} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-                  Contact
-                </Link>
-              </li>
+              {startHereLinks.map((item) => (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    prefetch={false}
+                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -104,7 +129,7 @@ export function Footer() {
                 Best fit
               </p>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                For teams carrying delivery and systems complexity.
+                {bestFitText}
               </p>
 
               <div className="mt-5 space-y-3 text-sm">

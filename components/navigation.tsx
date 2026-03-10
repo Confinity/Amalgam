@@ -6,15 +6,27 @@ import { usePathname } from "next/navigation"
 import { Menu, X, ArrowRight, Mail } from "lucide-react"
 import { BrandLogo } from "@/components/brand-logo"
 
-const navItems = [
-  { href: "/services", label: "Services" },
-  { href: "/case-studies", label: "Case Studies" },
-  { href: "/knowledge", label: "Knowledge" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-]
+type NavigationProps = {
+  servicesLabel?: string
+  primaryCtaLabel?: string
+  primaryCtaHref?: string
+  mobilePrompt?: string
+}
 
-export function Navigation() {
+export function Navigation({
+  servicesLabel = "Services",
+  primaryCtaLabel = "Book a free strategy call",
+  primaryCtaHref = "/contact?interest=strategy-session",
+  mobilePrompt = "If delivery is slowing and the root cause is still fuzzy, start with a strategy call.",
+}: NavigationProps) {
+  const navItems = [
+    { href: "/services", label: servicesLabel },
+    { href: "/case-studies", label: "Case Studies" },
+    { href: "/knowledge", label: "Knowledge" },
+    { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact" },
+  ]
+
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -82,11 +94,11 @@ export function Navigation() {
 
         <div className="hidden items-center gap-4 md:flex">
           <Link
-            href="/contact?interest=strategy-session"
+            href={primaryCtaHref}
             prefetch={false}
             className="inline-flex items-center gap-2 rounded-lg bg-foreground px-4 py-2.5 text-sm font-medium text-background transition-all hover:opacity-90 focus-visible:outline-none"
           >
-            Book a free strategy call
+            {primaryCtaLabel}
             <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         </div>
@@ -138,16 +150,16 @@ export function Navigation() {
               </div>
               <hr className="my-5 border-border" />
               <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-                If delivery is slowing and the root cause is still fuzzy, start with a strategy call.
+                {mobilePrompt}
               </p>
               <div className="grid gap-3">
                 <Link
-                  href="/contact?interest=strategy-session"
+                  href={primaryCtaHref}
                   prefetch={false}
                   className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-2xl bg-foreground px-4 py-3 text-sm font-medium text-background"
                   onClick={() => setMobileOpen(false)}
                 >
-                  Book a free strategy call
+                  {primaryCtaLabel}
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
                 <Link
