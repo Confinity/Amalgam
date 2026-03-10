@@ -89,83 +89,83 @@ const STAGE_CONFIG: Record<StageId, StageConfig> = {
   "ideate-prioritize": {
     id: "ideate-prioritize",
     label: "Ideate & Prioritize",
-    who: "Early founders and pre-build teams.",
-    summary: "Clarify what to build first and avoid early complexity debt.",
-    feelsLike: "There is potential, but the first move and scope still feel fuzzy.",
+    who: "Early founders before heavy build starts.",
+    summary: "Choose what to build first and keep scope tight.",
+    feelsLike: "You have ideas, but the first version is still unclear.",
     helpBullets: [
-      "Shape MVP scope around what must be true first.",
-      "Pressure-test feasibility before commitments.",
-      "Set practical decision rhythm from day one.",
+      "Narrow the MVP to what must work first.",
+      "Check feasibility before you commit.",
+      "Set a simple decision rhythm.",
     ],
     nextStep:
-      "If you are still shaping the idea, start by clarifying what the first version must do.",
+      "Start by defining what the first version must prove.",
     primaryAction: {
       label: "Get your next-step brief",
       href: "/launchpad/guides",
       source: "next_step_brief",
-      description: "Start with practical guidance before deeper commitments.",
+      description: "Use a short brief to lock the first move.",
     },
     secondaryLabel: "Talk through your situation",
     pressures: [
-      { id: "unclear-first-move", label: "Unclear first move", note: "Use one decision frame before expanding options." },
-      { id: "too-many-priorities", label: "Too many priorities", note: "Reduce scope now to protect speed later." },
+      { id: "unclear-first-move", label: "Unclear first move", note: "Pick one decision frame before expanding options." },
+      { id: "too-many-priorities", label: "Too many priorities", note: "Reduce scope now so you can move faster later." },
       { id: "scope-risk", label: "Scope risk", note: "Filter with feasibility, not ambition." },
     ],
     guides: ["architecture-map-before-roadmap", "sequencing-roadmaps-under-uncertainty"],
     signals: ["architecture-map-before-roadmap", "decision-rights-under-complexity", "sequencing-roadmaps-under-uncertainty"],
-    proof: "Early clarity removes months of rework later.",
+    proof: "Early clarity saves months of rework.",
     testimonialId: "fitzmier-jtf",
-    finalHeading: "Need a clearer first move before committing engineering effort?",
-    finalBody: "Start with the brief, then talk with us if you want a sharper read.",
+    finalHeading: "Need a clearer first move?",
+    finalBody: "Start with the brief. If it still feels fuzzy, we can talk it through.",
   },
   "validate-derisk": {
     id: "validate-derisk",
     label: "Validate & De-risk",
-    who: "Teams with an MVP that still needs stronger proof.",
-    summary: "Validate the right things before scaling effort and complexity.",
-    feelsLike: "Something is working, but priority calls still feel risky.",
+    who: "Teams with an MVP that still needs proof.",
+    summary: "Validate before you scale effort.",
+    feelsLike: "Something works, but priority calls still feel risky.",
     helpBullets: [
-      "Reduce wasted build effort.",
-      "Improve decision quality with stronger evidence.",
-      "Clarify what to prove next.",
+      "Focus build time on what needs proof.",
+      "Use evidence to choose priorities.",
+      "Decide what to test next.",
     ],
-    nextStep: "Before building further, make sure you are validating the right things.",
+    nextStep: "Before you build more, check that you are validating the right thing.",
     primaryAction: {
       label: "Run the validation checklist",
       href: "/launchpad/ai-readiness-checklist",
       source: "validation_checklist",
-      description: "Use a practical checklist to avoid scaling weak assumptions.",
+      description: "Run a short checklist before you scale weak assumptions.",
     },
     secondaryLabel: "Book a triage call",
     pressures: [
       { id: "need-evidence", label: "Need better evidence", note: "Tie priorities to measurable signal." },
-      { id: "uncertain-priority", label: "Uncertain priorities", note: "Use one shared prioritization lens." },
+      { id: "uncertain-priority", label: "Uncertain priorities", note: "Use one shared way to rank priorities." },
       { id: "avoid-overbuild", label: "Avoid overbuilding", note: "Keep effort tied to proof." },
     ],
     guides: ["metrics-you-can-run-the-company-on", "post-series-a-data-foundations"],
     signals: ["metrics-you-can-run-the-company-on", "post-series-a-data-foundations", "operating-rhythm-after-growth"],
-    proof: "Tighter validation now protects speed and trust later.",
+    proof: "Better validation now protects speed and confidence later.",
     testimonialId: "mooney-cleanitsupply",
-    finalHeading: "Need confidence in what to validate before investing more?",
-    finalBody: "Run the checklist first. If the picture stays fuzzy, we can pressure-test it with you.",
+    finalHeading: "Need confidence before you invest more?",
+    finalBody: "Run the checklist first. If the signal is still mixed, we can review it with you.",
   },
   "build-ship": {
     id: "build-ship",
     label: "Build & Ship",
-    who: "Teams actively delivering product under pressure.",
-    summary: "Reduce delivery drag and make execution more predictable.",
-    feelsLike: "The team is working hard, but progress is harder to forecast.",
+    who: "Teams shipping product right now.",
+    summary: "Reduce delivery drag and make progress more predictable.",
+    feelsLike: "The team is busy, but delivery still feels messy.",
     helpBullets: [
-      "Diagnose what is actually slowing delivery.",
+      "Find the real blockers.",
       "Sequence work around real constraints.",
-      "Clarify architecture and integration tradeoffs.",
+      "Simplify architecture and integration tradeoffs.",
     ],
-    nextStep: "If execution is getting messy, start by identifying the real drag pattern.",
+    nextStep: "If shipping feels messy, find the real drag pattern first.",
     primaryAction: {
       label: "Start the Delivery Drag Diagnostic",
       href: "/launchpad/delivery-drag-diagnostic",
       source: "delivery_drag_diagnostic",
-      description: "Pressure-test drag before choosing a bigger intervention.",
+      description: "Diagnose drag before starting bigger work.",
     },
     secondaryLabel: "Talk to Amalgam",
     pressures: [
@@ -175,7 +175,7 @@ const STAGE_CONFIG: Record<StageId, StageConfig> = {
     ],
     guides: ["delivery-velocity-is-a-systems-problem", "integration-tax"],
     signals: ["delivery-velocity-is-a-systems-problem", "integration-tax", "sequencing-roadmaps-under-uncertainty"],
-    proof: "You do not need a large proposal to get useful clarity.",
+    proof: "You can get clear quickly without a big proposal.",
     testimonialId: "mendez-pearlx",
     finalHeading: "Need a clearer read on what is slowing delivery right now?",
     finalBody: "Start with the diagnostic, then go deeper only if needed.",
@@ -183,20 +183,20 @@ const STAGE_CONFIG: Record<StageId, StageConfig> = {
   "productize-systemize": {
     id: "productize-systemize",
     label: "Productize & Systemize",
-    who: "Teams moving from ad hoc execution into repeatable systems.",
-    summary: "Turn what works into coherent internal systems and operating rhythm.",
+    who: "Teams moving from ad hoc work to repeatable systems.",
+    summary: "Make internal systems stable so delivery can scale.",
     feelsLike: "The product works, but internals are becoming fragile.",
     helpBullets: [
-      "Pressure-test tooling and stack posture.",
+      "Stress-test stack and tooling.",
       "Stabilize high-risk interfaces.",
-      "Improve operating clarity for repeatable delivery.",
+      "Tighten operating clarity across teams.",
     ],
-    nextStep: "If internals are getting messy, map where structure is breaking first.",
+    nextStep: "Map where structure is breaking before you add more process.",
     primaryAction: {
       label: "Start the Tech Stack Audit",
       href: "/launchpad/tech-stack-audit",
       source: "tech_stack_audit",
-      description: "Get a first-pass read on coherence, risk, and hidden drag.",
+      description: "Get a first-pass read on risk, clarity, and hidden drag.",
     },
     secondaryLabel: "See program fit",
     pressures: [
@@ -206,7 +206,7 @@ const STAGE_CONFIG: Record<StageId, StageConfig> = {
     ],
     guides: ["modernize-vs-rebuild", "structure-follows-architecture"],
     signals: ["modernize-vs-rebuild", "architecture-map-before-roadmap", "structure-follows-architecture"],
-    proof: "Productization is usually a coherence problem before it is a speed problem.",
+    proof: "Productization is usually a clarity problem before a speed problem.",
     testimonialId: "fitzmier-jtf",
     finalHeading: "Need to turn ad hoc delivery into repeatable systems?",
     finalBody: "Start with the stack audit, then decide whether sprint or deeper support fits best.",
@@ -214,33 +214,33 @@ const STAGE_CONFIG: Record<StageId, StageConfig> = {
   "scale-stabilize": {
     id: "scale-stabilize",
     label: "Scale & Stabilize",
-    who: "Scale-ups and complex teams carrying rising systems pressure.",
-    summary: "Regain control as complexity rises and confidence starts slipping.",
-    feelsLike: "Growth is real, but systems are less predictable than they should be.",
+    who: "Scale-ups carrying rising complexity.",
+    summary: "Regain control as systems pressure grows.",
+    feelsLike: "Growth is real, but execution feels less predictable.",
     helpBullets: [
-      "Diagnose where complexity is creating drag.",
-      "Stabilize architecture and integration pressure points.",
-      "Support leadership with clearer sequencing and follow-through.",
+      "Find the highest-impact drag points.",
+      "Stabilize architecture and integrations.",
+      "Give leadership clearer sequencing.",
     ],
-    nextStep: "If complexity is dragging momentum, start by clarifying where intervention matters most.",
+    nextStep: "If growth feels heavier each month, clarify what to fix first.",
     primaryAction: {
       label: "Get your scale readiness path",
       href: "/launchpad/ai-readiness-checklist",
       source: "scale_readiness_path",
-      description: "Get a practical first read on readiness and intervention order.",
+      description: "Get a practical read on readiness and what to fix first.",
     },
     secondaryLabel: "Book a strategic call",
     pressures: [
       { id: "growth-drag", label: "Growth creating drag", note: "Treat this as systems + sequencing, not effort alone." },
-      { id: "confidence-slipping", label: "Confidence slipping", note: "Align around one shared diagnostic picture." },
+      { id: "confidence-slipping", label: "Confidence slipping", note: "Align around one shared view of the system." },
       { id: "need-follow-through", label: "Need follow-through", note: "Continuity support may matter more than new plans." },
     ],
     guides: ["delivery-velocity-is-a-systems-problem", "sequencing-roadmaps-under-uncertainty"],
     signals: ["metrics-you-can-run-the-company-on", "delivery-velocity-is-a-systems-problem", "decision-rights-under-complexity"],
-    proof: "Teams recover momentum when complexity is made legible.",
+    proof: "Momentum returns when complexity is made clear.",
     testimonialId: "mendez-pearlx",
-    finalHeading: "Need a stronger operating read as growth pressure rises?",
-    finalBody: "Start with readiness, then book a strategic call for direct support.",
+    finalHeading: "Need a steadier way to run delivery as you scale?",
+    finalBody: "Start with readiness. Book a strategic call if you want direct support.",
   },
 }
 
@@ -399,7 +399,7 @@ export function LaunchpadStageNavigator({
     ? "Use the journey flow above to pick the stage that matches your current pressure. We will personalize everything below instantly."
     : stage.primaryAction.description
   const nextActionNarrative = isOverview
-    ? "Pick the stage that best matches your pressure. The rest of this page updates instantly with focused tools, guides, and deeper-support options."
+    ? "Choose the stage that feels closest. Everything below updates in place."
     : stage.nextStep
   const confidenceNote = isOverview
     ? "You can review the full journey first, then switch into one focused stage without losing context."
@@ -408,10 +408,10 @@ export function LaunchpadStageNavigator({
     ? "Talk through your situation"
     : stage.secondaryLabel
   const finalHeading = isOverview
-    ? "Need help choosing the right stage and next move?"
+    ? "Not sure which stage fits best?"
     : stage.finalHeading
   const finalBody = isOverview
-    ? "Start by choosing your stage. If you want a second opinion, we can help you pressure-test the right next step."
+    ? "Pick a stage first. If you want a second opinion, we can help you choose the right next move."
     : stage.finalBody
 
   useEffect(() => {
@@ -566,21 +566,20 @@ export function LaunchpadStageNavigator({
         <div className="mx-auto grid max-w-[1200px] gap-10 px-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 rounded-full border border-teal/25 bg-teal/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-teal">
-              A-to-Z founder operating navigator
+              Support from idea to scale
             </span>
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
               Launchpad
             </p>
             <h1 className="max-w-[20ch] text-4xl font-semibold tracking-tight text-foreground md:text-5xl lg:text-6xl">
-              From first idea to scale pressure, Launchpad helps you choose the{" "}
+              Where are you stuck right now? Launchpad helps you choose the{" "}
               <span className="bg-gradient-to-r from-teal to-purple bg-clip-text text-transparent">
                 right next move.
               </span>
             </h1>
             <p className="mt-6 max-w-[56ch] text-lg leading-relaxed text-muted-foreground">
-              Find your stage, see what matters now, and choose the next best
-              step whether that means using a practical tool, exploring a
-              guide, or talking to us.
+              Pick your stage. We will show what to do next, what to read, and
+              when deeper support is worth it.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <TrackedLink
@@ -602,7 +601,7 @@ export function LaunchpadStageNavigator({
               </TrackedLink>
             </div>
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-              Self-serve first. Human support when useful.
+              Start self-serve. Talk to us when useful.
             </p>
             <div className="mt-7 flex flex-wrap items-center gap-2 text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground">
               {["Idea", "Validation", "Build", "Productize", "Scale"].map(
@@ -626,17 +625,17 @@ export function LaunchpadStageNavigator({
             </p>
             <ol className="mt-5 space-y-3 text-sm leading-relaxed text-muted-foreground">
               <li className="support-panel-item px-0 pb-0 pt-1">
-                1. Select your stage
+                1. Pick the stage that feels closest
               </li>
               <li className="support-panel-item px-0 pb-0 pt-3">
-                2. See your next best step
+                2. See your next best move
               </li>
               <li className="support-panel-item px-0 pb-0 pt-3">
-                3. Go deeper only if needed
+                3. Go deeper only if it helps
               </li>
             </ol>
             <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-              Self-serve first. Human support when useful.
+              Start self-serve. Bring us in when you need us.
             </p>
           </aside>
         </div>
@@ -651,8 +650,7 @@ export function LaunchpadStageNavigator({
             Where are you right now?
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            Pick the stage that feels closest to your situation. We&apos;ll
-            show tools, guidance, and next steps that fit best.
+            Pick what feels closest. We&apos;ll adjust the page to your context.
           </p>
           <div
             role="radiogroup"
@@ -719,7 +717,7 @@ export function LaunchpadStageNavigator({
                 eventData={{ stage: stageId, pressure: pressureId || "none" }}
                 className="inline-flex min-h-9 items-center rounded-full border border-border px-3.5 py-1.5 text-xs font-medium text-foreground transition-colors hover:bg-secondary"
               >
-                Jump to recommendations
+                See recommendations
               </TrackedLink>
               <button
                 type="button"
@@ -729,18 +727,18 @@ export function LaunchpadStageNavigator({
                   onStageSelect("all")
                 }}
               >
-                Back to all stages
+                Show all stages
               </button>
             </div>
           ) : null}
           {isOverview ? (
             <p className="mt-4 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-              Select a stage to add pressure-state refinement.
+              Pick a stage to unlock optional pressure filters.
             </p>
           ) : (
             <>
               <p className="mt-4 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                Pressure state (optional)
+                Pressure filter (optional)
               </p>
               <div
                 role="radiogroup"
@@ -805,15 +803,14 @@ export function LaunchpadStageNavigator({
             <>
               <div className="support-panel rounded-[30px] p-8">
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                  Full journey overview
+                  Full journey
                 </p>
                 <h2 className="mt-4 text-3xl font-semibold text-foreground">
-                  See the full journey, then open the stage that fits your reality right now
+                  See the full path, then open the stage that matches your reality
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  Think of this as your operating map from idea to scale pressure.
-                  Each step has a different failure mode. Select one step and the
-                  rest of the page will adapt in place.
+                  Think of this as your map from idea to scale. Pick one stage
+                  and everything below adapts in place.
                 </p>
                 <div className="mt-8 space-y-4">
                   {STAGE_ORDER.map((itemId, index) => {
@@ -847,7 +844,7 @@ export function LaunchpadStageNavigator({
                             </p>
                             <div className="mt-4 grid gap-2 sm:grid-cols-2">
                               <p className="rounded-xl border border-border bg-background/70 px-3 py-2 text-xs font-medium text-muted-foreground">
-                                Who this is for: {item.who}
+                                Who this fits: {item.who}
                               </p>
                               <p className="rounded-xl border border-border bg-background/70 px-3 py-2 text-xs font-medium text-foreground/80">
                                 Best first move: {item.primaryAction.label}
@@ -870,7 +867,7 @@ export function LaunchpadStageNavigator({
                               <ArrowRight className="h-4 w-4" />
                             </button>
                             <p className="text-xs text-muted-foreground">
-                              Updates the sections below instantly.
+                              The rest of the page updates instantly.
                             </p>
                           </div>
                         </div>
@@ -884,12 +881,12 @@ export function LaunchpadStageNavigator({
                   What changes next
                 </p>
                 <div className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground">
-                  <p>Next-best step and primary action become stage-specific.</p>
-                  <p>Guides and confidence notes shift to match that stage.</p>
-                  <p>Program fit and final CTA wording update to the same context.</p>
+                  <p>Next step and primary action become specific to that stage.</p>
+                  <p>Guides and confidence notes shift with the stage.</p>
+                  <p>Program fit and final CTA update to match.</p>
                 </div>
                 <p className="mt-5 rounded-2xl border border-border bg-secondary/35 px-4 py-3 text-sm leading-relaxed text-foreground">
-                  Start broad if needed. Narrow quickly when you are ready.
+                  Start broad if you need to. Narrow when you are ready.
                 </p>
               </aside>
             </>
@@ -933,7 +930,7 @@ export function LaunchpadStageNavigator({
                 <p className="mt-4 rounded-2xl border border-border bg-secondary/35 px-4 py-3 text-sm leading-relaxed text-foreground">
                   {pressure
                     ? pressure.note
-                    : "Add a pressure state above if you want a tighter recommendation."}
+                    : "Add a pressure filter above if you want tighter guidance."}
                 </p>
               </aside>
             </>
@@ -950,7 +947,7 @@ export function LaunchpadStageNavigator({
             Next best step
           </p>
           <h2 className="mb-10 text-3xl font-semibold text-foreground text-balance">
-            {isOverview ? "Choose your starting move across the full journey" : "What to do next in this stage"}
+            {isOverview ? "What should you do first?" : "What should you do next?"}
           </h2>
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
             <article className="support-panel flex h-full flex-col rounded-[30px] p-8">
@@ -973,7 +970,7 @@ export function LaunchpadStageNavigator({
                   eventData={{ stage: stageId, source: "next_step_module" }}
                   className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
                 >
-                  Prefer a quick diagnostic first? Start here
+                  Not sure yet? Start with a quick diagnostic
                   <ArrowRight className="h-4 w-4" />
                 </TrackedLink>
               ) : null}
@@ -1053,8 +1050,8 @@ export function LaunchpadStageNavigator({
           </p>
           <h2 className="mb-10 text-3xl font-semibold text-foreground text-balance">
             {isOverview
-              ? "If self-serve work points to deeper support, this is how it usually starts"
-              : "If this stage needs deeper support, here is the usual fit"}
+              ? "If you need deeper help after self-serve, start here"
+              : "If this stage needs deeper help, this is the usual fit"}
           </h2>
           <div className="grid gap-6 lg:grid-cols-3">
             <article className="rounded-[28px] border border-teal/45 bg-background p-7 shadow-[0_14px_30px_rgba(0,191,166,0.08)]">
@@ -1121,9 +1118,8 @@ export function LaunchpadStageNavigator({
               Not every next step has to start with us
             </h2>
             <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
-              If the right move is adjacent to our core work, we will point you
-              there directly. The goal is a better next move, not a forced
-              engagement.
+              If the best move sits outside our core work, we will tell you.
+              The goal is the right next step, not a forced engagement.
             </p>
           </div>
           <aside className="rounded-[30px] border border-border bg-background p-7">
@@ -1131,9 +1127,9 @@ export function LaunchpadStageNavigator({
               When this helps
             </p>
             <div className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground">
-              <p>Need a direct read on which path fits your situation.</p>
-              <p>Need an adjacent introduction once the situation is clearer.</p>
-              <p>Need practical judgment before a larger commitment.</p>
+              <p>Need a clear read on which path fits your situation.</p>
+              <p>Need an adjacent intro once the picture is clearer.</p>
+              <p>Need practical judgment before a bigger commitment.</p>
             </div>
             <TrackedLink
               href={contactHref({
@@ -1141,10 +1137,10 @@ export function LaunchpadStageNavigator({
                 stageLabel: isOverview ? "All stages overview" : stage.label,
                 pressure: pressureId,
                 ctaPath: "trust_block",
-                ctaLabel: "Start a conversation",
-                note: "Need practical direction on where to start.",
-                interest: "general",
-              })}
+              ctaLabel: "Start a conversation",
+              note: "Need practical direction on the right next move.",
+              interest: "general",
+            })}
               eventName="launchpad_trust_conversation_click"
               eventData={{ stage: stageId, pressure: pressureId || "none" }}
               className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
@@ -1263,11 +1259,11 @@ export function LaunchpadStageNavigator({
             </p>
             <h2 className="mt-4 text-3xl font-semibold text-foreground text-balance">
               {isOverview
-                ? "Practical updates across the full founder journey"
+                ? "Practical updates across the full journey"
                 : `Practical updates for teams in ${stage.label.toLowerCase()}`}
             </h2>
             <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
-              Notes on what to do next when complexity, priorities, and delivery pressure collide.
+              Short notes on what to do next when complexity and delivery pressure collide.
             </p>
             <div className="mt-8 grid gap-4 md:grid-cols-3">
               {signals.map((article) => (
@@ -1308,8 +1304,8 @@ export function LaunchpadStageNavigator({
             </h3>
             <p className="mt-4 text-sm leading-relaxed text-background/72">
               {isOverview
-                ? "Useful notes from idea to scale without generic noise."
-                : `Useful notes for ${stage.label.toLowerCase()} teams without generic noise.`}
+                ? "Useful notes from idea to scale. No generic noise."
+                : `Useful notes for ${stage.label.toLowerCase()} teams. No generic noise.`}
             </p>
             <SignalsSubscribeForm
               source={`launchpad_stage_${stageId}`}
@@ -1340,7 +1336,7 @@ export function LaunchpadStageNavigator({
                 Proof
               </p>
               <h2 className="mt-3 text-2xl font-semibold text-foreground text-balance">
-                What teams notice after choosing the right next step
+                What teams notice when they choose the right next step
               </h2>
               <blockquote className="mt-6 text-base leading-relaxed text-foreground md:text-lg">
                 <span className="mr-1 text-xl leading-none text-teal/65">
@@ -1378,7 +1374,7 @@ export function LaunchpadStageNavigator({
           className="mx-auto max-w-[950px] px-6 text-center motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200"
         >
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
-            Final next step
+            Your next step
           </p>
           <h2 className="text-3xl font-semibold text-background text-balance md:text-4xl">
             {finalHeading}
