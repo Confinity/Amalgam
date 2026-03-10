@@ -368,6 +368,12 @@ export function LaunchpadStageNavigator({
   const nextActionDescription = isOverview
     ? "If you are not sure where to start, run a practical diagnostic first, then choose a focused stage."
     : stage.primaryAction.description
+  const nextActionNarrative = isOverview
+    ? "Pick the stage that best matches your pressure. The rest of this page updates instantly with focused tools, guides, and deeper-support options."
+    : stage.nextStep
+  const confidenceNote = isOverview
+    ? "You can review the full journey first, then switch into one focused stage without losing context."
+    : stage.proof
   const contextualSecondaryLabel = isOverview
     ? "Talk through your situation"
     : stage.secondaryLabel
@@ -662,44 +668,72 @@ export function LaunchpadStageNavigator({
                   Full journey overview
                 </p>
                 <h2 className="mt-4 text-3xl font-semibold text-foreground">
-                  See the full entrepreneurial journey, then choose where you are now
+                  See the full journey, then open the stage that fits your reality right now
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  Launchpad supports the full path from ideation through scale. Pick
-                  any stage below to switch into focused guidance.
+                  Think of this as your operating map from idea to scale pressure.
+                  Each step has a different failure mode. Select one step and the
+                  rest of the page will adapt in place.
                 </p>
-                <div className="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+                <div className="mt-8 space-y-4">
                   {STAGE_ORDER.map((itemId, index) => {
                     const item = STAGE_CONFIG[itemId]
                     const accentClass =
                       index % 5 === 0
-                        ? "from-teal/16 to-transparent"
+                        ? "from-teal/15 via-teal/5 to-transparent"
                         : index % 5 === 1
-                          ? "from-teal/10 via-purple/6 to-transparent"
+                          ? "from-teal/10 via-purple/8 to-transparent"
                         : index % 5 === 2
-                            ? "from-purple/12 to-transparent"
+                            ? "from-purple/14 via-teal/4 to-transparent"
                         : index % 5 === 3
-                              ? "from-teal/8 via-purple/8 to-transparent"
-                              : "from-purple/8 via-teal/8 to-transparent"
+                              ? "from-purple/10 via-teal/8 to-transparent"
+                              : "from-teal/8 via-purple/12 to-transparent"
                     return (
                       <article
                         key={item.id}
-                        className={`rounded-2xl border border-border bg-gradient-to-br ${accentClass} p-4`}
+                        className={`relative overflow-hidden rounded-[24px] border border-border bg-gradient-to-br ${accentClass} p-5 md:p-6`}
                       >
-                        <p className="text-xs font-medium uppercase tracking-[0.16em] text-teal">
-                          {item.label}
-                        </p>
-                        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                          {item.summary}
-                        </p>
-                        <button
-                          type="button"
-                          className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
-                          onClick={() => onStageSelect(item.id)}
-                        >
-                          Show this stage
-                          <ArrowRight className="h-4 w-4" />
-                        </button>
+                        <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-teal/70 to-purple/70" />
+                        <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
+                          <div className="pl-2">
+                            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-teal">
+                              Stage {index + 1}
+                            </p>
+                            <h3 className="mt-2 text-xl font-semibold text-foreground">
+                              {item.label}
+                            </h3>
+                            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                              {item.feelsLike}
+                            </p>
+                            <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                              <p className="rounded-xl border border-border bg-background/70 px-3 py-2 text-xs font-medium text-muted-foreground">
+                                Who this is for: {item.who}
+                              </p>
+                              <p className="rounded-xl border border-border bg-background/70 px-3 py-2 text-xs font-medium text-foreground/80">
+                                Best first move: {item.primaryAction.label}
+                              </p>
+                            </div>
+                          </div>
+                          <div className="flex flex-col items-start gap-2 lg:items-end">
+                            <button
+                              type="button"
+                              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition-opacity hover:opacity-90"
+                              onClick={() => {
+                                track("launchpad_overview_stage_open_click", {
+                                  stage: item.id,
+                                  location: "journey_flow",
+                                })
+                                onStageSelect(item.id)
+                              }}
+                            >
+                              Open {item.label}
+                              <ArrowRight className="h-4 w-4" />
+                            </button>
+                            <p className="text-xs text-muted-foreground">
+                              Updates the sections below instantly.
+                            </p>
+                          </div>
+                        </div>
                       </article>
                     )
                   })}
@@ -707,11 +741,15 @@ export function LaunchpadStageNavigator({
               </div>
               <aside className="rounded-[30px] border border-border bg-background p-7">
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                  Current signal
+                  What changes next
                 </p>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  Start in overview mode when you need the full map. Select a stage
-                  anytime for focused next-step guidance and stage-specific tools.
+                <div className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground">
+                  <p>Next-best step and primary action become stage-specific.</p>
+                  <p>Guides and confidence notes shift to match that stage.</p>
+                  <p>Program fit and final CTA wording update to the same context.</p>
+                </div>
+                <p className="mt-5 rounded-2xl border border-border bg-secondary/35 px-4 py-3 text-sm leading-relaxed text-foreground">
+                  Start broad if needed. Narrow quickly when you are ready.
                 </p>
               </aside>
             </>
@@ -763,8 +801,11 @@ export function LaunchpadStageNavigator({
         </div>
       </section>
 
-      <section className="deferred-section border-y border-border bg-secondary/35 py-20 lg:py-24">
-        <div className="mx-auto max-w-[1200px] px-6">
+      <section id="launchpad-next-step" className="deferred-section border-y border-border bg-secondary/35 py-20 lg:py-24">
+        <div
+          key={`next-step-${stageId}-${pressureId || "none"}`}
+          className="mx-auto max-w-[1200px] px-6 motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200"
+        >
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.22em] text-teal">
             Next best step
           </p>
@@ -783,7 +824,7 @@ export function LaunchpadStageNavigator({
                 {nextActionDescription}
               </p>
               <p className="mt-4 text-sm leading-relaxed text-foreground/80">
-                {stage.nextStep}
+                {nextActionNarrative}
               </p>
               <div className="mt-auto flex flex-col gap-3 pt-6 sm:flex-row">
                 <TrackedLink
@@ -843,7 +884,7 @@ export function LaunchpadStageNavigator({
                   Confidence note
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {stage.proof}
+                  {confidenceNote}
                 </p>
               </div>
             </div>
@@ -852,7 +893,10 @@ export function LaunchpadStageNavigator({
       </section>
 
       <section className="deferred-section section-warm py-20 lg:py-24">
-        <div className="mx-auto max-w-[1200px] px-6">
+        <div
+          key={`program-fit-${stageId}-${pressureId || "none"}`}
+          className="mx-auto max-w-[1200px] px-6 motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200"
+        >
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.22em] text-teal">
             Program fit
           </p>
@@ -1058,7 +1102,10 @@ export function LaunchpadStageNavigator({
       </section>
 
       <section className="deferred-section py-20 lg:py-24">
-        <div className="mx-auto grid max-w-[1200px] gap-8 px-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
+        <div
+          key={`signals-${stageId}-${pressureId || "none"}`}
+          className="mx-auto grid max-w-[1200px] gap-8 px-6 motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start"
+        >
           <div className="support-panel rounded-[30px] p-8">
             <p className="text-sm font-medium uppercase tracking-[0.22em] text-teal">
               Signals
@@ -1133,7 +1180,10 @@ export function LaunchpadStageNavigator({
 
       {testimonial ? (
         <section className="deferred-section border-y border-border bg-secondary/25 py-16 lg:py-20">
-          <div className="mx-auto max-w-[1200px] px-6">
+          <div
+            key={`proof-${stageId}`}
+            className="mx-auto max-w-[1200px] px-6 motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200"
+          >
             <div className="rounded-[30px] border border-border bg-background p-8 md:p-10">
               <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
                 Proof
@@ -1172,7 +1222,10 @@ export function LaunchpadStageNavigator({
       ) : null}
 
       <section className="deferred-section bg-foreground py-20 lg:py-24">
-        <div className="mx-auto max-w-[950px] px-6 text-center">
+        <div
+          key={`final-cta-${stageId}-${pressureId || "none"}`}
+          className="mx-auto max-w-[950px] px-6 text-center motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200"
+        >
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
             Final next step
           </p>
