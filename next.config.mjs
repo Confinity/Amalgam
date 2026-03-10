@@ -6,7 +6,7 @@ const repositoryName = repository.split("/")[1] ?? "Amalgam"
 const basePath = isGithubActions ? `/${repositoryName}` : ""
 
 const nextConfig = {
-  output: "export",
+  output: isGithubActions ? "export" : undefined,
   trailingSlash: true,
   basePath,
   assetPrefix: basePath ? `${basePath}/` : undefined,

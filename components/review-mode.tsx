@@ -26,7 +26,12 @@ type DragState = {
 }
 
 const REVIEW_MODE_STORAGE_KEY = "amalgam_review_mode"
-const REVIEW_REMOTE_NOTES_URL = "/api/review-notes"
+const REVIEW_REMOTE_NOTES_FALLBACK_URL =
+  process.env.NEXT_PUBLIC_REVIEW_NOTES_URL?.trim() ||
+  "https://jsonblob.com/api/jsonBlob/019cd9ac-4875-7fa4-9d22-d380a855b21b"
+const REVIEW_REMOTE_NOTES_URLS = ["/api/review-notes", REVIEW_REMOTE_NOTES_FALLBACK_URL].filter(
+  (value, index, list) => Boolean(value) && list.indexOf(value) === index
+)
 const REMOTE_SYNC_DEBOUNCE_MS = 700
 const CONFIGURED_BASE_PATH = (process.env.NEXT_PUBLIC_BASE_PATH ?? "").replace(/\/+$/, "")
 const LEGACY_BASE_PATHS = ["/Amalgam", "/amalgam"] as const
@@ -181,38 +186,48 @@ function normalizeRemoteStore(raw: unknown): ReviewRemoteStore {
 }
 
 async function fetchRemoteStore(): Promise<ReviewRemoteStore | null> {
-  try {
-    const response = await fetch(REVIEW_REMOTE_NOTES_URL, {
-      method: "GET",
-      cache: "no-store",
-      headers: {
-        Accept: "application/json",
-      },
-    })
-    if (!response.ok) {
-      return null
+  for (const endpoint of REVIEW_REMOTE_NOTES_URLS) {
+    try {
+      const response = await fetch(endpoint, {
+        method: "GET",
+        cache: "no-store",
+        headers: {
+          Accept: "application/json",
+        },
+      })
+      if (!response.ok) {
+        continue
+      }
+      const payload = (await response.json()) as unknown
+      return normalizeRemoteStore(payload)
+    } catch {
+      continue
     }
-    const payload = (await response.json()) as unknown
-    return normalizeRemoteStore(payload)
-  } catch {
-    return null
   }
+
+  return null
 }
 
 async function saveRemoteStore(store: ReviewRemoteStore): Promise<boolean> {
-  try {
-    const response = await fetch(REVIEW_REMOTE_NOTES_URL, {
-      method: "PUT",
-      cache: "no-store",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(store),
-    })
-    return response.ok
-  } catch {
-    return false
+  for (const endpoint of REVIEW_REMOTE_NOTES_URLS) {
+    try {
+      const response = await fetch(endpoint, {
+        method: "PUT",
+        cache: "no-store",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(store),
+      })
+      if (response.ok) {
+        return true
+      }
+    } catch {
+      continue
+    }
   }
+
+  return false
 }
 
 function getPageUrlForNotes() {
