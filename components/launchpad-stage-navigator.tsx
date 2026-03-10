@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { useEffect, useMemo, useRef, useState } from "react"
-import type { KeyboardEvent } from "react"
+import type { KeyboardEvent, MouseEvent as ReactMouseEvent } from "react"
 import { usePathname, useRouter } from "next/navigation"
 import { track } from "@vercel/analytics"
 import { ArrowRight, ChevronDown, ChevronRight, Compass, Sparkles, Wrench } from "lucide-react"
@@ -56,6 +56,8 @@ const STAGE_ORDER: StageId[] = [
   "scale-stabilize",
 ]
 const STAGE_SELECTION_ORDER: StageSelection[] = ["all", ...STAGE_ORDER]
+const FIXED_NAV_FALLBACK_HEIGHT = 72
+const ANCHOR_EXTRA_GAP = 12
 const STAGE_TONE: Record<
   StageId,
   {
@@ -327,6 +329,7 @@ export function LaunchpadStageNavigator({
   const [exploreOpen, setExploreOpen] = useState(false)
   const [showMobileDock, setShowMobileDock] = useState(false)
   const entryTracked = useRef(false)
+  const scrollLockYRef = useRef<number | null>(null)
 
   const isOverview = stageId === "all"
   const activeStageId: StageId = isOverview ? DEFAULT_STAGE : stageId
@@ -389,6 +392,7 @@ export function LaunchpadStageNavigator({
   const nextActionLabel = isOverview
     ? "Find your current stage"
     : stage.primaryAction.label
+  const nextActionAnchorTarget = isOverview ? "launchpad-stage-selector" : null
   const nextActionHref = isOverview
     ? "#launchpad-stage-selector"
     : stage.primaryAction.href
@@ -413,6 +417,67 @@ export function LaunchpadStageNavigator({
   const finalBody = isOverview
     ? "Pick a stage first. If you want a second opinion, we can help you choose the right next move."
     : stage.finalBody
+
+  const lockViewportForStateSwap = () => {
+    if (typeof window === "undefined") {
+      return
+    }
+    scrollLockYRef.current = window.scrollY
+  }
+
+  const releaseViewportLock = () => {
+    if (typeof window === "undefined" || scrollLockYRef.current === null) {
+      return
+    }
+
+    const lockedY = scrollLockYRef.current
+    scrollLockYRef.current = null
+    const fixScroll = () => {
+      window.scrollTo({
+        top: lockedY,
+        left: window.scrollX,
+        behavior: "auto",
+      })
+    }
+
+    window.requestAnimationFrame(() => {
+      fixScroll()
+      window.requestAnimationFrame(fixScroll)
+    })
+  }
+
+  const scrollToLaunchpadSection = (targetId: "launchpad-stage-selector" | "launchpad-next-step") => {
+    if (typeof window === "undefined") {
+      return
+    }
+
+    const target = document.getElementById(targetId)
+    if (!target) {
+      return
+    }
+
+    const header = document.querySelector("header")
+    const navHeight =
+      header instanceof HTMLElement
+        ? Math.round(header.getBoundingClientRect().height)
+        : FIXED_NAV_FALLBACK_HEIGHT
+    const targetTop =
+      window.scrollY + target.getBoundingClientRect().top - navHeight - ANCHOR_EXTRA_GAP
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+
+    window.scrollTo({
+      top: Math.max(0, targetTop),
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+    })
+  }
+
+  const onAnchorClick = (
+    event: ReactMouseEvent<HTMLAnchorElement>,
+    targetId: "launchpad-stage-selector" | "launchpad-next-step",
+  ) => {
+    event.preventDefault()
+    scrollToLaunchpadSection(targetId)
+  }
 
   useEffect(() => {
     if (entryTracked.current) {
@@ -478,6 +543,10 @@ export function LaunchpadStageNavigator({
       nextStage !== "all" && STAGE_CONFIG[nextStage].pressures.some((item) => item.id === pressureId)
         ? pressureId
         : ""
+    if (nextStage === stageId && keepPressure === pressureId) {
+      return
+    }
+    lockViewportForStateSwap()
     setStageId(nextStage)
     setPressureId(keepPressure)
     syncUrl(nextStage, keepPressure)
@@ -486,16 +555,6 @@ export function LaunchpadStageNavigator({
 
   const openStageFromJourney = (nextStage: StageId) => {
     onStageSelect(nextStage)
-    if (typeof window !== "undefined") {
-      window.setTimeout(() => {
-        const target = document.getElementById("launchpad-next-step")
-        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
-        target?.scrollIntoView({
-          behavior: prefersReducedMotion ? "auto" : "smooth",
-          block: "start",
-        })
-      }, 120)
-    }
   }
 
   const onPressureSelect = (next: string) => {
@@ -503,10 +562,21 @@ export function LaunchpadStageNavigator({
       return
     }
     const nextPressure = next === pressureId ? "" : next
+    if (nextPressure === pressureId) {
+      return
+    }
+    lockViewportForStateSwap()
     setPressureId(nextPressure)
     syncUrl(stageId, nextPressure)
     track("launchpad_pressure_selected", { stage: stageId, pressure: nextPressure || "none" })
   }
+
+  useEffect(() => {
+    if (scrollLockYRef.current === null) {
+      return
+    }
+    releaseViewportLock()
+  }, [stageId, pressureId])
 
   const onStageSelectorKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     const key = event.key
@@ -586,6 +656,7 @@ export function LaunchpadStageNavigator({
                 href="#launchpad-stage-selector"
                 eventName="launchpad_primary_cta_click"
                 eventData={{ source: "hero", stage: stageId }}
+                onClick={(event) => onAnchorClick(event, "launchpad-stage-selector")}
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-teal px-6 py-3 font-medium text-background transition-opacity hover:opacity-90"
               >
                 Find your stage
@@ -643,7 +714,7 @@ export function LaunchpadStageNavigator({
 
       <div
         id="launchpad-stage-selector"
-        className="sticky top-20 z-40 border-b border-border bg-background/95 py-5 backdrop-blur"
+        className="sticky top-20 z-40 scroll-mt-24 border-b border-border bg-background/95 py-5 backdrop-blur md:scroll-mt-28"
       >
         <div className="mx-auto max-w-[1200px] px-6">
           <h2 className="text-2xl font-semibold text-foreground">
@@ -715,6 +786,7 @@ export function LaunchpadStageNavigator({
                 href="#launchpad-next-step"
                 eventName="launchpad_jump_to_recommendations_click"
                 eventData={{ stage: stageId, pressure: pressureId || "none" }}
+                onClick={(event) => onAnchorClick(event, "launchpad-next-step")}
                 className="inline-flex min-h-9 items-center rounded-full border border-border px-3.5 py-1.5 text-xs font-medium text-foreground transition-colors hover:bg-secondary"
               >
                 See recommendations
@@ -776,8 +848,7 @@ export function LaunchpadStageNavigator({
                   type="button"
                   className="mt-3 inline-flex min-h-9 items-center rounded-full border border-border px-3.5 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
                   onClick={() => {
-                    setPressureId("")
-                    syncUrl(stageId, "")
+                    onPressureSelect("")
                     track("launchpad_pressure_cleared", { stage: stageId })
                   }}
                 >
@@ -938,7 +1009,7 @@ export function LaunchpadStageNavigator({
         </div>
       </section>
 
-      <section id="launchpad-next-step" className="deferred-section border-y border-border bg-secondary/35 py-20 lg:py-24">
+      <section id="launchpad-next-step" className="deferred-section scroll-mt-24 border-y border-border bg-secondary/35 py-20 md:scroll-mt-28 lg:py-24">
         <div
           key={`next-step-${stageId}-${pressureId || "none"}`}
           className="mx-auto max-w-[1200px] px-6 motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200"
@@ -983,6 +1054,11 @@ export function LaunchpadStageNavigator({
                     pressure: pressureId || "none",
                     source: nextActionSource,
                   }}
+                  onClick={
+                    nextActionAnchorTarget
+                      ? (event) => onAnchorClick(event, nextActionAnchorTarget)
+                      : undefined
+                  }
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
                 >
                   {nextActionLabel}
@@ -1391,6 +1467,11 @@ export function LaunchpadStageNavigator({
                 pressure: pressureId || "none",
                 source: nextActionSource,
               }}
+              onClick={
+                nextActionAnchorTarget
+                  ? (event) => onAnchorClick(event, nextActionAnchorTarget)
+                  : undefined
+              }
               className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-background px-6 py-3 font-medium text-foreground transition-opacity hover:opacity-90"
             >
               {nextActionLabel}
@@ -1425,6 +1506,11 @@ export function LaunchpadStageNavigator({
               href={nextActionHref}
               eventName="launchpad_sticky_dock_primary_click"
               eventData={{ stage: stageId, pressure: pressureId || "none", source: nextActionSource }}
+              onClick={
+                nextActionAnchorTarget
+                  ? (event) => onAnchorClick(event, nextActionAnchorTarget)
+                  : undefined
+              }
               className="inline-flex min-h-11 items-center justify-center rounded-lg bg-foreground px-3 text-center text-xs font-semibold text-background"
             >
               {isOverview ? "Find stage" : "Start next step"}
