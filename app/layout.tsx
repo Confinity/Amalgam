@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next"
 import { Manrope } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { ReviewMode } from "@/components/review-mode"
 import { SiteSchema } from "@/components/site-schema"
 import { SITE_URL, absoluteUrl, withBasePath } from "@/lib/site-config"
 import "./globals.css"
@@ -108,6 +109,7 @@ export default function RootLayout({
         </a>
         <SiteSchema />
         {children}
+        <ReviewMode />
         {analyticsEnabled ? <Analytics /> : null}
       </body>
     </html>
