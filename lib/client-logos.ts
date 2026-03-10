@@ -66,7 +66,7 @@ export const clientLogos: ClientLogo[] = [
   },
   {
     name: "TIAA",
-    src: "/clients/tiaa.webp",
+    src: "/clients/tiaa-color.png",
     alt: "TIAA wordmark",
     href: "/case-studies/tiaa",
     cardClassName: "client-logo-card--tiaa",
