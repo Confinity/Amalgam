@@ -118,7 +118,7 @@ function saveNotes(
 }
 
 function isEditableTarget(target: EventTarget | null) {
-  if (!(target instanceof HTMLElement)) {
+  if (!(target instanceof Element)) {
     return false
   }
   const tag = target.tagName.toLowerCase()
@@ -126,12 +126,12 @@ function isEditableTarget(target: EventTarget | null) {
     tag === "input" ||
     tag === "textarea" ||
     tag === "select" ||
-    target.isContentEditable
+    (target instanceof HTMLElement && target.isContentEditable)
   )
 }
 
 function isReviewUiTarget(target: EventTarget | null) {
-  if (!(target instanceof HTMLElement)) {
+  if (!(target instanceof Element)) {
     return false
   }
   return Boolean(target.closest('[data-review-ui="true"]'))
@@ -444,7 +444,7 @@ export function ReviewMode() {
               style={{ backgroundColor: meta.header }}
               onPointerDown={(event) => {
                 if (isReviewUiTarget(event.target)) {
-                  const maybeControl = (event.target as HTMLElement).closest(
+                  const maybeControl = (event.target as Element).closest(
                     "button,select,input,textarea"
                   )
                   if (maybeControl) {
