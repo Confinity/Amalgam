@@ -2,5 +2,5 @@
 2:I[13830,["/Amalgam/_next/static/chunks/7b2d31d69f85ec95.js","/Amalgam/_next/static/chunks/640e65901f32d92b.js"],"LegacyRouteRedirect"]
 3:I[95276,["/Amalgam/_next/static/chunks/221e0744b683f94b.js","/Amalgam/_next/static/chunks/54acdc74ad0965ad.js"],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"buildId":"wSVNIQOVTGV5G4x1UHwhG","rsc":["$","$1","c",{"children":[["$","$L2",null,{"target":"/contact?interest=strategy-session","label":"strategy call"}],[["$","script","script-0",{"src":"/Amalgam/_next/static/chunks/640e65901f32d92b.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"Z8FYV0pcmMeMYmm9L-z1u","rsc":["$","$1","c",{"children":[["$","$L2",null,{"target":"/contact?interest=strategy-session","label":"strategy call"}],[["$","script","script-0",{"src":"/Amalgam/_next/static/chunks/640e65901f32d92b.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
 5:null
