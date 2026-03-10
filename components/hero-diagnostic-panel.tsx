@@ -327,17 +327,17 @@ export function HeroDiagnosticPanel() {
         ? nodes.map((node) => {
             switch (node.key) {
               case "api":
-                return { ...node, x: 35, y: 24, width: 92, height: 52 }
+                return { ...node, x: 34, y: 20, width: 90, height: 48 }
               case "identity":
-                return { ...node, x: 65, y: 24, width: 92, height: 52 }
+                return { ...node, x: 66, y: 20, width: 90, height: 48 }
               case "core":
-                return { ...node, x: 50, y: 42, width: 102, height: 58 }
+                return { ...node, x: 50, y: 36, width: 100, height: 54 }
               case "data":
-                return { ...node, x: 38, y: 57, width: 96, height: 54 }
+                return { ...node, x: 38, y: 50, width: 94, height: 52 }
               case "infra":
-                return { ...node, x: 62, y: 57, width: 96, height: 54 }
+                return { ...node, x: 62, y: 50, width: 94, height: 52 }
               case "observability":
-                return { ...node, x: 50, y: 71, width: 116, height: 50 }
+                return { ...node, x: 50, y: 63, width: 114, height: 48 }
             }
           })
         : nodes,
@@ -354,7 +354,7 @@ export function HeroDiagnosticPanel() {
   )
 
   const diagramFieldStyle = isSmallMobile
-    ? { left: 18, right: 18, top: 16, bottom: 126 }
+    ? { left: 18, right: 18, top: 16, bottom: 176 }
     : undefined
 
   const insetStyle = isSmallMobile
@@ -548,7 +548,7 @@ export function HeroDiagnosticPanel() {
   return (
     <div
       ref={panelRef}
-      className="hero-right-panel relative isolate h-[392px] overflow-hidden rounded-[28px] border border-black/4 bg-[linear-gradient(180deg,rgba(240,244,248,0.82),rgba(248,250,252,0.94))] p-4 shadow-[0_16px_34px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.42)] sm:h-[460px] sm:p-6 lg:h-[560px] lg:p-8"
+      className="hero-right-panel relative isolate h-[440px] overflow-hidden rounded-[28px] border border-black/4 bg-[linear-gradient(180deg,rgba(240,244,248,0.82),rgba(248,250,252,0.94))] p-4 shadow-[0_16px_34px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.42)] sm:h-[460px] sm:p-6 lg:h-[560px] lg:p-8"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,191,166,0.08),transparent_34%),radial-gradient(circle_at_top_right,rgba(106,92,255,0.08),transparent_30%)]" />
       <div className="pointer-events-none absolute inset-[18px] rounded-[24px] bg-[linear-gradient(rgba(255,255,255,0.16)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.16)_1px,transparent_1px)] bg-[size:34px_34px] opacity-55 sm:inset-[20px] lg:inset-6" />
@@ -654,7 +654,7 @@ export function HeroDiagnosticPanel() {
 
       <div
         ref={insetRef}
-        className={`founder-review-inset absolute z-[3] w-[220px] rounded-[18px] border bg-background/85 px-[18px] py-[16px] shadow-[0_8px_20px_rgba(15,23,42,0.06)] backdrop-blur-xl transition-colors duration-500 sm:w-[270px] sm:py-[18px] lg:w-[290px] ${
+        className={`founder-review-inset absolute z-[3] w-[calc(100%-36px)] rounded-[18px] border bg-background/85 px-[18px] py-[16px] shadow-[0_8px_20px_rgba(15,23,42,0.06)] backdrop-blur-xl transition-colors duration-500 sm:w-[270px] sm:py-[18px] lg:w-[290px] ${
           phase === "activate"
             ? "border-teal/28"
             : "border-teal/18"
