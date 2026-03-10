@@ -3,9 +3,16 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 import Link from "next/link"
 import { track } from "@vercel/analytics"
-import { ArrowLeft, ArrowRight, CheckCircle2, Mail, RotateCcw } from "lucide-react"
+import { AlertTriangle, ArrowLeft, ArrowRight, CheckCircle2, Mail, RotateCcw, ShieldCheck } from "lucide-react"
 import { getKnowledgeBriefBySlug } from "@/lib/knowledge-briefs"
-import { evaluateLaunchpadTool, getLaunchpadTool, type LaunchpadToolId } from "@/lib/launchpad"
+import {
+  evaluateLaunchpadTool,
+  getLaunchpadCaseStudyRecommendation,
+  getLaunchpadResultGuidance,
+  getLaunchpadTool,
+  getToolStrategyCallHref,
+  type LaunchpadToolId,
+} from "@/lib/launchpad"
 
 type ToolAssessmentProps = {
   toolId: LaunchpadToolId
@@ -31,12 +38,19 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
     track("launchpad_tool_complete", {
       tool: toolId,
       resultCategory: result.category.id,
+      confidence: result.confidence.level,
     })
   }, [completed, result, toolId])
 
   if (!tool) {
     return null
   }
+
+  const guidance = result ? getLaunchpadResultGuidance(toolId, result.category.id) : null
+  const caseStudyRecommendation = result
+    ? getLaunchpadCaseStudyRecommendation(toolId, result.category.id)
+    : null
+  const strategyCallHref = result ? getToolStrategyCallHref(result) : "/contact?interest=strategy-session"
 
   const currentQuestion = tool.questions[stepIndex]
   const currentAnswer = currentQuestion ? answers[currentQuestion.id] : ""
@@ -78,7 +92,7 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
   }
 
   function handleEmailSummary() {
-    if (!result || !email.trim()) {
+    if (!result || !guidance || !email.trim()) {
       return
     }
 
@@ -88,13 +102,23 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
       [
         `${tool.title}`,
         "",
-        `Result: ${result.category.title}`,
+        `Profile: ${result.category.title}`,
+        `Confidence: ${result.confidence.label}`,
         "",
-        result.category.summary,
-        "",
+        `What we are seeing: ${result.category.summary}`,
         `Why it matters: ${result.category.whyItMatters}`,
         "",
-        `Recommended next step: ${result.category.nextStep.label} (${result.category.nextStep.href})`,
+        "Top drivers:",
+        ...(result.topDrivers.length > 0
+          ? result.topDrivers.map((driver) => `- ${driver}`)
+          : ["- Limited signal from selected answers"]),
+        "",
+        "First two-week moves:",
+        ...guidance.firstMoves.map((item) => `- ${item}`),
+        "",
+        `Risk if unchanged: ${guidance.riskIfUnchanged}`,
+        "",
+        `Recommended next move: ${result.category.nextStep.label} (${result.category.nextStep.href})`,
         "",
         "Generated from Amalgam Launchpad.",
       ].join("\n"),
@@ -105,7 +129,7 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
       resultCategory: result.category.id,
     })
 
-    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`
+    window.open(`mailto:${recipient}?subject=${subject}&body=${body}`, "_self")
   }
 
   return (
@@ -113,20 +137,12 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
       <div className="rounded-[30px] border border-border bg-background p-7 md:p-8">
         <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
           <div className="max-w-2xl">
-            <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-              {tool.kicker}
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold text-foreground text-balance">
-              {tool.title}
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              {tool.description}
-            </p>
+            <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">{tool.kicker}</p>
+            <h2 className="mt-3 text-3xl font-semibold text-foreground text-balance">{tool.title}</h2>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">{tool.description}</p>
           </div>
           <div className="support-panel min-w-[240px] rounded-[24px] p-5">
-            <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-              Assessment details
-            </p>
+            <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">Assessment details</p>
             <dl className="mt-4 space-y-3 text-sm">
               <div>
                 <dt className="text-muted-foreground">Best for</dt>
@@ -147,15 +163,13 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
 
       {!started ? (
         <div className="rounded-[30px] border border-border bg-secondary/30 p-7 md:p-8">
-          <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
-            {tool.questionIntro}
-          </p>
+          <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">{tool.questionIntro}</p>
           <button
             type="button"
             onClick={handleStart}
             className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-foreground px-6 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
           >
-            Start diagnostic
+            Start assessment
             <ArrowRight className="h-4 w-4" />
           </button>
         </div>
@@ -168,12 +182,8 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
               <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
                 Step {stepIndex + 1} of {tool.questions.length}
               </p>
-              <h3 className="mt-3 text-2xl font-semibold text-foreground text-balance">
-                {currentQuestion.prompt}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {currentQuestion.helper}
-              </p>
+              <h3 className="mt-3 text-2xl font-semibold text-foreground text-balance">{currentQuestion.prompt}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{currentQuestion.helper}</p>
             </div>
             <div className="w-full max-w-[220px]">
               <div
@@ -184,10 +194,7 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
                 aria-valuenow={progressValue}
                 aria-label={`${tool.title} progress`}
               >
-                <div
-                  className="h-full rounded-full bg-teal transition-all"
-                  style={{ width: `${progressValue}%` }}
-                />
+                <div className="h-full rounded-full bg-teal transition-all" style={{ width: `${progressValue}%` }} />
               </div>
             </div>
           </div>
@@ -197,14 +204,11 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
             <div className="grid gap-4">
               {currentQuestion.options.map((option) => {
                 const isSelected = currentAnswer === option.id
-
                 return (
                   <label
                     key={option.id}
                     className={`block cursor-pointer rounded-[24px] border px-5 py-5 transition-colors ${
-                      isSelected
-                        ? "border-teal bg-teal/6"
-                        : "border-border bg-background hover:border-teal/35"
+                      isSelected ? "border-teal bg-teal/6" : "border-border bg-background hover:border-teal/35"
                     }`}
                   >
                     <input
@@ -231,9 +235,7 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
                       </span>
                       <div>
                         <p className="font-medium text-foreground">{option.label}</p>
-                        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                          {option.description}
-                        </p>
+                        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{option.description}</p>
                       </div>
                     </div>
                   </label>
@@ -265,108 +267,144 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
         </div>
       ) : null}
 
-      {completed && result ? (
+      {completed && result && guidance ? (
         <div className="space-y-6">
           <div className="rounded-[30px] border border-border bg-background p-7 md:p-8">
-            <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-              {tool.outputLabel}
-            </p>
-            <h3 className="mt-3 text-3xl font-semibold text-foreground text-balance">
-              {result.category.title}
-            </h3>
-            <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">
-              {result.category.summary}
-            </p>
-            <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
+            <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">{tool.outputLabel}</p>
+            <h3 className="mt-3 text-3xl font-semibold text-foreground text-balance">{result.category.title}</h3>
+            <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">{result.category.summary}</p>
+
+            <div className="mt-8 grid gap-6 lg:grid-cols-3">
               <div className="support-panel rounded-[26px] p-6">
-                <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                  Why it matters
-                </p>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {result.category.whyItMatters}
-                </p>
-                {result.runnerUp && result.runnerUpScore && result.runnerUpScore > 0 ? (
-                  <>
-                    <p className="mt-5 text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
-                      Also showing up
-                    </p>
-                    <p className="mt-2 text-sm leading-relaxed text-foreground">
-                      {result.runnerUp.title}
-                    </p>
-                  </>
-                ) : null}
+                <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">Confidence level</p>
+                <p className="mt-3 text-lg font-semibold text-foreground">{result.confidence.label}</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{result.confidence.summary}</p>
+              </div>
+              <div className="support-panel rounded-[26px] p-6 lg:col-span-2">
+                <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">Why this profile won</p>
+                <div className="mt-4 space-y-3">
+                  {result.topDrivers.length > 0 ? (
+                    result.topDrivers.map((driver) => (
+                      <div
+                        key={driver}
+                        className="flex items-start gap-3 rounded-2xl border border-border bg-background px-4 py-3 text-sm text-muted-foreground"
+                      >
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-teal" />
+                        <span>{driver}</span>
+                      </div>
+                    ))
+                  ) : (
+                    <div className="rounded-2xl border border-border bg-background px-4 py-3 text-sm text-muted-foreground">
+                      Not enough signal to isolate dominant drivers confidently.
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 grid gap-6 lg:grid-cols-2">
+              <div className="rounded-[26px] border border-border bg-secondary/25 p-6">
+                <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">First 2-week moves</p>
+                <div className="mt-4 space-y-3">
+                  {guidance.firstMoves.map((move) => (
+                    <div
+                      key={move}
+                      className="flex items-start gap-3 rounded-2xl border border-border bg-background px-4 py-3 text-sm text-muted-foreground"
+                    >
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-teal" />
+                      <span>{move}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <div className="rounded-[26px] border border-teal/35 bg-teal/6 p-6">
-                <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                  Recommended next move
-                </p>
-                <p className="mt-3 text-lg font-semibold text-foreground">
-                  {result.category.nextStep.label}
-                </p>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {result.category.nextStep.note}
-                </p>
-                <div className="mt-6 flex flex-col gap-3">
-                  <Link
-                    href={result.category.nextStep.href}
-                    onClick={() =>
-                      track("launchpad_tool_cta", {
-                        tool: toolId,
-                        resultCategory: result.category.id,
-                        href: result.category.nextStep.href,
-                      })
-                    }
-                    className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-foreground px-5 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
-                  >
-                    {result.category.nextStep.label}
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                  <Link
-                    href="/contact"
-                    onClick={() =>
-                      track("launchpad_tool_cta", {
-                        tool: toolId,
-                        resultCategory: result.category.id,
-                        href: "/contact",
-                      })
-                    }
-                    className="inline-flex min-h-11 items-center justify-center rounded-xl border border-border px-5 py-3 text-sm font-medium text-foreground transition-colors hover:bg-background"
-                  >
-                    Start a conversation
-                  </Link>
+              <div className="rounded-[26px] border border-amber-200 bg-amber-50/60 p-6">
+                <div className="flex items-center gap-2">
+                  <AlertTriangle className="h-4 w-4 text-amber-700" />
+                  <p className="text-xs font-medium uppercase tracking-[0.22em] text-amber-700">Risk if unchanged</p>
                 </div>
+                <p className="mt-3 text-sm leading-relaxed text-amber-900/80">{guidance.riskIfUnchanged}</p>
+              </div>
+            </div>
+
+            <div className="mt-6 rounded-[26px] border border-teal/35 bg-teal/6 p-6">
+              <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">Recommended next move</p>
+              <p className="mt-3 text-lg font-semibold text-foreground">Book a free 60-minute strategy call</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                Bring this result into the call and we will pressure-test it with you live.
+              </p>
+              <div className="mt-6 flex flex-col gap-3 md:flex-row">
+                <Link
+                  href={strategyCallHref}
+                  onClick={() =>
+                    track("launchpad_tool_cta", {
+                      tool: toolId,
+                      resultCategory: result.category.id,
+                      cta: "strategy_call",
+                      href: strategyCallHref,
+                    })
+                  }
+                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-foreground px-5 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
+                >
+                  Book a free 60-minute strategy call
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  href={result.category.nextStep.href}
+                  onClick={() =>
+                    track("launchpad_tool_cta", {
+                      tool: toolId,
+                      resultCategory: result.category.id,
+                      cta: "recommended_path",
+                      href: result.category.nextStep.href,
+                    })
+                  }
+                  className="inline-flex min-h-11 items-center justify-center rounded-xl border border-border bg-background px-5 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+                >
+                  {result.category.nextStep.label}
+                </Link>
               </div>
             </div>
           </div>
 
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
-            <div className="rounded-[30px] border border-border bg-secondary/35 p-7 md:p-8">
-              <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                Related guides
-              </p>
-              <div className="mt-5 grid gap-4 md:grid-cols-3">
-                {relatedGuides.map((guide) => (
-                  <Link
-                    key={guide.slug}
-                    href={`/knowledge/${guide.slug}`}
-                    className="rounded-[24px] border border-border bg-background px-5 py-5 transition-colors hover:border-teal/35"
-                  >
-                    <p className="text-sm font-semibold text-foreground">{guide.title}</p>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                      {guide.description}
-                    </p>
-                  </Link>
-                ))}
+            <div className="space-y-6">
+              <div className="rounded-[30px] border border-border bg-secondary/35 p-7 md:p-8">
+                <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">Related guides</p>
+                <div className="mt-5 grid gap-4 md:grid-cols-3">
+                  {relatedGuides.map((guide) => (
+                    <Link
+                      key={guide.slug}
+                      href={`/knowledge/${guide.slug}`}
+                      className="rounded-[24px] border border-border bg-background px-5 py-5 transition-colors hover:border-teal/35"
+                    >
+                      <p className="text-sm font-semibold text-foreground">{guide.title}</p>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{guide.description}</p>
+                    </Link>
+                  ))}
+                </div>
               </div>
+
+              {caseStudyRecommendation ? (
+                <div className="rounded-[30px] border border-border bg-background p-7">
+                  <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">Related proof</p>
+                  <p className="mt-3 text-lg font-semibold text-foreground">{caseStudyRecommendation.client}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{caseStudyRecommendation.reason}</p>
+                  <Link
+                    href={`/case-studies/${caseStudyRecommendation.slug}`}
+                    className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
+                  >
+                    See related case study
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              ) : null}
             </div>
 
             <div className="rounded-[30px] border border-border bg-background p-7">
-              <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                Email this summary
-              </p>
+              <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">Email this summary</p>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Want a copy in your inbox? Use your work email and we will open a draft with the result summary.
+                Send yourself the result for internal review.
               </p>
               <label className="mt-5 block">
                 <span className="sr-only">Work email</span>
@@ -395,6 +433,15 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
                 Run it again
                 <RotateCcw className="h-4 w-4" />
               </button>
+              <div className="mt-4 rounded-2xl border border-border bg-secondary/25 p-4">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="h-4 w-4 text-teal" />
+                  <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">Practical reminder</p>
+                </div>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  This is a first-pass diagnostic. Use it to narrow ambiguity, then validate with direct context.
+                </p>
+              </div>
             </div>
           </div>
         </div>

@@ -37,6 +37,8 @@ type ContactFormProps = {
 
 export function ContactForm({ initialInterest = "" }: ContactFormProps) {
   const normalizeInterest = (value: string) => (value in interestLabels ? value : "")
+  const normalizeContext = (value: string) =>
+    value.replace(/\s+/g, " ").trim().slice(0, 1200)
   const getInitialInterest = () => {
     const seededInterest = normalizeInterest(initialInterest)
     if (seededInterest) {
@@ -51,9 +53,28 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
     return normalizeInterest(urlInterest)
   }
 
+  const getInitialMessage = () => {
+    if (typeof window === "undefined") {
+      return ""
+    }
+
+    const rawContext = new URLSearchParams(window.location.search).get("context") ?? ""
+    if (!rawContext) {
+      return ""
+    }
+
+    const context = normalizeContext(rawContext)
+    if (!context) {
+      return ""
+    }
+
+    return `Context from diagnostic:\n${context}\n\nWhat is happening, what are you trying to solve, and where is the friction showing up?`
+  }
+
   const [form, setForm] = useState<FormState>({
     ...initialState,
     interest: getInitialInterest(),
+    message: getInitialMessage(),
   })
   const [error, setError] = useState("")
   const [submitted, setSubmitted] = useState(false)
@@ -125,21 +146,21 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
             </p>
           </div>
           <div className="contact-intake-note-item rounded-2xl bg-background px-4 py-4">
-            <p className="text-sm font-medium text-foreground">No black-box handoff</p>
+            <p className="text-sm font-medium text-foreground">You keep full context</p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              We draft the email so your exact context stays visible.
+              We draft your email so your message stays clear and reusable.
             </p>
           </div>
         </div>
       </div>
-      <h2 className="mb-2 text-xl font-semibold text-foreground">Send us a message</h2>
+      <h2 className="mb-2 text-xl font-semibold text-foreground">Share your situation</h2>
       <p className="mb-6 text-sm text-muted-foreground">
-        This opens a draft email to hello@amalgam-inc.com with your notes prefilled.
+        This opens a draft to hello@amalgam-inc.com with your details prefilled.
       </p>
 
       <form className="space-y-5" onSubmit={handleSubmit}>
         <div>
-          <p className="mb-3 text-sm font-medium text-foreground">Common paths</p>
+          <p className="mb-3 text-sm font-medium text-foreground">Quick paths</p>
           <div className="contact-common-paths flex flex-wrap gap-2">
             {[
               { value: "strategy-session", label: "Free strategy call" },
@@ -259,7 +280,7 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
             <option value="general">General inquiry</option>
           </select>
           <p className="mt-2 text-xs text-muted-foreground">
-            Choose the closest fit. If you are unsure, leave it as a general inquiry.
+            Pick the closest fit. If unsure, use general inquiry.
           </p>
         </div>
 
@@ -340,7 +361,7 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
 
       <div className="contact-control-note mt-4 inline-flex items-center gap-2 text-xs text-muted-foreground">
         <Copy className="h-3.5 w-3.5" />
-        You stay in control of the message, with copy-to-clipboard backup if your mail app does not open.
+        Your message stays in your control, with clipboard backup if your mail app does not open.
       </div>
     </div>
   )

@@ -33,7 +33,7 @@ export default function LaunchpadGuidesPage() {
               Launchpad Guides
             </p>
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl">
-              Practical field guidance for leaders trying to act, not just read
+              Practical guides for teams that need to act now
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
               Guidance grouped by the pressure right in front of you.

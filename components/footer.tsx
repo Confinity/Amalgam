@@ -104,7 +104,7 @@ export function Footer() {
                 Best fit
               </p>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Business leaders, product leaders, and technical teams carrying complexity.
+                For teams carrying delivery and systems complexity.
               </p>
 
               <div className="mt-5 space-y-3 text-sm">

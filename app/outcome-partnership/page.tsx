@@ -262,7 +262,7 @@ export default function OutcomePartnershipPage() {
                 Why Teams Choose This
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Because a roadmap alone does not protect momentum
+                A roadmap alone does not keep momentum alive
               </h2>
               <div className="mt-6 space-y-4 leading-relaxed text-muted-foreground">
                 <p>

@@ -75,9 +75,9 @@ export default function LaunchpadPage() {
                 What Launchpad is for
               </p>
               <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
-                <p>Structured self-location for teams carrying real systems complexity.</p>
-                <p>Diagnostics and field guides that deliver value before contact.</p>
-                <p>Clear escalation into a strategy call when deeper support is needed.</p>
+                <p>Structured self-location for teams carrying systems complexity.</p>
+                <p>Diagnostics and guides that deliver value before contact.</p>
+                <p>A clear escalation path when deeper support is needed.</p>
               </div>
             </div>
           </div>
@@ -93,7 +93,7 @@ export default function LaunchpadPage() {
                 Pick the path that matches your situation
               </h2>
               <p className="mt-4 leading-relaxed text-muted-foreground">
-                Pick a route into the right tool, guide set, program, or conversation.
+                Pick a route into the right tool, guide, program, or conversation.
               </p>
             </div>
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
@@ -118,7 +118,7 @@ export default function LaunchpadPage() {
 
         <section className="deferred-section border-y border-border bg-secondary/35 py-24 lg:py-28">
           <div className="mx-auto max-w-[1200px] px-6">
-            <div className="mb-12 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+            <div className="mb-12">
               <div className="max-w-3xl">
                 <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
                   Featured tools
@@ -127,15 +127,6 @@ export default function LaunchpadPage() {
                 Use these tools to pressure-test the situation before committing
               </h2>
               </div>
-              <TrackedLink
-                href="/launchpad/tools"
-                eventName="launchpad_path_click"
-                eventData={{ source: "launchpad_featured_tools", target: "tools_index" }}
-                className="inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
-              >
-                See all diagnostics
-                <ArrowRight className="h-4 w-4" />
-              </TrackedLink>
             </div>
             <div className="grid gap-8 lg:grid-cols-3">
               {tools.map((tool) => (
@@ -176,7 +167,7 @@ export default function LaunchpadPage() {
                     eventData={{ source: "launchpad_featured_tools", target: tool.id }}
                     className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
                   >
-                    Start diagnostic
+                    See your profile
                     <ArrowRight className="h-4 w-4" />
                   </TrackedLink>
                 </div>
@@ -272,7 +263,7 @@ export default function LaunchpadPage() {
                 >
                   {program.featured ? (
                     <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                      Best starting point
+                      Recommended first move
                     </p>
                   ) : null}
                   <h3 className="mt-4 text-2xl font-semibold text-foreground">{program.title}</h3>
@@ -373,7 +364,7 @@ export default function LaunchpadPage() {
                 </p>
               </div>
               <h3 className="mt-4 text-2xl font-semibold text-background">
-                Get practical Launchpad signal
+                Get practical updates
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-background/72">
                 Useful notes on systems clarity, execution drag, and next moves when complexity slows the business down.
@@ -406,7 +397,7 @@ export default function LaunchpadPage() {
         <section className="deferred-section bg-foreground py-20 lg:py-24">
           <div className="mx-auto max-w-[900px] px-6 text-center">
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
-              Best next step
+              Next step
             </p>
               <h2 className="text-3xl font-semibold text-background text-balance md:text-4xl">
                 Launchpad helps you get clear quickly. If deeper help is needed, start with a strategy call.

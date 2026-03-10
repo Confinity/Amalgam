@@ -32,7 +32,7 @@ export default function LaunchpadSignalsPage() {
                 Launchpad Signals
               </p>
               <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl">
-                Practical signal for leaders navigating systems complexity
+                Practical updates for leaders navigating systems complexity
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 Useful updates on delivery drag, architecture decisions, and what to do next.
@@ -64,7 +64,7 @@ export default function LaunchpadSignalsPage() {
                 Recent signal
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Start with the notes most useful to teams carrying complexity now
+                Start with the notes teams are using right now
               </h2>
             </div>
             <div className="grid gap-6 lg:grid-cols-3">

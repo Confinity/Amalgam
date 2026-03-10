@@ -61,39 +61,14 @@ export default function ContactPage() {
                 <p className="contact-hero-body mt-6 text-lg leading-relaxed text-muted-foreground">
                   Tell us what&apos;s stuck. We&apos;ll give you a clear next step.
                 </p>
-                <Link
-                  href="/launchpad/tools"
-                  className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
-                >
-                  Not ready to reach out yet? Explore diagnostics
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
 
-                <div className="contact-path-grid mt-8 grid gap-4 sm:grid-cols-3">
-                  <div className="contact-path-card support-panel p-5">
-                    <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                      Free strategy call
-                    </p>
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                      Best when you need a clear read before deciding what help you need.
-                    </p>
-                  </div>
-                  <div className="contact-path-card support-panel p-5">
-                    <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                      Execution Sprint
-                    </p>
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                      Best when the diagnosis is visible and the team needs sequencing.
-                    </p>
-                  </div>
-                  <div className="contact-path-card support-panel p-5">
-                    <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                      Outcome Partnership
-                    </p>
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                      Best when the roadmap exists and follow-through protects momentum.
-                    </p>
-                  </div>
+                <div className="contact-path-card support-panel mt-8 p-5">
+                  <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
+                    Best first move
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    If the root cause is still unclear, start with a free strategy call. If the path is already clear, the form lets you choose the right engagement directly.
+                  </p>
                 </div>
 
                 <div className="contact-methods mt-10 space-y-6">
@@ -238,9 +213,9 @@ export default function ContactPage() {
                 </Link>
                 <Link
                   href="/launchpad/tools"
-                  className="mt-3 inline-flex min-h-11 w-full items-center justify-center rounded-xl border border-background/15 px-6 py-3 text-sm font-medium text-background transition-colors hover:bg-background/10"
+                  className="inline-flex items-center justify-center pt-1 text-sm font-medium text-teal transition-colors hover:text-background"
                 >
-                  Explore diagnostics
+                  Prefer self-check first? Explore diagnostics
                 </Link>
               </div>
             </div>

@@ -113,6 +113,8 @@ export default function CaseStudiesPage() {
           eyebrow="Client feedback"
           title="What clients noticed in the work"
           compact
+          testimonialIds={["mooney-cleanitsupply", "mendez-pearlx"]}
+          maxItems={2}
         />
 
         <section className="deferred-section section-warm px-6 py-16 md:py-24">

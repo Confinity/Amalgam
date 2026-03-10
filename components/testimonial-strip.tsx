@@ -7,6 +7,8 @@ type TestimonialStripProps = {
   eyebrow?: string
   title?: string
   compact?: boolean
+  testimonialIds?: string[]
+  maxItems?: number
 }
 
 export function TestimonialStrip({
@@ -14,7 +16,16 @@ export function TestimonialStrip({
   eyebrow = "Client perspective",
   title = "What working together felt like",
   compact = false,
+  testimonialIds,
+  maxItems,
 }: TestimonialStripProps) {
+  const filteredTestimonials = testimonialIds?.length
+    ? testimonials.filter((item) => testimonialIds.includes(item.id))
+    : testimonials
+  const visibleTestimonials = (maxItems && maxItems > 0
+    ? filteredTestimonials.slice(0, maxItems)
+    : filteredTestimonials)
+
   return (
     <section className={className}>
       <div className="mx-auto max-w-[1200px] px-6">
@@ -26,7 +37,7 @@ export function TestimonialStrip({
         </div>
 
         <div className={`grid gap-6 ${compact ? "md:grid-cols-2 xl:grid-cols-3" : "lg:grid-cols-3"}`}>
-          {testimonials.map((item) => (
+          {visibleTestimonials.map((item) => (
             <article
               key={item.id}
               className="rounded-[28px] border border-border bg-[linear-gradient(160deg,rgba(255,255,255,0.95),rgba(244,246,248,0.7))] p-6 shadow-sm"

@@ -71,7 +71,7 @@ export default function LaunchpadProgramsPage() {
                 >
                   {program.featured ? (
                     <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                      Best starting point
+                      Recommended first move
                     </p>
                   ) : null}
                   <h2 className="mt-4 text-2xl font-semibold text-foreground">{program.title}</h2>

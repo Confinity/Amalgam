@@ -327,17 +327,17 @@ export function HeroDiagnosticPanel() {
         ? nodes.map((node) => {
             switch (node.key) {
               case "api":
-                return { ...node, x: 34, y: 20, width: 90, height: 48 }
+                return { ...node, x: 30, y: 19, width: 76, height: 44 }
               case "identity":
-                return { ...node, x: 66, y: 20, width: 90, height: 48 }
+                return { ...node, x: 70, y: 19, width: 76, height: 44 }
               case "core":
-                return { ...node, x: 50, y: 36, width: 100, height: 54 }
+                return { ...node, x: 50, y: 34, width: 92, height: 50 }
               case "data":
-                return { ...node, x: 38, y: 50, width: 94, height: 52 }
+                return { ...node, x: 30, y: 50, width: 82, height: 48 }
               case "infra":
-                return { ...node, x: 62, y: 50, width: 94, height: 52 }
+                return { ...node, x: 70, y: 50, width: 82, height: 48 }
               case "observability":
-                return { ...node, x: 50, y: 63, width: 114, height: 48 }
+                return { ...node, x: 50, y: 64, width: 110, height: 44 }
             }
           })
         : nodes,

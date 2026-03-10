@@ -348,9 +348,27 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
 
               <div className="rounded-[28px] border border-border bg-background p-6">
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                  Best for
+                  Apply this now
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-foreground">{brief.takeaway}</p>
+                {recommendedTool ? (
+                  <div className="mt-4 rounded-2xl border border-border bg-secondary/30 p-4">
+                    <p className="text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
+                      Recommended diagnostic
+                    </p>
+                    <p className="mt-2 text-sm font-medium text-foreground">{recommendedTool.title}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {launchpadRecommendation?.reason}
+                    </p>
+                    <Link
+                      href={`/launchpad/${recommendedTool.slug}`}
+                      className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
+                    >
+                      See how the diagnostic works
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </div>
+                ) : null}
                 {category ? (
                   <Link
                     href={`/knowledge?category=${category.id}`}
@@ -387,30 +405,6 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                   })}
                 </div>
               </div>
-
-              {recommendedTool ? (
-                <div className="rounded-[28px] border border-border bg-background p-6">
-                  <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                    Recommended diagnostic
-                  </p>
-                  <h3 className="mt-3 text-lg font-semibold text-foreground">
-                    {recommendedTool.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {launchpadRecommendation?.reason}
-                  </p>
-                  <p className="mt-4 text-sm text-foreground">
-                    {recommendedTool.outputLabel} in {recommendedTool.estimatedTime}.
-                  </p>
-                  <Link
-                    href={`/launchpad/${recommendedTool.slug}`}
-                    className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
-                  >
-                    Explore diagnostics
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </div>
-              ) : null}
 
               <div className="rounded-[28px] border border-border bg-background p-6">
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">

@@ -17,6 +17,11 @@ export const metadata: Metadata = {
 
 export default function LaunchpadToolsPage() {
   const tools = getFeaturedLaunchpadTools()
+  const previewRows = tools.map((tool) => ({
+    id: tool.id,
+    title: tool.shortTitle,
+    profiles: tool.categories.slice(0, 2).map((category) => category.title),
+  }))
 
   return (
     <>
@@ -40,6 +45,28 @@ export default function LaunchpadToolsPage() {
 
         <section className="py-20 lg:py-24">
           <div className="mx-auto max-w-[1200px] px-6">
+            <div className="mb-10 rounded-[28px] border border-border bg-secondary/30 p-6 md:p-7">
+              <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
+                What you walk away with
+              </p>
+              <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+                Each tool gives you a clear profile of what is likely creating drag, why it matters, and a practical next move.
+              </p>
+              <div className="mt-5 grid gap-3 md:grid-cols-3">
+                {previewRows.map((row) => (
+                  <div key={row.id} className="rounded-2xl border border-border bg-background px-4 py-4">
+                    <p className="text-sm font-semibold text-foreground">{row.title}</p>
+                    <p className="mt-2 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                      Example profiles
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {row.profiles.join(" | ")}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             <div className="grid gap-8 xl:grid-cols-3">
               {tools.map((tool) => (
                 <article key={tool.id} className="support-panel flex h-full flex-col rounded-[30px] p-8">
@@ -77,7 +104,7 @@ export default function LaunchpadToolsPage() {
                     eventData={{ source: "launchpad_tools_index", target: tool.id }}
                     className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
                   >
-                    Start diagnostic
+                    See your profile
                     <ArrowRight className="h-4 w-4" />
                   </TrackedLink>
                 </article>

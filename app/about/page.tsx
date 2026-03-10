@@ -124,7 +124,7 @@ export default function AboutPage() {
                   About Amalgam
                 </p>
                 <h1 className="text-4xl font-semibold leading-tight tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                  A focused team for complex moments that need clear decisions.
+                  A focused team for complex moments when decisions need to move.
                 </h1>
                 <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                   Amalgam helps business and technical leaders bring clarity to complex systems and restore momentum.
@@ -309,7 +309,11 @@ export default function AboutPage() {
           description="The kinds of complex environments this team has operated in across regulated institutions, operationally demanding companies, and high-growth teams where systems quality directly affects delivery."
         />
 
-        <TestimonialStrip className="deferred-section border-t border-border py-20 lg:py-24" />
+        <TestimonialStrip
+          className="deferred-section border-t border-border py-20 lg:py-24"
+          testimonialIds={["fitzmier-jtf", "mooney-cleanitsupply"]}
+          maxItems={2}
+        />
 
         <section className="deferred-section bg-foreground py-20 lg:py-24">
           <div className="mx-auto max-w-[1200px] px-6 text-center">

@@ -214,7 +214,7 @@ export default function ExecutionSprintPage() {
                 Process
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Structured to make later commitments more trustworthy
+                Built so later commitments hold up
               </h2>
             </div>
             <div className="grid gap-6 lg:grid-cols-3">

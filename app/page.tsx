@@ -123,7 +123,7 @@ function WhatWeDo() {
             What Amalgam does
           </p>
           <h2 className="mb-4 text-3xl font-semibold text-foreground">
-            Clear help for the systems work that slows teams down
+            Clear help when systems work starts slowing delivery
           </h2>
           <p className="max-w-2xl leading-relaxed text-muted-foreground">
             We work with teams that need clearer judgment, better structure, and steadier forward motion.
@@ -162,9 +162,7 @@ function WhoWeHelp() {
                 Founders and business leaders
               </h3>
             </div>
-            <p className="mb-5 text-muted-foreground">
-              When growth adds complexity and execution starts to wobble.
-            </p>
+            <p className="mb-5 text-muted-foreground">When growth adds complexity.</p>
             <ul className="space-y-3">
               {[
                 "Shipping slows after growth",
@@ -189,9 +187,7 @@ function WhoWeHelp() {
                 Technical and product leaders
               </h3>
             </div>
-            <p className="mb-5 text-muted-foreground">
-              When architecture, integrations, and delivery pressure collide.
-            </p>
+            <p className="mb-5 text-muted-foreground">When architecture and execution collide.</p>
             <ul className="space-y-3">
               {[
                 "Architecture has become fragile",
@@ -258,7 +254,7 @@ function TypicalTriggers() {
               When teams usually reach out
             </h2>
             <p className="leading-relaxed text-muted-foreground">
-              Teams usually reach out when delivery slows and nobody can clearly prove why.
+              Teams usually reach out when delivery slows and nobody can clearly show why.
             </p>
             <Link
               href="/contact?interest=strategy-session"
@@ -323,9 +319,7 @@ function Offers() {
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="mb-10 max-w-3xl">
           <h2 className="mb-4 text-2xl font-semibold text-foreground">Start here</h2>
-          <p className="text-muted-foreground">
-            One clear first step, then deeper support only when it clearly helps.
-          </p>
+          <p className="text-muted-foreground">One clear first step, then deeper support only when needed.</p>
         </div>
         <div className="grid gap-8 lg:grid-cols-2">
           {offers.map((offer) => (
@@ -339,7 +333,7 @@ function Offers() {
             >
               {offer.primary ? (
                 <span className="mb-4 inline-flex rounded-full border border-teal/25 bg-teal/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                  Best starting point
+                  Recommended first move
                 </span>
               ) : null}
               <h3 className="text-2xl font-semibold text-foreground">{offer.title}</h3>
@@ -398,9 +392,7 @@ function FeaturedCaseStudies() {
             <h2 className="mb-2 text-3xl font-semibold text-foreground">
               Work we can stand behind
             </h2>
-            <p className="text-muted-foreground">
-              A few examples of how we&apos;ve helped in real operating conditions.
-            </p>
+            <p className="text-muted-foreground">A few examples from real operating conditions.</p>
           </div>
           <Link
             href="/case-studies"
@@ -550,7 +542,10 @@ export default function HomePage() {
         <WhoWeHelp />
         <TypicalTriggers />
         <Offers />
-        <TestimonialStrip className="deferred-section border-t border-border py-20 lg:py-24" />
+        <TestimonialStrip
+          className="deferred-section border-t border-border py-20 lg:py-24"
+          testimonialIds={["fitzmier-jtf", "mendez-pearlx", "mooney-cleanitsupply"]}
+        />
         <TrustSection />
         <FeaturedCaseStudies />
         <KnowledgePreview />

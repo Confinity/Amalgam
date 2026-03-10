@@ -86,6 +86,25 @@ export type LaunchpadToolResult = {
   runnerUp?: LaunchpadToolCategory
   runnerUpScore?: number
   totals: Record<string, number>
+  topDrivers: string[]
+  confidence: {
+    level: "high" | "medium" | "provisional"
+    label: string
+    summary: string
+    answerRatio: number
+    margin: number
+  }
+}
+
+export type LaunchpadResultGuidance = {
+  firstMoves: string[]
+  riskIfUnchanged: string
+}
+
+export type LaunchpadCaseStudyRecommendation = {
+  slug: string
+  client: string
+  reason: string
 }
 
 export const launchpadPaths: LaunchpadPathCard[] = [
@@ -94,21 +113,21 @@ export const launchpadPaths: LaunchpadPathCard[] = [
     description:
       "The drag is visible, but the root cause still feels unclear across systems, teams, and decisions.",
     href: "/launchpad/delivery-drag-diagnostic",
-    nextStep: "Best next step: Delivery Drag Diagnostic",
+    nextStep: "Next: Delivery Drag Diagnostic",
   },
   {
     title: "I need a roadmap",
     description:
       "The system is visibly messy and the business now needs honest sequencing rather than more abstract debate.",
     href: "/launchpad/programs",
-    nextStep: "Best next step: Execution Sprint path",
+    nextStep: "Next: Execution Sprint path",
   },
   {
     title: "I need follow-through",
     description:
       "The direction exists, but momentum still needs clear judgment close enough to protect the work.",
     href: "/launchpad/programs",
-    nextStep: "Best next step: Outcome Partnership path",
+    nextStep: "Next: Outcome Partnership path",
   },
   {
     title: "I want tools first",
@@ -1049,6 +1068,222 @@ const launchpadGuideCollectionMap = new Map(
   launchpadGuideCollections.map((collection) => [collection.id, collection]),
 )
 
+const resultGuidanceMap: Record<string, LaunchpadResultGuidance> = {
+  "delivery-drag-diagnostic:structural-delivery-drag": {
+    firstMoves: [
+      "Map the highest-risk architecture boundaries and change dependencies.",
+      "Pick one structural hotspot to stabilize before pushing more feature scope.",
+      "Define explicit ownership for platform decisions and review cadence.",
+    ],
+    riskIfUnchanged:
+      "Delivery cost and fragility keep compounding, making every roadmap commitment harder to trust.",
+  },
+  "delivery-drag-diagnostic:sequencing-drag": {
+    firstMoves: [
+      "Re-sequence the next quarter around dependency removal, not feature preference.",
+      "Publish explicit 30/60/90 execution gates with decision criteria.",
+      "Pause low-leverage initiatives until critical path constraints are cleared.",
+    ],
+    riskIfUnchanged:
+      "Teams keep working hard against a brittle sequence, and confidence in planning erodes.",
+  },
+  "delivery-drag-diagnostic:ownership-coordination-drag": {
+    firstMoves: [
+      "Define decision-right owners for cross-functional execution points.",
+      "Reduce handoff count across the highest-friction workflow.",
+      "Establish one operating rhythm for escalation and unblock decisions.",
+    ],
+    riskIfUnchanged:
+      "Coordination overhead grows faster than output, and execution speed keeps degrading.",
+  },
+  "delivery-drag-diagnostic:visibility-data-drag": {
+    firstMoves: [
+      "Agree on one source of truth for priority delivery and risk metrics.",
+      "Cut low-signal reporting and focus on decision-grade indicators.",
+      "Add simple weekly variance checks between plan and observed delivery behavior.",
+    ],
+    riskIfUnchanged:
+      "Leadership decisions stay noisy and reactive, increasing rework and plan churn.",
+  },
+  "delivery-drag-diagnostic:integration-driven-drag": {
+    firstMoves: [
+      "Inventory the most failure-prone integrations and rank by business impact.",
+      "Add clear interface ownership for each high-risk boundary.",
+      "Stabilize one integration path end-to-end before expanding scope.",
+    ],
+    riskIfUnchanged:
+      "Integration failures continue to tax delivery and absorb capacity from core work.",
+  },
+  "ai-readiness-checklist:not-ready-yet": {
+    firstMoves: [
+      "Clarify one workflow where value is measurable before discussing broad AI plans.",
+      "Assign a single accountable owner for readiness decisions.",
+      "Stabilize baseline data quality and access before tooling decisions.",
+    ],
+    riskIfUnchanged:
+      "AI initiatives become performative, with low adoption and high distraction cost.",
+  },
+  "ai-readiness-checklist:tactically-ready-in-a-few-areas": {
+    firstMoves: [
+      "Select one narrow pilot with a clear success metric and owner.",
+      "Set a 6-week evaluation window with adoption and quality checkpoints.",
+      "Document constraints before scaling beyond the pilot scope.",
+    ],
+    riskIfUnchanged:
+      "Potential value remains trapped in isolated wins without a reusable execution model.",
+  },
+  "ai-readiness-checklist:promising-but-blocked": {
+    firstMoves: [
+      "List the top three blockers by impact on adoption velocity.",
+      "Fix ownership and workflow clarity before adding more tools.",
+      "Sequence blocker removal with one practical business use case.",
+    ],
+    riskIfUnchanged:
+      "Teams stay stuck between ambition and execution, with little measurable progress.",
+  },
+  "ai-readiness-checklist:ready-for-focused-adoption": {
+    firstMoves: [
+      "Launch a focused adoption plan for highest-value workflows first.",
+      "Add lightweight governance around quality, risk, and review.",
+      "Create a repeatable rollout pattern for adjacent teams.",
+    ],
+    riskIfUnchanged:
+      "Readiness advantage decays while competitors operationalize faster.",
+  },
+  "ai-readiness-checklist:ready-governance-is-the-issue": {
+    firstMoves: [
+      "Establish explicit governance owners and escalation paths.",
+      "Define minimum quality, risk, and compliance controls by workflow.",
+      "Run monthly governance reviews tied to delivery outcomes.",
+    ],
+    riskIfUnchanged:
+      "Adoption continues but risk exposure grows faster than control maturity.",
+  },
+  "tech-stack-audit:stable-but-underdocumented": {
+    firstMoves: [
+      "Document critical workflows and architecture decisions with owners.",
+      "Create onboarding maps for top dependency paths.",
+      "Set a lightweight monthly system review to prevent knowledge drift.",
+    ],
+    riskIfUnchanged:
+      "Execution quality stays person-dependent and fragile under team or scope change.",
+  },
+  "tech-stack-audit:fragmented-and-fragile": {
+    firstMoves: [
+      "Identify top fragility zones across integrations and deployment boundaries.",
+      "Consolidate overlapping tooling where operational cost is highest.",
+      "Define one stabilization backlog with ownership and near-term sequence.",
+    ],
+    riskIfUnchanged:
+      "Small changes keep producing outsized operational risk and delivery stalls.",
+  },
+  "tech-stack-audit:scaling-with-risk": {
+    firstMoves: [
+      "Prioritize risk controls on the highest-growth system paths.",
+      "Add explicit reliability checkpoints to roadmap decisions.",
+      "Stress-test one critical flow before scaling adjacent complexity.",
+    ],
+    riskIfUnchanged:
+      "Growth pressure exposes hidden risk faster than teams can respond.",
+  },
+  "tech-stack-audit:over-complex-for-current-stage": {
+    firstMoves: [
+      "Remove non-essential abstraction from highest-friction delivery paths.",
+      "Right-size platform decisions to current business stage and team capacity.",
+      "Sequence simplification work before adding new architecture layers.",
+    ],
+    riskIfUnchanged:
+      "Complexity tax keeps absorbing time and budget without proportional business value.",
+  },
+  "tech-stack-audit:under-instrumented-for-reliable-delivery": {
+    firstMoves: [
+      "Define minimum observability baseline for critical workflows.",
+      "Instrument error, latency, and quality signals tied to business outcomes.",
+      "Add weekly signal review to guide delivery and risk decisions.",
+    ],
+    riskIfUnchanged:
+      "The team keeps making decisions with weak signal, increasing rework and uncertainty.",
+  },
+}
+
+const caseStudyRecommendationMap: Record<string, LaunchpadCaseStudyRecommendation> = {
+  "delivery-drag-diagnostic:structural-delivery-drag": {
+    slug: "mt-bank",
+    client: "M&T Bank",
+    reason: "Legacy platform constraints and sequencing risk under real delivery pressure.",
+  },
+  "delivery-drag-diagnostic:sequencing-drag": {
+    slug: "confinity",
+    client: "Confinity",
+    reason: "Roadmap sequencing and execution structure in a fast-evolving operating context.",
+  },
+  "delivery-drag-diagnostic:ownership-coordination-drag": {
+    slug: "premier-financial-alliance",
+    client: "Premier Financial Alliance",
+    reason: "Cross-functional ownership clarity and operating workflow alignment.",
+  },
+  "delivery-drag-diagnostic:visibility-data-drag": {
+    slug: "john-templeton-foundation",
+    client: "John Templeton Foundation",
+    reason: "Data quality and signal clarity improvements for better decisions.",
+  },
+  "delivery-drag-diagnostic:integration-driven-drag": {
+    slug: "barclays-bank-us",
+    client: "Barclays Bank US",
+    reason: "Integration-heavy modernization and complex environment execution.",
+  },
+  "ai-readiness-checklist:not-ready-yet": {
+    slug: "john-templeton-foundation",
+    client: "John Templeton Foundation",
+    reason: "Readiness starts with data and workflow foundations, not tooling hype.",
+  },
+  "ai-readiness-checklist:tactically-ready-in-a-few-areas": {
+    slug: "pearlx",
+    client: "PearlX",
+    reason: "Focused execution around practical workflows and staged rollout.",
+  },
+  "ai-readiness-checklist:promising-but-blocked": {
+    slug: "sofi",
+    client: "SoFi",
+    reason: "Operational decision support in a high-velocity financial environment.",
+  },
+  "ai-readiness-checklist:ready-for-focused-adoption": {
+    slug: "moodys",
+    client: "Moody's",
+    reason: "Specialized intelligence workflows deployed for enterprise use.",
+  },
+  "ai-readiness-checklist:ready-governance-is-the-issue": {
+    slug: "tiaa",
+    client: "TIAA",
+    reason: "Execution in a regulated environment where governance quality matters.",
+  },
+  "tech-stack-audit:stable-but-underdocumented": {
+    slug: "admin-partners",
+    client: "Admin Partners",
+    reason: "System legibility and process quality improvements for sustainable execution.",
+  },
+  "tech-stack-audit:fragmented-and-fragile": {
+    slug: "cleanitsupply",
+    client: "CleanItSupply",
+    reason: "Modernization and operational simplification in a legacy-heavy stack.",
+  },
+  "tech-stack-audit:scaling-with-risk": {
+    slug: "barclays-bank-us",
+    client: "Barclays Bank US",
+    reason: "Platform evolution and reliability constraints at enterprise scale.",
+  },
+  "tech-stack-audit:over-complex-for-current-stage": {
+    slug: "confinity",
+    client: "Confinity",
+    reason: "Right-sizing architecture and execution patterns to current business stage.",
+  },
+  "tech-stack-audit:under-instrumented-for-reliable-delivery": {
+    slug: "premier-financial-alliance",
+    client: "Premier Financial Alliance",
+    reason: "Operational signal and workflow clarity in critical system processes.",
+  },
+}
+
 export function getLaunchpadTool(toolId: LaunchpadToolId): LaunchpadToolDefinition {
   return launchpadToolMap.get(toolId)!
 }
@@ -1081,6 +1316,50 @@ export function getLaunchpadSignalArticles() {
     getKnowledgeBriefBySlug("modernize-vs-rebuild"),
     getKnowledgeBriefBySlug("metrics-you-can-run-the-company-on"),
   ].filter((brief): brief is KnowledgeBrief => Boolean(brief))
+}
+
+function toConfidenceLabel(level: "high" | "medium" | "provisional") {
+  if (level === "high") {
+    return "High confidence"
+  }
+  if (level === "medium") {
+    return "Medium confidence"
+  }
+  return "Provisional confidence"
+}
+
+function toConfidenceSummary(
+  level: "high" | "medium" | "provisional",
+  answerRatio: number,
+  margin: number,
+) {
+  const answered = Math.round(answerRatio * 100)
+  if (level === "high") {
+    return `Strong pattern match (${answered}% of core questions answered, score margin ${margin}).`
+  }
+  if (level === "medium") {
+    return `Useful directional read (${answered}% of core questions answered, score margin ${margin}).`
+  }
+  return `Early signal only (${answered}% of core questions answered, score margin ${margin}). Validate before committing.`
+}
+
+function getConfidenceLevel(answerRatio: number, margin: number) {
+  if (answerRatio >= 0.85 && margin >= 4) {
+    return "high" as const
+  }
+  if (answerRatio >= 0.6 && margin >= 2) {
+    return "medium" as const
+  }
+  return "provisional" as const
+}
+
+function truncateDriverPrompt(prompt: string) {
+  if (prompt.length <= 78) {
+    return prompt
+  }
+  const trimmed = prompt.slice(0, 78).trim()
+  const safeCut = trimmed.lastIndexOf(" ")
+  return `${safeCut > 35 ? trimmed.slice(0, safeCut) : trimmed}...`
 }
 
 export function evaluateLaunchpadTool(
@@ -1134,6 +1413,34 @@ export function evaluateLaunchpadTool(
   }
 
   const runnerUp = ranked[1]
+  const margin = Math.max(0, top.score - (runnerUp?.score ?? 0))
+  const answeredCount = tool.questions.reduce(
+    (count, question) => (answers[question.id] ? count + 1 : count),
+    0,
+  )
+  const answerRatio = tool.questions.length > 0 ? answeredCount / tool.questions.length : 0
+  const confidenceLevel = getConfidenceLevel(answerRatio, margin)
+
+  const topDrivers = tool.questions
+    .map((question) => {
+      const answerId = answers[question.id]
+      const option = question.options.find((item) => item.id === answerId)
+      if (!option) {
+        return null
+      }
+      const dominantWeight = option.weights[top.category.id] ?? 0
+      if (dominantWeight <= 0) {
+        return null
+      }
+      return {
+        score: dominantWeight,
+        signal: `${truncateDriverPrompt(question.prompt)} -> ${option.label}`,
+      }
+    })
+    .filter((item): item is { score: number; signal: string } => Boolean(item))
+    .sort((left, right) => right.score - left.score)
+    .slice(0, 3)
+    .map((item) => item.signal)
 
   return {
     tool,
@@ -1142,7 +1449,58 @@ export function evaluateLaunchpadTool(
     runnerUp: runnerUp?.category,
     runnerUpScore: runnerUp?.score,
     totals,
+    topDrivers,
+    confidence: {
+      level: confidenceLevel,
+      label: toConfidenceLabel(confidenceLevel),
+      summary: toConfidenceSummary(confidenceLevel, answerRatio, margin),
+      answerRatio,
+      margin,
+    },
   }
+}
+
+export function getLaunchpadResultGuidance(
+  toolId: LaunchpadToolId,
+  categoryId: string,
+): LaunchpadResultGuidance {
+  return (
+    resultGuidanceMap[`${toolId}:${categoryId}`] ?? {
+      firstMoves: [
+        "Identify the highest-friction workflow and assign a single owner.",
+        "Reduce cross-functional handoffs in the next planning cycle.",
+        "Run a 2-week checkpoint against delivery and risk outcomes.",
+      ],
+      riskIfUnchanged:
+        "Execution drag and uncertainty continue to compound while decisions stay noisy.",
+    }
+  )
+}
+
+export function getLaunchpadCaseStudyRecommendation(
+  toolId: LaunchpadToolId,
+  categoryId: string,
+): LaunchpadCaseStudyRecommendation | null {
+  return caseStudyRecommendationMap[`${toolId}:${categoryId}`] ?? null
+}
+
+export function getToolStrategyCallHref(
+  result: LaunchpadToolResult,
+  confidenceLabelOverride?: string,
+) {
+  const params = new URLSearchParams()
+  params.set("interest", "strategy-session")
+  params.set(
+    "context",
+    [
+      `Tool: ${result.tool.title}`,
+      `Profile: ${result.category.title}`,
+      `Confidence: ${confidenceLabelOverride ?? result.confidence.label}`,
+      `Top driver: ${result.topDrivers[0] ?? "Not enough signal yet"}`,
+      "I would like a 60-minute strategy call to pressure-test this result.",
+    ].join("\n"),
+  )
+  return `/contact?${params.toString()}`
 }
 
 export function getLaunchpadKnowledgeRecommendation(slug: string): {

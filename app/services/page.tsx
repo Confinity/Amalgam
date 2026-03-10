@@ -74,38 +74,38 @@ const pressurePoints = [
     title: "Architecture complexity",
     featured: true,
     description:
-      "The system has grown harder to reason about. Changes take too long, dependencies are murky, and risk is rising faster than confidence.",
+      "The system is harder to reason about. Changes take too long, dependencies stay murky, and risk rises faster than confidence.",
   },
   {
     icon: GitBranch,
     title: "Integration fragility",
     description:
-      "Too many tools, too many handoffs, too much hidden coupling. Work looks simpler on paper than it behaves in reality.",
+      "Too many tools and handoffs with hidden coupling. Work looks simpler on paper than it behaves in reality.",
   },
   {
     icon: Database,
     title: "Data trust problems",
     description:
-      "The business is making important decisions on top of numbers, workflows, or automations that no one fully trusts anymore.",
+      "Important decisions rely on numbers, workflows, or automations that teams no longer fully trust.",
   },
   {
     icon: Gauge,
     title: "Delivery slowdowns",
     featured: true,
     description:
-      "Shipping has slowed after growth, a raise, a reorg, or a platform transition. The team is working hard, but the system is still dragging.",
+      "Shipping slowed after growth, reorg, or platform change. The team is working hard, but the system is still dragging.",
   },
   {
     icon: Users,
     title: "Cross-functional drag",
     description:
-      "Product, engineering, operations, and leadership are all involved, but ownership and sequencing still feel fuzzy or unstable.",
+      "Product, engineering, operations, and leadership are involved, but ownership and sequencing still feel fuzzy.",
   },
   {
     icon: Shield,
     title: "Regulated or high-stakes environments",
     description:
-      "The margin for error is lower. Legacy infrastructure, compliance, and operational risk make bad decisions more expensive.",
+      "Margin for error is lower. Legacy infrastructure, compliance, and operational risk make bad decisions expensive.",
   },
 ]
 
@@ -219,15 +219,14 @@ export default function ServicesPage() {
             <div className="mb-12 grid gap-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1fr)] lg:items-end">
               <div className="max-w-3xl">
                 <p className="mb-4 text-sm font-medium uppercase tracking-widest text-teal">
-                  Where We Step In
+                  Where we help first
                 </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
                 Where we usually help first
               </h2>
               </div>
               <p className="max-w-[52ch] leading-relaxed text-muted-foreground lg:justify-self-end">
-                We are most useful when drag spans architecture, tooling, data,
-                operating rhythm, and leadership decisions.
+                We are most useful when drag spans architecture, tooling, data, and delivery decisions.
               </p>
             </div>
             <div className="mb-8 flex flex-wrap gap-3">
@@ -308,7 +307,7 @@ export default function ServicesPage() {
                   </div>
                   {index === 0 ? (
                     <p className="mt-5 text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                      Best starting point
+                      Recommended first move
                     </p>
                   ) : null}
                   <h3 className="mt-6 text-2xl font-semibold text-foreground">
@@ -385,6 +384,8 @@ export default function ServicesPage() {
         <TestimonialStrip
           className="deferred-section border-b border-border py-20 lg:py-24"
           compact
+          testimonialIds={["mendez-pearlx", "fitzmier-jtf"]}
+          maxItems={2}
         />
 
         <section className="deferred-section section-warm py-24 lg:py-28">
@@ -407,7 +408,7 @@ export default function ServicesPage() {
             </div>
             <div className="rounded-[32px] border border-border/70 bg-foreground p-8 shadow-lg shadow-slate-950/8">
               <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                Best next step
+                Next step
               </p>
               <h3 className="mt-4 text-2xl font-semibold text-background">
                 Start with a free strategy call

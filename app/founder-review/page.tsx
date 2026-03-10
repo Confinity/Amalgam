@@ -115,7 +115,7 @@ export default function FounderReviewPage() {
                 Fast clarity when something is stuck and the cause is still unclear
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                A two-week diagnostic that shows what is slowing delivery, where risk is building, and what should move first.
+                A two-week diagnostic to pinpoint what is slowing delivery and what to fix first.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Link
@@ -155,8 +155,7 @@ export default function FounderReviewPage() {
                   Important
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  This is a paid diagnostic, not a free consultation. It is built
-                  to produce real clarity fast.
+                  This is a paid diagnostic, not a free consultation. It is built to produce clarity fast.
                 </p>
               </div>
               <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
@@ -195,7 +194,7 @@ export default function FounderReviewPage() {
                 The right starting point when leadership needs signal, not noise
               </h2>
               <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
-                The Diagnostic Review is for teams that need a sharper view of what is creating drag across the system.
+                The Diagnostic Review is for teams that need a sharper view of what is creating drag.
               </p>
               <div className="mt-8 grid gap-3">
                 {signals.map((signal) => (
@@ -316,7 +315,7 @@ export default function FounderReviewPage() {
                 Process
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                A focused sequence designed to get to signal quickly
+                A focused process to get clear, fast
               </h2>
             </div>
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">

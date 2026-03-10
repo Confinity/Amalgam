@@ -3,15 +3,12 @@ import { notFound } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import {
-  AlertCircle,
   ArrowLeft,
   ArrowRight,
   Building2,
   CheckCircle2,
-  Lightbulb,
   MapPin,
   Sparkles,
-  TrendingUp,
   Wrench,
 } from "lucide-react"
 import { Navigation } from "@/components/navigation"
@@ -262,52 +259,6 @@ export default async function CaseStudyPage({ params }: PageProps) {
                   </div>
                 </div>
               </aside>
-            </div>
-          </div>
-        </section>
-
-        <section className="border-b border-border bg-muted/30 px-6 py-12">
-          <div className="mx-auto max-w-[1120px]">
-            <div className="grid gap-6 md:grid-cols-3">
-              <div className="rounded-[28px] border border-border bg-background p-6">
-                <div className="mb-3 flex items-center gap-2">
-                  <AlertCircle className="h-5 w-5 text-foreground" />
-                  <p className="text-sm font-bold uppercase tracking-wider text-muted-foreground">
-                    Client context
-                  </p>
-                </div>
-                <p className="leading-relaxed text-foreground">
-                  {summarizeCaseStudyText(caseStudy.problem, {
-                    maxSentences: 1,
-                    maxChars: 200,
-                  })}
-                </p>
-              </div>
-
-              <div className="rounded-[28px] border border-border bg-background p-6">
-                <div className="mb-3 flex items-center gap-2">
-                  <Lightbulb className="h-5 w-5 text-foreground" />
-                  <p className="text-sm font-bold uppercase tracking-wider text-muted-foreground">
-                    Where Amalgam stepped in
-                  </p>
-                </div>
-                <p className="leading-relaxed text-muted-foreground">{caseStudy.approach}</p>
-              </div>
-
-              <div className="rounded-[28px] border border-border bg-background p-6">
-                <div className="mb-3 flex items-center gap-2">
-                  <TrendingUp className="h-5 w-5 text-teal" />
-                  <p className="text-sm font-bold uppercase tracking-wider text-teal">
-                    What changed
-                  </p>
-                </div>
-                <p className="font-medium leading-relaxed text-foreground">
-                  {summarizeCaseStudyText(caseStudy.outcome, {
-                    maxSentences: 1,
-                    maxChars: 185,
-                  })}
-                </p>
-              </div>
             </div>
           </div>
         </section>
