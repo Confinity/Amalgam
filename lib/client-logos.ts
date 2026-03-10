@@ -1,4 +1,5 @@
 export type ClientLogo = {
+  id: ClientLogoId
   name: string
   src: string
   alt: string
@@ -7,8 +8,21 @@ export type ClientLogo = {
   imageClassName?: string
 }
 
+export type ClientLogoId =
+  | "mt-bank"
+  | "pearlx"
+  | "premier-financial-alliance"
+  | "john-templeton-foundation"
+  | "confinity"
+  | "moodys"
+  | "sofi"
+  | "tiaa"
+
 export const clientLogos: ClientLogo[] = [
+  // Swap logo image assets by editing each `src` path below.
+  // Group order/rotation behavior is configured in `rotatingClientLogoSets`.
   {
+    id: "mt-bank",
     name: "M&T Bank",
     src: "/clients/mt-bank.webp",
     alt: "M&T Bank wordmark",
@@ -17,6 +31,7 @@ export const clientLogos: ClientLogo[] = [
     imageClassName: "max-w-[76%] lg:max-w-[78%]",
   },
   {
+    id: "pearlx",
     name: "PearlX",
     src: "/clients/pearlx.webp",
     alt: "PearlX wordmark",
@@ -25,6 +40,7 @@ export const clientLogos: ClientLogo[] = [
     imageClassName: "max-w-[70%] lg:max-w-[72%]",
   },
   {
+    id: "premier-financial-alliance",
     name: "Premier Financial Alliance",
     src: "/clients/premier-financial-alliance.webp",
     alt: "Premier Financial Alliance wordmark",
@@ -33,6 +49,7 @@ export const clientLogos: ClientLogo[] = [
     imageClassName: "max-w-[72%] lg:max-w-[74%]",
   },
   {
+    id: "john-templeton-foundation",
     name: "John Templeton Foundation",
     src: "/clients/john-templeton-foundation.webp",
     alt: "John Templeton Foundation wordmark",
@@ -41,6 +58,7 @@ export const clientLogos: ClientLogo[] = [
     imageClassName: "max-w-[69%] max-h-[50px] opacity-90 lg:max-w-[71%]",
   },
   {
+    id: "confinity",
     name: "Confinity",
     src: "/clients/confinity.png",
     alt: "Confinity wordmark",
@@ -49,6 +67,7 @@ export const clientLogos: ClientLogo[] = [
     imageClassName: "max-w-[76%] lg:max-w-[79%]",
   },
   {
+    id: "moodys",
     name: "Moody's",
     src: "/clients/moodys.webp",
     alt: "Moody's wordmark",
@@ -57,6 +76,7 @@ export const clientLogos: ClientLogo[] = [
     imageClassName: "max-w-[74%] lg:max-w-[76%]",
   },
   {
+    id: "sofi",
     name: "SoFi",
     src: "/clients/sofi.webp",
     alt: "SoFi wordmark",
@@ -65,6 +85,7 @@ export const clientLogos: ClientLogo[] = [
     imageClassName: "max-w-[70%] lg:max-w-[72%]",
   },
   {
+    id: "tiaa",
     name: "TIAA",
     src: "/clients/tiaa-color.png",
     alt: "TIAA wordmark",
@@ -73,6 +94,33 @@ export const clientLogos: ClientLogo[] = [
     imageClassName: "max-w-[68%] lg:max-w-[70%]",
   },
 ]
+
+export type RotatingClientLogoMode = "desktop-tablet" | "mobile"
+export type RotatingClientLogoState = ClientLogoId[]
+
+export const rotatingClientLogoSets: Record<
+  RotatingClientLogoMode,
+  RotatingClientLogoState[]
+> = {
+  "desktop-tablet": [
+    ["mt-bank", "moodys", "pearlx", "sofi"],
+    ["tiaa", "john-templeton-foundation", "premier-financial-alliance", "confinity"],
+  ],
+  mobile: [
+    ["mt-bank", "moodys"],
+    ["pearlx", "sofi"],
+    ["tiaa", "john-templeton-foundation"],
+    ["premier-financial-alliance", "confinity"],
+  ],
+}
+
+export const clientLogosById: Record<ClientLogoId, ClientLogo> = clientLogos.reduce(
+  (acc, logo) => {
+    acc[logo.id] = logo
+    return acc
+  },
+  {} as Record<ClientLogoId, ClientLogo>,
+)
 
 export const additionalClientNames = [
   "Barclays",
