@@ -56,6 +56,34 @@ const STAGE_ORDER: StageId[] = [
   "scale-stabilize",
 ]
 const STAGE_SELECTION_ORDER: StageSelection[] = ["all", ...STAGE_ORDER]
+const STAGE_TONE: Record<
+  StageId,
+  {
+    chip: string
+    badge: string
+  }
+> = {
+  "ideate-prioritize": {
+    chip: "border-emerald-500/55 bg-emerald-600 text-white",
+    badge: "border-emerald-500/25 bg-emerald-500/10 text-emerald-700",
+  },
+  "validate-derisk": {
+    chip: "border-cyan-500/55 bg-cyan-600 text-white",
+    badge: "border-cyan-500/25 bg-cyan-500/10 text-cyan-700",
+  },
+  "build-ship": {
+    chip: "border-teal/45 bg-teal text-background",
+    badge: "border-teal/30 bg-teal/10 text-teal",
+  },
+  "productize-systemize": {
+    chip: "border-blue-500/55 bg-blue-600 text-white",
+    badge: "border-blue-500/25 bg-blue-500/10 text-blue-700",
+  },
+  "scale-stabilize": {
+    chip: "border-indigo-500/55 bg-indigo-600 text-white",
+    badge: "border-indigo-500/25 bg-indigo-500/10 text-indigo-700",
+  },
+}
 
 const STAGE_CONFIG: Record<StageId, StageConfig> = {
   "ideate-prioritize": {
@@ -303,6 +331,7 @@ export function LaunchpadStageNavigator({
   const isOverview = stageId === "all"
   const activeStageId: StageId = isOverview ? DEFAULT_STAGE : stageId
   const stage = STAGE_CONFIG[activeStageId]
+  const stageTone = STAGE_TONE[activeStageId]
   const pressure = isOverview
     ? null
     : stage.pressures.find((item) => item.id === pressureId) ?? null
@@ -331,6 +360,7 @@ export function LaunchpadStageNavigator({
           ? "ai-readiness-checklist"
           : null
   const tool = toolId ? getLaunchpadTool(toolId) : null
+  const showToolIcon = !isOverview && Boolean(tool)
 
   const talkHref = useMemo(
     () =>
@@ -357,16 +387,16 @@ export function LaunchpadStageNavigator({
     [isOverview, pressureId, stage],
   )
   const nextActionLabel = isOverview
-    ? "Start with the Delivery Drag Diagnostic"
+    ? "Find your current stage"
     : stage.primaryAction.label
   const nextActionHref = isOverview
-    ? "/launchpad/delivery-drag-diagnostic"
+    ? "#launchpad-stage-selector"
     : stage.primaryAction.href
   const nextActionSource = isOverview
-    ? "overview_default_diagnostic"
+    ? "overview_select_stage"
     : stage.primaryAction.source
   const nextActionDescription = isOverview
-    ? "If you are not sure where to start, run a practical diagnostic first, then choose a focused stage."
+    ? "Use the journey flow above to pick the stage that matches your current pressure. We will personalize everything below instantly."
     : stage.primaryAction.description
   const nextActionNarrative = isOverview
     ? "Pick the stage that best matches your pressure. The rest of this page updates instantly with focused tools, guides, and deeper-support options."
@@ -378,10 +408,10 @@ export function LaunchpadStageNavigator({
     ? "Talk through your situation"
     : stage.secondaryLabel
   const finalHeading = isOverview
-    ? "Need help identifying the right stage and next step?"
+    ? "Need help choosing the right stage and next move?"
     : stage.finalHeading
   const finalBody = isOverview
-    ? "Start with a practical diagnostic, then choose focused support only when it clearly makes sense."
+    ? "Start by choosing your stage. If you want a second opinion, we can help you pressure-test the right next step."
     : stage.finalBody
 
   useEffect(() => {
@@ -391,6 +421,23 @@ export function LaunchpadStageNavigator({
     entryTracked.current = true
     track("launchpad_entry_stage", { stage: initialStage, from_query: Boolean(initialStageParam) })
   }, [initialStage, initialStageParam])
+
+  useEffect(() => {
+    const onPopState = () => {
+      const params = new URLSearchParams(window.location.search)
+      const urlStage = parseStage(params.get("stage"))
+      const rawPressure = params.get("pressure") ?? ""
+      const urlPressure =
+        urlStage !== "all" &&
+        STAGE_CONFIG[urlStage].pressures.some((item) => item.id === rawPressure)
+          ? rawPressure
+          : ""
+      setStageId(urlStage)
+      setPressureId(urlPressure)
+    }
+    window.addEventListener("popstate", onPopState)
+    return () => window.removeEventListener("popstate", onPopState)
+  }, [])
 
   useEffect(() => {
     const updateDock = () => {
@@ -435,6 +482,16 @@ export function LaunchpadStageNavigator({
     setPressureId(keepPressure)
     syncUrl(nextStage, keepPressure)
     track("launchpad_stage_selected", { stage: nextStage, pressure: keepPressure || "none" })
+  }
+
+  const openStageFromJourney = (nextStage: StageId) => {
+    onStageSelect(nextStage)
+    if (typeof window !== "undefined") {
+      window.setTimeout(() => {
+        const target = document.getElementById("launchpad-next-step")
+        target?.scrollIntoView({ behavior: "smooth", block: "start" })
+      }, 120)
+    }
   }
 
   const onPressureSelect = (next: string) => {
@@ -584,6 +641,7 @@ export function LaunchpadStageNavigator({
                   ? "border-teal/45 bg-gradient-to-r from-teal to-teal/80 text-background"
                   : "border-border bg-background text-foreground hover:bg-secondary"
               }`}
+              tabIndex={isOverview ? 0 : -1}
               onClick={() => onStageSelect("all")}
             >
               All stages
@@ -599,9 +657,10 @@ export function LaunchpadStageNavigator({
                   aria-checked={selected}
                   className={`min-h-11 shrink-0 rounded-full border px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
                     selected
-                      ? "border-teal/45 bg-gradient-to-r from-teal to-teal/80 text-background"
+                      ? STAGE_TONE[itemId].chip
                       : "border-border bg-background text-foreground hover:bg-secondary"
                   }`}
+                  tabIndex={selected ? 0 : -1}
                   onClick={() => onStageSelect(itemId)}
                 >
                   {STAGE_CONFIG[itemId].label}
@@ -612,6 +671,27 @@ export function LaunchpadStageNavigator({
           <p id="launchpad-stage-selector-help" className="sr-only">
             Choose one stage to load focused recommendations. Use left and right arrow keys to move between options.
           </p>
+          <p className="sr-only" aria-live="polite" aria-atomic="true">
+            {isOverview
+              ? "Viewing all stages overview."
+              : `Viewing ${stage.label}${pressure ? ` with pressure ${pressure.label}.` : "."}`}
+          </p>
+          {!isOverview ? (
+            <div className="mt-4 flex flex-wrap items-center gap-3">
+              <p
+                className={`inline-flex min-h-9 items-center rounded-full border px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] ${stageTone.badge}`}
+              >
+                Focused view: {stage.label}
+              </p>
+              <button
+                type="button"
+                className="inline-flex min-h-9 items-center rounded-full border border-border px-3.5 py-1.5 text-xs font-medium text-foreground transition-colors hover:bg-secondary"
+                onClick={() => onStageSelect("all")}
+              >
+                Back to all stages
+              </button>
+            </div>
+          ) : null}
           {isOverview ? (
             <p className="mt-4 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
               Select a stage to add pressure-state refinement.
@@ -639,6 +719,7 @@ export function LaunchpadStageNavigator({
                           ? "border-teal/55 bg-teal/10 text-foreground"
                           : "border-border bg-background text-muted-foreground hover:text-foreground"
                       }`}
+                      tabIndex={selected ? 0 : -1}
                       onClick={() => onPressureSelect(option.id)}
                     >
                       {option.label}
@@ -723,7 +804,7 @@ export function LaunchpadStageNavigator({
                                   stage: item.id,
                                   location: "journey_flow",
                                 })
-                                onStageSelect(item.id)
+                                openStageFromJourney(item.id)
                               }}
                             >
                               Open {item.label}
@@ -826,6 +907,17 @@ export function LaunchpadStageNavigator({
               <p className="mt-4 text-sm leading-relaxed text-foreground/80">
                 {nextActionNarrative}
               </p>
+              {isOverview ? (
+                <TrackedLink
+                  href="/launchpad/delivery-drag-diagnostic"
+                  eventName="launchpad_overview_fallback_diagnostic_click"
+                  eventData={{ stage: stageId, source: "next_step_module" }}
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
+                >
+                  Prefer a quick diagnostic first? Start here
+                  <ArrowRight className="h-4 w-4" />
+                </TrackedLink>
+              ) : null}
               <div className="mt-auto flex flex-col gap-3 pt-6 sm:flex-row">
                 <TrackedLink
                   href={nextActionHref}
@@ -1247,7 +1339,7 @@ export function LaunchpadStageNavigator({
               className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-background px-6 py-3 font-medium text-foreground transition-opacity hover:opacity-90"
             >
               {nextActionLabel}
-              {tool ? <Wrench className="h-4 w-4" /> : <Compass className="h-4 w-4" />}
+              {showToolIcon ? <Wrench className="h-4 w-4" /> : <Compass className="h-4 w-4" />}
             </TrackedLink>
             <TrackedLink
               href={finalTalkHref}
@@ -1280,7 +1372,7 @@ export function LaunchpadStageNavigator({
               eventData={{ stage: stageId, pressure: pressureId || "none", source: nextActionSource }}
               className="inline-flex min-h-11 items-center justify-center rounded-lg bg-foreground px-3 text-center text-xs font-semibold text-background"
             >
-              Start next step
+              {isOverview ? "Find stage" : "Start next step"}
             </TrackedLink>
             <TrackedLink
               href={finalTalkHref}
