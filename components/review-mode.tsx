@@ -222,7 +222,15 @@ function getPageUrlForNotes() {
 
   const url = new URL(window.location.href)
   url.searchParams.delete("review")
-  const search = url.searchParams.toString()
+  const ignoredParams = new Set(["fbclid", "gclid"])
+  const keptParams = Array.from(url.searchParams.entries())
+    .filter(([key]) => !key.toLowerCase().startsWith("utm_") && !ignoredParams.has(key.toLowerCase()))
+    .sort(([a], [b]) => a.localeCompare(b))
+  const normalizedSearch = new URLSearchParams()
+  for (const [key, value] of keptParams) {
+    normalizedSearch.append(key, value)
+  }
+  const search = normalizedSearch.toString()
   const cleanPath = normalizeNotesPathname(url.pathname)
   return search ? `${cleanPath}?${search}` : cleanPath
 }
