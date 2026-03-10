@@ -6,7 +6,7 @@ import { Navigation } from "@/components/navigation"
 import { careerCultureSignals, careerRoles } from "@/lib/careers-data"
 
 export const metadata: Metadata = {
-  title: "Careers",
+  title: "Careers at Amalgam",
   description:
     "Explore open roles at Amalgam and contact the team directly about current opportunities.",
   alternates: {
@@ -28,7 +28,7 @@ export default function CareersPage() {
                 Careers
               </p>
               <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Join a small team doing meaningful client work
+                Want to do meaningful work with a small, high-trust team?
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 We care about clear thinking, strong execution, and real client outcomes.
@@ -71,7 +71,7 @@ export default function CareersPage() {
                 Open roles
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Current opportunities
+                Roles you can step into now
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                 Role titles, summaries, and ranges below are sourced from the prior
@@ -147,7 +147,7 @@ export default function CareersPage() {
                 You&apos;ll fit well here if
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                You value ownership, clarity, and client outcomes
+                You&apos;ll fit here if ownership and clarity matter to you
               </h2>
             </div>
             <div className="grid gap-6 md:grid-cols-2">
@@ -169,7 +169,7 @@ export default function CareersPage() {
               Next step
             </p>
             <h2 className="text-3xl font-semibold text-background text-balance md:text-4xl">
-              Interested in one of these roles?
+              Interested in one of these roles? Let&apos;s talk.
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-background/72">
               Use the contact page to start a conversation with the team. Include

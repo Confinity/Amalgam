@@ -12,7 +12,7 @@ import {
 } from "@/lib/launchpad"
 
 export const metadata: Metadata = {
-  title: "Launchpad Guides",
+  title: "Need guidance by pressure point? Start here.",
   description:
     "Field guidance for teams dealing with delivery drag, fragile systems, AI readiness, and integration complexity.",
   alternates: {
@@ -33,10 +33,10 @@ export default function LaunchpadGuidesPage() {
               Launchpad Guides
             </p>
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl">
-              Practical guides for teams that need to act now
+              Need practical guidance you can act on now?
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              Guidance grouped by the pressure right in front of you.
+              Start with the pressure point right in front of you.
             </p>
           </div>
         </section>

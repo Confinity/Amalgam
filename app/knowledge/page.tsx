@@ -14,7 +14,7 @@ import { KnowledgeFeaturedHero } from "@/components/knowledge-featured-hero"
 import { knowledgeBriefs, knowledgeCategories } from "@/lib/knowledge-briefs"
 
 export const metadata: Metadata = {
-  title: "Knowledge Base",
+  title: "Read this when delivery feels stuck",
   description:
     "A practical knowledge base for teams navigating architecture, delivery, data, and organizational complexity.",
   alternates: {
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 const readingPaths = [
   {
-    title: "Shipping slowed after growth",
+    title: "Your shipping slowed after growth",
     description:
       "Start with the operating drag, then move into the execution mechanics underneath it.",
     articleSlugs: [
@@ -34,7 +34,7 @@ const readingPaths = [
     ],
   },
   {
-    title: "Roadmap decisions feel blocked by technical ambiguity",
+    title: "Your roadmap keeps getting blocked by technical ambiguity",
     description:
       "Use this path when planning keeps collapsing into debate because the system is still under-mapped.",
     articleSlugs: [
@@ -44,7 +44,7 @@ const readingPaths = [
     ],
   },
   {
-    title: "The business no longer trusts its own numbers",
+    title: "Your team no longer trusts the numbers",
     description:
       "Start with the data foundation, then move toward the metrics and decision model built on top of it.",
     articleSlugs: [
@@ -116,9 +116,9 @@ export default function KnowledgePage({ searchParams }: KnowledgePageProps) {
                 </span>
               </div>
               <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Practical reads for teams{" "}
+                Not sure where to start?{" "}
                 <span className="bg-gradient-to-r from-teal via-teal to-purple bg-clip-text text-transparent">
-                  under delivery pressure
+                  Start with the pressure you feel most.
                 </span>
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
@@ -255,7 +255,7 @@ export default function KnowledgePage({ searchParams }: KnowledgePageProps) {
                   Library overview
                 </p>
                 <h2 className="mt-3 text-3xl font-semibold text-foreground text-balance">
-                  A library organized by real pressure points
+                  This library is organized around real pressure points
                 </h2>
                 <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">
                   Start with the area that feels most constrained, then follow connected reads to build a clearer view of your system.
@@ -375,7 +375,7 @@ export default function KnowledgePage({ searchParams }: KnowledgePageProps) {
         <section className="deferred-section-tall border-y border-border bg-secondary/25 px-6 py-16 md:px-8 md:py-20">
           <div className="mx-auto max-w-[1200px]">
             <div className="mb-10 max-w-3xl">
-                <h2 className="text-2xl font-semibold text-foreground">Explore by area</h2>
+                <h2 className="text-2xl font-semibold text-foreground">Choose the area that feels most stuck</h2>
                 <p className="mt-3 text-muted-foreground">
                   Each collection is built around one kind of pressure.
                 </p>
@@ -437,7 +437,7 @@ export default function KnowledgePage({ searchParams }: KnowledgePageProps) {
           <div className="mx-auto grid max-w-[1200px] gap-8 rounded-[32px] border border-border bg-foreground px-8 py-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
               <h2 className="text-3xl font-semibold text-background text-balance">
-                Need help applying this to your situation?
+                Want help applying this to your exact situation?
               </h2>
               <p className="mt-4 max-w-2xl text-background/70">
                 If you want a direct read on your own situation, start with a free strategy call.

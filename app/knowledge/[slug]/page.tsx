@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!brief) {
     return {
-      title: "Article Not Found",
+      title: "Can't find that article?",
     }
   }
 

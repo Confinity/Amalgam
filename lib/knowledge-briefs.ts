@@ -75,7 +75,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
   {
     slug: "modernize-vs-rebuild",
     category: "architecture",
-    title: "When to modernize vs. rebuild",
+    title: "Should you modernize or rebuild?",
     description:
       "A practical decision framework for choosing between targeted modernization, phased replacement, and a true rebuild.",
     takeaway:
@@ -143,7 +143,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
   {
     slug: "architecture-map-before-roadmap",
     category: "architecture",
-    title: "You need an architecture map before a roadmap",
+    title: "Do you need an architecture map before your roadmap?",
     description:
       "Why strategic roadmaps fail when nobody has a trustworthy picture of the current system, dependencies, and ownership boundaries.",
     takeaway:
@@ -204,7 +204,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
   {
     slug: "integration-tax",
     category: "operations",
-    title: "The integration tax",
+    title: "Are integrations quietly slowing you down?",
     description:
       "Why delivery slows when workflows span too many tools, owners, and hidden dependencies, and what to simplify first.",
     takeaway:
@@ -269,7 +269,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
   {
     slug: "operating-rhythm-after-growth",
     category: "operations",
-    title: "Rebuilding operating rhythm after growth",
+    title: "Did growth break your operating rhythm?",
     description:
       "How companies lose execution cadence after hiring, fundraising, or product expansion, and what restores it without adding bureaucracy.",
     takeaway:
@@ -389,7 +389,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
   {
     slug: "metrics-you-can-run-the-company-on",
     category: "data",
-    title: "Metrics you can actually run the company on",
+    title: "Which metrics should you actually run the company on?",
     description:
       "How to choose a small set of operating metrics that help leadership make decisions instead of creating reporting theater.",
     takeaway:
@@ -447,7 +447,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
   {
     slug: "delivery-velocity-is-a-systems-problem",
     category: "execution",
-    title: "Delivery velocity is a systems problem",
+    title: "Why your delivery velocity problem is really a systems problem",
     description:
       "Why shipping slows for structural reasons, not just team performance, and how to diagnose the real drag.",
     takeaway:
@@ -508,7 +508,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
   {
     slug: "sequencing-roadmaps-under-uncertainty",
     category: "execution",
-    title: "Sequencing roadmaps under uncertainty",
+    title: "How to sequence your roadmap when certainty is low",
     description:
       "How to prioritize when the current state is only partially visible and leadership still needs a plan it can trust.",
     takeaway:
@@ -567,7 +567,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
   {
     slug: "structure-follows-architecture",
     category: "org-design",
-    title: "Structure follows architecture",
+    title: "Your team structure follows your architecture",
     description:
       "How system boundaries, decision ownership, and team design reinforce each other for better or worse.",
     takeaway:
@@ -626,7 +626,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
   {
     slug: "decision-rights-under-complexity",
     category: "org-design",
-    title: "Decision rights under complexity",
+    title: "Who should decide what when things get complex?",
     description:
       "How to reduce escalation load by clarifying which decisions belong to teams, leaders, and cross-functional forums.",
     takeaway:

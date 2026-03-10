@@ -13,7 +13,7 @@ import { TestimonialStrip } from "@/components/testimonial-strip"
 import { caseStudies, industries, summarizeCaseStudyText } from "@/lib/case-studies-data"
 
 export const metadata: Metadata = {
-  title: "Case Studies",
+  title: "See work in situations like yours",
   description:
     "Real client work across banking, fintech, energy, retail, and enterprise systems with clear context, approach, and outcomes.",
   alternates: {
@@ -55,7 +55,7 @@ export default function CaseStudiesPage() {
                 Case Studies
               </p>
               <h1 className="text-4xl font-semibold leading-tight tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Real client work, explained clearly
+                See what changed in real client situations like yours
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
                 See the situation, what changed, and why it mattered.
@@ -97,7 +97,7 @@ export default function CaseStudiesPage() {
                   Featured work
                 </p>
                 <h2 className="text-3xl font-semibold text-foreground">
-                  Start with a few representative engagements
+                  Start with a few cases that show how we work
                 </h2>
               </div>
               <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
@@ -125,7 +125,7 @@ export default function CaseStudiesPage() {
                   Full library
                 </p>
                 <h2 className="text-3xl font-semibold text-foreground">
-                  Browse all case studies
+                  Find a case close to your situation
                 </h2>
               </div>
               <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
@@ -210,7 +210,7 @@ export default function CaseStudiesPage() {
                 Recently added
               </p>
               <h2 className="text-2xl font-semibold text-foreground">
-                Additional financial services case studies
+                Additional financial services examples
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 Short reads with conservative public detail for high-sensitivity engagements.
@@ -234,7 +234,7 @@ export default function CaseStudiesPage() {
         <section className="bg-foreground px-6 py-20">
           <div className="mx-auto max-w-[900px] text-center">
             <h2 className="text-3xl font-bold text-background text-balance md:text-4xl">
-              Need a second set of eyes on your situation?
+              Want a second set of eyes on your situation?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-background/70">
               Start with a free strategy call and we will recommend the clearest next step.

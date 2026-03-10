@@ -2,7 +2,7 @@ import { Metadata } from "next"
 import { LegalPageShell } from "@/components/legal-page-shell"
 
 export const metadata: Metadata = {
-  title: "Cookie Policy",
+  title: "How cookies are used on this site",
   description:
     "Learn how Amalgam uses cookies and similar technologies on this website.",
   alternates: {

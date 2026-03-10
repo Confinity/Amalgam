@@ -148,7 +148,7 @@ export const launchpadPaths: LaunchpadPathCard[] = [
 export const launchpadPrograms: LaunchpadProgramCard[] = [
   {
     id: "founder-review",
-    title: "Diagnostic Review",
+    title: "Need clarity fast? Diagnostic Review",
     description:
       "A focused diagnostic for situations where the drag is real but the system is still too fuzzy to sequence honestly.",
     whenItsRight:
@@ -159,7 +159,7 @@ export const launchpadPrograms: LaunchpadProgramCard[] = [
   },
   {
     id: "execution-sprint",
-    title: "Execution Sprint",
+    title: "Need a roadmap you can run? Execution Sprint",
     description:
       "A structured sequencing engagement for teams that already have a credible diagnosis and need a roadmap leadership can trust.",
     whenItsRight:
@@ -169,7 +169,7 @@ export const launchpadPrograms: LaunchpadProgramCard[] = [
   },
   {
     id: "outcome-partnership",
-    title: "Outcome Partnership",
+    title: "Need ongoing support? Outcome Partnership",
     description:
       "Steady follow-through for situations where the path is real, but execution still needs close support to protect momentum.",
     whenItsRight:
@@ -262,7 +262,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
   {
     id: "delivery-drag-diagnostic",
     slug: "delivery-drag-diagnostic",
-    title: "Delivery Drag Diagnostic",
+    title: "Is delivery drag slowing you down?",
     shortTitle: "Delivery Drag",
     kicker: "Structured diagnostic",
     description:
@@ -531,7 +531,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
   {
     id: "ai-readiness-checklist",
     slug: "ai-readiness-checklist",
-    title: "AI Readiness Checklist",
+    title: "Are you actually ready for AI adoption?",
     shortTitle: "AI Readiness",
     kicker: "Practical checklist",
     description:
@@ -797,7 +797,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
   {
     id: "tech-stack-audit",
     slug: "tech-stack-audit",
-    title: "Tech Stack Audit",
+    title: "Is your tech stack helping or hurting?",
     shortTitle: "Tech Stack Audit",
     kicker: "First-pass stack read",
     description:

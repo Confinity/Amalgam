@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { LegacyRouteRedirect } from "@/components/legacy-route-redirect"
 
 export const metadata: Metadata = {
-  title: "Redirecting to Contact",
+  title: "Taking you to Contact",
   robots: {
     index: false,
     follow: true,

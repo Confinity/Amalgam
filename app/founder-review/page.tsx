@@ -15,9 +15,9 @@ import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
 
 export const metadata: Metadata = {
-  title: "Diagnostic Review",
+  title: "Not sure what is causing the drag? Start here.",
   description:
-    "A focused diagnostic that reveals what is stuck, what is driving risk, and what to fix first.",
+    "When delivery feels stuck and the root cause is unclear, the Diagnostic Review gives you a clear next move.",
   alternates: {
     canonical: "/founder-review",
   },
@@ -34,25 +34,25 @@ const signals = [
 const deliverables = [
   {
     icon: Compass,
-    title: "Current-state diagnosis",
+    title: "What is actually happening now",
     description:
       "A clear read on the architecture, workflows, constraints, and handoff failures shaping the current situation.",
   },
   {
     icon: Target,
-    title: "Bottlenecks and risk",
+    title: "Where risk is building",
     description:
       "The specific issues slowing delivery, creating fragility, or distorting roadmap decisions.",
   },
   {
     icon: FileText,
-    title: "Decision-ready recommendations",
+    title: "What to do next",
     description:
       "Practical recommendations tied to business risk, sequencing, and what leadership should move on next.",
   },
   {
     icon: Zap,
-    title: "Clear next step",
+    title: "Your best next step",
     description:
       "A concrete path forward, whether that means internal action, an Execution Sprint, or deeper partnership.",
   },
@@ -112,7 +112,7 @@ export default function FounderReviewPage() {
                 Diagnostic Review
               </p>
               <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Fast clarity when something is stuck and the cause is still unclear
+                Not sure what is causing the drag? Start here.
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 A two-week diagnostic to pinpoint what is slowing delivery and what to fix first.
@@ -191,7 +191,7 @@ export default function FounderReviewPage() {
                 Best Fit
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                The right starting point when leadership needs signal, not noise
+                The right first move when you need signal, not more noise
               </h2>
               <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
                 The Diagnostic Review is for teams that need a sharper view of what is creating drag.
@@ -244,7 +244,7 @@ export default function FounderReviewPage() {
                 Fit check
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Choose this when the business needs sharper signal, not just more conversation
+                Choose this when you need sharper signal, not more meetings
               </h2>
             </div>
             <div className="grid gap-6 lg:grid-cols-2">
@@ -291,7 +291,7 @@ export default function FounderReviewPage() {
                 What You Get
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Structured output that helps leadership decide what to do next
+                Clear outputs that help leadership decide what to do next
               </h2>
             </div>
             <div className="grid gap-6 md:grid-cols-2">
@@ -315,7 +315,7 @@ export default function FounderReviewPage() {
                 Process
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                A focused process to get clear, fast
+                A focused two-week process to get clear fast
               </h2>
             </div>
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -339,7 +339,7 @@ export default function FounderReviewPage() {
                 Why It Works
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Built to produce signal, not more noise
+                Built to give you signal, not more noise
               </h2>
               <div className="mt-6 space-y-4 leading-relaxed text-muted-foreground">
                 <p>
@@ -354,7 +354,7 @@ export default function FounderReviewPage() {
               </div>
             </div>
             <div className="rounded-[30px] border border-border bg-foreground p-8">
-              <h3 className="text-2xl font-semibold text-background">Ready to start?</h3>
+              <h3 className="text-2xl font-semibold text-background">Need clarity fast?</h3>
               <p className="mt-4 text-sm leading-relaxed text-background/70">
                 If the situation is real and the team needs clarity fast, the next
                 step is a conversation about fit and timing.

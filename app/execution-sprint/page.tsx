@@ -15,9 +15,9 @@ import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
 
 export const metadata: Metadata = {
-  title: "Execution Sprint",
+  title: "Need a roadmap your team can actually run?",
   description:
-    "A focused engagement to map systems, define constraints, and produce an execution plan teams can use.",
+    "The Execution Sprint helps you turn clear diagnosis into a roadmap your team can execute with confidence.",
   alternates: {
     canonical: "/execution-sprint",
   },
@@ -26,25 +26,25 @@ export const metadata: Metadata = {
 const outputs = [
   {
     icon: Map,
-    title: "Current-state map",
+    title: "What your system looks like today",
     description:
       "A working picture of the systems, dependencies, ownership lines, and pressure points shaping the roadmap.",
   },
   {
     icon: Target,
-    title: "Bottleneck and constraint analysis",
+    title: "What is blocking momentum",
     description:
       "A clearer view of what is making delivery slow, risky, or harder to sequence honestly.",
   },
   {
     icon: Calendar,
-    title: "30/60/90 day plan",
+    title: "Your 30/60/90 day sequence",
     description:
       "A phased plan that distinguishes what is fixed now, what is conditional, and what should move first.",
   },
   {
     icon: FileText,
-    title: "Leadership-ready roadmap",
+    title: "A roadmap leadership can defend",
     description:
       "A roadmap designed to support real decisions, not just create an attractive planning document.",
   },
@@ -104,7 +104,7 @@ export default function ExecutionSprintPage() {
                 Execution Sprint
               </p>
               <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Turn a clear diagnosis into an execution plan teams can use
+                Need a roadmap your team can actually run?
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 We map the current state, clarify constraints, and turn work into a sequence teams can actually run.
@@ -156,7 +156,7 @@ export default function ExecutionSprintPage() {
                 What You Leave With
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Not just a roadmap, but the reasoning underneath it
+                You get the roadmap and the reasoning behind it
               </h2>
             </div>
             <div className="grid gap-6 md:grid-cols-2">
@@ -214,7 +214,7 @@ export default function ExecutionSprintPage() {
                 Process
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Built so later commitments hold up
+                Built so your roadmap still holds under pressure
               </h2>
             </div>
             <div className="grid gap-6 lg:grid-cols-3">
@@ -246,7 +246,7 @@ export default function ExecutionSprintPage() {
                 Why It Matters
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                The roadmap only helps if it reflects the real system
+                A roadmap only works if it reflects your real system
               </h2>
               <div className="mt-6 space-y-4 leading-relaxed text-muted-foreground">
                 <p>
@@ -261,7 +261,7 @@ export default function ExecutionSprintPage() {
               </div>
             </div>
             <div className="rounded-[30px] border border-border bg-foreground p-8">
-              <h3 className="text-2xl font-semibold text-background">Need a roadmap that holds up?</h3>
+              <h3 className="text-2xl font-semibold text-background">Need a roadmap that holds up in real execution?</h3>
               <p className="mt-4 text-sm leading-relaxed text-background/70">
                 If the diagnosis is already visible and the next challenge is
                 sequencing the work properly, this is the right place to go next.

@@ -15,7 +15,7 @@ import {
 } from "@/lib/launchpad"
 
 export const metadata: Metadata = {
-  title: "Launchpad",
+  title: "Need clarity before committing? Start in Launchpad.",
   description:
     "Tools and guidance for teams dealing with delivery drag, systems complexity, and next-step decisions.",
   alternates: {
@@ -41,7 +41,7 @@ export default function LaunchpadPage() {
                 Launchpad
               </p>
               <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Tools and guidance for teams dealing with delivery drag
+                Need clarity before you commit to deeper support?
               </h1>
               <p className="mt-6 max-w-[34ch] text-lg leading-relaxed text-muted-foreground">
                 Self-locate quickly, test what is causing drag, and pick the next move with confidence.
@@ -72,7 +72,7 @@ export default function LaunchpadPage() {
 
             <div className="support-panel rounded-[30px] p-8">
               <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                What Launchpad is for
+                What this helps you do
               </p>
               <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
                 <p>Structured self-location for teams carrying systems complexity.</p>
@@ -90,7 +90,7 @@ export default function LaunchpadPage() {
                 Choose your path
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Pick the path that matches your situation
+                Pick the path that matches what you&apos;re feeling right now
               </h2>
               <p className="mt-4 leading-relaxed text-muted-foreground">
                 Pick a route into the right tool, guide, program, or conversation.
@@ -124,7 +124,7 @@ export default function LaunchpadPage() {
                   Featured tools
                 </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Use these tools to pressure-test the situation before committing
+                Use these tools to pressure-test your situation before committing
               </h2>
               </div>
             </div>
@@ -184,7 +184,7 @@ export default function LaunchpadPage() {
                   Featured guides
                 </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Practical guide groupings for the pressure points teams usually carry
+                Practical guide groupings for the pressure points you&apos;re carrying
               </h2>
               </div>
               <TrackedLink
@@ -238,7 +238,7 @@ export default function LaunchpadPage() {
                   Programs
                 </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                If the tool or guide points to deeper work, this is how the work usually begins
+                If a tool or guide points to deeper work, this is how it usually starts
               </h2>
               </div>
               <TrackedLink
@@ -295,7 +295,7 @@ export default function LaunchpadPage() {
                 Partner paths
               </p>
               <h2 className="mt-4 text-3xl font-semibold text-foreground text-balance">
-                Not every next step sits inside Amalgam&apos;s core work
+                Not every next step has to be inside Amalgam&apos;s core work
               </h2>
               <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
                 If the right move sits adjacent to our core work, we can point you to the right intro or next step.
@@ -330,7 +330,7 @@ export default function LaunchpadPage() {
                 Signals
               </p>
               <h2 className="mt-4 text-3xl font-semibold text-foreground text-balance">
-                Practical signal for leaders and teams carrying systems complexity
+                Practical signal for leaders carrying system complexity
               </h2>
               <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
                 Notes on delivery drag, architecture decisions, and next-step judgment under pressure.
@@ -364,7 +364,7 @@ export default function LaunchpadPage() {
                 </p>
               </div>
               <h3 className="mt-4 text-2xl font-semibold text-background">
-                Get practical updates
+                Want practical updates you can use?
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-background/72">
                 Useful notes on systems clarity, execution drag, and next moves when complexity slows the business down.
@@ -400,7 +400,7 @@ export default function LaunchpadPage() {
               Next step
             </p>
               <h2 className="text-3xl font-semibold text-background text-balance md:text-4xl">
-                Launchpad helps you get clear quickly. If deeper help is needed, start with a strategy call.
+                Launchpad helps you get clear fast. If you need deeper help, start with a strategy call.
               </h2>
             <p className="mx-auto mt-4 max-w-2xl text-background/72">
               Use the tools and guides first. If the problem needs direct diagnosis, we will point you to the right engagement.

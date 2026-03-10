@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer"
 import { ArrowRight, Home } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Page Not Found",
+  title: "Can't find that page?",
   description:
     "The page you were looking for does not exist. Use the navigation to return to Amalgam's services, case studies, knowledge, or contact pages.",
   robots: {
@@ -24,7 +24,7 @@ export default function NotFound() {
             <div className="mx-auto max-w-3xl text-center">
               <p className="mb-4 text-8xl font-bold text-teal/20">404</p>
               <h1 className="mb-4 text-3xl font-semibold text-foreground md:text-4xl">
-                Page not found
+                Can&apos;t find that page?
               </h1>
               <p className="mx-auto mb-8 max-w-xl text-muted-foreground">
                 The page you&apos;re looking for doesn&apos;t exist or has moved. Try one of these pages next.

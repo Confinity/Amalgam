@@ -25,7 +25,7 @@ import {
 import { withBasePath } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "Who you work with at Amalgam",
   description:
     "Founded in 2012, Amalgam is a focused team that helps business and technical leaders bring clarity to complex systems and restore delivery momentum.",
   alternates: {
@@ -36,37 +36,37 @@ export const metadata: Metadata = {
 const principles = [
   {
     icon: Target,
-    title: "Clarity",
+    title: "We make the next move clear",
     description:
       "We focus on what matters and make the next move clear.",
   },
   {
     icon: Shield,
-    title: "Rigor",
+    title: "You get experienced judgment",
     description:
       "You work with people who have handled this before.",
   },
   {
     icon: Zap,
-    title: "Momentum",
+    title: "We protect momentum",
     description:
       "We remove blockers so teams can move with less drag.",
   },
   {
     icon: Eye,
-    title: "Transparency",
+    title: "We tell you what we actually see",
     description:
       "We say what we see and explain every recommendation clearly.",
   },
   {
     icon: Users,
-    title: "Client-first",
+    title: "We optimize for your outcome",
     description:
       "Outcomes matter more than hours. We care about what gets shipped.",
   },
   {
     icon: Clock,
-    title: "Pragmatism",
+    title: "We stay practical under constraints",
     description:
       "We work with your real constraints and focus on practical progress.",
   },
@@ -91,19 +91,19 @@ const aboutStats = [
 const operatingModel = [
   {
     icon: Compass,
-    title: "Diagnose before prescribing",
+    title: "First, understand your real system",
     description:
       "We start by understanding the real system, the real constraints, and the real decision pressure. No pre-packaged playbooks.",
   },
   {
     icon: Layers3,
-    title: "Work at the system level",
+    title: "Then solve at the system level",
     description:
       "We do not treat delivery problems as isolated engineering problems when the architecture, workflow, and decision model are all involved.",
   },
   {
     icon: Zap,
-    title: "Bias toward momentum",
+    title: "Always bias toward usable momentum",
     description:
       "The goal is not perfect theory. The goal is a path leadership can trust and teams can actually move on.",
   },
@@ -124,7 +124,7 @@ export default function AboutPage() {
                   About Amalgam
                 </p>
                 <h1 className="text-4xl font-semibold leading-tight tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                  A focused team for complex moments when decisions need to move.
+                  Want to know who you&apos;ll actually work with?
                 </h1>
                 <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                   Amalgam helps business and technical leaders bring clarity to complex systems and restore momentum.
@@ -169,7 +169,7 @@ export default function AboutPage() {
               </div>
 
               <div className="max-w-3xl">
-                <h2 className="mb-6 text-2xl font-semibold text-foreground">A note from our founder</h2>
+                <h2 className="mb-6 text-2xl font-semibold text-foreground">A quick note from our founder</h2>
                 <blockquote className="space-y-4 text-lg leading-relaxed text-muted-foreground">
                   <p>
                     I started Amalgam to keep the work practical and honest.
@@ -192,7 +192,7 @@ export default function AboutPage() {
                 Why this model works now
               </p>
               <h2 className="mb-6 text-3xl font-semibold text-foreground text-balance">
-                Today&apos;s delivery problems cross team boundaries
+                Your delivery problems usually cross team boundaries
               </h2>
               <div className="space-y-4 leading-relaxed text-muted-foreground">
                 <p>
@@ -210,7 +210,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="mb-12">
               <h2 className="text-2xl font-semibold text-foreground">How we operate</h2>
-              <p className="mt-2 text-muted-foreground">The principles that guide every engagement.</p>
+              <p className="mt-2 text-muted-foreground">How you can expect us to work with you.</p>
             </div>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {principles.map((principle) => (
@@ -233,7 +233,7 @@ export default function AboutPage() {
                 Operating Model
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                How we work in high-stakes situations
+                How we work when stakes are high
               </h2>
               <p className="mt-4 leading-relaxed text-muted-foreground">
                 We are intentionally small and direct. The model is built for
@@ -258,7 +258,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="mb-12 flex items-end justify-between gap-6">
               <div>
-                <h2 className="text-2xl font-semibold text-foreground">The team</h2>
+                <h2 className="text-2xl font-semibold text-foreground">The people you&apos;ll work with</h2>
                 <p className="mt-2 text-muted-foreground">
                   Focused support across systems, architecture, and delivery.
                 </p>
@@ -318,7 +318,7 @@ export default function AboutPage() {
         <section className="deferred-section bg-foreground py-20 lg:py-24">
           <div className="mx-auto max-w-[1200px] px-6 text-center">
             <h2 className="mb-4 text-3xl font-semibold text-background text-balance md:text-4xl">
-              Need a clear read on what is slowing the business down?
+              Want to see if we&apos;re the right fit for your situation?
             </h2>
             <p className="mx-auto mb-8 max-w-xl text-background/70">
               Start with a free strategy call. If deeper support is needed, we

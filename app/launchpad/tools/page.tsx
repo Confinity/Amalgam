@@ -7,7 +7,7 @@ import { TrackedLink } from "@/components/tracked-link"
 import { getFeaturedLaunchpadTools } from "@/lib/launchpad"
 
 export const metadata: Metadata = {
-  title: "Launchpad Tools",
+  title: "Need a quick diagnostic before you decide?",
   description:
     "Structured diagnostics for delivery drag, AI readiness, and stack posture.",
   alternates: {
@@ -35,7 +35,7 @@ export default function LaunchpadToolsPage() {
               Launchpad Tools
             </p>
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl">
-              Diagnostics that create clarity before you decide what help you need
+              Use these diagnostics to find your next move
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
               Use these for a fast first-pass read before deciding on deeper support.

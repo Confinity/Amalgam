@@ -14,9 +14,9 @@ import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
 
 export const metadata: Metadata = {
-  title: "Outcome Partnership",
+  title: "Need senior support to keep execution moving?",
   description:
-    "Ongoing support to carry the roadmap forward, unblock execution, and sustain delivery momentum over time.",
+    "Outcome Partnership gives you ongoing senior support to keep execution moving when priorities and pressure keep changing.",
   alternates: {
     canonical: "/outcome-partnership",
   },
@@ -25,25 +25,25 @@ export const metadata: Metadata = {
 const whatWeProvide = [
   {
     icon: Users,
-    title: "Direct support in the work",
+    title: "Senior support inside the work",
     description:
       "People who can make sense of the situation quickly and contribute real judgment instead of adding overhead.",
   },
   {
     icon: Handshake,
-    title: "Continuity across execution",
+    title: "Continuity across changing priorities",
     description:
       "A steady partnership model that preserves context and compounds rather than restarting every few weeks.",
   },
   {
     icon: Target,
-    title: "Shared accountability",
+    title: "Shared accountability for outcomes",
     description:
       "The work stays tied to outcomes, sequencing, and shipped progress instead of drifting into generic advisory work.",
   },
   {
     icon: Zap,
-    title: "Unblocking and momentum",
+    title: "Fast unblocking and momentum",
     description:
       "We help resolve decision bottlenecks, architectural friction, and cross-functional drag before they stall the roadmap.",
   },
@@ -90,7 +90,7 @@ export default function OutcomePartnershipPage() {
                 Outcome Partnership
               </p>
               <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Ongoing support to keep momentum real
+                Need senior support to keep execution moving?
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 The Outcome Partnership carries the roadmap into execution when priorities shift and decisions cannot drift.
@@ -147,7 +147,7 @@ export default function OutcomePartnershipPage() {
                 What We Provide
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Direct support tied to real execution, not ornamental advisory work
+                Direct support tied to execution, not advisory theater
               </h2>
             </div>
             <div className="grid gap-6 md:grid-cols-2">
@@ -171,7 +171,7 @@ export default function OutcomePartnershipPage() {
                 In Practice
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                What this partnership actually looks like
+                What this partnership looks like week to week
               </h2>
               <div className="mt-6 space-y-3">
                 {whatThisLooksLike.map((item) => (
@@ -215,7 +215,7 @@ export default function OutcomePartnershipPage() {
                 Fit check
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Best when the direction is real and the risk now sits in follow-through
+                Best when direction is clear and follow-through is the risk
               </h2>
             </div>
             <div className="grid gap-6 lg:grid-cols-2">
@@ -262,7 +262,7 @@ export default function OutcomePartnershipPage() {
                 Why Teams Choose This
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                A roadmap alone does not keep momentum alive
+                A roadmap alone will not keep momentum alive
               </h2>
               <div className="mt-6 space-y-4 leading-relaxed text-muted-foreground">
                 <p>

@@ -18,9 +18,9 @@ import { ClientLogoWall } from "@/components/client-logo-wall"
 import { TestimonialStrip } from "@/components/testimonial-strip"
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Need execution support? Start here.",
   description:
-    "Amalgam helps teams bring order to complex delivery work with clear diagnosis, practical sequencing, and direct follow-through.",
+    "If execution is slowing down, Amalgam helps you diagnose the issue, sequence the work, and keep momentum.",
   alternates: {
     canonical: "/services",
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 const engagements = [
   {
     icon: Compass,
-    title: "Diagnostic Review",
+    title: "Need clarity fast? Diagnostic Review",
     subtitle: "Clarity in 2 weeks",
     description:
       "Fast clarity when something is stuck and the cause is still unclear.",
@@ -42,7 +42,7 @@ const engagements = [
   },
   {
     icon: Map,
-    title: "Execution Sprint",
+    title: "Need a real roadmap? Execution Sprint",
     subtitle: "Roadmap in 4-6 weeks",
     description:
       "Turn a clear diagnosis into an execution plan teams can use.",
@@ -55,7 +55,7 @@ const engagements = [
   },
   {
     icon: Handshake,
-    title: "Outcome Partnership",
+    title: "Need steady follow-through? Outcome Partnership",
     subtitle: "Ongoing momentum",
     description:
       "Ongoing support to keep momentum real.",
@@ -71,39 +71,39 @@ const engagements = [
 const pressurePoints = [
   {
     icon: Layers,
-    title: "Architecture complexity",
+    title: "Your architecture feels too complex",
     featured: true,
     description:
       "The system is harder to reason about. Changes take too long, dependencies stay murky, and risk rises faster than confidence.",
   },
   {
     icon: GitBranch,
-    title: "Integration fragility",
+    title: "Integrations keep breaking trust",
     description:
       "Too many tools and handoffs with hidden coupling. Work looks simpler on paper than it behaves in reality.",
   },
   {
     icon: Database,
-    title: "Data trust problems",
+    title: "Your team does not trust the data",
     description:
       "Important decisions rely on numbers, workflows, or automations that teams no longer fully trust.",
   },
   {
     icon: Gauge,
-    title: "Delivery slowdowns",
+    title: "Delivery has slowed down",
     featured: true,
     description:
       "Shipping slowed after growth, reorg, or platform change. The team is working hard, but the system is still dragging.",
   },
   {
     icon: Users,
-    title: "Cross-functional drag",
+    title: "Teams are misaligned across functions",
     description:
       "Product, engineering, operations, and leadership are involved, but ownership and sequencing still feel fuzzy.",
   },
   {
     icon: Shield,
-    title: "Regulated or high-stakes environments",
+    title: "You operate in a high-stakes environment",
     description:
       "Margin for error is lower. Legacy infrastructure, compliance, and operational risk make bad decisions expensive.",
   },
@@ -111,7 +111,7 @@ const pressurePoints = [
 
 const capabilityGroups = [
   {
-    title: "Architecture and platforms",
+    title: "Architecture and platform decisions you need to make",
     items: [
       "System architecture assessment",
       "Legacy modernization strategy",
@@ -120,7 +120,7 @@ const capabilityGroups = [
     ],
   },
   {
-    title: "Data and operational clarity",
+    title: "Data and operating clarity you can trust",
     items: [
       "Data trust and source-of-truth design",
       "Workflow simplification",
@@ -129,7 +129,7 @@ const capabilityGroups = [
     ],
   },
   {
-    title: "Execution and operating model",
+    title: "Execution model that keeps work moving",
     items: [
       "Roadmap sequencing",
       "Delivery process improvement",
@@ -153,10 +153,10 @@ export default function ServicesPage() {
                 Services
               </p>
               <h1 className="text-4xl font-semibold leading-tight tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Practical support for complex delivery challenges
+                Need help untangling delivery drag?
               </h1>
               <p className="mt-6 max-w-[32ch] text-lg leading-relaxed text-muted-foreground">
-                We help teams bring order to complex systems work, delivery pressure, and blocked decisions.
+                We help you bring order to complex systems work, delivery pressure, and blocked decisions.
               </p>
               <p className="mt-5 max-w-[34ch] text-sm font-medium leading-relaxed text-foreground/72">
                 Best when the drag is obvious but the root cause is still fuzzy.
@@ -187,7 +187,7 @@ export default function ServicesPage() {
 
             <div className="support-panel rounded-[30px] border border-border/60 p-8">
               <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                How work usually starts
+                How teams usually start with us
               </p>
               <div className="mt-5 space-y-0">
                 {engagements.map((engagement, index) => (
@@ -222,7 +222,7 @@ export default function ServicesPage() {
                   Where we help first
                 </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Where we usually help first
+                Where we usually step in first
               </h2>
               </div>
               <p className="max-w-[52ch] leading-relaxed text-muted-foreground lg:justify-self-end">
@@ -281,7 +281,7 @@ export default function ServicesPage() {
                 Ways to work with us
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Three ways to work together
+                How you can work with us
               </h2>
               </div>
               <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
@@ -347,7 +347,7 @@ export default function ServicesPage() {
                 Selected Depth
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Breadth where it matters, without trying to do everything
+                Depth where it matters most
               </h2>
               <p className="mt-4 leading-relaxed text-muted-foreground">
                 The work usually spans architecture, data, delivery, and operating model at once. We stay focused on the few areas that change the outcome fastest.
@@ -377,7 +377,7 @@ export default function ServicesPage() {
         <ClientLogoWall
           className="border-y border-border py-20 lg:py-24"
           eyebrow="Client Experience"
-          title="Trusted where systems quality directly affects outcomes"
+          title="Trusted by teams where system quality affects outcomes"
           description="Selected experience across financial services, enterprise operations, philanthropy, and growth-stage environments where bad sequencing gets expensive fast."
         />
 
@@ -395,7 +395,7 @@ export default function ServicesPage() {
                 Why Amalgam
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Built for teams that want practical help
+                Need practical help, not consulting theater?
               </h2>
               <div className="mt-6 max-w-[48ch] space-y-4 leading-relaxed text-muted-foreground">
                 <p>

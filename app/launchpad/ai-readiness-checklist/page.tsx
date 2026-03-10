@@ -6,7 +6,7 @@ import { Navigation } from "@/components/navigation"
 import { ToolAssessment } from "@/components/tool-assessment"
 
 export const metadata: Metadata = {
-  title: "AI Readiness Checklist",
+  title: "Are you actually ready for AI adoption?",
   description:
     "A sober first-pass checklist for deciding whether your workflows, ownership, and data foundations are actually ready for meaningful AI usage.",
   alternates: {

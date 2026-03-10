@@ -6,7 +6,7 @@ import { Navigation } from "@/components/navigation"
 import { ToolAssessment } from "@/components/tool-assessment"
 
 export const metadata: Metadata = {
-  title: "Tech Stack Audit",
+  title: "Is your tech stack helping or hurting?",
   description:
     "A first-pass audit for deciding whether the stack is stable, fragmented, over-complex, risky, or under-instrumented for reliable delivery.",
   alternates: {

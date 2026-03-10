@@ -15,7 +15,7 @@ import { ContactForm } from "@/components/contact-form"
 import { ContextualTestimonial } from "@/components/contextual-testimonial"
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Tell us what is stuck",
   description:
     "Talk with Amalgam about what is slowing delivery and get a clear recommendation on the best next step.",
   alternates: {
@@ -25,17 +25,17 @@ export const metadata: Metadata = {
 
 const nextSteps = [
   {
-    title: "You share the situation",
+    title: "You tell us what is stuck",
     description:
       "Tell us what is slowing delivery and where decisions feel stuck.",
   },
   {
-    title: "Amalgam replies directly",
+    title: "We reply directly",
     description:
       "You hear back from the team, not a sales queue.",
   },
   {
-    title: "We point to the right next step",
+    title: "You get a clear next step",
     description:
       "That may be a free strategy call, a focused diagnostic, or a practical internal next move.",
   },
@@ -56,7 +56,7 @@ export default function ContactPage() {
                   Contact
                 </p>
                 <h1 className="text-4xl font-semibold leading-tight tracking-tight text-foreground text-balance md:text-5xl">
-                  Start the conversation
+                  Tell us what is stuck
                 </h1>
                 <p className="contact-hero-body mt-6 text-lg leading-relaxed text-muted-foreground">
                   Tell us what&apos;s stuck. We&apos;ll give you a clear next step.
@@ -150,7 +150,7 @@ export default function ContactPage() {
                   What happens next
                 </p>
                 <h2 className="mt-3 text-3xl font-semibold text-foreground">
-                  A direct path to the right next step
+                  Here&apos;s how this works
                 </h2>
                 <div className="contact-next-steps mt-8 grid gap-4 md:grid-cols-3">
                   {nextSteps.map((step, index) => (

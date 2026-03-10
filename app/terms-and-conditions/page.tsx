@@ -2,7 +2,7 @@ import { Metadata } from "next"
 import { LegalPageShell } from "@/components/legal-page-shell"
 
 export const metadata: Metadata = {
-  title: "Terms and Conditions",
+  title: "Website terms you should know",
   description:
     "Terms and conditions governing the use of Amalgam's website and the general framing of our services.",
   alternates: {

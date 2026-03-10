@@ -7,7 +7,7 @@ import { TrackedLink } from "@/components/tracked-link"
 import { launchpadPrograms } from "@/lib/launchpad"
 
 export const metadata: Metadata = {
-  title: "Launchpad Programs",
+  title: "Not sure which support level fits? Start here.",
   description:
     "See how Diagnostic Review, Execution Sprint, and Outcome Partnership map to what your team needs now.",
   alternates: {
@@ -17,19 +17,19 @@ export const metadata: Metadata = {
 
 const decisionMap = [
   {
-    title: "Root cause unclear",
+    title: "Your root cause is still unclear",
     description:
       "If the drag is visible but the system still needs a direct read, Diagnostic Review is the cleanest entry point.",
     href: "/founder-review",
   },
   {
-    title: "Situation legible, sequencing needed",
+    title: "You can see the issue, but need sequencing",
     description:
       "If the diagnosis is trusted and the organization needs a roadmap that can survive scrutiny, move into the Execution Sprint.",
     href: "/execution-sprint",
   },
   {
-    title: "Momentum needs continuity",
+    title: "You need continuity to keep momentum",
     description:
       "If the path exists but execution still needs close follow-through, Outcome Partnership becomes the continuity layer.",
     href: "/outcome-partnership",
@@ -49,7 +49,7 @@ export default function LaunchpadProgramsPage() {
               Launchpad Programs
             </p>
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl">
-              If tools or guides point to deeper help, this is how work usually starts
+              If tools or guides point to deeper help, pick the support level that fits now
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
               For teams with clear signal that now need the right level of support.
@@ -101,7 +101,7 @@ export default function LaunchpadProgramsPage() {
                 Which one is right?
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Choose based on what the system needs next
+                Choose based on what your system needs next
               </h2>
             </div>
             <div className="grid gap-6 lg:grid-cols-3">

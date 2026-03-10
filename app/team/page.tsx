@@ -14,7 +14,7 @@ import {
 import { withBasePath } from "@/lib/site-config"
 
 export const metadata: Metadata = {
-  title: "Team",
+  title: "Meet the people you work with",
   description:
     "Meet the Amalgam team across architecture, engineering, delivery, legal, and HR.",
   alternates: {
@@ -60,7 +60,7 @@ export default function TeamPage() {
                 Our Team
               </span>
               <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Experienced leaders who help teams move complex work forward
+                Meet the people who help you move complex work forward
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
                 Amalgam stays intentionally small. The team spans product, architecture, engineering, delivery, operations, and leadership.
@@ -77,7 +77,7 @@ export default function TeamPage() {
                   href="/about"
                   className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-background/80 px-6 py-3 font-medium text-foreground transition-colors hover:bg-muted"
                 >
-                  Read our story
+                  See how we work
                 </Link>
               </div>
 
@@ -226,7 +226,7 @@ export default function TeamPage() {
         <section className="deferred-section border-t border-border bg-foreground px-6 py-20">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-bold text-background md:text-4xl">
-              Need experienced support in the room?
+              Need experienced support in the room with you?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-background/70">
               Start with a strategy call if systems are slowing the business down, or reach out directly if you already know where you need help.

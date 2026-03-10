@@ -15,7 +15,7 @@ const analyticsEnabled = process.env.NEXT_PUBLIC_VERCEL_ANALYTICS === "1"
 
 export const metadata: Metadata = {
   title: {
-    default: "Amalgam | Experienced support for complex systems",
+    default: "Amalgam | Is delivery getting messy? We help you move again.",
     template: "%s | Amalgam",
   },
   applicationName: "Amalgam",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: "Amalgam",
-    title: "Amalgam - When delivery gets messy, we help teams move again.",
+    title: "Amalgam - Is delivery getting messy? We help you move again.",
     description:
       "Experienced support helping teams bring clarity to complex systems and move execution forward.",
     images: [
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Amalgam - When delivery gets messy, we help teams move again.",
+    title: "Amalgam - Is delivery getting messy? We help you move again.",
     description:
       "Experienced support helping teams bring clarity to complex systems and move execution forward.",
     images: [absoluteUrl("/opengraph-image")],

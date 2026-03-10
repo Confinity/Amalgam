@@ -23,9 +23,9 @@ import { caseStudies } from "@/lib/case-studies-data"
 import { knowledgeBriefs, knowledgeCategories } from "@/lib/knowledge-briefs"
 
 export const metadata: Metadata = {
-  title: "When delivery gets messy, we help teams move again.",
+  title: "Is delivery getting messy? We help you move again.",
   description:
-    "Amalgam helps teams bring clarity to complex systems and move delivery forward with confidence.",
+    "If delivery is slowing down, Amalgam helps you find what is stuck and move forward with confidence.",
   alternates: {
     canonical: "/",
   },
@@ -41,16 +41,16 @@ function Hero() {
         <div className="hero-layout">
           <div className="max-w-3xl">
             <p className="mb-5 text-sm font-medium uppercase tracking-[0.22em] text-teal">
-              For teams under delivery pressure
+              If delivery feels stuck
             </p>
             <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight text-foreground text-balance sm:text-5xl lg:text-[58px]">
               When delivery gets messy,{" "}
               <span className="bg-gradient-to-r from-teal to-purple bg-clip-text text-transparent">
-                we help you get moving again.
+                we help you move again.
               </span>
             </h1>
             <p className="hero-body mt-6 text-lg leading-relaxed text-muted-foreground">
-              If architecture, data, integrations, and delivery pressure are colliding, we help you find the blocker and move.
+              If architecture, data, integrations, and deadlines are colliding, we help you find what is blocking progress and fix the next move.
             </p>
             <div className="hero-cta-row mt-3">
               <Link
@@ -77,7 +77,7 @@ function Hero() {
                 <span>Deep systems experience</span>
               </div>
               <p className="mt-3 text-[13px] leading-relaxed text-muted-foreground/90">
-                You get direct support, clear thinking, and practical next steps.
+                You get direct support, clearer decisions, and practical next steps.
               </p>
             </div>
           </div>
@@ -95,22 +95,22 @@ function WhatWeDo() {
   const outcomes = [
     {
       icon: Compass,
-      title: "Get a clear read",
+      title: "See what is actually broken",
       description: "See what is actually slowing the work down before more time gets burned.",
     },
     {
       icon: Layers,
-      title: "Steady the system",
+      title: "Stabilize the system",
       description: "Find the weak points in the system before they create more drag.",
     },
     {
       icon: Zap,
-      title: "Remove momentum blockers",
+      title: "Remove the bottlenecks",
       description: "Spot what keeps slowing delivery, decisions, and handoffs.",
     },
     {
       icon: Target,
-      title: "Support leaders through uncertainty",
+      title: "Give leadership a clear call",
       description: "Give leaders something solid to work from when the picture is messy.",
     },
   ]
@@ -123,10 +123,10 @@ function WhatWeDo() {
             What Amalgam does
           </p>
           <h2 className="mb-4 text-3xl font-semibold text-foreground">
-            Clear help when systems work starts slowing delivery
+            Need clear help when delivery starts slipping?
           </h2>
           <p className="max-w-2xl leading-relaxed text-muted-foreground">
-            We work with teams that need clearer judgment, better structure, and steadier forward motion.
+            We help you identify what is slowing execution, then fix it with you.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -150,7 +150,7 @@ function WhoWeHelp() {
     <section className="homepage-audiences-section deferred-section border-y border-border bg-secondary/45 py-20 lg:py-24">
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="mb-10">
-          <h2 className="text-2xl font-semibold text-foreground">Who we help</h2>
+          <h2 className="text-2xl font-semibold text-foreground">Who this is for</h2>
         </div>
         <div className="grid gap-8 lg:grid-cols-2">
           <div className="rounded-2xl border border-border bg-background p-8">
@@ -162,7 +162,7 @@ function WhoWeHelp() {
                 Founders and business leaders
               </h3>
             </div>
-            <p className="mb-5 text-muted-foreground">When growth adds complexity.</p>
+            <p className="mb-5 text-muted-foreground">You&apos;re growing, but execution keeps slowing.</p>
             <ul className="space-y-3">
               {[
                 "Shipping slows after growth",
@@ -187,7 +187,7 @@ function WhoWeHelp() {
                 Technical and product leaders
               </h3>
             </div>
-            <p className="mb-5 text-muted-foreground">When architecture and execution collide.</p>
+            <p className="mb-5 text-muted-foreground">You can feel technical drag every sprint.</p>
             <ul className="space-y-3">
               {[
                 "Architecture has become fragile",
@@ -251,7 +251,7 @@ function TypicalTriggers() {
               Common pressure points
             </p>
             <h2 className="mb-4 text-3xl font-semibold text-foreground">
-              When teams usually reach out
+              When teams usually call us
             </h2>
             <p className="leading-relaxed text-muted-foreground">
               Teams usually reach out when delivery slows and nobody can clearly show why.
@@ -299,7 +299,7 @@ function Offers() {
       primary: true,
     },
     {
-      title: "Deeper support when you need it",
+      title: "Need deeper support? We can stay involved.",
       subtitle: "Paid engagements",
       description:
         "When the issue is clear and you want help moving it through execution.",
@@ -319,7 +319,7 @@ function Offers() {
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="mb-10 max-w-3xl">
           <h2 className="mb-4 text-2xl font-semibold text-foreground">Start here</h2>
-          <p className="text-muted-foreground">One clear first step, then deeper support only when needed.</p>
+          <p className="text-muted-foreground">Start with one clear next step, then go deeper only if needed.</p>
         </div>
         <div className="grid gap-8 lg:grid-cols-2">
           {offers.map((offer) => (
@@ -371,7 +371,7 @@ function TrustSection() {
     <ClientLogoWall
       className="homepage-trust-section border-t border-border"
       eyebrow="Client experience"
-      title="Trusted in complex environments"
+      title="Trusted by teams in complex environments"
       description="Selected client experience across banking, fintech, insurance, and enterprise systems."
       showCaseStudiesCta
     />
@@ -390,7 +390,7 @@ function FeaturedCaseStudies() {
               Case studies
             </p>
             <h2 className="mb-2 text-3xl font-semibold text-foreground">
-              Work we can stand behind
+              See work in situations like yours
             </h2>
             <p className="text-muted-foreground">A few examples from real operating conditions.</p>
           </div>
@@ -431,7 +431,7 @@ function KnowledgePreview() {
               Knowledge
             </p>
             <h2 className="mb-2 text-3xl font-semibold text-foreground">
-              Practical thinking for work under pressure
+              Read this when delivery feels stuck
             </h2>
             <p className="max-w-xl text-muted-foreground">
               Notes on architecture, delivery, data, and decisions under pressure.
@@ -490,7 +490,7 @@ function FinalCTA() {
             Next step
           </p>
           <h2 className="mb-4 text-3xl font-semibold text-background text-balance">
-            Get a clear read on what&apos;s slowing delivery
+            Want a clear read on what&apos;s slowing delivery?
           </h2>
           <p className="max-w-2xl text-background/70">
             Start with a free strategy call. We&apos;ll help you pinpoint what is stuck and what to do next.
