@@ -288,12 +288,13 @@ export function ReviewMode() {
 
       event.preventDefault()
       event.stopPropagation()
+      const docEl = document.documentElement
       const now = new Date().toISOString()
       const nextNote: ReviewNote = {
         id: createNoteId(),
         pageUrl,
-        x: Math.max(8, Math.min(event.clientX + 10, window.innerWidth - 260)),
-        y: Math.max(8, Math.min(event.clientY + 10, window.innerHeight - 80)),
+        x: Math.max(8, Math.min(event.pageX + 10, docEl.scrollWidth - 260)),
+        y: Math.max(8, Math.min(event.pageY + 10, docEl.scrollHeight - 80)),
         title: "",
         text: "",
         category: "needs-review",
@@ -323,10 +324,11 @@ export function ReviewMode() {
     }
 
     const onPointerMove = (event: PointerEvent) => {
-      const maxX = Math.max(20, window.innerWidth - 220)
-      const maxY = Math.max(20, window.innerHeight - 80)
-      const nextX = Math.max(8, Math.min(event.clientX - dragging.offsetX, maxX))
-      const nextY = Math.max(8, Math.min(event.clientY - dragging.offsetY, maxY))
+      const docEl = document.documentElement
+      const maxX = Math.max(20, docEl.scrollWidth - 220)
+      const maxY = Math.max(20, docEl.scrollHeight - 80)
+      const nextX = Math.max(8, Math.min(event.pageX - dragging.offsetX, maxX))
+      const nextY = Math.max(8, Math.min(event.pageY - dragging.offsetY, maxY))
 
       setNotes((previous) =>
         previous.map((note) =>
@@ -436,7 +438,7 @@ export function ReviewMode() {
           <article
             key={note.id}
             data-review-ui="true"
-            className="fixed z-[230] w-[250px] overflow-hidden rounded-xl border border-border bg-white shadow-xl"
+            className="absolute z-[230] w-[250px] overflow-hidden rounded-xl border border-border bg-white shadow-xl"
             style={{ left: note.x, top: note.y }}
           >
             <header
@@ -454,8 +456,8 @@ export function ReviewMode() {
                 event.preventDefault()
                 setDragging({
                   id: note.id,
-                  offsetX: event.clientX - note.x,
-                  offsetY: event.clientY - note.y,
+                  offsetX: event.pageX - note.x,
+                  offsetY: event.pageY - note.y,
                 })
               }}
             >
