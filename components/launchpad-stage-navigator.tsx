@@ -461,8 +461,22 @@ export function LaunchpadStageNavigator({
       header instanceof HTMLElement
         ? Math.round(header.getBoundingClientRect().height)
         : FIXED_NAV_FALLBACK_HEIGHT
+    const stageSelector = document.getElementById("launchpad-stage-selector")
+    const stageSelectorHeight =
+      stageSelector instanceof HTMLElement
+        ? Math.round(stageSelector.getBoundingClientRect().height)
+        : 0
+    const stageSelectorStickyTop =
+      stageSelector instanceof HTMLElement
+        ? Number.parseFloat(window.getComputedStyle(stageSelector).top || "80")
+        : 80
+    const nextStepOffset =
+      stageSelectorHeight > 0
+        ? stageSelectorStickyTop + stageSelectorHeight + ANCHOR_EXTRA_GAP
+        : navHeight + ANCHOR_EXTRA_GAP
+    const offset = targetId === "launchpad-next-step" ? nextStepOffset : navHeight + ANCHOR_EXTRA_GAP
     const targetTop =
-      window.scrollY + target.getBoundingClientRect().top - navHeight - ANCHOR_EXTRA_GAP
+      window.scrollY + target.getBoundingClientRect().top - offset
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
 
     window.scrollTo({
