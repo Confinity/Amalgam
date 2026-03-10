@@ -107,7 +107,7 @@ export default function ExecutionSprintPage() {
                 Turn a clear diagnosis into an execution plan teams can use
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                We map the current state, clarify constraints, and turn work into a sequence teams can move on.
+                We map the current state, clarify constraints, and turn work into a sequence teams can actually run.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Link
@@ -253,7 +253,7 @@ export default function ExecutionSprintPage() {
                   Many roadmapping efforts fail because teams sequence work before architecture, ownership, and constraints are clear enough.
                 </p>
                 <p>
-                  The Execution Sprint fixes that with a plan based on what the system can support now and what risk should be removed first.
+                  The Execution Sprint fixes that with a plan based on what the system can support now and which risk to remove first.
                 </p>
                 <p>
                   The result is a roadmap that is easier to defend, communicate, and execute.

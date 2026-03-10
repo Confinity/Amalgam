@@ -127,14 +127,14 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
           <div className="contact-intake-note-item rounded-2xl bg-background px-4 py-4">
             <p className="text-sm font-medium text-foreground">No black-box handoff</p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              The form drafts the email so your exact context stays visible.
+              We draft the email so your exact context stays visible.
             </p>
           </div>
         </div>
       </div>
       <h2 className="mb-2 text-xl font-semibold text-foreground">Send us a message</h2>
       <p className="mb-6 text-sm text-muted-foreground">
-        This opens a draft email to hello@amalgam-inc.com with your notes formatted.
+        This opens a draft email to hello@amalgam-inc.com with your notes prefilled.
       </p>
 
       <form className="space-y-5" onSubmit={handleSubmit}>
@@ -300,8 +300,7 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
               <div className="space-y-2">
                 <p className="font-medium text-foreground">Draft ready.</p>
                 <p>
-                  Your email app should now be open with the message prefilled for
-                  hello@amalgam-inc.com.
+                  Your email app should now open with the message prefilled for hello@amalgam-inc.com.
                 </p>
                 <p>
                   {copied
@@ -341,7 +340,7 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
 
       <div className="contact-control-note mt-4 inline-flex items-center gap-2 text-xs text-muted-foreground">
         <Copy className="h-3.5 w-3.5" />
-        No black-box submission flow. You stay in control, and your message can be copied if your mail app does not open.
+        You stay in control of the message, with copy-to-clipboard backup if your mail app does not open.
       </div>
     </div>
   )

@@ -127,8 +127,7 @@ export default function AboutPage() {
                   A focused team for complex moments that need clear decisions.
                 </h1>
                 <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                  Amalgam helps business and technical leaders bring clarity to
-                  complex systems and restore delivery momentum.
+                  Amalgam helps business and technical leaders bring clarity to complex systems and restore momentum.
                 </p>
               </div>
               <div className="support-panel rounded-[28px] p-7">
@@ -176,7 +175,7 @@ export default function AboutPage() {
                     I started Amalgam to keep the work practical and honest.
                   </p>
                   <p>
-                    Too many projects create dependency instead of progress. We focus on what is slowing the business down, make the next move clear, and help teams move again.
+                    Too many projects create dependency instead of progress. We focus on what is actually slowing the business down, make the next move clear, and help teams move again.
                   </p>
                 </blockquote>
                 <p className="mt-6 font-medium text-foreground">{founder.fullName ?? founder.name}</p>
@@ -200,7 +199,7 @@ export default function AboutPage() {
                   Most delivery problems are no longer confined to one team. Architecture, product, operations, and decision-making are usually all involved.
                 </p>
                 <p>
-                  That is where Amalgam is most useful: when leaders need clear judgment that connects the full system and creates a path teams can execute with confidence.
+                  That is where Amalgam is most useful: when leaders need clear judgment that connects the full system and gives teams a path they can execute.
                 </p>
               </div>
             </div>

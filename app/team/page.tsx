@@ -229,8 +229,7 @@ export default function TeamPage() {
               Need focused support in the room?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-background/70">
-              Start with a strategy call if your systems are slowing the business
-              down, or reach out directly if you already know where you need help.
+              Start with a strategy call if systems are slowing the business down, or reach out directly if you already know where you need help.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link

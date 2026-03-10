@@ -36,7 +36,7 @@ export default function LaunchpadGuidesPage() {
               Practical field guidance for leaders trying to act, not just read
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              Guidance grouped by the pressure in front of you.
+              Guidance grouped by the pressure right in front of you.
             </p>
           </div>
         </section>

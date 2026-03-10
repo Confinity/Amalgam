@@ -195,7 +195,7 @@ export default function FounderReviewPage() {
                 The right starting point when leadership needs signal, not noise
               </h2>
               <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
-                The Diagnostic Review is for teams that need a sharper view of what is actually creating drag across the system.
+                The Diagnostic Review is for teams that need a sharper view of what is creating drag across the system.
               </p>
               <div className="mt-8 grid gap-3">
                 {signals.map((signal) => (
@@ -344,13 +344,10 @@ export default function FounderReviewPage() {
               </h2>
               <div className="mt-6 space-y-4 leading-relaxed text-muted-foreground">
                 <p>
-                  The Diagnostic Review is built for situations where unclear
-                  decisions are already getting expensive. It is built to produce
-                  a real diagnosis.
+                  This is built for situations where unclear decisions are already getting expensive.
                 </p>
                 <p>
-                  You get clear judgment from day one, a cleaner view of the system,
-                  and a more honest conversation about what should happen next.
+                  You get a cleaner view of the system and a more direct conversation about what should happen next.
                 </p>
                 <p>
                   It should reduce ambiguity, not create dependency.

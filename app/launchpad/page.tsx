@@ -44,7 +44,7 @@ export default function LaunchpadPage() {
                 Tools and guidance for teams dealing with delivery drag
               </h1>
               <p className="mt-6 max-w-[34ch] text-lg leading-relaxed text-muted-foreground">
-                Self-locate, test what is causing drag, and pick the right next move.
+                Self-locate quickly, test what is causing drag, and pick the next move with confidence.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <TrackedLink
@@ -76,8 +76,8 @@ export default function LaunchpadPage() {
               </p>
               <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
                 <p>Structured self-location for teams carrying real systems complexity.</p>
-                <p>Tool-shaped diagnostics and field guides that deliver value before contact.</p>
-                <p>Natural escalation into a strategy call or focused engagement when needed.</p>
+                <p>Diagnostics and field guides that deliver value before contact.</p>
+                <p>Clear escalation into a strategy call when deeper support is needed.</p>
               </div>
             </div>
           </div>
@@ -93,7 +93,7 @@ export default function LaunchpadPage() {
                 Pick the path that matches your situation
               </h2>
               <p className="mt-4 leading-relaxed text-muted-foreground">
-                These are decision routes into the right tool, guide set, program, or conversation.
+                Pick a route into the right tool, guide set, program, or conversation.
               </p>
             </div>
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
@@ -123,9 +123,9 @@ export default function LaunchpadPage() {
                 <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
                   Featured tools
                 </p>
-                <h2 className="text-3xl font-semibold text-foreground text-balance">
-                  Use these tools to pressure-test the situation before committing
-                </h2>
+              <h2 className="text-3xl font-semibold text-foreground text-balance">
+                Use these tools to pressure-test the situation before committing
+              </h2>
               </div>
               <TrackedLink
                 href="/launchpad/tools"
@@ -133,7 +133,7 @@ export default function LaunchpadPage() {
                 eventData={{ source: "launchpad_featured_tools", target: "tools_index" }}
                 className="inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
               >
-                Explore diagnostics
+                See all diagnostics
                 <ArrowRight className="h-4 w-4" />
               </TrackedLink>
             </div>
@@ -192,9 +192,9 @@ export default function LaunchpadPage() {
                 <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
                   Featured guides
                 </p>
-                <h2 className="text-3xl font-semibold text-foreground text-balance">
-                  Practical guide groupings for the pressure points teams usually carry
-                </h2>
+              <h2 className="text-3xl font-semibold text-foreground text-balance">
+                Practical guide groupings for the pressure points teams usually carry
+              </h2>
               </div>
               <TrackedLink
                 href="/launchpad/guides"
@@ -246,9 +246,9 @@ export default function LaunchpadPage() {
                 <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
                   Programs
                 </p>
-                <h2 className="text-3xl font-semibold text-foreground text-balance">
-                  If the tool or guide points to deeper work, this is how the work usually begins
-                </h2>
+              <h2 className="text-3xl font-semibold text-foreground text-balance">
+                If the tool or guide points to deeper work, this is how the work usually begins
+              </h2>
               </div>
               <TrackedLink
                 href="/launchpad/programs"
@@ -307,7 +307,7 @@ export default function LaunchpadPage() {
                 Not every next step sits inside Amalgam&apos;s core work
               </h2>
               <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
-                If the right move sits adjacent to our core work, we can point you to the right introduction or next step.
+                If the right move sits adjacent to our core work, we can point you to the right intro or next step.
               </p>
             </div>
             <div className="rounded-[30px] border border-border bg-background p-7">
@@ -342,7 +342,7 @@ export default function LaunchpadPage() {
                 Practical signal for leaders and teams carrying systems complexity
               </h2>
               <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
-                Practical notes on delivery drag, architecture decisions, and next-step judgment under pressure.
+                Notes on delivery drag, architecture decisions, and next-step judgment under pressure.
               </p>
               <div className="mt-8 grid gap-4 md:grid-cols-3">
                 {signalArticles.map((article) => (
@@ -376,8 +376,7 @@ export default function LaunchpadPage() {
                 Get practical Launchpad signal
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-background/72">
-                Useful notes on systems clarity, execution drag, and next moves
-                when complexity starts slowing the business down.
+                Useful notes on systems clarity, execution drag, and next moves when complexity slows the business down.
               </p>
               <SignalsSubscribeForm
                 source="launchpad_page"
@@ -413,8 +412,7 @@ export default function LaunchpadPage() {
                 Launchpad helps you get clear quickly. If deeper help is needed, start with a strategy call.
               </h2>
             <p className="mx-auto mt-4 max-w-2xl text-background/72">
-              Use the tools and guides first. If the problem still needs direct
-              diagnosis, we will point you to the right engagement.
+              Use the tools and guides first. If the problem needs direct diagnosis, we will point you to the right engagement.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
               <TrackedLink

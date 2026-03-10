@@ -514,7 +514,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
     slug: "ai-readiness-checklist",
     title: "AI Readiness Checklist",
     shortTitle: "AI Readiness",
-    kicker: "Operator checklist",
+    kicker: "Practical checklist",
     description:
       "Assess whether the company is actually ready for meaningful AI usage or still needs better workflows, ownership, and system foundations first.",
     audience:

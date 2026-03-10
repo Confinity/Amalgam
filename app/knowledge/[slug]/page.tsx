@@ -96,9 +96,8 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
 
     const trimmed = condensed.slice(0, 300).trim()
     const lastSpace = trimmed.lastIndexOf(" ")
-    return `${lastSpace > 100 ? trimmed.slice(0, lastSpace) : trimmed}…`
+    return `${lastSpace > 100 ? trimmed.slice(0, lastSpace) : trimmed}...`
   })()
-  const displayIntroPreview = introPreview.replace(/[^\u0000-\u007F]+$/u, "...")
   const canonicalUrl = `https://amalgam-inc.com/knowledge/${brief.slug}`
   const schema = [
     {
@@ -191,7 +190,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                   {brief.title}
                 </h1>
                 <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                  {displayIntroPreview}
+                  {introPreview}
                 </p>
               </div>
 
@@ -432,8 +431,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                   Need help with your specific situation?
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-background/75">
-                  Articles sharpen judgment. They do not replace a real read on
-                  your architecture, operating model, and delivery constraints.
+                  Articles sharpen judgment. They do not replace a direct read on your architecture, operating model, and delivery constraints.
                 </p>
                 <div className="mt-5 flex flex-col gap-3">
                   <Link

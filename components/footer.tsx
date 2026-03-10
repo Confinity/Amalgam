@@ -12,7 +12,7 @@ export function Footer() {
               <BrandLogo className="h-8 w-auto" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Experienced support helping teams bring clarity to complex systems and move execution forward.
+              We help teams make complex systems clearer and execution steadier.
             </p>
             <div className="footer-credentials text-sm text-muted-foreground">
               <span className="credential-chip rounded-full border border-border bg-background px-3 py-1.5">

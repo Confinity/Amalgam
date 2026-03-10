@@ -870,5 +870,5 @@ export function summarizeCaseStudyText(
   const trimmed = candidate.slice(0, maxChars).trim()
   const safeCut = trimmed.lastIndexOf(" ")
   const base = safeCut > 60 ? trimmed.slice(0, safeCut) : trimmed
-  return `${base}…`
+  return `${base}...`
 }

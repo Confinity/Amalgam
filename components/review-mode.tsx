@@ -97,9 +97,21 @@ function loadNotes(pageUrl: string): ReviewNote[] {
   }
 }
 
-function saveNotes(pageUrl: string, notes: ReviewNote[]) {
+function saveNotes(
+  pageUrl: string,
+  notes: ReviewNote[],
+  options: { allowEmpty?: boolean } = {}
+) {
   if (typeof window === "undefined") {
     return
+  }
+
+  const allowEmpty = options.allowEmpty ?? false
+  if (!allowEmpty && notes.length === 0) {
+    const existing = loadNotes(pageUrl)
+    if (existing.length > 0) {
+      return
+    }
   }
 
   window.localStorage.setItem(noteStorageKey(pageUrl), JSON.stringify(notes))
@@ -148,6 +160,11 @@ export function ReviewMode() {
     height: number
   } | null>(null)
   const pressedKeysRef = useRef<Set<string>>(new Set())
+  const latestNotesRef = useRef<ReviewNote[]>([])
+
+  useEffect(() => {
+    latestNotesRef.current = notes
+  }, [notes])
 
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -176,14 +193,6 @@ export function ReviewMode() {
       setNotes(loadNotes(currentPage))
     })
   }, [active, pathname])
-
-  useEffect(() => {
-    if (!active) {
-      return
-    }
-
-    saveNotes(pageUrl, notes)
-  }, [active, pageUrl, notes])
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -293,7 +302,11 @@ export function ReviewMode() {
         updatedAt: now,
       }
 
-      setNotes((previous) => [...previous, nextNote])
+      setNotes((previous) => {
+        const next = [...previous, nextNote]
+        saveNotes(pageUrl, next)
+        return next
+      })
     }
 
     window.addEventListener("mousemove", onMouseMove, true)
@@ -325,6 +338,7 @@ export function ReviewMode() {
     }
 
     const onPointerUp = () => {
+      saveNotes(pageUrl, latestNotesRef.current)
       setDragging(null)
     }
 
@@ -334,15 +348,26 @@ export function ReviewMode() {
       window.removeEventListener("pointermove", onPointerMove)
       window.removeEventListener("pointerup", onPointerUp)
     }
-  }, [dragging])
+  }, [dragging, pageUrl])
 
   const visibleNotes = useMemo(
     () => (notesVisible ? notes.filter((note) => note.pageUrl === pageUrl) : []),
     [notes, notesVisible, pageUrl]
   )
 
+  const updateNotes = (
+    updater: ReviewNote[] | ((previous: ReviewNote[]) => ReviewNote[]),
+    options: { allowEmpty?: boolean } = {}
+  ) => {
+    setNotes((previous) => {
+      const next = typeof updater === "function" ? updater(previous) : updater
+      saveNotes(pageUrl, next, options)
+      return next
+    })
+  }
+
   const updateNote = (id: string, updates: Partial<ReviewNote>) => {
-    setNotes((previous) =>
+    updateNotes((previous) =>
       previous.map((note) =>
         note.id === id ? { ...note, ...updates, updatedAt: new Date().toISOString() } : note
       )
@@ -350,7 +375,9 @@ export function ReviewMode() {
   }
 
   const deleteNote = (id: string) => {
-    setNotes((previous) => previous.filter((note) => note.id !== id))
+    updateNotes((previous) => previous.filter((note) => note.id !== id), {
+      allowEmpty: true,
+    })
   }
 
   const clearCurrentPageNotes = () => {
@@ -360,7 +387,9 @@ export function ReviewMode() {
     if (!shouldClear) {
       return
     }
-    setNotes((previous) => previous.filter((note) => note.pageUrl !== pageUrl))
+    updateNotes((previous) => previous.filter((note) => note.pageUrl !== pageUrl), {
+      allowEmpty: true,
+    })
   }
 
   const exitReviewMode = () => {

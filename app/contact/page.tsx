@@ -75,7 +75,7 @@ export default function ContactPage() {
                       Free strategy call
                     </p>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                      Best when you need a clear read before committing to deeper work.
+                      Best when you need a clear read before deciding what help you need.
                     </p>
                   </div>
                   <div className="contact-path-card support-panel p-5">
@@ -83,7 +83,7 @@ export default function ContactPage() {
                       Execution Sprint
                     </p>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                      Best when the diagnosis is visible and the team needs sequence.
+                      Best when the diagnosis is visible and the team needs sequencing.
                     </p>
                   </div>
                   <div className="contact-path-card support-panel p-5">

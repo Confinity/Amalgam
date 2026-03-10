@@ -58,7 +58,7 @@ export default function CaseStudiesPage() {
                 Real client work, explained clearly
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-                See what the situation was, what we changed, and why it mattered.
+                See the situation, what changed, and why it mattered.
               </p>
               <div className="mt-10 grid gap-4 sm:grid-cols-3">
                 <div className="rounded-2xl border border-border bg-background/90 px-5 py-5 shadow-sm">
@@ -77,15 +77,15 @@ export default function CaseStudiesPage() {
             </div>
 
             <div className="rounded-[32px] border border-border bg-background/95 p-7 shadow-sm">
-              <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                How to use this page
-              </p>
-              <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
-                <p>Start with the featured examples for a fast read.</p>
+                <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
+                  How to use this page
+                </p>
+                <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
+                <p>Start with the featured examples for a quick read.</p>
                 <p>Use the full library to find situations close to your own.</p>
                 <p>If it feels similar, book a strategy call and we can review your case directly.</p>
+                </div>
               </div>
-            </div>
           </div>
         </section>
 
@@ -101,7 +101,7 @@ export default function CaseStudiesPage() {
                 </h2>
               </div>
               <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-                Featured examples rotate each page load.
+                Featured examples rotate each page load so returning visitors see broader proof.
               </p>
             </div>
             <CaseStudiesFeaturedGrid featuredStudies={featuredStudies} />
@@ -127,7 +127,7 @@ export default function CaseStudiesPage() {
                 </h2>
               </div>
               <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-                Each page gives you the context, the work, and the outcome.
+                Each page gives you context, what we did, and what changed.
               </p>
             </div>
 

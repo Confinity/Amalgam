@@ -31,7 +31,7 @@ export default function LaunchpadSignalsPage() {
               <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
                 Launchpad Signals
               </p>
-            <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl">
+              <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl">
                 Practical signal for leaders navigating systems complexity
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
@@ -46,7 +46,7 @@ export default function LaunchpadSignalsPage() {
                 Get practical updates
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-background/72">
-                Useful notes on systems clarity, architecture choices, and what to do next when complexity is slowing the business.
+                Useful notes on systems clarity, architecture choices, and what to do next when complexity slows the business.
               </p>
               <SignalsSubscribeForm
                 source="launchpad_signals_page"

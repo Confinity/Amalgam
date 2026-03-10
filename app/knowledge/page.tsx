@@ -59,9 +59,25 @@ function getCategoryHref(categoryId?: string) {
   return categoryId ? `/knowledge?category=${categoryId}` : "/knowledge"
 }
 
-export default function KnowledgePage() {
+type KnowledgePageProps = {
+  searchParams?: {
+    category?: string | string[]
+  }
+}
+
+export default function KnowledgePage({ searchParams }: KnowledgePageProps) {
   const featuredCandidates = knowledgeBriefs.filter((brief) => brief.featured)
-  const filteredBriefs = knowledgeBriefs
+  const requestedCategory = Array.isArray(searchParams?.category)
+    ? searchParams?.category[0]
+    : searchParams?.category
+  const selectedCategoryId = knowledgeCategories.some(
+    (category) => category.id === requestedCategory,
+  )
+    ? requestedCategory
+    : undefined
+  const filteredBriefs = selectedCategoryId
+    ? knowledgeBriefs.filter((brief) => brief.category === selectedCategoryId)
+    : knowledgeBriefs
 
   const articleCollections = knowledgeCategories.map((category) => ({
     category,
@@ -106,7 +122,7 @@ export default function KnowledgePage() {
                 </span>
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-                Practical articles on architecture, data, delivery, and decisions that affect momentum.
+                Short reads on architecture, delivery, data, and leadership decisions under pressure.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
@@ -127,7 +143,7 @@ export default function KnowledgePage() {
                 href="/launchpad"
                 className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
               >
-                Prefer structured diagnostics and tools? Explore diagnostics
+                Prefer tools first? Explore diagnostics
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <div className="mt-10 flex flex-wrap gap-3">
@@ -159,7 +175,11 @@ export default function KnowledgePage() {
               <div className="flex flex-wrap gap-3">
                 <Link
                   href="/knowledge"
-                  className="rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background"
+                  className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                    !selectedCategoryId
+                      ? "bg-foreground text-background"
+                      : "border border-border bg-background text-muted-foreground hover:text-foreground"
+                  }`}
                 >
                   All articles
                 </Link>
@@ -167,12 +187,17 @@ export default function KnowledgePage() {
                   const count = knowledgeBriefs.filter(
                     (brief) => brief.category === category.id
                   ).length
+                  const selected = selectedCategoryId === category.id
 
                   return (
                     <Link
                       key={category.id}
                       href={getCategoryHref(category.id)}
-                      className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                      className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
+                        selected
+                          ? "border-teal/45 bg-teal/10 text-foreground"
+                          : "border-border bg-background text-muted-foreground hover:text-foreground"
+                      }`}
                     >
                       {category.shortLabel}
                       <span className="rounded-full bg-secondary px-2 py-0.5 text-xs text-muted-foreground">
@@ -233,7 +258,7 @@ export default function KnowledgePage() {
                   A library organized by real pressure points
                 </h2>
                 <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">
-                  Start with the area that feels most constrained, then follow connected articles to build a clearer view of the system.
+                  Start with the area that feels most constrained, then follow connected reads to build a clearer view of your system.
                 </p>
               </div>
               <div className="grid gap-3 rounded-[24px] border border-border bg-secondary/40 p-5">
@@ -350,11 +375,11 @@ export default function KnowledgePage() {
         <section className="deferred-section-tall border-y border-border bg-secondary/25 px-6 py-16 md:px-8 md:py-20">
           <div className="mx-auto max-w-[1200px]">
             <div className="mb-10 max-w-3xl">
-              <h2 className="text-2xl font-semibold text-foreground">Explore by area</h2>
-              <p className="mt-3 text-muted-foreground">
-                Each collection is built around one kind of pressure.
-              </p>
-            </div>
+                <h2 className="text-2xl font-semibold text-foreground">Explore by area</h2>
+                <p className="mt-3 text-muted-foreground">
+                  Each collection is built around one kind of pressure.
+                </p>
+              </div>
             <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
               {articleCollections.map(({ category, briefs, lead }) => (
                 <div

@@ -93,7 +93,7 @@ export default function OutcomePartnershipPage() {
                 Ongoing support to keep momentum real
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                The Outcome Partnership carries the roadmap into execution for teams that need direct support as priorities shift and decisions cannot drift.
+                The Outcome Partnership carries the roadmap into execution when priorities shift and decisions cannot drift.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Link
@@ -266,7 +266,7 @@ export default function OutcomePartnershipPage() {
               </h2>
               <div className="mt-6 space-y-4 leading-relaxed text-muted-foreground">
                 <p>
-                  The hardest part is often not deciding what should happen. It is keeping good decisions intact as execution pressure and constraints start pulling them apart.
+                  The hardest part is often not deciding what should happen. It is keeping good decisions intact as execution pressure rises.
                 </p>
                 <p>
                   The Outcome Partnership is for that stage. It keeps judgment close to the work so the roadmap stays usable under pressure.

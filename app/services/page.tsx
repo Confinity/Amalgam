@@ -156,10 +156,10 @@ export default function ServicesPage() {
                 Practical support for complex delivery challenges
               </h1>
               <p className="mt-6 max-w-[32ch] text-lg leading-relaxed text-muted-foreground">
-                We help teams bring order to complex systems work, delivery pressure, and decisions that need to move.
+                We help teams bring order to complex systems work, delivery pressure, and blocked decisions.
               </p>
               <p className="mt-5 max-w-[34ch] text-sm font-medium leading-relaxed text-foreground/72">
-                Best when the drag is visible but the root cause is still unclear.
+                Best when the drag is obvious but the root cause is still fuzzy.
               </p>
               <div className="mt-6 flex flex-col gap-4 sm:flex-row">
                 <Link
@@ -226,8 +226,8 @@ export default function ServicesPage() {
               </h2>
               </div>
               <p className="max-w-[52ch] leading-relaxed text-muted-foreground lg:justify-self-end">
-                We are most useful when the drag sits across architecture,
-                tooling, data, operating rhythm, and decisions.
+                We are most useful when drag spans architecture, tooling, data,
+                operating rhythm, and leadership decisions.
               </p>
             </div>
             <div className="mb-8 flex flex-wrap gap-3">
@@ -286,7 +286,7 @@ export default function ServicesPage() {
               </h2>
               </div>
               <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-                Start with clarity, move into sequence, then add continuity only when it clearly adds leverage.
+                Start with clarity, then sequence, then continuity only when it clearly adds value.
               </p>
             </div>
 
@@ -351,9 +351,7 @@ export default function ServicesPage() {
                 Breadth where it matters, without trying to do everything
               </h2>
               <p className="mt-4 leading-relaxed text-muted-foreground">
-                  The work usually spans architecture, data, delivery, and operating
-                model at the same time. We stay focused on the areas that change
-                the situation, rather than expanding into everything.
+                The work usually spans architecture, data, delivery, and operating model at once. We stay focused on the few areas that change the outcome fastest.
               </p>
             </div>
             <div className="grid gap-6 lg:grid-cols-3">
@@ -400,10 +398,10 @@ export default function ServicesPage() {
               </h2>
               <div className="mt-6 max-w-[48ch] space-y-4 leading-relaxed text-muted-foreground">
                 <p>
-                  We are a focused team built for messy, high-stakes situations where the business needs clarity, sequence, and direct follow-through.
+                  We do our best work in messy, high-stakes situations where the business needs clarity, sequence, and follow-through.
                 </p>
                 <p>
-                  That is why the model stays simple: diagnose first, sequence next, stay involved only when it helps.
+                  The model stays simple: diagnose first, sequence next, stay involved when it clearly helps.
                 </p>
               </div>
             </div>

@@ -33,7 +33,7 @@ export default function LaunchpadToolsPage() {
               Diagnostics that create clarity before you decide what help you need
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              Use these for a fast first-pass read before deeper support.
+              Use these for a fast first-pass read before deciding on deeper support.
             </p>
           </div>
         </section>

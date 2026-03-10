@@ -50,7 +50,7 @@ function Hero() {
               </span>
             </h1>
             <p className="hero-body mt-6 text-lg leading-relaxed text-muted-foreground">
-              Architecture, data, integrations, and delivery pressure at the same time? We help you sort it and move.
+              If architecture, data, integrations, and delivery pressure are colliding, we help you find the blocker and move.
             </p>
             <div className="hero-cta-row mt-3">
               <Link
@@ -123,7 +123,7 @@ function WhatWeDo() {
             What Amalgam does
           </p>
           <h2 className="mb-4 text-3xl font-semibold text-foreground">
-            Clear help for systems, decisions, and execution
+            Clear help for the systems work that slows teams down
           </h2>
           <p className="max-w-2xl leading-relaxed text-muted-foreground">
             We work with teams that need clearer judgment, better structure, and steadier forward motion.
@@ -163,7 +163,7 @@ function WhoWeHelp() {
               </h3>
             </div>
             <p className="mb-5 text-muted-foreground">
-              When growth adds complexity and work starts slowing down.
+              When growth adds complexity and execution starts to wobble.
             </p>
             <ul className="space-y-3">
               {[
@@ -190,7 +190,7 @@ function WhoWeHelp() {
               </h3>
             </div>
             <p className="mb-5 text-muted-foreground">
-              When architecture, integrations, data, and delivery all collide.
+              When architecture, integrations, and delivery pressure collide.
             </p>
             <ul className="space-y-3">
               {[
@@ -258,7 +258,7 @@ function TypicalTriggers() {
               When teams usually reach out
             </h2>
             <p className="leading-relaxed text-muted-foreground">
-              Teams usually come to us when delivery slows down and the root cause is no longer obvious.
+              Teams usually reach out when delivery slows and nobody can clearly prove why.
             </p>
             <Link
               href="/contact?interest=strategy-session"
@@ -292,7 +292,7 @@ function Offers() {
       title: "Free strategy call",
       subtitle: "60 minutes",
       description:
-        "A short strategy call to help you see what is slowing things down and where to move first.",
+        "A short strategy call to identify what is stuck and where to move first.",
       points: [
         "Experienced second set of eyes",
         "Fast fit check",
@@ -306,7 +306,7 @@ function Offers() {
       title: "Deeper support when you need it",
       subtitle: "Paid engagements",
       description:
-        "When the issue is clearer and you need help moving it forward.",
+        "When the issue is clear and you want help moving it through execution.",
       points: [
         "Diagnostic review for root-cause clarity",
         "Execution Sprint for sequencing",
@@ -442,7 +442,7 @@ function KnowledgePreview() {
               Practical thinking for work under pressure
             </h2>
             <p className="max-w-xl text-muted-foreground">
-              Practical notes on architecture, delivery, data, and leadership decisions under pressure.
+              Notes on architecture, delivery, data, and decisions under pressure.
             </p>
           </div>
           <Link
@@ -501,7 +501,7 @@ function FinalCTA() {
             Get a clear read on what&apos;s slowing delivery
           </h2>
           <p className="max-w-2xl text-background/70">
-            Start with a free strategy call. We&apos;ll help you see what is stuck and where to move first.
+            Start with a free strategy call. We&apos;ll help you pinpoint what is stuck and what to do next.
           </p>
         </div>
         <div className="homepage-final-cta-panel rounded-[24px] border border-background/12 bg-background/[0.04] p-6">
