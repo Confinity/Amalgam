@@ -26,10 +26,10 @@ type DragState = {
 }
 
 const REVIEW_MODE_STORAGE_KEY = "amalgam_review_mode"
-const REVIEW_REMOTE_NOTES_URL =
-  process.env.NEXT_PUBLIC_REVIEW_NOTES_URL?.trim() ||
-  "https://jsonblob.com/api/jsonBlob/019cd9ac-4875-7fa4-9d22-d380a855b21b"
+const REVIEW_REMOTE_NOTES_URL = "/api/review-notes"
 const REMOTE_SYNC_DEBOUNCE_MS = 700
+const CONFIGURED_BASE_PATH = (process.env.NEXT_PUBLIC_BASE_PATH ?? "").replace(/\/+$/, "")
+const LEGACY_BASE_PATHS = ["/Amalgam", "/amalgam"] as const
 
 type ReviewRemoteStore = {
   version: 1
@@ -65,6 +65,28 @@ const categoryMeta: Record<
 
 function noteStorageKey(pageUrl: string) {
   return `review_notes:${pageUrl}`
+}
+
+function normalizeNotesPathname(pathname: string) {
+  let normalized = pathname.replace(/\/+$/, "") || "/"
+  const prefixes = [CONFIGURED_BASE_PATH, ...LEGACY_BASE_PATHS].filter(Boolean)
+
+  for (const prefix of prefixes) {
+    if (!prefix || prefix === "/") {
+      continue
+    }
+
+    if (normalized === prefix) {
+      normalized = "/"
+      continue
+    }
+
+    if (normalized.startsWith(`${prefix}/`)) {
+      normalized = normalized.slice(prefix.length) || "/"
+    }
+  }
+
+  return normalized
 }
 
 function normalizeReviewNote(raw: unknown, fallbackPageUrl?: string): ReviewNote | null {
@@ -201,7 +223,7 @@ function getPageUrlForNotes() {
   const url = new URL(window.location.href)
   url.searchParams.delete("review")
   const search = url.searchParams.toString()
-  const cleanPath = url.pathname.replace(/\/+$/, "") || "/"
+  const cleanPath = normalizeNotesPathname(url.pathname)
   return search ? `${cleanPath}?${search}` : cleanPath
 }
 
@@ -278,6 +300,7 @@ export function ReviewMode() {
   const [dragging, setDragging] = useState<DragState | null>(null)
   const [pageUrl, setPageUrl] = useState("/")
   const [notes, setNotes] = useState<ReviewNote[]>([])
+  const [syncStatus, setSyncStatus] = useState<"idle" | "loading" | "synced" | "error">("idle")
   const [highlightRect, setHighlightRect] = useState<{
     left: number
     top: number
@@ -315,6 +338,7 @@ export function ReviewMode() {
     queueMicrotask(() => {
       setPageUrl(currentPage)
       setNotes(cachedNotes)
+      setSyncStatus("loading")
     })
     remoteHydratedPageRef.current = ""
 
@@ -328,6 +352,7 @@ export function ReviewMode() {
       remoteHydratedPageRef.current = currentPage
       if (!store) {
         remoteStoreRef.current = null
+        setSyncStatus("error")
         return
       }
 
@@ -335,6 +360,7 @@ export function ReviewMode() {
       const remoteNotes = store.pages[currentPage] ?? []
       setNotes(remoteNotes)
       saveNotes(currentPage, remoteNotes, { allowEmpty: true })
+      setSyncStatus("synced")
     })()
 
     return () => {
@@ -360,6 +386,7 @@ export function ReviewMode() {
 
     syncTimeoutRef.current = window.setTimeout(() => {
       void (async () => {
+        setSyncStatus("loading")
         const baseStore = remoteStoreRef.current ?? (await fetchRemoteStore()) ?? createEmptyRemoteStore()
         const nextPages = { ...baseStore.pages }
 
@@ -378,6 +405,9 @@ export function ReviewMode() {
         const saved = await saveRemoteStore(nextStore)
         if (saved) {
           remoteStoreRef.current = nextStore
+          setSyncStatus("synced")
+        } else {
+          setSyncStatus("error")
         }
       })()
     }, REMOTE_SYNC_DEBOUNCE_MS)
@@ -582,6 +612,7 @@ export function ReviewMode() {
     setActive(false)
     setPanelOpen(false)
     setAddingNote(false)
+    setSyncStatus("idle")
     setHighlightRect(null)
     setDragging(null)
     if (typeof window !== "undefined") {
@@ -723,6 +754,24 @@ export function ReviewMode() {
             </p>
             <p className="mb-3 text-xs text-muted-foreground">
               Page: <span className="font-medium text-foreground">{pageUrl}</span>
+            </p>
+            <p
+              className={`mb-3 text-[11px] font-medium ${
+                syncStatus === "synced"
+                  ? "text-emerald-700"
+                  : syncStatus === "error"
+                    ? "text-rose-700"
+                    : "text-muted-foreground"
+              }`}
+            >
+              Sync:{" "}
+              {syncStatus === "synced"
+                ? "Shared across devices"
+                : syncStatus === "error"
+                  ? "Using local cache (remote unavailable)"
+                  : syncStatus === "loading"
+                    ? "Syncing..."
+                    : "Idle"}
             </p>
             <div className="space-y-2">
               <button
