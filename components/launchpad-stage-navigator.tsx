@@ -489,7 +489,11 @@ export function LaunchpadStageNavigator({
     if (typeof window !== "undefined") {
       window.setTimeout(() => {
         const target = document.getElementById("launchpad-next-step")
-        target?.scrollIntoView({ behavior: "smooth", block: "start" })
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        target?.scrollIntoView({
+          behavior: prefersReducedMotion ? "auto" : "smooth",
+          block: "start",
+        })
       }, 120)
     }
   }
@@ -525,6 +529,32 @@ export function LaunchpadStageNavigator({
     const direction = key === "ArrowRight" ? 1 : -1
     const nextIndex = (currentIndex + direction + STAGE_SELECTION_ORDER.length) % STAGE_SELECTION_ORDER.length
     onStageSelect(STAGE_SELECTION_ORDER[nextIndex])
+  }
+
+  const onPressureSelectorKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (isOverview) {
+      return
+    }
+    const key = event.key
+    if (!["ArrowRight", "ArrowLeft", "Home", "End"].includes(key)) {
+      return
+    }
+    event.preventDefault()
+    const pressureOrder = stage.pressures.map((item) => item.id)
+    const currentIndex = pressureOrder.indexOf(pressureId)
+    const fallbackIndex = 0
+    const selectedIndex = currentIndex >= 0 ? currentIndex : fallbackIndex
+    if (key === "Home") {
+      onPressureSelect(pressureOrder[0])
+      return
+    }
+    if (key === "End") {
+      onPressureSelect(pressureOrder[pressureOrder.length - 1])
+      return
+    }
+    const direction = key === "ArrowRight" ? 1 : -1
+    const nextIndex = (selectedIndex + direction + pressureOrder.length) % pressureOrder.length
+    onPressureSelect(pressureOrder[nextIndex])
   }
 
   return (
@@ -683,10 +713,21 @@ export function LaunchpadStageNavigator({
               >
                 Focused view: {stage.label}
               </p>
+              <TrackedLink
+                href="#launchpad-next-step"
+                eventName="launchpad_jump_to_recommendations_click"
+                eventData={{ stage: stageId, pressure: pressureId || "none" }}
+                className="inline-flex min-h-9 items-center rounded-full border border-border px-3.5 py-1.5 text-xs font-medium text-foreground transition-colors hover:bg-secondary"
+              >
+                Jump to recommendations
+              </TrackedLink>
               <button
                 type="button"
                 className="inline-flex min-h-9 items-center rounded-full border border-border px-3.5 py-1.5 text-xs font-medium text-foreground transition-colors hover:bg-secondary"
-                onClick={() => onStageSelect("all")}
+                onClick={() => {
+                  track("launchpad_back_to_all_stages_click", { stage: stageId, pressure: pressureId || "none" })
+                  onStageSelect("all")
+                }}
               >
                 Back to all stages
               </button>
@@ -704,6 +745,8 @@ export function LaunchpadStageNavigator({
               <div
                 role="radiogroup"
                 aria-label="Refine by pressure"
+                aria-describedby="launchpad-pressure-selector-help"
+                onKeyDown={onPressureSelectorKeyDown}
                 className="mt-2 flex gap-2 overflow-x-auto pb-1"
               >
                 {stage.pressures.map((option) => {
@@ -719,7 +762,7 @@ export function LaunchpadStageNavigator({
                           ? "border-teal/55 bg-teal/10 text-foreground"
                           : "border-border bg-background text-muted-foreground hover:text-foreground"
                       }`}
-                      tabIndex={selected ? 0 : -1}
+                      tabIndex={selected || (!pressureId && option.id === stage.pressures[0]?.id) ? 0 : -1}
                       onClick={() => onPressureSelect(option.id)}
                     >
                       {option.label}
@@ -727,6 +770,22 @@ export function LaunchpadStageNavigator({
                   )
                 })}
               </div>
+              <p id="launchpad-pressure-selector-help" className="sr-only">
+                Pressure filters are optional. Use left and right arrow keys to move between options.
+              </p>
+              {pressureId ? (
+                <button
+                  type="button"
+                  className="mt-3 inline-flex min-h-9 items-center rounded-full border border-border px-3.5 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+                  onClick={() => {
+                    setPressureId("")
+                    syncUrl(stageId, "")
+                    track("launchpad_pressure_cleared", { stage: stageId })
+                  }}
+                >
+                  Clear pressure filter
+                </button>
+              ) : null}
             </>
           )}
         </div>
