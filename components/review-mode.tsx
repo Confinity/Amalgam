@@ -173,8 +173,8 @@ export function ReviewMode() {
 
     const fromSession =
       window.sessionStorage.getItem(REVIEW_MODE_STORAGE_KEY) === "true"
-    const fromQuery =
-      new URLSearchParams(window.location.search).get("review") === "true"
+    const reviewParam = new URLSearchParams(window.location.search).get("review")
+    const fromQuery = reviewParam !== null && reviewParam !== "false"
 
     if (fromSession || fromQuery) {
       queueMicrotask(() => setActive(true))
