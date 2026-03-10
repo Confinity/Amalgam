@@ -55,7 +55,7 @@ export const clientLogos: ClientLogo[] = [
     alt: "John Templeton Foundation wordmark",
     href: "/case-studies/john-templeton-foundation",
     cardClassName: "client-logo-card--john-templeton",
-    imageClassName: "max-w-[69%] max-h-[50px] opacity-90 lg:max-w-[71%]",
+    imageClassName: "max-w-[80%] max-h-[54px] lg:max-w-[82%]",
   },
   {
     id: "confinity",
@@ -64,7 +64,7 @@ export const clientLogos: ClientLogo[] = [
     alt: "Confinity wordmark",
     href: "/case-studies/confinity",
     cardClassName: "client-logo-card--confinity",
-    imageClassName: "max-w-[76%] lg:max-w-[79%]",
+    imageClassName: "max-w-[84%] lg:max-w-[86%]",
   },
   {
     id: "moodys",

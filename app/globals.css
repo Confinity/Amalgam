@@ -326,6 +326,16 @@
     height: 48px;
   }
 
+  .client-logo-card--john-templeton .client-logo {
+    opacity: 1;
+    filter: contrast(1.16) saturate(1.06);
+  }
+
+  .client-logo-card--confinity .client-logo {
+    opacity: 1;
+    filter: contrast(1.1) saturate(1.04);
+  }
+
   @keyframes client-logo-outgoing {
     from {
       opacity: 1;
