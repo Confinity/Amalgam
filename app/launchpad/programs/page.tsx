@@ -7,7 +7,7 @@ import { TrackedLink } from "@/components/tracked-link"
 import { launchpadPrograms } from "@/lib/launchpad"
 
 export const metadata: Metadata = {
-  title: "Not sure which support level fits? Start here.",
+  title: "Not sure which support level fits right now? Start here.",
   description:
     "See how Diagnostic Review, Execution Sprint, and Outcome Partnership map to what your team needs now.",
   alternates: {
@@ -49,7 +49,7 @@ export default function LaunchpadProgramsPage() {
               Launchpad Programs
             </p>
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl">
-              If tools or guides point to deeper help, pick the support level that fits now
+              If tools or guides point to deeper help, pick the support level that fits your situation now.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
               For teams with clear signal that now need the right level of support.

@@ -107,7 +107,7 @@ export const caseStudies: CaseStudy[] = [
     overview: "PearlX is an innovative energy startup transforming how multi-housing facilities access sustainable power. They provide affordable clean energy solutions benefiting both property owners and residents through their unique model.",
     challenges: [
       "Limited startup resources prevented building a high-quality customer portal",
-      "Need for partner with expertise to architect a complex multi-tenant platform",
+      "Needed a partner who could architect a complex multi-tenant platform",
       "Tight timeline required rapid development without sacrificing quality",
       "Required support for both landlords and renters with different permission levels"
     ],
@@ -427,7 +427,7 @@ export const caseStudies: CaseStudy[] = [
     overview: "Constructive Built Environment is a team of water industry professionals solving complex procurement challenges. They create value through solutions that make procurement and deployment easier, more effective, and transparent.",
     challenges: [
       "Startup resource constraints prevented rapid MVP development",
-      "Need for all-in-one partner without fragmented support",
+      "Needed an all-in-one partner instead of fragmented support",
       "Hiring full-time team would be costly and slow",
       "Managing multiple contractors threatened process speed",
       "Required rapid market entry for early adopter capture"
@@ -557,7 +557,7 @@ export const caseStudies: CaseStudy[] = [
       "Complex technical integration: Voyager deeply embedded with dependencies across IT, operations, compliance, and business units",
       "High licensing costs for legacy systems creating unnecessary overhead",
       "Internal delays in vendor selection slowing transformation timeline",
-      "Need for extensive change management across all business and technical teams"
+      "Needed extensive change management across business and technical teams"
     ],
     solution: [
       {

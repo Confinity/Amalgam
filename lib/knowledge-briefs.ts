@@ -135,7 +135,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
         title: "A better decision standard",
         paragraphs: [
           "The right architecture decision is the one that creates the most future freedom at the least avoidable risk. Sometimes that means modernization with discipline. Sometimes it means targeted replacement. Sometimes it means a rebuild. What it should never mean is letting technical ideology masquerade as strategy.",
-          "If the team cannot explain the path in terms leadership can weigh, the decision is not mature yet. Good technical strategy is legible, defensible, and connected to what the business is trying to make possible next.",
+          "If the team cannot explain the path in terms leadership can weigh, the decision is not mature yet. Good technical strategy is clear, defensible, and connected to what the business is trying to make possible next.",
         ],
       },
     ],
@@ -166,7 +166,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
         title: "Why roadmaps fail before execution even starts",
         paragraphs: [
           "Most failed roadmaps are not failures of ambition. They are failures of visibility. A team promises work based on an imagined system, then discovers the real system only after execution begins: a hidden dependency, a brittle integration, an unowned workflow, a compliance constraint nobody surfaced in planning.",
-          "When that happens repeatedly, the organization starts blaming estimation. The deeper problem is that sequencing happened before the architecture and operating model were legible enough to sequence honestly.",
+          "When that happens repeatedly, the organization starts blaming estimation. The deeper problem is that sequencing happened before the architecture and operating model were clear enough to plan confidently.",
         ],
       },
       {
@@ -187,7 +187,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
         id: "how-to-use-it",
         title: "How the map changes roadmap quality",
         paragraphs: [
-          "Once the current state is legible, prioritization becomes more honest. Teams can distinguish foundational work from optional enhancement, separate visible roadmap progress from hidden risk reduction, and sequence around the real pressure points instead of the loudest opinions.",
+          "Once the current state is clear, prioritization becomes more honest. Teams can distinguish foundational work from optional enhancement, separate visible roadmap progress from hidden risk reduction, and sequence around real pressure points instead of the loudest opinions.",
           "This also improves leadership communication. Instead of vague language about technical debt, you can point to the specific architectural boundaries or workflow collisions that make certain promises unsafe today.",
         ],
       },
@@ -305,7 +305,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
         bullets: [
           "A small set of decisions that happen on a reliable cadence.",
           "Clear definition of who owns each cross-functional issue.",
-          "A progress model tied to shipped outcomes, not performative updates.",
+          "A progress model tied to shipped outcomes, not status theater.",
         ],
       },
       {
@@ -339,7 +339,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
     intro:
       "After a raise, expectations accelerate faster than the data foundation. Leaders want tighter forecasting, clearer unit economics, and more automated workflows. The problem is that many post-Series A companies are still running on a loose collection of source systems, spreadsheets, and partially trusted dashboards. The company is scaling decisions faster than it is scaling truth.",
     summary:
-      "Before a business needs sophisticated analytics, it needs trusted definitions, legible source systems, and reviewable transformation logic. Without that substrate, automation and forecasting only make ambiguity faster.",
+      "Before a business needs sophisticated analytics, it needs trusted definitions, clear source systems, and reviewable transformation logic. Without that substrate, automation and forecasting only make ambiguity faster.",
     keyTakeaways: [
       "Metrics trust is the real milestone, not dashboard count.",
       "A post-Series A data system should optimize for consistency and clarity before advanced complexity.",
@@ -477,7 +477,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
         id: "where-friction-lives",
         title: "Where friction actually lives",
         paragraphs: [
-          "Friction tends to cluster in a few places: handoffs between teams, high-risk architectural boundaries, unclear product or data ownership, and work that enters execution before requirements or constraints are legible enough.",
+          "Friction tends to cluster in a few places: handoffs between teams, high-risk architectural boundaries, unclear product or data ownership, and work that enters execution before requirements or constraints are clear enough.",
           "You are not trying to remove all complexity. You are trying to stop treating this as a performance problem when the system is still set up to manufacture delay.",
         ],
         bullets: [
@@ -589,7 +589,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
         id: "mirror-effect",
         title: "The org chart mirrors the system",
         paragraphs: [
-          "If a routine product change needs engineering, operations, data, and support to renegotiate ownership every time, the architecture likely has the same boundary problem the teams do. Work is not slow because people are uncooperative. It is slow because the system does not make responsibility legible.",
+          "If a routine product change needs engineering, operations, data, and support to renegotiate ownership every time, the architecture likely has the same boundary problem the teams do. Work is not slow because people are uncooperative. It is slow because the system does not make responsibility clear.",
           "This is why many reorgs disappoint. They change reporting relationships but leave dependencies, domain overlap, and escalation ambiguity intact.",
         ],
       },
@@ -637,7 +637,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
     intro:
       "In complex organizations, execution often slows not because decisions are impossible, but because decision rights are blurred. Teams hesitate, leaders intervene too late or too often, and recurring issues keep reappearing in forums that should not need to own them.",
     summary:
-      "Clear decision rights reduce escalation noise and speed up execution. The goal is not to centralize everything. It is to make authority legible enough that teams can act with confidence and leadership can intervene deliberately instead of constantly.",
+      "Clear decision rights reduce escalation noise and speed up execution. The goal is not to centralize everything. It is to make authority clear enough that teams can act with confidence and leadership can intervene deliberately instead of constantly.",
     keyTakeaways: [
       "Escalation load is often a symptom of unclear authority, not weak individual judgment.",
       "Teams need explicit space to decide within boundaries, not vague permission to be empowered.",

@@ -14,7 +14,7 @@ import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
 
 export const metadata: Metadata = {
-  title: "Need senior support to keep execution moving?",
+  title: "Do you need senior support to keep execution moving?",
   description:
     "Outcome Partnership gives you ongoing senior support to keep execution moving when priorities and pressure keep changing.",
   alternates: {
@@ -90,7 +90,7 @@ export default function OutcomePartnershipPage() {
                 Outcome Partnership
               </p>
               <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Need senior support to keep execution moving?
+                Do you need senior support to keep execution moving?
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 The Outcome Partnership carries the roadmap into execution when priorities shift and decisions cannot drift.
@@ -107,7 +107,7 @@ export default function OutcomePartnershipPage() {
                   href="/contact?interest=founder-review"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-border px-6 py-3 font-medium text-foreground transition-all hover:bg-secondary"
                 >
-                  Book a free strategy call
+                  Book a strategy call
                 </Link>
               </div>
             </div>
@@ -279,7 +279,7 @@ export default function OutcomePartnershipPage() {
             <div className="rounded-[30px] border border-border bg-foreground p-8">
               <Shield className="h-6 w-6 text-teal" />
               <h3 className="mt-4 text-2xl font-semibold text-background">
-                Need focused support during execution?
+                Want focused support while the roadmap is in motion?
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-background/70">
                 If the business already has direction but the work still needs

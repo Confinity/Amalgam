@@ -7,9 +7,9 @@ import { TrackedLink } from "@/components/tracked-link"
 import { getFeaturedLaunchpadTools } from "@/lib/launchpad"
 
 export const metadata: Metadata = {
-  title: "Need a quick diagnostic before you decide?",
+  title: "Not sure where to start? Run a quick diagnostic.",
   description:
-    "Structured diagnostics for delivery drag, AI readiness, and stack posture.",
+    "Structured diagnostics for delivery slowdowns, AI readiness, and stack health.",
   alternates: {
     canonical: "/launchpad/tools",
   },
@@ -35,7 +35,7 @@ export default function LaunchpadToolsPage() {
               Launchpad Tools
             </p>
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl">
-              Use these diagnostics to find your next move
+              Not sure what to do first? Start with a quick diagnostic.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
               Use these for a fast first-pass read before deciding on deeper support.
@@ -50,7 +50,7 @@ export default function LaunchpadToolsPage() {
                 What you walk away with
               </p>
               <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-                Each tool gives you a clear profile of what is likely creating drag, why it matters, and a practical next move.
+                Each tool gives you a clear read on what is likely creating the slowdown, why it matters, and a practical next move.
               </p>
               <div className="mt-5 grid gap-3 md:grid-cols-3">
                 {previewRows.map((row) => (

@@ -25,15 +25,15 @@ export function Footer({ variant = "default" }: FooterProps) {
 
   const footerCtaLabel = isHowWeWork
     ? "Book a 15-minute call"
-    : "Book a free strategy call"
+    : "Book a strategy call"
 
   const footerIntro = isHowWeWork
     ? "Start with a short call. Go deeper only when the situation needs it."
     : "We help teams make complex systems clearer and execution steadier."
 
   const bestFitText = isHowWeWork
-    ? "For teams that need a clearer read on what is slowing delivery."
-    : "For teams carrying delivery and systems complexity."
+    ? "For teams trying to understand why delivery is slowing."
+    : "For teams dealing with delivery and systems complexity."
 
   return (
     <footer className="border-t border-border bg-background">
@@ -160,6 +160,10 @@ export function Footer({ variant = "default" }: FooterProps) {
             &copy; {new Date().getFullYear()} Amalgam Inc. All rights reserved.
           </p>
           <div className="footer-legal-links flex flex-wrap items-center justify-center gap-3">
+            <Link href="#main-content" prefetch={false} className="text-xs text-muted-foreground transition-colors hover:text-foreground">
+              Back to top
+            </Link>
+            <span className="text-xs text-muted-foreground/50" aria-hidden="true">&middot;</span>
             <Link href="/privacy-policy" prefetch={false} className="text-xs text-muted-foreground transition-colors hover:text-foreground">
               Privacy Policy
             </Link>

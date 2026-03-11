@@ -295,7 +295,7 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
                     ))
                   ) : (
                     <div className="rounded-2xl border border-border bg-background px-4 py-3 text-sm text-muted-foreground">
-                      Not enough signal to isolate dominant drivers confidently.
+                      Not enough detail yet to identify the strongest drivers with confidence.
                     </div>
                   )}
                 </div>
@@ -329,9 +329,9 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
 
             <div className="mt-6 rounded-[26px] border border-teal/35 bg-teal/6 p-6">
               <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">Recommended next move</p>
-              <p className="mt-3 text-lg font-semibold text-foreground">Book a free 60-minute strategy call</p>
+              <p className="mt-3 text-lg font-semibold text-foreground">Book a 60-minute strategy call</p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                Bring this result into the call and we will pressure-test it with you live.
+                Bring this result into the call and we will walk through it with you live.
               </p>
               <div className="mt-6 flex flex-col gap-3 md:flex-row">
                 <Link
@@ -346,7 +346,7 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
                   }
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-foreground px-5 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
                 >
-                  Book a free 60-minute strategy call
+                  Book a 60-minute strategy call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link

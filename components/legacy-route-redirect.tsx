@@ -3,6 +3,7 @@
 import { useEffect } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
+import { ArrowRight } from "lucide-react"
 
 type LegacyRouteRedirectProps = {
   target: string
@@ -28,11 +29,21 @@ export function LegacyRouteRedirect({ target, label }: LegacyRouteRedirectProps)
         <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
           We&apos;re sending you to the current {label} page.
         </p>
+        <div className="mx-auto mt-5 h-1 w-40 overflow-hidden rounded-full bg-secondary">
+          <span className="block h-full w-full animate-pulse rounded-full bg-gradient-to-r from-teal to-purple" />
+        </div>
         <Link
           href={target}
-          className="mt-6 inline-flex min-h-11 items-center justify-center rounded-lg border border-border px-5 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+          className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-border px-5 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
         >
           Continue to {label}
+          <ArrowRight className="h-4 w-4" />
+        </Link>
+        <Link
+          href="/"
+          className="mt-3 inline-flex min-h-11 items-center justify-center rounded-lg px-5 py-3 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground"
+        >
+          Go to homepage instead
         </Link>
       </div>
     </main>

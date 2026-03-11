@@ -422,7 +422,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
 
               <div className="rounded-[28px] border border-border bg-foreground p-6">
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                  Need help with your specific situation?
+                  Want help with your specific situation?
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-background/75">
                   Articles sharpen judgment. They do not replace a direct read on your architecture, operating model, and delivery constraints.
@@ -432,7 +432,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                     href="/contact?interest=strategy-session"
                     className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-background px-4 py-3 text-sm font-medium text-foreground transition-opacity hover:opacity-90"
                   >
-                    Book a free strategy call
+                    Book a strategy call
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                   <Link

@@ -8,7 +8,7 @@ import { ToolAssessment } from "@/components/tool-assessment"
 export const metadata: Metadata = {
   title: "Are you actually ready for AI adoption?",
   description:
-    "A sober first-pass checklist for deciding whether your workflows, ownership, and data foundations are actually ready for meaningful AI usage.",
+    "A practical first-pass checklist for deciding whether your workflows, ownership, and data foundations are actually ready for meaningful AI usage.",
   alternates: {
     canonical: "/launchpad/ai-readiness-checklist",
   },

@@ -449,7 +449,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                 href="/contact?interest=strategy-session"
                 className="inline-flex items-center gap-2 rounded-lg bg-background px-6 py-3 font-medium text-foreground transition-colors hover:bg-background/90"
               >
-                Book a free strategy call
+                Book a strategy call
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

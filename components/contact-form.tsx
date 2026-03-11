@@ -1,6 +1,6 @@
 "use client"
 
-import { FormEvent, useMemo, useState } from "react"
+import { FormEvent, useEffect, useMemo, useState } from "react"
 import { ArrowRight, CheckCircle2, Copy, Mail, Phone } from "lucide-react"
 
 type FormState = {
@@ -23,13 +23,15 @@ const initialState: FormState = {
 
 const interestLabels: Record<string, string> = {
   "": "General inquiry",
-  "strategy-session": "Free strategy call",
+  "strategy-session": "Strategy call",
   "founder-review": "Diagnostic Review",
   "execution-sprint": "Execution Sprint",
   "outcome-partnership": "Outcome Partnership",
   careers: "Careers",
   general: "General inquiry",
 }
+
+const CONTACT_DRAFT_STORAGE_KEY = "amalgam_contact_draft_v1"
 
 type ContactFormProps = {
   initialInterest?: string
@@ -68,17 +70,72 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
       return ""
     }
 
-    return `Context from diagnostic:\n${context}\n\nWhat is happening, what are you trying to solve, and where is the friction showing up?`
+    return `Context shared from a Launchpad tool:\n${context}\n\nWhat is happening, what are you trying to solve, and where is the friction showing up?`
   }
 
-  const [form, setForm] = useState<FormState>({
-    ...initialState,
-    interest: getInitialInterest(),
-    message: getInitialMessage(),
+  const loadDraft = () => {
+    if (typeof window === "undefined") {
+      return null
+    }
+
+    try {
+      const raw = window.sessionStorage.getItem(CONTACT_DRAFT_STORAGE_KEY)
+      if (!raw) {
+        return null
+      }
+      const parsed = JSON.parse(raw) as Partial<FormState>
+      if (!parsed || typeof parsed !== "object") {
+        return null
+      }
+      return {
+        firstName: typeof parsed.firstName === "string" ? parsed.firstName : "",
+        lastName: typeof parsed.lastName === "string" ? parsed.lastName : "",
+        email: typeof parsed.email === "string" ? parsed.email : "",
+        company: typeof parsed.company === "string" ? parsed.company : "",
+        interest: typeof parsed.interest === "string" ? normalizeInterest(parsed.interest) : "",
+        message: typeof parsed.message === "string" ? parsed.message.slice(0, 6000) : "",
+      } satisfies FormState
+    } catch {
+      return null
+    }
+  }
+
+  const [form, setForm] = useState<FormState>(() => {
+    const draft = loadDraft()
+    const seededInterest = getInitialInterest()
+    const seededMessage = getInitialMessage()
+
+    return {
+      ...initialState,
+      ...(draft ?? {}),
+      interest: seededInterest || draft?.interest || "",
+      message: seededMessage || draft?.message || "",
+    }
   })
   const [error, setError] = useState("")
   const [submitted, setSubmitted] = useState(false)
   const [copied, setCopied] = useState(false)
+  const [draftCleared, setDraftCleared] = useState(false)
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return
+    }
+    window.sessionStorage.setItem(CONTACT_DRAFT_STORAGE_KEY, JSON.stringify(form))
+  }, [form])
+
+  const hasDraftContent = useMemo(
+    () =>
+      Boolean(
+        form.firstName ||
+          form.lastName ||
+          form.email ||
+          form.company ||
+          form.interest ||
+          form.message
+      ),
+    [form]
+  )
 
   const mailtoHref = useMemo(() => {
     const subject = `${interestLabels[form.interest] ?? "General inquiry"} - ${form.firstName} ${form.lastName}`.trim()
@@ -129,7 +186,23 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
     }
 
     setSubmitted(true)
+    if (typeof window !== "undefined") {
+      window.sessionStorage.removeItem(CONTACT_DRAFT_STORAGE_KEY)
+    }
     window.location.href = mailtoHref
+  }
+
+  function clearDraft() {
+    setForm({
+      ...initialState,
+      interest: getInitialInterest(),
+      message: getInitialMessage(),
+    })
+    if (typeof window !== "undefined") {
+      window.sessionStorage.removeItem(CONTACT_DRAFT_STORAGE_KEY)
+    }
+    setDraftCleared(true)
+    setTimeout(() => setDraftCleared(false), 1800)
   }
 
   return (
@@ -142,13 +215,13 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
           <div className="contact-intake-note-item rounded-2xl bg-background px-4 py-4">
             <p className="text-sm font-medium text-foreground">Best for serious situations</p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Use this when the business is stuck and you want to send clear context.
+              Use this when things are stuck and you want to share clear context quickly.
             </p>
           </div>
           <div className="contact-intake-note-item rounded-2xl bg-background px-4 py-4">
             <p className="text-sm font-medium text-foreground">You keep full context</p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              We draft your email so your message stays clear and reusable.
+              We draft the email for you so your message stays clear and easy to reuse.
             </p>
           </div>
         </div>
@@ -157,13 +230,16 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
       <p className="mb-6 text-sm text-muted-foreground">
         This opens a draft to hello@amalgam-inc.com with your details prefilled.
       </p>
+      <p className="mb-6 text-xs text-muted-foreground">
+        Draft auto-saves in this browser tab while you write.
+      </p>
 
       <form className="space-y-5" onSubmit={handleSubmit}>
         <div>
           <p className="mb-3 text-sm font-medium text-foreground">Quick paths</p>
           <div className="contact-common-paths flex flex-wrap gap-2">
             {[
-              { value: "strategy-session", label: "Free strategy call" },
+              { value: "strategy-session", label: "Strategy call" },
               { value: "founder-review", label: "Diagnostic Review" },
               { value: "execution-sprint", label: "Execution Sprint" },
               { value: "outcome-partnership", label: "Outcome Partnership" },
@@ -272,7 +348,7 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
             className="contact-field w-full rounded-lg border border-border bg-background px-4 py-2.5 text-foreground focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/20"
           >
             <option value="">Select an option</option>
-            <option value="strategy-session">Free strategy call</option>
+            <option value="strategy-session">Strategy call</option>
             <option value="founder-review">Diagnostic Review</option>
             <option value="execution-sprint">Execution Sprint</option>
             <option value="outcome-partnership">Outcome Partnership</option>
@@ -357,6 +433,17 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
           <Phone className="h-4 w-4" />
           Call Amalgam
         </a>
+      </div>
+
+      <div className="mt-3">
+        <button
+          type="button"
+          onClick={clearDraft}
+          disabled={!hasDraftContent}
+          className="inline-flex min-h-11 items-center justify-center rounded-lg border border-border px-4 py-2 text-xs font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground disabled:cursor-not-allowed disabled:opacity-45"
+        >
+          {draftCleared ? "Draft cleared" : "Clear saved draft"}
+        </button>
       </div>
 
       <div className="contact-control-note mt-4 inline-flex items-center gap-2 text-xs text-muted-foreground">

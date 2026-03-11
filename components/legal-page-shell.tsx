@@ -40,7 +40,7 @@ export function LegalPageShell({
 
             <aside className="rounded-[28px] border border-border bg-secondary/35 p-6">
               <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                Need help?
+                Questions?
               </p>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 If you have a question about this policy or how Amalgam handles your

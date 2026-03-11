@@ -15,7 +15,7 @@ import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
 
 export const metadata: Metadata = {
-  title: "Need a roadmap your team can actually run?",
+  title: "Is your team asking for a roadmap they can actually run?",
   description:
     "The Execution Sprint helps you turn clear diagnosis into a roadmap your team can execute with confidence.",
   alternates: {
@@ -104,7 +104,7 @@ export default function ExecutionSprintPage() {
                 Execution Sprint
               </p>
               <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Need a roadmap your team can actually run?
+                Is your team asking for a roadmap they can actually run?
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 We map the current state, clarify constraints, and turn work into a sequence teams can actually run.
@@ -121,7 +121,7 @@ export default function ExecutionSprintPage() {
                   href="/contact?interest=founder-review"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-border px-6 py-3 font-medium text-foreground transition-all hover:bg-secondary"
                 >
-                  Book a free strategy call
+                  Book a strategy call
                 </Link>
               </div>
             </div>
@@ -261,7 +261,7 @@ export default function ExecutionSprintPage() {
               </div>
             </div>
             <div className="rounded-[30px] border border-border bg-foreground p-8">
-              <h3 className="text-2xl font-semibold text-background">Need a roadmap that holds up in real execution?</h3>
+              <h3 className="text-2xl font-semibold text-background">Want a roadmap that still works once execution starts?</h3>
               <p className="mt-4 text-sm leading-relaxed text-background/70">
                 If the diagnosis is already visible and the next challenge is
                 sequencing the work properly, this is the right place to go next.
@@ -278,7 +278,7 @@ export default function ExecutionSprintPage() {
                   href="/contact?interest=founder-review"
                   className="inline-flex min-h-11 items-center justify-center rounded-xl border border-background/15 px-6 py-3 font-medium text-background transition-colors hover:bg-background/10"
                 >
-                  Book a free strategy call
+                  Book a strategy call
                 </Link>
               </div>
             </div>

@@ -8,9 +8,9 @@ import { TrackedLink } from "@/components/tracked-link"
 import { getLaunchpadSignalArticles } from "@/lib/launchpad"
 
 export const metadata: Metadata = {
-  title: "Want practical updates you can use?",
+  title: "Want practical updates you can use this quarter?",
   description:
-    "Subscribe for practical updates on systems clarity, execution drag, architecture choices, and decision quality.",
+    "Subscribe for practical updates on systems clarity, delivery slowdowns, architecture choices, and decision quality.",
   alternates: {
     canonical: "/launchpad/signals",
   },
@@ -32,7 +32,7 @@ export default function LaunchpadSignalsPage() {
                 Launchpad Signals
               </p>
               <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl">
-                Want practical updates for navigating systems complexity?
+                Want practical updates you can use while delivery is under pressure?
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 Useful updates on delivery drag, architecture decisions, and what to do next.
@@ -103,7 +103,7 @@ export default function LaunchpadSignalsPage() {
         <ContextualTestimonial
           className="deferred-section border-t border-border py-20 lg:py-24"
           eyebrow="Client perspective"
-          title="Signal that teams describe as practical, not performative"
+          title="Signal teams describe as useful and grounded"
           testimonialId="fitzmier-jtf"
         />
       </main>

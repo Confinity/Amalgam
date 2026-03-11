@@ -136,7 +136,7 @@ export default function KnowledgePage({ searchParams }: KnowledgePageProps) {
                   href="/contact?interest=strategy-session"
                   className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-border px-6 py-3 font-medium text-foreground transition-colors hover:bg-secondary"
                 >
-                  Book a free strategy call
+                  Book a strategy call
                 </Link>
               </div>
               <Link
@@ -440,7 +440,7 @@ export default function KnowledgePage({ searchParams }: KnowledgePageProps) {
                 Want help applying this to your exact situation?
               </h2>
               <p className="mt-4 max-w-2xl text-background/70">
-                If you want a direct read on your own situation, start with a free strategy call.
+                If you want a direct read on your own situation, start with a strategy call.
               </p>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row lg:justify-end">
@@ -448,7 +448,7 @@ export default function KnowledgePage({ searchParams }: KnowledgePageProps) {
                 href="/contact?interest=strategy-session"
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-background px-6 py-3 font-medium text-foreground transition-opacity hover:opacity-90"
               >
-                Book a free strategy call
+                Book a strategy call
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

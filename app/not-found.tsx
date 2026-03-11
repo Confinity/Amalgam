@@ -34,7 +34,7 @@ export default function NotFound() {
                   href="/contact?interest=strategy-session"
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 font-medium text-background transition-all hover:opacity-90"
                 >
-                  Book a free strategy call
+                  Book a strategy call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
@@ -46,10 +46,11 @@ export default function NotFound() {
               </div>
             </div>
 
-            <div className="mx-auto mt-12 grid max-w-[960px] gap-4 md:grid-cols-4">
+            <div className="mx-auto mt-12 grid max-w-[960px] gap-4 md:grid-cols-3 lg:grid-cols-5">
               {[
                 { href: "/", label: "Home" },
                 { href: "/services", label: "Services" },
+                { href: "/launchpad", label: "Launchpad" },
                 { href: "/knowledge", label: "Knowledge" },
                 { href: "/contact", label: "Contact" },
               ].map((item) => (

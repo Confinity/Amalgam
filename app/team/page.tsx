@@ -70,7 +70,7 @@ export default function TeamPage() {
                   href="/contact?interest=strategy-session"
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 font-medium text-background transition-all hover:bg-foreground/90"
                 >
-                  Book a free strategy call
+                  Book a strategy call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
@@ -226,17 +226,17 @@ export default function TeamPage() {
         <section className="deferred-section border-t border-border bg-foreground px-6 py-20">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-bold text-background md:text-4xl">
-              Need experienced support in the room with you?
+              Want experienced operators in the room while you execute?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-background/70">
-              Start with a strategy call if systems are slowing the business down, or reach out directly if you already know where you need help.
+              Start with a strategy call if systems are slowing the business down. If you already know where you need help, contact us directly.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
                 href="/contact?interest=strategy-session"
                 className="inline-flex items-center gap-2 rounded-lg bg-background px-6 py-3 font-medium text-foreground transition-colors hover:bg-background/90"
               >
-                Book a free strategy call
+                Book a strategy call
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

@@ -37,7 +37,7 @@ const nextSteps = [
   {
     title: "You get a clear next step",
     description:
-      "That may be a free strategy call, a focused diagnostic, or a practical internal next move.",
+      "That may be a strategy call, a focused diagnostic, or a practical internal next move.",
   },
 ]
 
@@ -59,7 +59,7 @@ export default function ContactPage() {
                   Tell us what is stuck
                 </h1>
                 <p className="contact-hero-body mt-6 text-lg leading-relaxed text-muted-foreground">
-                  Tell us what&apos;s stuck. We&apos;ll give you a clear next step.
+                  Tell us where work is getting stuck and what decision you need to make next.
                 </p>
 
                 <div className="contact-path-card support-panel mt-8 p-5">
@@ -67,7 +67,7 @@ export default function ContactPage() {
                     Best first move
                   </p>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    If the root cause is still unclear, start with a free strategy call. If the path is already clear, the form lets you choose the right engagement directly.
+                    If the root cause is still unclear, start with a strategy call. If the path is already clear, choose the engagement that fits.
                   </p>
                 </div>
 
@@ -177,10 +177,10 @@ export default function ContactPage() {
                   Best first move
                 </p>
                 <h2 className="mt-3 text-2xl font-semibold text-background">
-                  Start with a free strategy call
+                  Start with a strategy call
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-background/70">
-                  If delivery is slowing and the root cause is still unclear, this is the cleanest first move.
+                  If delivery is slowing and the root cause is unclear, this is usually the fastest place to start.
                 </p>
                 <div className="contact-review-points mt-6 space-y-3">
                   {[
@@ -201,7 +201,7 @@ export default function ContactPage() {
                   href="/contact?interest=strategy-session"
                   className="mt-6 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl bg-background px-6 py-3 font-medium text-foreground transition-opacity hover:opacity-90"
                 >
-                  Book a free strategy call
+                  Book a strategy call
                   <Compass className="h-4 w-4" />
                 </Link>
                 <Link

@@ -15,9 +15,9 @@ import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
 
 export const metadata: Metadata = {
-  title: "Not sure what is causing the drag? Start here.",
+  title: "Not sure what is actually slowing delivery? Start here.",
   description:
-    "When delivery feels stuck and the root cause is unclear, the Diagnostic Review gives you a clear next move.",
+    "When delivery feels stuck and the root cause is unclear, the Diagnostic Review helps you identify what to fix first.",
   alternates: {
     canonical: "/founder-review",
   },
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
 const signals = [
   "Shipping slowed after growth, a raise, or a platform transition",
   "Important work keeps getting trapped in technical ambiguity",
-  "Leadership knows there is drag but the root cause is still fuzzy",
+  "Leadership can see the drag, but the root cause is still unclear",
   "Integrations, architecture, and operating friction are colliding at the same time",
-  "The team needs a path forward it can trust, not another round of abstract advice",
+  "The team needs a path it can trust, not another planning loop without decisions",
 ]
 
 const deliverables = [
@@ -112,17 +112,17 @@ export default function FounderReviewPage() {
                 Diagnostic Review
               </p>
               <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Not sure what is causing the drag? Start here.
+                Not sure what is actually causing the slowdown? Start here.
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                A two-week diagnostic to pinpoint what is slowing delivery and what to fix first.
+                A focused two-week review to pinpoint what is slowing delivery and what to fix first.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Link
                   href="/contact?interest=founder-review"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 font-medium text-background transition-all hover:opacity-90"
                 >
-                  Book a free strategy call
+                  Book a strategy call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
@@ -354,17 +354,16 @@ export default function FounderReviewPage() {
               </div>
             </div>
             <div className="rounded-[30px] border border-border bg-foreground p-8">
-              <h3 className="text-2xl font-semibold text-background">Need clarity fast?</h3>
+              <h3 className="text-2xl font-semibold text-background">Want a clear read before the next sprint cycle?</h3>
               <p className="mt-4 text-sm leading-relaxed text-background/70">
-                If the situation is real and the team needs clarity fast, the next
-                step is a conversation about fit and timing.
+                If your team is working hard but still feels stuck, start with a quick conversation about fit and timing.
               </p>
               <div className="mt-6 flex flex-col gap-3">
                 <Link
                   href="/contact?interest=founder-review"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-background px-6 py-3 font-medium text-foreground transition-opacity hover:opacity-90"
                 >
-                  Book a free strategy call
+                  Book a strategy call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link

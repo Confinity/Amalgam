@@ -23,9 +23,9 @@ import { caseStudies } from "@/lib/case-studies-data"
 import { knowledgeBriefs, knowledgeCategories } from "@/lib/knowledge-briefs"
 
 export const metadata: Metadata = {
-  title: "Is delivery getting messy? We help you move again.",
+  title: "Is delivery slowing down even though your team is working hard?",
   description:
-    "If delivery is slowing down, Amalgam helps you find what is stuck and move forward with confidence.",
+    "We help founders and delivery leaders pinpoint what is slowing execution and choose the next move with confidence.",
   alternates: {
     canonical: "/",
   },
@@ -44,20 +44,20 @@ function Hero() {
               If delivery feels stuck
             </p>
             <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight text-foreground text-balance sm:text-5xl lg:text-[58px]">
-              When delivery gets messy,{" "}
+              Is delivery slowing down even though everyone is busy?{" "}
               <span className="bg-gradient-to-r from-teal to-purple bg-clip-text text-transparent">
-                we help you move again.
+                We help you fix what is actually blocking progress.
               </span>
             </h1>
             <p className="hero-body mt-6 text-lg leading-relaxed text-muted-foreground">
-              If architecture, data, integrations, and deadlines are colliding, we help you find what is blocking progress and fix the next move.
+              When architecture, data, integrations, and ownership collide, we help you see the real blockers and fix the next decision.
             </p>
             <div className="hero-cta-row mt-3">
               <Link
                 href="/contact?interest=strategy-session"
                 className="inline-flex items-center gap-2 rounded-lg bg-foreground px-6 py-3 text-sm font-medium text-background transition-all hover:opacity-90"
               >
-                Book a free strategy call
+                Book a strategy call
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
@@ -79,6 +79,26 @@ function Hero() {
               <p className="mt-3 text-[13px] leading-relaxed text-muted-foreground/90">
                 You get direct support, clearer decisions, and practical next steps.
               </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <Link
+                  href="/launchpad"
+                  className="inline-flex min-h-9 items-center rounded-full border border-border bg-background px-3.5 py-1.5 text-xs font-medium text-foreground transition-colors hover:bg-secondary"
+                >
+                  Not sure where to start? Use Launchpad
+                </Link>
+                <Link
+                  href="/case-studies"
+                  className="inline-flex min-h-9 items-center rounded-full border border-border bg-background px-3.5 py-1.5 text-xs font-medium text-foreground transition-colors hover:bg-secondary"
+                >
+                  See similar client situations
+                </Link>
+                <Link
+                  href="/founder-review"
+                  className="inline-flex min-h-9 items-center rounded-full border border-border bg-background px-3.5 py-1.5 text-xs font-medium text-foreground transition-colors hover:bg-secondary"
+                >
+                  Need diagnosis first? Start here
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -123,10 +143,10 @@ function WhatWeDo() {
             What Amalgam does
           </p>
           <h2 className="mb-4 text-3xl font-semibold text-foreground">
-            Need clear help when delivery starts slipping?
+            What does Amalgam help with?
           </h2>
           <p className="max-w-2xl leading-relaxed text-muted-foreground">
-            We help you identify what is slowing execution, then fix it with you.
+            We help you pinpoint what is slowing execution, then fix it with your team.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -285,7 +305,7 @@ function TypicalTriggers() {
 function Offers() {
   const offers = [
     {
-      title: "Free strategy call",
+      title: "Strategy call",
       subtitle: "60 minutes",
       description:
         "A short strategy call to identify what is stuck and where to move first.",
@@ -295,11 +315,11 @@ function Offers() {
         "Clear recommendation",
       ],
       href: "/contact?interest=strategy-session",
-      ctaLabel: "Book a free strategy call",
+      ctaLabel: "Book a strategy call",
       primary: true,
     },
     {
-      title: "Need deeper support? We can stay involved.",
+      title: "Already know the issue and want hands-on help?",
       subtitle: "Paid engagements",
       description:
         "When the issue is clear and you want help moving it through execution.",
@@ -490,10 +510,10 @@ function FinalCTA() {
             Next step
           </p>
           <h2 className="mb-4 text-3xl font-semibold text-background text-balance">
-            Want a clear read on what&apos;s slowing delivery?
+            Want a second set of eyes on what&apos;s slowing delivery?
           </h2>
           <p className="max-w-2xl text-background/70">
-            Start with a free strategy call. We&apos;ll help you pinpoint what is stuck and what to do next.
+            Start with a strategy call. We&apos;ll help you isolate the issue and recommend the smartest next step.
           </p>
         </div>
         <div className="homepage-final-cta-panel rounded-[24px] border border-background/12 bg-background/[0.04] p-6">
@@ -516,7 +536,7 @@ function FinalCTA() {
               href="/contact?interest=strategy-session"
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-background px-6 py-3 font-medium text-foreground transition-all hover:opacity-90"
             >
-              Book a free strategy call
+              Book a strategy call
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link

@@ -29,6 +29,8 @@
   --body: #475569;
   --teal: #00BFA6;
   --purple: #6A5CFF;
+  --focus-ring: color-mix(in srgb, var(--teal) 72%, white 28%);
+  --focus-ring-shadow: color-mix(in srgb, var(--teal) 26%, transparent);
 }
 
 @theme inline {
@@ -67,13 +69,22 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
   }
   * {
     @apply border-border outline-ring/50;
   }
   :focus-visible {
-    outline: 2px solid color-mix(in srgb, var(--teal) 70%, white);
-    outline-offset: 3px;
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px var(--focus-ring-shadow);
+    border-radius: 0.55rem;
+  }
+  [id] {
+    scroll-margin-top: 104px;
+  }
+  :where(a, button, input, select, textarea, summary, [role="button"]) {
+    -webkit-tap-highlight-color: transparent;
   }
   body {
     @apply bg-background text-foreground;
@@ -1188,5 +1199,26 @@
   .deferred-section-tall {
     content-visibility: auto;
     contain-intrinsic-size: 1400px;
+  }
+}
+
+@layer base {
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    .status-dot {
+      animation: none !important;
+    }
   }
 }

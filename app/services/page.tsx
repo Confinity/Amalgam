@@ -120,16 +120,17 @@ export default function ServicesPage() {
                 How we work
               </p>
               <h1 className="max-w-[20ch] text-4xl font-semibold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
-                Need help getting delivery moving again?
+                Are releases slipping even though your team is working hard?
               </h1>
               <div className="mt-6 max-w-[56ch] space-y-3 text-base leading-relaxed text-muted-foreground md:text-lg">
                 <p>
-                  We help teams figure out what is slowing delivery, what
-                  matters most, and what the right next step should be.
+                  If work keeps stalling between product, engineering, and
+                  operations, we help you find exactly where the drag is coming
+                  from.
                 </p>
                 <p>
-                  The first step is simple. We start with a short conversation,
-                  then go deeper only when it clearly makes sense.
+                  Start with a short triage call. If deeper work makes sense,
+                  we map the path and move with you.
                 </p>
               </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -263,7 +264,7 @@ export default function ServicesPage() {
               ))}
             </div>
             <p className="mx-auto mt-8 max-w-[62ch] text-center text-sm leading-relaxed text-muted-foreground">
-              Deeper work is scoped and priced after the strategy call, once
+              Deeper work is scoped and priced after the triage call, once
               the situation is clear.
             </p>
           </div>
@@ -277,7 +278,7 @@ export default function ServicesPage() {
               </h2>
               <p className="mx-auto mt-4 max-w-[58ch] text-base leading-relaxed text-muted-foreground">
                 Once the situation is clear, we focus on the areas that
-                actually change delivery momentum.
+                actually improve delivery.
               </p>
             </div>
             <div className="grid gap-5 md:grid-cols-3">
@@ -353,7 +354,7 @@ export default function ServicesPage() {
           <div className="mx-auto grid max-w-[1160px] gap-10 px-6 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-center">
             <div className="max-w-[620px]">
               <h2 className="max-w-[20ch] text-3xl font-semibold leading-tight text-foreground md:text-4xl">
-                Need a clearer read on what&apos;s slowing delivery?
+                Want a clear read on why delivery feels slow right now?
               </h2>
               <p className="mt-5 max-w-[52ch] text-base leading-relaxed text-muted-foreground">
                 Start with a short call. If the situation needs deeper

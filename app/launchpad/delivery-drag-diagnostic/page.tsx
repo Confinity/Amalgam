@@ -8,7 +8,7 @@ import { ToolAssessment } from "@/components/tool-assessment"
 export const metadata: Metadata = {
   title: "Is delivery drag slowing you down?",
   description:
-    "A structured diagnostic to pressure-test whether delivery slowdowns are being shaped by architecture, sequencing, coordination, data signal, or integration drag.",
+    "A structured diagnostic to pinpoint whether delivery slowdowns are being shaped by architecture, sequencing, coordination, data quality, or integration complexity.",
   alternates: {
     canonical: "/launchpad/delivery-drag-diagnostic",
   },

@@ -92,8 +92,8 @@ export default function OpenGraphImage() {
                 fontWeight: 700,
               }}
             >
-              <span>When delivery gets messy,</span>
-              <span style={{ color: "#00bfa6" }}>{" we help teams move again."}</span>
+              <span>When delivery slows down,</span>
+              <span style={{ color: "#00bfa6" }}>{" we help teams unblock progress."}</span>
             </div>
             <div style={{ fontSize: 30, lineHeight: 1.35, color: "#4b5563", maxWidth: 900 }}>
               Experienced support for architecture, data, integrations, and delivery friction.

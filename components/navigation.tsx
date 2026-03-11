@@ -15,12 +15,13 @@ type NavigationProps = {
 
 export function Navigation({
   servicesLabel = "Services",
-  primaryCtaLabel = "Book a free strategy call",
+  primaryCtaLabel = "Talk with our team",
   primaryCtaHref = "/contact?interest=strategy-session",
-  mobilePrompt = "If delivery is slowing and the root cause is still fuzzy, start with a strategy call.",
+  mobilePrompt = "If releases are slipping and the cause is not obvious, start with a strategy call.",
 }: NavigationProps) {
   const navItems = [
     { href: "/services", label: servicesLabel },
+    { href: "/launchpad", label: "Launchpad" },
     { href: "/case-studies", label: "Case Studies" },
     { href: "/knowledge", label: "Knowledge" },
     { href: "/about", label: "About" },
@@ -30,9 +31,17 @@ export function Navigation({
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [scrollProgress, setScrollProgress] = useState(0)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10)
+    const onScroll = () => {
+      const totalScrollable = document.documentElement.scrollHeight - window.innerHeight
+      const progress = totalScrollable > 0 ? Math.min(1, window.scrollY / totalScrollable) : 0
+      setScrolled(window.scrollY > 10)
+      setScrollProgress(progress)
+    }
+
+    onScroll()
     window.addEventListener("scroll", onScroll, { passive: true })
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
@@ -40,10 +49,15 @@ export function Navigation({
   useEffect(() => {
     if (!mobileOpen) {
       document.body.style.removeProperty("overflow")
+      document.body.style.removeProperty("padding-right")
       return
     }
 
     document.body.style.overflow = "hidden"
+    const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth
+    if (scrollBarWidth > 0) {
+      document.body.style.paddingRight = `${scrollBarWidth}px`
+    }
 
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -54,6 +68,7 @@ export function Navigation({
     window.addEventListener("keydown", handleEscape)
     return () => {
       document.body.style.removeProperty("overflow")
+      document.body.style.removeProperty("padding-right")
       window.removeEventListener("keydown", handleEscape)
     }
   }, [mobileOpen])
@@ -65,7 +80,7 @@ export function Navigation({
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled || mobileOpen
-          ? "border-b border-border bg-background/80 shadow-sm backdrop-blur-xl"
+          ? "border-b border-border/90 bg-background/88 shadow-sm backdrop-blur-xl"
           : "bg-transparent"
       }`}
     >
@@ -81,9 +96,9 @@ export function Navigation({
               href={item.href}
               prefetch={false}
               aria-current={isActive(item.href) ? "page" : undefined}
-              className={`px-1 py-2 text-sm font-medium transition-colors focus-visible:outline-none ${
+              className={`rounded-full px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-none ${
                 isActive(item.href)
-                  ? "text-teal"
+                  ? "bg-teal/10 text-foreground"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -108,6 +123,7 @@ export function Navigation({
           className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-background/90 text-foreground transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:hidden"
           aria-label="Toggle menu"
           aria-expanded={mobileOpen}
+          aria-controls="mobile-site-menu"
         >
           {mobileOpen ? (
             <X className="h-5 w-5 text-foreground" />
@@ -117,8 +133,15 @@ export function Navigation({
         </button>
       </nav>
 
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-border/70">
+        <span
+          className="block h-full bg-gradient-to-r from-teal via-teal/90 to-purple/85 transition-[width] duration-200"
+          style={{ width: `${Math.round(scrollProgress * 100)}%` }}
+        />
+      </div>
+
       {mobileOpen && (
-        <div className="md:hidden">
+        <div id="mobile-site-menu" className="md:hidden">
           <button
             type="button"
             aria-label="Close menu"

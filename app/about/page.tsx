@@ -27,7 +27,7 @@ import { withBasePath } from "@/lib/site-config"
 export const metadata: Metadata = {
   title: "Who you work with at Amalgam",
   description:
-    "Founded in 2012, Amalgam is a focused team that helps business and technical leaders bring clarity to complex systems and restore delivery momentum.",
+    "Founded in 2012, Amalgam helps business and technical leaders make complex systems clearer and execution more reliable.",
   alternates: {
     canonical: "/about",
   },
@@ -127,7 +127,7 @@ export default function AboutPage() {
                   Want to know who you&apos;ll actually work with?
                 </h1>
                 <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                  Amalgam helps business and technical leaders bring clarity to complex systems and restore momentum.
+                  Amalgam helps business and technical leaders make complex systems clearer and execution more reliable.
                 </p>
               </div>
               <div className="support-panel rounded-[28px] p-7">
@@ -135,7 +135,7 @@ export default function AboutPage() {
                   What clients hire us for
                 </p>
                 <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
-                  <p>Fast diagnostic clarity when the root problem is still unclear.</p>
+                  <p>A sharp diagnostic when the real issue is still unclear.</p>
                   <p>Clear sequencing when teams need a roadmap they can trust.</p>
                   <p>Hands-on follow-through when momentum needs to be sustained.</p>
                 </div>
@@ -175,7 +175,7 @@ export default function AboutPage() {
                     I started Amalgam to keep the work practical and honest.
                   </p>
                   <p>
-                    Too many projects create dependency instead of progress. We focus on what is actually slowing the business down, make the next move clear, and help teams move again.
+                    Too many projects create dependency instead of progress. We focus on what is actually slowing the business down, make the next move clear, and help teams unblock progress.
                   </p>
                 </blockquote>
                 <p className="mt-6 font-medium text-foreground">{founder.fullName ?? founder.name}</p>
@@ -321,7 +321,7 @@ export default function AboutPage() {
               Want to see if we&apos;re the right fit for your situation?
             </h2>
             <p className="mx-auto mb-8 max-w-xl text-background/70">
-              Start with a free strategy call. If deeper support is needed, we
+              Start with a strategy call. If deeper support is needed, we
               will recommend the right engagement.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
@@ -329,7 +329,7 @@ export default function AboutPage() {
                 href="/contact?interest=strategy-session"
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-background px-6 py-3 font-medium text-foreground transition-all hover:opacity-90"
               >
-                Book a free strategy call
+                Book a strategy call
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

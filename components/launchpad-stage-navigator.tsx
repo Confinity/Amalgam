@@ -47,6 +47,15 @@ type StageConfig = {
   finalBody: string
 }
 
+type QuickActionCard = {
+  id: string
+  label: string
+  description: string
+  href: string
+  source: string
+  anchorTarget: "launchpad-stage-selector" | "launchpad-next-step" | null
+}
+
 const DEFAULT_STAGE: StageId = "build-ship"
 const STAGE_ORDER: StageId[] = [
   "ideate-prioritize",
@@ -117,7 +126,7 @@ const STAGE_CONFIG: Record<StageId, StageConfig> = {
     signals: ["architecture-map-before-roadmap", "decision-rights-under-complexity", "sequencing-roadmaps-under-uncertainty"],
     proof: "Early clarity saves months of rework.",
     testimonialId: "fitzmier-jtf",
-    finalHeading: "Need a clearer first move?",
+    finalHeading: "Not sure what to do first?",
     finalBody: "Start with the brief. If it still feels fuzzy, we can talk it through.",
   },
   "validate-derisk": {
@@ -140,7 +149,7 @@ const STAGE_CONFIG: Record<StageId, StageConfig> = {
     },
     secondaryLabel: "Book a triage call",
     pressures: [
-      { id: "need-evidence", label: "Need better evidence", note: "Tie priorities to measurable signal." },
+      { id: "need-evidence", label: "Better evidence", note: "Tie priorities to measurable signal." },
       { id: "uncertain-priority", label: "Uncertain priorities", note: "Use one shared way to rank priorities." },
       { id: "avoid-overbuild", label: "Avoid overbuilding", note: "Keep effort tied to proof." },
     ],
@@ -148,7 +157,7 @@ const STAGE_CONFIG: Record<StageId, StageConfig> = {
     signals: ["metrics-you-can-run-the-company-on", "post-series-a-data-foundations", "operating-rhythm-after-growth"],
     proof: "Better validation now protects speed and confidence later.",
     testimonialId: "mooney-cleanitsupply",
-    finalHeading: "Need confidence before you invest more?",
+    finalHeading: "Want more confidence before you invest more?",
     finalBody: "Run the checklist first. If the signal is still mixed, we can review it with you.",
   },
   "build-ship": {
@@ -173,13 +182,13 @@ const STAGE_CONFIG: Record<StageId, StageConfig> = {
     pressures: [
       { id: "delivery-messy", label: "Delivery feels messy", note: "Treat this as a systems issue first." },
       { id: "integration-drag", label: "Integration drag", note: "Fix boundary ownership before adding more process." },
-      { id: "need-roadmap", label: "Need a roadmap", note: "Sequence around dependencies, not preferences." },
+      { id: "need-roadmap", label: "Roadmap clarity", note: "Sequence around dependencies, not preferences." },
     ],
     guides: ["delivery-velocity-is-a-systems-problem", "integration-tax"],
     signals: ["delivery-velocity-is-a-systems-problem", "integration-tax", "sequencing-roadmaps-under-uncertainty"],
     proof: "You can get clear quickly without a big proposal.",
     testimonialId: "mendez-pearlx",
-    finalHeading: "Need a clearer read on what is slowing delivery right now?",
+    finalHeading: "Want a clearer read on what is slowing delivery right now?",
     finalBody: "Start with the diagnostic, then go deeper only if needed.",
   },
   "productize-systemize": {
@@ -210,7 +219,7 @@ const STAGE_CONFIG: Record<StageId, StageConfig> = {
     signals: ["modernize-vs-rebuild", "architecture-map-before-roadmap", "structure-follows-architecture"],
     proof: "Productization is usually a clarity problem before a speed problem.",
     testimonialId: "fitzmier-jtf",
-    finalHeading: "Need to turn ad hoc delivery into repeatable systems?",
+    finalHeading: "Ready to turn ad hoc delivery into repeatable systems?",
     finalBody: "Start with the stack audit, then decide whether sprint or deeper support fits best.",
   },
   "scale-stabilize": {
@@ -235,13 +244,13 @@ const STAGE_CONFIG: Record<StageId, StageConfig> = {
     pressures: [
       { id: "growth-drag", label: "Growth creating drag", note: "Treat this as systems + sequencing, not effort alone." },
       { id: "confidence-slipping", label: "Confidence slipping", note: "Align around one shared view of the system." },
-      { id: "need-follow-through", label: "Need follow-through", note: "Continuity support may matter more than new plans." },
+      { id: "need-follow-through", label: "Follow-through support", note: "Continuity support may matter more than new plans." },
     ],
     guides: ["delivery-velocity-is-a-systems-problem", "sequencing-roadmaps-under-uncertainty"],
     signals: ["metrics-you-can-run-the-company-on", "delivery-velocity-is-a-systems-problem", "decision-rights-under-complexity"],
     proof: "Momentum returns when complexity is made clear.",
     testimonialId: "mendez-pearlx",
-    finalHeading: "Need a steadier way to run delivery as you scale?",
+    finalHeading: "Want a steadier way to run delivery as you scale?",
     finalBody: "Start with readiness. Book a strategic call if you want direct support.",
   },
 }
@@ -373,7 +382,7 @@ export function LaunchpadStageNavigator({
         pressure: pressureId,
         ctaPath: "contextual",
         ctaLabel: isOverview ? "Talk through your situation" : stage.secondaryLabel,
-        note: isOverview ? "Need guidance on where to start in the journey." : stage.nextStep,
+        note: isOverview ? "Looking for guidance on where to start in the journey." : stage.nextStep,
       }),
     [isOverview, pressureId, stage],
   )
@@ -385,7 +394,7 @@ export function LaunchpadStageNavigator({
         pressure: pressureId,
         ctaPath: "final",
         ctaLabel: "Book a quick call",
-        note: isOverview ? "Need a quick read on the right next step." : stage.finalBody,
+        note: isOverview ? "Looking for a quick read on the right next step." : stage.finalBody,
       }),
     [isOverview, pressureId, stage],
   )
@@ -417,6 +426,71 @@ export function LaunchpadStageNavigator({
   const finalBody = isOverview
     ? "Pick a stage first. If you want a second opinion, we can help you choose the right next move."
     : stage.finalBody
+  const stageNumber = STAGE_ORDER.indexOf(activeStageId) + 1
+  const stageProgressPercent = Math.round((stageNumber / STAGE_ORDER.length) * 100)
+  const stageProgressLabel = isOverview
+    ? "Viewing all five stages before narrowing."
+    : `Stage ${stageNumber} of ${STAGE_ORDER.length} in the founder journey.`
+  const stagePressureSummary = isOverview
+    ? "Pick a stage to unlock tailored pressure filters and next-step guidance."
+    : pressure
+      ? pressure.note
+      : "Optional pressure filters help tighten recommendations for this stage."
+  const quickActionCards: QuickActionCard[] = isOverview
+    ? [
+        {
+          id: "pick-stage",
+          label: "Pick your stage",
+          description: "Switch from overview to a focused stage in one click.",
+          href: "#launchpad-stage-selector",
+          source: "overview_pick_stage",
+          anchorTarget: "launchpad-stage-selector",
+        },
+        {
+          id: "diagnostic",
+          label: "Run a quick diagnostic",
+          description: "Start with a practical read before deeper engagement.",
+          href: "/launchpad/delivery-drag-diagnostic",
+          source: "overview_diagnostic",
+          anchorTarget: null,
+        },
+        {
+          id: "call",
+          label: "Book a strategic call",
+          description: "Get a direct read if the path still feels unclear.",
+          href: finalTalkHref,
+          source: "overview_book_call",
+          anchorTarget: null,
+        },
+      ]
+    : [
+        {
+          id: "primary",
+          label: nextActionLabel,
+          description: nextActionDescription,
+          href: nextActionHref,
+          source: nextActionSource,
+          anchorTarget: nextActionAnchorTarget,
+        },
+        {
+          id: "guide",
+          label: guides[0] ? `Read: ${guides[0].title}` : "Review supporting guide",
+          description: guides[0]
+            ? guides[0].description
+            : "Use a practical guide to validate your next move.",
+          href: guides[0] ? `/knowledge/${guides[0].slug}` : "/launchpad/guides",
+          source: "stage_supporting_guide",
+          anchorTarget: null,
+        },
+        {
+          id: "call",
+          label: contextualSecondaryLabel,
+          description: "Talk through this stage with a senior operator.",
+          href: talkHref,
+          source: "stage_talk_path",
+          anchorTarget: null,
+        },
+      ]
 
   const lockViewportForStateSwap = () => {
     if (typeof window === "undefined") {
@@ -491,6 +565,16 @@ export function LaunchpadStageNavigator({
   ) => {
     event.preventDefault()
     scrollToLaunchpadSection(targetId)
+  }
+
+  const onQuickActionAnchorClick = (
+    targetId: QuickActionCard["anchorTarget"],
+  ) => {
+    if (!targetId) {
+      return undefined
+    }
+    return (event: ReactMouseEvent<HTMLAnchorElement>) =>
+      onAnchorClick(event, targetId)
   }
 
   useEffect(() => {
@@ -656,14 +740,14 @@ export function LaunchpadStageNavigator({
               Launchpad
             </p>
             <h1 className="max-w-[20ch] text-4xl font-semibold tracking-tight text-foreground md:text-5xl lg:text-6xl">
-              Where are you stuck right now? Launchpad helps you choose the{" "}
+              Pick your stage, then leave with a{" "}
               <span className="bg-gradient-to-r from-teal to-purple bg-clip-text text-transparent">
-                right next move.
+                concrete next move.
               </span>
             </h1>
             <p className="mt-6 max-w-[56ch] text-lg leading-relaxed text-muted-foreground">
-              Pick your stage. We will show what to do next, what to read, and
-              when deeper support is worth it.
+              Launchpad personalizes what to do next, what to read, and when to
+              escalate to deeper support without losing momentum.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <TrackedLink
@@ -686,7 +770,7 @@ export function LaunchpadStageNavigator({
               </TrackedLink>
             </div>
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-              Start self-serve. Talk to us when useful.
+              Start self-serve first, then escalate only when the signal says so.
             </p>
             <div className="mt-7 flex flex-wrap items-center gap-2 text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground">
               {["Idea", "Validation", "Build", "Productize", "Scale"].map(
@@ -706,21 +790,21 @@ export function LaunchpadStageNavigator({
 
           <aside className="support-panel rounded-[30px] border border-teal/20 p-8 shadow-[0_18px_40px_rgba(15,23,42,0.08)]">
             <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-              How Launchpad works
+              What makes this different
             </p>
             <ol className="mt-5 space-y-3 text-sm leading-relaxed text-muted-foreground">
               <li className="support-panel-item px-0 pb-0 pt-1">
-                1. Pick the stage that feels closest
+                1. One stage selector, not generic advice
               </li>
               <li className="support-panel-item px-0 pb-0 pt-3">
-                2. See your next best move
+                2. Recommendations update instantly with pressure context
               </li>
               <li className="support-panel-item px-0 pb-0 pt-3">
-                3. Go deeper only if it helps
+                3. Clear escalation path when deeper support is worth it
               </li>
             </ol>
             <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-              Start self-serve. Bring us in when you need us.
+              Practical clarity first. Services second.
             </p>
           </aside>
         </div>
@@ -873,6 +957,108 @@ export function LaunchpadStageNavigator({
           )}
         </div>
       </div>
+
+      <section className="deferred-section border-b border-border bg-secondary/20 py-10">
+        <div className="mx-auto grid max-w-[1200px] gap-6 px-6 lg:grid-cols-[minmax(0,1.08fr)_minmax(320px,0.92fr)] lg:items-start">
+          <article className="support-panel rounded-[30px] p-7 md:p-8">
+            <div className="flex flex-wrap items-center gap-2">
+              <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
+                Personalized briefing
+              </p>
+              <span className="inline-flex min-h-8 items-center rounded-full border border-border bg-background px-3 text-xs font-medium text-muted-foreground">
+                {isOverview ? "Overview mode" : "Focused mode"}
+              </span>
+            </div>
+            <div className="mt-5 grid gap-4 md:grid-cols-[minmax(0,1fr)_minmax(220px,0.8fr)] md:items-start">
+              <div>
+                <h2 className="text-2xl font-semibold text-foreground text-balance">
+                  {isOverview
+                    ? "See the whole map, then focus where pressure is highest"
+                    : `${stage.label}: your current decision layer`}
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  {stageProgressLabel}
+                </p>
+              </div>
+              <div className="rounded-2xl border border-border bg-background px-4 py-4">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-teal">
+                  Progress through journey
+                </p>
+                <div className="mt-3 h-2 overflow-hidden rounded-full bg-secondary">
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-teal via-teal/85 to-purple/80 transition-all duration-300"
+                    style={{ width: `${stageProgressPercent}%` }}
+                  />
+                </div>
+                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                  {stageProgressPercent}% of the journey map surfaced
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-5 grid gap-3 md:grid-cols-3">
+              <div className="rounded-2xl border border-border bg-background px-4 py-4">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-teal">
+                  Current stage
+                </p>
+                <p className="mt-2 text-sm font-semibold text-foreground">
+                  {isOverview ? "All stages" : stage.label}
+                </p>
+              </div>
+              <div className="rounded-2xl border border-border bg-background px-4 py-4">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-teal">
+                  Pressure signal
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {stagePressureSummary}
+                </p>
+              </div>
+              <div className="rounded-2xl border border-border bg-background px-4 py-4">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-teal">
+                  Recommendation mode
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {isOverview
+                    ? "Exploration first, then narrow into one stage."
+                    : "Action first, then optional deeper engagement."}
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <aside className="rounded-[30px] border border-border bg-background p-7">
+            <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
+              Fast-lane actions
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              Start with one high-signal move. You can always expand afterward.
+            </p>
+            <div className="mt-5 space-y-3">
+              {quickActionCards.map((item) => (
+                <TrackedLink
+                  key={item.id}
+                  href={item.href}
+                  eventName="launchpad_fast_lane_click"
+                  eventData={{
+                    stage: stageId,
+                    pressure: pressureId || "none",
+                    source: item.source,
+                  }}
+                  onClick={onQuickActionAnchorClick(item.anchorTarget)}
+                  className="block rounded-2xl border border-border bg-secondary/35 px-4 py-4 transition-colors hover:border-teal/35 hover:bg-background"
+                >
+                  <p className="text-sm font-semibold text-foreground">
+                    {item.label}
+                  </p>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                    {item.description}
+                  </p>
+                </TrackedLink>
+              ))}
+            </div>
+          </aside>
+        </div>
+      </section>
 
       <section
         id={`stage-panel-${isOverview ? "all" : stage.id}`}
@@ -1217,9 +1403,9 @@ export function LaunchpadStageNavigator({
               When this helps
             </p>
             <div className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground">
-              <p>Need a clear read on which path fits your situation.</p>
-              <p>Need an adjacent intro once the picture is clearer.</p>
-              <p>Need practical judgment before a bigger commitment.</p>
+              <p>Get a clear read on which path fits your situation.</p>
+              <p>Get an adjacent intro once the picture is clearer.</p>
+              <p>Get practical judgment before a bigger commitment.</p>
             </div>
             <TrackedLink
               href={contactHref({
@@ -1228,7 +1414,7 @@ export function LaunchpadStageNavigator({
                 pressure: pressureId,
                 ctaPath: "trust_block",
               ctaLabel: "Start a conversation",
-              note: "Need practical direction on the right next move.",
+              note: "Looking for practical direction on the right next move.",
               interest: "general",
             })}
               eventName="launchpad_trust_conversation_click"
