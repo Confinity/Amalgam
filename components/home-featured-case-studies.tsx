@@ -37,7 +37,7 @@ export function HomeFeaturedCaseStudies({ featuredStudies }: HomeFeaturedCaseStu
     <div className="grid gap-7">
       <Link
         href={`/case-studies/${flagship.slug}`}
-        className="group grid min-w-0 gap-7 rounded-[34px] border border-border bg-background p-8 transition-all hover:-translate-y-1 hover:border-teal/40 hover:shadow-lg hover:shadow-teal/5 lg:grid-cols-[minmax(0,0.94fr)_minmax(0,1.06fr)] lg:p-9"
+        className="card-interactive group grid min-w-0 gap-7 rounded-[34px] border border-border bg-background p-8 lg:grid-cols-[minmax(0,0.94fr)_minmax(0,1.06fr)] lg:p-9"
       >
         <div className="min-w-0">
           <p className="mb-3 text-xs font-medium uppercase tracking-widest text-teal">
@@ -72,7 +72,7 @@ export function HomeFeaturedCaseStudies({ featuredStudies }: HomeFeaturedCaseStu
           <Link
             key={study.id}
             href={`/case-studies/${study.slug}`}
-            className="group rounded-[28px] border border-border bg-background p-6 transition-all hover:-translate-y-1 hover:border-teal/40 hover:shadow-lg hover:shadow-teal/5"
+            className="card-interactive group rounded-[28px] border border-border bg-background p-6"
           >
             <p className="mb-3 text-xs font-medium uppercase tracking-widest text-teal">
               {study.industry}

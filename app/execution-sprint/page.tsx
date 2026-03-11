@@ -135,7 +135,7 @@ export default function ExecutionSprintPage() {
                 <Users className="h-5 w-5 text-teal" />
                 <span className="font-medium text-foreground">Direct access to the team</span>
               </div>
-              <div className="mt-6 rounded-2xl border border-border bg-secondary/35 p-4">
+                <div className="mt-6 rounded-2xl border border-border bg-secondary/35 p-4">
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
                   Best use
                 </p>
@@ -160,8 +160,8 @@ export default function ExecutionSprintPage() {
               </h2>
             </div>
             <div className="grid gap-6 md:grid-cols-2">
-              {outputs.map((item) => (
-                <div key={item.title} className="rounded-[28px] border border-border bg-background p-7">
+                {outputs.map((item) => (
+                <div key={item.title} className="card-interactive rounded-[28px] border border-border bg-background p-7">
                   <item.icon className="h-6 w-6 text-teal" />
                   <h3 className="mt-4 text-xl font-semibold text-foreground">{item.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -184,7 +184,7 @@ export default function ExecutionSprintPage() {
                   {executionFit.right.map((item) => (
                     <div
                       key={item}
-                      className="flex items-start gap-3 rounded-2xl border border-border bg-secondary/25 px-4 py-4 text-sm text-muted-foreground"
+                      className="card-interactive flex items-start gap-3 rounded-2xl border border-border bg-secondary/25 px-4 py-4 text-sm text-muted-foreground"
                     >
                       <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-teal" />
                       <span>{item}</span>
@@ -200,7 +200,7 @@ export default function ExecutionSprintPage() {
                   {executionFit.notYet.map((item) => (
                     <div
                       key={item}
-                      className="flex items-start gap-3 rounded-2xl border border-border bg-secondary/25 px-4 py-4 text-sm text-muted-foreground"
+                      className="card-interactive flex items-start gap-3 rounded-2xl border border-border bg-secondary/25 px-4 py-4 text-sm text-muted-foreground"
                     >
                       <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-foreground/35" />
                       <span>{item}</span>
@@ -219,14 +219,14 @@ export default function ExecutionSprintPage() {
             </div>
             <div className="grid gap-6 lg:grid-cols-3">
               {phases.map((phase, index) => (
-                <div key={phase.title} className="rounded-[28px] border border-border bg-background p-7">
+                <div key={phase.title} className="card-interactive rounded-[28px] border border-border bg-background p-7">
                   <span className="text-3xl font-bold text-teal/30">{`0${index + 1}`}</span>
                   <h3 className="mt-4 text-xl font-semibold text-foreground">{phase.title}</h3>
                   <div className="mt-5 space-y-3">
                     {phase.items.map((item) => (
                       <div
                         key={item}
-                        className="flex items-start gap-3 rounded-2xl border border-border bg-secondary/25 px-4 py-3 text-sm text-muted-foreground"
+                        className="card-interactive flex items-start gap-3 rounded-2xl border border-border bg-secondary/25 px-4 py-3 text-sm text-muted-foreground"
                       >
                         <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-teal" />
                         <span>{item}</span>

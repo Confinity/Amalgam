@@ -171,7 +171,7 @@ export default function ContactPage() {
                   {nextSteps.map((step, index) => (
                     <div
                       key={step.title}
-                      className="contact-next-step support-panel px-5 py-5"
+                      className="contact-next-step support-panel card-interactive px-5 py-5"
                     >
                       <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-teal/10 text-sm font-semibold text-teal">
                         0{index + 1}
@@ -220,7 +220,7 @@ export default function ContactPage() {
                   href="/founder-review"
                   className="mt-3 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl border border-background/15 px-6 py-3 font-medium text-background transition-colors hover:bg-background/10"
                 >
-                  See how we work
+                  Explore Founder Review
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>

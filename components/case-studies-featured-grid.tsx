@@ -33,7 +33,7 @@ export function CaseStudiesFeaturedGrid({ featuredStudies }: CaseStudiesFeatured
         <Link
           key={study.id}
           href={`/case-studies/${study.slug}`}
-          className="group flex h-full flex-col rounded-[30px] border border-border bg-background p-7 transition-all hover:-translate-y-1 hover:border-teal/40 hover:shadow-xl hover:shadow-teal/5"
+          className="card-interactive group flex h-full flex-col rounded-[30px] border border-border bg-background p-7"
         >
           <div className="flex items-start justify-between gap-4">
             <div>
@@ -55,19 +55,19 @@ export function CaseStudiesFeaturedGrid({ featuredStudies }: CaseStudiesFeatured
             <div className="rounded-2xl border border-border bg-secondary/35 px-4 py-4">
               <div className="flex items-center gap-3">
                 <Compass className="h-5 w-5 text-teal" />
-                <p className="font-medium text-foreground">How we approached it</p>
+                <p className="font-medium text-foreground">What we did</p>
               </div>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {summarizeCaseStudyText(study.approach, { maxSentences: 1, maxChars: 150 })}
+                {summarizeCaseStudyText(study.approach, { maxSentences: 1, maxChars: 140 })}
               </p>
             </div>
             <div className="rounded-2xl border border-border bg-secondary/35 px-4 py-4">
               <div className="flex items-center gap-3">
                 <ShieldCheck className="h-5 w-5 text-teal" />
-                <p className="font-medium text-foreground">What changed</p>
+                <p className="font-medium text-foreground">Outcome</p>
               </div>
               <p className="mt-2 text-sm leading-relaxed text-foreground">
-                {summarizeCaseStudyText(study.outcome, { maxSentences: 1, maxChars: 150 })}
+                {summarizeCaseStudyText(study.outcome, { maxSentences: 1, maxChars: 140 })}
               </p>
             </div>
           </div>

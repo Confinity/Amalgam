@@ -42,6 +42,9 @@
   --surface-muted-softer: rgba(244, 246, 248, 0.42);
   --shadow-soft: 0 12px 28px rgba(15, 23, 42, 0.04);
   --shadow-soft-inset: inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  --shadow-card: 0 10px 24px rgba(15, 23, 42, 0.045);
+  --shadow-card-hover: 0 16px 34px rgba(15, 23, 42, 0.08);
+  --motion-standard: 220ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @theme inline {
@@ -170,7 +173,7 @@
 
   .hero-layout {
     display: grid;
-    gap: 48px;
+    gap: 36px;
     align-items: center;
   }
 
@@ -184,6 +187,7 @@
 
   .hero-gradient-line {
     color: rgb(15, 140, 154);
+    -webkit-text-fill-color: currentColor;
   }
 
   @supports ((-webkit-background-clip: text) or (background-clip: text)) {
@@ -192,6 +196,7 @@
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+      -webkit-text-fill-color: transparent;
     }
   }
 
@@ -224,6 +229,26 @@
     box-shadow:
       var(--shadow-soft),
       var(--shadow-soft-inset);
+    transition:
+      transform var(--motion-standard),
+      box-shadow var(--motion-standard),
+      border-color var(--motion-standard);
+  }
+
+  .card-interactive {
+    transition:
+      transform var(--motion-standard),
+      box-shadow var(--motion-standard),
+      border-color var(--motion-standard),
+      background var(--motion-standard);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .card-interactive:hover {
+      transform: translateY(-2px);
+      border-color: rgba(16, 185, 129, 0.22);
+      box-shadow: var(--shadow-card-hover);
+    }
   }
 
   .section-warm {
@@ -588,21 +613,29 @@
     animation: subtlePulse 7s ease-in-out infinite;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 960px) {
     .hero-layout {
-      grid-template-columns: minmax(0, 1.03fr) minmax(420px, 0.97fr);
-      gap: 64px;
+      grid-template-columns: minmax(0, 1.04fr) minmax(360px, 0.96fr);
+      gap: 56px;
     }
 
     .hero-panel-shell {
-      max-width: 540px;
+      max-width: 520px;
       margin-left: auto;
     }
   }
 
-  @media (min-width: 1024px) and (max-width: 1199px) {
+  @media (min-width: 960px) and (max-width: 1199px) {
     .hero-panel-shell {
-      max-width: 500px;
+      max-width: 460px;
+      margin-left: auto;
+    }
+  }
+
+  @media (max-width: 959px) {
+    .hero-panel-shell {
+      max-width: 580px;
+      margin-right: auto;
       margin-left: auto;
     }
   }

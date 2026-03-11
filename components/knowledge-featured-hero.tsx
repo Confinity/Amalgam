@@ -49,12 +49,9 @@ export function KnowledgeFeaturedHero({
         </p>
         <p className="mt-2 text-sm leading-relaxed text-foreground">{active.takeaway}</p>
       </div>
-      <div className="mt-6 grid gap-3 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-        {active.keyTakeaways.slice(0, 2).map((item) => (
-          <div
-            key={item}
-            className="rounded-2xl border border-border bg-background px-4 py-4 text-sm leading-relaxed text-foreground"
-          >
+      <div className="mt-6">
+        {active.keyTakeaways.slice(0, 1).map((item) => (
+          <div key={item} className="rounded-2xl border border-border bg-background px-4 py-4 text-sm leading-relaxed text-foreground">
             {item}
           </div>
         ))}

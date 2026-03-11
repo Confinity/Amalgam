@@ -18,19 +18,19 @@ export const metadata: Metadata = {
 }
 
 const reachOutMoments = [
-  { title: "Direction keeps shifting", description: "The product path is less clear than it should be." },
-  { title: "Delivery keeps slipping", description: "The team is busy, but shipping is slower." },
+  { title: "Direction keeps shifting", description: "The product path is not clear enough." },
+  { title: "Delivery keeps slipping", description: "The team is busy, but progress is slower." },
   { title: "Systems feel fragile", description: "Simple changes create too much risk." },
-  { title: "Data is harder to trust", description: "Decisions are slowed by unclear reporting." },
-  { title: "Coordination is heavy", description: "Too much time goes to handoffs and alignment." },
-  { title: "The next move is unclear", description: "Leadership needs a practical path, not another debate." },
+  { title: "Data is harder to trust", description: "Decisions stall when reporting is unclear." },
+  { title: "Coordination is heavy", description: "Too much work is spent on handoffs." },
+  { title: "The next move is unclear", description: "Leadership needs a practical path." },
 ]
 
 const startPath = [
   {
     title: "Founder Review",
     description:
-      "A focused engagement that gives a clear read on what is happening and what should happen next.",
+      "A focused engagement for a clear read and practical next step.",
     cta: "See how we work",
     href: "/founder-review",
   },
@@ -53,7 +53,7 @@ const startPath = [
 const deeperSupportAreas = [
   { title: "Systems and architecture", description: "Clarify boundaries and reduce avoidable friction." },
   { title: "Data confidence", description: "Strengthen trust in the numbers teams use to decide." },
-  { title: "Decision alignment", description: "Make ownership and sequencing easier across teams." },
+  { title: "Decision alignment", description: "Keep ownership and sequencing clear across teams." },
 ]
 
 const selectedTestimonials = [
@@ -129,7 +129,7 @@ export default function ServicesPage() {
             </div>
             <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
               {reachOutMoments.map((item) => (
-                <article key={item.title} className="rounded-[22px] border border-border/70 bg-white/70 p-6 shadow-[0_10px_24px_rgba(15,23,42,0.04)]">
+                <article key={item.title} className="card-interactive rounded-[22px] border border-border/70 bg-white/70 p-6 shadow-[0_10px_24px_rgba(15,23,42,0.04)]">
                   <h3 className="max-w-[26ch] text-xl font-semibold leading-snug text-foreground">{item.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
                 </article>
@@ -148,7 +148,7 @@ export default function ServicesPage() {
             </div>
             <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
               {startPath.map((item, index) => (
-                <article key={item.title} className="flex h-full flex-col rounded-[24px] border border-border/70 bg-background p-6">
+                <article key={item.title} className="card-interactive flex h-full flex-col rounded-[24px] border border-border/70 bg-background p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-teal">Step {index + 1}</p>
                   <h3 className="mt-3 text-xl font-semibold text-foreground">{item.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
@@ -172,7 +172,7 @@ export default function ServicesPage() {
             </div>
             <div className="grid gap-5 md:grid-cols-3">
               {deeperSupportAreas.map((item) => (
-                <article key={item.title} className="support-panel rounded-[24px] border border-border/60 p-6">
+                <article key={item.title} className="support-panel card-interactive rounded-[24px] border border-border/60 p-6">
                   <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
                   <p className="mt-3 max-w-[32ch] text-sm leading-relaxed text-muted-foreground">{item.description}</p>
                 </article>

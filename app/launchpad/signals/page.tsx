@@ -35,7 +35,7 @@ export default function LaunchpadSignalsPage() {
               Want practical notes you can use this quarter?
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              Short updates on execution, architecture decisions, and what to do next.
+              Short practical updates on execution, architecture, and what to do next.
             </p>
             </div>
             <div className="rounded-[30px] border border-border bg-foreground p-8">
@@ -75,7 +75,7 @@ export default function LaunchpadSignalsPage() {
                   href={`/knowledge/${article.slug}`}
                   eventName="launchpad_path_click"
                   eventData={{ source: "launchpad_signals_page", target: article.slug }}
-                  className="rounded-[28px] border border-border bg-background p-7 transition-colors hover:border-teal/35"
+                  className="card-interactive rounded-[28px] border border-border bg-background p-7"
                 >
                   <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
                     Note preview

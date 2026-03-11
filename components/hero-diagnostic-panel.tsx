@@ -94,7 +94,7 @@ const nodes: NodeConfig[] = [
     key: "infra",
     label: "Infra",
     title: "Deploy",
-    tooltip: "Deployment friction slows release velocity.",
+    tooltip: "Deployment friction slows shipping pace.",
     x: 65,
     y: 58,
     width: 108,
@@ -548,7 +548,7 @@ export function HeroDiagnosticPanel() {
   return (
     <div
       ref={panelRef}
-      className="hero-right-panel relative isolate h-[440px] overflow-hidden rounded-[28px] border border-black/4 bg-[linear-gradient(180deg,rgba(240,244,248,0.82),rgba(248,250,252,0.94))] p-4 shadow-[0_16px_34px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.42)] sm:h-[460px] sm:p-6 lg:h-[560px] lg:p-8"
+      className="hero-right-panel relative isolate h-[420px] overflow-hidden rounded-[28px] border border-black/4 bg-[linear-gradient(180deg,rgba(240,244,248,0.82),rgba(248,250,252,0.94))] p-4 shadow-[0_16px_34px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.42)] sm:h-[430px] sm:p-6 lg:h-[500px] lg:p-8"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,191,166,0.08),transparent_34%),radial-gradient(circle_at_top_right,rgba(106,92,255,0.08),transparent_30%)]" />
       <div className="pointer-events-none absolute inset-[18px] rounded-[24px] bg-[linear-gradient(rgba(255,255,255,0.16)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.16)_1px,transparent_1px)] bg-[size:34px_34px] opacity-55 sm:inset-[20px] lg:inset-6" />

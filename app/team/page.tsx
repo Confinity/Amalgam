@@ -96,7 +96,7 @@ export default function TeamPage() {
                 {heroShowcaseMembers.map((member, index) => (
                   <div
                     key={member.name}
-                    className={`overflow-hidden rounded-[28px] border border-border bg-background shadow-sm ${
+                    className={`card-interactive overflow-hidden rounded-[28px] border border-border bg-background shadow-sm ${
                       index % 3 === 1 ? "sm:translate-y-8" : ""
                     }`}
                   >
@@ -129,7 +129,7 @@ export default function TeamPage() {
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="rounded-2xl border border-border bg-background/90 px-5 py-5 shadow-sm backdrop-blur"
+                  className="card-interactive rounded-2xl border border-border bg-background/90 px-5 py-5 shadow-sm backdrop-blur"
                 >
                   <p className="text-3xl font-bold text-teal md:text-4xl">{stat.value}</p>
                   <p className="mt-2 text-sm text-muted-foreground">{stat.label}</p>
@@ -169,7 +169,7 @@ export default function TeamPage() {
                   {members.map((member) => (
                     <div
                       key={member.name}
-                      className="group overflow-hidden rounded-3xl border border-border bg-background transition-all hover:-translate-y-1 hover:border-teal/50 hover:shadow-xl hover:shadow-teal/5"
+                      className="card-interactive group overflow-hidden rounded-3xl border border-border bg-background"
                     >
                       <div
                         className={`relative aspect-[4/4.2] overflow-hidden ${unifiedTeamPortraitBackgroundClass}`}

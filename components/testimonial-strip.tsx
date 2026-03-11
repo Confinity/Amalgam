@@ -35,7 +35,7 @@ export function TestimonialStrip({
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.22em] text-teal">
             {eyebrow}
           </p>
-          <h2 className="text-2xl font-semibold text-foreground text-balance">{title}</h2>
+          <h2 className="text-2xl font-semibold text-foreground text-balance md:text-3xl">{title}</h2>
           {description ? (
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{description}</p>
           ) : null}
@@ -45,7 +45,7 @@ export function TestimonialStrip({
           {visibleTestimonials.map((item) => (
             <article
               key={item.id}
-              className="min-w-0 rounded-[28px] border border-border bg-[linear-gradient(160deg,rgba(255,255,255,0.95),rgba(244,246,248,0.7))] p-6 shadow-sm"
+              className="card-interactive min-w-0 rounded-[28px] border border-border bg-[linear-gradient(160deg,rgba(255,255,255,0.95),rgba(244,246,248,0.7))] p-6 shadow-sm"
             >
               <div className="text-2xl leading-none text-teal/60">&ldquo;</div>
               <p className="mt-2 text-sm leading-relaxed text-foreground">{item.quote}</p>

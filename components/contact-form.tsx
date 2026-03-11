@@ -297,9 +297,7 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
       <p className="mb-6 text-sm text-muted-foreground">
         We usually reply within one business day.
       </p>
-      <p className="mb-6 text-xs text-muted-foreground">
-        Your draft autosaves in this browser tab while you write.
-      </p>
+      <p className="mb-6 text-xs text-muted-foreground">Draft autosaves while you write.</p>
 
       <form className="space-y-5" onSubmit={handleSubmit}>
         <div>
@@ -322,8 +320,8 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
                   aria-pressed={selected}
                   className={`contact-path-button min-h-11 rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
                     selected
-                      ? "border-foreground bg-foreground text-background"
-                      : "border-border bg-background text-muted-foreground hover:text-foreground"
+                      ? "border-teal bg-teal text-background"
+                      : "border-border bg-background text-muted-foreground hover:border-teal/30 hover:text-foreground"
                   }`}
                   onClick={() =>
                     setForm((current) => ({
@@ -473,7 +471,7 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
           </p>
         ) : null}
 
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div>
           <button
             type="submit"
             disabled={submitting}
@@ -482,18 +480,18 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
             {submitting ? "Sending..." : "Send through website"}
             <Send className="h-4 w-4" />
           </button>
-          <button
-            type="button"
-            onClick={handleOpenEmailDraft}
-            className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-border px-6 py-3 font-medium text-foreground transition-colors hover:bg-secondary"
-          >
-            Open email draft
-            <ArrowRight className="h-4 w-4" />
-          </button>
         </div>
       </form>
 
-      <div className="contact-secondary-actions mt-6 grid gap-3 sm:grid-cols-2">
+      <div className="contact-secondary-actions mt-6 grid gap-3 sm:grid-cols-3">
+        <button
+          type="button"
+          onClick={handleOpenEmailDraft}
+          className="inline-flex items-center justify-center gap-2 rounded-lg border border-border px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+        >
+          <ArrowRight className="h-4 w-4" />
+          Open email draft
+        </button>
         <a
           href="mailto:hello@amalgam-inc.com"
           className="inline-flex items-center justify-center gap-2 rounded-lg border border-border px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"

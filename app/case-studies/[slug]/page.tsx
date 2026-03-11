@@ -191,6 +191,9 @@ export default async function CaseStudyPage({ params }: PageProps) {
                     maxChars: 360,
                   })}
                 </p>
+                <p className="mt-3 text-sm text-foreground/75">
+                  Situation, problem, what we did, and outcome.
+                </p>
                 <div className="mt-8 overflow-hidden rounded-[32px] border border-border bg-secondary/35">
                   <div className="relative aspect-[16/10] w-full">
                     <Image
@@ -224,7 +227,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                   At a glance
                 </p>
                 <div className="mt-5 space-y-4">
-                  <div className="rounded-2xl border border-border bg-background px-4 py-4">
+                  <div className="card-interactive rounded-2xl border border-border bg-background px-4 py-4">
                     <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
                       Situation and problem
                     </p>
@@ -235,7 +238,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                       })}
                     </p>
                   </div>
-                  <div className="rounded-2xl border border-border bg-background px-4 py-4">
+                  <div className="card-interactive rounded-2xl border border-border bg-background px-4 py-4">
                     <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
                       What we did
                     </p>
@@ -246,7 +249,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                       })}
                     </p>
                   </div>
-                  <div className="rounded-2xl border border-border bg-background px-4 py-4">
+                  <div className="card-interactive rounded-2xl border border-border bg-background px-4 py-4">
                     <p className="text-xs uppercase tracking-[0.22em] text-teal">
                       Outcome
                     </p>
@@ -276,7 +279,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
               </div>
               <div className="grid gap-3">
                 {caseStudy.challenges.map((challenge, index) => (
-                  <div key={challenge} className="flex items-start gap-3 rounded-2xl border border-border bg-muted/30 p-4">
+                  <div key={challenge} className="card-interactive flex items-start gap-3 rounded-2xl border border-border bg-muted/30 p-4">
                     <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary text-sm font-bold text-foreground">
                       {index + 1}
                     </span>
@@ -295,7 +298,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
               </div>
               <div className="grid gap-6 md:grid-cols-2">
                 {caseStudy.solution.map((item) => (
-                  <div key={item.title} className="rounded-[28px] border border-border bg-background p-6">
+                  <div key={item.title} className="card-interactive rounded-[28px] border border-border bg-background p-6">
                     <div className="mb-3 flex items-center gap-3">
                       <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-teal/10 text-teal">
                         <CheckCircle2 className="h-5 w-5" />
@@ -329,7 +332,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
               </div>
               <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
                 {caseStudy.results.map((result) => (
-                  <div key={`${result.metric}-${result.value}`} className="flex flex-col rounded-[28px] border border-border bg-background p-6">
+                  <div key={`${result.metric}-${result.value}`} className="card-interactive flex flex-col rounded-[28px] border border-border bg-background p-6">
                     <span className="mb-3 inline-block self-start rounded-full bg-secondary px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                       {result.metric}
                     </span>
@@ -371,7 +374,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                   <Link
                     key={study.slug}
                     href={`/case-studies/${study.slug}`}
-                    className="rounded-[24px] border border-border bg-background px-5 py-5 transition-colors hover:border-teal/35"
+                    className="card-interactive rounded-[24px] border border-border bg-background px-5 py-5"
                   >
                     <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
                       {study.industry}

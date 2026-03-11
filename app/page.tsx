@@ -30,7 +30,7 @@ function Hero() {
           <div className="max-w-4xl">
             <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight text-foreground text-balance sm:text-5xl lg:text-[58px]">
               <span>From idea to scale —</span>
-              <span className="hero-gradient-line block">
+              <span className="hero-gradient-line block bg-gradient-to-r from-teal to-purple bg-clip-text text-transparent">
                 without the chaos.
               </span>
             </h1>
@@ -38,7 +38,7 @@ function Hero() {
               Amalgam helps founders, entrepreneurs, and product teams turn ideas into real products and working systems.
             </p>
             <p className="hero-body mt-5 text-lg leading-relaxed text-muted-foreground">
-              When progress gets messy, we help you find the blocker, simplify the system, and move forward with confidence.
+              Building something real is rarely simple. Ideas evolve, systems grow, and delivery gets messy. We help you find the blocker and move forward with confidence.
             </p>
             <div className="hero-cta-row mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -101,7 +101,7 @@ function WhatWeDo() {
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {outcomes.map((outcome) => (
-            <div key={outcome.title} className="rounded-2xl border border-border/90 bg-background p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-teal/30 hover:shadow-md">
+            <div key={outcome.title} className="card-interactive rounded-2xl border border-border/90 bg-background p-6 shadow-sm">
               <outcome.icon className="mb-4 h-6 w-6 text-teal" />
               <h3 className="mb-2 font-semibold text-foreground">{outcome.title}</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">{outcome.description}</p>
@@ -148,7 +148,7 @@ function WhoWeHelp() {
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {audienceCards.map((card) => (
-            <div key={card.title} className="rounded-2xl border border-border bg-background p-6">
+            <div key={card.title} className="card-interactive rounded-2xl border border-border bg-background p-6">
               <card.icon className="h-5 w-5 text-teal" />
               <h3 className="mt-4 text-lg font-semibold text-foreground">{card.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{card.body}</p>
@@ -189,7 +189,7 @@ function TypicalTriggers() {
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             {triggers.map((trigger) => (
-              <div key={trigger.text} className="support-panel flex min-w-0 items-center gap-4 p-5">
+              <div key={trigger.text} className="support-panel card-interactive flex min-w-0 items-center gap-4 p-5">
                 <trigger.icon className="h-5 w-5 shrink-0 text-teal" />
                 <span className="min-w-0 break-words text-foreground">{trigger.text}</span>
               </div>
@@ -241,17 +241,17 @@ function Offers() {
         <div className="mb-8 max-w-3xl">
           <h2 className="mb-4 text-2xl font-semibold text-foreground md:text-3xl">Start with one clear step</h2>
           <p className="text-muted-foreground">
-            Start with Founder Review, then go deeper only when needed.
+            Founder Review first. Then Execution Sprint or Outcome Partnership if needed.
           </p>
         </div>
         <div className="grid gap-8 lg:grid-cols-3">
           {offers.map((offer) => (
             <div
               key={offer.title}
-              className={`rounded-[26px] p-8 ${
+            className={`rounded-[26px] p-8 ${
                 offer.primary
                   ? "border border-teal/40 bg-background shadow-[0_14px_34px_rgba(0,191,166,0.08)]"
-                  : "support-panel"
+                  : "support-panel card-interactive"
               }`}
             >
               {offer.primary ? (
@@ -294,7 +294,7 @@ function TrustSection() {
       className="homepage-trust-section border-t border-border"
       eyebrow="Client experience"
       title="Trusted in complex environments"
-      description="Experience across fintech, banking, energy, retail, philanthropy, and enterprise software."
+      description="We’ve supported teams across fintech, banking, energy, retail, philanthropy, and enterprise software."
       showCaseStudiesCta
     />
   )
@@ -310,7 +310,7 @@ function FeaturedCaseStudies() {
           <div>
             <p className="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-teal">Case studies</p>
             <h2 className="mb-2 text-2xl font-semibold text-foreground md:text-3xl">See work in situations like yours</h2>
-            <p className="text-muted-foreground">Real situations. Clear outcomes.</p>
+            <p className="text-muted-foreground">Real situations. Real constraints. Clear outcomes.</p>
           </div>
           <Link
             href="/case-studies"
@@ -354,7 +354,7 @@ function KnowledgePreview() {
             <Link
               key={brief.slug}
               href={`/knowledge/${brief.slug}`}
-              className="group flex h-full flex-col rounded-[28px] border border-border/85 bg-background p-7 transition-all hover:-translate-y-1 hover:border-teal/35 hover:shadow-lg hover:shadow-teal/5"
+              className="card-interactive group flex h-full flex-col rounded-[28px] border border-border/85 bg-background p-7"
             >
               <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
                 {knowledgeCategories.find((category) => category.id === brief.category)?.label}
@@ -388,7 +388,7 @@ function FinalCTA() {
         </div>
         <div className="homepage-final-cta-panel rounded-[24px] border border-background/12 bg-background/[0.04] p-6">
           <p className="text-sm text-background/78">
-            Launchpad helps you self-serve quickly. Strategy calls are for direct support on your exact situation.
+            Use Launchpad if you want to self-serve first. If you want direct support, book a strategy call.
           </p>
           <div className="mt-6 flex flex-col gap-3">
             <Link

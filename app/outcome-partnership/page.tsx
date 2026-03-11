@@ -155,7 +155,7 @@ export default function OutcomePartnershipPage() {
             </div>
             <div className="grid gap-6 md:grid-cols-2">
               {whatWeProvide.map((item) => (
-                <div key={item.title} className="rounded-[28px] border border-border bg-background p-7">
+                <div key={item.title} className="card-interactive rounded-[28px] border border-border bg-background p-7">
                   <item.icon className="h-6 w-6 text-teal" />
                   <h3 className="mt-4 text-xl font-semibold text-foreground">{item.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -180,7 +180,7 @@ export default function OutcomePartnershipPage() {
                 {whatThisLooksLike.map((item) => (
                   <div
                     key={item}
-                    className="flex items-start gap-3 rounded-2xl border border-border bg-background px-4 py-4 text-sm text-muted-foreground"
+                    className="card-interactive flex items-start gap-3 rounded-2xl border border-border bg-background px-4 py-4 text-sm text-muted-foreground"
                   >
                     <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-teal" />
                     <span>{item}</span>
@@ -200,7 +200,7 @@ export default function OutcomePartnershipPage() {
                 {notThis.map((item) => (
                   <div
                     key={item}
-                    className="flex items-start gap-3 rounded-2xl border border-border bg-background px-4 py-4 text-sm text-muted-foreground"
+                    className="card-interactive flex items-start gap-3 rounded-2xl border border-border bg-background px-4 py-4 text-sm text-muted-foreground"
                   >
                     <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-rose-500" />
                     <span>{item}</span>
@@ -230,7 +230,7 @@ export default function OutcomePartnershipPage() {
                   {partnershipFit.right.map((item) => (
                     <div
                       key={item}
-                      className="flex items-start gap-3 rounded-2xl border border-border bg-secondary/25 px-4 py-4 text-sm text-muted-foreground"
+                      className="card-interactive flex items-start gap-3 rounded-2xl border border-border bg-secondary/25 px-4 py-4 text-sm text-muted-foreground"
                     >
                       <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-teal" />
                       <span>{item}</span>
@@ -246,7 +246,7 @@ export default function OutcomePartnershipPage() {
                   {partnershipFit.notYet.map((item) => (
                     <div
                       key={item}
-                      className="flex items-start gap-3 rounded-2xl border border-border bg-secondary/25 px-4 py-4 text-sm text-muted-foreground"
+                      className="card-interactive flex items-start gap-3 rounded-2xl border border-border bg-secondary/25 px-4 py-4 text-sm text-muted-foreground"
                     >
                       <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-foreground/35" />
                       <span>{item}</span>

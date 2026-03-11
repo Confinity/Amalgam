@@ -57,7 +57,7 @@ export default function LaunchpadToolsPage() {
               </p>
               <div className="mt-5 grid gap-3 md:grid-cols-3">
                 {previewRows.map((row) => (
-                  <div key={row.id} className="rounded-2xl border border-border bg-background px-4 py-4">
+                  <div key={row.id} className="card-interactive rounded-2xl border border-border bg-background px-4 py-4">
                     <p className="text-sm font-semibold text-foreground">{row.title}</p>
                     <p className="mt-2 text-xs uppercase tracking-[0.2em] text-muted-foreground">
                       Example profiles
@@ -72,7 +72,7 @@ export default function LaunchpadToolsPage() {
 
             <div className="grid gap-8 xl:grid-cols-3">
               {tools.map((tool) => (
-                <article key={tool.id} className="support-panel flex h-full flex-col rounded-[30px] p-8">
+                <article key={tool.id} className="support-panel card-interactive flex h-full flex-col rounded-[30px] p-8">
                   <div className="flex items-center gap-3">
                     <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-background text-teal">
                       <Wrench className="h-5 w-5" />

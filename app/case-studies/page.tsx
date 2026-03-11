@@ -57,7 +57,7 @@ export default function CaseStudiesPage() {
             <h1 className="text-4xl font-semibold leading-tight tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
               See how teams moved forward in real situations
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+                <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
               Explore the situation teams faced, what changed, and the outcomes that followed.
             </p>
               <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -135,7 +135,7 @@ export default function CaseStudiesPage() {
                 <Link
                   key={study.id}
                   href={`/case-studies/${study.slug}`}
-                  className="group flex flex-col overflow-hidden rounded-[28px] border border-border bg-background transition-all hover:-translate-y-1 hover:border-teal/40 hover:shadow-xl hover:shadow-teal/5"
+                  className="card-interactive group flex flex-col overflow-hidden rounded-[28px] border border-border bg-background"
                 >
                   <div className="border-b border-border bg-secondary/20 p-6 pb-5">
                     <div className="mb-3 flex items-center justify-between gap-3">
@@ -218,7 +218,7 @@ export default function CaseStudiesPage() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="rounded-2xl border border-border bg-background px-5 py-5 transition-colors hover:border-teal/35"
+                  className="card-interactive rounded-2xl border border-border bg-background px-5 py-5"
                 >
                   <p className="text-lg font-semibold text-foreground">{item.name}</p>
                   <p className="mt-2 text-sm text-muted-foreground">{item.note}</p>

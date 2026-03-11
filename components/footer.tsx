@@ -58,7 +58,7 @@ export function Footer({ variant = "default" }: FooterProps) {
             <Link
               href="/contact?interest=strategy-session"
               prefetch={false}
-              className="footer-cta mt-5 inline-flex items-center gap-2 rounded-xl bg-foreground px-5 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
+              className="footer-cta mt-5 inline-flex items-center gap-2 rounded-xl bg-foreground px-5 py-3 text-sm font-medium text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-95"
             >
               {footerCtaLabel}
               <ArrowRight className="h-4 w-4" />

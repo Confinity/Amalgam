@@ -165,7 +165,7 @@ export default function KnowledgePage() {
               {curatedPaths.map((path) => (
                 <div
                   key={path.title}
-                  className="flex h-full flex-col rounded-[30px] border border-border bg-background p-7"
+                  className="card-interactive flex h-full flex-col rounded-[30px] border border-border bg-background p-7"
                 >
                   <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
                     Start here if...
@@ -181,7 +181,7 @@ export default function KnowledgePage() {
                       <Link
                         key={article.slug}
                         href={`/knowledge/${article.slug}`}
-                        className="flex items-center justify-between gap-4 rounded-2xl border border-border bg-secondary/25 px-4 py-4 text-sm transition-colors hover:border-teal/40"
+                        className="card-interactive flex items-center justify-between gap-4 rounded-2xl border border-border bg-secondary/25 px-4 py-4 text-sm"
                       >
                         <div>
                           <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
@@ -206,7 +206,7 @@ export default function KnowledgePage() {
                   This library is built around real pressure points
                 </h2>
                 <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">
-                  Start with the area that feels most constrained, then follow connected reads to build a clearer view of your system.
+                  Start with the area that feels most constrained, then follow connected reads as needed.
                 </p>
               </div>
               <div className="grid gap-3 rounded-[24px] border border-border bg-secondary/40 p-5">
@@ -247,7 +247,7 @@ export default function KnowledgePage() {
                     <Link
                       key={brief.slug}
                       href={`/knowledge/${brief.slug}`}
-                      className="group flex h-full flex-col rounded-[28px] border border-border bg-background p-7 transition-all hover:-translate-y-1 hover:border-teal/40 hover:shadow-xl hover:shadow-teal/5"
+                      className="card-interactive group flex h-full flex-col rounded-[28px] border border-border bg-background p-7"
                     >
                       <div className="flex items-start justify-between gap-4">
                         <span className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
@@ -312,7 +312,7 @@ export default function KnowledgePage() {
                 <div
                   key={category.id}
                   id={`knowledge-${category.id}`}
-                  className="flex h-full flex-col rounded-[28px] border border-border bg-background p-7"
+                  className="card-interactive flex h-full flex-col rounded-[28px] border border-border bg-background p-7"
                 >
                   <div className="flex items-center justify-between gap-4">
                     <h3 className="text-xl font-semibold text-foreground">{category.label}</h3>
@@ -341,7 +341,7 @@ export default function KnowledgePage() {
                       <Link
                         key={brief.slug}
                         href={`/knowledge/${brief.slug}`}
-                        className="flex items-center justify-between gap-4 rounded-2xl border border-border px-4 py-3 text-sm text-foreground transition-colors hover:border-teal/40 hover:text-teal"
+                        className="card-interactive flex items-center justify-between gap-4 rounded-2xl border border-border px-4 py-3 text-sm text-foreground hover:text-teal"
                       >
                         <span>{brief.title}</span>
                         <ArrowRight className="h-4 w-4 shrink-0" />

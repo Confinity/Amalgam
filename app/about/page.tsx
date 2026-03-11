@@ -145,7 +145,7 @@ export default function AboutPage() {
               {aboutStats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="support-panel rounded-2xl px-5 py-5"
+                  className="support-panel card-interactive rounded-2xl px-5 py-5"
                 >
                   <p className="text-3xl font-bold text-teal">{stat.value}</p>
                   <p className="mt-2 text-sm text-muted-foreground">{stat.label}</p>
@@ -209,7 +209,7 @@ export default function AboutPage() {
             </div>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {principles.map((principle) => (
-                <div key={principle.title} className="support-panel rounded-[24px] p-6">
+                <div key={principle.title} className="support-panel card-interactive rounded-[24px] p-6">
                   <principle.icon className="mb-4 h-6 w-6 text-teal" />
                   <h3 className="mb-2 font-semibold text-foreground">{principle.title}</h3>
                   <p className="text-sm leading-relaxed text-muted-foreground">
@@ -235,7 +235,7 @@ export default function AboutPage() {
             </div>
             <div className="grid gap-6 lg:grid-cols-3">
               {operatingModel.map((item) => (
-                <div key={item.title} className="border-l border-border/80 pl-5 pr-4 py-2">
+                <div key={item.title} className="card-interactive border-l border-border/80 pl-5 pr-4 py-2">
                   <item.icon className="h-6 w-6 text-teal" />
                   <h3 className="mt-4 text-xl font-semibold text-foreground">{item.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -262,7 +262,7 @@ export default function AboutPage() {
             </div>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {aboutPreviewTeamMembers.map((member) => (
-                <div key={member.name} className="overflow-hidden rounded-[26px] border border-border/80 bg-background">
+                <div key={member.name} className="card-interactive overflow-hidden rounded-[26px] border border-border/80 bg-background">
                   <div
                     className={`relative aspect-[4/4.15] overflow-hidden ${unifiedTeamPortraitBackgroundClass}`}
                   >

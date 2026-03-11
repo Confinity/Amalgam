@@ -49,14 +49,14 @@ export function LegalPageShell({
               <div className="mt-5 space-y-3">
                 <a
                   href="mailto:hello@amalgam-inc.com"
-                  className="flex items-center gap-3 rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground transition-colors hover:border-teal/40"
+                  className="card-interactive flex items-center gap-3 rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground"
                 >
                   <Mail className="h-4 w-4 text-teal" />
                   hello@amalgam-inc.com
                 </a>
                 <a
                   href="tel:+14843548498"
-                  className="flex items-center gap-3 rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground transition-colors hover:border-teal/40"
+                  className="card-interactive flex items-center gap-3 rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground"
                 >
                   <Phone className="h-4 w-4 text-teal" />
                   +1 484-354-8498

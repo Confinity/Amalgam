@@ -179,7 +179,7 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
             <h2 className="mt-3 text-3xl font-semibold text-foreground text-balance">{tool.title}</h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">{tool.description}</p>
           </div>
-          <div className="support-panel min-w-[240px] rounded-[24px] p-5">
+          <div className="support-panel card-interactive min-w-[240px] rounded-[24px] p-5">
             <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">Before you start</p>
             <dl className="mt-4 space-y-3 text-sm">
               <div>
@@ -248,7 +248,7 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
                 return (
                   <label
                     key={option.id}
-                    className={`block cursor-pointer rounded-[24px] border px-5 py-5 transition-colors ${
+                    className={`card-interactive block cursor-pointer rounded-[24px] border px-5 py-5 ${
                       isSelected ? "border-teal bg-teal/6" : "border-border bg-background hover:border-teal/35"
                     }`}
                   >
@@ -315,7 +315,7 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
             <h3 className="mt-3 text-3xl font-semibold text-foreground text-balance">{result.category.title}</h3>
             <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">{result.category.summary}</p>
 
-            <div className="mt-6 rounded-[26px] border border-border bg-secondary/25 p-6">
+            <div className="card-interactive mt-6 rounded-[26px] border border-border bg-secondary/25 p-6">
               <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">First 2-week moves</p>
               <div className="mt-4 space-y-3">
                 {guidance.firstMoves.map((move) => (
@@ -330,7 +330,7 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
               </div>
             </div>
 
-            <div className="mt-6 rounded-[26px] border border-teal/35 bg-teal/6 p-6">
+            <div className="card-interactive mt-6 rounded-[26px] border border-teal/35 bg-teal/6 p-6">
               <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">Recommended next move</p>
               <p className="mt-3 text-lg font-semibold text-foreground">Book a strategy call</p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
@@ -379,12 +379,12 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
 
             {showDetailedReadout ? (
               <div className="mt-6 grid gap-6 lg:grid-cols-3">
-                <div className="support-panel rounded-[26px] p-6">
+                <div className="support-panel card-interactive rounded-[26px] p-6">
                   <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">Confidence level</p>
                   <p className="mt-3 text-lg font-semibold text-foreground">{result.confidence.label}</p>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{result.confidence.summary}</p>
                 </div>
-                <div className="support-panel rounded-[26px] p-6 lg:col-span-2">
+                <div className="support-panel card-interactive rounded-[26px] p-6 lg:col-span-2">
                   <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">Why this profile won</p>
                   <div className="mt-4 space-y-3">
                     {result.topDrivers.length > 0 ? (
@@ -404,7 +404,7 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
                     )}
                   </div>
                 </div>
-                <div className="rounded-[26px] border border-amber-200 bg-amber-50/60 p-6 lg:col-span-3">
+                <div className="card-interactive rounded-[26px] border border-amber-200 bg-amber-50/60 p-6 lg:col-span-3">
                   <div className="flex items-center gap-2">
                     <AlertTriangle className="h-4 w-4 text-amber-700" />
                     <p className="text-xs font-medium uppercase tracking-[0.22em] text-amber-700">Risk if unchanged</p>
@@ -425,7 +425,7 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
                       <Link
                         key={guide.slug}
                         href={`/knowledge/${guide.slug}`}
-                        className="rounded-[24px] border border-border bg-background px-5 py-5 transition-colors hover:border-teal/35"
+                        className="card-interactive rounded-[24px] border border-border bg-background px-5 py-5"
                       >
                         <p className="text-sm font-semibold text-foreground">{guide.title}</p>
                         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{guide.description}</p>
@@ -435,7 +435,7 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
                 </div>
 
                 {caseStudyRecommendation ? (
-                  <div className="rounded-[30px] border border-border bg-background p-7">
+                  <div className="card-interactive rounded-[30px] border border-border bg-background p-7">
                     <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">Related proof</p>
                     <p className="mt-3 text-lg font-semibold text-foreground">{caseStudyRecommendation.client}</p>
                     <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{caseStudyRecommendation.reason}</p>

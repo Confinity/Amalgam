@@ -63,7 +63,7 @@ export default function LaunchpadProgramsPage() {
               {launchpadPrograms.map((program) => (
                 <article
                   key={program.id}
-                  className={`flex h-full flex-col rounded-[30px] p-8 ${
+                  className={`card-interactive flex h-full flex-col rounded-[30px] p-8 ${
                     program.featured
                       ? "border border-teal/45 bg-background shadow-[0_14px_30px_rgba(0,191,166,0.08)]"
                       : "support-panel"
@@ -111,7 +111,7 @@ export default function LaunchpadProgramsPage() {
                   href={item.href}
                   eventName="launchpad_path_click"
                   eventData={{ source: "launchpad_programs_decision_map", target: item.title }}
-                  className="rounded-[28px] border border-border bg-background p-7 transition-colors hover:border-teal/35"
+                  className="card-interactive rounded-[28px] border border-border bg-background p-7"
                 >
                   <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
                   <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{item.description}</p>

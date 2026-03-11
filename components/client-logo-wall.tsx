@@ -187,7 +187,7 @@ export function ClientLogoWall({
               {eyebrow}
             </p>
           ) : null}
-          <h2 className="text-3xl font-semibold text-foreground text-balance">{title}</h2>
+          <h2 className="text-2xl font-semibold text-foreground text-balance md:text-3xl">{title}</h2>
           <p className="mx-auto mt-3 max-w-[42ch] leading-relaxed text-muted-foreground">
             {description}
           </p>

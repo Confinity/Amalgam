@@ -49,7 +49,7 @@ export default function LaunchpadGuidesPage() {
               const relatedProgram = getLaunchpadProgram(collection.relatedProgram)
 
               return (
-                <section key={collection.id} className="rounded-[32px] border border-border bg-background p-8 lg:p-10">
+                <section key={collection.id} className="card-interactive rounded-[32px] border border-border bg-background p-8 lg:p-10">
                   <div className="grid gap-8 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)]">
                     <div>
                       <h2 className="text-3xl font-semibold text-foreground text-balance">
@@ -78,7 +78,7 @@ export default function LaunchpadGuidesPage() {
                           href={`/knowledge/${article.slug}`}
                           eventName="launchpad_path_click"
                           eventData={{ source: "launchpad_guides_collection", target: article.slug }}
-                          className="block rounded-[24px] border border-border bg-secondary/20 px-5 py-5 transition-colors hover:border-teal/35"
+                          className="card-interactive block rounded-[24px] border border-border bg-secondary/20 px-5 py-5"
                         >
                           <p className="text-lg font-semibold text-foreground">{article.title}</p>
                           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -88,7 +88,7 @@ export default function LaunchpadGuidesPage() {
                       ))}
 
                       {relatedProgram ? (
-                        <div className="support-panel rounded-[24px] p-5">
+                        <div className="support-panel card-interactive rounded-[24px] p-5">
                           <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
                             If this points to deeper work
                           </p>

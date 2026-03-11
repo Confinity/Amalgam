@@ -91,7 +91,7 @@ export default function FounderReviewPage() {
               </p>
               <div className="mt-5 space-y-3">
                 {fitSignals.map((item) => (
-                  <div key={item} className="flex items-start gap-3 rounded-2xl border border-border bg-secondary/30 px-4 py-3 text-sm text-muted-foreground">
+                  <div key={item} className="card-interactive flex items-start gap-3 rounded-2xl border border-border bg-secondary/30 px-4 py-3 text-sm text-muted-foreground">
                     <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-teal" />
                     <span>{item}</span>
                   </div>
@@ -113,7 +113,7 @@ export default function FounderReviewPage() {
             </div>
             <div className="grid gap-6 md:grid-cols-2">
               {deliverables.map((item) => (
-                <div key={item.title} className="rounded-[28px] border border-border bg-background p-7">
+                <div key={item.title} className="card-interactive rounded-[28px] border border-border bg-background p-7">
                   <item.icon className="h-6 w-6 text-teal" />
                   <h3 className="mt-4 text-xl font-semibold text-foreground">{item.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
@@ -131,7 +131,7 @@ export default function FounderReviewPage() {
             </div>
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
               {process.map((item) => (
-                <div key={item.step} className="rounded-[28px] border border-border bg-background p-6">
+                <div key={item.step} className="card-interactive rounded-[28px] border border-border bg-background p-6">
                   <span className="text-3xl font-bold text-teal/30">{item.step}</span>
                   <h3 className="mt-3 text-lg font-semibold text-foreground">{item.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.description}</p>

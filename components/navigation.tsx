@@ -113,7 +113,7 @@ export function Navigation({
           <Link
             href={primaryCtaHref}
             prefetch={false}
-            className="inline-flex items-center gap-2 rounded-lg bg-foreground px-4 py-2.5 text-sm font-medium text-background transition-all hover:opacity-90 focus-visible:outline-none"
+            className="inline-flex items-center gap-2 rounded-lg bg-foreground px-4 py-2.5 text-sm font-medium text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-95 focus-visible:outline-none"
           >
             {primaryCtaLabel}
             <ArrowRight className="h-3.5 w-3.5" />
@@ -181,7 +181,7 @@ export function Navigation({
                 <Link
                   href={primaryCtaHref}
                   prefetch={false}
-                  className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-2xl bg-foreground px-4 py-3 text-sm font-medium text-background"
+                  className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-2xl bg-foreground px-4 py-3 text-sm font-medium text-background transition-all duration-200 hover:opacity-95"
                   onClick={() => setMobileOpen(false)}
                 >
                   {primaryCtaLabel}

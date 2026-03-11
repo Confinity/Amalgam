@@ -80,7 +80,7 @@ export default function CareersPage() {
 
             <div className="grid gap-8">
               {careerRoles.map((role) => (
-                <article key={role.id} className="rounded-[30px] border border-border bg-background p-8">
+                <article key={role.id} className="card-interactive rounded-[30px] border border-border bg-background p-8">
                   <div className="flex flex-wrap items-center gap-3">
                     <span className="inline-flex items-center gap-1.5 rounded-full border border-teal/20 bg-teal/10 px-3 py-1 text-xs font-semibold text-teal">
                       <Sparkles className="h-3.5 w-3.5" />
@@ -148,7 +148,7 @@ export default function CareersPage() {
             </div>
             <div className="grid gap-6 md:grid-cols-2">
               {careerCultureSignals.map((signal) => (
-                <div key={signal.title} className="rounded-[28px] border border-border bg-background p-7">
+                <div key={signal.title} className="card-interactive rounded-[28px] border border-border bg-background p-7">
                   <h3 className="text-xl font-semibold text-foreground">{signal.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                     {signal.description}

@@ -170,7 +170,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
             <div className="mt-8 flex flex-wrap items-center gap-3 text-sm">
               {category ? (
                 <Link
-                  href={`/knowledge?category=${category.id}`}
+                  href={`/knowledge#knowledge-${category.id}`}
                   className="rounded-full border border-teal/20 bg-background/90 px-3 py-1 font-semibold uppercase tracking-[0.22em] text-teal transition-colors hover:border-teal/40"
                 >
                   {category.label}
@@ -207,7 +207,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                   {brief.keyTakeaways.map((item) => (
                     <div
                       key={item}
-                      className="rounded-2xl border border-border bg-secondary/40 px-4 py-3 text-sm leading-relaxed text-foreground"
+                      className="card-interactive rounded-2xl border border-border bg-secondary/40 px-4 py-3 text-sm leading-relaxed text-foreground"
                     >
                       {item}
                     </div>
@@ -225,7 +225,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                 <section
                   key={section.id}
                   id={section.id}
-                  className="scroll-mt-28 rounded-[30px] border border-border bg-background px-6 py-7 md:px-8 md:py-9"
+                  className="card-interactive scroll-mt-28 rounded-[30px] border border-border bg-background px-6 py-7 md:px-8 md:py-9"
                 >
                   <div className="mb-6 flex items-start gap-4">
                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-teal/10 text-sm font-semibold text-teal">
@@ -275,7 +275,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                 </section>
               ))}
 
-              <section className="rounded-[30px] border border-border bg-secondary/30 px-6 py-7 md:px-8 md:py-8">
+              <section className="card-interactive rounded-[30px] border border-border bg-secondary/30 px-6 py-7 md:px-8 md:py-8">
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
                   Continue reading
                 </p>
@@ -283,7 +283,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                   {previousBrief ? (
                     <Link
                       href={`/knowledge/${previousBrief.slug}`}
-                      className="rounded-[24px] border border-border bg-background px-5 py-5 transition-colors hover:border-teal/40"
+                      className="card-interactive rounded-[24px] border border-border bg-background px-5 py-5"
                     >
                       <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
                         Previous article
@@ -305,7 +305,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                   {nextBrief ? (
                     <Link
                       href={`/knowledge/${nextBrief.slug}`}
-                      className="rounded-[24px] border border-border bg-background px-5 py-5 transition-colors hover:border-teal/40"
+                      className="card-interactive rounded-[24px] border border-border bg-background px-5 py-5"
                     >
                       <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
                         Next article
@@ -339,7 +339,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                     <a
                       key={section.id}
                       href={`#${section.id}`}
-                      className="flex items-start gap-3 rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground transition-colors hover:border-teal/40 hover:text-teal"
+                      className="card-interactive flex items-start gap-3 rounded-2xl border border-border bg-background px-4 py-3 text-sm text-foreground hover:text-teal"
                     >
                       <span className="text-muted-foreground">{index + 1}</span>
                       <span>{section.title}</span>
@@ -372,8 +372,8 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                   </div>
                 ) : null}
                 {category ? (
-                  <Link
-                    href={`/knowledge?category=${category.id}`}
+                    <Link
+                    href={`/knowledge#knowledge-${category.id}`}
                     className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
                   >
                     Explore all {category.label} articles
@@ -394,7 +394,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                       <Link
                         key={item.slug}
                         href={`/knowledge/${item.slug}`}
-                        className="block rounded-2xl border border-border px-4 py-4 transition-colors hover:border-teal/40"
+                        className="card-interactive block rounded-2xl border border-border px-4 py-4"
                       >
                         <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
                           {itemCategory?.label}
@@ -463,7 +463,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                 <>
                   <ChevronRight className="h-4 w-4" />
                   <Link
-                    href={`/knowledge?category=${category.id}`}
+                    href={`/knowledge#knowledge-${category.id}`}
                     className="transition-colors hover:text-foreground"
                   >
                     {category.label}
