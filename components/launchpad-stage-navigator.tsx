@@ -895,7 +895,7 @@ export function LaunchpadStageNavigator({
               </span>
             </div>
             <h1 className="max-w-[20ch] text-4xl font-semibold tracking-tight text-foreground md:text-5xl lg:text-6xl">
-              Where are releases getting stuck right now?{" "}
+              Where is product delivery getting stuck right now?{" "}
               <span className="bg-gradient-to-r from-teal to-purple bg-clip-text text-transparent">
                 We&apos;ll help you choose the next move.
               </span>

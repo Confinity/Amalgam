@@ -8,7 +8,7 @@ const organizationSchema = {
   image: absoluteUrl("/opengraph-image"),
   logo: absoluteUrl("/brand/amalgam-logo.webp"),
   description:
-    "Amalgam helps founders and product leaders fix system complexity and unblock execution.",
+    "Amalgam helps founders, operators, and enterprise teams fix architecture, integration, and delivery bottlenecks.",
   email: "hello@amalgam-inc.com",
   telephone: "+1-484-354-8498",
   foundingDate: "2012",
@@ -28,7 +28,7 @@ const websiteSchema = {
   name: "Amalgam",
   url: SITE_URL,
   description:
-    "Practical guidance for teams dealing with shipping drag, system risk, and execution pressure.",
+    "Practical guidance for teams dealing with delivery bottlenecks, system risk, and cross-functional execution pressure.",
 }
 
 export function SiteSchema() {

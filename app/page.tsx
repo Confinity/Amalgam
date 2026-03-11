@@ -23,9 +23,9 @@ import { caseStudies } from "@/lib/case-studies-data"
 import { knowledgeBriefs, knowledgeCategories } from "@/lib/knowledge-briefs"
 
 export const metadata: Metadata = {
-  title: "Are product releases slowing down even though your team is busy?",
+  title: "Is product delivery stalling because systems and teams are out of sync?",
   description:
-    "We help founders and product leaders find what is slowing product delivery and decide what to fix first.",
+    "We help founders, operators, and enterprise teams pinpoint what is blocking delivery and decide what to fix first.",
   alternates: {
     canonical: "/",
   },
@@ -41,16 +41,16 @@ function Hero() {
         <div className="hero-layout">
           <div className="max-w-3xl">
             <p className="mb-5 text-sm font-medium uppercase tracking-[0.22em] text-teal">
-              If releases feel stuck
+              If delivery keeps slipping
             </p>
             <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight text-foreground text-balance sm:text-5xl lg:text-[58px]">
-              Are product releases slowing down even though everyone is busy?{" "}
+              Are key product commitments missing target dates?{" "}
               <span className="bg-gradient-to-r from-teal to-purple bg-clip-text text-transparent">
-                We help you fix what is actually blocking progress.
+                We help you pinpoint the bottleneck and fix it with your team.
               </span>
             </h1>
             <p className="hero-body mt-6 text-lg leading-relaxed text-muted-foreground">
-              When architecture, integrations, data, and ownership start colliding, we help you see the real blocker and choose the right next move.
+              When architecture, integrations, data trust, and ownership start colliding, we help you isolate where delivery is stuck and choose the right next move.
             </p>
             <div className="hero-cta-row mt-3">
               <Link
@@ -110,7 +110,7 @@ function WhatWeDo() {
     {
       icon: Compass,
       title: "Find the real blocker",
-      description: "Spot what is actually slowing releases before another sprint gets wasted.",
+      description: "Pinpoint what is blocking delivery before another sprint gets wasted.",
     },
     {
       icon: Layers,
@@ -176,7 +176,7 @@ function WhoWeHelp() {
                 Founders and business leaders
               </h3>
             </div>
-            <p className="mb-5 text-muted-foreground">You&apos;re growing, but execution keeps slowing.</p>
+            <p className="mb-5 text-muted-foreground">You&apos;re growing, but each release takes longer and confidence is dropping.</p>
             <ul className="space-y-3">
               {[
                 "Shipping slows after growth",
@@ -268,7 +268,7 @@ function TypicalTriggers() {
               When teams usually call us
             </h2>
             <p className="leading-relaxed text-muted-foreground">
-              Teams usually call when releases slow down and nobody can agree on why.
+              Teams usually call when deadlines keep slipping and each function has a different explanation.
             </p>
             <Link
               href="/contact?interest=strategy-session"

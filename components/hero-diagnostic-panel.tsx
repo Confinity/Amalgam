@@ -672,7 +672,7 @@ export function HeroDiagnosticPanel() {
           60-minute strategy call
         </h2>
         <p className="mt-1 text-[13px] text-muted-foreground">
-          Clear read on what is slowing releases
+          Clear read on what is slowing delivery
         </p>
         <Link
           href="/contact?interest=strategy-session"

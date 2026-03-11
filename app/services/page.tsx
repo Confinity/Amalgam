@@ -30,7 +30,7 @@ const reachOutMoments = [
   {
     title: "Product delivery is slower than it should be",
     description:
-      "The team is working hard, but progress is harder to predict.",
+      "Delivery keeps stalling across product, engineering, and operations.",
   },
   {
     title: "Technical priorities are misaligned",
@@ -108,7 +108,7 @@ export default function ServicesPage() {
       <Navigation
         servicesLabel="How We Work"
         primaryCtaLabel="Book a strategy call"
-        mobilePrompt="If releases are slowing and the root cause is not obvious, start with a quick 15-minute triage call."
+        mobilePrompt="If delivery is stalling and the root cause is unclear, start with a quick 15-minute triage call."
       />
       <main id="main-content" className="min-h-screen bg-background pt-20">
         <section className="relative overflow-hidden border-b border-border py-20 lg:py-28">
@@ -120,17 +120,20 @@ export default function ServicesPage() {
                 How we work
               </p>
               <h1 className="max-w-[20ch] text-4xl font-semibold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
-                Are your releases slipping even though your team is working hard?
+                Is product work stalling between teams?{" "}
+                <span className="bg-gradient-to-r from-teal to-purple bg-clip-text text-transparent">
+                  We help you find the blocker and move.
+                </span>
               </h1>
               <div className="mt-6 max-w-[56ch] space-y-3 text-base leading-relaxed text-muted-foreground md:text-lg">
                 <p>
-                  If work keeps stalling between product, engineering, and
-                  operations, we help you find exactly where the drag is coming
-                  from.
+                  If product, engineering, and operations are all shipping work
+                  but deadlines still slip, we help you pinpoint exactly where
+                  delivery is blocked.
                 </p>
                 <p>
-                  Start with a short triage call. If deeper work makes sense,
-                  we map the path and move with you.
+                  Start with a short triage call. If deeper work is needed, we
+                  map the right path and execute with your team.
                 </p>
               </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -202,8 +205,8 @@ export default function ServicesPage() {
                 When teams usually reach out
               </h2>
               <p className="mx-auto mt-4 max-w-[58ch] text-base leading-relaxed text-muted-foreground">
-                Usually when product delivery is slowing and the root cause is no
-                longer obvious.
+                Usually when product delivery is stalling and no one can clearly
+                explain why.
               </p>
             </div>
             <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -354,7 +357,7 @@ export default function ServicesPage() {
           <div className="mx-auto grid max-w-[1160px] gap-10 px-6 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-center">
             <div className="max-w-[620px]">
               <h2 className="max-w-[20ch] text-3xl font-semibold leading-tight text-foreground md:text-4xl">
-                Want a clear read on why your shipping engine feels slow right now?
+                Need a clear read on what is blocking delivery right now?
               </h2>
               <p className="mt-5 max-w-[52ch] text-base leading-relaxed text-muted-foreground">
                 Start with a short call. If the situation needs deeper

@@ -8,7 +8,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Amalgam",
     short_name: "Amalgam",
     description:
-      "Amalgam helps teams fix system complexity and execution drag so delivery gets predictable again.",
+      "Amalgam helps teams fix architecture, data, and delivery bottlenecks so critical product work ships on time.",
     start_url: withBasePath("/"),
     display: "standalone",
     background_color: "#FCFCFA",

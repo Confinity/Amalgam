@@ -17,7 +17,7 @@ export function Navigation({
   servicesLabel = "Services",
   primaryCtaLabel = "Book a strategy call",
   primaryCtaHref = "/contact?interest=strategy-session",
-  mobilePrompt = "If releases are slipping and you are not sure why, start with a quick strategy call.",
+  mobilePrompt = "If delivery is stalling and the bottleneck is unclear, start with a quick strategy call.",
 }: NavigationProps) {
   const navItems = [
     { href: "/services", label: servicesLabel },

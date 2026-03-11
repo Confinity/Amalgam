@@ -17,7 +17,7 @@ import { ContextualTestimonial } from "@/components/contextual-testimonial"
 export const metadata: Metadata = {
   title: "What is slowing your team right now?",
   description:
-    "Talk with Amalgam about what is slowing releases or execution and get a clear recommendation on the next step.",
+    "Talk with Amalgam about what is blocking delivery and get a clear recommendation on the next step.",
   alternates: {
     canonical: "/contact",
   },
@@ -27,7 +27,7 @@ const nextSteps = [
   {
     title: "You tell us what is stuck",
     description:
-      "Tell us what is slowing your releases and where decisions feel stuck.",
+      "Tell us what is slowing delivery and where decisions are getting stuck.",
   },
   {
     title: "We reply directly",
@@ -180,7 +180,7 @@ export default function ContactPage() {
                   Start with a strategy call
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-background/70">
-                  If releases are slowing and the root cause is unclear, this is usually the fastest place to start.
+                  If delivery is stalling and the root cause is unclear, this is usually the fastest place to start.
                 </p>
                 <div className="contact-review-points mt-6 space-y-3">
                   {[

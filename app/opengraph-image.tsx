@@ -92,11 +92,11 @@ export default function OpenGraphImage() {
                 fontWeight: 700,
               }}
             >
-              <span>When releases start slipping,</span>
-              <span style={{ color: "#00bfa6" }}>{" we help teams fix what is blocking execution."}</span>
+              <span>When product delivery starts slipping,</span>
+              <span style={{ color: "#00bfa6" }}>{" we help teams fix what is blocking delivery."}</span>
             </div>
             <div style={{ fontSize: 30, lineHeight: 1.35, color: "#4b5563", maxWidth: 900 }}>
-              Senior support for architecture, data, integrations, and product delivery friction.
+              Senior support for architecture, data, integrations, and cross-team execution bottlenecks.
             </div>
           </div>
 

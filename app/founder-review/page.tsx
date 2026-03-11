@@ -15,7 +15,7 @@ import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
 
 export const metadata: Metadata = {
-  title: "Not sure what is actually slowing releases? Start here.",
+  title: "Not sure why delivery keeps stalling? Start here.",
   description:
     "When product delivery feels stuck and the root cause is unclear, the Diagnostic Review helps you identify what to fix first.",
   alternates: {
@@ -356,7 +356,7 @@ export default function FounderReviewPage() {
             <div className="rounded-[30px] border border-border bg-foreground p-8">
               <h3 className="text-2xl font-semibold text-background">Want a clear read before the next sprint cycle?</h3>
               <p className="mt-4 text-sm leading-relaxed text-background/70">
-                If your team is working hard but still feels stuck, start with a quick conversation about fit and timing.
+                If your team is pushing hard but delivery still feels stuck, start with a quick conversation about fit and timing.
               </p>
               <div className="mt-6 flex flex-col gap-3">
                 <Link

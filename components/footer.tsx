@@ -29,11 +29,11 @@ export function Footer({ variant = "default" }: FooterProps) {
 
   const footerIntro = isHowWeWork
     ? "Start with a short call. Go deeper only when the situation needs it."
-    : "We help teams fix system complexity so shipping and execution become predictable again."
+    : "We help teams fix architecture, data, and ownership bottlenecks so delivery gets back on track."
 
   const bestFitText = isHowWeWork
-    ? "For teams asking: what is actually slowing our releases right now?"
-    : "For founders and product leaders dealing with system complexity and execution drag."
+    ? "For teams asking: what is actually blocking delivery right now?"
+    : "For founders, operators, and enterprise teams dealing with system complexity and delivery risk."
 
   return (
     <footer className="border-t border-border bg-background">

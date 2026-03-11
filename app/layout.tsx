@@ -15,12 +15,12 @@ const analyticsEnabled = process.env.NEXT_PUBLIC_VERCEL_ANALYTICS === "1"
 
 export const metadata: Metadata = {
   title: {
-    default: "Amalgam | Are releases slipping even though your team is working hard?",
+    default: "Amalgam | Is product delivery stalling because systems and teams are out of sync?",
     template: "%s | Amalgam",
   },
   applicationName: "Amalgam",
   description:
-    "Amalgam helps founders and product leaders fix the system issues that slow releases and execution.",
+    "Amalgam helps founders, operators, and enterprise teams fix architecture, data, and delivery bottlenecks so critical product work ships with confidence.",
   metadataBase: new URL(SITE_URL),
   category: "technology consulting",
   formatDetection: {
@@ -54,9 +54,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: "Amalgam",
-    title: "Amalgam - Are releases slipping even though your team is working hard?",
+    title: "Amalgam - Is product delivery stalling because systems and teams are out of sync?",
     description:
-      "Senior support for teams fixing system complexity, shipping drag, and execution risk.",
+      "Senior support for teams fixing architecture, integration, and delivery bottlenecks before they become bigger business risk.",
     images: [
       {
         url: absoluteUrl("/opengraph-image"),
@@ -68,9 +68,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Amalgam - Are releases slipping even though your team is working hard?",
+    title: "Amalgam - Is product delivery stalling because systems and teams are out of sync?",
     description:
-      "Senior support for teams fixing system complexity, shipping drag, and execution risk.",
+      "Senior support for teams fixing architecture, integration, and delivery bottlenecks before they become bigger business risk.",
     images: [absoluteUrl("/opengraph-image")],
     creator: "@amalgam_inc",
   },
