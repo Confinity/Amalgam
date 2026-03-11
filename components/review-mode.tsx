@@ -69,10 +69,6 @@ const categoryMeta: Record<
   },
 }
 
-function noteStorageKey(pageUrl: string) {
-  return `review_notes:${pageUrl}`
-}
-
 function normalizeNotesPathname(pathname: string) {
   let normalized = pathname.replace(/\/+$/, "") || "/"
   const prefixes = [CONFIGURED_BASE_PATH, ...LEGACY_BASE_PATHS].filter(Boolean)
@@ -312,41 +308,25 @@ function getPageUrlForNotes() {
   return search ? `${cleanPath}?${search}` : cleanPath
 }
 
-function loadNotes(pageUrl: string): ReviewNote[] {
-  if (typeof window === "undefined") {
-    return []
-  }
-
-  try {
-    const raw = window.localStorage.getItem(noteStorageKey(pageUrl))
-    if (!raw) {
-      return []
-    }
-    const parsed = JSON.parse(raw) as unknown
-    return normalizeReviewNotes(parsed, pageUrl)
-  } catch {
-    return []
-  }
-}
-
-function saveNotes(
-  pageUrl: string,
-  notes: ReviewNote[],
-  options: { allowEmpty?: boolean } = {}
-) {
+function clearLegacyLocalNotes() {
   if (typeof window === "undefined") {
     return
   }
 
-  const allowEmpty = options.allowEmpty ?? false
-  if (!allowEmpty && notes.length === 0) {
-    const existing = loadNotes(pageUrl)
-    if (existing.length > 0) {
-      return
+  try {
+    const keysToRemove: string[] = []
+    for (let index = 0; index < window.localStorage.length; index += 1) {
+      const key = window.localStorage.key(index)
+      if (key && key.startsWith("review_notes:")) {
+        keysToRemove.push(key)
+      }
     }
+    for (const key of keysToRemove) {
+      window.localStorage.removeItem(key)
+    }
+  } catch {
+    // Ignore storage access issues to avoid blocking review mode startup.
   }
-
-  window.localStorage.setItem(noteStorageKey(pageUrl), JSON.stringify(notes))
 }
 
 function isEditableTarget(target: EventTarget | null) {
@@ -422,6 +402,8 @@ export function ReviewMode() {
       return
     }
 
+    clearLegacyLocalNotes()
+
     const fromSession =
       window.sessionStorage.getItem(REVIEW_MODE_STORAGE_KEY) === "true"
     const reviewParam = new URLSearchParams(window.location.search).get("review")
@@ -439,12 +421,11 @@ export function ReviewMode() {
     }
 
     const currentPage = getPageUrlForNotes()
-    const cachedNotes = loadNotes(currentPage)
     localDirtyRef.current = false
     localRevisionRef.current = 0
     queueMicrotask(() => {
       setPageUrl(currentPage)
-      setNotes(cachedNotes)
+      setNotes([])
       setSyncStatus("loading")
     })
     remoteHydratedPageRef.current = ""
@@ -471,7 +452,6 @@ export function ReviewMode() {
           ? previous
           : replacePageNotes(previous, currentPage, remoteNotes)
       })
-      saveNotes(currentPage, remoteNotes, { allowEmpty: true })
       setSyncStatus("synced")
     })()
 
@@ -486,7 +466,6 @@ export function ReviewMode() {
     }
 
     const pageNotes = notes.filter((note) => note.pageUrl === pageUrl)
-    saveNotes(pageUrl, pageNotes, { allowEmpty: true })
 
     if (remoteHydratedPageRef.current !== pageUrl || !localDirtyRef.current) {
       return
@@ -568,7 +547,6 @@ export function ReviewMode() {
       }
 
       const remotePageNotes = store.pages[pageUrl] ?? []
-      saveNotes(pageUrl, remotePageNotes, { allowEmpty: true })
       setNotes((previous) => {
         const currentPageNotes = previous.filter((note) => note.pageUrl === pageUrl)
         if (notesSignature(currentPageNotes) === notesSignature(remotePageNotes)) {
@@ -943,7 +921,7 @@ export function ReviewMode() {
               {syncStatus === "synced"
                 ? "Shared across devices"
                 : syncStatus === "error"
-                  ? "Using local cache (remote unavailable)"
+                  ? "Remote sync unavailable"
                   : syncStatus === "loading"
                     ? "Syncing..."
                     : "Idle"}
