@@ -81,9 +81,8 @@ export default function CaseStudiesPage() {
                   How to use this page
                 </p>
                 <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
-                  <p>Start with the featured examples for a quick read.</p>
-                  <p>Use the full library to find situations close to your own.</p>
-                  <p>If one feels similar, book a strategy call and we can review your situation directly.</p>
+                  <p>Start with featured examples for a quick read.</p>
+                  <p>If one feels close to your situation, book a strategy call and we&apos;ll review it with you.</p>
                 </div>
               </div>
           </div>
@@ -100,9 +99,6 @@ export default function CaseStudiesPage() {
                   Start with a few cases that show how we work
                 </h2>
               </div>
-              <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-                Featured examples rotate on each page load so returning visitors see broader proof.
-              </p>
             </div>
             <CaseStudiesFeaturedGrid featuredStudies={featuredStudies} />
           </div>

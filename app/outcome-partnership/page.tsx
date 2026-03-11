@@ -27,33 +27,33 @@ const whatWeProvide = [
     icon: Users,
     title: "Senior support inside the work",
     description:
-      "People who can make sense of the situation quickly and contribute real judgment instead of adding overhead.",
+      "People who can make sense of the situation quickly and contribute real judgment.",
   },
   {
     icon: Handshake,
     title: "Continuity across changing priorities",
     description:
-      "A steady partnership model that preserves context and compounds rather than restarting every few weeks.",
+      "A steady partnership model that preserves context instead of restarting every few weeks.",
   },
   {
     icon: Target,
     title: "Shared accountability for outcomes",
     description:
-      "The work stays tied to outcomes, sequencing, and shipped progress instead of drifting into generic advisory work.",
+      "The work stays tied to outcomes, sequencing, and shipped progress.",
   },
   {
     icon: Zap,
     title: "Fast unblocking and forward progress",
     description:
-      "We help resolve decision bottlenecks, architectural friction, and cross-functional drag before they stall the roadmap.",
+      "We resolve decision bottlenecks and cross-team friction before they stall the roadmap.",
   },
 ]
 
 const whatThisLooksLike = [
   "Working alongside your team during planning, execution, and review cycles",
   "Supporting architecture and sequencing decisions as the roadmap meets reality",
-  "Helping leadership and teams stay aligned when cross-functional friction rises",
-  "Keeping execution moving while building internal capability instead of outside dependence",
+  "Keeping leadership and teams aligned when cross-functional friction rises",
+  "Keeping execution moving while building internal capability",
 ]
 
 const notThis = [
@@ -66,8 +66,8 @@ const notThis = [
 const partnershipFit = {
   right: [
     "The roadmap exists, but execution pressure is likely to distort it without close support.",
-    "Leadership wants judgment close to the work while priorities, constraints, and trade-offs keep shifting.",
-    "The team needs help preserving progress and cross-functional alignment, not just planning the work once.",
+    "Leadership wants judgment close to the work while priorities and constraints keep shifting.",
+    "The team needs help preserving progress and cross-functional alignment.",
   ],
   notYet: [
     "The root problem is still too fuzzy and needs a clear assessment first.",
@@ -282,8 +282,7 @@ export default function OutcomePartnershipPage() {
                 Want focused support while the roadmap is in motion?
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-background/70">
-                If the business already has direction but the work still needs
-                stronger follow-through, this is the next conversation to have.
+                If the business has direction but the work still needs stronger follow-through, this is the next conversation to have.
               </p>
               <div className="mt-6 flex flex-col gap-3">
                 <Link

@@ -13,19 +13,20 @@ export const metadata: Metadata = {
 }
 
 type LaunchpadPageProps = {
-  searchParams?: {
+  searchParams?: Promise<{
     stage?: string | string[]
     pressure?: string | string[]
-  }
+  }>
 }
 
-export default function LaunchpadPage({ searchParams }: LaunchpadPageProps) {
-  const stage = Array.isArray(searchParams?.stage)
-    ? searchParams?.stage[0]
-    : searchParams?.stage
-  const pressure = Array.isArray(searchParams?.pressure)
-    ? searchParams?.pressure[0]
-    : searchParams?.pressure
+export default async function LaunchpadPage({ searchParams }: LaunchpadPageProps) {
+  const resolvedSearchParams = searchParams ? await searchParams : undefined
+  const stage = Array.isArray(resolvedSearchParams?.stage)
+    ? resolvedSearchParams?.stage[0]
+    : resolvedSearchParams?.stage
+  const pressure = Array.isArray(resolvedSearchParams?.pressure)
+    ? resolvedSearchParams?.pressure[0]
+    : resolvedSearchParams?.pressure
 
   return (
     <>

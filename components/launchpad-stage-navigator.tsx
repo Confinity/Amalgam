@@ -196,7 +196,7 @@ const STAGE_CONFIG: Record<StageId, StageConfig> = {
     proof: "Better validation now protects speed and confidence later.",
     testimonialId: "mooney-cleanitsupply",
     finalHeading: "Want more confidence before you invest more?",
-    finalBody: "Run the checklist first. If clarity is still mixed, we can review it with you.",
+    finalBody: "Start with the checklist. If it still feels unclear, we can review it with you.",
   },
   "build-ship": {
     id: "build-ship",
@@ -211,13 +211,13 @@ const STAGE_CONFIG: Record<StageId, StageConfig> = {
     goodLooksLike:
       "Teams can explain where drag is coming from and sequence work around real constraints.",
     amalgamHelp:
-      "We help teams isolate delivery friction patterns and prioritize the fixes that unlock momentum.",
-    nextStep: "If shipping feels messy, find the real drag pattern first.",
+      "We help teams find the delivery friction and prioritize the fixes that restore momentum.",
+    nextStep: "If shipping feels messy, find the real delivery blocker first.",
     primaryAction: {
       label: "Start the delivery drag check",
       href: "/launchpad/delivery-drag-diagnostic",
       source: "delivery_drag_diagnostic",
-      description: "Diagnose drag before starting bigger work.",
+      description: "Get a quick read on delivery friction before bigger work.",
     },
     secondaryLabel: STRATEGY_CALL_LABEL,
     pressures: [
@@ -561,7 +561,7 @@ export function LaunchpadStageNavigator({
         {
           id: "call",
           label: contextualSecondaryLabel,
-          description: "Talk through this stage with a senior operator.",
+          description: "Talk through this stage with a senior builder.",
           href: talkHref,
           source: "stage_talk_path",
           anchorTarget: null,
@@ -2114,7 +2114,7 @@ export function LaunchpadStageNavigator({
               }
               className="inline-flex min-h-11 items-center justify-center rounded-lg bg-foreground px-3 text-center text-xs font-semibold text-background"
             >
-              {isOverview ? "Find my stage" : "Start next step"}
+              {isOverview ? "Find my stage" : "See next step"}
             </TrackedLink>
             <TrackedLink
               href={finalTalkHref}

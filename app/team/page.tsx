@@ -32,10 +32,8 @@ const stats = [
 const practiceAreas = [
   "Systems architecture",
   "Data and integrations",
-  "Delivery recovery",
+  "Delivery execution",
   "Growth and operations",
-  "DevOps and platform",
-  "Legal and HR",
 ]
 
 const founderName = "Neeraj"
@@ -229,7 +227,7 @@ export default function TeamPage() {
               Want experienced builders in the room while you execute?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-background/70">
-              Start with a strategy call if system issues are slowing execution. If you already know where you need help, contact us directly.
+              Start with a strategy call if system issues are slowing execution.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link

@@ -38,7 +38,7 @@ const principles = [
     icon: Target,
     title: "We make the next move clear",
     description:
-      "We focus on what matters and make the next move clear.",
+      "We focus on what matters first.",
   },
   {
     icon: Shield,
@@ -50,25 +50,25 @@ const principles = [
     icon: Zap,
     title: "We keep execution moving",
     description:
-      "We remove blockers so teams can move with less drag.",
+      "We remove blockers so teams can keep moving.",
   },
   {
     icon: Eye,
     title: "We tell you what we actually see",
     description:
-      "We say what we see and explain every recommendation clearly.",
+      "Direct communication, clear reasoning.",
   },
   {
     icon: Users,
     title: "We focus on what gets shipped",
     description:
-      "Outcomes matter more than hours. We care about what gets shipped.",
+      "Outcomes matter more than hours.",
   },
   {
     icon: Clock,
     title: "We stay practical under constraints",
     description:
-      "We work with your real constraints and focus on practical progress.",
+      "We work with real constraints and practical progress.",
   },
 ]
 
@@ -93,19 +93,19 @@ const operatingModel = [
     icon: Compass,
     title: "First, understand your real system",
     description:
-      "We start by understanding the real system, the real constraints, and the real decision pressure. No pre-packaged playbooks.",
+      "We start with your actual system, constraints, and decision pressure.",
   },
   {
     icon: Layers3,
     title: "Then solve at the system level",
     description:
-      "We do not treat execution problems as isolated engineering problems when architecture, workflow, and decision models are all involved.",
+      "We solve across architecture, workflow, and decision flow together.",
   },
   {
     icon: Zap,
     title: "Always bias toward usable progress",
     description:
-      "The goal is not perfect theory. The goal is a path leadership can trust and teams can actually move on.",
+      "The goal is a path leadership can trust and teams can execute.",
   },
 ]
 
@@ -135,9 +135,9 @@ export default function AboutPage() {
                   What clients hire us for
                 </p>
                 <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
-                  <p>A clear read when the real issue is still unclear.</p>
-                  <p>Clear sequencing when teams need a roadmap they can trust.</p>
-                  <p>Hands-on follow-through when execution needs to stay on track.</p>
+                  <p>Clear read when the issue is unclear.</p>
+                  <p>Sequencing when teams need a roadmap they can trust.</p>
+                  <p>Hands-on follow-through during execution.</p>
                 </div>
               </div>
             </div>
@@ -194,12 +194,9 @@ export default function AboutPage() {
               <h2 className="mb-6 text-3xl font-semibold text-foreground text-balance">
                 Most execution problems cross team boundaries
               </h2>
-              <div className="space-y-4 leading-relaxed text-muted-foreground">
-                <p>
-                  Most difficult problems cross product, architecture, and execution.
-                </p>
-                <p>We help teams see the full system and move forward.</p>
-              </div>
+              <p className="leading-relaxed text-muted-foreground">
+                Most difficult problems cross product, architecture, and execution. We help teams see the full system and move forward.
+              </p>
             </div>
           </div>
         </section>
@@ -302,7 +299,7 @@ export default function AboutPage() {
           className="py-20 lg:py-24"
           eyebrow="Client Experience"
           title="Trusted in complex environments"
-          description="The kinds of complex environments this team has operated in across regulated institutions, operationally demanding companies, and high-growth teams where systems quality directly affects execution."
+          description="Work across regulated institutions, operationally demanding companies, and high-growth teams where systems quality directly affects execution."
         />
 
         <TestimonialStrip

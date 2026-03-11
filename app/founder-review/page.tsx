@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const fitSignals = [
   "You need a clear read before making bigger changes.",
   "Different teams have different explanations for the slowdown.",
-  "Architecture, workflows, and decision flow are all contributing to friction.",
+  "Architecture, workflows, and decision flow are all creating friction.",
 ]
 
 const deliverables = [
@@ -29,12 +29,12 @@ const deliverables = [
   {
     icon: Target,
     title: "Where risk is building",
-    description: "The issues most likely to slow progress or increase rework.",
+    description: "The issues most likely to slow progress or create rework.",
   },
   {
     icon: FileText,
     title: "What to do next",
-    description: "Practical recommendations leadership can act on quickly.",
+    description: "Practical recommendations leadership can act on now.",
   },
   {
     icon: Zap,
@@ -44,8 +44,8 @@ const deliverables = [
 ]
 
 const process = [
-  { step: "01", title: "Context", description: "Align on goals, constraints, and the decisions that matter most now." },
-  { step: "02", title: "Review", description: "Review systems, workflows, and team decision flow." },
+  { step: "01", title: "Context", description: "Align on goals, constraints, and the decisions that matter most." },
+  { step: "02", title: "Review", description: "Review systems, workflows, and decision flow." },
   { step: "03", title: "Synthesis", description: "Separate symptoms from core blockers." },
   { step: "04", title: "Clear path", description: "Present a clear path forward with practical next steps." },
 ]
@@ -108,7 +108,7 @@ export default function FounderReviewPage() {
                 Clear read before bigger changes
               </h2>
               <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
-                Founder Review helps leadership understand what is really happening before committing to larger execution decisions.
+                Understand what is really happening before committing to larger execution decisions.
               </p>
             </div>
             <div className="grid gap-6 md:grid-cols-2">
@@ -127,7 +127,7 @@ export default function FounderReviewPage() {
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="mb-12 max-w-3xl">
               <h2 className="text-3xl font-semibold text-foreground text-balance">How the work happens</h2>
-              <p className="mt-4 text-muted-foreground">Context -&gt; review -&gt; synthesis -&gt; clear path forward.</p>
+              <p className="mt-4 text-muted-foreground">Context -&gt; review -&gt; synthesis -&gt; clear path.</p>
             </div>
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
               {process.map((item) => (
@@ -145,10 +145,9 @@ export default function FounderReviewPage() {
           <div className="mx-auto grid max-w-[1200px] gap-10 px-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
             <div className="max-w-3xl">
               <h2 className="text-3xl font-semibold text-foreground text-balance">Clarity quickly, not noise</h2>
-              <div className="mt-6 space-y-4 leading-relaxed text-muted-foreground">
-                <p>This work is built to reduce confusion and speed up decisions.</p>
-                <p>You leave with a practical path, not a vague report.</p>
-              </div>
+              <p className="mt-6 leading-relaxed text-muted-foreground">
+                This work reduces confusion and speeds up decisions. You leave with a practical path, not a vague report.
+              </p>
             </div>
             <div className="rounded-[30px] border border-border bg-foreground p-8">
               <h3 className="text-2xl font-semibold text-background">Need a clear read now?</h3>

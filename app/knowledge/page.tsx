@@ -3,7 +3,6 @@ import Link from "next/link"
 import {
   ArrowRight,
   BookOpen,
-  Compass,
   Filter,
   Layers3,
   Sparkles,
@@ -60,16 +59,17 @@ function getCategoryHref(categoryId?: string) {
 }
 
 type KnowledgePageProps = {
-  searchParams?: {
+  searchParams?: Promise<{
     category?: string | string[]
-  }
+  }>
 }
 
-export default function KnowledgePage({ searchParams }: KnowledgePageProps) {
+export default async function KnowledgePage({ searchParams }: KnowledgePageProps) {
+  const resolvedSearchParams = searchParams ? await searchParams : undefined
   const featuredCandidates = knowledgeBriefs.filter((brief) => brief.featured)
-  const requestedCategory = Array.isArray(searchParams?.category)
-    ? searchParams?.category[0]
-    : searchParams?.category
+  const requestedCategory = Array.isArray(resolvedSearchParams?.category)
+    ? resolvedSearchParams?.category[0]
+    : resolvedSearchParams?.category
   const selectedCategoryId = knowledgeCategories.some(
     (category) => category.id === requestedCategory,
   )
@@ -111,16 +111,9 @@ export default function KnowledgePage({ searchParams }: KnowledgePageProps) {
                   <Sparkles className="h-3.5 w-3.5" />
                   Knowledge Base
                 </span>
-                <span className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                  Practical notes on architecture, systems, execution, and leadership
-                </span>
               </div>
               <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
                 Start with the pressure you feel right now
-                {" "}
-                <span className="bg-gradient-to-r from-teal via-teal to-purple bg-clip-text text-transparent">
-                  and move one step at a time.
-                </span>
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
                 Short practical reads on architecture, delivery systems, data foundations, and leadership decisions.
@@ -139,26 +132,6 @@ export default function KnowledgePage({ searchParams }: KnowledgePageProps) {
                 >
                   Book a strategy call
                 </Link>
-              </div>
-              <Link
-                href="/launchpad"
-                className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
-              >
-                Prefer tools first? Explore Launchpad
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <div className="mt-10 flex flex-wrap gap-3">
-                <div className="rounded-full border border-border bg-background/90 px-4 py-2 text-sm text-muted-foreground shadow-sm">
-                  <span className="font-semibold text-foreground">{knowledgeBriefs.length}</span>{" "}
-                  long-form articles
-                </div>
-                <div className="rounded-full border border-border bg-background/90 px-4 py-2 text-sm text-muted-foreground shadow-sm">
-                  <span className="font-semibold text-foreground">{knowledgeCategories.length}</span>{" "}
-                  focus areas
-                </div>
-                <div className="rounded-full border border-border bg-background/90 px-4 py-2 text-sm text-muted-foreground shadow-sm">
-                  Written for business and technical leaders
-                </div>
               </div>
             </div>
 
@@ -227,7 +200,7 @@ export default function KnowledgePage({ searchParams }: KnowledgePageProps) {
                   {path.title}
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                    Guided reading paths based on what is happening inside your team right now.
+                    {path.description}
                 </p>
                   <div className="mt-6 space-y-3">
                     {path.articles.map((article, index) => (
@@ -256,7 +229,7 @@ export default function KnowledgePage({ searchParams }: KnowledgePageProps) {
                   Library overview
                 </p>
                 <h2 className="mt-3 text-3xl font-semibold text-foreground text-balance">
-                  This library is organized around real pressure points
+                  This library is built around real pressure points
                 </h2>
                 <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">
                   Start with the area that feels most constrained, then follow connected reads to build a clearer view of your system.
@@ -286,17 +259,6 @@ export default function KnowledgePage({ searchParams }: KnowledgePageProps) {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-background text-teal">
-                    <Compass className="h-5 w-5" />
-                  </div>
-                  <div>
-                  <p className="text-sm font-medium text-foreground">Best read in sequence</p>
-                  <p className="text-sm text-muted-foreground">
-                      Start with one article, then follow related paths on each page
-                  </p>
-                </div>
-              </div>
               </div>
             </div>
 
@@ -334,16 +296,6 @@ export default function KnowledgePage({ searchParams }: KnowledgePageProps) {
                         <p className="mt-2 text-sm leading-relaxed text-foreground">
                           {brief.takeaway}
                         </p>
-                      </div>
-                      <div className="mt-6 grid gap-2">
-                        {brief.keyTakeaways.slice(0, 2).map((point) => (
-                          <div
-                            key={point}
-                            className="rounded-2xl border border-border/70 bg-background px-4 py-3 text-sm text-muted-foreground"
-                          >
-                            {point}
-                          </div>
-                        ))}
                       </div>
                       <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors group-hover:text-foreground">
                         Read article

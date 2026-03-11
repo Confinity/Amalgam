@@ -28,25 +28,25 @@ const outputs = [
     icon: Map,
     title: "What your system looks like today",
     description:
-      "A working picture of the systems, dependencies, ownership lines, and pressure points shaping the roadmap.",
+      "A clear picture of systems, dependencies, and ownership shaping the roadmap.",
   },
   {
     icon: Target,
     title: "What is blocking progress",
     description:
-      "A clearer view of what is making execution slow, risky, or harder to sequence honestly.",
+      "What is making execution slow, risky, or hard to sequence.",
   },
   {
     icon: Calendar,
     title: "Your 30/60/90 day sequence",
     description:
-      "A phased plan that distinguishes what is fixed now, what is conditional, and what should move first.",
+      "A phased plan for what moves now, what is conditional, and what comes next.",
   },
   {
     icon: FileText,
     title: "A roadmap leadership can defend",
     description:
-      "A roadmap designed to support real decisions, not just create an attractive planning document.",
+      "A roadmap built for real decisions, not presentation slides.",
   },
 ]
 
@@ -81,12 +81,12 @@ const executionFit = {
   right: [
     "The situation is clear enough and the real need is better sequencing.",
     "Leadership needs a roadmap that can survive cross-functional scrutiny.",
-    "Too many initiatives are competing for priority without a trustworthy order of operations.",
+    "Too many initiatives are competing without a trustworthy order of operations.",
   ],
   notYet: [
-    "The business still cannot explain what is actually creating the drag.",
-    "The real need is ongoing follow-through rather than a time-boxed roadmap effort.",
-    "The team wants a planning artifact without doing the system-level work underneath it.",
+    "The business still cannot explain what is creating the drag.",
+    "The real need is ongoing follow-through, not a time-boxed roadmap effort.",
+    "The team wants a planning artifact without the system-level work underneath it.",
   ],
 }
 
@@ -260,8 +260,7 @@ export default function ExecutionSprintPage() {
             <div className="rounded-[30px] border border-border bg-foreground p-8">
               <h3 className="text-2xl font-semibold text-background">Want a roadmap that still works once execution starts?</h3>
               <p className="mt-4 text-sm leading-relaxed text-background/70">
-                If the situation is already clear and the next challenge is
-                sequencing the work properly, this is the right place to go next.
+                If the situation is clear and the next challenge is sequencing, this is the right place to go next.
               </p>
               <div className="mt-6 flex flex-col gap-3">
                 <Link

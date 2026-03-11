@@ -56,9 +56,9 @@ export default function CareersPage() {
                 Snapshot
               </p>
               <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
-                <p>{careerRoles.length} current openings from our current role listing.</p>
-                <p>Remote-first setup with direct collaboration.</p>
-                <p>Small-team environment where ownership and professionalism matter.</p>
+                <p>{careerRoles.length} current openings.</p>
+                <p>Remote-first with direct collaboration.</p>
+                <p>Small team. High ownership.</p>
               </div>
             </div>
           </div>

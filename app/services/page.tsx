@@ -30,21 +30,21 @@ const startPath = [
   {
     title: "Founder Review",
     description:
-      "A focused working engagement to get a clear read on what is happening and what should happen next.",
+      "A focused engagement that gives a clear read on what is happening and what should happen next.",
     cta: "See how we work",
     href: "/founder-review",
   },
   {
     title: "Execution Sprint",
     description:
-      "When direction is mostly clear but planning is hard, we build a roadmap your team can run.",
+      "When direction is clear but planning is hard, we build a roadmap your team can run.",
     cta: "See how we work",
     href: "/execution-sprint",
   },
   {
     title: "Outcome Partnership",
     description:
-      "When plans exist and follow-through is the risk, we stay close to execution and keep momentum.",
+      "When plans exist and follow-through is the risk, we stay close to execution.",
     cta: "See how we work",
     href: "/outcome-partnership",
   },
@@ -79,9 +79,9 @@ export default function ServicesPage() {
               <h1 className="max-w-[20ch] text-4xl font-semibold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
                 If building or scaling gets harder than it should, start here.
               </h1>
-              <div className="mt-6 max-w-[56ch] space-y-3 text-base leading-relaxed text-muted-foreground md:text-lg">
-                <p>We help you find the real blocker, make the next move clear, and keep execution moving.</p>
-              </div>
+              <p className="mt-6 max-w-[56ch] text-base leading-relaxed text-muted-foreground md:text-lg">
+                We help you find the real blocker, make the next move clear, and keep execution moving.
+              </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/contact?interest=strategy-session"
@@ -124,7 +124,7 @@ export default function ServicesPage() {
             <div className="mx-auto mb-12 max-w-[760px] text-center">
               <h2 className="text-3xl font-semibold text-foreground md:text-4xl">When teams usually reach out</h2>
               <p className="mx-auto mt-4 max-w-[58ch] text-base leading-relaxed text-muted-foreground">
-                These signs usually mean something in the system needs attention.
+                These are usually signs the system needs attention.
               </p>
             </div>
             <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -143,7 +143,7 @@ export default function ServicesPage() {
             <div className="mx-auto mb-12 max-w-[760px] text-center">
               <h2 className="text-3xl font-semibold text-foreground md:text-4xl">How work usually starts</h2>
               <p className="mx-auto mt-4 max-w-[58ch] text-base leading-relaxed text-muted-foreground">
-                Most engagements begin with a Founder Review. This focused working engagement gives a clear read on the situation and a realistic path forward. Teams move into deeper support only when needed.
+                Most engagements begin with a Founder Review, then move deeper only when needed.
               </p>
             </div>
             <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
@@ -192,7 +192,7 @@ export default function ServicesPage() {
           <div className="mx-auto max-w-[1160px] px-6">
             <div className="mx-auto mb-12 max-w-[760px] text-center">
               <h2 className="text-3xl font-semibold text-foreground md:text-4xl">What clients noticed</h2>
-              <p className="mt-4 text-muted-foreground">Clients value clear thinking, practical support, and steady follow-through.</p>
+              <p className="mt-4 text-muted-foreground">Practical support with steady follow-through.</p>
             </div>
             <div className="grid gap-6 lg:grid-cols-2">
               {selectedTestimonials.map((item) => (

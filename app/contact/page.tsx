@@ -59,10 +59,7 @@ export default function ContactPage() {
                   What is slowing your team right now?
                 </h1>
                 <p className="contact-hero-body mt-6 text-lg leading-relaxed text-muted-foreground">
-                  Tell us what is happening in your team and where progress is slowing.
-                </p>
-                <p className="mt-3 text-lg leading-relaxed text-muted-foreground">
-                  We will review it and help you decide the smartest next move.
+                  Tell us what is happening in your team and where progress is slowing. We will review it and help you decide the smartest next move.
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <Link
@@ -85,7 +82,7 @@ export default function ContactPage() {
                     Best first move
                   </p>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    If the root cause is still unclear, start with a strategy call. If the path is already clear, choose the engagement that fits.
+                    If the root cause is unclear, start with a strategy call.
                   </p>
                 </div>
 
@@ -202,7 +199,6 @@ export default function ContactPage() {
                   {[
                     "60-minute strategy call",
                     "Clear recommendation on what to do next",
-                    "Useful even if you keep execution internal",
                   ].map((item) => (
                     <div
                       key={item}
@@ -226,12 +222,6 @@ export default function ContactPage() {
                 >
                   See how we work
                   <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link
-                  href="/launchpad"
-                  className="inline-flex items-center justify-center pt-1 text-sm font-medium text-teal transition-colors hover:text-background"
-                >
-                  Prefer self-serve first? Explore Launchpad
                 </Link>
               </div>
             </div>

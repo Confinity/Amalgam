@@ -30,7 +30,7 @@ function Hero() {
           <div className="max-w-4xl">
             <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight text-foreground text-balance sm:text-5xl lg:text-[58px]">
               <span>From idea to scale —</span>
-              <span className="block bg-gradient-to-r from-teal to-purple bg-clip-text text-transparent">
+              <span className="hero-gradient-line block">
                 without the chaos.
               </span>
             </h1>
@@ -38,7 +38,7 @@ function Hero() {
               Amalgam helps founders, entrepreneurs, and product teams turn ideas into real products and working systems.
             </p>
             <p className="hero-body mt-5 text-lg leading-relaxed text-muted-foreground">
-              When progress gets messy, we help you find the blocker, simplify the system, and move forward with confidence.
+              Building something real is rarely simple. Ideas evolve, systems grow, and delivery gets messy. We help you find what is slowing progress and move forward with confidence.
             </p>
             <div className="hero-cta-row mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -96,7 +96,7 @@ function WhatWeDo() {
         <div className="mb-9 max-w-3xl">
           <h2 className="mb-4 text-3xl font-semibold text-foreground">What we help builders solve</h2>
           <p className="max-w-2xl leading-relaxed text-muted-foreground">
-            Clear direction, steadier delivery, and systems your team can trust.
+            When progress gets harder than it should, we help teams find the blocker and choose the next move.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -177,7 +177,7 @@ function TypicalTriggers() {
           <div className="max-w-xl">
             <h2 className="mb-4 text-3xl font-semibold text-foreground">When teams usually reach out</h2>
             <p className="leading-relaxed text-muted-foreground">
-              When progress slows and priorities blur, we help teams get clear on what is stuck and what to do next.
+              Progress slows, priorities blur, and outcomes feel off. We help teams step back, see what is happening, and choose the next move.
             </p>
             <Link
               href="/contact?interest=strategy-session"
@@ -241,7 +241,7 @@ function Offers() {
         <div className="mb-8 max-w-3xl">
           <h2 className="mb-4 text-2xl font-semibold text-foreground">Start with one clear step</h2>
           <p className="text-muted-foreground">
-            Start with Founder Review, then go deeper only when needed.
+            Most teams start with Founder Review, then move into planning and hands-on support only when needed.
           </p>
         </div>
         <div className="grid gap-8 lg:grid-cols-3">
@@ -294,7 +294,7 @@ function TrustSection() {
       className="homepage-trust-section border-t border-border"
       eyebrow="Client experience"
       title="Trusted in complex environments"
-      description="We’ve supported teams across fintech, banking, energy, retail, philanthropy, and enterprise software."
+      description="We’ve supported teams across fintech, banking, energy, retail, philanthropy, and enterprise software. These environments share one thing: complexity that generic advice cannot solve."
       showCaseStudiesCta
     />
   )
