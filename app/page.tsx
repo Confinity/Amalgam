@@ -37,13 +37,9 @@ function Hero() {
             <p className="mt-5 text-lg leading-relaxed text-foreground/90">
               Amalgam helps founders, entrepreneurs, and product teams turn ideas into real products and working systems.
             </p>
-            <div className="hero-body mt-6 space-y-2 text-lg leading-relaxed text-muted-foreground">
-              <p>Building something real is rarely simple.</p>
-              <p>Ideas evolve. Systems grow. Delivery gets messy.</p>
-              <p>
-                We help you bring clarity to what you&apos;re building, fix what is slowing progress, and move forward with confidence.
-              </p>
-            </div>
+            <p className="hero-body mt-5 text-lg leading-relaxed text-muted-foreground">
+              When progress gets messy, we help you find the blocker, simplify the system, and move forward with confidence.
+            </p>
             <div className="hero-cta-row mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/launchpad"
@@ -97,16 +93,10 @@ function WhatWeDo() {
   return (
     <section className="homepage-core-offer-section section-warm border-t border-border py-20 lg:py-24">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
-        <div className="mb-12 max-w-3xl">
+        <div className="mb-9 max-w-3xl">
           <h2 className="mb-4 text-3xl font-semibold text-foreground">What we help builders solve</h2>
-          <p className="max-w-2xl whitespace-pre-line leading-relaxed text-muted-foreground">
-            {`Teams usually reach out when progress starts feeling harder than it should.
-
-Maybe product direction is unclear.
-Maybe delivery keeps slipping.
-Maybe systems start breaking as things grow.
-
-We help identify the real blocker and decide what should happen next.`}
+          <p className="max-w-2xl leading-relaxed text-muted-foreground">
+            Clear direction, steadier delivery, and systems your team can trust.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -150,10 +140,10 @@ function WhoWeHelp() {
   return (
     <section className="homepage-audiences-section deferred-section border-y border-border bg-secondary/45 py-20 lg:py-24">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
-        <div className="mb-10 max-w-3xl">
+        <div className="mb-8 max-w-3xl">
           <h2 className="text-2xl font-semibold text-foreground">Who Amalgam helps</h2>
           <p className="mt-3 text-muted-foreground">
-            Amalgam supports people building real products and systems.
+            Builders at every stage, from first release to scale.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -186,12 +176,8 @@ function TypicalTriggers() {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
           <div className="max-w-xl">
             <h2 className="mb-4 text-3xl font-semibold text-foreground">When teams usually reach out</h2>
-            <p className="whitespace-pre-line leading-relaxed text-muted-foreground">
-              {`Progress slows.
-Priorities become harder to align.
-Teams are working hard but outcomes still feel off.
-
-We help teams step back, understand what is really happening, and choose the next move with confidence.`}
+            <p className="leading-relaxed text-muted-foreground">
+              When progress slows and priorities blur, we help teams get clear on what is stuck and what to do next.
             </p>
             <Link
               href="/contact?interest=strategy-session"
@@ -221,8 +207,8 @@ function Offers() {
       title: "Founder Review",
       subtitle: "Clear first step",
       description:
-        "Most teams begin with a Founder Review. It gives leadership a clear read on the situation and a practical path forward.",
-      points: ["Clear assessment", "Practical next steps", "Realistic execution path"],
+        "Get a clear read on what is happening and what should happen next.",
+      points: ["Clear assessment", "Practical next steps"],
       href: "/founder-review",
       ctaLabel: "See how we work",
       primary: true,
@@ -231,8 +217,8 @@ function Offers() {
       title: "Execution Sprint",
       subtitle: "When planning is the blocker",
       description:
-        "Turn a clear situation into a roadmap your team can realistically execute.",
-      points: ["Constraint-aware planning", "30/60/90 sequence", "Leadership-ready roadmap"],
+        "Turn clarity into a roadmap your team can realistically execute.",
+      points: ["Constraint-aware planning", "Leadership-ready roadmap"],
       href: "/execution-sprint",
       ctaLabel: "See how we work",
       primary: false,
@@ -241,8 +227,8 @@ function Offers() {
       title: "Outcome Partnership",
       subtitle: "When follow-through is the risk",
       description:
-        "Stay supported while priorities evolve and execution pressure rises.",
-      points: ["Senior continuity", "Fast unblocking", "Steady momentum"],
+        "Stay supported inside execution as priorities evolve.",
+      points: ["Senior continuity", "Fast unblocking"],
       href: "/outcome-partnership",
       ctaLabel: "See how we work",
       primary: false,
@@ -252,14 +238,10 @@ function Offers() {
   return (
     <section className="homepage-offers-section deferred-section border-y border-border bg-secondary/45 py-20 lg:py-24">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
-        <div className="mb-10 max-w-3xl">
+        <div className="mb-8 max-w-3xl">
           <h2 className="mb-4 text-2xl font-semibold text-foreground">Start with one clear step</h2>
-          <p className="whitespace-pre-line text-muted-foreground">
-            {`Most teams begin with a Founder Review.
-
-It gives leadership a clear read on the situation and a practical path forward.
-
-If deeper support is needed, we move into execution planning and hands-on support.`}
+          <p className="text-muted-foreground">
+            Start with Founder Review, then go deeper only when needed.
           </p>
         </div>
         <div className="grid gap-8 lg:grid-cols-3">
@@ -312,7 +294,7 @@ function TrustSection() {
       className="homepage-trust-section border-t border-border"
       eyebrow="Client experience"
       title="Trusted in complex environments"
-      description="We’ve supported teams across fintech, banking, energy, retail, philanthropy, and enterprise software. These environments share one thing: complexity that cannot be solved with generic advice."
+      description="We’ve supported teams across fintech, banking, energy, retail, philanthropy, and enterprise software."
       showCaseStudiesCta
     />
   )
@@ -328,9 +310,7 @@ function FeaturedCaseStudies() {
           <div>
             <p className="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-teal">Case studies</p>
             <h2 className="mb-2 text-3xl font-semibold text-foreground">See work in situations like yours</h2>
-            <p className="whitespace-pre-line text-muted-foreground">{`Real situations.
-Real constraints.
-Clear outcomes.`}</p>
+            <p className="text-muted-foreground">Real situations, real constraints, clear outcomes.</p>
           </div>
           <Link
             href="/case-studies"
@@ -358,7 +338,7 @@ function KnowledgePreview() {
             <p className="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-teal">Knowledge</p>
             <h2 className="mb-2 text-3xl font-semibold text-foreground">Read this when systems get messy</h2>
             <p className="max-w-xl text-muted-foreground">
-              Short practical notes on architecture, delivery, data, and leadership decisions when systems get messy.
+              Practical notes on architecture, delivery, data, and leadership decisions.
             </p>
           </div>
           <Link
@@ -402,9 +382,8 @@ function FinalCTA() {
         <div className="max-w-3xl">
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">Next step</p>
           <h2 className="mb-4 text-3xl font-semibold text-background text-balance">Need a clear next step?</h2>
-          <p className="max-w-2xl whitespace-pre-line text-background/70">
-            {`Use Launchpad if you want to self-serve first.
-If you want direct support, book a strategy call.`}
+          <p className="max-w-2xl text-background/70">
+            Self-serve with Launchpad first, or book a strategy call for direct support.
           </p>
         </div>
         <div className="homepage-final-cta-panel rounded-[24px] border border-background/12 bg-background/[0.04] p-6">
