@@ -22,6 +22,7 @@ import {
   getLaunchpadKnowledgeRecommendation,
   getLaunchpadTool,
 } from "@/lib/launchpad"
+import { ArticleReadingProgress } from "@/components/article-reading-progress"
 
 type PageProps = {
   params: Promise<{
@@ -152,6 +153,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
     <>
       <JsonLd data={schema} />
       <Navigation />
+      <ArticleReadingProgress targetId="knowledge-article-body" />
       <main id="main-content" className="min-h-screen bg-background pt-20">
         <section className="relative overflow-hidden border-b border-border px-6 py-16 md:px-8 md:py-24">
           <div className="pointer-events-none absolute right-0 top-0 h-72 w-72 rounded-full bg-teal/10 blur-3xl" />
@@ -218,7 +220,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
 
         <section className="px-6 py-16 md:px-8 md:py-20">
           <div className="mx-auto grid max-w-[1200px] gap-12 lg:grid-cols-[minmax(0,720px)_320px] xl:grid-cols-[minmax(0,760px)_320px]">
-            <article className="space-y-10">
+            <article id="knowledge-article-body" className="space-y-10">
               {brief.sections.map((section, index) => (
                 <section
                   key={section.id}
@@ -411,11 +413,11 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                   Signal
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  Get practical notes on systems clarity, execution drag, and architecture judgment when they are worth your attention.
+                  Get practical notes on systems, execution drag, and architecture decisions when they are worth your attention.
                 </p>
                 <SignalsSubscribeForm
                   source={`knowledge_article_${brief.slug}`}
-                  buttonLabel="Subscribe for signal"
+                  buttonLabel="Subscribe for practical updates"
                   className="mt-5 space-y-4"
                 />
               </div>
@@ -425,7 +427,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                   Want help with your specific situation?
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-background/75">
-                  Articles sharpen judgment. They do not replace a direct read on your architecture, operating model, and delivery constraints.
+                  Articles sharpen judgment. They do not replace a direct read on your architecture, operating model, and execution constraints.
                 </p>
                 <div className="mt-5 flex flex-col gap-3">
                   <Link

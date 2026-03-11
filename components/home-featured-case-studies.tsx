@@ -37,9 +37,9 @@ export function HomeFeaturedCaseStudies({ featuredStudies }: HomeFeaturedCaseStu
     <div className="grid gap-7">
       <Link
         href={`/case-studies/${flagship.slug}`}
-        className="group grid gap-7 rounded-[34px] border border-border bg-background p-8 transition-all hover:-translate-y-1 hover:border-teal/40 hover:shadow-lg hover:shadow-teal/5 lg:grid-cols-[minmax(0,0.94fr)_minmax(0,1.06fr)] lg:p-9"
+        className="group grid min-w-0 gap-7 rounded-[34px] border border-border bg-background p-8 transition-all hover:-translate-y-1 hover:border-teal/40 hover:shadow-lg hover:shadow-teal/5 lg:grid-cols-[minmax(0,0.94fr)_minmax(0,1.06fr)] lg:p-9"
       >
-        <div>
+        <div className="min-w-0">
           <p className="mb-3 text-xs font-medium uppercase tracking-widest text-teal">
             Featured case
           </p>
@@ -53,7 +53,7 @@ export function HomeFeaturedCaseStudies({ featuredStudies }: HomeFeaturedCaseStu
             {summarizeCaseStudyText(flagship.problem, { maxSentences: 1, maxChars: 180 })}
           </p>
         </div>
-        <div className="support-panel rounded-[26px] p-6">
+        <div className="support-panel min-w-0 rounded-[26px] p-6">
           <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
             What changed
           </p>

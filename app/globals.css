@@ -31,6 +31,17 @@
   --purple: #6A5CFF;
   --focus-ring: color-mix(in srgb, var(--teal) 72%, white 28%);
   --focus-ring-shadow: color-mix(in srgb, var(--teal) 26%, transparent);
+  --stroke-subtle: rgba(17, 24, 39, 0.06);
+  --stroke-soft: rgba(17, 24, 39, 0.08);
+  --stroke-field: rgba(17, 24, 39, 0.1);
+  --surface-panel-start: rgba(255, 255, 255, 0.78);
+  --surface-panel-end: rgba(244, 246, 248, 0.76);
+  --surface-card-soft: rgba(255, 255, 255, 0.7);
+  --surface-card-soft-alt: rgba(255, 255, 255, 0.65);
+  --surface-muted-soft: rgba(244, 246, 248, 0.52);
+  --surface-muted-softer: rgba(244, 246, 248, 0.42);
+  --shadow-soft: 0 12px 28px rgba(15, 23, 42, 0.04);
+  --shadow-soft-inset: inset 0 1px 0 rgba(255, 255, 255, 0.28);
 }
 
 @theme inline {
@@ -70,6 +81,13 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  @supports (overflow: clip) {
+    html {
+      overflow-x: clip;
+    }
   }
   * {
     @apply border-border outline-ring/50;
@@ -88,6 +106,8 @@
   }
   body {
     @apply bg-background text-foreground;
+    max-width: 100%;
+    overflow-x: hidden;
     background-image:
       radial-gradient(circle at top right, rgba(0, 191, 166, 0.16), transparent 32%),
       radial-gradient(circle at 18% 28%, rgba(106, 92, 255, 0.11), transparent 26%),
@@ -96,6 +116,18 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     line-height: 1.5;
+  }
+  @supports (overflow: clip) {
+    body {
+      overflow-x: clip;
+    }
+  }
+  img,
+  svg,
+  video,
+  canvas {
+    max-width: 100%;
+    height: auto;
   }
   h1,
   h2,
@@ -167,18 +199,18 @@
 
   .support-panel {
     border-radius: 24px;
-    border: 1px solid rgba(17, 24, 39, 0.06);
+    border: 1px solid var(--stroke-subtle);
     background:
       radial-gradient(circle at top right, rgba(0, 191, 166, 0.08), rgba(0, 191, 166, 0) 45%),
       radial-gradient(circle at bottom left, rgba(106, 92, 255, 0.07), rgba(106, 92, 255, 0) 44%),
       linear-gradient(
         165deg,
-        rgba(255, 255, 255, 0.78) 0%,
-        rgba(244, 246, 248, 0.76) 100%
+        var(--surface-panel-start) 0%,
+        var(--surface-panel-end) 100%
       );
     box-shadow:
-      0 12px 28px rgba(15, 23, 42, 0.04),
-      inset 0 1px 0 rgba(255, 255, 255, 0.28);
+      var(--shadow-soft),
+      var(--shadow-soft-inset);
   }
 
   .section-warm {
@@ -196,18 +228,18 @@
   }
 
   .support-panel-item + .support-panel-item {
-    border-top: 1px solid rgba(17, 24, 39, 0.08);
+    border-top: 1px solid var(--stroke-soft);
     padding-top: 14px;
   }
 
   .contact-path-card {
-    border: 1px solid rgba(17, 24, 39, 0.06);
-    background: rgba(255, 255, 255, 0.66);
+    border: 1px solid var(--stroke-subtle);
+    background: var(--surface-card-soft-alt);
   }
 
   .contact-response-note {
     padding-top: 6px;
-    border-top: 1px solid rgba(17, 24, 39, 0.06);
+    border-top: 1px solid var(--stroke-subtle);
   }
 
   .contact-intake-panel {
@@ -215,14 +247,14 @@
   }
 
   .contact-intake-note {
-    border-color: rgba(17, 24, 39, 0.06);
-    background: rgba(244, 246, 248, 0.52);
+    border-color: var(--stroke-subtle);
+    background: var(--surface-muted-soft);
     box-shadow: none;
   }
 
   .contact-intake-note-item {
-    border: 1px solid rgba(17, 24, 39, 0.05);
-    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--stroke-subtle);
+    background: var(--surface-card-soft);
   }
 
   .contact-common-paths {
@@ -230,13 +262,13 @@
   }
 
   .contact-path-button {
-    border-color: rgba(17, 24, 39, 0.08);
-    background: rgba(255, 255, 255, 0.65);
+    border-color: var(--stroke-soft);
+    background: var(--surface-card-soft-alt);
   }
 
   .contact-field {
-    border-color: rgba(17, 24, 39, 0.1);
-    background: rgba(255, 255, 255, 0.78);
+    border-color: var(--stroke-field);
+    background: var(--surface-panel-start);
   }
 
   .contact-field--textarea {
@@ -248,13 +280,13 @@
   }
 
   .contact-next-panel {
-    border-color: rgba(17, 24, 39, 0.06);
-    background: rgba(244, 246, 248, 0.42);
+    border-color: var(--stroke-subtle);
+    background: var(--surface-muted-softer);
   }
 
   .contact-next-step {
-    border: 1px solid rgba(17, 24, 39, 0.05);
-    background: rgba(255, 255, 255, 0.58);
+    border: 1px solid var(--stroke-subtle);
+    background: var(--surface-card-soft-alt);
   }
 
   .contact-review-panel {

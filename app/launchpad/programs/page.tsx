@@ -7,9 +7,9 @@ import { TrackedLink } from "@/components/tracked-link"
 import { launchpadPrograms } from "@/lib/launchpad"
 
 export const metadata: Metadata = {
-  title: "Not sure which support level fits right now? Start here.",
+  title: "Need deeper help now? Choose the support level that fits.",
   description:
-    "See how Diagnostic Review, Execution Sprint, and Outcome Partnership map to what your team needs now.",
+    "Choose between Diagnostic Review, Execution Sprint, and Outcome Partnership based on what your team needs right now.",
   alternates: {
     canonical: "/launchpad/programs",
   },
@@ -17,19 +17,19 @@ export const metadata: Metadata = {
 
 const decisionMap = [
   {
-    title: "Your root cause is still unclear",
+    title: "Need diagnosis first",
     description:
       "If the drag is visible but the system still needs a direct read, Diagnostic Review is the cleanest entry point.",
     href: "/founder-review",
   },
   {
-    title: "You can see the issue, but need sequencing",
+    title: "Need a roadmap plan",
     description:
       "If the diagnosis is trusted and the organization needs a roadmap that can survive scrutiny, move into the Execution Sprint.",
     href: "/execution-sprint",
   },
   {
-    title: "You need continuity to keep momentum",
+    title: "Need continuity in execution",
     description:
       "If the path exists but execution still needs close follow-through, Outcome Partnership becomes the continuity layer.",
     href: "/outcome-partnership",
@@ -49,10 +49,10 @@ export default function LaunchpadProgramsPage() {
               Launchpad Programs
             </p>
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl">
-              If tools or guides point to deeper help, pick the support level that fits your situation now.
+              If self-serve is not enough, choose the level of support that fits right now.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              For teams with clear signal that now need the right level of support.
+              Pick based on what you need most right now: diagnosis, sequencing, or execution continuity.
             </p>
           </div>
         </section>
@@ -101,7 +101,7 @@ export default function LaunchpadProgramsPage() {
                 Which one is right?
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                Choose based on what your system needs next
+                Which level of support fits right now?
               </h2>
             </div>
             <div className="grid gap-6 lg:grid-cols-3">

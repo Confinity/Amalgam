@@ -440,9 +440,8 @@ export default async function CaseStudyPage({ params }: PageProps) {
               Seeing something similar?
             </h2>
             <p className="mt-4 text-lg text-background/70">
-              If the shape of this situation feels familiar, the clearest next step
-              is still a conversation about where your system is stuck and what
-              should move first.
+              If this situation feels familiar, the clearest next step is a direct
+              conversation about what is stuck in your system and what should move first.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
@@ -456,7 +455,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-lg border border-background/30 px-6 py-3 font-medium text-background transition-colors hover:bg-background/10"
               >
-                Start a conversation
+                Contact us directly
               </Link>
             </div>
           </div>
@@ -466,3 +465,4 @@ export default async function CaseStudyPage({ params }: PageProps) {
     </>
   )
 }
+

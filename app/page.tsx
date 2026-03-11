@@ -23,9 +23,9 @@ import { caseStudies } from "@/lib/case-studies-data"
 import { knowledgeBriefs, knowledgeCategories } from "@/lib/knowledge-briefs"
 
 export const metadata: Metadata = {
-  title: "Is delivery slowing down even though your team is working hard?",
+  title: "Are product releases slowing down even though your team is busy?",
   description:
-    "We help founders and delivery leaders pinpoint what is slowing execution and choose the next move with confidence.",
+    "We help founders and product leaders find what is slowing product delivery and decide what to fix first.",
   alternates: {
     canonical: "/",
   },
@@ -37,20 +37,20 @@ function Hero() {
       <div className="pointer-events-none absolute top-0 right-0 h-[640px] w-[640px] -translate-y-1/2 translate-x-1/4 rounded-full bg-[radial-gradient(circle,rgba(0,191,166,0.14)_0%,transparent_72%)]" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-[440px] w-[440px] translate-y-1/3 -translate-x-1/4 rounded-full bg-[radial-gradient(circle,rgba(106,92,255,0.1)_0%,transparent_72%)]" />
 
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <div className="hero-layout">
           <div className="max-w-3xl">
             <p className="mb-5 text-sm font-medium uppercase tracking-[0.22em] text-teal">
-              If delivery feels stuck
+              If releases feel stuck
             </p>
             <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight text-foreground text-balance sm:text-5xl lg:text-[58px]">
-              Is delivery slowing down even though everyone is busy?{" "}
+              Are product releases slowing down even though everyone is busy?{" "}
               <span className="bg-gradient-to-r from-teal to-purple bg-clip-text text-transparent">
                 We help you fix what is actually blocking progress.
               </span>
             </h1>
             <p className="hero-body mt-6 text-lg leading-relaxed text-muted-foreground">
-              When architecture, data, integrations, and ownership collide, we help you see the real blockers and fix the next decision.
+              When architecture, integrations, data, and ownership start colliding, we help you see the real blocker and choose the right next move.
             </p>
             <div className="hero-cta-row mt-3">
               <Link
@@ -92,12 +92,6 @@ function Hero() {
                 >
                   See similar client situations
                 </Link>
-                <Link
-                  href="/founder-review"
-                  className="inline-flex min-h-9 items-center rounded-full border border-border bg-background px-3.5 py-1.5 text-xs font-medium text-foreground transition-colors hover:bg-secondary"
-                >
-                  Need diagnosis first? Start here
-                </Link>
               </div>
             </div>
           </div>
@@ -115,29 +109,29 @@ function WhatWeDo() {
   const outcomes = [
     {
       icon: Compass,
-      title: "See what is actually broken",
-      description: "See what is actually slowing the work down before more time gets burned.",
+      title: "Find the real blocker",
+      description: "Spot what is actually slowing releases before another sprint gets wasted.",
     },
     {
       icon: Layers,
-      title: "Stabilize the system",
-      description: "Find the weak points in the system before they create more drag.",
+      title: "Stabilize the stack",
+      description: "Fix weak system boundaries before they create more rework.",
     },
     {
       icon: Zap,
-      title: "Remove the bottlenecks",
-      description: "Spot what keeps slowing delivery, decisions, and handoffs.",
+      title: "Reduce execution drag",
+      description: "Remove the handoffs and decision bottlenecks that slow shipping.",
     },
     {
       icon: Target,
       title: "Give leadership a clear call",
-      description: "Give leaders something solid to work from when the picture is messy.",
+      description: "Give leaders a direct recommendation they can act on now.",
     },
   ]
 
   return (
     <section className="homepage-core-offer-section section-warm border-t border-border py-20 lg:py-24">
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <div className="mb-12 max-w-3xl">
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
             What Amalgam does
@@ -146,7 +140,7 @@ function WhatWeDo() {
             What does Amalgam help with?
           </h2>
           <p className="max-w-2xl leading-relaxed text-muted-foreground">
-            We help you pinpoint what is slowing execution, then fix it with your team.
+            We help you pinpoint what is slowing product delivery, then fix it with your team.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -168,7 +162,7 @@ function WhatWeDo() {
 function WhoWeHelp() {
   return (
     <section className="homepage-audiences-section deferred-section border-y border-border bg-secondary/45 py-20 lg:py-24">
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <div className="mb-10">
           <h2 className="text-2xl font-semibold text-foreground">Who this is for</h2>
         </div>
@@ -187,8 +181,8 @@ function WhoWeHelp() {
               {[
                 "Shipping slows after growth",
                 "The stack is getting harder to trust",
-                "Decisions are blocked by technical ambiguity",
-                "Too many tools, not enough clarity",
+                "Decisions are blocked by unclear technical risk",
+                "Too many tools, not enough shared signal",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-teal" />
@@ -207,7 +201,7 @@ function WhoWeHelp() {
                 Technical and product leaders
               </h3>
             </div>
-            <p className="mb-5 text-muted-foreground">You can feel technical drag every sprint.</p>
+            <p className="mb-5 text-muted-foreground">You can feel system drag in every planning cycle.</p>
             <ul className="space-y-3">
               {[
                 "Architecture has become fragile",
@@ -264,7 +258,7 @@ function TypicalTriggers() {
 
   return (
     <section className="homepage-triggers-section deferred-section py-20 lg:py-24">
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
           <div className="max-w-xl">
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
@@ -274,13 +268,13 @@ function TypicalTriggers() {
               When teams usually call us
             </h2>
             <p className="leading-relaxed text-muted-foreground">
-              Teams usually reach out when delivery slows and nobody can clearly show why.
+              Teams usually call when releases slow down and nobody can agree on why.
             </p>
             <Link
               href="/contact?interest=strategy-session"
               className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
             >
-              Start a conversation
+              Book a strategy call
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -289,10 +283,10 @@ function TypicalTriggers() {
               <Link
                 key={trigger.text}
                 href={trigger.href}
-                className="support-panel flex items-center gap-4 p-5 transition-colors hover:border-teal/35"
+                className="support-panel flex min-w-0 items-center gap-4 p-5 transition-colors hover:border-teal/35"
               >
                 <trigger.icon className="h-5 w-5 shrink-0 text-teal" />
-                <span className="text-foreground">{trigger.text}</span>
+                <span className="min-w-0 break-words text-foreground">{trigger.text}</span>
               </Link>
             ))}
           </div>
@@ -322,24 +316,24 @@ function Offers() {
       title: "Already know the issue and want hands-on help?",
       subtitle: "Paid engagements",
       description:
-        "When the issue is clear and you want help moving it through execution.",
+        "When the issue is clear and you want senior hands-on help through execution.",
       points: [
-        "Diagnostic review for root-cause clarity",
+        "Diagnostic review for root-cause diagnosis",
         "Execution Sprint for sequencing",
         "Outcome Partnership for follow-through",
       ],
       href: "/services",
-      ctaLabel: "See how we can help",
+      ctaLabel: "See engagement options",
       primary: false,
     },
   ]
 
   return (
     <section className="homepage-offers-section deferred-section border-y border-border bg-secondary/45 py-20 lg:py-24">
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <div className="mb-10 max-w-3xl">
           <h2 className="mb-4 text-2xl font-semibold text-foreground">Start here</h2>
-          <p className="text-muted-foreground">Start with one clear next step, then go deeper only if needed.</p>
+          <p className="text-muted-foreground">Start with one clear next step, then go deeper only if it is needed.</p>
         </div>
         <div className="grid gap-8 lg:grid-cols-2">
           {offers.map((offer) => (
@@ -403,7 +397,7 @@ function FeaturedCaseStudies() {
 
   return (
     <section className="homepage-case-studies-section deferred-section section-warm border-t border-border py-20 lg:py-24">
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <div className="mb-12 flex items-end justify-between">
           <div>
             <p className="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-teal">
@@ -444,17 +438,17 @@ function KnowledgePreview() {
 
   return (
     <section className="homepage-knowledge-section deferred-section border-y border-border bg-secondary/50 py-20 lg:py-24">
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-teal">
               Knowledge
             </p>
             <h2 className="mb-2 text-3xl font-semibold text-foreground">
-              Read this when delivery feels stuck
+              Read this when product work keeps stalling
             </h2>
             <p className="max-w-xl text-muted-foreground">
-              Notes on architecture, delivery, data, and decisions under pressure.
+              Practical notes on architecture, shipping systems, data, and cross-team decisions under pressure.
             </p>
           </div>
           <Link
@@ -510,10 +504,10 @@ function FinalCTA() {
             Next step
           </p>
           <h2 className="mb-4 text-3xl font-semibold text-background text-balance">
-            Want a second set of eyes on what&apos;s slowing delivery?
+            Want a second set of eyes on what&apos;s slowing product delivery?
           </h2>
           <p className="max-w-2xl text-background/70">
-            Start with a strategy call. We&apos;ll help you isolate the issue and recommend the smartest next step.
+            Start with a strategy call. We&apos;ll isolate the issue and recommend the smartest next step.
           </p>
         </div>
         <div className="homepage-final-cta-panel rounded-[24px] border border-background/12 bg-background/[0.04] p-6">
@@ -543,7 +537,7 @@ function FinalCTA() {
               href="/services"
               className="inline-flex items-center justify-center gap-2 rounded-lg border border-background/30 px-6 py-3 font-medium text-background transition-all hover:bg-background/10"
             >
-              See how we can help
+              See engagement options
             </Link>
           </div>
         </div>

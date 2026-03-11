@@ -51,7 +51,7 @@ export const teamMembers: TeamMember[] = [
     role: "CEO & Founder",
     group: "leadership",
     shortBio:
-      "Built Amalgam after years across startups, financial services, and software delivery. Focused on clarity, structure, and real execution.",
+      "Built Amalgam after years across startups, financial services, and software delivery. Focused on direct communication, structure, and real execution.",
     bio:
       "Neeraj founded Amalgam after years in startups, financial services, and software development. He keeps the team focused on clear thinking, sound systems judgment, and practical execution.",
     specialties: ["Strategic Leadership", "Financial Services", "Startup Advisory"],

@@ -38,7 +38,7 @@ export default function CookiePolicyPage() {
           <div className="rounded-[24px] border border-border bg-secondary/25 p-5">
             <p className="font-medium text-foreground">Analytics-related cookies</p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              We use these to understand site usage and improve clarity, performance, and usability over time.
+              We use these to understand site usage and improve readability, performance, and usability over time.
             </p>
           </div>
           <div className="rounded-[24px] border border-border bg-secondary/25 p-5">

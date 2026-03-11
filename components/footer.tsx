@@ -11,7 +11,7 @@ export function Footer({ variant = "default" }: FooterProps) {
 
   const startHereLinks = isHowWeWork
     ? [
-        { href: "/contact?interest=strategy-session", label: "15-minute triage call" },
+        { href: "/contact?interest=strategy-session", label: "Strategy call (15-minute triage)" },
         { href: "/contact?interest=strategy-session", label: "Strategy call" },
         { href: "/services#how-work-usually-begins", label: "Diagnostic review" },
         { href: "/services#how-work-usually-begins", label: "Execution support" },
@@ -24,20 +24,20 @@ export function Footer({ variant = "default" }: FooterProps) {
       ]
 
   const footerCtaLabel = isHowWeWork
-    ? "Book a 15-minute call"
+    ? "Book a strategy call"
     : "Book a strategy call"
 
   const footerIntro = isHowWeWork
     ? "Start with a short call. Go deeper only when the situation needs it."
-    : "We help teams make complex systems clearer and execution steadier."
+    : "We help teams fix system complexity so shipping and execution become predictable again."
 
   const bestFitText = isHowWeWork
-    ? "For teams trying to understand why delivery is slowing."
-    : "For teams dealing with delivery and systems complexity."
+    ? "For teams asking: what is actually slowing our releases right now?"
+    : "For founders and product leaders dealing with system complexity and execution drag."
 
   return (
     <footer className="border-t border-border bg-background">
-      <div className="mx-auto max-w-[1200px] px-6 py-16">
+      <div className="mx-auto max-w-[1200px] px-4 py-16 sm:px-6">
         <div className="footer-grid grid gap-12 xl:grid-cols-[minmax(0,1.05fr)_0.7fr_0.8fr_minmax(320px,0.98fr)]">
           <div>
             <Link href="/" prefetch={false} className="inline-flex items-center" aria-label="Amalgam home">
@@ -123,7 +123,7 @@ export function Footer({ variant = "default" }: FooterProps) {
           </div>
 
           <div>
-            <h4 className="mb-4 text-sm font-semibold text-foreground">Start a Conversation</h4>
+            <h4 className="mb-4 text-sm font-semibold text-foreground">Contact</h4>
             <div className="rounded-[28px] border border-border bg-secondary/30 p-5">
               <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
                 Best fit
@@ -133,9 +133,9 @@ export function Footer({ variant = "default" }: FooterProps) {
               </p>
 
               <div className="mt-5 space-y-3 text-sm">
-                <Link href="/contact" prefetch={false} className="contact-row contact-row--primary">
+                <Link href="/contact?interest=strategy-session" prefetch={false} className="contact-row contact-row--primary">
                   <CalendarDays className="contact-icon h-4 w-4 shrink-0 text-teal" />
-                  <span>Start a conversation</span>
+                  <span>Book a strategy call</span>
                   <ArrowRight className="ml-auto h-4 w-4 shrink-0" />
                 </Link>
                 <a href="mailto:hello@amalgam-inc.com" className="contact-row">
@@ -181,3 +181,4 @@ export function Footer({ variant = "default" }: FooterProps) {
     </footer>
   )
 }
+

@@ -56,6 +56,8 @@ type QuickActionCard = {
   anchorTarget: "launchpad-stage-selector" | "launchpad-next-step" | null
 }
 
+type LaunchpadAnchorTarget = "launchpad-stage-selector" | "launchpad-next-step"
+
 const DEFAULT_STAGE: StageId = "build-ship"
 const STAGE_ORDER: StageId[] = [
   "ideate-prioritize",
@@ -65,8 +67,17 @@ const STAGE_ORDER: StageId[] = [
   "scale-stabilize",
 ]
 const STAGE_SELECTION_ORDER: StageSelection[] = ["all", ...STAGE_ORDER]
+const HERO_STAGE_TAGS: Array<{ id: StageId; label: string }> = [
+  { id: "ideate-prioritize", label: "Idea" },
+  { id: "validate-derisk", label: "Validation" },
+  { id: "build-ship", label: "Build" },
+  { id: "productize-systemize", label: "Productize" },
+  { id: "scale-stabilize", label: "Scale" },
+]
 const FIXED_NAV_FALLBACK_HEIGHT = 72
 const ANCHOR_EXTRA_GAP = 12
+const MOBILE_STAGE_SELECTOR_COMPACT_SCROLL_Y = 140
+const STRATEGY_CALL_LABEL = "Book a strategy call"
 const STAGE_TONE: Record<
   StageId,
   {
@@ -116,7 +127,7 @@ const STAGE_CONFIG: Record<StageId, StageConfig> = {
       source: "next_step_brief",
       description: "Use a short brief to lock the first move.",
     },
-    secondaryLabel: "Talk through your situation",
+    secondaryLabel: STRATEGY_CALL_LABEL,
     pressures: [
       { id: "unclear-first-move", label: "Unclear first move", note: "Pick one decision frame before expanding options." },
       { id: "too-many-priorities", label: "Too many priorities", note: "Reduce scope now so you can move faster later." },
@@ -124,7 +135,7 @@ const STAGE_CONFIG: Record<StageId, StageConfig> = {
     ],
     guides: ["architecture-map-before-roadmap", "sequencing-roadmaps-under-uncertainty"],
     signals: ["architecture-map-before-roadmap", "decision-rights-under-complexity", "sequencing-roadmaps-under-uncertainty"],
-    proof: "Early clarity saves months of rework.",
+    proof: "Early alignment can save months of rework.",
     testimonialId: "fitzmier-jtf",
     finalHeading: "Not sure what to do first?",
     finalBody: "Start with the brief. If it still feels fuzzy, we can talk it through.",
@@ -147,7 +158,7 @@ const STAGE_CONFIG: Record<StageId, StageConfig> = {
       source: "validation_checklist",
       description: "Run a short checklist before you scale weak assumptions.",
     },
-    secondaryLabel: "Book a triage call",
+    secondaryLabel: STRATEGY_CALL_LABEL,
     pressures: [
       { id: "need-evidence", label: "Better evidence", note: "Tie priorities to measurable signal." },
       { id: "uncertain-priority", label: "Uncertain priorities", note: "Use one shared way to rank priorities." },
@@ -164,8 +175,8 @@ const STAGE_CONFIG: Record<StageId, StageConfig> = {
     id: "build-ship",
     label: "Build & Ship",
     who: "Teams shipping product right now.",
-    summary: "Reduce delivery drag and make progress more predictable.",
-    feelsLike: "The team is busy, but delivery still feels messy.",
+    summary: "Reduce shipping drag and make progress more predictable.",
+    feelsLike: "The team is busy, but shipping still feels messy.",
     helpBullets: [
       "Find the real blockers.",
       "Sequence work around real constraints.",
@@ -178,38 +189,38 @@ const STAGE_CONFIG: Record<StageId, StageConfig> = {
       source: "delivery_drag_diagnostic",
       description: "Diagnose drag before starting bigger work.",
     },
-    secondaryLabel: "Talk to Amalgam",
+    secondaryLabel: STRATEGY_CALL_LABEL,
     pressures: [
-      { id: "delivery-messy", label: "Delivery feels messy", note: "Treat this as a systems issue first." },
+      { id: "delivery-messy", label: "Shipping feels messy", note: "Treat this as a systems issue first." },
       { id: "integration-drag", label: "Integration drag", note: "Fix boundary ownership before adding more process." },
-      { id: "need-roadmap", label: "Roadmap clarity", note: "Sequence around dependencies, not preferences." },
+      { id: "need-roadmap", label: "Roadmap sequence", note: "Sequence around dependencies, not preferences." },
     ],
     guides: ["delivery-velocity-is-a-systems-problem", "integration-tax"],
     signals: ["delivery-velocity-is-a-systems-problem", "integration-tax", "sequencing-roadmaps-under-uncertainty"],
     proof: "You can get clear quickly without a big proposal.",
     testimonialId: "mendez-pearlx",
-    finalHeading: "Want a clearer read on what is slowing delivery right now?",
+    finalHeading: "Want a clearer read on what is slowing shipping right now?",
     finalBody: "Start with the diagnostic, then go deeper only if needed.",
   },
   "productize-systemize": {
     id: "productize-systemize",
     label: "Productize & Systemize",
     who: "Teams moving from ad hoc work to repeatable systems.",
-    summary: "Make internal systems stable so delivery can scale.",
+    summary: "Make internal systems stable so shipping can scale.",
     feelsLike: "The product works, but internals are becoming fragile.",
     helpBullets: [
       "Stress-test stack and tooling.",
       "Stabilize high-risk interfaces.",
-      "Tighten operating clarity across teams.",
+      "Tighten operating alignment across teams.",
     ],
     nextStep: "Map where structure is breaking before you add more process.",
     primaryAction: {
       label: "Start the Tech Stack Audit",
       href: "/launchpad/tech-stack-audit",
       source: "tech_stack_audit",
-      description: "Get a first-pass read on risk, clarity, and hidden drag.",
+      description: "Get a first-pass read on risk, constraints, and hidden drag.",
     },
-    secondaryLabel: "See program fit",
+    secondaryLabel: STRATEGY_CALL_LABEL,
     pressures: [
       { id: "systems-fragile", label: "Systems feel fragile", note: "Stabilize critical boundaries before adding complexity." },
       { id: "ops-misaligned", label: "Ops misaligned", note: "Clarify ownership around cross-team workflows." },
@@ -217,9 +228,9 @@ const STAGE_CONFIG: Record<StageId, StageConfig> = {
     ],
     guides: ["modernize-vs-rebuild", "structure-follows-architecture"],
     signals: ["modernize-vs-rebuild", "architecture-map-before-roadmap", "structure-follows-architecture"],
-    proof: "Productization is usually a clarity problem before a speed problem.",
+    proof: "Productization is usually a system-definition problem before a speed problem.",
     testimonialId: "fitzmier-jtf",
-    finalHeading: "Ready to turn ad hoc delivery into repeatable systems?",
+    finalHeading: "Ready to turn ad hoc shipping into repeatable systems?",
     finalBody: "Start with the stack audit, then decide whether sprint or deeper support fits best.",
   },
   "scale-stabilize": {
@@ -240,7 +251,7 @@ const STAGE_CONFIG: Record<StageId, StageConfig> = {
       source: "scale_readiness_path",
       description: "Get a practical read on readiness and what to fix first.",
     },
-    secondaryLabel: "Book a strategic call",
+    secondaryLabel: STRATEGY_CALL_LABEL,
     pressures: [
       { id: "growth-drag", label: "Growth creating drag", note: "Treat this as systems + sequencing, not effort alone." },
       { id: "confidence-slipping", label: "Confidence slipping", note: "Align around one shared view of the system." },
@@ -250,8 +261,8 @@ const STAGE_CONFIG: Record<StageId, StageConfig> = {
     signals: ["metrics-you-can-run-the-company-on", "delivery-velocity-is-a-systems-problem", "decision-rights-under-complexity"],
     proof: "Momentum returns when complexity is made clear.",
     testimonialId: "mendez-pearlx",
-    finalHeading: "Want a steadier way to run delivery as you scale?",
-    finalBody: "Start with readiness. Book a strategic call if you want direct support.",
+    finalHeading: "Want a steadier way to run shipping as you scale?",
+    finalBody: "Start with readiness. Book a strategy call if you want direct support.",
   },
 }
 
@@ -336,9 +347,15 @@ export function LaunchpadStageNavigator({
   const [stageId, setStageId] = useState<StageSelection>(initialStage)
   const [pressureId, setPressureId] = useState(initialPressure)
   const [exploreOpen, setExploreOpen] = useState(false)
+  const [showFullMap, setShowFullMap] = useState(false)
+  const [showOverviewMap, setShowOverviewMap] = useState(false)
   const [showMobileDock, setShowMobileDock] = useState(false)
+  const [isMobileViewport, setIsMobileViewport] = useState(false)
+  const [compactStageSelector, setCompactStageSelector] = useState(false)
+  const [showMobilePressureFilters, setShowMobilePressureFilters] = useState(false)
   const entryTracked = useRef(false)
   const scrollLockYRef = useRef<number | null>(null)
+  const pendingScrollTargetRef = useRef<LaunchpadAnchorTarget | null>(null)
 
   const isOverview = stageId === "all"
   const activeStageId: StageId = isOverview ? DEFAULT_STAGE : stageId
@@ -381,7 +398,7 @@ export function LaunchpadStageNavigator({
         stageLabel: isOverview ? "All stages overview" : stage.label,
         pressure: pressureId,
         ctaPath: "contextual",
-        ctaLabel: isOverview ? "Talk through your situation" : stage.secondaryLabel,
+        ctaLabel: stage.secondaryLabel,
         note: isOverview ? "Looking for guidance on where to start in the journey." : stage.nextStep,
       }),
     [isOverview, pressureId, stage],
@@ -393,7 +410,7 @@ export function LaunchpadStageNavigator({
         stageLabel: isOverview ? "All stages overview" : stage.label,
         pressure: pressureId,
         ctaPath: "final",
-        ctaLabel: "Book a quick call",
+        ctaLabel: STRATEGY_CALL_LABEL,
         note: isOverview ? "Looking for a quick read on the right next step." : stage.finalBody,
       }),
     [isOverview, pressureId, stage],
@@ -418,7 +435,7 @@ export function LaunchpadStageNavigator({
     ? "You can review the full journey first, then switch into one focused stage without losing context."
     : stage.proof
   const contextualSecondaryLabel = isOverview
-    ? "Talk through your situation"
+    ? STRATEGY_CALL_LABEL
     : stage.secondaryLabel
   const finalHeading = isOverview
     ? "Not sure which stage fits best?"
@@ -427,15 +444,31 @@ export function LaunchpadStageNavigator({
     ? "Pick a stage first. If you want a second opinion, we can help you choose the right next move."
     : stage.finalBody
   const stageNumber = STAGE_ORDER.indexOf(activeStageId) + 1
-  const stageProgressPercent = Math.round((stageNumber / STAGE_ORDER.length) * 100)
+  const stageProgressPercent = isOverview
+    ? 100
+    : Math.round((stageNumber / STAGE_ORDER.length) * 100)
   const stageProgressLabel = isOverview
-    ? "Viewing all five stages before narrowing."
+    ? "All five stages are loaded. Pick one to get a tailored next move."
     : `Stage ${stageNumber} of ${STAGE_ORDER.length} in the founder journey.`
   const stagePressureSummary = isOverview
-    ? "Pick a stage to unlock tailored pressure filters and next-step guidance."
+    ? "Pick a stage to load pressure filters and next-step guidance."
     : pressure
       ? pressure.note
       : "Optional pressure filters help tighten recommendations for this stage."
+  const compactMobileSelector = compactStageSelector && isMobileViewport
+  const showPressureControls = !isMobileViewport || !compactStageSelector || showMobilePressureFilters
+  const stageSelectorGroupClass = compactMobileSelector
+    ? "mt-2 flex flex-wrap gap-2"
+    : "mt-3 flex gap-3 overflow-x-auto pb-1 md:mt-5"
+  const stageChipClass = compactMobileSelector
+    ? "min-h-9 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+    : "min-h-11 shrink-0 rounded-full border px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+  const pressureSelectorGroupClass = compactMobileSelector
+    ? "mt-2 flex flex-wrap gap-2"
+    : "mt-2 flex gap-2 overflow-x-auto pb-1"
+  const pressureChipClass = compactMobileSelector
+    ? "min-h-9 rounded-full border px-3 py-1.5 text-[11px] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+    : "min-h-10 shrink-0 rounded-full border px-3.5 py-2 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
   const quickActionCards: QuickActionCard[] = isOverview
     ? [
         {
@@ -456,7 +489,7 @@ export function LaunchpadStageNavigator({
         },
         {
           id: "call",
-          label: "Book a strategic call",
+          label: STRATEGY_CALL_LABEL,
           description: "Get a direct read if the path still feels unclear.",
           href: finalTalkHref,
           source: "overview_book_call",
@@ -520,7 +553,45 @@ export function LaunchpadStageNavigator({
     })
   }
 
-  const scrollToLaunchpadSection = (targetId: "launchpad-stage-selector" | "launchpad-next-step") => {
+  const getLaunchpadAnchorOffset = (targetId: LaunchpadAnchorTarget) => {
+    const header = document.querySelector("header")
+    const navHeight =
+      header instanceof HTMLElement
+        ? Math.round(header.getBoundingClientRect().height)
+        : FIXED_NAV_FALLBACK_HEIGHT
+    if (targetId === "launchpad-stage-selector") {
+      return navHeight + ANCHOR_EXTRA_GAP
+    }
+
+    const stageSelector = document.getElementById("launchpad-stage-selector")
+    if (!(stageSelector instanceof HTMLElement)) {
+      return navHeight + ANCHOR_EXTRA_GAP
+    }
+
+    const stageSelectorHeight = Math.round(stageSelector.getBoundingClientRect().height)
+    const stageSelectorStickyTop = Number.parseFloat(
+      window.getComputedStyle(stageSelector).top || "80",
+    )
+    return stageSelectorStickyTop + stageSelectorHeight + ANCHOR_EXTRA_GAP
+  }
+
+  const alignLaunchpadTarget = (
+    target: HTMLElement,
+    targetId: LaunchpadAnchorTarget,
+  ) => {
+    const expectedTop = getLaunchpadAnchorOffset(targetId)
+    const currentTop = target.getBoundingClientRect().top
+    const delta = currentTop - expectedTop
+    if (Math.abs(delta) <= 2) {
+      return
+    }
+    window.scrollBy({ top: delta, behavior: "auto" })
+  }
+
+  const scrollToLaunchpadSection = (
+    targetId: LaunchpadAnchorTarget,
+    behaviorOverride?: ScrollBehavior,
+  ) => {
     if (typeof window === "undefined") {
       return
     }
@@ -530,38 +601,29 @@ export function LaunchpadStageNavigator({
       return
     }
 
-    const header = document.querySelector("header")
-    const navHeight =
-      header instanceof HTMLElement
-        ? Math.round(header.getBoundingClientRect().height)
-        : FIXED_NAV_FALLBACK_HEIGHT
-    const stageSelector = document.getElementById("launchpad-stage-selector")
-    const stageSelectorHeight =
-      stageSelector instanceof HTMLElement
-        ? Math.round(stageSelector.getBoundingClientRect().height)
-        : 0
-    const stageSelectorStickyTop =
-      stageSelector instanceof HTMLElement
-        ? Number.parseFloat(window.getComputedStyle(stageSelector).top || "80")
-        : 80
-    const nextStepOffset =
-      stageSelectorHeight > 0
-        ? stageSelectorStickyTop + stageSelectorHeight + ANCHOR_EXTRA_GAP
-        : navHeight + ANCHOR_EXTRA_GAP
-    const offset = targetId === "launchpad-next-step" ? nextStepOffset : navHeight + ANCHOR_EXTRA_GAP
+    const offset = getLaunchpadAnchorOffset(targetId)
     const targetTop =
       window.scrollY + target.getBoundingClientRect().top - offset
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    const behavior = behaviorOverride ?? (prefersReducedMotion ? "auto" : "smooth")
 
     window.scrollTo({
       top: Math.max(0, targetTop),
-      behavior: prefersReducedMotion ? "auto" : "smooth",
+      behavior,
     })
+
+    if (behavior === "smooth") {
+      window.setTimeout(() => alignLaunchpadTarget(target, targetId), 420)
+      window.setTimeout(() => alignLaunchpadTarget(target, targetId), 760)
+      return
+    }
+
+    window.requestAnimationFrame(() => alignLaunchpadTarget(target, targetId))
   }
 
   const onAnchorClick = (
     event: ReactMouseEvent<HTMLAnchorElement>,
-    targetId: "launchpad-stage-selector" | "launchpad-next-step",
+    targetId: LaunchpadAnchorTarget,
   ) => {
     event.preventDefault()
     scrollToLaunchpadSection(targetId)
@@ -603,17 +665,28 @@ export function LaunchpadStageNavigator({
   }, [])
 
   useEffect(() => {
-    const updateDock = () => {
-      const viewportBottom = window.scrollY + window.innerHeight
-      const remaining = document.documentElement.scrollHeight - viewportBottom
-      setShowMobileDock(window.scrollY > 760 && remaining > 420)
+    const updateResponsiveUi = () => {
+      const hero = document.getElementById("launchpad-hero")
+      const finalCta = document.getElementById("launchpad-final-cta")
+      const heroBottom = hero?.getBoundingClientRect().bottom ?? 0
+      const finalTop = finalCta?.getBoundingClientRect().top ?? Number.POSITIVE_INFINITY
+      const inMobileViewport = window.innerWidth < 768
+      const beforeFinalCta = finalTop > window.innerHeight * 0.72
+      setIsMobileViewport(inMobileViewport)
+      setCompactStageSelector(
+        inMobileViewport && window.scrollY > MOBILE_STAGE_SELECTOR_COMPACT_SCROLL_Y,
+      )
+      if (!inMobileViewport) {
+        setShowMobilePressureFilters(false)
+      }
+      setShowMobileDock(inMobileViewport && heroBottom < 0 && beforeFinalCta)
     }
-    updateDock()
-    window.addEventListener("scroll", updateDock, { passive: true })
-    window.addEventListener("resize", updateDock)
+    updateResponsiveUi()
+    window.addEventListener("scroll", updateResponsiveUi, { passive: true })
+    window.addEventListener("resize", updateResponsiveUi)
     return () => {
-      window.removeEventListener("scroll", updateDock)
-      window.removeEventListener("resize", updateDock)
+      window.removeEventListener("scroll", updateResponsiveUi)
+      window.removeEventListener("resize", updateResponsiveUi)
     }
   }, [])
 
@@ -636,23 +709,48 @@ export function LaunchpadStageNavigator({
     router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false })
   }
 
-  const onStageSelect = (nextStage: StageSelection) => {
+  const onStageSelect = (
+    nextStage: StageSelection,
+    options?: { preserveScroll?: boolean; scrollTarget?: LaunchpadAnchorTarget | null },
+  ) => {
+    const preserveScroll = options?.preserveScroll ?? true
+    const scrollTarget = options?.scrollTarget ?? null
     const keepPressure =
       nextStage !== "all" && STAGE_CONFIG[nextStage].pressures.some((item) => item.id === pressureId)
         ? pressureId
         : ""
     if (nextStage === stageId && keepPressure === pressureId) {
+      if (scrollTarget) {
+        scrollToLaunchpadSection(scrollTarget)
+      }
       return
     }
-    lockViewportForStateSwap()
+    if (preserveScroll) {
+      lockViewportForStateSwap()
+    } else {
+      scrollLockYRef.current = null
+    }
     setStageId(nextStage)
     setPressureId(keepPressure)
+    setShowMobilePressureFilters(false)
+    if (nextStage !== "all") {
+      setShowOverviewMap(false)
+    }
+    pendingScrollTargetRef.current = scrollTarget
     syncUrl(nextStage, keepPressure)
     track("launchpad_stage_selected", { stage: nextStage, pressure: keepPressure || "none" })
   }
 
   const openStageFromJourney = (nextStage: StageId) => {
     onStageSelect(nextStage)
+  }
+
+  const onHeroStageTagClick = (nextStage: StageId) => {
+    track("launchpad_hero_stage_tag_click", { from_stage: stageId, to_stage: nextStage })
+    onStageSelect(nextStage, {
+      preserveScroll: false,
+      scrollTarget: "launchpad-next-step",
+    })
   }
 
   const onPressureSelect = (next: string) => {
@@ -670,10 +768,20 @@ export function LaunchpadStageNavigator({
   }
 
   useEffect(() => {
-    if (scrollLockYRef.current === null) {
+    if (scrollLockYRef.current !== null) {
+      releaseViewportLock()
+    }
+
+    if (!pendingScrollTargetRef.current || typeof window === "undefined") {
       return
     }
-    releaseViewportLock()
+    const targetId = pendingScrollTargetRef.current
+    pendingScrollTargetRef.current = null
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        scrollToLaunchpadSection(targetId)
+      })
+    })
   }, [stageId, pressureId])
 
   const onStageSelectorKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
@@ -727,27 +835,28 @@ export function LaunchpadStageNavigator({
 
   return (
     <>
-      <section className="relative overflow-hidden border-b border-border py-20 lg:py-28">
+      <section id="launchpad-hero" className="relative overflow-hidden border-b border-border py-20 lg:py-28">
         <div className="pointer-events-none absolute right-0 top-0 h-80 w-80 rounded-full bg-teal/10 blur-3xl" />
         <div className="pointer-events-none absolute left-0 top-16 h-64 w-64 rounded-full bg-purple/8 blur-3xl" />
         <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-teal/12 to-transparent" />
-        <div className="mx-auto grid max-w-[1200px] gap-10 px-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
+        <div className="mx-auto grid max-w-[1200px] gap-10 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
           <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-teal/25 bg-teal/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-teal">
-              Support from idea to scale
-            </span>
-            <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
-              Launchpad
-            </p>
+            <div className="mb-4 flex flex-wrap items-center gap-3">
+              <p className="text-sm font-medium uppercase tracking-[0.22em] text-teal">
+                Launchpad
+              </p>
+              <span className="inline-flex items-center gap-2 rounded-full border border-teal/25 bg-teal/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-teal">
+                Support from idea to scale
+              </span>
+            </div>
             <h1 className="max-w-[20ch] text-4xl font-semibold tracking-tight text-foreground md:text-5xl lg:text-6xl">
-              Pick your stage, then leave with a{" "}
+              Where are releases getting stuck right now?{" "}
               <span className="bg-gradient-to-r from-teal to-purple bg-clip-text text-transparent">
-                concrete next move.
+                We&apos;ll help you choose the next move.
               </span>
             </h1>
             <p className="mt-6 max-w-[56ch] text-lg leading-relaxed text-muted-foreground">
-              Launchpad personalizes what to do next, what to read, and when to
-              escalate to deeper support without losing momentum.
+              Pick the stage that fits your situation and get one practical next step in under a minute.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <TrackedLink
@@ -766,45 +875,51 @@ export function LaunchpadStageNavigator({
                 eventData={{ source: "hero", stage: stageId }}
                 className="inline-flex min-h-11 items-center justify-center rounded-lg border border-border px-6 py-3 font-medium text-foreground transition-colors hover:bg-secondary"
               >
-                Book a quick call
+                {STRATEGY_CALL_LABEL}
               </TrackedLink>
             </div>
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-              Start self-serve first, then escalate only when the signal says so.
+              Prefer self-serve first? Start with a quick diagnostic.
             </p>
             <div className="mt-7 flex flex-wrap items-center gap-2 text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground">
-              {["Idea", "Validation", "Build", "Productize", "Scale"].map(
-                (step, index) => (
-                  <span key={step} className="inline-flex items-center gap-2">
-                    <span className="rounded-full border border-border bg-background px-3 py-1.5">
-                      {step}
-                    </span>
-                    {index < 4 ? (
-                      <ChevronRight className="h-3.5 w-3.5 text-muted-foreground/70" />
-                    ) : null}
-                  </span>
-                ),
-              )}
+              {HERO_STAGE_TAGS.map((step, index) => (
+                <span key={step.id} className="inline-flex items-center gap-2">
+                  <button
+                    type="button"
+                    className={`rounded-full border px-3 py-1.5 transition-colors ${
+                      stageId === step.id
+                        ? "border-teal/45 bg-teal/12 text-foreground"
+                        : "border-border bg-background text-muted-foreground hover:text-foreground"
+                    }`}
+                    onClick={() => onHeroStageTagClick(step.id)}
+                  >
+                    {step.label}
+                  </button>
+                  {index < HERO_STAGE_TAGS.length - 1 ? (
+                    <ChevronRight className="h-3.5 w-3.5 text-muted-foreground/70" />
+                  ) : null}
+                </span>
+              ))}
             </div>
           </div>
 
           <aside className="support-panel rounded-[30px] border border-teal/20 p-8 shadow-[0_18px_40px_rgba(15,23,42,0.08)]">
             <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-              What makes this different
+              How Launchpad helps
             </p>
             <ol className="mt-5 space-y-3 text-sm leading-relaxed text-muted-foreground">
               <li className="support-panel-item px-0 pb-0 pt-1">
-                1. One stage selector, not generic advice
+                1. Find your stage first, before committing to a path
               </li>
               <li className="support-panel-item px-0 pb-0 pt-3">
-                2. Recommendations update instantly with pressure context
+                2. Get recommendations based on real pressure, not generic templates
               </li>
               <li className="support-panel-item px-0 pb-0 pt-3">
-                3. Clear escalation path when deeper support is worth it
+                3. Move into deeper support only when the signal says it is worth it
               </li>
             </ol>
             <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-              Practical clarity first. Services second.
+              Clarity first. Services second.
             </p>
           </aside>
         </div>
@@ -812,13 +927,25 @@ export function LaunchpadStageNavigator({
 
       <div
         id="launchpad-stage-selector"
-        className="sticky top-20 z-40 scroll-mt-24 border-b border-border bg-background/95 py-5 backdrop-blur md:scroll-mt-28"
+        className={`sticky top-[68px] z-40 scroll-mt-24 border-b border-border bg-background/95 backdrop-blur transition-all duration-200 md:top-20 md:scroll-mt-28 md:py-5 ${
+          compactMobileSelector
+            ? "py-1.5 shadow-sm"
+            : compactStageSelector
+              ? "py-2 shadow-sm"
+              : "py-4"
+        }`}
       >
-        <div className="mx-auto max-w-[1200px] px-6">
-          <h2 className="text-2xl font-semibold text-foreground">
-            Where are you right now?
+        <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
+          <h2 className={`font-semibold text-foreground ${compactMobileSelector ? "text-lg" : "text-xl md:text-2xl"}`}>
+            {compactStageSelector && isMobileViewport
+              ? "Where are you now?"
+              : "Where are you right now?"}
           </h2>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+          <p
+            className={`mt-2 text-sm leading-relaxed text-muted-foreground ${
+              compactStageSelector && isMobileViewport ? "hidden" : ""
+            }`}
+          >
             Pick what feels closest. We&apos;ll adjust the page to your context.
           </p>
           <div
@@ -826,14 +953,14 @@ export function LaunchpadStageNavigator({
             aria-label="Founder journey stages"
             aria-describedby="launchpad-stage-selector-help"
             onKeyDown={onStageSelectorKeyDown}
-            className="mt-5 flex gap-3 overflow-x-auto pb-1"
+            className={stageSelectorGroupClass}
           >
             <button
               id="stage-tab-all"
               role="radio"
               type="button"
               aria-checked={isOverview}
-              className={`min-h-11 shrink-0 rounded-full border px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+              className={`${stageChipClass} ${
                 isOverview
                   ? "border-teal/45 bg-gradient-to-r from-teal to-teal/80 text-background"
                   : "border-border bg-background text-foreground hover:bg-secondary"
@@ -852,7 +979,7 @@ export function LaunchpadStageNavigator({
                   role="radio"
                   type="button"
                   aria-checked={selected}
-                  className={`min-h-11 shrink-0 rounded-full border px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                  className={`${stageChipClass} ${
                     selected
                       ? STAGE_TONE[itemId].chip
                       : "border-border bg-background text-foreground hover:bg-secondary"
@@ -874,9 +1001,11 @@ export function LaunchpadStageNavigator({
               : `Viewing ${stage.label}${pressure ? ` with pressure ${pressure.label}.` : "."}`}
           </p>
           {!isOverview ? (
-            <div className="mt-4 flex flex-wrap items-center gap-3">
+            <div className="mt-3 flex flex-wrap items-center gap-2 md:mt-4 md:gap-3">
               <p
-                className={`inline-flex min-h-9 items-center rounded-full border px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] ${stageTone.badge}`}
+                className={`inline-flex min-h-9 items-center rounded-full border px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] ${stageTone.badge} ${
+                  compactStageSelector && isMobileViewport ? "hidden" : ""
+                }`}
               >
                 Focused view: {stage.label}
               </p>
@@ -891,7 +1020,7 @@ export function LaunchpadStageNavigator({
               </TrackedLink>
               <button
                 type="button"
-                className="inline-flex min-h-9 items-center rounded-full border border-border px-3.5 py-1.5 text-xs font-medium text-foreground transition-colors hover:bg-secondary"
+                className="hidden min-h-9 items-center rounded-full border border-border px-3.5 py-1.5 text-xs font-medium text-foreground transition-colors hover:bg-secondary md:inline-flex"
                 onClick={() => {
                   track("launchpad_back_to_all_stages_click", { stage: stageId, pressure: pressureId || "none" })
                   onStageSelect("all")
@@ -902,56 +1031,75 @@ export function LaunchpadStageNavigator({
             </div>
           ) : null}
           {isOverview ? (
-            <p className="mt-4 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-              Pick a stage to unlock optional pressure filters.
+            <p
+              className={`mt-4 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground ${
+                compactStageSelector && isMobileViewport ? "hidden" : ""
+              }`}
+            >
+              Pick a stage to view optional pressure filters.
             </p>
           ) : (
             <>
-              <p className="mt-4 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                Pressure filter (optional)
-              </p>
-              <div
-                role="radiogroup"
-                aria-label="Refine by pressure"
-                aria-describedby="launchpad-pressure-selector-help"
-                onKeyDown={onPressureSelectorKeyDown}
-                className="mt-2 flex gap-2 overflow-x-auto pb-1"
-              >
-                {stage.pressures.map((option) => {
-                  const selected = pressureId === option.id
-                  return (
-                    <button
-                      key={option.id}
-                      type="button"
-                      role="radio"
-                      aria-checked={selected}
-                      className={`min-h-10 shrink-0 rounded-full border px-3.5 py-2 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
-                        selected
-                          ? "border-teal/55 bg-teal/10 text-foreground"
-                          : "border-border bg-background text-muted-foreground hover:text-foreground"
-                      }`}
-                      tabIndex={selected || (!pressureId && option.id === stage.pressures[0]?.id) ? 0 : -1}
-                      onClick={() => onPressureSelect(option.id)}
-                    >
-                      {option.label}
-                    </button>
-                  )
-                })}
-              </div>
-              <p id="launchpad-pressure-selector-help" className="sr-only">
-                Pressure filters are optional. Use left and right arrow keys to move between options.
-              </p>
-              {pressureId ? (
+              <div className="mt-4 flex items-center justify-between gap-3">
+                <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                  Pressure filter (optional)
+                </p>
                 <button
                   type="button"
-                  className="mt-3 inline-flex min-h-9 items-center rounded-full border border-border px-3.5 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-                  onClick={() => {
-                    onPressureSelect("")
-                    track("launchpad_pressure_cleared", { stage: stageId })
-                  }}
+                  className={`min-h-8 items-center rounded-full border border-border px-3 py-1 text-[11px] font-medium text-foreground transition-colors hover:bg-secondary md:hidden ${
+                    compactStageSelector ? "inline-flex" : "hidden"
+                  }`}
+                  onClick={() => setShowMobilePressureFilters((current) => !current)}
                 >
-                  Clear pressure filter
+                  {showPressureControls ? "Hide filters" : "Show filters"}
                 </button>
+              </div>
+              {showPressureControls ? (
+                <>
+                  <div
+                    role="radiogroup"
+                    aria-label="Refine by pressure"
+                    aria-describedby="launchpad-pressure-selector-help"
+                    onKeyDown={onPressureSelectorKeyDown}
+                    className={pressureSelectorGroupClass}
+                  >
+                    {stage.pressures.map((option) => {
+                      const selected = pressureId === option.id
+                      return (
+                        <button
+                          key={option.id}
+                          type="button"
+                          role="radio"
+                          aria-checked={selected}
+                           className={`${pressureChipClass} ${
+                             selected
+                               ? "border-teal/55 bg-teal/10 text-foreground"
+                               : "border-border bg-background text-muted-foreground hover:text-foreground"
+                          }`}
+                          tabIndex={selected || (!pressureId && option.id === stage.pressures[0]?.id) ? 0 : -1}
+                          onClick={() => onPressureSelect(option.id)}
+                        >
+                          {option.label}
+                        </button>
+                      )
+                    })}
+                  </div>
+                  <p id="launchpad-pressure-selector-help" className="sr-only">
+                    Pressure filters are optional. Use left and right arrow keys to move between options.
+                  </p>
+                  {pressureId ? (
+                    <button
+                      type="button"
+                      className="mt-3 inline-flex min-h-9 items-center rounded-full border border-border px-3.5 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+                      onClick={() => {
+                        onPressureSelect("")
+                        track("launchpad_pressure_cleared", { stage: stageId })
+                      }}
+                    >
+                      Clear pressure filter
+                    </button>
+                  ) : null}
+                </>
               ) : null}
             </>
           )}
@@ -959,11 +1107,11 @@ export function LaunchpadStageNavigator({
       </div>
 
       <section className="deferred-section border-b border-border bg-secondary/20 py-10">
-        <div className="mx-auto grid max-w-[1200px] gap-6 px-6 lg:grid-cols-[minmax(0,1.08fr)_minmax(320px,0.92fr)] lg:items-start">
+        <div className="mx-auto grid max-w-[1200px] gap-6 px-4 sm:px-6 lg:grid-cols-[minmax(0,1.08fr)_minmax(320px,0.92fr)] lg:items-start">
           <article className="support-panel rounded-[30px] p-7 md:p-8">
             <div className="flex flex-wrap items-center gap-2">
               <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                Personalized briefing
+                Your current snapshot
               </p>
               <span className="inline-flex min-h-8 items-center rounded-full border border-border bg-background px-3 text-xs font-medium text-muted-foreground">
                 {isOverview ? "Overview mode" : "Focused mode"}
@@ -974,7 +1122,7 @@ export function LaunchpadStageNavigator({
                 <h2 className="text-2xl font-semibold text-foreground text-balance">
                   {isOverview
                     ? "See the whole map, then focus where pressure is highest"
-                    : `${stage.label}: your current decision layer`}
+                    : `${stage.label}: where you are right now`}
                 </h2>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   {stageProgressLabel}
@@ -982,7 +1130,7 @@ export function LaunchpadStageNavigator({
               </div>
               <div className="rounded-2xl border border-border bg-background px-4 py-4">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-teal">
-                  Progress through journey
+                  Journey context
                 </p>
                 <div className="mt-3 h-2 overflow-hidden rounded-full bg-secondary">
                   <div
@@ -991,7 +1139,7 @@ export function LaunchpadStageNavigator({
                   />
                 </div>
                 <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                  {stageProgressPercent}% of the journey map surfaced
+                  Showing {stageProgressPercent}% of the journey map
                 </p>
               </div>
             </div>
@@ -1019,8 +1167,8 @@ export function LaunchpadStageNavigator({
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {isOverview
-                    ? "Exploration first, then narrow into one stage."
-                    : "Action first, then optional deeper engagement."}
+                    ? "Start broad, then narrow to one stage."
+                    : "Take one action first, then decide if deeper support is needed."}
                 </p>
               </div>
             </div>
@@ -1028,10 +1176,10 @@ export function LaunchpadStageNavigator({
 
           <aside className="rounded-[30px] border border-border bg-background p-7">
             <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-              Fast-lane actions
+              Best next moves
             </p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Start with one high-signal move. You can always expand afterward.
+              Pick one strong first move. You can always expand after.
             </p>
             <div className="mt-5 space-y-3">
               {quickActionCards.map((item) => (
@@ -1068,7 +1216,7 @@ export function LaunchpadStageNavigator({
       >
         <div
           key={`${stageId}-${pressureId || "none"}`}
-          className="mx-auto grid max-w-[1200px] gap-8 px-6 motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200 lg:grid-cols-[minmax(0,1fr)_330px]"
+          className="mx-auto grid max-w-[1200px] gap-8 px-4 sm:px-6 motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200 lg:grid-cols-[minmax(0,1fr)_330px]"
         >
           {isOverview ? (
             <>
@@ -1083,69 +1231,110 @@ export function LaunchpadStageNavigator({
                   Think of this as your map from idea to scale. Pick one stage
                   and everything below adapts in place.
                 </p>
-                <div className="mt-8 space-y-4">
-                  {STAGE_ORDER.map((itemId, index) => {
-                    const item = STAGE_CONFIG[itemId]
-                    const accentClass =
-                      index % 5 === 0
-                        ? "from-teal/15 via-teal/5 to-transparent"
-                        : index % 5 === 1
-                          ? "from-teal/10 via-purple/8 to-transparent"
-                        : index % 5 === 2
-                            ? "from-purple/14 via-teal/4 to-transparent"
-                        : index % 5 === 3
-                              ? "from-purple/10 via-teal/8 to-transparent"
-                              : "from-teal/8 via-purple/12 to-transparent"
-                    return (
-                      <article
-                        key={item.id}
-                        className={`relative overflow-hidden rounded-[24px] border border-border bg-gradient-to-br ${accentClass} p-5 md:p-6`}
-                      >
-                        <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-teal/70 to-purple/70" />
-                        <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
-                          <div className="pl-2">
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-teal">
-                              Stage {index + 1}
-                            </p>
-                            <h3 className="mt-2 text-xl font-semibold text-foreground">
-                              {item.label}
-                            </h3>
-                            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                              {item.feelsLike}
-                            </p>
-                            <div className="mt-4 grid gap-2 sm:grid-cols-2">
-                              <p className="rounded-xl border border-border bg-background/70 px-3 py-2 text-xs font-medium text-muted-foreground">
-                                Who this fits: {item.who}
+                <button
+                  type="button"
+                  className="mt-6 inline-flex min-h-11 items-center rounded-lg border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+                  onClick={() =>
+                    setShowOverviewMap((current) => {
+                      const next = !current
+                      track("launchpad_overview_map_toggle", { open: next })
+                      return next
+                    })
+                  }
+                >
+                  {showOverviewMap ? "Hide full stage map" : "Show full stage map"}
+                </button>
+                {showOverviewMap ? (
+                  <div className="mt-8 space-y-4">
+                    {STAGE_ORDER.map((itemId, index) => {
+                      const item = STAGE_CONFIG[itemId]
+                      const accentClass =
+                        index % 5 === 0
+                          ? "from-teal/15 via-teal/5 to-transparent"
+                          : index % 5 === 1
+                            ? "from-teal/10 via-purple/8 to-transparent"
+                          : index % 5 === 2
+                              ? "from-purple/14 via-teal/4 to-transparent"
+                          : index % 5 === 3
+                                ? "from-purple/10 via-teal/8 to-transparent"
+                                : "from-teal/8 via-purple/12 to-transparent"
+                      return (
+                        <article
+                          key={item.id}
+                          className={`relative overflow-hidden rounded-[24px] border border-border bg-gradient-to-br ${accentClass} p-5 md:p-6`}
+                        >
+                          <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-teal/70 to-purple/70" />
+                          <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
+                            <div className="pl-2">
+                              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-teal">
+                                Stage {index + 1}
                               </p>
-                              <p className="rounded-xl border border-border bg-background/70 px-3 py-2 text-xs font-medium text-foreground/80">
-                                Best first move: {item.primaryAction.label}
+                              <h3 className="mt-2 text-xl font-semibold text-foreground">
+                                {item.label}
+                              </h3>
+                              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                                {item.feelsLike}
+                              </p>
+                              <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                                <p className="rounded-xl border border-border bg-background/70 px-3 py-2 text-xs font-medium text-muted-foreground">
+                                  Who this fits: {item.who}
+                                </p>
+                                <p className="rounded-xl border border-border bg-background/70 px-3 py-2 text-xs font-medium text-foreground/80">
+                                  Best first move: {item.primaryAction.label}
+                                </p>
+                              </div>
+                            </div>
+                            <div className="flex flex-col items-start gap-2 lg:items-end">
+                              <button
+                                type="button"
+                                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition-opacity hover:opacity-90"
+                                onClick={() => {
+                                  track("launchpad_overview_stage_open_click", {
+                                    stage: item.id,
+                                    location: "journey_flow",
+                                  })
+                                  openStageFromJourney(item.id)
+                                }}
+                              >
+                                Open {item.label}
+                                <ArrowRight className="h-4 w-4" />
+                              </button>
+                              <p className="text-xs text-muted-foreground">
+                                The rest of the page updates instantly.
                               </p>
                             </div>
                           </div>
-                          <div className="flex flex-col items-start gap-2 lg:items-end">
-                            <button
-                              type="button"
-                              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition-opacity hover:opacity-90"
-                              onClick={() => {
-                                track("launchpad_overview_stage_open_click", {
-                                  stage: item.id,
-                                  location: "journey_flow",
-                                })
-                                openStageFromJourney(item.id)
-                              }}
-                            >
-                              Open {item.label}
-                              <ArrowRight className="h-4 w-4" />
-                            </button>
-                            <p className="text-xs text-muted-foreground">
-                              The rest of the page updates instantly.
-                            </p>
-                          </div>
-                        </div>
-                      </article>
-                    )
-                  })}
-                </div>
+                        </article>
+                      )
+                    })}
+                  </div>
+                ) : (
+                  <div className="mt-6 grid gap-3 md:grid-cols-2">
+                    {STAGE_ORDER.map((itemId, index) => {
+                      const item = STAGE_CONFIG[itemId]
+                      return (
+                        <button
+                          key={item.id}
+                          type="button"
+                          className="rounded-2xl border border-border bg-background px-4 py-4 text-left transition-colors hover:border-teal/35"
+                          onClick={() => {
+                            track("launchpad_overview_stage_open_click", {
+                              stage: item.id,
+                              location: "compact_map",
+                            })
+                            openStageFromJourney(item.id)
+                          }}
+                        >
+                          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-teal">
+                            Stage {index + 1}
+                          </p>
+                          <p className="mt-2 text-sm font-semibold text-foreground">{item.label}</p>
+                          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{item.feelsLike}</p>
+                        </button>
+                      )
+                    })}
+                  </div>
+                )}
               </div>
               <aside className="rounded-[30px] border border-border bg-background p-7">
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
@@ -1165,7 +1354,7 @@ export function LaunchpadStageNavigator({
             <>
               <div className="support-panel rounded-[30px] p-8">
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                  Stage context
+                  What this stage means
                 </p>
                 <h2 className="mt-4 text-3xl font-semibold text-foreground">
                   {stage.label}
@@ -1193,7 +1382,7 @@ export function LaunchpadStageNavigator({
               </div>
               <aside className="rounded-[30px] border border-border bg-background p-7">
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                  Current signal
+                  What this likely means
                 </p>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                   {stage.nextStep}
@@ -1212,7 +1401,7 @@ export function LaunchpadStageNavigator({
       <section id="launchpad-next-step" className="deferred-section scroll-mt-24 border-y border-border bg-secondary/35 py-20 md:scroll-mt-28 lg:py-24">
         <div
           key={`next-step-${stageId}-${pressureId || "none"}`}
-          className="mx-auto max-w-[1200px] px-6 motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200"
+          className="mx-auto max-w-[1200px] px-4 sm:px-6 motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200"
         >
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.22em] text-teal">
             Next best step
@@ -1316,10 +1505,42 @@ export function LaunchpadStageNavigator({
         </div>
       </section>
 
+      <section className="deferred-section border-b border-border py-10">
+        <div className="mx-auto flex max-w-[1200px] flex-col gap-3 px-4 sm:px-6 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-sm font-medium text-foreground">
+              Need deeper detail?
+            </p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Open full details for programs, trust notes, signals, and proof.
+            </p>
+          </div>
+          <button
+            type="button"
+            className="inline-flex min-h-11 items-center justify-center rounded-lg border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+            onClick={() => {
+              setShowFullMap((current) => {
+                const next = !current
+                track("launchpad_full_map_toggle", {
+                  stage: stageId,
+                  pressure: pressureId || "none",
+                  open: next,
+                })
+                return next
+              })
+            }}
+          >
+            {showFullMap ? "Hide full guidance" : "Show full guidance"}
+          </button>
+        </div>
+      </section>
+
+      {showFullMap ? (
+        <>
       <section className="deferred-section section-warm py-20 lg:py-24">
         <div
           key={`program-fit-${stageId}-${pressureId || "none"}`}
-          className="mx-auto max-w-[1200px] px-6 motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200"
+          className="mx-auto max-w-[1200px] px-4 sm:px-6 motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200"
         >
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.22em] text-teal">
             Program fit
@@ -1385,10 +1606,10 @@ export function LaunchpadStageNavigator({
       </section>
 
       <section className="deferred-section py-18 lg:py-20">
-        <div className="mx-auto grid max-w-[1200px] gap-8 px-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
+        <div className="mx-auto grid max-w-[1200px] gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
           <div className="support-panel rounded-[30px] p-8">
             <p className="text-sm font-medium uppercase tracking-[0.22em] text-teal">
-              Trust note
+              Fit check
             </p>
             <h2 className="mt-4 text-3xl font-semibold text-foreground text-balance">
               Not every next step has to start with us
@@ -1403,7 +1624,7 @@ export function LaunchpadStageNavigator({
               When this helps
             </p>
             <div className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground">
-              <p>Get a clear read on which path fits your situation.</p>
+              <p>Get a direct read on which path fits your situation.</p>
               <p>Get an adjacent intro once the picture is clearer.</p>
               <p>Get practical judgment before a bigger commitment.</p>
             </div>
@@ -1413,15 +1634,15 @@ export function LaunchpadStageNavigator({
                 stageLabel: isOverview ? "All stages overview" : stage.label,
                 pressure: pressureId,
                 ctaPath: "trust_block",
-              ctaLabel: "Start a conversation",
-              note: "Looking for practical direction on the right next move.",
-              interest: "general",
-            })}
+                ctaLabel: STRATEGY_CALL_LABEL,
+                note: "Looking for practical direction on the right next move.",
+                interest: "general",
+              })}
               eventName="launchpad_trust_conversation_click"
               eventData={{ stage: stageId, pressure: pressureId || "none" }}
               className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
             >
-              Start a conversation
+              {STRATEGY_CALL_LABEL}
               <ArrowRight className="h-4 w-4" />
             </TrackedLink>
           </aside>
@@ -1429,7 +1650,7 @@ export function LaunchpadStageNavigator({
       </section>
 
       <section className="deferred-section border-y border-border py-16 lg:py-20">
-        <div className="mx-auto max-w-[1200px] px-6">
+        <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
           <button
             type="button"
             aria-expanded={exploreOpen}
@@ -1527,11 +1748,11 @@ export function LaunchpadStageNavigator({
       <section className="deferred-section py-20 lg:py-24">
         <div
           key={`signals-${stageId}-${pressureId || "none"}`}
-          className="mx-auto grid max-w-[1200px] gap-8 px-6 motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start"
+          className="mx-auto grid max-w-[1200px] gap-8 px-4 sm:px-6 motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start"
         >
           <div className="support-panel rounded-[30px] p-8">
             <p className="text-sm font-medium uppercase tracking-[0.22em] text-teal">
-              Signals
+              What to read next
             </p>
             <h2 className="mt-4 text-3xl font-semibold text-foreground text-balance">
               {isOverview
@@ -1539,7 +1760,7 @@ export function LaunchpadStageNavigator({
                 : `Practical updates for teams in ${stage.label.toLowerCase()}`}
             </h2>
             <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
-              Short notes on what to do next when complexity and delivery pressure collide.
+              Short notes on what to do next when complexity and execution pressure collide.
             </p>
             <div className="mt-8 grid gap-4 md:grid-cols-3">
               {signals.map((article) => (
@@ -1572,7 +1793,7 @@ export function LaunchpadStageNavigator({
             <div className="flex items-center gap-3">
               <Sparkles className="h-5 w-5 text-teal" />
               <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                Subscribe
+                Updates
               </p>
             </div>
             <h3 className="mt-4 text-2xl font-semibold text-background">
@@ -1585,7 +1806,7 @@ export function LaunchpadStageNavigator({
             </p>
             <SignalsSubscribeForm
               source={`launchpad_stage_${stageId}`}
-              buttonLabel="Subscribe for practical signal"
+              buttonLabel="Subscribe for practical updates"
               className="mt-6 space-y-4"
             />
             <TrackedLink
@@ -1594,7 +1815,7 @@ export function LaunchpadStageNavigator({
               eventData={{ stage: stageId }}
               className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-background"
             >
-              Explore the signals layer
+              Explore all practical updates
               <ArrowRight className="h-4 w-4" />
             </TrackedLink>
           </aside>
@@ -1605,7 +1826,7 @@ export function LaunchpadStageNavigator({
         <section className="deferred-section border-y border-border bg-secondary/25 py-16 lg:py-20">
           <div
             key={`proof-${stageId}`}
-            className="mx-auto max-w-[1200px] px-6 motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200"
+            className="mx-auto max-w-[1200px] px-4 sm:px-6 motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200"
           >
             <div className="rounded-[30px] border border-border bg-background p-8 md:p-10">
               <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
@@ -1643,11 +1864,13 @@ export function LaunchpadStageNavigator({
           </div>
         </section>
       ) : null}
+        </>
+      ) : null}
 
-      <section className="deferred-section bg-foreground py-20 lg:py-24">
+      <section id="launchpad-final-cta" className="deferred-section bg-foreground py-20 lg:py-24">
         <div
           key={`final-cta-${stageId}-${pressureId || "none"}`}
-          className="mx-auto max-w-[950px] px-6 text-center motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200"
+          className="mx-auto max-w-[950px] px-4 sm:px-6 text-center motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200"
         >
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
             Your next step
@@ -1683,11 +1906,11 @@ export function LaunchpadStageNavigator({
               eventData={{
                 stage: stageId,
                 pressure: pressureId || "none",
-                source: "book_quick_call",
+                source: "book_strategy_call",
               }}
               className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-background/20 px-6 py-3 font-medium text-background transition-colors hover:bg-background/10"
             >
-              Book a quick call
+              {STRATEGY_CALL_LABEL}
             </TrackedLink>
           </div>
         </div>
@@ -1718,10 +1941,10 @@ export function LaunchpadStageNavigator({
             <TrackedLink
               href={finalTalkHref}
               eventName="launchpad_sticky_dock_secondary_click"
-              eventData={{ stage: stageId, pressure: pressureId || "none", source: "book_quick_call" }}
+              eventData={{ stage: stageId, pressure: pressureId || "none", source: "book_strategy_call" }}
               className="inline-flex min-h-11 items-center justify-center rounded-lg border border-border px-3 text-center text-xs font-semibold text-foreground"
             >
-              Talk to us
+              Strategy call
             </TrackedLink>
           </div>
         </div>

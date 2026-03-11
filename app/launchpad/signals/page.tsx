@@ -10,7 +10,7 @@ import { getLaunchpadSignalArticles } from "@/lib/launchpad"
 export const metadata: Metadata = {
   title: "Want practical updates you can use this quarter?",
   description:
-    "Subscribe for practical updates on systems clarity, delivery slowdowns, architecture choices, and decision quality.",
+    "Get short practical updates on execution pressure, architecture decisions, and what to do next.",
   alternates: {
     canonical: "/launchpad/signals",
   },
@@ -32,10 +32,10 @@ export default function LaunchpadSignalsPage() {
                 Launchpad Signals
               </p>
               <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl">
-                Want practical updates you can use while delivery is under pressure?
+                Want practical notes you can use this quarter?
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                Useful updates on delivery drag, architecture decisions, and what to do next.
+                Short updates on execution pressure, architecture decisions, and what to do next.
               </p>
             </div>
             <div className="rounded-[30px] border border-border bg-foreground p-8">
@@ -46,11 +46,14 @@ export default function LaunchpadSignalsPage() {
                 Get updates you can actually use
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-background/72">
-                Useful notes on systems clarity, architecture choices, and what to do next when complexity slows the business.
+                Useful notes on system health, architecture decisions, and what to do next when complexity slows the business.
+              </p>
+              <p className="mt-3 text-xs uppercase tracking-[0.16em] text-background/60">
+                1-2 useful notes per month. No noise.
               </p>
               <SignalsSubscribeForm
                 source="launchpad_signals_page"
-                buttonLabel="Subscribe for signal"
+                buttonLabel="Subscribe for practical updates"
                 className="mt-6 space-y-4"
               />
             </div>

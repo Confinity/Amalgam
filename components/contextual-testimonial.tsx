@@ -26,7 +26,7 @@ export function ContextualTestimonial({
 
   return (
     <section className={className}>
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <div className="rounded-[30px] border border-border bg-[linear-gradient(160deg,rgba(255,255,255,0.94),rgba(244,246,248,0.78))] p-8 md:p-10">
           <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">{eyebrow}</p>
           <h2 className="mt-3 text-2xl font-semibold text-foreground text-balance">{title}</h2>
@@ -44,9 +44,9 @@ export function ContextualTestimonial({
                 className="object-cover"
               />
             </div>
-            <div>
-              <p className="text-sm font-semibold text-foreground">{testimonial.name}</p>
-              <p className="text-xs text-muted-foreground">
+            <div className="min-w-0">
+              <p className="break-words text-sm font-semibold text-foreground">{testimonial.name}</p>
+              <p className="break-words text-xs text-muted-foreground">
                 {testimonial.title}, {testimonial.company}
               </p>
             </div>

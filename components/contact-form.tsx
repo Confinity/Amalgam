@@ -1,7 +1,7 @@
 "use client"
 
 import { FormEvent, useEffect, useMemo, useState } from "react"
-import { ArrowRight, CheckCircle2, Copy, Mail, Phone } from "lucide-react"
+import { ArrowRight, CheckCircle2, Copy, Mail, Phone, Send } from "lucide-react"
 
 type FormState = {
   firstName: string
@@ -37,10 +37,32 @@ type ContactFormProps = {
   initialInterest?: string
 }
 
+type ContactApiResponse = {
+  status?: "success" | "error"
+  message?: string
+}
+
+function isValidEmail(value: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+}
+
+function buildSummary(form: FormState) {
+  return [
+    `Name: ${form.firstName} ${form.lastName}`.trim(),
+    `Email: ${form.email}`,
+    `Company: ${form.company || "Not provided"}`,
+    `Interest: ${interestLabels[form.interest] ?? "General inquiry"}`,
+    "",
+    "Situation:",
+    form.message,
+  ].join("\n")
+}
+
 export function ContactForm({ initialInterest = "" }: ContactFormProps) {
   const normalizeInterest = (value: string) => (value in interestLabels ? value : "")
   const normalizeContext = (value: string) =>
     value.replace(/\s+/g, " ").trim().slice(0, 1200)
+
   const getInitialInterest = () => {
     const seededInterest = normalizeInterest(initialInterest)
     if (seededInterest) {
@@ -70,7 +92,7 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
       return ""
     }
 
-    return `Context shared from a Launchpad tool:\n${context}\n\nWhat is happening, what are you trying to solve, and where is the friction showing up?`
+    return `Context shared from Launchpad:\n${context}\n\nWhat is happening, what are you trying to solve, and where is friction showing up?`
   }
 
   const loadDraft = () => {
@@ -100,21 +122,28 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
     }
   }
 
+  const resetToSeededState = () => ({
+    ...initialState,
+    interest: getInitialInterest(),
+    message: getInitialMessage(),
+  })
+
   const [form, setForm] = useState<FormState>(() => {
     const draft = loadDraft()
-    const seededInterest = getInitialInterest()
-    const seededMessage = getInitialMessage()
+    const seeded = resetToSeededState()
 
     return {
-      ...initialState,
+      ...seeded,
       ...(draft ?? {}),
-      interest: seededInterest || draft?.interest || "",
-      message: seededMessage || draft?.message || "",
+      interest: seeded.interest || draft?.interest || "",
+      message: seeded.message || draft?.message || "",
     }
   })
   const [error, setError] = useState("")
   const [submitted, setSubmitted] = useState(false)
-  const [copied, setCopied] = useState(false)
+  const [successMessage, setSuccessMessage] = useState("")
+  const [submitting, setSubmitting] = useState(false)
+  const [copyStatus, setCopyStatus] = useState<"idle" | "copied" | "error">("idle")
   const [draftCleared, setDraftCleared] = useState(false)
 
   useEffect(() => {
@@ -124,6 +153,14 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
     window.sessionStorage.setItem(CONTACT_DRAFT_STORAGE_KEY, JSON.stringify(form))
   }, [form])
 
+  useEffect(() => {
+    if (copyStatus === "idle") {
+      return
+    }
+    const timeout = window.setTimeout(() => setCopyStatus("idle"), 1800)
+    return () => window.clearTimeout(timeout)
+  }, [copyStatus])
+
   const hasDraftContent = useMemo(
     () =>
       Boolean(
@@ -132,72 +169,101 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
           form.email ||
           form.company ||
           form.interest ||
-          form.message
+          form.message,
       ),
-    [form]
+    [form],
   )
 
+  const summaryBody = useMemo(() => buildSummary(form), [form])
   const mailtoHref = useMemo(() => {
     const subject = `${interestLabels[form.interest] ?? "General inquiry"} - ${form.firstName} ${form.lastName}`.trim()
-    const body = [
-      `Name: ${form.firstName} ${form.lastName}`.trim(),
-      `Email: ${form.email}`,
-      `Company: ${form.company || "Not provided"}`,
-      `Interest: ${interestLabels[form.interest] ?? "General inquiry"}`,
-      "",
-      "Situation:",
-      form.message,
-    ].join("\n")
-
     return `mailto:hello@amalgam-inc.com?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`
-  }, [form])
+      subject,
+    )}&body=${encodeURIComponent(summaryBody)}`
+  }, [form, summaryBody])
+
+  async function copySummaryToClipboard() {
+    try {
+      await navigator.clipboard.writeText(summaryBody)
+      setCopyStatus("copied")
+      return true
+    } catch {
+      setCopyStatus("error")
+      return false
+    }
+  }
+
+  async function handleOpenEmailDraft() {
+    if (!form.message.trim()) {
+      setError("Add a short situation summary first so the draft is useful.")
+      return
+    }
+
+    setError("")
+    await copySummaryToClipboard()
+    window.location.href = mailtoHref
+  }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     setError("")
+    setSubmitted(false)
 
     if (!form.firstName || !form.lastName || !form.email || !form.message) {
-      setError("Please complete the required fields before sending.")
+      setError("Please complete first name, last name, work email, and your situation summary.")
       return
     }
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+    if (!isValidEmail(form.email)) {
       setError("Please enter a valid work email address.")
       return
     }
 
-    const clipboardBody = [
-      `Name: ${form.firstName} ${form.lastName}`.trim(),
-      `Email: ${form.email}`,
-      `Company: ${form.company || "Not provided"}`,
-      `Interest: ${interestLabels[form.interest] ?? "General inquiry"}`,
-      "",
-      "Situation:",
-      form.message,
-    ].join("\n")
+    setSubmitting(true)
 
     try {
-      await navigator.clipboard.writeText(clipboardBody)
-      setCopied(true)
-    } catch {
-      setCopied(false)
-    }
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...form,
+          source: "contact-page",
+        }),
+      })
 
-    setSubmitted(true)
-    if (typeof window !== "undefined") {
-      window.sessionStorage.removeItem(CONTACT_DRAFT_STORAGE_KEY)
+      const data = (await response.json()) as ContactApiResponse
+
+      if (!response.ok || data.status !== "success") {
+        throw new Error(
+          data.message ??
+            "We could not submit your message right now. Open an email draft instead.",
+        )
+      }
+
+      setSubmitted(true)
+      setSuccessMessage(
+        data.message ?? "Message sent. We will reply directly within one business day.",
+      )
+      if (typeof window !== "undefined") {
+        window.sessionStorage.removeItem(CONTACT_DRAFT_STORAGE_KEY)
+      }
+      setForm(resetToSeededState())
+    } catch (submissionError) {
+      const message =
+        submissionError instanceof Error
+          ? submissionError.message
+          : "We could not submit your message right now. Open an email draft instead."
+      setError(message)
+      await copySummaryToClipboard()
+    } finally {
+      setSubmitting(false)
     }
-    window.location.href = mailtoHref
   }
 
   function clearDraft() {
-    setForm({
-      ...initialState,
-      interest: getInitialInterest(),
-      message: getInitialMessage(),
-    })
+    setForm(resetToSeededState())
     if (typeof window !== "undefined") {
       window.sessionStorage.removeItem(CONTACT_DRAFT_STORAGE_KEY)
     }
@@ -213,25 +279,26 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
         </p>
         <div className="contact-intake-note-grid mt-3 grid gap-3 sm:grid-cols-2">
           <div className="contact-intake-note-item rounded-2xl bg-background px-4 py-4">
-            <p className="text-sm font-medium text-foreground">Best for serious situations</p>
+            <p className="text-sm font-medium text-foreground">Best for high-stakes release and system issues</p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Use this when things are stuck and you want to share clear context quickly.
+              Send context directly through the site and we route it to the team.
             </p>
           </div>
           <div className="contact-intake-note-item rounded-2xl bg-background px-4 py-4">
-            <p className="text-sm font-medium text-foreground">You keep full context</p>
+            <p className="text-sm font-medium text-foreground">Prefer email? That still works</p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              We draft the email for you so your message stays clear and easy to reuse.
+              You can open a ready-to-send email draft with your details prefilled.
             </p>
           </div>
         </div>
       </div>
+
       <h2 className="mb-2 text-xl font-semibold text-foreground">Share your situation</h2>
       <p className="mb-6 text-sm text-muted-foreground">
-        This opens a draft to hello@amalgam-inc.com with your details prefilled.
+        We usually reply within one business day.
       </p>
       <p className="mb-6 text-xs text-muted-foreground">
-        Draft auto-saves in this browser tab while you write.
+        Your draft autosaves in this browser tab while you write.
       </p>
 
       <form className="space-y-5" onSubmit={handleSubmit}>
@@ -283,7 +350,9 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
               name="firstName"
               required
               value={form.firstName}
-              onChange={(event) => setForm((current) => ({ ...current, firstName: event.target.value }))}
+              onChange={(event) =>
+                setForm((current) => ({ ...current, firstName: event.target.value }))
+              }
               className="contact-field w-full rounded-lg border border-border bg-background px-4 py-2.5 text-foreground placeholder:text-muted-foreground focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/20"
               placeholder="Jane"
             />
@@ -298,7 +367,9 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
               name="lastName"
               required
               value={form.lastName}
-              onChange={(event) => setForm((current) => ({ ...current, lastName: event.target.value }))}
+              onChange={(event) =>
+                setForm((current) => ({ ...current, lastName: event.target.value }))
+              }
               className="contact-field w-full rounded-lg border border-border bg-background px-4 py-2.5 text-foreground placeholder:text-muted-foreground focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/20"
               placeholder="Smith"
             />
@@ -338,7 +409,7 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
 
         <div>
           <label htmlFor="interest" className="mb-1.5 block text-sm font-medium text-foreground">
-            What are you interested in?
+            What kind of help do you want?
           </label>
           <select
             id="interest"
@@ -356,13 +427,13 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
             <option value="general">General inquiry</option>
           </select>
           <p className="mt-2 text-xs text-muted-foreground">
-            Pick the closest fit. If unsure, use general inquiry.
+            Pick the closest fit. If unsure, choose general inquiry.
           </p>
         </div>
 
         <div>
           <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-foreground">
-            Tell us about your situation
+            What is happening right now?
           </label>
           <textarea
             id="message"
@@ -372,9 +443,25 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
             value={form.message}
             onChange={(event) => setForm((current) => ({ ...current, message: event.target.value }))}
             className="contact-field contact-field--textarea w-full resize-none rounded-lg border border-border bg-background px-4 py-2.5 text-foreground placeholder:text-muted-foreground focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/20"
-            placeholder="What is happening, what are you trying to solve, and where is the friction showing up?"
+            placeholder="What is slowing things down, what outcome do you need, and where is the risk showing up?"
           />
         </div>
+
+        {submitted ? (
+          <div
+            role="status"
+            aria-live="polite"
+            className="rounded-2xl border border-teal/20 bg-teal/5 p-4 text-sm text-muted-foreground"
+          >
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-teal" />
+              <div className="space-y-1">
+                <p className="font-medium text-foreground">Message sent.</p>
+                <p>{successMessage}</p>
+              </div>
+            </div>
+          </div>
+        ) : null}
 
         {error ? (
           <p
@@ -386,36 +473,24 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
           </p>
         ) : null}
 
-        {submitted ? (
-          <div
-            role="status"
-            aria-live="polite"
-            className="rounded-2xl border border-teal/20 bg-teal/5 p-4 text-sm text-muted-foreground"
+        <div className="grid gap-3 sm:grid-cols-2">
+          <button
+            type="submit"
+            disabled={submitting}
+            className="contact-primary-cta inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 font-medium text-background transition-all hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
           >
-            <div className="flex items-start gap-3">
-              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-teal" />
-              <div className="space-y-2">
-                <p className="font-medium text-foreground">Draft ready.</p>
-                <p>
-                  Your email app should now open with the message prefilled for hello@amalgam-inc.com.
-                </p>
-                <p>
-                  {copied
-                    ? "Your message was also copied to clipboard as backup."
-                    : "If the draft did not open, use the direct email link below."}
-                </p>
-              </div>
-            </div>
-          </div>
-        ) : null}
-
-        <button
-          type="submit"
-          className="contact-primary-cta inline-flex w-full items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 font-medium text-background transition-all hover:opacity-90"
-        >
-          Open email draft
-          <ArrowRight className="h-4 w-4" />
-        </button>
+            {submitting ? "Sending..." : "Send through website"}
+            <Send className="h-4 w-4" />
+          </button>
+          <button
+            type="button"
+            onClick={handleOpenEmailDraft}
+            className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border border-border px-6 py-3 font-medium text-foreground transition-colors hover:bg-secondary"
+          >
+            Open email draft
+            <ArrowRight className="h-4 w-4" />
+          </button>
+        </div>
       </form>
 
       <div className="contact-secondary-actions mt-6 grid gap-3 sm:grid-cols-2">
@@ -448,7 +523,11 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
 
       <div className="contact-control-note mt-4 inline-flex items-center gap-2 text-xs text-muted-foreground">
         <Copy className="h-3.5 w-3.5" />
-        Your message stays in your control, with clipboard backup if your mail app does not open.
+        {copyStatus === "copied"
+          ? "Copied to clipboard."
+          : copyStatus === "error"
+            ? "Clipboard unavailable. Use direct email if needed."
+            : "If web submit fails, the email draft flow keeps your message intact."}
       </div>
     </div>
   )

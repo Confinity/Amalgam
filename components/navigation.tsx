@@ -15,9 +15,9 @@ type NavigationProps = {
 
 export function Navigation({
   servicesLabel = "Services",
-  primaryCtaLabel = "Talk with our team",
+  primaryCtaLabel = "Book a strategy call",
   primaryCtaHref = "/contact?interest=strategy-session",
-  mobilePrompt = "If releases are slipping and the cause is not obvious, start with a strategy call.",
+  mobilePrompt = "If releases are slipping and you are not sure why, start with a quick strategy call.",
 }: NavigationProps) {
   const navItems = [
     { href: "/services", label: servicesLabel },
@@ -84,7 +84,7 @@ export function Navigation({
           : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
+      <nav className="mx-auto flex max-w-[1200px] items-center justify-between px-4 py-4 sm:px-6">
         <Link href="/" className="flex items-center" aria-label="Amalgam home">
           <BrandLogo priority className="h-8 w-auto sm:h-9" />
         </Link>
@@ -191,7 +191,7 @@ export function Navigation({
                   className="inline-flex min-h-11 w-full items-center justify-center rounded-2xl border border-border px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
                   onClick={() => setMobileOpen(false)}
                 >
-                  Start a conversation
+                  Contact us directly
                 </Link>
               </div>
               <div className="mt-5 rounded-2xl border border-border bg-secondary/35 px-4 py-4">
@@ -213,3 +213,4 @@ export function Navigation({
     </header>
   )
 }
+

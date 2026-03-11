@@ -59,7 +59,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         title: "Process Automation & Business Logic",
-        description: "Created new administrative and reporting logic to optimize agent onboarding, team communication, and incentive management."
+        description: "Created new administrative and reporting logic to improve agent onboarding, team communication, and incentive management."
       },
       {
         title: "UX/UI Redesign",
@@ -102,9 +102,9 @@ export const caseStudies: CaseStudy[] = [
     heroImageSrc: "/case-studies/pearlx.webp",
     heroImageAlt: "PearlX customer portal thumbnail from the legacy Amalgam case study",
     problem: "As a startup, PearlX lacked the resources to build their customer portal, a critical part of the business, risking delayed go-to-market and costly inefficiencies.",
-    approach: "We built a robust customer portal with data infrastructure, seamless onboarding processes, and user profiles with custom permissions. The architecture uses React.js and AWS services including AWS Kinesis, AWS Lambda, and PostgreSQL.",
+    approach: "We built a robust customer portal with data infrastructure, reliable onboarding flows, and user profiles with custom permissions. The architecture uses React.js and AWS services including AWS Kinesis, AWS Lambda, and PostgreSQL.",
     outcome: "PearlX now has a streamlined onboarding process, efficient community management, and a scalable, user-friendly portal that helps them attract and retain clients. Amalgam remains their trusted development partner.",
-    overview: "PearlX is an innovative energy startup transforming how multi-housing facilities access sustainable power. They provide affordable clean energy solutions benefiting both property owners and residents through their unique model.",
+    overview: "PearlX is an innovative energy startup helping multi-housing facilities access sustainable power. They provide affordable clean energy solutions for both property owners and residents.",
     challenges: [
       "Limited startup resources prevented building a high-quality customer portal",
       "Needed a partner who could architect a complex multi-tenant platform",
@@ -230,7 +230,7 @@ export const caseStudies: CaseStudy[] = [
     heroImageAlt: "Barclays Bank US website thumbnail from the legacy Amalgam case study",
     problem: "Barclays Bank US had an outdated marketing website with poor UX, lack of accessibility compliance, and no personalization capabilities, preventing them from effectively showcasing their services and risking customer engagement.",
     approach: "We redesigned the website with modern UI/UX, implemented Magnolia CMS for content management, added personalization features like goal setters and CD ladder builders, and ensured WCAG accessibility compliance.",
-    outcome: "The redesigned website empowered Barclays Bank US to stand out in a competitive market with an optimized online banking experience, enhanced customer engagement, and a modern, customer-centric brand perception.",
+    outcome: "The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer engagement, and a modern brand perception.",
     overview: "Barclays Bank is a global financial services provider offering personal and business banking, student loans, home equity products, credit cards, and more. They needed a website that could effectively communicate their unique offerings and security features.",
     challenges: [
       "Outdated website with unintuitive UX and UI prevented customer engagement",
@@ -242,7 +242,7 @@ export const caseStudies: CaseStudy[] = [
     solution: [
       {
         title: "Website Redesign",
-        description: "Created seamless, dynamic user experience with CSS transitions, parallax scrolling, intelligent page indicators, and modern tech-focused identity with accessible imagery and contemporary design touches."
+        description: "Created a smooth, dynamic user experience with CSS transitions, parallax scrolling, intelligent page indicators, and a modern identity with accessible imagery."
       },
       {
         title: "Personalization Engine",
@@ -254,14 +254,14 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         title: "Accessibility & Responsiveness",
-        description: "Ensured WCAG compliance and optimized responsiveness across all devices while maintaining modern design integrity."
+        description: "Ensured WCAG compliance and improved responsiveness across all devices while maintaining modern design integrity."
       }
     ],
     results: [
       {
         metric: "Experience",
         value: "WCAG Compliant",
-        description: "Inclusive and visitor-friendly digital experience seamlessly displays across devices in adherence to WCAG standards."
+        description: "Inclusive and visitor-friendly digital experience that works across devices in adherence to WCAG standards."
       },
       {
         metric: "Content",
@@ -315,7 +315,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         title: "API Integration",
-        description: "Enabled API call functionality for seamless integration with JTF's existing systems and workflows."
+        description: "Enabled API calls for reliable integration with JTF's existing systems and workflows."
       },
       {
         title: "Rigorous Testing",
@@ -422,7 +422,7 @@ export const caseStudies: CaseStudy[] = [
     heroImageSrc: "/case-studies/constructive-built-environment.webp",
     heroImageAlt: "Constructive Built Environment CART platform thumbnail from the legacy Amalgam case study",
     problem: "As a startup, Constructive faced resource constraints and needed a tech partner to develop their CART platform quickly without hiring overhead or managing multiple contractors.",
-    approach: "We acted as an extension of Constructive's team, providing on-demand full-scope development with startup agility. We shaped the product through strategic conversations, designed UX/UI for 12+ pages, and ensured seamless transitions when their tech stack evolved.",
+    approach: "We acted as an extension of Constructive's team, providing on-demand full-scope development with startup agility. We shaped the product through strategic conversations, designed UX/UI for 12+ pages, and ensured stable transitions when their tech stack evolved.",
     outcome: "We kickstarted their product with an MVP users enjoyed, accelerating go-to-market, ensuring smooth user engagement, and avoiding overhead costs. We continue supporting their platform evolution.",
     overview: "Constructive Built Environment is a team of water industry professionals solving complex procurement challenges. They create value through solutions that make procurement and deployment easier, more effective, and transparent.",
     challenges: [
@@ -485,10 +485,10 @@ export const caseStudies: CaseStudy[] = [
     headline: "Streamlining Core Systems for Operational Excellence",
     heroImageSrc: "/case-studies/admin-partners.webp",
     heroImageAlt: "Admin Partners systems-integration thumbnail from the legacy Amalgam case study",
-    problem: "Admin Partners faced operational bottlenecks due to disconnected core systems that didn't work seamlessly together, creating friction in their business processes.",
+    problem: "Admin Partners faced operational bottlenecks due to disconnected core systems that did not work reliably together, creating friction in their business processes.",
     approach: "We assessed their core systems architecture, identified integration gaps, and implemented solutions to streamline their operational workflows and data flow.",
     outcome: "Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.",
-    overview: "Admin Partners provides professional administrative services to help businesses optimize their operations. They needed to modernize their internal systems to better serve their clients.",
+    overview: "Admin Partners provides professional administrative services to help businesses improve their operations. They needed to modernize their internal systems to better serve their clients.",
     challenges: [
       "Disconnected systems created operational inefficiencies",
       "Limited visibility across business processes",
@@ -522,7 +522,7 @@ export const caseStudies: CaseStudy[] = [
       {
         metric: "Integration",
         value: "Connected Systems",
-        description: "Core systems now work seamlessly together for better data flow."
+        description: "Core systems now work reliably together for better data flow."
       },
       {
         metric: "Scalability",
@@ -550,13 +550,13 @@ export const caseStudies: CaseStudy[] = [
     heroImageAlt: "M&T Bank digital-banking modernization thumbnail from the legacy Amalgam case study",
     problem: "M&T Bank's business banking platform operated on Voyager, a legacy system. When the vendor announced discontinuation of support, M&T faced a mission-critical decision: modernize or risk operational vulnerabilities.",
     approach: "We joined as a strategic implementation partner, providing skilled consultants to support decommissioning and helping M&T reimagine their digital banking experience. We evaluated multiple digital banking vendors using a matrix of 130+ business use cases, facilitated the selection of Q2, and delivered change management including training and documentation.",
-    outcome: "M&T successfully transitioned from the aging Voyager platform to Q2's modern, cloud-based solution with seamless integration into existing tools and successful cross-departmental adoption.",
+    outcome: "M&T successfully transitioned from the aging Voyager platform to Q2's modern, cloud-based solution with reliable integration into existing tools and successful cross-departmental adoption.",
     overview: "M&T Bank is one of the largest commercial banks in the United States, offering financial solutions across retail, commercial, and institutional markets. The bank needed to modernize its digital infrastructure to better serve evolving customer needs and address vendor discontinuation.",
     challenges: [
       "Vendor discontinuation of legacy Voyager platform requiring immediate action",
       "Complex technical integration: Voyager deeply embedded with dependencies across IT, operations, compliance, and business units",
       "High licensing costs for legacy systems creating unnecessary overhead",
-      "Internal delays in vendor selection slowing transformation timeline",
+      "Internal delays in vendor selection slowing the modernization timeline",
       "Needed extensive change management across business and technical teams"
     ],
     solution: [
@@ -737,7 +737,7 @@ export const caseStudies: CaseStudy[] = [
     problem: "Banking operations required technical support that respected existing systems, regulatory constraints, and delivery timelines.",
     approach: "We provided practical technical and systems support across banking-focused workflows, helping teams move critical work forward with clearer structure and lower delivery friction.",
     outcome: "The engagement improved execution reliability in a complex financial setting where architecture quality and operational coordination directly affected delivery outcomes.",
-    overview: "This work sat at the intersection of financial-services operations and technical execution. The focus was disciplined support: help teams improve how systems work together while maintaining practical momentum.",
+    overview: "This work sat at the intersection of financial-services operations and technical execution. The focus was disciplined support: help teams improve how systems work together while maintaining practical progress.",
     challenges: [
       "Technical changes had to be delivered within strict operational constraints",
       "Systems coordination and handoffs increased execution complexity",
@@ -771,7 +771,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         metric: "Operating cadence",
-        value: "Steadier momentum",
+        value: "Steadier progress",
         description: "Teams were able to sustain progress with clearer implementation structure."
       },
       {

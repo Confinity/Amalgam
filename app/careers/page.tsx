@@ -147,7 +147,7 @@ export default function CareersPage() {
                 You&apos;ll fit well here if
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                You&apos;ll fit here if ownership and clarity matter to you
+                You&apos;ll fit here if ownership and direct communication matter to you
               </h2>
             </div>
             <div className="grid gap-6 md:grid-cols-2">
@@ -180,7 +180,7 @@ export default function CareersPage() {
                 href="/contact?interest=careers"
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-background px-6 py-3 font-medium text-foreground transition-opacity hover:opacity-90"
               >
-                Start a conversation
+                Ask about open roles
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <a
@@ -197,3 +197,4 @@ export default function CareersPage() {
     </>
   )
 }
+

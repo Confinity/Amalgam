@@ -4,9 +4,9 @@ import { LaunchpadStageNavigator } from "@/components/launchpad-stage-navigator"
 import { Navigation } from "@/components/navigation"
 
 export const metadata: Metadata = {
-  title: "Not sure what to do next? Find your stage and next move.",
+  title: "Where is product delivery getting stuck? Find your stage and next move.",
   description:
-    "Launchpad helps founders and operators find their stage, clarify pressure points, and choose the next move with confidence.",
+    "Launchpad helps founders and operators identify their stage, diagnose pressure, and choose one practical next move.",
   alternates: {
     canonical: "/launchpad",
   },
@@ -29,7 +29,7 @@ export default function LaunchpadPage({ searchParams }: LaunchpadPageProps) {
 
   return (
     <>
-      <Navigation primaryCtaLabel="Book a quick call" />
+      <Navigation primaryCtaLabel="Book a strategy call" />
       <main id="main-content" className="min-h-screen bg-background pt-20">
         <LaunchpadStageNavigator
           initialStageParam={stage}

@@ -71,7 +71,7 @@ const nodes: NodeConfig[] = [
     key: "core",
     label: "Core",
     title: "Platform",
-    tooltip: "Strong platform ownership unlocks consistent delivery.",
+    tooltip: "Strong platform ownership supports consistent shipping.",
     x: 50,
     y: 42,
     width: 112,
@@ -672,7 +672,7 @@ export function HeroDiagnosticPanel() {
           60-minute strategy call
         </h2>
         <p className="mt-1 text-[13px] text-muted-foreground">
-          Clear read on what is slowing delivery
+          Clear read on what is slowing releases
         </p>
         <Link
           href="/contact?interest=strategy-session"

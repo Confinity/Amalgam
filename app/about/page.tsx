@@ -27,7 +27,7 @@ import { withBasePath } from "@/lib/site-config"
 export const metadata: Metadata = {
   title: "Who you work with at Amalgam",
   description:
-    "Founded in 2012, Amalgam helps business and technical leaders make complex systems clearer and execution more reliable.",
+    "Founded in 2012, Amalgam helps business and technical leaders fix complex system issues that slow execution.",
   alternates: {
     canonical: "/about",
   },
@@ -48,7 +48,7 @@ const principles = [
   },
   {
     icon: Zap,
-    title: "We protect momentum",
+    title: "We keep execution moving",
     description:
       "We remove blockers so teams can move with less drag.",
   },
@@ -60,7 +60,7 @@ const principles = [
   },
   {
     icon: Users,
-    title: "We optimize for your outcome",
+    title: "We focus on what gets shipped",
     description:
       "Outcomes matter more than hours. We care about what gets shipped.",
   },
@@ -99,11 +99,11 @@ const operatingModel = [
     icon: Layers3,
     title: "Then solve at the system level",
     description:
-      "We do not treat delivery problems as isolated engineering problems when the architecture, workflow, and decision model are all involved.",
+      "We do not treat execution problems as isolated engineering problems when architecture, workflow, and decision models are all involved.",
   },
   {
     icon: Zap,
-    title: "Always bias toward usable momentum",
+    title: "Always bias toward usable progress",
     description:
       "The goal is not perfect theory. The goal is a path leadership can trust and teams can actually move on.",
   },
@@ -127,7 +127,7 @@ export default function AboutPage() {
                   Want to know who you&apos;ll actually work with?
                 </h1>
                 <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                  Amalgam helps business and technical leaders make complex systems clearer and execution more reliable.
+                  Amalgam helps business and technical leaders fix complex system issues so shipping becomes more reliable.
                 </p>
               </div>
               <div className="support-panel rounded-[28px] p-7">
@@ -137,7 +137,7 @@ export default function AboutPage() {
                 <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
                   <p>A sharp diagnostic when the real issue is still unclear.</p>
                   <p>Clear sequencing when teams need a roadmap they can trust.</p>
-                  <p>Hands-on follow-through when momentum needs to be sustained.</p>
+                  <p>Hands-on follow-through when execution needs to stay on track.</p>
                 </div>
               </div>
             </div>
@@ -175,7 +175,7 @@ export default function AboutPage() {
                     I started Amalgam to keep the work practical and honest.
                   </p>
                   <p>
-                    Too many projects create dependency instead of progress. We focus on what is actually slowing the business down, make the next move clear, and help teams unblock progress.
+                    Too many projects create dependency instead of progress. We focus on what is actually slowing the business, make the next move clear, and help teams ship again.
                   </p>
                 </blockquote>
                 <p className="mt-6 font-medium text-foreground">{founder.fullName ?? founder.name}</p>
@@ -192,11 +192,11 @@ export default function AboutPage() {
                 Why this model works now
               </p>
               <h2 className="mb-6 text-3xl font-semibold text-foreground text-balance">
-                Your delivery problems usually cross team boundaries
+                Most execution problems cross team boundaries
               </h2>
               <div className="space-y-4 leading-relaxed text-muted-foreground">
                 <p>
-                  Most delivery problems are no longer confined to one team. Architecture, product, operations, and decision-making are usually all involved.
+                  Most execution problems are no longer confined to one team. Architecture, product, operations, and decision-making are usually all involved.
                 </p>
                 <p>
                   That is where Amalgam is most useful: when leaders need clear judgment that connects the full system and gives teams a path they can execute.
@@ -260,7 +260,7 @@ export default function AboutPage() {
               <div>
                 <h2 className="text-2xl font-semibold text-foreground">The people you&apos;ll work with</h2>
                 <p className="mt-2 text-muted-foreground">
-                  Focused support across systems, architecture, and delivery.
+                  Focused support across systems, architecture, and execution.
                 </p>
               </div>
               <Link href="/team" className="flex items-center gap-1 text-sm font-medium text-teal hover:underline">
@@ -306,7 +306,7 @@ export default function AboutPage() {
           className="py-20 lg:py-24"
           eyebrow="Client Experience"
           title="Trusted in complex environments"
-          description="The kinds of complex environments this team has operated in across regulated institutions, operationally demanding companies, and high-growth teams where systems quality directly affects delivery."
+          description="The kinds of complex environments this team has operated in across regulated institutions, operationally demanding companies, and high-growth teams where systems quality directly affects execution."
         />
 
         <TestimonialStrip
@@ -336,7 +336,7 @@ export default function AboutPage() {
                 href="/services"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-background/30 px-6 py-3 font-medium text-background transition-all hover:bg-background/10"
               >
-                See how we can help
+                See engagement options
               </Link>
             </div>
           </div>
@@ -346,3 +346,4 @@ export default function AboutPage() {
     </>
   )
 }
+

@@ -16,7 +16,7 @@ import { withBasePath } from "@/lib/site-config"
 export const metadata: Metadata = {
   title: "Meet the people you work with",
   description:
-    "Meet the Amalgam team across architecture, engineering, delivery, legal, and HR.",
+    "Meet the Amalgam team across architecture, engineering, product delivery, legal, and HR.",
   alternates: {
     canonical: "/team",
   },
@@ -60,10 +60,10 @@ export default function TeamPage() {
                 Our Team
               </span>
               <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Meet the people who help you move complex work forward
+                Meet the people who help you ship through complex systems
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-                Amalgam stays intentionally small. The team spans product, architecture, engineering, delivery, operations, and leadership.
+                Amalgam stays intentionally small. The team spans product, architecture, engineering, operations, and leadership.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
@@ -229,7 +229,7 @@ export default function TeamPage() {
               Want experienced operators in the room while you execute?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-background/70">
-              Start with a strategy call if systems are slowing the business down. If you already know where you need help, contact us directly.
+              Start with a strategy call if system issues are slowing execution. If you already know where you need help, contact us directly.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
@@ -243,7 +243,7 @@ export default function TeamPage() {
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-lg border border-background/30 px-6 py-3 font-medium text-background transition-colors hover:bg-background/10"
               >
-                Start a conversation
+                Contact us directly
               </Link>
             </div>
           </div>
@@ -253,3 +253,4 @@ export default function TeamPage() {
     </>
   )
 }
+

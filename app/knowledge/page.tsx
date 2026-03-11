@@ -14,9 +14,9 @@ import { KnowledgeFeaturedHero } from "@/components/knowledge-featured-hero"
 import { knowledgeBriefs, knowledgeCategories } from "@/lib/knowledge-briefs"
 
 export const metadata: Metadata = {
-  title: "Read this when delivery feels stuck",
+  title: "Read this when product delivery feels stuck",
   description:
-    "A practical knowledge base for teams navigating architecture, delivery, data, and organizational complexity.",
+    "A practical knowledge base for teams navigating architecture, product delivery, data, and organizational complexity.",
   alternates: {
     canonical: "/knowledge",
   },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 const readingPaths = [
   {
-    title: "Your shipping slowed after growth",
+    title: "Shipping slowed after growth",
     description:
       "Start with the operating drag, then move into the execution mechanics underneath it.",
     articleSlugs: [
@@ -34,7 +34,7 @@ const readingPaths = [
     ],
   },
   {
-    title: "Your roadmap keeps getting blocked by technical ambiguity",
+    title: "Roadmap decisions keep stalling in technical ambiguity",
     description:
       "Use this path when planning keeps collapsing into debate because the system is still under-mapped.",
     articleSlugs: [
@@ -112,17 +112,17 @@ export default function KnowledgePage({ searchParams }: KnowledgePageProps) {
                   Knowledge Base
                 </span>
                 <span className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                  Notes and perspectives on architecture, systems, delivery, and leadership
+                  Practical notes on architecture, systems, execution, and leadership
                 </span>
               </div>
               <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
                 Not sure where to start?{" "}
                 <span className="bg-gradient-to-r from-teal via-teal to-purple bg-clip-text text-transparent">
-                  Start with the pressure you feel most.
+                  Start with the pressure you feel most right now.
                 </span>
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-                Short reads on architecture, delivery, data, and leadership decisions under pressure.
+                Short reads on architecture, execution, data, and leadership decisions when things feel messy.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
@@ -281,7 +281,7 @@ export default function KnowledgePage({ searchParams }: KnowledgePageProps) {
                   <div>
                     <p className="text-sm font-medium text-foreground">Built by area</p>
                     <p className="text-sm text-muted-foreground">
-                      Architecture, systems strategy, data, delivery, and leadership
+                      Architecture, systems strategy, data, execution, and leadership
                     </p>
                   </div>
                 </div>
@@ -290,12 +290,12 @@ export default function KnowledgePage({ searchParams }: KnowledgePageProps) {
                     <Compass className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-foreground">Best read in sequence</p>
-                    <p className="text-sm text-muted-foreground">
-                      Start with one article, then follow the related paths on each page
-                    </p>
-                  </div>
+                  <p className="text-sm font-medium text-foreground">Best read in sequence</p>
+                  <p className="text-sm text-muted-foreground">
+                      Start with one article, then follow related paths on each page
+                  </p>
                 </div>
+              </div>
               </div>
             </div>
 
@@ -377,7 +377,7 @@ export default function KnowledgePage({ searchParams }: KnowledgePageProps) {
             <div className="mb-10 max-w-3xl">
                 <h2 className="text-2xl font-semibold text-foreground">Choose the area that feels most stuck</h2>
                 <p className="mt-3 text-muted-foreground">
-                  Each collection is built around one kind of pressure.
+                  Each collection is built around one pressure pattern we see repeatedly.
                 </p>
               </div>
             <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
@@ -455,7 +455,7 @@ export default function KnowledgePage({ searchParams }: KnowledgePageProps) {
                 href="/contact"
                 className="inline-flex min-h-11 items-center justify-center rounded-xl border border-background/20 px-6 py-3 font-medium text-background transition-colors hover:bg-background/10"
               >
-                Start a conversation
+                Contact us directly
               </Link>
             </div>
           </div>
@@ -465,3 +465,4 @@ export default function KnowledgePage({ searchParams }: KnowledgePageProps) {
     </>
   )
 }
+

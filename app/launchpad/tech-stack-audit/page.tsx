@@ -8,7 +8,7 @@ import { ToolAssessment } from "@/components/tool-assessment"
 export const metadata: Metadata = {
   title: "Is your tech stack helping or hurting?",
   description:
-    "A first-pass audit for deciding whether the stack is stable, fragmented, over-complex, risky, or under-instrumented for reliable delivery.",
+    "A first-pass audit for deciding whether the stack is stable, fragmented, over-complex, risky, or under-instrumented for reliable execution.",
   alternates: {
     canonical: "/launchpad/tech-stack-audit",
   },

@@ -15,9 +15,9 @@ import { ContactForm } from "@/components/contact-form"
 import { ContextualTestimonial } from "@/components/contextual-testimonial"
 
 export const metadata: Metadata = {
-  title: "Tell us what is stuck",
+  title: "What is slowing your team right now?",
   description:
-    "Talk with Amalgam about what is slowing delivery and get a clear recommendation on the best next step.",
+    "Talk with Amalgam about what is slowing releases or execution and get a clear recommendation on the next step.",
   alternates: {
     canonical: "/contact",
   },
@@ -27,7 +27,7 @@ const nextSteps = [
   {
     title: "You tell us what is stuck",
     description:
-      "Tell us what is slowing delivery and where decisions feel stuck.",
+      "Tell us what is slowing your releases and where decisions feel stuck.",
   },
   {
     title: "We reply directly",
@@ -56,10 +56,10 @@ export default function ContactPage() {
                   Contact
                 </p>
                 <h1 className="text-4xl font-semibold leading-tight tracking-tight text-foreground text-balance md:text-5xl">
-                  Tell us what is stuck
+                  What is slowing your team right now?
                 </h1>
                 <p className="contact-hero-body mt-6 text-lg leading-relaxed text-muted-foreground">
-                  Tell us where work is getting stuck and what decision you need to make next.
+                  Tell us where execution is getting stuck and which decision you need to make next.
                 </p>
 
                 <div className="contact-path-card support-panel mt-8 p-5">
@@ -180,13 +180,13 @@ export default function ContactPage() {
                   Start with a strategy call
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-background/70">
-                  If delivery is slowing and the root cause is unclear, this is usually the fastest place to start.
+                  If releases are slowing and the root cause is unclear, this is usually the fastest place to start.
                 </p>
                 <div className="contact-review-points mt-6 space-y-3">
                   {[
                     "60-minute strategy call",
                     "Clear recommendation on what to do next",
-                    "Useful even if you keep delivery internal",
+                    "Useful even if you keep execution internal",
                   ].map((item) => (
                     <div
                       key={item}

@@ -52,10 +52,10 @@ export const knowledgeCategories = [
   },
   {
     id: "execution",
-    label: "Delivery",
-    shortLabel: "Delivery",
+    label: "Execution",
+    shortLabel: "Execution",
     description:
-      "Roadmaps, sequencing, and the practical mechanics of turning diagnosis into momentum.",
+      "Roadmaps, sequencing, and the practical mechanics of turning diagnosis into executable plans.",
   },
   {
     id: "org-design",
@@ -77,9 +77,9 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
     category: "architecture",
     title: "Should you modernize or rebuild?",
     description:
-      "A practical decision framework for choosing between targeted modernization, phased replacement, and a true rebuild.",
+      "How to choose between targeted modernization, phased replacement, and a true rebuild without betting the company.",
     takeaway:
-      "Use this when leadership is debating a rewrite and needs a decision tied to business risk rather than engineering taste.",
+      "Use this when rewrite debates are stalling decisions and leadership needs a risk-based call.",
     readTime: "8 min read",
     published: "March 2026",
     featured: true,
@@ -113,7 +113,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
         kicker: "Most companies need less disruption, not more.",
         paragraphs: [
           "Modernization is strongest when the business cannot tolerate interruption. You improve observability, isolate unstable integrations, simplify core workflows, and gradually replace the areas where fragility is actually concentrated. This path is less dramatic, but it protects the system while you learn where the true risk lives.",
-          "It also creates better information. A phased modernization forces the team to articulate ownership boundaries, expose hidden dependencies, and identify where the real handoff failures occur. That learning often removes the need for a rebuild entirely, or at least narrows its scope to a few high-leverage domains.",
+          "It also creates better information. A phased modernization forces the team to articulate ownership boundaries, expose hidden dependencies, and identify where the real handoff failures occur. That learning often removes the need for a rebuild entirely, or at least narrows its scope to a few highest-impact domains.",
         ],
       },
       {
@@ -122,7 +122,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
         kicker: "Rebuild only when old assumptions have become the trap.",
         paragraphs: [
           "A rebuild becomes defensible when the system is not just hard to change, but fundamentally shaped around assumptions the business can no longer live with. That can mean a broken domain model, an unsafe deployment pattern, a vendor or stack the company cannot staff, or a platform structure that makes new revenue-critical capabilities unnaturally expensive.",
-          "Even then, the rebuild should be framed as a migration strategy. The work is not 'build a cleaner thing.' The work is to move the business from one operating substrate to another without breaking trust. That means coexistence planning, data synchronization, boundary clarity, and ruthless sequencing.",
+          "Even then, the rebuild should be framed as a migration strategy. The work is not 'build a cleaner thing.' The work is to move the business from one operating substrate to another without breaking trust. That means coexistence planning, data synchronization, clear boundaries, and ruthless sequencing.",
         ],
         bullets: [
           "Define which capabilities move first and why.",
@@ -145,9 +145,9 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
     category: "architecture",
     title: "Do you need an architecture map before your roadmap?",
     description:
-      "Why strategic roadmaps fail when nobody has a trustworthy picture of the current system, dependencies, and ownership boundaries.",
+      "Roadmaps fail when nobody has a reliable picture of the current system, dependencies, and ownership boundaries.",
     takeaway:
-      "Use this when roadmap planning keeps collapsing into debate because technical reality is still fuzzy.",
+      "Use this when roadmap planning keeps collapsing into debate because technical reality is still unclear.",
     readTime: "7 min read",
     published: "March 2026",
     featured: false,
@@ -206,9 +206,9 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
     category: "operations",
     title: "Are integrations quietly slowing you down?",
     description:
-      "Why delivery slows when workflows span too many tools, owners, and hidden dependencies, and what to simplify first.",
+      "Shipping slows when workflows span too many tools, owners, and hidden dependencies. This shows what to simplify first.",
     takeaway:
-      "Use this when work looks simple on paper but repeatedly gets slower, noisier, and harder to coordinate in practice.",
+      "Use this when work looks simple on paper but keeps getting slower and harder to coordinate in practice.",
     readTime: "7 min read",
     published: "March 2026",
     featured: true,
@@ -240,7 +240,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
         title: "Why adding more tooling often makes it worse",
         paragraphs: [
           "When friction becomes visible, the default response is often additive: another dashboard, another sync, another automation service, another layer to normalize the chaos. This can help temporarily, but if the underlying workflow is still unclear, the new tool becomes one more place where partial truth lives.",
-          "The real issue is usually boundary clarity. Teams need to know which system is authoritative, which events matter, where state changes should happen, and who owns failures when those flows break.",
+          "The real issue is usually boundary definition. Teams need to know which system is authoritative, which events matter, where state changes should happen, and who owns failures when those flows break.",
         ],
       },
       {
@@ -271,19 +271,19 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
     category: "operations",
     title: "Did growth break your operating rhythm?",
     description:
-      "How companies lose execution cadence after hiring, fundraising, or product expansion, and what restores it without adding bureaucracy.",
+      "Why companies lose execution rhythm after hiring, fundraising, or product expansion, and how to restore it without adding bureaucracy.",
     takeaway:
-      "Use this when the company has more people and more tooling but less shared momentum than it had a year ago.",
+      "Use this when the company has more people and more tooling but less alignment than it had a year ago.",
     readTime: "7 min read",
     published: "March 2026",
     featured: false,
     intro:
-      "Growth is supposed to create leverage. Instead, many teams experience the opposite: more meetings, slower alignment, and increasing uncertainty about what is actually on track. The company is not lacking effort. It is lacking operating rhythm that still fits the size and complexity of the system.",
+      "Growth is supposed to make work easier. Instead, many teams experience the opposite: more meetings, slower alignment, and increasing uncertainty about what is actually on track. The company is not lacking effort. It is lacking operating rhythm that still fits the size and complexity of the system.",
     summary:
       "Execution cadence degrades after growth when old coordination habits break but new ones are never designed. Restoring rhythm requires clearer decision points, fewer ambiguous handoffs, and a cadence that matches actual work, not management theater.",
     keyTakeaways: [
       "The pre-growth operating model rarely survives hiring and complexity intact.",
-      "Rhythm is about decision clarity and sequencing, not just meeting frequency.",
+      "Rhythm is about decision quality and sequencing, not just meeting frequency.",
       "You do not fix slow execution by layering more reporting on top of unclear ownership.",
     ],
     sections: [
@@ -330,9 +330,9 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
     category: "data",
     title: "Post-Series A data foundations",
     description:
-      "What needs to be true in your data layer before reporting, forecasting, and automation become trustworthy at scale.",
+      "What needs to be true in your data layer before reporting, forecasting, and automation can be trusted at scale.",
     takeaway:
-      "Use this when metrics trust is falling apart and leadership is asking for more automation anyway.",
+      "Use this when metric trust is falling apart and leadership is still asking for more automation.",
     readTime: "8 min read",
     published: "March 2026",
     featured: true,
@@ -342,7 +342,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
       "Before a business needs sophisticated analytics, it needs trusted definitions, clear source systems, and reviewable transformation logic. Without that substrate, automation and forecasting only make ambiguity faster.",
     keyTakeaways: [
       "Metrics trust is the real milestone, not dashboard count.",
-      "A post-Series A data system should optimize for consistency and clarity before advanced complexity.",
+      "A post-Series A data system should prioritize consistency and shared definitions before advanced complexity.",
       "Automation becomes a force multiplier only after the operating data model is stable enough to trust.",
     ],
     sections: [
@@ -372,8 +372,8 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
         id: "automation-sequence",
         title: "Why automation has to come in the right sequence",
         paragraphs: [
-          "Teams often reach for automation as soon as manual work becomes painful. That instinct makes sense. But automating on top of unclear definitions only accelerates inconsistency. You end up with faster confusion, not better leverage.",
-          "The better sequence is clarity, then reliability, then automation. Once definitions and ownership are solid, automation becomes a way to remove toil. Before that, it tends to hide broken assumptions.",
+          "Teams often reach for automation as soon as manual work becomes painful. That instinct makes sense. But automating on top of unclear definitions only accelerates inconsistency. You end up with faster confusion, not better outcomes.",
+          "The better sequence is shared definitions, then reliability, then automation. Once definitions and ownership are solid, automation becomes a way to remove toil. Before that, it tends to hide broken assumptions.",
         ],
       },
       {
@@ -393,12 +393,12 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
     description:
       "How to choose a small set of operating metrics that help leadership make decisions instead of creating reporting theater.",
     takeaway:
-      "Use this when the company has dozens of dashboards but very little confidence in what should drive action.",
+      "Use this when the company has dozens of dashboards but little confidence in what should drive action.",
     readTime: "6 min read",
     published: "March 2026",
     featured: false,
     intro:
-      "Many teams mistake visibility for clarity. They accumulate dashboards, scorecards, and alerts, then discover that the business is still arguing about what matters. A company rarely suffers from too few numbers. It suffers from too many numbers with too little decision weight attached to them.",
+      "Many teams mistake visibility for understanding. They accumulate dashboards, scorecards, and alerts, then discover that the business is still arguing about what matters. A company rarely suffers from too few numbers. It suffers from too many numbers with too little decision weight attached to them.",
     summary:
       "A strong operating metric earns its place by shaping action. The best metrics are few, stable enough to trust, and directly connected to the decisions leadership and teams have to make repeatedly.",
     keyTakeaways: [
@@ -449,16 +449,16 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
     category: "execution",
     title: "Why your delivery velocity problem is really a systems problem",
     description:
-      "Why shipping slows for structural reasons, not just team performance, and how to diagnose the real drag.",
+      "Shipping slows for structural reasons, not just team effort. Diagnose the real drag first.",
     takeaway:
-      "Use this when leadership is asking teams to move faster without understanding the system that is making work slow.",
+      "Use this when leadership is asking teams to move faster without fixing the system that is making work slow.",
     readTime: "7 min read",
     published: "March 2026",
     featured: true,
     intro:
       "When delivery slows, organizations often search for a people explanation first: weak execution, poor planning, unclear accountability, or low urgency. Those can be real. But in many teams, shipping is slow because the system is slow. Work crosses too many boundaries, approvals arrive too late, dependencies are hidden, and the architecture makes every change more expensive than it looks at kickoff.",
     summary:
-      "Velocity is not just a measure of effort. It is an outcome produced by system design, architecture boundaries, ownership clarity, and decision cadence. Teams move faster when the system makes progress easier, not when leadership simply asks harder.",
+      "Velocity is not just a measure of effort. It is an outcome produced by system design, architecture boundaries, ownership definition, and decision cadence. Teams move faster when the system makes progress easier, not when leadership simply asks harder.",
     keyTakeaways: [
       "Slow delivery is often the result of structural friction, not lack of urgency.",
       "A team can look underperforming when the surrounding system makes every change expensive.",
@@ -510,14 +510,14 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
     category: "execution",
     title: "How to sequence your roadmap when certainty is low",
     description:
-      "How to prioritize when the current state is only partially visible and leadership still needs a plan it can trust.",
+      "How to prioritize when the current state is only partly visible and leadership still needs a plan it can trust.",
     takeaway:
-      "Use this when the roadmap needs to move forward but the organization does not yet have perfect certainty.",
+      "Use this when the roadmap needs to move forward before every assumption is fully proven.",
     readTime: "7 min read",
     published: "March 2026",
     featured: false,
     intro:
-      "Real roadmaps are built under uncertainty. Waiting for complete clarity is unrealistic. Pretending clarity exists when it does not is worse. Strong sequencing is the discipline of making the next decisions obvious enough, while keeping later commitments flexible enough to survive what the team will still learn on the way.",
+      "Real roadmaps are built under uncertainty. Waiting for complete certainty is unrealistic. Pretending certainty exists when it does not is worse. Strong sequencing is the discipline of making the next decisions obvious enough, while keeping later commitments flexible enough to survive what the team will still learn on the way.",
     summary:
       "Good sequencing does not eliminate uncertainty. It contains it. Teams should front-load the work that removes risk, clarifies architecture, and makes later commitments easier to trust.",
     keyTakeaways: [
@@ -538,13 +538,13 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
         id: "what-goes-first",
         title: "What should go first",
         paragraphs: [
-          "Early roadmap work should buy leverage. That means reducing architectural risk, clarifying system ownership, cleaning up core workflow bottlenecks, or producing enough operating visibility that later decisions become meaningfully better.",
+          "Early roadmap work should buy optionality. That means reducing architectural risk, clarifying system ownership, cleaning up core workflow bottlenecks, or producing enough operating visibility that later decisions become meaningfully better.",
           "Visible customer outcomes matter, but if the foundation underneath them is still unstable, those wins can create a misleading sense of progress.",
         ],
         bullets: [
           "Prioritize work that reduces future rework.",
           "Sequence around dependencies that threaten multiple later initiatives.",
-          "Treat clarity-producing work as strategic, not administrative.",
+          "Treat definition work as strategic, not administrative.",
         ],
       },
       {
@@ -571,7 +571,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
     description:
       "How system boundaries, decision ownership, and team design reinforce each other for better or worse.",
     takeaway:
-      "Use this when reorg conversations are happening without a clear view of how the system itself is shaped.",
+      "Use this when reorg conversations start before anyone maps how work actually flows.",
     readTime: "7 min read",
     published: "March 2026",
     featured: true,
@@ -598,7 +598,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
         title: "What good boundaries actually enable",
         paragraphs: [
           "Good boundaries do not isolate teams from one another. They make collaboration cleaner. Teams know what they own, where their interfaces begin and end, and which decisions they can make without performing cross-functional diplomacy every day.",
-          "That clarity improves both execution and morale because fewer issues require negotiation simply to get work moving.",
+          "That definition work improves both execution and morale because fewer issues require negotiation simply to get work moving.",
         ],
         bullets: [
           "Fewer meetings to resolve basic ownership questions.",
@@ -630,7 +630,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
     description:
       "How to reduce escalation load by clarifying which decisions belong to teams, leaders, and cross-functional forums.",
     takeaway:
-      "Use this when too many issues are floating upward because nobody is confident about where authority actually sits.",
+      "Use this when too many issues keep escalating because nobody is confident about where authority actually sits.",
     readTime: "6 min read",
     published: "March 2026",
     featured: false,

@@ -188,7 +188,7 @@ export function ClientLogoWall({
 
   return (
     <section className={`client-experience ${className}`}>
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <div className="mx-auto max-w-[720px] text-center">
           {eyebrow ? (
             <p className="mb-3 text-xs font-medium uppercase tracking-[0.24em] text-teal">

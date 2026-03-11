@@ -43,7 +43,7 @@ const whatWeProvide = [
   },
   {
     icon: Zap,
-    title: "Fast unblocking and momentum",
+    title: "Fast unblocking and forward progress",
     description:
       "We help resolve decision bottlenecks, architectural friction, and cross-functional drag before they stall the roadmap.",
   },
@@ -53,7 +53,7 @@ const whatThisLooksLike = [
   "Working alongside your team during planning, execution, and review cycles",
   "Supporting architecture and sequencing decisions as the roadmap meets reality",
   "Helping leadership and teams stay aligned when cross-functional friction rises",
-  "Keeping delivery moving while building internal clarity rather than dependence on outside help",
+  "Keeping execution moving while building internal capability instead of outside dependence",
 ]
 
 const notThis = [
@@ -67,7 +67,7 @@ const partnershipFit = {
   right: [
     "The roadmap exists, but execution pressure is likely to distort it without close support.",
     "Leadership wants judgment close to the work while priorities, constraints, and trade-offs keep shifting.",
-    "The team needs help preserving momentum and cross-functional alignment, not just planning the work once.",
+    "The team needs help preserving progress and cross-functional alignment, not just planning the work once.",
   ],
   notYet: [
     "The root problem is still too fuzzy and needs diagnosis first.",
@@ -100,14 +100,14 @@ export default function OutcomePartnershipPage() {
                   href="/contact?interest=outcome-partnership"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 font-medium text-background transition-all hover:opacity-90"
                 >
-                  Start a conversation
+                  Book a strategy call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   href="/contact?interest=founder-review"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-border px-6 py-3 font-medium text-foreground transition-all hover:bg-secondary"
                 >
-                  Book a strategy call
+                  Need diagnosis first?
                 </Link>
               </div>
             </div>
@@ -262,7 +262,7 @@ export default function OutcomePartnershipPage() {
                 Why Teams Choose This
               </p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
-                A roadmap alone will not keep momentum alive
+                A roadmap alone will not keep execution on track
               </h2>
               <div className="mt-6 space-y-4 leading-relaxed text-muted-foreground">
                 <p>
@@ -272,7 +272,7 @@ export default function OutcomePartnershipPage() {
                   The Outcome Partnership is for that stage. It keeps judgment close to the work so the roadmap stays usable under pressure.
                 </p>
                 <p>
-                  The standard is simple: more clarity, less drag, and stronger internal capability by the time the work is done.
+                  The standard is simple: fewer blind spots, less drag, and stronger internal capability by the time the work is done.
                 </p>
               </div>
             </div>
@@ -290,14 +290,14 @@ export default function OutcomePartnershipPage() {
                   href="/contact?interest=outcome-partnership"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-background px-6 py-3 font-medium text-foreground transition-opacity hover:opacity-90"
                 >
-                  Start a conversation
+                  Book a strategy call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   href="/services"
                   className="inline-flex min-h-11 items-center justify-center rounded-xl border border-background/15 px-6 py-3 font-medium text-background transition-colors hover:bg-background/10"
                 >
-                  See how we can help
+                  See engagement options
                 </Link>
               </div>
             </div>
@@ -315,3 +315,4 @@ export default function OutcomePartnershipPage() {
     </>
   )
 }
+

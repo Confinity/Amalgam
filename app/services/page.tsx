@@ -11,7 +11,7 @@ import { withBasePath } from "@/lib/site-config"
 export const metadata: Metadata = {
   title: "How We Work | Amalgam",
   description:
-    "How working with Amalgam starts: from a short triage call to deeper delivery and execution support when it clearly makes sense.",
+    "How working with Amalgam starts: from a short triage call to deeper diagnostic and execution support when it clearly makes sense.",
   alternates: {
     canonical: "/services",
   },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 const reachOutMoments = [
   {
-    title: "Your systems got harder to trust",
+    title: "Your systems are harder to trust",
     description:
       "What used to work now feels fragile, manual, or unpredictable.",
   },
@@ -28,7 +28,7 @@ const reachOutMoments = [
     description: "Too many moving parts. Not enough reliability.",
   },
   {
-    title: "Delivery feels slower than it should",
+    title: "Product delivery is slower than it should be",
     description:
       "The team is working hard, but progress is harder to predict.",
   },
@@ -43,7 +43,7 @@ const reachOutMoments = [
       "Leadership knows something is off but needs a clearer path forward.",
   },
   {
-    title: "You need experienced support quickly",
+    title: "You need senior support quickly",
     description: "Not more theory. Clear judgment and practical next steps.",
   },
 ]
@@ -53,27 +53,27 @@ const startPath = [
     title: "15-minute triage call",
     description:
       "A quick conversation to understand the situation and see whether a deeper discussion makes sense.",
-    cta: "Book the call",
+    cta: "Book a strategy call",
     href: "/contact?interest=strategy-session",
   },
   {
     title: "Strategy call",
     description:
       "If the situation is worth exploring, we take a deeper look at the context, pressure points, and possible paths forward.",
-    cta: "Learn more",
+    cta: "Book a strategy call",
     href: "/contact?interest=strategy-session",
   },
   {
     title: "Diagnostic review",
     description:
-      "If the situation needs clarity, we analyze the systems, architecture, or delivery model before larger work begins.",
+      "If the situation needs diagnosis, we analyze systems, architecture, and execution patterns before larger work begins.",
     cta: "See the process",
     href: "/founder-review",
   },
   {
     title: "Execution support",
     description:
-      "Once the path is clear, we help move the work forward through focused delivery support or longer-term partnership.",
+      "Once the path is clear, we help move work forward through focused execution support or longer-term partnership.",
     cta: "See what comes next",
     href: "/outcome-partnership",
   },
@@ -86,12 +86,12 @@ const deeperSupportAreas = [
       "When the underlying structure creates fragility, drag, or avoidable rework.",
   },
   {
-    title: "Data and operational clarity",
+    title: "Data trust and operating signal",
     description:
-      "When teams cannot fully trust what they are seeing or how decisions are made.",
+      "When teams cannot trust what they are seeing or how decisions are made.",
   },
   {
-    title: "Execution and delivery rhythm",
+    title: "Execution and operating rhythm",
     description:
       "When priorities, ownership, and coordination slow progress across the team.",
   },
@@ -107,8 +107,8 @@ export default function ServicesPage() {
     <>
       <Navigation
         servicesLabel="How We Work"
-        primaryCtaLabel="Book a 15-minute call"
-        mobilePrompt="If delivery is slowing and the root cause is not obvious, start with a quick 15-minute triage call."
+        primaryCtaLabel="Book a strategy call"
+        mobilePrompt="If releases are slowing and the root cause is not obvious, start with a quick 15-minute triage call."
       />
       <main id="main-content" className="min-h-screen bg-background pt-20">
         <section className="relative overflow-hidden border-b border-border py-20 lg:py-28">
@@ -120,7 +120,7 @@ export default function ServicesPage() {
                 How we work
               </p>
               <h1 className="max-w-[20ch] text-4xl font-semibold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
-                Are releases slipping even though your team is working hard?
+                Are your releases slipping even though your team is working hard?
               </h1>
               <div className="mt-6 max-w-[56ch] space-y-3 text-base leading-relaxed text-muted-foreground md:text-lg">
                 <p>
@@ -138,7 +138,7 @@ export default function ServicesPage() {
                   href="/contact?interest=strategy-session"
                   className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl bg-foreground px-6 py-3 font-medium text-background transition-all hover:opacity-90 sm:w-auto"
                 >
-                  Book a 15-minute call
+                  Book a strategy call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
@@ -202,7 +202,7 @@ export default function ServicesPage() {
                 When teams usually reach out
               </h2>
               <p className="mx-auto mt-4 max-w-[58ch] text-base leading-relaxed text-muted-foreground">
-                Usually when delivery is slowing down and the root cause is no
+                Usually when product delivery is slowing and the root cause is no
                 longer obvious.
               </p>
             </div>
@@ -263,10 +263,10 @@ export default function ServicesPage() {
                 </article>
               ))}
             </div>
-            <p className="mx-auto mt-8 max-w-[62ch] text-center text-sm leading-relaxed text-muted-foreground">
-              Deeper work is scoped and priced after the triage call, once
-              the situation is clear.
-            </p>
+              <p className="mx-auto mt-8 max-w-[62ch] text-center text-sm leading-relaxed text-muted-foreground">
+                Deeper work is scoped and priced after the triage call, once
+                the situation is clear.
+              </p>
           </div>
         </section>
 
@@ -278,7 +278,7 @@ export default function ServicesPage() {
               </h2>
               <p className="mx-auto mt-4 max-w-[58ch] text-base leading-relaxed text-muted-foreground">
                 Once the situation is clear, we focus on the areas that
-                actually improve delivery.
+                actually improve execution.
               </p>
             </div>
             <div className="grid gap-5 md:grid-cols-3">
@@ -302,7 +302,7 @@ export default function ServicesPage() {
         <ClientLogoWall
           className="border-y border-border py-20 lg:py-24"
           eyebrow="Client trust"
-          title="Trusted in complex delivery environments"
+          title="Trusted in complex execution environments"
           description="Selected work across financial services, product, operations, and large-scale technology environments."
         />
 
@@ -354,7 +354,7 @@ export default function ServicesPage() {
           <div className="mx-auto grid max-w-[1160px] gap-10 px-6 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-center">
             <div className="max-w-[620px]">
               <h2 className="max-w-[20ch] text-3xl font-semibold leading-tight text-foreground md:text-4xl">
-                Want a clear read on why delivery feels slow right now?
+                Want a clear read on why your shipping engine feels slow right now?
               </h2>
               <p className="mt-5 max-w-[52ch] text-base leading-relaxed text-muted-foreground">
                 Start with a short call. If the situation needs deeper
@@ -366,7 +366,7 @@ export default function ServicesPage() {
                 START HERE
               </p>
               <p className="mt-4 text-2xl font-semibold leading-tight text-background">
-                Book a 15-minute call
+                Book a strategy call
               </p>
               <p className="mt-3 text-sm leading-relaxed text-background/74">
                 Quick fit check. Clear next step. No large proposal too early.
@@ -376,7 +376,7 @@ export default function ServicesPage() {
                   href="/contact?interest=strategy-session"
                   className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl bg-background px-6 py-3 font-medium text-foreground transition-opacity hover:opacity-90"
                 >
-                  Book a 15-minute call
+                  Book a strategy call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
@@ -394,3 +394,4 @@ export default function ServicesPage() {
     </>
   )
 }
+

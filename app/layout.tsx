@@ -15,12 +15,12 @@ const analyticsEnabled = process.env.NEXT_PUBLIC_VERCEL_ANALYTICS === "1"
 
 export const metadata: Metadata = {
   title: {
-    default: "Amalgam | Is delivery slowing down even though your team is working hard?",
+    default: "Amalgam | Are releases slipping even though your team is working hard?",
     template: "%s | Amalgam",
   },
   applicationName: "Amalgam",
   description:
-    "Amalgam helps teams bring clarity to complex systems, improve delivery, and move forward with confidence.",
+    "Amalgam helps founders and product leaders fix the system issues that slow releases and execution.",
   metadataBase: new URL(SITE_URL),
   category: "technology consulting",
   formatDetection: {
@@ -54,9 +54,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: "Amalgam",
-    title: "Amalgam - Is delivery slowing down even though your team is working hard?",
+    title: "Amalgam - Are releases slipping even though your team is working hard?",
     description:
-      "Experienced support helping teams bring clarity to complex systems and move execution forward.",
+      "Senior support for teams fixing system complexity, shipping drag, and execution risk.",
     images: [
       {
         url: absoluteUrl("/opengraph-image"),
@@ -68,9 +68,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Amalgam - Is delivery slowing down even though your team is working hard?",
+    title: "Amalgam - Are releases slipping even though your team is working hard?",
     description:
-      "Experienced support helping teams bring clarity to complex systems and move execution forward.",
+      "Senior support for teams fixing system complexity, shipping drag, and execution risk.",
     images: [absoluteUrl("/opengraph-image")],
     creator: "@amalgam_inc",
   },

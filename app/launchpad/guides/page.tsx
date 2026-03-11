@@ -12,9 +12,9 @@ import {
 } from "@/lib/launchpad"
 
 export const metadata: Metadata = {
-  title: "Not sure what to read first? Start with your pressure point.",
+  title: "Execution pressure is rising? Start with the right guide path.",
   description:
-    "Practical guidance for teams dealing with delivery slowdowns, fragile systems, AI readiness, and integration complexity.",
+    "Practical guide paths for shipping drag, fragile systems, integration pain, and AI readiness.",
   alternates: {
     canonical: "/launchpad/guides",
   },
@@ -33,10 +33,10 @@ export default function LaunchpadGuidesPage() {
               Launchpad Guides
             </p>
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl">
-              Not sure what to read first? Start with the pressure point in front of you.
+              Execution pressure is rising. Start with the path that matches your situation.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              Follow the path that matches your current pressure, then decide your next move with more confidence.
+              Each path includes three practical reads and one clear next action.
             </p>
           </div>
         </section>
@@ -65,7 +65,7 @@ export default function LaunchpadGuidesPage() {
                           eventData={{ source: "launchpad_guides_collection", target: relatedTool.id }}
                           className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
                         >
-                          Start with {relatedTool.shortTitle}
+                          Start with this diagnostic
                           <ArrowRight className="h-4 w-4" />
                         </TrackedLink>
                       ) : null}
@@ -117,7 +117,7 @@ export default function LaunchpadGuidesPage() {
         <ContextualTestimonial
           className="deferred-section border-t border-border py-20 lg:py-24"
           eyebrow="Client perspective"
-          title="Why teams keep coming back to field guidance with real operating context"
+          title="Why teams keep coming back to guidance that matches real operating pressure"
           testimonialId="mooney-cleanitsupply"
         />
       </main>

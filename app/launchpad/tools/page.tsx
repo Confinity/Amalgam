@@ -7,9 +7,9 @@ import { TrackedLink } from "@/components/tracked-link"
 import { getFeaturedLaunchpadTools } from "@/lib/launchpad"
 
 export const metadata: Metadata = {
-  title: "Not sure where to start? Run a quick diagnostic.",
+  title: "Where is product delivery getting stuck? Run a quick diagnostic.",
   description:
-    "Structured diagnostics for delivery slowdowns, AI readiness, and stack health.",
+    "Run a practical 5-minute diagnostic for shipping drag, AI readiness, or tech-stack risk.",
   alternates: {
     canonical: "/launchpad/tools",
   },
@@ -35,10 +35,10 @@ export default function LaunchpadToolsPage() {
               Launchpad Tools
             </p>
             <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl">
-              Not sure what to do first? Start with a quick diagnostic.
+              Not sure where to start? Run a quick diagnostic first.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              Use these for a fast first-pass read before deciding on deeper support.
+              In about 5 minutes, you&apos;ll get a likely profile, why it matters, and what to do next.
             </p>
           </div>
         </section>
@@ -50,7 +50,10 @@ export default function LaunchpadToolsPage() {
                 What you walk away with
               </p>
               <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-                Each tool gives you a clear read on what is likely creating the slowdown, why it matters, and a practical next move.
+                Each diagnostic gives you a direct read on what is likely causing drag, why it matters now, and the best next step.
+              </p>
+              <p className="mt-2 max-w-3xl text-sm leading-relaxed text-foreground/80">
+                Answer 5 questions -&gt; See your profile -&gt; Choose self-serve or strategy call.
               </p>
               <div className="mt-5 grid gap-3 md:grid-cols-3">
                 {previewRows.map((row) => (
@@ -104,7 +107,7 @@ export default function LaunchpadToolsPage() {
                     eventData={{ source: "launchpad_tools_index", target: tool.id }}
                     className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
                   >
-                    See your profile
+                    Run diagnostic
                     <ArrowRight className="h-4 w-4" />
                   </TrackedLink>
                 </article>

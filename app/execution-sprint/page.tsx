@@ -17,7 +17,7 @@ import { Navigation } from "@/components/navigation"
 export const metadata: Metadata = {
   title: "Is your team asking for a roadmap they can actually run?",
   description:
-    "The Execution Sprint helps you turn clear diagnosis into a roadmap your team can execute with confidence.",
+    "The Execution Sprint helps you turn a clear diagnosis into a roadmap your team can execute with confidence.",
   alternates: {
     canonical: "/execution-sprint",
   },
@@ -32,9 +32,9 @@ const outputs = [
   },
   {
     icon: Target,
-    title: "What is blocking momentum",
+    title: "What is blocking progress",
     description:
-      "A clearer view of what is making delivery slow, risky, or harder to sequence honestly.",
+      "A clearer view of what is making execution slow, risky, or harder to sequence honestly.",
   },
   {
     icon: Calendar,
@@ -64,7 +64,7 @@ const phases = [
     items: [
       "Clarify bottlenecks and operating constraints",
       "Identify trade-offs and foundational work",
-      "Sequence initiatives around risk removal and leverage",
+      "Sequence initiatives around risk removal and business impact",
     ],
   },
   {
@@ -114,14 +114,14 @@ export default function ExecutionSprintPage() {
                   href="/contact?interest=execution-sprint"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 font-medium text-background transition-all hover:opacity-90"
                 >
-                  Start a conversation
+                  Book a strategy call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   href="/contact?interest=founder-review"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-border px-6 py-3 font-medium text-foreground transition-all hover:bg-secondary"
                 >
-                  Book a strategy call
+                  Need diagnosis first?
                 </Link>
               </div>
             </div>
@@ -271,14 +271,14 @@ export default function ExecutionSprintPage() {
                   href="/contact?interest=execution-sprint"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-background px-6 py-3 font-medium text-foreground transition-opacity hover:opacity-90"
                 >
-                  Start a conversation
+                  Book a strategy call
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   href="/contact?interest=founder-review"
                   className="inline-flex min-h-11 items-center justify-center rounded-xl border border-background/15 px-6 py-3 font-medium text-background transition-colors hover:bg-background/10"
                 >
-                  Book a strategy call
+                  Need diagnosis first?
                 </Link>
               </div>
             </div>
@@ -296,3 +296,4 @@ export default function ExecutionSprintPage() {
     </>
   )
 }
+

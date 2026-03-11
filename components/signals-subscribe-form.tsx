@@ -12,7 +12,7 @@ type SignalsSubscribeFormProps = {
 
 export function SignalsSubscribeForm({
   source,
-  buttonLabel = "Subscribe for signal",
+  buttonLabel = "Subscribe for practical updates",
   className,
 }: SignalsSubscribeFormProps) {
   const [email, setEmail] = useState("")
@@ -34,29 +34,29 @@ export function SignalsSubscribeForm({
     setStatus("idle")
     setMessage("")
 
-    const webhook = process.env.NEXT_PUBLIC_SIGNALS_WEBHOOK_URL
-
     try {
-      if (webhook) {
-        const response = await fetch(webhook, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: normalizedEmail,
-            source,
-            createdAt: new Date().toISOString(),
-          }),
-        })
+      const response = await fetch("/api/signals", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: normalizedEmail,
+          source,
+        }),
+      })
 
-        if (!response.ok) {
-          throw new Error(`Webhook returned ${response.status}`)
-        }
+      const data = (await response.json()) as { status?: string; message?: string }
+
+      if (!response.ok || data.status !== "success") {
+        throw new Error(data.message ?? `Signals API returned ${response.status}`)
       }
 
       setStatus("success")
-      setMessage("You are in. We will send practical signal when it is worth your attention.")
+      setMessage(
+        data.message ??
+          "You are in. We will only send notes when they are genuinely useful.",
+      )
       track("signals_signup_success", { source })
       setEmail("")
     } catch {

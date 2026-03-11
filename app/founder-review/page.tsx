@@ -15,9 +15,9 @@ import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
 
 export const metadata: Metadata = {
-  title: "Not sure what is actually slowing delivery? Start here.",
+  title: "Not sure what is actually slowing releases? Start here.",
   description:
-    "When delivery feels stuck and the root cause is unclear, the Diagnostic Review helps you identify what to fix first.",
+    "When product delivery feels stuck and the root cause is unclear, the Diagnostic Review helps you identify what to fix first.",
   alternates: {
     canonical: "/founder-review",
   },
@@ -42,7 +42,7 @@ const deliverables = [
     icon: Target,
     title: "Where risk is building",
     description:
-      "The specific issues slowing delivery, creating fragility, or distorting roadmap decisions.",
+      "The specific issues slowing execution, creating fragility, or distorting roadmap decisions.",
   },
   {
     icon: FileText,
@@ -63,7 +63,7 @@ const process = [
     step: "01",
     title: "Kickoff and context",
     description:
-      "We align on the situation, constraints, and where leadership most needs clarity.",
+      "We align on the situation, constraints, and where leadership most needs answers first.",
   },
   {
     step: "02",
@@ -89,12 +89,12 @@ const fitSignals = {
   right: [
     "Leadership can feel the drag clearly, but the actual source of it is still disputed or fuzzy.",
     "Architecture, workflow, integration, and operating issues are colliding at the same time.",
-    "The cost of another vague planning cycle is already starting to show up in momentum, risk, or trust.",
+    "The cost of another vague planning cycle is already showing up in progress, risk, or trust.",
   ],
   notYet: [
     "The diagnosis is already trusted and the real need is roadmap sequencing.",
     "The work is narrowly scoped and the constraints are already obvious to everyone involved.",
-    "The business mainly needs delivery capacity, not diagnostic support.",
+    "The business mainly needs execution capacity, not diagnostic support.",
   ],
 }
 
@@ -115,7 +115,7 @@ export default function FounderReviewPage() {
                 Not sure what is actually causing the slowdown? Start here.
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                A focused two-week review to pinpoint what is slowing delivery and what to fix first.
+                A focused two-week review to pinpoint what is slowing product delivery and what to fix first.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Link
@@ -155,7 +155,7 @@ export default function FounderReviewPage() {
                   Important
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  This is a paid diagnostic, not a free consultation. It is built to produce clarity fast.
+                  This is a paid diagnostic, not a free consultation. It is built to produce a clear read quickly.
                 </p>
               </div>
               <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
@@ -370,7 +370,7 @@ export default function FounderReviewPage() {
                   href="/services"
                   className="inline-flex min-h-11 items-center justify-center rounded-xl border border-background/15 px-6 py-3 font-medium text-background transition-colors hover:bg-background/10"
                 >
-                  See how we can help
+                  See engagement options
                 </Link>
               </div>
             </div>
@@ -388,3 +388,4 @@ export default function FounderReviewPage() {
     </>
   )
 }
+

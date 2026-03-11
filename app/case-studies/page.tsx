@@ -15,7 +15,7 @@ import { caseStudies, industries, summarizeCaseStudyText } from "@/lib/case-stud
 export const metadata: Metadata = {
   title: "See work in situations like yours",
   description:
-    "Real client work across banking, fintech, energy, retail, and enterprise systems with clear context, approach, and outcomes.",
+    "Real client work across banking, fintech, energy, retail, and enterprise systems with clear context, actions, and outcomes.",
   alternates: {
     canonical: "/case-studies",
   },
@@ -37,7 +37,7 @@ const additionalRelationships = [
   {
     name: "TIAA",
     href: "/case-studies/tiaa",
-    note: "Technical delivery and systems support in a banking environment.",
+    note: "Technical execution and systems support in a banking environment.",
   },
 ]
 
@@ -55,10 +55,10 @@ export default function CaseStudiesPage() {
                 Case Studies
               </p>
               <h1 className="text-4xl font-semibold leading-tight tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                See what changed in real client situations like yours
+                See how we helped in real situations like yours
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-                See the situation, what changed, and why it mattered.
+                See the problem, what changed, and why it mattered.
               </p>
               <div className="mt-10 grid gap-4 sm:grid-cols-3">
                 <div className="rounded-2xl border border-border bg-background/90 px-5 py-5 shadow-sm">
@@ -81,9 +81,9 @@ export default function CaseStudiesPage() {
                   How to use this page
                 </p>
                 <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
-                <p>Start with the featured examples for a quick read.</p>
-                <p>Use the full library to find situations close to your own.</p>
-                <p>If it feels similar, book a strategy call and we can review your case directly.</p>
+                  <p>Start with the featured examples for a quick read.</p>
+                  <p>Use the full library to find situations close to your own.</p>
+                  <p>If one feels similar, book a strategy call and we can review your situation directly.</p>
                 </div>
               </div>
           </div>
@@ -101,7 +101,7 @@ export default function CaseStudiesPage() {
                 </h2>
               </div>
               <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-                Featured examples rotate each page load so returning visitors see broader proof.
+                Featured examples rotate on each page load so returning visitors see broader proof.
               </p>
             </div>
             <CaseStudiesFeaturedGrid featuredStudies={featuredStudies} />
@@ -124,9 +124,9 @@ export default function CaseStudiesPage() {
                 <p className="mb-3 text-xs font-medium uppercase tracking-[0.22em] text-teal">
                   Full library
                 </p>
-                <h2 className="text-3xl font-semibold text-foreground">
-                  Find a case close to your situation
-                </h2>
+              <h2 className="text-3xl font-semibold text-foreground">
+                Find a case close to your situation
+              </h2>
               </div>
               <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
                 Each page gives you context, what we did, and what changed.
@@ -251,7 +251,7 @@ export default function CaseStudiesPage() {
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-lg border border-background/30 px-6 py-3 font-medium text-background transition-colors hover:bg-background/10"
               >
-                Start a conversation
+                Contact us directly
               </Link>
             </div>
           </div>
@@ -261,3 +261,4 @@ export default function CaseStudiesPage() {
     </>
   )
 }
+
