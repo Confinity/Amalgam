@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useMemo, useRef, useState } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { usePathname } from "next/navigation"
 import { Eye, EyeOff, MessageSquare, Plus, Trash2, X } from "lucide-react"
 
@@ -33,6 +33,7 @@ const REVIEW_REMOTE_NOTES_URLS = ["/api/review-notes", REVIEW_REMOTE_NOTES_FALLB
   (value, index, list) => Boolean(value) && list.indexOf(value) === index
 )
 const REMOTE_SYNC_DEBOUNCE_MS = 700
+const REMOTE_PULL_INTERVAL_MS = 3500
 const CONFIGURED_BASE_PATH = (process.env.NEXT_PUBLIC_BASE_PATH ?? "").replace(/\/+$/, "")
 const LEGACY_BASE_PATHS = ["/Amalgam", "/amalgam"] as const
 
@@ -152,6 +153,67 @@ function createEmptyRemoteStore(): ReviewRemoteStore {
     updatedAt: new Date().toISOString(),
     pages: {},
   }
+}
+
+function toIsoMillis(value: string) {
+  const parsed = Date.parse(value)
+  return Number.isNaN(parsed) ? 0 : parsed
+}
+
+function noteSignature(note: ReviewNote) {
+  return [
+    note.id,
+    note.pageUrl,
+    note.updatedAt,
+    note.x,
+    note.y,
+    note.category,
+    note.collapsed ? 1 : 0,
+    note.title,
+    note.text,
+  ].join("|")
+}
+
+function notesSignature(notes: ReviewNote[]) {
+  return notes.map((note) => noteSignature(note)).sort().join("||")
+}
+
+function pageDeletionKey(pageUrl: string, noteId: string) {
+  return `${pageUrl}::${noteId}`
+}
+
+function replacePageNotes(allNotes: ReviewNote[], pageUrl: string, nextPageNotes: ReviewNote[]) {
+  const otherPageNotes = allNotes.filter((note) => note.pageUrl !== pageUrl)
+  return [...otherPageNotes, ...nextPageNotes]
+}
+
+function mergePageNotesForSync(params: {
+  pageUrl: string
+  localNotes: ReviewNote[]
+  remoteNotes: ReviewNote[]
+  deletedNotes: Record<string, string>
+}) {
+  const { pageUrl, localNotes, remoteNotes, deletedNotes } = params
+  const merged = new Map<string, ReviewNote>()
+
+  for (const remoteNote of remoteNotes) {
+    const deletionIso = deletedNotes[pageDeletionKey(pageUrl, remoteNote.id)]
+    if (deletionIso && toIsoMillis(deletionIso) >= toIsoMillis(remoteNote.updatedAt)) {
+      continue
+    }
+    merged.set(remoteNote.id, remoteNote)
+  }
+
+  for (const localNote of localNotes) {
+    const existing = merged.get(localNote.id)
+    if (!existing || toIsoMillis(localNote.updatedAt) >= toIsoMillis(existing.updatedAt)) {
+      merged.set(localNote.id, localNote)
+    }
+  }
+
+  return Array.from(merged.values()).sort(
+    (left, right) => toIsoMillis(left.createdAt) - toIsoMillis(right.createdAt)
+  )
 }
 
 function normalizeRemoteStore(raw: unknown): ReviewRemoteStore {
@@ -334,6 +396,26 @@ export function ReviewMode() {
   const remoteStoreRef = useRef<ReviewRemoteStore | null>(null)
   const remoteHydratedPageRef = useRef<string>("")
   const syncTimeoutRef = useRef<number | null>(null)
+  const localDirtyRef = useRef(false)
+  const localRevisionRef = useRef(0)
+  const deletedNotesRef = useRef<Record<string, string>>({})
+
+  const markLocalDirty = useCallback(() => {
+    localDirtyRef.current = true
+    localRevisionRef.current += 1
+  }, [])
+
+  const applyLocalNotesUpdate = useCallback((
+    updater: ReviewNote[] | ((previous: ReviewNote[]) => ReviewNote[])
+  ) => {
+    setNotes((previous) => {
+      const next = typeof updater === "function" ? updater(previous) : updater
+      if (next !== previous) {
+        markLocalDirty()
+      }
+      return next
+    })
+  }, [markLocalDirty])
 
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -358,6 +440,8 @@ export function ReviewMode() {
 
     const currentPage = getPageUrlForNotes()
     const cachedNotes = loadNotes(currentPage)
+    localDirtyRef.current = false
+    localRevisionRef.current = 0
     queueMicrotask(() => {
       setPageUrl(currentPage)
       setNotes(cachedNotes)
@@ -381,7 +465,12 @@ export function ReviewMode() {
 
       remoteStoreRef.current = store
       const remoteNotes = store.pages[currentPage] ?? []
-      setNotes(remoteNotes)
+      setNotes((previous) => {
+        const currentPageNotes = previous.filter((note) => note.pageUrl === currentPage)
+        return notesSignature(currentPageNotes) === notesSignature(remoteNotes)
+          ? previous
+          : replacePageNotes(previous, currentPage, remoteNotes)
+      })
       saveNotes(currentPage, remoteNotes, { allowEmpty: true })
       setSyncStatus("synced")
     })()
@@ -399,7 +488,7 @@ export function ReviewMode() {
     const pageNotes = notes.filter((note) => note.pageUrl === pageUrl)
     saveNotes(pageUrl, pageNotes, { allowEmpty: true })
 
-    if (remoteHydratedPageRef.current !== pageUrl) {
+    if (remoteHydratedPageRef.current !== pageUrl || !localDirtyRef.current) {
       return
     }
 
@@ -407,20 +496,30 @@ export function ReviewMode() {
       window.clearTimeout(syncTimeoutRef.current)
     }
 
+    const revisionSnapshot = localRevisionRef.current
     syncTimeoutRef.current = window.setTimeout(() => {
       void (async () => {
         setSyncStatus("loading")
-        const baseStore = remoteStoreRef.current ?? (await fetchRemoteStore()) ?? createEmptyRemoteStore()
-        const nextPages = { ...baseStore.pages }
+        const latestStore = (await fetchRemoteStore()) ?? remoteStoreRef.current ?? createEmptyRemoteStore()
+        remoteStoreRef.current = latestStore
+        const remotePageNotes = latestStore.pages[pageUrl] ?? []
+        const mergedPageNotes = mergePageNotesForSync({
+          pageUrl,
+          localNotes: pageNotes,
+          remoteNotes: remotePageNotes,
+          deletedNotes: deletedNotesRef.current,
+        })
 
-        if (pageNotes.length > 0) {
-          nextPages[pageUrl] = pageNotes
+        const nextPages = { ...latestStore.pages }
+
+        if (mergedPageNotes.length > 0) {
+          nextPages[pageUrl] = mergedPageNotes
         } else {
           delete nextPages[pageUrl]
         }
 
         const nextStore: ReviewRemoteStore = {
-          ...baseStore,
+          ...latestStore,
           updatedAt: new Date().toISOString(),
           pages: nextPages,
         }
@@ -428,6 +527,14 @@ export function ReviewMode() {
         const saved = await saveRemoteStore(nextStore)
         if (saved) {
           remoteStoreRef.current = nextStore
+          if (localRevisionRef.current === revisionSnapshot) {
+            localDirtyRef.current = false
+          }
+          for (const key of Object.keys(deletedNotesRef.current)) {
+            if (key.startsWith(`${pageUrl}::`)) {
+              delete deletedNotesRef.current[key]
+            }
+          }
           setSyncStatus("synced")
         } else {
           setSyncStatus("error")
@@ -442,6 +549,46 @@ export function ReviewMode() {
       }
     }
   }, [active, notes, pageUrl])
+
+  useEffect(() => {
+    if (!active) {
+      return
+    }
+
+    let cancelled = false
+    const pullLatest = async () => {
+      const store = await fetchRemoteStore()
+      if (cancelled || !store) {
+        return
+      }
+
+      remoteStoreRef.current = store
+      if (localDirtyRef.current) {
+        return
+      }
+
+      const remotePageNotes = store.pages[pageUrl] ?? []
+      saveNotes(pageUrl, remotePageNotes, { allowEmpty: true })
+      setNotes((previous) => {
+        const currentPageNotes = previous.filter((note) => note.pageUrl === pageUrl)
+        if (notesSignature(currentPageNotes) === notesSignature(remotePageNotes)) {
+          return previous
+        }
+        return replacePageNotes(previous, pageUrl, remotePageNotes)
+      })
+      setSyncStatus("synced")
+    }
+
+    void pullLatest()
+    const intervalId = window.setInterval(() => {
+      void pullLatest()
+    }, REMOTE_PULL_INTERVAL_MS)
+
+    return () => {
+      cancelled = true
+      window.clearInterval(intervalId)
+    }
+  }, [active, pageUrl])
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -552,7 +699,7 @@ export function ReviewMode() {
         updatedAt: now,
       }
 
-      setNotes((previous) => {
+      applyLocalNotesUpdate((previous) => {
         return [...previous, nextNote]
       })
     }
@@ -563,7 +710,7 @@ export function ReviewMode() {
       window.removeEventListener("mousemove", onMouseMove, true)
       window.removeEventListener("click", onClick, true)
     }
-  }, [active, addingNote, pageUrl])
+  }, [active, addingNote, applyLocalNotesUpdate, pageUrl])
 
   useEffect(() => {
     if (!dragging) {
@@ -577,7 +724,7 @@ export function ReviewMode() {
       const nextX = Math.max(8, Math.min(event.pageX - dragging.offsetX, maxX))
       const nextY = Math.max(8, Math.min(event.pageY - dragging.offsetY, maxY))
 
-      setNotes((previous) =>
+      applyLocalNotesUpdate((previous) =>
         previous.map((note) =>
           note.id === dragging.id
             ? { ...note, x: nextX, y: nextY, updatedAt: new Date().toISOString() }
@@ -596,7 +743,7 @@ export function ReviewMode() {
       window.removeEventListener("pointermove", onPointerMove)
       window.removeEventListener("pointerup", onPointerUp)
     }
-  }, [dragging, pageUrl])
+  }, [applyLocalNotesUpdate, dragging, pageUrl])
 
   const visibleNotes = useMemo(
     () => (notesVisible ? notes.filter((note) => note.pageUrl === pageUrl) : []),
@@ -604,7 +751,7 @@ export function ReviewMode() {
   )
 
   const updateNotes = (updater: ReviewNote[] | ((previous: ReviewNote[]) => ReviewNote[])) => {
-    setNotes((previous) => {
+    applyLocalNotesUpdate((previous) => {
       return typeof updater === "function" ? updater(previous) : updater
     })
   }
@@ -618,6 +765,7 @@ export function ReviewMode() {
   }
 
   const deleteNote = (id: string) => {
+    deletedNotesRef.current[pageDeletionKey(pageUrl, id)] = new Date().toISOString()
     updateNotes((previous) => previous.filter((note) => note.id !== id))
   }
 
@@ -627,6 +775,10 @@ export function ReviewMode() {
     )
     if (!shouldClear) {
       return
+    }
+    const now = new Date().toISOString()
+    for (const note of notes.filter((item) => item.pageUrl === pageUrl)) {
+      deletedNotesRef.current[pageDeletionKey(pageUrl, note.id)] = now
     }
     updateNotes((previous) => previous.filter((note) => note.pageUrl !== pageUrl))
   }
