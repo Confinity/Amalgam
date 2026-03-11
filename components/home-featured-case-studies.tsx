@@ -60,12 +60,6 @@ export function HomeFeaturedCaseStudies({ featuredStudies }: HomeFeaturedCaseStu
           <p className="mt-3 text-sm leading-relaxed text-foreground">
             {summarizeCaseStudyText(flagship.outcome, { maxSentences: 1, maxChars: 170 })}
           </p>
-          <p className="mt-4 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-            How we approached it
-          </p>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-            {summarizeCaseStudyText(flagship.approach, { maxSentences: 1, maxChars: 170 })}
-          </p>
         </div>
         <span className="inline-flex items-center gap-1 text-sm font-medium text-foreground transition-colors group-hover:text-teal">
           Read case study

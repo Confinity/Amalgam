@@ -38,7 +38,7 @@ function Hero() {
               Amalgam helps founders, entrepreneurs, and product teams turn ideas into real products and working systems.
             </p>
             <p className="hero-body mt-5 text-lg leading-relaxed text-muted-foreground">
-              Building something real is rarely simple. Ideas evolve, systems grow, and delivery gets messy. We help you find what is slowing progress and move forward with confidence.
+              When progress gets messy, we help you find the blocker, simplify the system, and move forward with confidence.
             </p>
             <div className="hero-cta-row mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -94,14 +94,14 @@ function WhatWeDo() {
     <section className="homepage-core-offer-section section-warm border-t border-border py-20 lg:py-24">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <div className="mb-9 max-w-3xl">
-          <h2 className="mb-4 text-3xl font-semibold text-foreground">What we help builders solve</h2>
+          <h2 className="mb-4 text-2xl font-semibold text-foreground md:text-3xl">What we help builders solve</h2>
           <p className="max-w-2xl leading-relaxed text-muted-foreground">
-            When progress gets harder than it should, we help teams find the blocker and choose the next move.
+            When progress gets harder than it should, we help you find the blocker and choose the next move.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {outcomes.map((outcome) => (
-            <div key={outcome.title} className="rounded-xl border border-border bg-background p-6">
+            <div key={outcome.title} className="rounded-2xl border border-border/90 bg-background p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-teal/30 hover:shadow-md">
               <outcome.icon className="mb-4 h-6 w-6 text-teal" />
               <h3 className="mb-2 font-semibold text-foreground">{outcome.title}</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">{outcome.description}</p>
@@ -141,9 +141,9 @@ function WhoWeHelp() {
     <section className="homepage-audiences-section deferred-section border-y border-border bg-secondary/45 py-20 lg:py-24">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <div className="mb-8 max-w-3xl">
-          <h2 className="text-2xl font-semibold text-foreground">Who Amalgam helps</h2>
+          <h2 className="text-2xl font-semibold text-foreground md:text-3xl">Who Amalgam helps</h2>
           <p className="mt-3 text-muted-foreground">
-            Builders at every stage, from first release to scale.
+            Builders at every stage, from first release through scale.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -175,9 +175,9 @@ function TypicalTriggers() {
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
           <div className="max-w-xl">
-            <h2 className="mb-4 text-3xl font-semibold text-foreground">When teams usually reach out</h2>
+            <h2 className="mb-4 text-2xl font-semibold text-foreground md:text-3xl">When teams usually reach out</h2>
             <p className="leading-relaxed text-muted-foreground">
-              Progress slows, priorities blur, and outcomes feel off. We help teams step back, see what is happening, and choose the next move.
+              Progress slows, priorities blur, and outcomes feel off. We help teams see what is happening and choose the next move.
             </p>
             <Link
               href="/contact?interest=strategy-session"
@@ -239,9 +239,9 @@ function Offers() {
     <section className="homepage-offers-section deferred-section border-y border-border bg-secondary/45 py-20 lg:py-24">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <div className="mb-8 max-w-3xl">
-          <h2 className="mb-4 text-2xl font-semibold text-foreground">Start with one clear step</h2>
+          <h2 className="mb-4 text-2xl font-semibold text-foreground md:text-3xl">Start with one clear step</h2>
           <p className="text-muted-foreground">
-            Most teams start with Founder Review, then move into planning and hands-on support only when needed.
+            Start with Founder Review, then go deeper only when needed.
           </p>
         </div>
         <div className="grid gap-8 lg:grid-cols-3">
@@ -294,7 +294,7 @@ function TrustSection() {
       className="homepage-trust-section border-t border-border"
       eyebrow="Client experience"
       title="Trusted in complex environments"
-      description="We’ve supported teams across fintech, banking, energy, retail, philanthropy, and enterprise software. These environments share one thing: complexity that generic advice cannot solve."
+      description="Experience across fintech, banking, energy, retail, philanthropy, and enterprise software."
       showCaseStudiesCta
     />
   )
@@ -309,8 +309,8 @@ function FeaturedCaseStudies() {
         <div className="mb-12 flex items-end justify-between">
           <div>
             <p className="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-teal">Case studies</p>
-            <h2 className="mb-2 text-3xl font-semibold text-foreground">See work in situations like yours</h2>
-            <p className="text-muted-foreground">Real situations, real constraints, clear outcomes.</p>
+            <h2 className="mb-2 text-2xl font-semibold text-foreground md:text-3xl">See work in situations like yours</h2>
+            <p className="text-muted-foreground">Real situations. Clear outcomes.</p>
           </div>
           <Link
             href="/case-studies"
@@ -336,9 +336,9 @@ function KnowledgePreview() {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-teal">Knowledge</p>
-            <h2 className="mb-2 text-3xl font-semibold text-foreground">Read this when systems get messy</h2>
+            <h2 className="mb-2 text-2xl font-semibold text-foreground md:text-3xl">Read this when systems get messy</h2>
             <p className="max-w-xl text-muted-foreground">
-              Practical notes on architecture, delivery, data, and leadership decisions.
+              Short practical notes on architecture, delivery, data, and leadership decisions.
             </p>
           </div>
           <Link
@@ -381,23 +381,15 @@ function FinalCTA() {
       <div className="mx-auto grid max-w-[1200px] gap-10 px-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-center">
         <div className="max-w-3xl">
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">Next step</p>
-          <h2 className="mb-4 text-3xl font-semibold text-background text-balance">Need a clear next step?</h2>
+          <h2 className="mb-4 text-3xl font-semibold text-background text-balance">Choose your next step</h2>
           <p className="max-w-2xl text-background/70">
-            Self-serve with Launchpad first, or book a strategy call for direct support.
+            Self-serve with Launchpad, or book a strategy call for direct support.
           </p>
         </div>
         <div className="homepage-final-cta-panel rounded-[24px] border border-background/12 bg-background/[0.04] p-6">
-          <div className="space-y-3">
-            {["Self-serve guidance in Launchpad", "Direct support when you need it"].map((item) => (
-              <div
-                key={item}
-                className="flex items-start gap-3 border-t border-background/10 px-0 py-3 text-sm text-background first:border-t-0 first:pt-0"
-              >
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-teal" />
-                <span>{item}</span>
-              </div>
-            ))}
-          </div>
+          <p className="text-sm text-background/78">
+            Launchpad helps you self-serve quickly. Strategy calls are for direct support on your exact situation.
+          </p>
           <div className="mt-6 flex flex-col gap-3">
             <Link
               href="/launchpad"
