@@ -1,5 +1,5 @@
 import { spawnSync, spawn } from "node:child_process"
-import { existsSync, rmSync, openSync, closeSync, cpSync } from "node:fs"
+import { existsSync, rmSync, openSync, closeSync, cpSync, mkdirSync, readdirSync } from "node:fs"
 import path from "node:path"
 import process from "node:process"
 
@@ -249,6 +249,21 @@ if (!existsSync(outDir)) {
 }
 
 cpSync(outDir, previewOutDir, { recursive: true })
+
+// Keep local preview resilient when a browser/tab still requests legacy base-path URLs.
+const legacyBasePaths = ["Amalgam", "amalgam"]
+for (const legacyBasePath of legacyBasePaths) {
+  const legacyDir = path.join(previewOutDir, legacyBasePath)
+  mkdirSync(legacyDir, { recursive: true })
+  for (const entry of readdirSync(previewOutDir)) {
+    if (legacyBasePaths.includes(entry)) {
+      continue
+    }
+    cpSync(path.join(previewOutDir, entry), path.join(legacyDir, entry), {
+      recursive: true,
+    })
+  }
+}
 
 const previewPid = startPreview(port, previewOutDir)
 
