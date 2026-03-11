@@ -25,7 +25,6 @@ export function Navigation({
     { href: "/case-studies", label: "Case Studies" },
     { href: "/knowledge", label: "Knowledge" },
     { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
   ]
 
   const pathname = usePathname()
@@ -184,14 +183,6 @@ export function Navigation({
                 >
                   {primaryCtaLabel}
                   <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-                <Link
-                  href="/contact"
-                  prefetch={false}
-                  className="inline-flex min-h-11 w-full items-center justify-center rounded-2xl border border-border px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Contact us directly
                 </Link>
               </div>
               <div className="mt-5 rounded-2xl border border-border bg-secondary/35 px-4 py-4">
