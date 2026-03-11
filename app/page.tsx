@@ -4,13 +4,14 @@ import { ArrowRight, CheckCircle2, Compass, Layers, Target, Users, Wrench, Zap }
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { ClientLogoWall } from "@/components/client-logo-wall"
+import { HeroDiagnosticPanel } from "@/components/hero-diagnostic-panel"
 import { HomeFeaturedCaseStudies } from "@/components/home-featured-case-studies"
 import { TestimonialStrip } from "@/components/testimonial-strip"
 import { caseStudies } from "@/lib/case-studies-data"
 import { knowledgeBriefs, knowledgeCategories } from "@/lib/knowledge-briefs"
 
 export const metadata: Metadata = {
-  title: "From idea to scale - without the chaos.",
+  title: "From idea to scale — without the chaos.",
   description:
     "Amalgam helps founders, entrepreneurs, and product teams turn ideas into real products and working systems.",
   alternates: {
@@ -25,34 +26,43 @@ function Hero() {
       <div className="pointer-events-none absolute bottom-0 left-0 h-[440px] w-[440px] translate-y-1/3 -translate-x-1/4 rounded-full bg-[radial-gradient(circle,rgba(106,92,255,0.1)_0%,transparent_72%)]" />
 
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
-        <div className="max-w-4xl">
-          <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight text-foreground text-balance sm:text-5xl lg:text-[58px]">
-            From idea to scale - without the chaos.
-          </h1>
-          <p className="mt-5 text-lg leading-relaxed text-foreground/90">
-            Amalgam helps founders, entrepreneurs, and product teams turn ideas into real products and working systems.
-          </p>
-          <div className="mt-6 max-w-3xl space-y-2 text-lg leading-relaxed text-muted-foreground">
-            <p>Building something real is rarely simple.</p>
-            <p>Ideas evolve. Systems grow. Delivery gets messy.</p>
-            <p>
-              We help you bring clarity to what you&apos;re building, fix what is slowing progress, and move forward with confidence.
+        <div className="hero-layout">
+          <div className="max-w-4xl">
+            <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight text-foreground text-balance sm:text-5xl lg:text-[58px]">
+              <span>From idea to scale —</span>
+              <span className="block bg-gradient-to-r from-teal to-purple bg-clip-text text-transparent">
+                without the chaos.
+              </span>
+            </h1>
+            <p className="mt-5 text-lg leading-relaxed text-foreground/90">
+              Amalgam helps founders, entrepreneurs, and product teams turn ideas into real products and working systems.
             </p>
+            <div className="hero-body mt-6 space-y-2 text-lg leading-relaxed text-muted-foreground">
+              <p>Building something real is rarely simple.</p>
+              <p>Ideas evolve. Systems grow. Delivery gets messy.</p>
+              <p>
+                We help you bring clarity to what you&apos;re building, fix what is slowing progress, and move forward with confidence.
+              </p>
+            </div>
+            <div className="hero-cta-row mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/launchpad"
+                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 text-sm font-medium text-background transition-all hover:opacity-90"
+              >
+                Find my stage
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/contact?interest=strategy-session"
+                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-border/90 px-6 py-3 text-sm font-medium text-foreground transition-all hover:border-border hover:bg-muted/70"
+              >
+                Book a strategy call
+              </Link>
+            </div>
           </div>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link
-              href="/launchpad"
-              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 text-sm font-medium text-background transition-all hover:opacity-90"
-            >
-              Find my stage
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="/contact?interest=strategy-session"
-              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-border/90 px-6 py-3 text-sm font-medium text-foreground transition-all hover:border-border hover:bg-muted/70"
-            >
-              Book a strategy call
-            </Link>
+
+          <div className="hero-panel-shell relative">
+            <HeroDiagnosticPanel />
           </div>
         </div>
       </div>
