@@ -55,29 +55,12 @@ const readingPaths = [
 ]
 
 function getCategoryHref(categoryId?: string) {
-  return categoryId ? `/knowledge?category=${categoryId}` : "/knowledge"
+  return categoryId ? `/knowledge#knowledge-${categoryId}` : "/knowledge#knowledge-library"
 }
 
-type KnowledgePageProps = {
-  searchParams?: Promise<{
-    category?: string | string[]
-  }>
-}
-
-export default async function KnowledgePage({ searchParams }: KnowledgePageProps) {
-  const resolvedSearchParams = searchParams ? await searchParams : undefined
+export default function KnowledgePage() {
   const featuredCandidates = knowledgeBriefs.filter((brief) => brief.featured)
-  const requestedCategory = Array.isArray(resolvedSearchParams?.category)
-    ? resolvedSearchParams?.category[0]
-    : resolvedSearchParams?.category
-  const selectedCategoryId = knowledgeCategories.some(
-    (category) => category.id === requestedCategory,
-  )
-    ? requestedCategory
-    : undefined
-  const filteredBriefs = selectedCategoryId
-    ? knowledgeBriefs.filter((brief) => brief.category === selectedCategoryId)
-    : knowledgeBriefs
+  const filteredBriefs = knowledgeBriefs
 
   const articleCollections = knowledgeCategories.map((category) => ({
     category,
@@ -148,12 +131,8 @@ export default async function KnowledgePage({ searchParams }: KnowledgePageProps
               </div>
               <div className="flex flex-wrap gap-3">
                 <Link
-                  href="/knowledge"
-                  className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                    !selectedCategoryId
-                      ? "bg-foreground text-background"
-                      : "border border-border bg-background text-muted-foreground hover:text-foreground"
-                  }`}
+                  href={getCategoryHref()}
+                  className="rounded-full border border-border bg-foreground px-4 py-2 text-sm font-medium text-background transition-opacity hover:opacity-90"
                 >
                   All articles
                 </Link>
@@ -161,17 +140,12 @@ export default async function KnowledgePage({ searchParams }: KnowledgePageProps
                   const count = knowledgeBriefs.filter(
                     (brief) => brief.category === category.id
                   ).length
-                  const selected = selectedCategoryId === category.id
 
                   return (
                     <Link
                       key={category.id}
                       href={getCategoryHref(category.id)}
-                      className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
-                        selected
-                          ? "border-teal/45 bg-teal/10 text-foreground"
-                          : "border-border bg-background text-muted-foreground hover:text-foreground"
-                      }`}
+                      className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {category.shortLabel}
                       <span className="rounded-full bg-secondary px-2 py-0.5 text-xs text-muted-foreground">
@@ -186,7 +160,7 @@ export default async function KnowledgePage({ searchParams }: KnowledgePageProps
         </section>
 
         <section className="deferred-section px-6 py-16 md:px-8 md:py-20">
-          <div className="mx-auto max-w-[1200px]">
+          <div id="knowledge-library" className="mx-auto max-w-[1200px]">
             <div className="mb-10 grid gap-6 lg:grid-cols-3">
               {curatedPaths.map((path) => (
                 <div
@@ -243,8 +217,8 @@ export default async function KnowledgePage({ searchParams }: KnowledgePageProps
                   <div>
                     <p className="text-sm font-medium text-foreground">Knowledge library</p>
                     <p className="text-sm text-muted-foreground">
-                      {filteredBriefs.length}{" "}
-                      {filteredBriefs.length === 1 ? "article" : "articles"} in view
+                      {knowledgeBriefs.length}{" "}
+                      {knowledgeBriefs.length === 1 ? "article" : "articles"} in view
                     </p>
                   </div>
                 </div>
@@ -337,6 +311,7 @@ export default async function KnowledgePage({ searchParams }: KnowledgePageProps
               {articleCollections.map(({ category, briefs, lead }) => (
                 <div
                   key={category.id}
+                  id={`knowledge-${category.id}`}
                   className="flex h-full flex-col rounded-[28px] border border-border bg-background p-7"
                 >
                   <div className="flex items-center justify-between gap-4">

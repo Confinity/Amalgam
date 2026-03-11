@@ -12,30 +12,12 @@ export const metadata: Metadata = {
   },
 }
 
-type LaunchpadPageProps = {
-  searchParams?: Promise<{
-    stage?: string | string[]
-    pressure?: string | string[]
-  }>
-}
-
-export default async function LaunchpadPage({ searchParams }: LaunchpadPageProps) {
-  const resolvedSearchParams = searchParams ? await searchParams : undefined
-  const stage = Array.isArray(resolvedSearchParams?.stage)
-    ? resolvedSearchParams?.stage[0]
-    : resolvedSearchParams?.stage
-  const pressure = Array.isArray(resolvedSearchParams?.pressure)
-    ? resolvedSearchParams?.pressure[0]
-    : resolvedSearchParams?.pressure
-
+export default function LaunchpadPage() {
   return (
     <>
       <Navigation primaryCtaLabel="Book a strategy call" />
       <main id="main-content" className="min-h-screen bg-background pt-20">
-        <LaunchpadStageNavigator
-          initialStageParam={stage}
-          initialPressureParam={pressure}
-        />
+        <LaunchpadStageNavigator />
       </main>
       <Footer />
     </>

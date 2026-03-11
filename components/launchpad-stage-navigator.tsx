@@ -716,14 +716,6 @@ export function LaunchpadStageNavigator({
   }
 
   useEffect(() => {
-    if (entryTracked.current) {
-      return
-    }
-    entryTracked.current = true
-    track("launchpad_entry_stage", { stage: initialStage, from_query: Boolean(initialStageParam) })
-  }, [initialStage, initialStageParam])
-
-  useEffect(() => {
     return () => {
       if (stageSelectorHighlightTimeoutRef.current !== null) {
         window.clearTimeout(stageSelectorHighlightTimeoutRef.current)
@@ -733,7 +725,7 @@ export function LaunchpadStageNavigator({
   }, [])
 
   useEffect(() => {
-    const onPopState = () => {
+    const syncFromUrl = (source: "entry" | "popstate") => {
       const params = new URLSearchParams(window.location.search)
       const urlStage = parseStage(params.get("stage"))
       const rawPressure = params.get("pressure") ?? ""
@@ -744,7 +736,17 @@ export function LaunchpadStageNavigator({
           : ""
       setStageId(urlStage)
       setPressureId(urlPressure)
+      if (source === "entry" && !entryTracked.current) {
+        entryTracked.current = true
+        track("launchpad_entry_stage", {
+          stage: urlStage,
+          from_query: params.has("stage"),
+        })
+      }
     }
+
+    syncFromUrl("entry")
+    const onPopState = () => syncFromUrl("popstate")
     window.addEventListener("popstate", onPopState)
     return () => window.removeEventListener("popstate", onPopState)
   }, [])
