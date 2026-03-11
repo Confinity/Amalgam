@@ -2,5 +2,5 @@
 2:I[13830,["/Amalgam/_next/static/chunks/8a3c1034e45a9433.js","/Amalgam/_next/static/chunks/bd0b891e23b40a93.js"],"LegacyRouteRedirect"]
 3:I[95276,["/Amalgam/_next/static/chunks/221e0744b683f94b.js","/Amalgam/_next/static/chunks/54acdc74ad0965ad.js"],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"buildId":"P1eI46VoViORXdEKemVqF","rsc":["$","$1","c",{"children":[["$","$L2",null,{"target":"/case-studies","label":"Case Studies"}],[["$","script","script-0",{"src":"/Amalgam/_next/static/chunks/bd0b891e23b40a93.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"u07j5fIlBhRs8s1g-9J6m","rsc":["$","$1","c",{"children":[["$","$L2",null,{"target":"/case-studies","label":"Case Studies"}],[["$","script","script-0",{"src":"/Amalgam/_next/static/chunks/bd0b891e23b40a93.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
 5:null
