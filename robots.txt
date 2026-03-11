@@ -1,0 +1,7 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+Host: https://confinity.github.io/Amalgam
+Sitemap: https://confinity.github.io/Amalgam/sitemap.xml
