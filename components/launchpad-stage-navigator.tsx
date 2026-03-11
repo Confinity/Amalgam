@@ -77,6 +77,7 @@ const HERO_STAGE_TAGS: Array<{ id: StageId; label: string }> = [
 const FIXED_NAV_FALLBACK_HEIGHT = 72
 const ANCHOR_EXTRA_GAP = 12
 const MOBILE_STAGE_SELECTOR_COMPACT_SCROLL_Y = 140
+const STAGE_SELECTOR_HIGHLIGHT_MS = 1400
 const STRATEGY_CALL_LABEL = "Book a strategy call"
 const STAGE_TONE: Record<
   StageId,
@@ -353,9 +354,11 @@ export function LaunchpadStageNavigator({
   const [isMobileViewport, setIsMobileViewport] = useState(false)
   const [compactStageSelector, setCompactStageSelector] = useState(false)
   const [showMobilePressureFilters, setShowMobilePressureFilters] = useState(false)
+  const [stageSelectorHighlighted, setStageSelectorHighlighted] = useState(false)
   const entryTracked = useRef(false)
   const scrollLockYRef = useRef<number | null>(null)
   const pendingScrollTargetRef = useRef<LaunchpadAnchorTarget | null>(null)
+  const stageSelectorHighlightTimeoutRef = useRef<number | null>(null)
 
   const isOverview = stageId === "all"
   const activeStageId: StageId = isOverview ? DEFAULT_STAGE : stageId
@@ -626,6 +629,39 @@ export function LaunchpadStageNavigator({
     targetId: LaunchpadAnchorTarget,
   ) => {
     event.preventDefault()
+    const triggerStageSelectorHighlight = () => {
+      setStageSelectorHighlighted(true)
+      if (stageSelectorHighlightTimeoutRef.current !== null) {
+        window.clearTimeout(stageSelectorHighlightTimeoutRef.current)
+      }
+      stageSelectorHighlightTimeoutRef.current = window.setTimeout(() => {
+        setStageSelectorHighlighted(false)
+        stageSelectorHighlightTimeoutRef.current = null
+      }, STAGE_SELECTOR_HIGHLIGHT_MS)
+
+      const preferredStageTabId =
+        stageId === "all" ? "stage-tab-build-ship" : `stage-tab-${stageId}`
+      const stageTab = document.getElementById(preferredStageTabId)
+      if (stageTab instanceof HTMLElement) {
+        stageTab.focus({ preventScroll: true })
+      }
+    }
+
+    if (targetId === "launchpad-stage-selector") {
+      const stageSelector = document.getElementById("launchpad-stage-selector")
+      if (stageSelector instanceof HTMLElement) {
+        const rect = stageSelector.getBoundingClientRect()
+        const selectorAlreadyVisible = rect.top <= 140 && rect.bottom >= 84
+        if (selectorAlreadyVisible) {
+          triggerStageSelectorHighlight()
+          return
+        }
+      }
+      scrollToLaunchpadSection(targetId)
+      window.setTimeout(() => triggerStageSelectorHighlight(), 440)
+      return
+    }
+
     scrollToLaunchpadSection(targetId)
   }
 
@@ -646,6 +682,15 @@ export function LaunchpadStageNavigator({
     entryTracked.current = true
     track("launchpad_entry_stage", { stage: initialStage, from_query: Boolean(initialStageParam) })
   }, [initialStage, initialStageParam])
+
+  useEffect(() => {
+    return () => {
+      if (stageSelectorHighlightTimeoutRef.current !== null) {
+        window.clearTimeout(stageSelectorHighlightTimeoutRef.current)
+        stageSelectorHighlightTimeoutRef.current = null
+      }
+    }
+  }, [])
 
   useEffect(() => {
     const onPopState = () => {
@@ -953,7 +998,11 @@ export function LaunchpadStageNavigator({
             aria-label="Founder journey stages"
             aria-describedby="launchpad-stage-selector-help"
             onKeyDown={onStageSelectorKeyDown}
-            className={stageSelectorGroupClass}
+            className={`${stageSelectorGroupClass} transition-all duration-300 ${
+              stageSelectorHighlighted
+                ? "rounded-2xl ring-2 ring-teal/55 ring-offset-2 ring-offset-background"
+                : ""
+            }`}
           >
             <button
               id="stage-tab-all"
