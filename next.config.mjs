@@ -1,12 +1,14 @@
 /** @type {import('next').NextConfig} */
 const isGithubActions = process.env.GITHUB_ACTIONS === "true"
+const isLocalStaticPreview = process.env.LOCAL_STATIC_PREVIEW === "true"
+const isStaticExport = isGithubActions || isLocalStaticPreview
 const repository =
   process.env.SITE_REPOSITORY ?? process.env.GITHUB_REPOSITORY ?? "Confinity/Amalgam"
 const repositoryName = repository.split("/")[1] ?? "Amalgam"
 const basePath = isGithubActions ? `/${repositoryName}` : ""
 
 const nextConfig = {
-  output: isGithubActions ? "export" : undefined,
+  output: isStaticExport ? "export" : undefined,
   trailingSlash: true,
   basePath,
   assetPrefix: basePath ? `${basePath}/` : undefined,

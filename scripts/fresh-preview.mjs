@@ -154,6 +154,10 @@ async function waitForHealthyPreview(targetPort) {
     "/launchpad/signals",
     "/contact",
   ]
+  const requiredMarkersByRoute = {
+    "/": "Are product releases slowing down even though your team is busy?",
+    "/launchpad": "Where are you right now?",
+  }
   const deadline = Date.now() + 25000
   let lastError = "Preview did not become healthy."
 
@@ -169,8 +173,12 @@ async function waitForHealthyPreview(targetPort) {
         }
 
         const html = await pageResponse.text()
+        const requiredMarker = requiredMarkersByRoute[route]
+        if (requiredMarker && !html.includes(requiredMarker)) {
+          throw new Error(`${route} missing expected content marker`)
+        }
         const assetMatches = [
-          ...html.matchAll(/\/_next\/static\/[^"'\\<>\s)]+/g),
+          ...html.matchAll(/\/(?:[^/"'<>\\\s]+\/)?_next\/static\/[^"'\\<>\s)]+/g),
         ].map((match) => match[0].replace(/\\+$/, ""))
 
         for (const assetPath of assetMatches) {
@@ -218,7 +226,18 @@ if (existsSync(nextDir)) {
   rmSync(nextDir, { recursive: true, force: true })
 }
 
-runPnpm(["build"])
+const outDir = path.join(root, "out")
+if (existsSync(outDir)) {
+  rmSync(outDir, { recursive: true, force: true })
+}
+
+runPnpm(["build"], {
+  env: {
+    ...process.env,
+    LOCAL_STATIC_PREVIEW: "true",
+    GITHUB_ACTIONS: "false",
+  },
+})
 
 const previewPid = startPreview(port)
 
