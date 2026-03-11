@@ -28,15 +28,15 @@ export default function LaunchpadSignalsPage() {
           <div className="pointer-events-none absolute left-8 top-20 h-56 w-56 rounded-full bg-purple/8 blur-3xl" />
           <div className="mx-auto grid max-w-[1200px] gap-10 px-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
             <div className="max-w-3xl">
-              <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
-                Launchpad Signals
-              </p>
-              <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl">
-                Want practical notes you can use this quarter?
-              </h1>
-              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                Short updates on execution pressure, architecture decisions, and what to do next.
-              </p>
+            <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
+              Launchpad Signals
+            </p>
+            <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl">
+              Want practical notes you can use this quarter?
+            </h1>
+            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+              Short updates on execution, architecture decisions, and what to do next.
+            </p>
             </div>
             <div className="rounded-[30px] border border-border bg-foreground p-8">
               <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
@@ -63,9 +63,7 @@ export default function LaunchpadSignalsPage() {
         <section className="py-20 lg:py-24">
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="mb-10 max-w-3xl">
-              <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">
-                Recent signal
-              </p>
+              <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">Recent notes</p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
                 Start with notes teams are using right now
               </h2>
@@ -80,7 +78,7 @@ export default function LaunchpadSignalsPage() {
                   className="rounded-[28px] border border-border bg-background p-7 transition-colors hover:border-teal/35"
                 >
                   <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                    Signal preview
+                    Note preview
                   </p>
                   <h3 className="mt-4 text-2xl font-semibold text-foreground">{article.title}</h3>
                   <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
@@ -106,7 +104,7 @@ export default function LaunchpadSignalsPage() {
         <ContextualTestimonial
           className="deferred-section border-t border-border py-20 lg:py-24"
           eyebrow="Client perspective"
-          title="Signal teams describe as useful and grounded"
+          title="Updates teams describe as useful and grounded"
           testimonialId="fitzmier-jtf"
         />
       </main>

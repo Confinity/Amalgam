@@ -226,7 +226,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                 <div className="mt-5 space-y-4">
                   <div className="rounded-2xl border border-border bg-background px-4 py-4">
                     <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                      Situation
+                      Situation and problem
                     </p>
                     <p className="mt-2 text-sm leading-relaxed text-foreground">
                       {summarizeCaseStudyText(caseStudy.problem, {
@@ -237,7 +237,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                   </div>
                   <div className="rounded-2xl border border-border bg-background px-4 py-4">
                     <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                      Amalgam&apos;s role
+                      What we did
                     </p>
                     <p className="mt-2 text-sm leading-relaxed text-foreground">
                       {summarizeCaseStudyText(caseStudy.approach, {
@@ -248,7 +248,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                   </div>
                   <div className="rounded-2xl border border-border bg-background px-4 py-4">
                     <p className="text-xs uppercase tracking-[0.22em] text-teal">
-                      What changed
+                      Outcome
                     </p>
                     <p className="mt-2 text-sm leading-relaxed font-medium text-foreground">
                       {summarizeCaseStudyText(caseStudy.outcome, {

@@ -27,7 +27,7 @@ import { withBasePath } from "@/lib/site-config"
 export const metadata: Metadata = {
   title: "Who you work with at Amalgam",
   description:
-    "Founded in 2012, Amalgam helps business and technical leaders fix complex system issues that slow execution.",
+    "Amalgam helps founders, entrepreneurs, and product teams turn ideas into real products and keep progress moving as complexity grows.",
   alternates: {
     canonical: "/about",
   },
@@ -127,7 +127,7 @@ export default function AboutPage() {
                   Want to know who you&apos;ll actually work with?
                 </h1>
                 <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                  Amalgam helps business and technical leaders fix complex system issues so shipping becomes more reliable.
+                  Amalgam helps founders, entrepreneurs, and product teams turn ideas into real products and keep progress moving as complexity grows.
                 </p>
               </div>
               <div className="support-panel rounded-[28px] p-7">
@@ -135,7 +135,7 @@ export default function AboutPage() {
                   What clients hire us for
                 </p>
                 <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
-                  <p>A sharp diagnostic when the real issue is still unclear.</p>
+                  <p>A clear read when the real issue is still unclear.</p>
                   <p>Clear sequencing when teams need a roadmap they can trust.</p>
                   <p>Hands-on follow-through when execution needs to stay on track.</p>
                 </div>
@@ -196,11 +196,9 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 leading-relaxed text-muted-foreground">
                 <p>
-                  Most execution problems are no longer confined to one team. Architecture, product, operations, and decision-making are usually all involved.
+                  Most difficult problems cross product, architecture, and execution.
                 </p>
-                <p>
-                  That is where Amalgam is most useful: when leaders need clear judgment that connects the full system and gives teams a path they can execute.
-                </p>
+                <p>We help teams see the full system and move forward.</p>
               </div>
             </div>
           </div>
@@ -210,7 +208,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="mb-12">
               <h2 className="text-2xl font-semibold text-foreground">How we operate</h2>
-              <p className="mt-2 text-muted-foreground">How you can expect us to work with you.</p>
+              <p className="mt-2 text-muted-foreground">Direct communication. Practical recommendations. Clear accountability.</p>
             </div>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {principles.map((principle) => (
@@ -229,9 +227,7 @@ export default function AboutPage() {
         <section className="deferred-section border-y border-border bg-secondary/35 py-20 lg:py-24">
           <div className="mx-auto max-w-[1200px] px-6">
             <div className="mb-12 max-w-3xl">
-              <p className="mb-4 text-sm font-medium uppercase tracking-widest text-teal">
-                Operating Model
-              </p>
+              <p className="mb-4 text-sm font-medium uppercase tracking-widest text-teal">Approach</p>
               <h2 className="text-3xl font-semibold text-foreground text-balance">
                 How we work when stakes are high
               </h2>
@@ -336,7 +332,7 @@ export default function AboutPage() {
                 href="/services"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-background/30 px-6 py-3 font-medium text-background transition-all hover:bg-background/10"
               >
-                See engagement options
+                See how we work
               </Link>
             </div>
           </div>

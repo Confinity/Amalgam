@@ -1,4 +1,4 @@
-import Link from "next/link"
+﻿import Link from "next/link"
 import { ArrowRight, CalendarDays, Mail, MapPin, Phone } from "lucide-react"
 import { BrandLogo } from "@/components/brand-logo"
 
@@ -11,16 +11,14 @@ export function Footer({ variant = "default" }: FooterProps) {
 
   const startHereLinks = isHowWeWork
     ? [
-        { href: "/contact?interest=strategy-session", label: "Strategy call (15-minute triage)" },
-        { href: "/contact?interest=strategy-session", label: "Strategy call" },
-        { href: "/services#how-work-usually-begins", label: "Diagnostic review" },
-        { href: "/services#how-work-usually-begins", label: "Execution support" },
-      ]
-    : [
-        { href: "/founder-review", label: "Diagnostic Review" },
+        { href: "/founder-review", label: "Founder Review" },
         { href: "/execution-sprint", label: "Execution Sprint" },
         { href: "/outcome-partnership", label: "Outcome Partnership" },
-        { href: "/contact", label: "Contact" },
+      ]
+    : [
+        { href: "/founder-review", label: "Founder Review" },
+        { href: "/execution-sprint", label: "Execution Sprint" },
+        { href: "/outcome-partnership", label: "Outcome Partnership" },
       ]
 
   const footerCtaLabel = isHowWeWork
@@ -28,12 +26,12 @@ export function Footer({ variant = "default" }: FooterProps) {
     : "Book a strategy call"
 
   const footerIntro = isHowWeWork
-    ? "Start with a short call. Go deeper only when the situation needs it."
-    : "We help teams fix architecture, data, and ownership bottlenecks so delivery gets back on track."
+    ? "Start with one clear step, then go deeper only when needed."
+    : "We help people turn ideas into real products and working systems."
 
   const bestFitText = isHowWeWork
-    ? "For teams asking: what is actually blocking delivery right now?"
-    : "For founders, operators, and enterprise teams dealing with system complexity and delivery risk."
+    ? "Best for founders, entrepreneurs, solopreneurs, and teams building real products."
+    : "Best for founders, entrepreneurs, solopreneurs, and teams building real products."
 
   return (
     <footer className="border-t border-border bg-background">
@@ -181,4 +179,5 @@ export function Footer({ variant = "default" }: FooterProps) {
     </footer>
   )
 }
+
 

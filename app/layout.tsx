@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next"
+﻿import type { Metadata, Viewport } from "next"
 import { Manrope } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ReviewModeLazy } from "@/components/review-mode-lazy"
@@ -15,12 +15,12 @@ const analyticsEnabled = process.env.NEXT_PUBLIC_VERCEL_ANALYTICS === "1"
 
 export const metadata: Metadata = {
   title: {
-    default: "Amalgam | Is product delivery stalling because systems and teams are out of sync?",
+    default: "Amalgam | From idea to scale - without the chaos.",
     template: "%s | Amalgam",
   },
   applicationName: "Amalgam",
   description:
-    "Amalgam helps founders, operators, and enterprise teams fix architecture, data, and delivery bottlenecks so critical product work ships with confidence.",
+    "Amalgam helps founders, entrepreneurs, and product teams turn ideas into real products and working systems.",
   metadataBase: new URL(SITE_URL),
   category: "technology consulting",
   formatDetection: {
@@ -35,12 +35,12 @@ export const metadata: Metadata = {
   },
   keywords: [
     "systems consulting",
-    "technical consulting",
-    "strategy consulting",
+    "product execution",
+    "strategy and delivery",
     "technical leadership",
-    "operating systems",
+    "product systems",
     "execution",
-    "delivery velocity",
+    "delivery momentum",
     "architecture",
     "technical debt",
     "enterprise modernization",
@@ -54,9 +54,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: "Amalgam",
-    title: "Amalgam - Is product delivery stalling because systems and teams are out of sync?",
+    title: "Amalgam - From idea to scale without the chaos",
     description:
-      "Senior support for teams fixing architecture, integration, and delivery bottlenecks before they become bigger business risk.",
+      "Senior execution support for founders, entrepreneurs, and teams building real products and systems.",
     images: [
       {
         url: absoluteUrl("/opengraph-image"),
@@ -68,9 +68,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Amalgam - Is product delivery stalling because systems and teams are out of sync?",
+    title: "Amalgam - From idea to scale without the chaos",
     description:
-      "Senior support for teams fixing architecture, integration, and delivery bottlenecks before they become bigger business risk.",
+      "Senior execution support for founders, entrepreneurs, and teams building real products and systems.",
     images: [absoluteUrl("/opengraph-image")],
     creator: "@amalgam_inc",
   },
@@ -115,3 +115,4 @@ export default function RootLayout({
     </html>
   )
 }
+

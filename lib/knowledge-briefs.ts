@@ -55,7 +55,7 @@ export const knowledgeCategories = [
     label: "Execution",
     shortLabel: "Execution",
     description:
-      "Roadmaps, sequencing, and the practical mechanics of turning diagnosis into executable plans.",
+      "Roadmaps, sequencing, and the practical mechanics of turning clarity into executable plans.",
   },
   {
     id: "org-design",
@@ -102,9 +102,9 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
           "This is why the first question should never be 'How bad is the codebase?' It should be 'What is the business no longer able to do confidently because of the current system?' If the answer is vague, the team probably does not yet know enough to justify a rebuild.",
         ],
         bullets: [
-          "Good signal: customer-facing continuity is at risk because the system cannot support core product changes safely.",
-          "Weak signal: engineers are frustrated because the current stack feels dated or unpleasant.",
-          "Critical signal: business priorities are repeatedly being reshaped to accommodate platform weakness rather than market opportunity.",
+          "Good indicator: customer-facing continuity is at risk because the system cannot support core product changes safely.",
+          "Weak indicator: engineers are frustrated because the current stack feels dated or unpleasant.",
+          "Critical indicator: business priorities are repeatedly being reshaped to accommodate platform weakness rather than market opportunity.",
         ],
       },
       {
@@ -166,7 +166,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
         title: "Why roadmaps fail before execution even starts",
         paragraphs: [
           "Most failed roadmaps are not failures of ambition. They are failures of visibility. A team promises work based on an imagined system, then discovers the real system only after execution begins: a hidden dependency, a brittle integration, an unowned workflow, a compliance constraint nobody surfaced in planning.",
-          "When that happens repeatedly, the organization starts blaming estimation. The deeper problem is that sequencing happened before the architecture and operating model were clear enough to plan confidently.",
+          "When that happens repeatedly, the organization starts blaming estimation. The deeper problem is that sequencing happened before the architecture and team setup were clear enough to plan confidently.",
         ],
       },
       {
@@ -282,7 +282,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
     summary:
       "Execution cadence degrades after growth when old coordination habits break but new ones are never designed. Restoring rhythm requires clearer decision points, fewer ambiguous handoffs, and a cadence that matches actual work, not management theater.",
     keyTakeaways: [
-      "The pre-growth operating model rarely survives hiring and complexity intact.",
+      "The pre-growth way of working rarely survives hiring and complexity intact.",
       "Rhythm is about decision quality and sequencing, not just meeting frequency.",
       "You do not fix slow execution by layering more reporting on top of unclear ownership.",
     ],
@@ -313,7 +313,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
         title: "What to change first",
         paragraphs: [
           "Start by reducing ambiguity, not by adding ceremony. Clarify the handful of operating meetings that actually need to exist. Remove duplicate reporting. Tighten ownership for cross-functional work. Ensure the same metrics appear in the same way across the same conversations.",
-          "Then look at the system beneath the rhythm. If teams are using cadence to compensate for poor system boundaries, process alone will not fix the problem. The operating model and architecture have to reinforce each other.",
+          "Then look at the system beneath the rhythm. If teams are using cadence to compensate for poor system boundaries, process alone will not fix the problem. Team structure and architecture have to reinforce each other.",
         ],
       },
       {
@@ -339,7 +339,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
     intro:
       "After a raise, expectations accelerate faster than the data foundation. Leaders want tighter forecasting, clearer unit economics, and more automated workflows. The problem is that many post-Series A companies are still running on a loose collection of source systems, spreadsheets, and partially trusted dashboards. The company is scaling decisions faster than it is scaling truth.",
     summary:
-      "Before a business needs sophisticated analytics, it needs trusted definitions, clear source systems, and reviewable transformation logic. Without that substrate, automation and forecasting only make ambiguity faster.",
+      "Before a business needs sophisticated analytics, it needs trusted definitions, clear source systems, and reviewable mapping logic. Without that substrate, automation and forecasting only make ambiguity faster.",
     keyTakeaways: [
       "Metrics trust is the real milestone, not dashboard count.",
       "A post-Series A data system should prioritize consistency and shared definitions before advanced complexity.",
@@ -359,12 +359,12 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
         title: "What good enough actually looks like",
         paragraphs: [
           "A post-Series A company usually does not need a giant centralized data platform immediately. It needs coherence around the handful of entities and metrics leadership uses every week: customers, deals, revenue, delivery, retention, onboarding, support load, or whatever truly drives the business.",
-          "That means documenting critical sources, normalizing definitions, and ensuring transformation logic is visible and reviewable. The system should help the company make better operating decisions, not merely generate prettier reporting.",
+          "That means documenting critical sources, normalizing definitions, and ensuring mapping logic is visible and reviewable. The system should help the company make better operating decisions, not merely generate prettier reporting.",
         ],
         bullets: [
           "Critical sources are known and treated as intentional systems of record.",
           "Core business entities have stable definitions across teams.",
-          "Transformations are explicit enough to review when numbers drift.",
+          "Data mapping rules are explicit enough to review when numbers drift.",
           "Dashboards correspond to decisions, not vanity visibility.",
         ],
       },
@@ -411,7 +411,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
         id: "why-dashboard-sprawl-happens",
         title: "Why dashboard sprawl happens",
         paragraphs: [
-          "As companies grow, every function starts building visibility for its own needs. That is normal. The problem begins when none of those views are reconciled into a common operating picture, so leadership sees many snapshots but no durable signal.",
+          "As companies grow, every function starts building visibility for its own needs. That is normal. The problem begins when none of those views are reconciled into a common operating picture, so leadership sees many snapshots but no durable view.",
           "This creates a familiar pattern: status meetings turn into interpretation exercises. People present numbers, but the organization still cannot agree what those numbers mean for priorities, risk, or execution.",
         ],
       },
@@ -491,7 +491,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
         id: "what-to-measure",
         title: "What to measure instead",
         paragraphs: [
-          "If leadership wants a more honest view of velocity, it should measure what shapes flow: lead time, blocked work, rework rate, cross-team dependency load, release confidence, and time lost to manual coordination. These signals reveal where the system is making work expensive.",
+          "If leadership wants a more honest view of velocity, it should measure what shapes flow: lead time, blocked work, rework rate, cross-team dependency load, release confidence, and time lost to manual coordination. These indicators reveal where the system is making work expensive.",
           "This does not replace judgment. It gives judgment better material to work with. The goal is not a more complicated dashboard. It is a clearer picture of why delivery feels slow.",
         ],
       },

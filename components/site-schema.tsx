@@ -1,4 +1,4 @@
-import { SITE_URL, absoluteUrl } from "@/lib/site-config"
+﻿import { SITE_URL, absoluteUrl } from "@/lib/site-config"
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -8,7 +8,7 @@ const organizationSchema = {
   image: absoluteUrl("/opengraph-image"),
   logo: absoluteUrl("/brand/amalgam-logo.webp"),
   description:
-    "Amalgam helps founders, operators, and enterprise teams fix architecture, integration, and delivery bottlenecks.",
+    "Amalgam helps founders, entrepreneurs, and product teams turn ideas into real products and working systems.",
   email: "hello@amalgam-inc.com",
   telephone: "+1-484-354-8498",
   foundingDate: "2012",
@@ -28,7 +28,7 @@ const websiteSchema = {
   name: "Amalgam",
   url: SITE_URL,
   description:
-    "Practical guidance for teams dealing with delivery bottlenecks, system risk, and cross-functional execution pressure.",
+    "Practical guidance for builders dealing with architecture, delivery, and scaling complexity.",
 }
 
 export function SiteSchema() {
@@ -41,3 +41,4 @@ export function SiteSchema() {
     />
   )
 }
+

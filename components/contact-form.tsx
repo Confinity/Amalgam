@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { FormEvent, useEffect, useMemo, useState } from "react"
 import { ArrowRight, CheckCircle2, Copy, Mail, Phone, Send } from "lucide-react"
@@ -24,7 +24,7 @@ const initialState: FormState = {
 const interestLabels: Record<string, string> = {
   "": "General inquiry",
   "strategy-session": "Strategy call",
-  "founder-review": "Diagnostic Review",
+  "founder-review": "Founder Review",
   "execution-sprint": "Execution Sprint",
   "outcome-partnership": "Outcome Partnership",
   careers: "Careers",
@@ -272,14 +272,14 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
   }
 
   return (
-    <div className="contact-intake-panel rounded-[28px] border border-border bg-background p-8 shadow-sm">
+    <div id="contact-intake" className="contact-intake-panel rounded-[28px] border border-border bg-background p-8 shadow-sm">
       <div className="contact-intake-note mb-6 rounded-[24px] border border-border bg-secondary/30 p-5">
         <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
           Direct intake
         </p>
         <div className="contact-intake-note-grid mt-3 grid gap-3 sm:grid-cols-2">
           <div className="contact-intake-note-item rounded-2xl bg-background px-4 py-4">
-            <p className="text-sm font-medium text-foreground">Best for high-stakes release and system issues</p>
+            <p className="text-sm font-medium text-foreground">Best when you want a direct read quickly</p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               Send context directly through the site and we route it to the team.
             </p>
@@ -307,7 +307,7 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
           <div className="contact-common-paths flex flex-wrap gap-2">
             {[
               { value: "strategy-session", label: "Strategy call" },
-              { value: "founder-review", label: "Diagnostic Review" },
+              { value: "founder-review", label: "Founder Review" },
               { value: "execution-sprint", label: "Execution Sprint" },
               { value: "outcome-partnership", label: "Outcome Partnership" },
               { value: "careers", label: "Careers" },
@@ -420,7 +420,7 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
           >
             <option value="">Select an option</option>
             <option value="strategy-session">Strategy call</option>
-            <option value="founder-review">Diagnostic Review</option>
+            <option value="founder-review">Founder Review</option>
             <option value="execution-sprint">Execution Sprint</option>
             <option value="outcome-partnership">Outcome Partnership</option>
             <option value="careers">Careers</option>
@@ -532,3 +532,4 @@ export function ContactForm({ initialInterest = "" }: ContactFormProps) {
     </div>
   )
 }
+

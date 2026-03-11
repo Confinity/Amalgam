@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useState, useSyncExternalStore } from "react"
 import {
   additionalClientNames,
   clientLogosById,
@@ -28,26 +28,18 @@ const TRANSITION_MS = 1000
 const CARD_STAGGER_MS = 140
 
 function useMediaQuery(query: string) {
-  const [matches, setMatches] = useState(() => {
-    if (typeof window === "undefined") {
-      return false
-    }
-    return window.matchMedia(query).matches
-  })
-
-  useEffect(() => {
-    if (typeof window === "undefined") {
-      return
-    }
-    const mediaQueryList = window.matchMedia(query)
-    const handleChange = (event: MediaQueryListEvent) => {
-      setMatches(event.matches)
-    }
-    mediaQueryList.addEventListener("change", handleChange)
-    return () => mediaQueryList.removeEventListener("change", handleChange)
-  }, [query])
-
-  return matches
+  return useSyncExternalStore(
+    (onStoreChange) => {
+      if (typeof window === "undefined") {
+        return () => {}
+      }
+      const mediaQueryList = window.matchMedia(query)
+      mediaQueryList.addEventListener("change", onStoreChange)
+      return () => mediaQueryList.removeEventListener("change", onStoreChange)
+    },
+    () => (typeof window !== "undefined" ? window.matchMedia(query).matches : false),
+    () => false,
+  )
 }
 
 function LogoCard({

@@ -120,7 +120,7 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
       "Top drivers:",
       ...(result.topDrivers.length > 0
         ? result.topDrivers.map((driver) => `- ${driver}`)
-        : ["- Limited signal from selected answers"]),
+        : ["- Limited evidence from selected answers"]),
       "",
       "First two-week moves:",
       ...guidance.firstMoves.map((item) => `- ${item}`),
@@ -207,7 +207,7 @@ export function ToolAssessment({ toolId }: ToolAssessmentProps) {
             onClick={handleStart}
             className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-foreground px-6 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
           >
-            Start 5-minute diagnostic
+            Start diagnostic
             <ArrowRight className="h-4 w-4" />
           </button>
           <p className="mt-3 text-sm text-muted-foreground">

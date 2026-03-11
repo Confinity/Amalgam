@@ -1,11 +1,10 @@
-"use client"
+﻿"use client"
 
-import Image from "next/image"
 import { useEffect, useMemo, useRef, useState } from "react"
 import type { KeyboardEvent, MouseEvent as ReactMouseEvent } from "react"
 import { usePathname, useRouter } from "next/navigation"
 import { track } from "@vercel/analytics"
-import { ArrowRight, ChevronDown, ChevronRight, Compass, Sparkles, Wrench } from "lucide-react"
+import { ArrowRight, ChevronDown, Compass, Sparkles, Wrench } from "lucide-react"
 import { SignalsSubscribeForm } from "@/components/signals-subscribe-form"
 import { TrackedLink } from "@/components/tracked-link"
 import {
@@ -17,7 +16,6 @@ import {
   type LaunchpadToolId,
 } from "@/lib/launchpad"
 import { getKnowledgeBriefBySlug, type KnowledgeBrief } from "@/lib/knowledge-briefs"
-import { withBasePath } from "@/lib/site-config"
 import { testimonials } from "@/lib/testimonials"
 
 type StageId =
@@ -34,7 +32,9 @@ type StageConfig = {
   who: string
   summary: string
   feelsLike: string
-  helpBullets: [string, string, string]
+  commonBreaks: [string, string]
+  goodLooksLike: string
+  amalgamHelp: string
   nextStep: string
   primaryAction: { label: string; href: string; source: string; description: string }
   secondaryLabel: string
@@ -67,13 +67,6 @@ const STAGE_ORDER: StageId[] = [
   "scale-stabilize",
 ]
 const STAGE_SELECTION_ORDER: StageSelection[] = ["all", ...STAGE_ORDER]
-const HERO_STAGE_TAGS: Array<{ id: StageId; label: string }> = [
-  { id: "ideate-prioritize", label: "Idea" },
-  { id: "validate-derisk", label: "Validation" },
-  { id: "build-ship", label: "Build" },
-  { id: "productize-systemize", label: "Productize" },
-  { id: "scale-stabilize", label: "Scale" },
-]
 const FIXED_NAV_FALLBACK_HEIGHT = 72
 const ANCHOR_EXTRA_GAP = 12
 const MOBILE_STAGE_SELECTOR_COMPACT_SCROLL_Y = 140
@@ -112,31 +105,47 @@ const STAGE_CONFIG: Record<StageId, StageConfig> = {
   "ideate-prioritize": {
     id: "ideate-prioritize",
     label: "Ideate & Prioritize",
-    who: "Early founders before heavy build starts.",
-    summary: "Choose what to build first and keep scope tight.",
-    feelsLike: "You have ideas, but the first version is still unclear.",
-    helpBullets: [
-      "Narrow the MVP to what must work first.",
-      "Check feasibility before you commit.",
-      "Set a simple decision rhythm.",
+    who: "Founders, entrepreneurs, and solopreneurs shaping the first real build.",
+    summary:
+      "Clarify what to build first so early effort compounds instead of drifting.",
+    feelsLike:
+      "You have momentum and ideas, but priorities keep changing week to week.",
+    commonBreaks: [
+      "Too many priorities enter the first roadmap at once.",
+      "Teams start building before success criteria are explicit.",
     ],
-    nextStep:
-      "Start by defining what the first version must prove.",
+    goodLooksLike:
+      "A tight first-version scope, clear success criteria, and one decision rhythm the team trusts.",
+    amalgamHelp:
+      "We help you convert early ambiguity into a practical sequence the team can execute.",
+    nextStep: "Pick one outcome the first version must prove, then sequence decisions around it.",
     primaryAction: {
-      label: "Get your next-step brief",
+      label: "Start the next-step brief",
       href: "/launchpad/guides",
       source: "next_step_brief",
-      description: "Use a short brief to lock the first move.",
+      description: "Use a short brief to lock scope and choose the right first move.",
     },
     secondaryLabel: STRATEGY_CALL_LABEL,
     pressures: [
-      { id: "unclear-first-move", label: "Unclear first move", note: "Pick one decision frame before expanding options." },
-      { id: "too-many-priorities", label: "Too many priorities", note: "Reduce scope now so you can move faster later." },
-      { id: "scope-risk", label: "Scope risk", note: "Filter with feasibility, not ambition." },
+      {
+        id: "unclear-first-move",
+        label: "Unclear first move",
+        note: "Pick one decision frame before expanding options.",
+      },
+      {
+        id: "too-many-priorities",
+        label: "Too many priorities",
+        note: "Narrow scope now so delivery speed rises later.",
+      },
+      {
+        id: "scope-risk",
+        label: "Scope risk",
+        note: "Filter early ideas with feasibility, not ambition alone.",
+      },
     ],
     guides: ["architecture-map-before-roadmap", "sequencing-roadmaps-under-uncertainty"],
     signals: ["architecture-map-before-roadmap", "decision-rights-under-complexity", "sequencing-roadmaps-under-uncertainty"],
-    proof: "Early alignment can save months of rework.",
+    proof: "Early alignment now can save months of expensive rework later.",
     testimonialId: "fitzmier-jtf",
     finalHeading: "Not sure what to do first?",
     finalBody: "Start with the brief. If it still feels fuzzy, we can talk it through.",
@@ -144,48 +153,68 @@ const STAGE_CONFIG: Record<StageId, StageConfig> = {
   "validate-derisk": {
     id: "validate-derisk",
     label: "Validate & De-risk",
-    who: "Teams with an MVP that still needs proof.",
-    summary: "Validate before you scale effort.",
-    feelsLike: "Something works, but priority calls still feel risky.",
-    helpBullets: [
-      "Focus build time on what needs proof.",
-      "Use evidence to choose priorities.",
-      "Decide what to test next.",
+    who: "Teams with an MVP that needs stronger proof before scaling investment.",
+    summary:
+      "Validate the biggest assumptions now so you avoid scaling the wrong thing.",
+    feelsLike:
+      "Something is working, but roadmap decisions still feel riskier than they should.",
+    commonBreaks: [
+      "Teams overbuild before they confirm what really matters.",
+      "Priority decisions rely on opinions more than shared evidence.",
     ],
-    nextStep: "Before you build more, check that you are validating the right thing.",
+    goodLooksLike:
+      "Validation targets are explicit, evidence quality is trusted, and next bets are easier to justify.",
+    amalgamHelp:
+      "We help you define what to test next and which assumptions deserve build time.",
+    nextStep: "Before building more, confirm you are validating the right thing in the right order.",
     primaryAction: {
-      label: "Run the validation checklist",
+      label: "Start the validation checklist",
       href: "/launchpad/ai-readiness-checklist",
       source: "validation_checklist",
       description: "Run a short checklist before you scale weak assumptions.",
     },
     secondaryLabel: STRATEGY_CALL_LABEL,
     pressures: [
-      { id: "need-evidence", label: "Better evidence", note: "Tie priorities to measurable signal." },
-      { id: "uncertain-priority", label: "Uncertain priorities", note: "Use one shared way to rank priorities." },
-      { id: "avoid-overbuild", label: "Avoid overbuilding", note: "Keep effort tied to proof." },
+      {
+        id: "need-evidence",
+        label: "Need stronger evidence",
+        note: "Tie priorities to measurable evidence before expanding scope.",
+      },
+      {
+        id: "uncertain-priority",
+        label: "Uncertain priorities",
+        note: "Use one shared ranking method so decisions stop bouncing.",
+      },
+      {
+        id: "avoid-overbuild",
+        label: "Avoid overbuilding",
+        note: "Keep effort tied to proof, not assumptions.",
+      },
     ],
     guides: ["metrics-you-can-run-the-company-on", "post-series-a-data-foundations"],
     signals: ["metrics-you-can-run-the-company-on", "post-series-a-data-foundations", "operating-rhythm-after-growth"],
     proof: "Better validation now protects speed and confidence later.",
     testimonialId: "mooney-cleanitsupply",
     finalHeading: "Want more confidence before you invest more?",
-    finalBody: "Run the checklist first. If the signal is still mixed, we can review it with you.",
+    finalBody: "Run the checklist first. If clarity is still mixed, we can review it with you.",
   },
   "build-ship": {
     id: "build-ship",
     label: "Build & Ship",
-    who: "Teams shipping product right now.",
-    summary: "Reduce shipping drag and make progress more predictable.",
-    feelsLike: "The team is busy, but shipping still feels messy.",
-    helpBullets: [
-      "Find the real blockers.",
-      "Sequence work around real constraints.",
-      "Simplify architecture and integration tradeoffs.",
+    who: "Founders and teams already shipping, but struggling with delivery consistency.",
+    summary: "Reduce delivery friction so shipping feels predictable again.",
+    feelsLike: "The team is busy, yet progress still feels noisier than it should.",
+    commonBreaks: [
+      "Hidden dependencies keep breaking expected delivery flow.",
+      "Architecture and integration tradeoffs are handled too late.",
     ],
+    goodLooksLike:
+      "Teams can explain where drag is coming from and sequence work around real constraints.",
+    amalgamHelp:
+      "We help teams isolate delivery friction patterns and prioritize the fixes that unlock momentum.",
     nextStep: "If shipping feels messy, find the real drag pattern first.",
     primaryAction: {
-      label: "Start the Delivery Drag Diagnostic",
+      label: "Start the delivery drag check",
       href: "/launchpad/delivery-drag-diagnostic",
       source: "delivery_drag_diagnostic",
       description: "Diagnose drag before starting bigger work.",
@@ -201,22 +230,25 @@ const STAGE_CONFIG: Record<StageId, StageConfig> = {
     proof: "You can get clear quickly without a big proposal.",
     testimonialId: "mendez-pearlx",
     finalHeading: "Want a clearer read on what is slowing shipping right now?",
-    finalBody: "Start with the diagnostic, then go deeper only if needed.",
+    finalBody: "Start with a quick assessment, then go deeper only if needed.",
   },
   "productize-systemize": {
     id: "productize-systemize",
     label: "Productize & Systemize",
-    who: "Teams moving from ad hoc work to repeatable systems.",
-    summary: "Make internal systems stable so shipping can scale.",
-    feelsLike: "The product works, but internals are becoming fragile.",
-    helpBullets: [
-      "Stress-test stack and tooling.",
-      "Stabilize high-risk interfaces.",
-      "Tighten operating alignment across teams.",
+    who: "Teams moving from ad hoc execution to repeatable product and system workflows.",
+    summary: "Stabilize internals so you can scale without constant fire drills.",
+    feelsLike: "The product works, but internals are getting fragile as complexity grows.",
+    commonBreaks: [
+      "Critical interfaces and tooling boundaries are under-specified.",
+      "Cross-team ownership is unclear when workflows collide.",
     ],
+    goodLooksLike:
+      "System boundaries are explicit, ownership is clear, and delivery remains stable as complexity rises.",
+    amalgamHelp:
+      "We help you map structural fragility and sequence fixes before complexity gets more expensive.",
     nextStep: "Map where structure is breaking before you add more process.",
     primaryAction: {
-      label: "Start the Tech Stack Audit",
+      label: "Start the tech stack audit",
       href: "/launchpad/tech-stack-audit",
       source: "tech_stack_audit",
       description: "Get a first-pass read on risk, constraints, and hidden drag.",
@@ -237,17 +269,20 @@ const STAGE_CONFIG: Record<StageId, StageConfig> = {
   "scale-stabilize": {
     id: "scale-stabilize",
     label: "Scale & Stabilize",
-    who: "Scale-ups carrying rising complexity.",
-    summary: "Regain control as systems pressure grows.",
-    feelsLike: "Growth is real, but execution feels less predictable.",
-    helpBullets: [
-      "Find the highest-impact drag points.",
-      "Stabilize architecture and integrations.",
-      "Give leadership clearer sequencing.",
+    who: "Scaling teams carrying more complexity than their current systems can absorb.",
+    summary: "Regain control as complexity rises and execution gets less predictable.",
+    feelsLike: "Growth is real, but follow-through and confidence are starting to slip.",
+    commonBreaks: [
+      "Complexity grows faster than decision and delivery systems.",
+      "Leaders lack one shared map of risk, sequencing, and ownership.",
     ],
+    goodLooksLike:
+      "Leadership can prioritize with confidence, teams execute with fewer collisions, and outcomes stay steadier under growth.",
+    amalgamHelp:
+      "We help scale-up teams simplify execution complexity into a practical path they can sustain.",
     nextStep: "If growth feels heavier each month, clarify what to fix first.",
     primaryAction: {
-      label: "Get your scale readiness path",
+      label: "Start the scale readiness check",
       href: "/launchpad/ai-readiness-checklist",
       source: "scale_readiness_path",
       description: "Get a practical read on readiness and what to fix first.",
@@ -316,7 +351,7 @@ function contactHref(input: {
     [
       "Source: Launchpad",
       `Stage: ${input.stageLabel}`,
-      input.pressure ? `Pressure: ${input.pressure}` : "Pressure: none selected",
+      input.pressure ? `Situation: ${input.pressure}` : "Situation: none selected",
       `CTA: ${input.ctaLabel}`,
       `Note: ${input.note}`,
     ].join("\n"),
@@ -363,7 +398,6 @@ export function LaunchpadStageNavigator({
   const isOverview = stageId === "all"
   const activeStageId: StageId = isOverview ? DEFAULT_STAGE : stageId
   const stage = STAGE_CONFIG[activeStageId]
-  const stageTone = STAGE_TONE[activeStageId]
   const pressure = isOverview
     ? null
     : stage.pressures.find((item) => item.id === pressureId) ?? null
@@ -419,7 +453,7 @@ export function LaunchpadStageNavigator({
     [isOverview, pressureId, stage],
   )
   const nextActionLabel = isOverview
-    ? "Find your current stage"
+    ? "Find my stage"
     : stage.primaryAction.label
   const nextActionAnchorTarget = isOverview ? "launchpad-stage-selector" : null
   const nextActionHref = isOverview
@@ -429,35 +463,41 @@ export function LaunchpadStageNavigator({
     ? "overview_select_stage"
     : stage.primaryAction.source
   const nextActionDescription = isOverview
-    ? "Use the journey flow above to pick the stage that matches your current pressure. We will personalize everything below instantly."
+    ? "Use the journey map to pick the stage that matches your current situation. The page will tailor your next move instantly."
     : stage.primaryAction.description
   const nextActionNarrative = isOverview
     ? "Choose the stage that feels closest. Everything below updates in place."
     : stage.nextStep
   const confidenceNote = isOverview
-    ? "You can review the full journey first, then switch into one focused stage without losing context."
+    ? "Launchpad keeps the full A-to-Z map visible while tailoring the next move to one stage."
     : stage.proof
   const contextualSecondaryLabel = isOverview
     ? STRATEGY_CALL_LABEL
     : stage.secondaryLabel
   const finalHeading = isOverview
-    ? "Not sure which stage fits best?"
+    ? "Not sure which stage fits best yet?"
     : stage.finalHeading
   const finalBody = isOverview
-    ? "Pick a stage first. If you want a second opinion, we can help you choose the right next move."
+    ? "Pick your stage first. If you want a second opinion, we can help you choose the right next move."
     : stage.finalBody
   const stageNumber = STAGE_ORDER.indexOf(activeStageId) + 1
   const stageProgressPercent = isOverview
     ? 100
     : Math.round((stageNumber / STAGE_ORDER.length) * 100)
   const stageProgressLabel = isOverview
-    ? "All five stages are loaded. Pick one to get a tailored next move."
+    ? "All five stages are visible. Pick one to get a tailored next move."
     : `Stage ${stageNumber} of ${STAGE_ORDER.length} in the founder journey.`
   const stagePressureSummary = isOverview
-    ? "Pick a stage to load pressure filters and next-step guidance."
+    ? "Pick a stage to reveal situation filters and contextual guidance."
     : pressure
       ? pressure.note
-      : "Optional pressure filters help tighten recommendations for this stage."
+      : "Add an optional situation filter to tighten recommendations for this stage."
+  const stageBreakSummary = isOverview
+    ? "Most teams hit delivery friction when priorities, ownership, and system constraints are not aligned."
+    : stage.commonBreaks.join(" ")
+  const stageGoodLooksSummary = isOverview
+    ? "Clear stage fit, one practical next move, and momentum without overload."
+    : stage.goodLooksLike
   const compactMobileSelector = compactStageSelector && isMobileViewport
   const showPressureControls = !isMobileViewport || !compactStageSelector || showMobilePressureFilters
   const stageSelectorGroupClass = compactMobileSelector
@@ -476,7 +516,7 @@ export function LaunchpadStageNavigator({
     ? [
         {
           id: "pick-stage",
-          label: "Pick your stage",
+          label: "Find my stage",
           description: "Switch from overview to a focused stage in one click.",
           href: "#launchpad-stage-selector",
           source: "overview_pick_stage",
@@ -484,8 +524,8 @@ export function LaunchpadStageNavigator({
         },
         {
           id: "diagnostic",
-          label: "Run a quick diagnostic",
-          description: "Start with a practical read before deeper engagement.",
+          label: "Start diagnostic",
+          description: "Get a practical read before deciding on deeper support.",
           href: "/launchpad/delivery-drag-diagnostic",
           source: "overview_diagnostic",
           anchorTarget: null,
@@ -510,7 +550,7 @@ export function LaunchpadStageNavigator({
         },
         {
           id: "guide",
-          label: guides[0] ? `Read: ${guides[0].title}` : "Review supporting guide",
+          label: guides[0] ? `Explore: ${guides[0].title}` : "Explore supporting guide",
           description: guides[0]
             ? guides[0].description
             : "Use a practical guide to validate your next move.",
@@ -790,14 +830,6 @@ export function LaunchpadStageNavigator({
     onStageSelect(nextStage)
   }
 
-  const onHeroStageTagClick = (nextStage: StageId) => {
-    track("launchpad_hero_stage_tag_click", { from_stage: stageId, to_stage: nextStage })
-    onStageSelect(nextStage, {
-      preserveScroll: false,
-      scrollTarget: "launchpad-next-step",
-    })
-  }
-
   const onPressureSelect = (next: string) => {
     if (isOverview) {
       return
@@ -827,6 +859,9 @@ export function LaunchpadStageNavigator({
         scrollToLaunchpadSection(targetId)
       })
     })
+    // scrollToLaunchpadSection is intentionally omitted to avoid re-triggering
+    // this effect on every render due function identity changes.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stageId, pressureId])
 
   const onStageSelectorKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
@@ -891,17 +926,19 @@ export function LaunchpadStageNavigator({
                 Launchpad
               </p>
               <span className="inline-flex items-center gap-2 rounded-full border border-teal/25 bg-teal/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-teal">
-                Support from idea to scale
+                A-to-Z founder journey
               </span>
             </div>
             <h1 className="max-w-[20ch] text-4xl font-semibold tracking-tight text-foreground md:text-5xl lg:text-6xl">
-              Where is product delivery getting stuck right now?{" "}
+              From idea to scale,{" "}
               <span className="bg-gradient-to-r from-teal to-purple bg-clip-text text-transparent">
-                We&apos;ll help you choose the next move.
+                find the right next move.
               </span>
             </h1>
             <p className="mt-6 max-w-[56ch] text-lg leading-relaxed text-muted-foreground">
-              Pick the stage that fits your situation and get one practical next step in under a minute.
+              Launchpad helps founders, entrepreneurs, and teams self-locate fast,
+              see what usually breaks, and choose one practical next step in under
+              a minute.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <TrackedLink
@@ -911,7 +948,7 @@ export function LaunchpadStageNavigator({
                 onClick={(event) => onAnchorClick(event, "launchpad-stage-selector")}
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-teal px-6 py-3 font-medium text-background transition-opacity hover:opacity-90"
               >
-                Find your stage
+                Find my stage
                 <ArrowRight className="h-4 w-4" />
               </TrackedLink>
               <TrackedLink
@@ -924,28 +961,8 @@ export function LaunchpadStageNavigator({
               </TrackedLink>
             </div>
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-              Prefer self-serve first? Start with a quick diagnostic.
+              Start self-serve if you want. Human support is always one click away.
             </p>
-            <div className="mt-7 flex flex-wrap items-center gap-2 text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground">
-              {HERO_STAGE_TAGS.map((step, index) => (
-                <span key={step.id} className="inline-flex items-center gap-2">
-                  <button
-                    type="button"
-                    className={`rounded-full border px-3 py-1.5 transition-colors ${
-                      stageId === step.id
-                        ? "border-teal/45 bg-teal/12 text-foreground"
-                        : "border-border bg-background text-muted-foreground hover:text-foreground"
-                    }`}
-                    onClick={() => onHeroStageTagClick(step.id)}
-                  >
-                    {step.label}
-                  </button>
-                  {index < HERO_STAGE_TAGS.length - 1 ? (
-                    <ChevronRight className="h-3.5 w-3.5 text-muted-foreground/70" />
-                  ) : null}
-                </span>
-              ))}
-            </div>
           </div>
 
           <aside className="support-panel rounded-[30px] border border-teal/20 p-8 shadow-[0_18px_40px_rgba(15,23,42,0.08)]">
@@ -954,19 +971,71 @@ export function LaunchpadStageNavigator({
             </p>
             <ol className="mt-5 space-y-3 text-sm leading-relaxed text-muted-foreground">
               <li className="support-panel-item px-0 pb-0 pt-1">
-                1. Find your stage first, before committing to a path
+                1. Identify your stage in the journey
               </li>
               <li className="support-panel-item px-0 pb-0 pt-3">
-                2. Get recommendations based on real pressure, not generic templates
+                2. See what usually breaks and what to do next
               </li>
               <li className="support-panel-item px-0 pb-0 pt-3">
-                3. Move into deeper support only when the signal says it is worth it
+                3. Choose self-serve guidance or senior help based on real context
               </li>
             </ol>
             <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
               Clarity first. Services second.
             </p>
           </aside>
+        </div>
+      </section>
+
+      <section className="deferred-section border-b border-border bg-secondary/20 py-12">
+        <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
+          <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
+            Full journey
+          </p>
+          <h2 className="mt-3 max-w-3xl text-2xl font-semibold text-foreground text-balance md:text-3xl">
+            See the full path from ideation to scale, then open the stage that fits your reality.
+          </h2>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+            The full map stays visible. When you pick a stage, everything below
+            becomes specific to that stage.
+          </p>
+          <div className="mt-6 grid gap-3 md:grid-cols-5">
+            {STAGE_ORDER.map((itemId, index) => {
+              const selected = stageId === itemId
+              const item = STAGE_CONFIG[itemId]
+              return (
+                <button
+                  key={itemId}
+                  type="button"
+                  className={`rounded-2xl border px-4 py-4 text-left transition-colors ${
+                    selected
+                      ? `${STAGE_TONE[itemId].badge} shadow-sm`
+                      : "border-border bg-background hover:border-teal/35"
+                  }`}
+                  onClick={() => {
+                    track("launchpad_journey_strip_stage_click", {
+                      stage: itemId,
+                      from_stage: stageId,
+                    })
+                    onStageSelect(itemId, {
+                      preserveScroll: false,
+                      scrollTarget: "launchpad-stage-selector",
+                    })
+                  }}
+                >
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-teal">
+                    Stage {index + 1}
+                  </p>
+                  <p className="mt-2 text-sm font-semibold text-foreground">
+                    {item.label}
+                  </p>
+                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                    {item.summary}
+                  </p>
+                </button>
+              )
+            })}
+          </div>
         </div>
       </section>
 
@@ -983,15 +1052,16 @@ export function LaunchpadStageNavigator({
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
           <h2 className={`font-semibold text-foreground ${compactMobileSelector ? "text-lg" : "text-xl md:text-2xl"}`}>
             {compactStageSelector && isMobileViewport
-              ? "Where are you now?"
-              : "Where are you right now?"}
+              ? "Pick stage"
+              : "Pick your stage"}
           </h2>
           <p
             className={`mt-2 text-sm leading-relaxed text-muted-foreground ${
               compactStageSelector && isMobileViewport ? "hidden" : ""
             }`}
           >
-            Pick what feels closest. We&apos;ll adjust the page to your context.
+            Choose what feels closest right now. We&apos;ll tailor everything below
+            to your stage and situation.
           </p>
           <div
             role="radiogroup"
@@ -1047,16 +1117,12 @@ export function LaunchpadStageNavigator({
           <p className="sr-only" aria-live="polite" aria-atomic="true">
             {isOverview
               ? "Viewing all stages overview."
-              : `Viewing ${stage.label}${pressure ? ` with pressure ${pressure.label}.` : "."}`}
+              : `Viewing ${stage.label}${pressure ? ` with situation ${pressure.label}.` : "."}`}
           </p>
           {!isOverview ? (
             <div className="mt-3 flex flex-wrap items-center gap-2 md:mt-4 md:gap-3">
-              <p
-                className={`inline-flex min-h-9 items-center rounded-full border px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] ${stageTone.badge} ${
-                  compactStageSelector && isMobileViewport ? "hidden" : ""
-                }`}
-              >
-                Focused view: {stage.label}
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                Focused on {stage.label}
               </p>
               <TrackedLink
                 href="#launchpad-next-step"
@@ -1065,7 +1131,7 @@ export function LaunchpadStageNavigator({
                 onClick={(event) => onAnchorClick(event, "launchpad-next-step")}
                 className="inline-flex min-h-9 items-center rounded-full border border-border px-3.5 py-1.5 text-xs font-medium text-foreground transition-colors hover:bg-secondary"
               >
-                See recommendations
+                See my next move
               </TrackedLink>
               <button
                 type="button"
@@ -1085,17 +1151,17 @@ export function LaunchpadStageNavigator({
                 compactStageSelector && isMobileViewport ? "hidden" : ""
               }`}
             >
-              Pick a stage to view optional pressure filters.
+              Pick one stage to reveal optional situation filters.
             </p>
           ) : (
             <>
               <div className="mt-4 flex items-center justify-between gap-3">
                 <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                  Pressure filter (optional)
+                  Refine by situation (optional)
                 </p>
                 <button
                   type="button"
-                  className={`min-h-8 items-center rounded-full border border-border px-3 py-1 text-[11px] font-medium text-foreground transition-colors hover:bg-secondary md:hidden ${
+                  className={`min-h-11 items-center rounded-full border border-border px-3 py-1 text-[11px] font-medium text-foreground transition-colors hover:bg-secondary md:hidden ${
                     compactStageSelector ? "inline-flex" : "hidden"
                   }`}
                   onClick={() => setShowMobilePressureFilters((current) => !current)}
@@ -1107,7 +1173,7 @@ export function LaunchpadStageNavigator({
                 <>
                   <div
                     role="radiogroup"
-                    aria-label="Refine by pressure"
+                    aria-label="Refine by situation"
                     aria-describedby="launchpad-pressure-selector-help"
                     onKeyDown={onPressureSelectorKeyDown}
                     className={pressureSelectorGroupClass}
@@ -1134,7 +1200,7 @@ export function LaunchpadStageNavigator({
                     })}
                   </div>
                   <p id="launchpad-pressure-selector-help" className="sr-only">
-                    Pressure filters are optional. Use left and right arrow keys to move between options.
+                    Situation filters are optional. Use left and right arrow keys to move between options.
                   </p>
                   {pressureId ? (
                     <button
@@ -1145,7 +1211,7 @@ export function LaunchpadStageNavigator({
                         track("launchpad_pressure_cleared", { stage: stageId })
                       }}
                     >
-                      Clear pressure filter
+                      Clear situation filter
                     </button>
                   ) : null}
                 </>
@@ -1160,7 +1226,7 @@ export function LaunchpadStageNavigator({
           <article className="support-panel rounded-[30px] p-7 md:p-8">
             <div className="flex flex-wrap items-center gap-2">
               <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                Your current snapshot
+                Stage snapshot
               </p>
               <span className="inline-flex min-h-8 items-center rounded-full border border-border bg-background px-3 text-xs font-medium text-muted-foreground">
                 {isOverview ? "Overview mode" : "Focused mode"}
@@ -1170,11 +1236,14 @@ export function LaunchpadStageNavigator({
               <div>
                 <h2 className="text-2xl font-semibold text-foreground text-balance">
                   {isOverview
-                    ? "See the whole map, then focus where pressure is highest"
-                    : `${stage.label}: where you are right now`}
+                    ? "See the full journey, then focus where the situation is most urgent"
+                    : `${stage.label}: your current context`}
                 </h2>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   {stageProgressLabel}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {stagePressureSummary}
                 </p>
               </div>
               <div className="rounded-2xl border border-border bg-background px-4 py-4">
@@ -1204,20 +1273,18 @@ export function LaunchpadStageNavigator({
               </div>
               <div className="rounded-2xl border border-border bg-background px-4 py-4">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-teal">
-                  Pressure signal
+                  What usually breaks
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {stagePressureSummary}
+                  {stageBreakSummary}
                 </p>
               </div>
               <div className="rounded-2xl border border-border bg-background px-4 py-4">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-teal">
-                  Recommendation mode
+                  What good looks like
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {isOverview
-                    ? "Start broad, then narrow to one stage."
-                    : "Take one action first, then decide if deeper support is needed."}
+                  {stageGoodLooksSummary}
                 </p>
               </div>
             </div>
@@ -1225,7 +1292,7 @@ export function LaunchpadStageNavigator({
 
           <aside className="rounded-[30px] border border-border bg-background p-7">
             <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-              Best next moves
+              Quick paths (optional)
             </p>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               Pick one strong first move. You can always expand after.
@@ -1271,14 +1338,14 @@ export function LaunchpadStageNavigator({
             <>
               <div className="support-panel rounded-[30px] p-8">
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                  Full journey
+                  Expanded stage map
                 </p>
                 <h2 className="mt-4 text-3xl font-semibold text-foreground">
-                  See the full path, then open the stage that matches your reality
+                  Need a deeper look before choosing your stage?
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  Think of this as your map from idea to scale. Pick one stage
-                  and everything below adapts in place.
+                  Use this expanded map to compare all five stages in more detail,
+                  then open the one that fits best.
                 </p>
                 <button
                   type="button"
@@ -1291,7 +1358,7 @@ export function LaunchpadStageNavigator({
                     })
                   }
                 >
-                  {showOverviewMap ? "Hide full stage map" : "Show full stage map"}
+                  {showOverviewMap ? "Hide full journey" : "Show full journey"}
                 </button>
                 {showOverviewMap ? (
                   <div className="mt-8 space-y-4">
@@ -1387,12 +1454,12 @@ export function LaunchpadStageNavigator({
               </div>
               <aside className="rounded-[30px] border border-border bg-background p-7">
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                  What changes next
+                  What updates when you choose a stage
                 </p>
                 <div className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground">
-                  <p>Next step and primary action become specific to that stage.</p>
-                  <p>Guides and confidence notes shift with the stage.</p>
-                  <p>Program fit and final CTA update to match.</p>
+                  <p>Your recommended next step becomes stage-specific.</p>
+                  <p>Guides, trust notes, and resources become more relevant.</p>
+                  <p>Support recommendations and final CTA adapt to your context.</p>
                 </div>
                 <p className="mt-5 rounded-2xl border border-border bg-secondary/35 px-4 py-3 text-sm leading-relaxed text-foreground">
                   Start broad if you need to. Narrow when you are ready.
@@ -1403,7 +1470,7 @@ export function LaunchpadStageNavigator({
             <>
               <div className="support-panel rounded-[30px] p-8">
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                  What this stage means
+                  Stage context
                 </p>
                 <h2 className="mt-4 text-3xl font-semibold text-foreground">
                   {stage.label}
@@ -1419,19 +1486,37 @@ export function LaunchpadStageNavigator({
                   {stage.feelsLike}
                 </p>
                 <div className="mt-6 grid gap-3 md:grid-cols-3">
-                  {stage.helpBullets.map((item) => (
-                    <div
-                      key={item}
-                      className="rounded-2xl border border-border bg-background px-4 py-4 text-sm text-muted-foreground"
-                    >
-                      {item}
-                    </div>
-                  ))}
+                  <div className="rounded-2xl border border-border bg-background px-4 py-4">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-teal">
+                      What usually breaks
+                    </p>
+                    <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+                      {stage.commonBreaks.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="rounded-2xl border border-border bg-background px-4 py-4">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-teal">
+                      What good looks like
+                    </p>
+                    <p className="mt-3 text-sm text-muted-foreground">
+                      {stage.goodLooksLike}
+                    </p>
+                  </div>
+                  <div className="rounded-2xl border border-border bg-background px-4 py-4">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-teal">
+                      How Amalgam helps
+                    </p>
+                    <p className="mt-3 text-sm text-muted-foreground">
+                      {stage.amalgamHelp}
+                    </p>
+                  </div>
                 </div>
               </div>
               <aside className="rounded-[30px] border border-border bg-background p-7">
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                  What this likely means
+                  What to do next
                 </p>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                   {stage.nextStep}
@@ -1439,7 +1524,7 @@ export function LaunchpadStageNavigator({
                 <p className="mt-4 rounded-2xl border border-border bg-secondary/35 px-4 py-3 text-sm leading-relaxed text-foreground">
                   {pressure
                     ? pressure.note
-                    : "Add a pressure filter above if you want tighter guidance."}
+                    : "Add a situation filter above if you want tighter guidance."}
                 </p>
               </aside>
             </>
@@ -1453,7 +1538,7 @@ export function LaunchpadStageNavigator({
           className="mx-auto max-w-[1200px] px-4 sm:px-6 motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200"
         >
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.22em] text-teal">
-            Next best step
+            Best next move
           </p>
           <h2 className="mb-10 text-3xl font-semibold text-foreground text-balance">
             {isOverview ? "What should you do first?" : "What should you do next?"}
@@ -1461,7 +1546,7 @@ export function LaunchpadStageNavigator({
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
             <article className="support-panel flex h-full flex-col rounded-[30px] p-8">
               <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                Recommended next action
+                Start here
               </p>
               <h3 className="mt-4 text-2xl font-semibold text-foreground">
                 {nextActionLabel}
@@ -1479,7 +1564,7 @@ export function LaunchpadStageNavigator({
                   eventData={{ stage: stageId, source: "next_step_module" }}
                   className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
                 >
-                  Not sure yet? Start with a quick diagnostic
+                  Not sure yet? Start diagnostic
                   <ArrowRight className="h-4 w-4" />
                 </TrackedLink>
               ) : null}
@@ -1549,8 +1634,94 @@ export function LaunchpadStageNavigator({
                   {confidenceNote}
                 </p>
               </div>
+              {testimonial ? (
+                <div className="rounded-[24px] border border-border bg-background px-6 py-5">
+                  <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
+                    Proof
+                  </p>
+                  <blockquote className="mt-3 text-sm leading-relaxed text-foreground">
+                    &ldquo;{testimonial.quote}&rdquo;
+                  </blockquote>
+                  <p className="mt-3 text-xs text-muted-foreground">
+                    {testimonial.name}, {testimonial.title} at {testimonial.company}
+                  </p>
+                </div>
+              ) : null}
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="deferred-section border-b border-border py-16 lg:py-20">
+        <div className="mx-auto grid max-w-[1200px] gap-6 px-4 sm:px-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
+          <article className="support-panel rounded-[30px] p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
+              Deeper support (optional)
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold text-foreground text-balance">
+              {isOverview
+                ? "If you want senior help after self-serve, this is the usual start"
+                : `If ${stage.label.toLowerCase()} needs deeper support, this is the usual fit`}
+            </h2>
+            <div className="mt-6 rounded-2xl border border-teal/35 bg-background px-5 py-5">
+              <p className="text-xs font-medium uppercase tracking-[0.2em] text-teal">
+                Recommended path
+              </p>
+              <h3 className="mt-2 text-2xl font-semibold text-foreground">
+                {mainProgram.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {mainProgram.description}
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-foreground/80">
+                {mainProgram.whenItsRight}
+              </p>
+              <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+                <TrackedLink
+                  href={mainProgram.href}
+                  eventName="launchpad_primary_program_recommendation_click"
+                  eventData={{
+                    stage: stageId,
+                    pressure: pressureId || "none",
+                    program: mainProgram.id,
+                  }}
+                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-foreground px-5 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
+                >
+                  {mainProgram.ctaLabel}
+                  <ArrowRight className="h-4 w-4" />
+                </TrackedLink>
+                <TrackedLink
+                  href={talkHref}
+                  eventName="launchpad_primary_program_call_click"
+                  eventData={{
+                    stage: stageId,
+                    pressure: pressureId || "none",
+                  }}
+                  className="inline-flex min-h-11 items-center justify-center rounded-lg border border-border px-5 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+                >
+                  {STRATEGY_CALL_LABEL}
+                </TrackedLink>
+              </div>
+            </div>
+          </article>
+          <aside className="rounded-[30px] border border-border bg-background p-7">
+            <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
+              Why teams trust this path
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              {confidenceNote}
+            </p>
+            {testimonial ? (
+              <>
+                <blockquote className="mt-5 rounded-2xl border border-border bg-secondary/35 px-4 py-4 text-sm leading-relaxed text-foreground">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </blockquote>
+                <p className="mt-4 text-xs text-muted-foreground">
+                  {testimonial.name}, {testimonial.title} at {testimonial.company}
+                </p>
+              </>
+            ) : null}
+          </aside>
         </div>
       </section>
 
@@ -1558,10 +1729,10 @@ export function LaunchpadStageNavigator({
         <div className="mx-auto flex max-w-[1200px] flex-col gap-3 px-4 sm:px-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-sm font-medium text-foreground">
-              Need deeper detail?
+              Need the full support map?
             </p>
             <p className="mt-1 text-sm text-muted-foreground">
-              Open full details for programs, trust notes, signals, and proof.
+              Open full details for all programs, trust notes, resources, and practical updates.
             </p>
           </div>
           <button
@@ -1579,7 +1750,7 @@ export function LaunchpadStageNavigator({
               })
             }}
           >
-            {showFullMap ? "Hide full guidance" : "Show full guidance"}
+            {showFullMap ? "Hide support details" : "Show support details"}
           </button>
         </div>
       </section>
@@ -1809,7 +1980,7 @@ export function LaunchpadStageNavigator({
                 : `Practical updates for teams in ${stage.label.toLowerCase()}`}
             </h2>
             <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
-              Short notes on what to do next when complexity and execution pressure collide.
+              Short notes on what to do next when complexity and delivery friction collide.
             </p>
             <div className="mt-8 grid gap-4 md:grid-cols-3">
               {signals.map((article) => (
@@ -1825,7 +1996,7 @@ export function LaunchpadStageNavigator({
                   className="rounded-[24px] border border-border bg-background px-5 py-5 transition-colors hover:border-teal/35"
                 >
                   <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                    Signal preview
+                    Note preview
                   </p>
                   <p className="mt-3 text-lg font-semibold text-foreground">
                     {article.title}
@@ -1871,48 +2042,6 @@ export function LaunchpadStageNavigator({
         </div>
       </section>
 
-      {testimonial ? (
-        <section className="deferred-section border-y border-border bg-secondary/25 py-16 lg:py-20">
-          <div
-            key={`proof-${stageId}`}
-            className="mx-auto max-w-[1200px] px-4 sm:px-6 motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200"
-          >
-            <div className="rounded-[30px] border border-border bg-background p-8 md:p-10">
-              <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                Proof
-              </p>
-              <h2 className="mt-3 text-2xl font-semibold text-foreground text-balance">
-                What teams notice when they choose the right next step
-              </h2>
-              <blockquote className="mt-6 text-base leading-relaxed text-foreground md:text-lg">
-                <span className="mr-1 text-xl leading-none text-teal/65">
-                  &ldquo;
-                </span>
-                {testimonial.quote}
-              </blockquote>
-              <div className="mt-6 flex items-center gap-3 border-t border-border pt-5">
-                <div className="relative h-12 w-12 overflow-hidden rounded-full border border-border/70 bg-background/70">
-                  <Image
-                    src={withBasePath(testimonial.image)}
-                    alt={`Portrait of ${testimonial.name}`}
-                    fill
-                    sizes="48px"
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    {testimonial.title}, {testimonial.company}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      ) : null}
         </>
       ) : null}
 
@@ -1985,7 +2114,7 @@ export function LaunchpadStageNavigator({
               }
               className="inline-flex min-h-11 items-center justify-center rounded-lg bg-foreground px-3 text-center text-xs font-semibold text-background"
             >
-              {isOverview ? "Find stage" : "Start next step"}
+              {isOverview ? "Find my stage" : "Start next step"}
             </TrackedLink>
             <TrackedLink
               href={finalTalkHref}
@@ -1993,7 +2122,7 @@ export function LaunchpadStageNavigator({
               eventData={{ stage: stageId, pressure: pressureId || "none", source: "book_strategy_call" }}
               className="inline-flex min-h-11 items-center justify-center rounded-lg border border-border px-3 text-center text-xs font-semibold text-foreground"
             >
-              Strategy call
+              Book a strategy call
             </TrackedLink>
           </div>
         </div>
@@ -2001,3 +2130,4 @@ export function LaunchpadStageNavigator({
     </>
   )
 }
+

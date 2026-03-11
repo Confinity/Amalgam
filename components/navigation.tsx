@@ -17,7 +17,7 @@ export function Navigation({
   servicesLabel = "Services",
   primaryCtaLabel = "Book a strategy call",
   primaryCtaHref = "/contact?interest=strategy-session",
-  mobilePrompt = "If delivery is stalling and the bottleneck is unclear, start with a quick strategy call.",
+  mobilePrompt = "If building or scaling feels harder than it should, start with a strategy call.",
 }: NavigationProps) {
   const navItems = [
     { href: "/services", label: servicesLabel },
@@ -26,6 +26,9 @@ export function Navigation({
     { href: "/knowledge", label: "Knowledge" },
     { href: "/about", label: "About" },
   ]
+  const headerNavItems = navItems.filter(
+    (item) => item.href !== "/contact" && item.label.toLowerCase() !== "contact",
+  )
 
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
@@ -89,7 +92,7 @@ export function Navigation({
         </Link>
 
         <div className="hidden items-center gap-4 md:ml-10 lg:ml-12 md:flex">
-          {navItems.map((item) => (
+          {headerNavItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -153,7 +156,7 @@ export function Navigation({
                 Navigation
               </div>
               <div className="flex flex-col gap-2">
-                {navItems.map((item) => (
+                {headerNavItems.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}

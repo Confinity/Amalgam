@@ -16,7 +16,7 @@ import { knowledgeBriefs, knowledgeCategories } from "@/lib/knowledge-briefs"
 export const metadata: Metadata = {
   title: "Read this when product delivery feels stuck",
   description:
-    "A practical knowledge base for teams navigating architecture, product delivery, data, and organizational complexity.",
+    "Short practical reads on architecture, delivery systems, data foundations, and leadership decisions.",
   alternates: {
     canonical: "/knowledge",
   },
@@ -116,13 +116,14 @@ export default function KnowledgePage({ searchParams }: KnowledgePageProps) {
                 </span>
               </div>
               <h1 className="text-4xl font-semibold tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                Not sure where to start?{" "}
+                Start with the pressure you feel right now
+                {" "}
                 <span className="bg-gradient-to-r from-teal via-teal to-purple bg-clip-text text-transparent">
-                  Start with the pressure you feel most right now.
+                  and move one step at a time.
                 </span>
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-                Short reads on architecture, execution, data, and leadership decisions when things feel messy.
+                Short practical reads on architecture, delivery systems, data foundations, and leadership decisions.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
@@ -143,7 +144,7 @@ export default function KnowledgePage({ searchParams }: KnowledgePageProps) {
                 href="/launchpad"
                 className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
               >
-                Prefer tools first? Explore diagnostics
+                Prefer tools first? Explore Launchpad
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <div className="mt-10 flex flex-wrap gap-3">
@@ -222,12 +223,12 @@ export default function KnowledgePage({ searchParams }: KnowledgePageProps) {
                   <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
                     Start here if...
                   </p>
-                  <h2 className="mt-3 text-2xl font-semibold text-foreground text-balance">
-                    {path.title}
-                  </h2>
-                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                    {path.description}
-                  </p>
+                <h2 className="mt-3 text-2xl font-semibold text-foreground text-balance">
+                  {path.title}
+                </h2>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                    Guided reading paths based on what is happening inside your team right now.
+                </p>
                   <div className="mt-6 space-y-3">
                     {path.articles.map((article, index) => (
                       <Link
@@ -377,7 +378,7 @@ export default function KnowledgePage({ searchParams }: KnowledgePageProps) {
             <div className="mb-10 max-w-3xl">
                 <h2 className="text-2xl font-semibold text-foreground">Choose the area that feels most stuck</h2>
                 <p className="mt-3 text-muted-foreground">
-                  Each collection is built around one pressure pattern we see repeatedly.
+                  Each collection is built around one situation we see repeatedly.
                 </p>
               </div>
             <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">

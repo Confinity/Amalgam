@@ -38,7 +38,7 @@ export const caseStudies: CaseStudy[] = [
     heroImageSrc: "/case-studies/premier-financial-alliance.webp",
     heroImageAlt: "Premier Financial Alliance team and operations dashboard thumbnail from the legacy Amalgam case study",
     problem: "Outdated technology and inefficient platforms created unnecessary manual processes for agent onboarding, reporting, and administrative tasks, wasting resources and risking inaccurate incentive distribution.",
-    approach: "We modernized their platform by automating complex data relationships, optimizing agent onboarding, and improving reporting capabilities. We migrated data from MySQL to PostgreSQL, refined business logic, and built an intuitive interface for administrators.",
+    approach: "We modernized their platform by automating complex data relationships, improving agent onboarding, and strengthening reporting capabilities. We migrated data from MySQL to PostgreSQL, refined business logic, and built an intuitive interface for administrators.",
     outcome: "PFA now has a solid incentive management system, secure team communication, and dynamic custom reporting that enables data-driven decision-making and streamlined operations.",
     overview: "Premier Financial Alliance is an insurance brokerage disrupting the industry with proprietary financial products focused on Middle America. They offer whole life, universal life, term life insurance, and annuities. However, their outdated platform hindered efficiency for both agents and administrators.",
     challenges: [
@@ -266,7 +266,7 @@ export const caseStudies: CaseStudy[] = [
       {
         metric: "Content",
         value: "Clear Homepage",
-        description: "Homepage showcases Savings and CD overviews with market-leading rates, minimum deposits, FDIC insurance, fees, and intuitive CTAs."
+        description: "Homepage showcases savings and CD overviews with clear terms, FDIC insurance details, and intuitive CTAs."
       },
       {
         metric: "Efficiency",
@@ -395,7 +395,7 @@ export const caseStudies: CaseStudy[] = [
       {
         metric: "Search",
         value: "Improved Results",
-        description: "Optimized search functionality provides more relevant results and efficient management of products and promotions."
+        description: "Search functionality now delivers more relevant results and more efficient management of products and promotions."
       },
       {
         metric: "Maintenance",
@@ -509,7 +509,7 @@ export const caseStudies: CaseStudy[] = [
         description: "Executed system improvements to streamline operations."
       },
       {
-        title: "Optimization",
+        title: "Refinement",
         description: "Fine-tuned processes for maximum efficiency and scalability."
       }
     ],
@@ -531,11 +531,11 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         metric: "Operations",
-        value: "Optimized",
+        value: "Stronger",
         description: "Better visibility and control across operational processes."
       }
     ],
-    technologies: ["Systems Integration", "Process Optimization"],
+    technologies: ["Systems Integration", "Process Improvement"],
     featured: false
   },
 
@@ -570,7 +570,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         title: "Data Migration & Integration",
-        description: "Built batch data pipelines and integration APIs for real-time and overnight synchronization, migrating data from Voyager to Q2 with validated mapping and transformation."
+        description: "Built batch data pipelines and integration APIs for real-time and overnight synchronization, migrating data from Voyager to Q2 with validated mapping rules and conversion checks."
       },
       {
         title: "Change Management & Training",
@@ -585,7 +585,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         metric: "Infrastructure",
-        value: "Optimized",
+        value: "Streamlined",
         description: "Replaced costly Tibco middleware with scalable, maintainable Spring Boot microservices."
       },
       {
@@ -614,7 +614,7 @@ export const caseStudies: CaseStudy[] = [
     heroImageAlt: "Moody's brand mark used as representative context for the engagement",
     problem: "Name matching across transliterations and fragmented source data created real screening friction in risk-sensitive workflows.",
     approach: "We designed and delivered a white-label name intelligence system focused on transliteration-aware matching, search precision, and practical review workflows across multiple data sources.",
-    outcome: "The platform gave enterprise teams a more usable way to examine name-based risk signals and make higher-confidence screening decisions in complex global datasets.",
+    outcome: "The platform gave enterprise teams a more usable way to examine name-based risk indicators and make higher-confidence screening decisions in complex global datasets.",
     overview: "This engagement centered on the practical problem of name intelligence at enterprise scale. The work required balancing transliteration complexity, search quality, and workflow usability in a way that could be adopted inside established risk operations.",
     challenges: [
       "Name matching quality dropped quickly when transliteration and spelling variation increased",
@@ -632,8 +632,8 @@ export const caseStudies: CaseStudy[] = [
         description: "Built screening flows that made it easier to review potential matches, compare alternatives, and move through high-volume queues."
       },
       {
-        title: "Data and Signal Normalization",
-        description: "Structured ingestion and normalization patterns so signals from different sources could be examined consistently."
+        title: "Data and Indicator Normalization",
+        description: "Structured ingestion and normalization patterns so indicators from different sources could be examined consistently."
       },
       {
         title: "White-Label Delivery",
@@ -658,7 +658,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         metric: "Decision support",
-        value: "Clearer signal",
+        value: "Clearer evidence",
         description: "Risk-related search and matching decisions were based on more structured, explainable outputs."
       }
     ],
@@ -675,13 +675,13 @@ export const caseStudies: CaseStudy[] = [
     headline: "Adapting name-screening and decision-support workflows for a digital financial environment",
     heroImageSrc: "/clients/sofi.webp",
     heroImageAlt: "SoFi brand mark used as representative context for the engagement",
-    problem: "Financial workflows needed practical screening and signal review support without slowing operational decisions.",
+    problem: "Financial workflows needed practical screening and indicator review support without slowing operational decisions.",
     approach: "We applied proven name-intelligence and workflow patterns to a fintech operating context, adapting matching behavior, review logic, and operational integration needs for a fast-moving financial environment.",
-    outcome: "The engagement improved how risk-relevant signals could be reviewed in day-to-day operations while keeping the workflow practical for teams under delivery pressure.",
+    outcome: "The engagement improved how risk-relevant indicators could be reviewed in day-to-day operations while keeping the workflow practical for teams under delivery pressure.",
     overview: "This work focused on adapting screening-oriented product lineage into a different financial operating context. The goal was not abstract architecture, but a practical system that teams could actually use in real workflows.",
     challenges: [
       "Risk-related checks needed to fit high-throughput financial operations",
-      "Signal review quality had to improve without creating heavy process drag",
+      "Review quality had to improve without creating heavy process drag",
       "Workflow design needed to support practical decision speed and consistency",
       "Implementation had to stay aligned with existing operational and technical constraints"
     ],
@@ -691,7 +691,7 @@ export const caseStudies: CaseStudy[] = [
         description: "Mapped screening and review logic to the realities of a digital financial operations environment."
       },
       {
-        title: "Matching and Signal Tuning",
+        title: "Matching and Indicator Tuning",
         description: "Refined matching behaviors and review paths so teams could evaluate potential risk indicators with better consistency."
       },
       {
@@ -713,7 +713,7 @@ export const caseStudies: CaseStudy[] = [
       {
         metric: "Decision support",
         value: "Higher confidence",
-        description: "Signal interpretation became easier to apply in practical day-to-day decisions."
+        description: "Indicator interpretation became easier to apply in practical day-to-day decisions."
       },
       {
         metric: "Delivery rhythm",
@@ -721,7 +721,7 @@ export const caseStudies: CaseStudy[] = [
         description: "Teams were able to run core workflows with fewer avoidable interruptions."
       }
     ],
-    technologies: ["Workflow Engineering", "Screening Support", "Signal Review Design", "Fintech Operations"],
+    technologies: ["Workflow Engineering", "Screening Support", "Indicator Review Design", "Fintech Operations"],
     featured: true
   },
 
@@ -806,14 +806,14 @@ export const caseStudies: CaseStudy[] = [
     solution: [
       {
         title: "Technology Assessment",
-        description: "Evaluated FINRA's existing technical infrastructure and identified optimization opportunities."
+        description: "Evaluated FINRA's existing technical infrastructure and identified practical improvement opportunities."
       },
       {
         title: "Systems Enhancement",
         description: "Implemented improvements to strengthen operational systems and regulatory capabilities."
       },
       {
-        title: "Process Optimization",
+        title: "Process Improvement",
         description: "Streamlined processes to support FINRA's regulatory functions and oversight responsibilities."
       }
     ],
@@ -826,7 +826,7 @@ export const caseStudies: CaseStudy[] = [
       {
         metric: "Operations",
         value: "Improved",
-        description: "Optimized processes for better effectiveness and efficiency."
+        description: "Processes became more consistent and effective."
       },
       {
         metric: "Impact",

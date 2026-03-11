@@ -56,8 +56,8 @@ export default function CareersPage() {
                 Snapshot
               </p>
               <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
-                <p>{careerRoles.length} current openings from the published legacy listing.</p>
-                <p>Remote-first operating model with direct collaboration.</p>
+                <p>{careerRoles.length} current openings from our current role listing.</p>
+                <p>Remote-first setup with direct collaboration.</p>
                 <p>Small-team environment where ownership and professionalism matter.</p>
               </div>
             </div>
@@ -74,8 +74,7 @@ export default function CareersPage() {
                 Roles you can step into now
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Role titles, summaries, and ranges below are sourced from the prior
-                published careers listing.
+                Role titles and summaries below reflect our current published openings.
               </p>
             </div>
 
@@ -98,9 +97,6 @@ export default function CareersPage() {
                   </div>
 
                   <h3 className="mt-5 text-2xl font-semibold text-foreground">{role.title}</h3>
-                  <p className="mt-2 text-sm font-medium text-teal">
-                    Compensation range: {role.compensationRange}
-                  </p>
                   <p className="mt-4 max-w-4xl text-sm leading-relaxed text-muted-foreground">
                     {role.summary}
                   </p>

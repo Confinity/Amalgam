@@ -106,7 +106,7 @@ const nodes: NodeConfig[] = [
     label: "Monitoring",
     title: "Observability",
     mobileTitle: "Observe",
-    tooltip: "Weak signal makes system diagnosis harder.",
+    tooltip: "Weak visibility makes the system harder to read clearly.",
     x: 50,
     y: 73,
     width: 132,
@@ -663,7 +663,7 @@ export function HeroDiagnosticPanel() {
       >
         <div className="flex items-center gap-2 text-[11px] font-medium text-foreground/55">
           <span className="status-dot inline-block h-1.5 w-1.5 rounded-full bg-emerald-500/80" />
-          System diagnosis available
+          System clarity available
         </div>
         <p className="mt-3 text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground">
           Start here

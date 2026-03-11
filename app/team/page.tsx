@@ -1,4 +1,4 @@
-import { Metadata } from "next"
+﻿import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
@@ -16,7 +16,7 @@ import { withBasePath } from "@/lib/site-config"
 export const metadata: Metadata = {
   title: "Meet the people you work with",
   description:
-    "Meet the Amalgam team across architecture, engineering, product delivery, legal, and HR.",
+    "A small group of experienced builders across product, architecture, engineering, and delivery.",
   alternates: {
     canonical: "/team",
   },
@@ -63,7 +63,7 @@ export default function TeamPage() {
                 Meet the people who help you ship through complex systems
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-                Amalgam stays intentionally small. The team spans product, architecture, engineering, operations, and leadership.
+                A small group of experienced builders across product, architecture, engineering, and delivery.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
@@ -226,7 +226,7 @@ export default function TeamPage() {
         <section className="deferred-section border-t border-border bg-foreground px-6 py-20">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-bold text-background md:text-4xl">
-              Want experienced operators in the room while you execute?
+              Want experienced builders in the room while you execute?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-background/70">
               Start with a strategy call if system issues are slowing execution. If you already know where you need help, contact us directly.
@@ -253,4 +253,5 @@ export default function TeamPage() {
     </>
   )
 }
+
 

@@ -1,4 +1,4 @@
-import { Metadata } from "next"
+﻿import { Metadata } from "next"
 import { ArrowRight } from "lucide-react"
 import { ContextualTestimonial } from "@/components/contextual-testimonial"
 import { Footer } from "@/components/footer"
@@ -9,7 +9,7 @@ import { launchpadPrograms } from "@/lib/launchpad"
 export const metadata: Metadata = {
   title: "Need deeper help now? Choose the support level that fits.",
   description:
-    "Choose between Diagnostic Review, Execution Sprint, and Outcome Partnership based on what your team needs right now.",
+    "Choose between Founder Review, Execution Sprint, and Outcome Partnership based on what your team needs right now.",
   alternates: {
     canonical: "/launchpad/programs",
   },
@@ -17,21 +17,21 @@ export const metadata: Metadata = {
 
 const decisionMap = [
   {
-    title: "Need diagnosis first",
+    title: "Need clarity first",
     description:
-      "If the drag is visible but the system still needs a direct read, Diagnostic Review is the cleanest entry point.",
+      "If clarity is low and the system still needs a direct read, Founder Review is the cleanest entry point.",
     href: "/founder-review",
   },
   {
-    title: "Need a roadmap plan",
+    title: "Need planning support",
     description:
-      "If the diagnosis is trusted and the organization needs a roadmap that can survive scrutiny, move into the Execution Sprint.",
+      "If direction is mostly clear but planning is hard, move into the Execution Sprint.",
     href: "/execution-sprint",
   },
   {
-    title: "Need continuity in execution",
+    title: "Need execution continuity",
     description:
-      "If the path exists but execution still needs close follow-through, Outcome Partnership becomes the continuity layer.",
+      "If plans exist and follow-through is the risk, Outcome Partnership is the continuity layer.",
     href: "/outcome-partnership",
   },
 ]
@@ -52,7 +52,7 @@ export default function LaunchpadProgramsPage() {
               If self-serve is not enough, choose the level of support that fits right now.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              Pick based on what you need most right now: diagnosis, sequencing, or execution continuity.
+              Pick based on what you need most right now: clarity, sequencing, or execution continuity.
             </p>
           </div>
         </section>
@@ -116,7 +116,7 @@ export default function LaunchpadProgramsPage() {
                   <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
                   <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
                   <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-teal">
-                    Explore this path
+                    See how we work
                     <ArrowRight className="h-4 w-4" />
                   </span>
                 </TrackedLink>
@@ -136,3 +136,4 @@ export default function LaunchpadProgramsPage() {
     </>
   )
 }
+

@@ -17,7 +17,7 @@ import { ContextualTestimonial } from "@/components/contextual-testimonial"
 export const metadata: Metadata = {
   title: "What is slowing your team right now?",
   description:
-    "Talk with Amalgam about what is blocking delivery and get a clear recommendation on the next step.",
+    "Tell us what is happening in your team and where progress is slowing. We will help you choose the smartest next move.",
   alternates: {
     canonical: "/contact",
   },
@@ -27,17 +27,17 @@ const nextSteps = [
   {
     title: "You tell us what is stuck",
     description:
-      "Tell us what is slowing delivery and where decisions are getting stuck.",
+      "You share context.",
   },
   {
     title: "We reply directly",
     description:
-      "You hear back from the team, not a sales queue.",
+      "We review and respond.",
   },
   {
     title: "You get a clear next step",
     description:
-      "That may be a strategy call, a focused diagnostic, or a practical internal next move.",
+      "You get a clear path.",
   },
 ]
 
@@ -59,8 +59,26 @@ export default function ContactPage() {
                   What is slowing your team right now?
                 </h1>
                 <p className="contact-hero-body mt-6 text-lg leading-relaxed text-muted-foreground">
-                  Tell us where execution is getting stuck and which decision you need to make next.
+                  Tell us what is happening in your team and where progress is slowing.
                 </p>
+                <p className="mt-3 text-lg leading-relaxed text-muted-foreground">
+                  We will review it and help you decide the smartest next move.
+                </p>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                  <Link
+                    href="/contact?interest=strategy-session"
+                    className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 font-medium text-background transition-all hover:opacity-90"
+                  >
+                    Book a strategy call
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <Link
+                    href="#contact-intake"
+                    className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-border px-6 py-3 font-medium text-foreground transition-all hover:bg-secondary"
+                  >
+                    Send through website
+                  </Link>
+                </div>
 
                 <div className="contact-path-card support-panel mt-8 p-5">
                   <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
@@ -176,9 +194,7 @@ export default function ContactPage() {
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
                   Best first move
                 </p>
-                <h2 className="mt-3 text-2xl font-semibold text-background">
-                  Start with a strategy call
-                </h2>
+                <h2 className="mt-3 text-2xl font-semibold text-background">Start with a strategy call</h2>
                 <p className="mt-4 text-sm leading-relaxed text-background/70">
                   If delivery is stalling and the root cause is unclear, this is usually the fastest place to start.
                 </p>
@@ -208,14 +224,14 @@ export default function ContactPage() {
                   href="/founder-review"
                   className="mt-3 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl border border-background/15 px-6 py-3 font-medium text-background transition-colors hover:bg-background/10"
                 >
-                  See how the diagnostic works
+                  See how we work
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
-                  href="/launchpad/tools"
+                  href="/launchpad"
                   className="inline-flex items-center justify-center pt-1 text-sm font-medium text-teal transition-colors hover:text-background"
                 >
-                  Prefer self-check first? Explore diagnostics
+                  Prefer self-serve first? Explore Launchpad
                 </Link>
               </div>
             </div>

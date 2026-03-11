@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+﻿import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import {
@@ -356,7 +356,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                 {recommendedTool ? (
                   <div className="mt-4 rounded-2xl border border-border bg-secondary/30 p-4">
                     <p className="text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
-                      Recommended diagnostic
+                      Recommended next step
                     </p>
                     <p className="mt-2 text-sm font-medium text-foreground">{recommendedTool.title}</p>
                     <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
@@ -366,7 +366,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                       href={`/launchpad/${recommendedTool.slug}`}
                       className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
                     >
-                      See how the diagnostic works
+                      Start diagnostic
                       <ArrowRight className="h-4 w-4" />
                     </Link>
                   </div>
@@ -410,10 +410,10 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
 
               <div className="rounded-[28px] border border-border bg-background p-6">
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                  Signal
+                  Updates
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  Get practical notes on systems, execution drag, and architecture decisions when they are worth your attention.
+                  Get practical notes on systems, delivery friction, and architecture decisions when they are worth your attention.
                 </p>
                 <SignalsSubscribeForm
                   source={`knowledge_article_${brief.slug}`}
@@ -427,7 +427,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                   Want help with your specific situation?
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-background/75">
-                  Articles sharpen judgment. They do not replace a direct read on your architecture, operating model, and execution constraints.
+                  Articles sharpen judgment. They do not replace a direct read on your architecture, team setup, and execution constraints.
                 </p>
                 <div className="mt-5 flex flex-col gap-3">
                   <Link
@@ -441,7 +441,7 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
                     href="/founder-review"
                     className="inline-flex min-h-11 items-center justify-center rounded-xl border border-background/15 px-4 py-3 text-sm font-medium text-background transition-colors hover:bg-background/10"
                   >
-                    See how the diagnostic works
+                    Explore Founder Review
                   </Link>
                 </div>
               </div>
@@ -478,3 +478,4 @@ export default async function KnowledgeBriefPage({ params }: PageProps) {
     </>
   )
 }
+

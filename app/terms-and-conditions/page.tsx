@@ -1,4 +1,4 @@
-import { Metadata } from "next"
+﻿import { Metadata } from "next"
 import { LegalPageShell } from "@/components/legal-page-shell"
 
 export const metadata: Metadata = {
@@ -28,14 +28,14 @@ export default function TermsPage() {
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold text-foreground">Services</h2>
         <p className="leading-relaxed text-muted-foreground">
-          Amalgam provides consulting services that may include Diagnostic Review
+          Amalgam provides consulting services that may include Founder Review
           engagements, Execution Sprint roadmapping work, Outcome Partnership
           support, systems architecture consulting, and related technical
           advisory services.
         </p>
         <p className="leading-relaxed text-muted-foreground">
-          Specific terms, fees, deliverables, and responsibilities for any paid
-          engagement are defined separately in a statement of work, proposal, or
+          Specific terms, deliverables, and responsibilities for any paid
+          engagement are defined separately in a statement of work or
           service agreement.
         </p>
       </section>
@@ -108,3 +108,4 @@ export default function TermsPage() {
     </LegalPageShell>
   )
 }
+

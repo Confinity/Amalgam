@@ -1,4 +1,4 @@
-import { Metadata } from "next"
+﻿import { Metadata } from "next"
 import Link from "next/link"
 import {
   ArrowRight,
@@ -17,7 +17,7 @@ import { Navigation } from "@/components/navigation"
 export const metadata: Metadata = {
   title: "Is your team asking for a roadmap they can actually run?",
   description:
-    "The Execution Sprint helps you turn a clear diagnosis into a roadmap your team can execute with confidence.",
+    "The Execution Sprint helps you turn a clear situation into a roadmap your team can realistically execute.",
   alternates: {
     canonical: "/execution-sprint",
   },
@@ -79,7 +79,7 @@ const phases = [
 
 const executionFit = {
   right: [
-    "The diagnosis is clear enough and the real need is better sequencing.",
+    "The situation is clear enough and the real need is better sequencing.",
     "Leadership needs a roadmap that can survive cross-functional scrutiny.",
     "Too many initiatives are competing for priority without a trustworthy order of operations.",
   ],
@@ -107,7 +107,7 @@ export default function ExecutionSprintPage() {
                 Is your team asking for a roadmap they can actually run?
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                We map the current state, clarify constraints, and turn work into a sequence teams can actually run.
+                We map the current state, clarify constraints, and turn work into a sequence teams can realistically execute.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Link
@@ -121,7 +121,7 @@ export default function ExecutionSprintPage() {
                   href="/contact?interest=founder-review"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-border px-6 py-3 font-medium text-foreground transition-all hover:bg-secondary"
                 >
-                  Need diagnosis first?
+                  Explore Founder Review
                 </Link>
               </div>
             </div>
@@ -140,9 +140,9 @@ export default function ExecutionSprintPage() {
                   Best use
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  Most teams arrive here after the Diagnostic Review, but it can also
-                  stand alone if the diagnosis is already clear and the business now
-                  needs sequence.
+                  Most teams arrive here after a Founder Review, but it can also
+                  stand alone when the situation is already clear and the business
+                  now needs sequence.
                 </p>
               </div>
             </div>
@@ -250,20 +250,17 @@ export default function ExecutionSprintPage() {
               </h2>
               <div className="mt-6 space-y-4 leading-relaxed text-muted-foreground">
                 <p>
-                  Many roadmapping efforts fail because teams sequence work before architecture, ownership, and constraints are clear enough.
+                  Plans fail when they ignore real constraints.
                 </p>
                 <p>
-                  The Execution Sprint fixes that with a plan based on what the system can support now and which risk to remove first.
-                </p>
-                <p>
-                  The result is a roadmap that is easier to defend, communicate, and execute.
+                  We build roadmaps around what the system and team can support now.
                 </p>
               </div>
             </div>
             <div className="rounded-[30px] border border-border bg-foreground p-8">
               <h3 className="text-2xl font-semibold text-background">Want a roadmap that still works once execution starts?</h3>
               <p className="mt-4 text-sm leading-relaxed text-background/70">
-                If the diagnosis is already visible and the next challenge is
+                If the situation is already clear and the next challenge is
                 sequencing the work properly, this is the right place to go next.
               </p>
               <div className="mt-6 flex flex-col gap-3">
@@ -278,7 +275,7 @@ export default function ExecutionSprintPage() {
                   href="/contact?interest=founder-review"
                   className="inline-flex min-h-11 items-center justify-center rounded-xl border border-background/15 px-6 py-3 font-medium text-background transition-colors hover:bg-background/10"
                 >
-                  Need diagnosis first?
+                  Explore Founder Review
                 </Link>
               </div>
             </div>
@@ -296,4 +293,5 @@ export default function ExecutionSprintPage() {
     </>
   )
 }
+
 

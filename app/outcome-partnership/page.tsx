@@ -1,4 +1,4 @@
-import { Metadata } from "next"
+﻿import { Metadata } from "next"
 import Link from "next/link"
 import {
   ArrowRight,
@@ -70,7 +70,7 @@ const partnershipFit = {
     "The team needs help preserving progress and cross-functional alignment, not just planning the work once.",
   ],
   notYet: [
-    "The root problem is still too fuzzy and needs diagnosis first.",
+    "The root problem is still too fuzzy and needs a clear assessment first.",
     "The business mainly needs a time-boxed roadmap rather than ongoing involvement.",
     "The actual ask is generic staff augmentation without accountability for the shape of the work.",
   ],
@@ -107,7 +107,7 @@ export default function OutcomePartnershipPage() {
                   href="/contact?interest=founder-review"
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-border px-6 py-3 font-medium text-foreground transition-all hover:bg-secondary"
                 >
-                  Need diagnosis first?
+                  Explore Founder Review
                 </Link>
               </div>
             </div>
@@ -118,9 +118,9 @@ export default function OutcomePartnershipPage() {
               </p>
               <div className="mt-5 space-y-4">
                 <div className="rounded-2xl border border-border bg-secondary/35 px-4 py-4">
-                  <p className="font-medium text-foreground">After diagnosis</p>
+                  <p className="font-medium text-foreground">After a clear read</p>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    Most teams reach this point after the Diagnostic Review or Execution Sprint.
+                    Most teams reach this point after the Founder Review or Execution Sprint.
                   </p>
                 </div>
                 <div className="rounded-2xl border border-border bg-secondary/35 px-4 py-4">
@@ -149,6 +149,9 @@ export default function OutcomePartnershipPage() {
               <h2 className="text-3xl font-semibold text-foreground text-balance">
                 Direct support tied to execution, not advisory theater
               </h2>
+              <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+                Senior support that stays connected to real execution and real outcomes.
+              </p>
             </div>
             <div className="grid gap-6 md:grid-cols-2">
               {whatWeProvide.map((item) => (
@@ -266,13 +269,10 @@ export default function OutcomePartnershipPage() {
               </h2>
               <div className="mt-6 space-y-4 leading-relaxed text-muted-foreground">
                 <p>
-                  The hardest part is often not deciding what should happen. It is keeping good decisions intact as execution pressure rises.
+                  A roadmap alone does not keep execution on track.
                 </p>
                 <p>
-                  The Outcome Partnership is for that stage. It keeps judgment close to the work so the roadmap stays usable under pressure.
-                </p>
-                <p>
-                  The standard is simple: fewer blind spots, less drag, and stronger internal capability by the time the work is done.
+                  This model helps teams keep momentum while priorities evolve.
                 </p>
               </div>
             </div>
@@ -297,7 +297,7 @@ export default function OutcomePartnershipPage() {
                   href="/services"
                   className="inline-flex min-h-11 items-center justify-center rounded-xl border border-background/15 px-6 py-3 font-medium text-background transition-colors hover:bg-background/10"
                 >
-                  See engagement options
+                  See how we work
                 </Link>
               </div>
             </div>
@@ -315,4 +315,5 @@ export default function OutcomePartnershipPage() {
     </>
   )
 }
+
 

@@ -4,9 +4,9 @@ import { LaunchpadStageNavigator } from "@/components/launchpad-stage-navigator"
 import { Navigation } from "@/components/navigation"
 
 export const metadata: Metadata = {
-  title: "Where is product delivery getting stuck? Find your stage and next move.",
+  title: "From idea to scale: find your stage and next move.",
   description:
-    "Launchpad helps founders and operators identify their stage, diagnose pressure, and choose one practical next move.",
+    "Launchpad helps builders quickly understand where they are in the journey and what to do next.",
   alternates: {
     canonical: "/launchpad",
   },

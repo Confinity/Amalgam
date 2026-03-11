@@ -1,4 +1,4 @@
-import { getKnowledgeBriefBySlug, type KnowledgeBrief } from "@/lib/knowledge-briefs"
+﻿import { getKnowledgeBriefBySlug, type KnowledgeBrief } from "@/lib/knowledge-briefs"
 
 export type LaunchpadToolId =
   | "delivery-drag-diagnostic"
@@ -148,24 +148,24 @@ export const launchpadPaths: LaunchpadPathCard[] = [
 export const launchpadPrograms: LaunchpadProgramCard[] = [
   {
     id: "founder-review",
-    title: "Diagnostic Review",
+    title: "Founder Review",
     description:
-      "Not sure what is actually slowing delivery? Start here for a focused diagnostic read.",
+      "Not sure what is actually slowing delivery? Start here for a focused assessment.",
     whenItsRight:
       "Best when architecture, workflow, integrations, and operating friction are all colliding at once.",
     href: "/founder-review",
-    ctaLabel: "See how it works",
+    ctaLabel: "See how we work",
     featured: true,
   },
   {
     id: "execution-sprint",
     title: "Execution Sprint",
     description:
-      "You trust the diagnosis and now need a roadmap leadership can run with.",
+      "You trust the clear read and now need a roadmap leadership can run with.",
     whenItsRight:
       "Best when the work is clear enough to plan but still needs cross-functional sequencing and constraint mapping.",
     href: "/execution-sprint",
-    ctaLabel: "See what's included",
+    ctaLabel: "See how we work",
   },
   {
     id: "outcome-partnership",
@@ -175,7 +175,7 @@ export const launchpadPrograms: LaunchpadProgramCard[] = [
     whenItsRight:
       "Best when direction is clear and the business needs continuity, unblockers, and direct decision support over time.",
     href: "/outcome-partnership",
-    ctaLabel: "See how support works",
+    ctaLabel: "See how we work",
   },
 ]
 
@@ -285,7 +285,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         nextStep: {
           label: "Book a strategy call",
           href: "/contact?interest=founder-review",
-          note: "The root cause still needs a direct diagnostic.",
+          note: "The root cause still needs a direct assessment.",
         },
         relatedGuideSlugs: [
           "modernize-vs-rebuild",
@@ -321,7 +321,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         nextStep: {
           label: "Book a strategy call",
           href: "/contact?interest=founder-review",
-          note: "The operating model likely needs a direct read before planning continues.",
+          note: "The team structure and workflow likely need a direct read before planning continues.",
         },
         relatedGuideSlugs: [
           "operating-rhythm-after-growth",
@@ -333,13 +333,13 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         id: "visibility-data-drag",
         title: "Visibility and data drag",
         summary:
-          "The team is making decisions with weak signal. Reporting, source-of-truth confidence, or operational visibility gaps are likely making it harder to sequence and execute well.",
+          "The team is making decisions with weak visibility. Reporting, source-of-truth confidence, or operational visibility gaps are likely making it harder to sequence and execute well.",
         whyItMatters:
           "When truth is hard to access, every planning cycle gets noisier. This usually does not get fixed with one more dashboard.",
         nextStep: {
           label: "Book a strategy call",
           href: "/contact?interest=founder-review",
-          note: "A direct diagnostic can separate reporting symptoms from system causes.",
+          note: "A direct assessment can separate reporting symptoms from system causes.",
         },
         relatedGuideSlugs: [
           "metrics-you-can-run-the-company-on",
@@ -391,8 +391,8 @@ const launchpadTools: LaunchpadToolDefinition[] = [
             weights: { "ownership-coordination-drag": 3, "sequencing-drag": 1 },
           },
           {
-            id: "signal",
-            label: "We do not trust the signal well enough to decide confidently.",
+            id: "evidence",
+            label: "We do not trust the evidence well enough to decide confidently.",
             description: "Data, reporting, or operating visibility issues keep slowing decisions.",
             weights: { "visibility-data-drag": 3, "ownership-coordination-drag": 1 },
           },
@@ -424,7 +424,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
           {
             id: "unclear-priority",
             label: "It is hard to know which issue deserves attention first.",
-            description: "Signal quality or data trust keeps muddying the call.",
+            description: "Data quality or reporting trust keeps muddying the call.",
             weights: { "visibility-data-drag": 3, "sequencing-drag": 1 },
           },
         ],
@@ -468,7 +468,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
           {
             id: "very-clear",
             label: "Clear enough that the next move is probably a roadmap and sequencing problem.",
-            description: "The diagnosis exists. What is missing is the execution plan.",
+            description: "The read exists. What is missing is the execution plan.",
             weights: { "sequencing-drag": 3 },
           },
           {
@@ -484,9 +484,9 @@ const launchpadTools: LaunchpadToolDefinition[] = [
             weights: { "ownership-coordination-drag": 2, "visibility-data-drag": 2 },
           },
           {
-            id: "signal-fuzzy",
+            id: "evidence-fuzzy",
             label: "We know it is slow, but the evidence is too noisy to trust.",
-            description: "Signal quality and operational visibility are both weak.",
+            description: "Data quality and operational visibility are both weak.",
             weights: { "visibility-data-drag": 3, "ownership-coordination-drag": 1 },
           },
         ],
@@ -497,9 +497,9 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         helper: "This helps anchor the recommended next step.",
         options: [
           {
-            id: "diagnosis",
+            id: "clear-read",
             label: "A direct read on what is actually creating the drag.",
-            description: "The situation still needs diagnosis more than planning.",
+            description: "The situation still needs a clear assessment more than planning.",
             weights: {
               "structural-delivery-drag": 2,
               "ownership-coordination-drag": 2,
@@ -509,7 +509,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
           {
             id: "roadmap",
             label: "A roadmap that sequences the work honestly.",
-            description: "The diagnosis is good enough that planning should come next.",
+            description: "The read is good enough that planning should come next.",
             weights: { "sequencing-drag": 3 },
           },
           {
@@ -520,7 +520,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
           },
           {
             id: "operating-clarity",
-            label: "A better picture of ownership, signal, and operating friction.",
+            label: "A better picture of ownership, visibility, and delivery friction.",
             description: "The way decisions and handoffs are working needs a direct look.",
             weights: { "ownership-coordination-drag": 2, "visibility-data-drag": 2 },
           },
@@ -551,11 +551,11 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         summary:
           "The current workflows, ownership, or system foundations are too unstable for AI to create reliable value right now.",
         whyItMatters:
-          "AI tends to amplify ambiguity. If the operating model is still fuzzy, the first gains usually come from stabilizing the system before automating anything meaningful.",
+          "AI tends to amplify ambiguity. If workflows and ownership are still fuzzy, the first gains usually come from stabilizing the system before automating anything meaningful.",
         nextStep: {
           label: "Book a strategy call",
           href: "/contact?interest=founder-review",
-          note: "The system likely needs diagnosis before AI decisions become useful.",
+          note: "The system likely needs a clear assessment before AI decisions become useful.",
         },
         relatedGuideSlugs: [
           "post-series-a-data-foundations",
@@ -603,13 +603,13 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         id: "ready-for-focused-adoption",
         title: "Ready for focused adoption",
         summary:
-          "The company has enough workflow definition, ownership, and usable signal to move on AI in a focused, practical way.",
+          "The company has enough workflow definition, ownership, and usable data confidence to move on AI in a focused, practical way.",
         whyItMatters:
           "This is where execution discipline matters more than enthusiasm. The opportunity is real, but it still needs practical sequencing and guardrails.",
         nextStep: {
           label: "Explore Execution Sprint",
           href: "/execution-sprint",
-          note: "The next move may be a focused plan rather than another broad diagnostic.",
+          note: "The next move may be a focused plan rather than another broad assessment.",
         },
         relatedGuideSlugs: [
           "sequencing-roadmaps-under-uncertainty",
@@ -657,7 +657,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
           {
             id: "mostly-clear",
             label: "Most target workflows are clear enough to improve deliberately.",
-            description: "The operating model is reasonably clear.",
+            description: "The workflow model is reasonably clear.",
             weights: { "ready-for-focused-adoption": 3, "ready-governance-is-the-issue": 1 },
           },
           {
@@ -676,7 +676,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
           {
             id: "weak",
             label: "Too weak to trust for meaningful automation.",
-            description: "Signal quality and source-of-truth design are both shaky.",
+            description: "Data quality and source-of-truth design are both shaky.",
             weights: { "not-ready-yet": 3, "promising-but-blocked": 1 },
           },
           {
@@ -769,7 +769,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
           {
             id: "clarify-foundations",
             label: "A clear read on whether the foundations are ready at all.",
-            description: "The business needs signal before it starts calling things AI strategy.",
+            description: "The business needs evidence before it starts calling things AI strategy.",
             weights: { "not-ready-yet": 3, "promising-but-blocked": 1 },
           },
           {
@@ -835,11 +835,11 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         summary:
           "Too many tools, unclear boundaries, and handoff risk are likely making simple work harder than it should be.",
         whyItMatters:
-          "This is where stack complexity starts shaping product speed, support load, and confidence in change. The business often needs a sharper diagnostic before it can simplify responsibly.",
+          "This is where stack complexity starts shaping product speed, support load, and confidence in change. The business often needs a sharper assessment before it can simplify responsibly.",
         nextStep: {
           label: "Book a strategy call",
           href: "/contact?interest=founder-review",
-          note: "A direct diagnostic can separate platform symptoms from the real architecture and workflow issues.",
+          note: "A direct assessment can separate platform symptoms from the real architecture and workflow issues.",
         },
         relatedGuideSlugs: [
           "integration-tax",
@@ -875,7 +875,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         nextStep: {
           label: "Explore Execution Sprint",
           href: "/execution-sprint",
-          note: "The situation may be ready for simplification and sequencing rather than another broad diagnostic.",
+          note: "The situation may be ready for simplification and sequencing rather than another broad assessment.",
         },
         relatedGuideSlugs: [
           "modernize-vs-rebuild",
@@ -887,13 +887,13 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         id: "under-instrumented-for-reliable-delivery",
         title: "Under-instrumented for reliable delivery",
         summary:
-          "The stack may be more coherent than it feels, but observability, reporting, or operational signal are too weak to support confident decision-making.",
+          "The stack may be more coherent than it feels, but observability, reporting, or operational visibility are too weak to support confident decision-making.",
         whyItMatters:
-          "When the business cannot see the system well, it tends to overreact to symptoms. Better signal can remove a surprising amount of unnecessary chaos.",
+          "When the business cannot see the system well, it tends to overreact to symptoms. Better visibility can remove a surprising amount of unnecessary chaos.",
         nextStep: {
           label: "Book a strategy call",
           href: "/contact?interest=founder-review",
-          note: "A direct read can help decide whether the right move is instrumentation, diagnosis, or sequencing.",
+          note: "A direct read can help decide whether the right move is instrumentation, assessment, or sequencing.",
         },
         relatedGuideSlugs: [
           "metrics-you-can-run-the-company-on",
@@ -929,7 +929,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
           {
             id: "opaque",
             label: "Hard to see clearly because instrumentation and visibility are weak.",
-            description: "The stack may not be broken, but signal is too poor to judge it well.",
+            description: "The stack may not be broken, but visibility is too weak to judge it well.",
             weights: { "under-instrumented-for-reliable-delivery": 3, "stable-but-underdocumented": 1 },
           },
         ],
@@ -960,7 +960,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
           {
             id: "unknown",
             label: "Hard to judge because observability and reporting are too weak.",
-            description: "The risk may be real, but the signal is underpowered.",
+            description: "The risk may be real, but visibility is underpowered.",
             weights: { "under-instrumented-for-reliable-delivery": 3, "fragmented-and-fragile": 1 },
           },
         ],
@@ -991,7 +991,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
           {
             id: "unclear",
             label: "Hard to tell because the team still lacks consistent visibility into system behavior.",
-            description: "The issue is not just onboarding; it is signal quality.",
+            description: "The issue is not just onboarding; it is visibility quality.",
             weights: { "under-instrumented-for-reliable-delivery": 3, "scaling-with-risk": 1 },
           },
         ],
@@ -1022,7 +1022,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
           {
             id: "hard-to-read",
             label: "We cannot really judge because the system's behavior is hard to observe cleanly.",
-            description: "Operational signal is too weak to evaluate fit confidently.",
+            description: "Operational visibility is too weak to evaluate fit confidently.",
             weights: { "under-instrumented-for-reliable-delivery": 3 },
           },
         ],
@@ -1035,18 +1035,18 @@ const launchpadTools: LaunchpadToolDefinition[] = [
           {
             id: "map-current-state",
             label: "A current-state read on the stack and where fragility is hiding.",
-            description: "The business needs a more honest diagnosis first.",
+            description: "The business needs a more honest clear read first.",
             weights: { "fragmented-and-fragile": 2, "scaling-with-risk": 2 },
           },
           {
             id: "clean-simplify",
             label: "A plan to simplify and sequence the stack more responsibly.",
-            description: "The situation may be clear enough for planning rather than broad diagnosis.",
+            description: "The situation may be clear enough for planning rather than a broad assessment.",
             weights: { "over-complex-for-current-stage": 3, "stable-but-underdocumented": 1 },
           },
           {
             id: "improve-visibility",
-            label: "Better visibility, instrumentation, and signal before bigger decisions.",
+            label: "Better visibility, instrumentation, and reporting before bigger decisions.",
             description: "The organization needs to see the system more clearly before moving.",
             weights: { "under-instrumented-for-reliable-delivery": 3, "stable-but-underdocumented": 1 },
           },
@@ -1099,7 +1099,7 @@ const resultGuidanceMap: Record<string, LaunchpadResultGuidance> = {
   "delivery-drag-diagnostic:visibility-data-drag": {
     firstMoves: [
       "Agree on one source of truth for priority delivery and risk metrics.",
-      "Cut low-signal reporting and focus on decision-grade indicators.",
+      "Cut low-value reporting and focus on decision-grade indicators.",
       "Add simple weekly variance checks between plan and observed delivery behavior.",
     ],
     riskIfUnchanged:
@@ -1198,11 +1198,11 @@ const resultGuidanceMap: Record<string, LaunchpadResultGuidance> = {
   "tech-stack-audit:under-instrumented-for-reliable-delivery": {
     firstMoves: [
       "Define minimum observability baseline for critical workflows.",
-      "Instrument error, latency, and quality signals tied to business outcomes.",
-      "Add weekly signal review to guide delivery and risk decisions.",
+      "Instrument error, latency, and quality indicators tied to business outcomes.",
+      "Add a weekly review of those indicators to guide delivery and risk decisions.",
     ],
     riskIfUnchanged:
-      "The team keeps making decisions with weak signal, increasing rework and uncertainty.",
+      "The team keeps making decisions with weak visibility, increasing rework and uncertainty.",
   },
 }
 
@@ -1225,7 +1225,7 @@ const caseStudyRecommendationMap: Record<string, LaunchpadCaseStudyRecommendatio
   "delivery-drag-diagnostic:visibility-data-drag": {
     slug: "john-templeton-foundation",
     client: "John Templeton Foundation",
-    reason: "Data quality and signal improvements for better decisions.",
+    reason: "Data quality and visibility improvements for better decisions.",
   },
   "delivery-drag-diagnostic:integration-driven-drag": {
     slug: "barclays-bank-us",
@@ -1280,7 +1280,7 @@ const caseStudyRecommendationMap: Record<string, LaunchpadCaseStudyRecommendatio
   "tech-stack-audit:under-instrumented-for-reliable-delivery": {
     slug: "premier-financial-alliance",
     client: "Premier Financial Alliance",
-    reason: "Operational signal and workflow definition in critical system processes.",
+    reason: "Operational visibility and workflow definition in critical system processes.",
   },
 }
 
@@ -1325,7 +1325,7 @@ function toConfidenceLabel(level: "high" | "medium" | "provisional") {
   if (level === "medium") {
     return "Medium confidence"
   }
-  return "Early signal"
+  return "Early read"
 }
 
 function toConfidenceSummary(
@@ -1340,7 +1340,7 @@ function toConfidenceSummary(
   if (level === "medium") {
     return `Useful directional read (${answered}% of core questions answered, score margin ${margin}).`
   }
-  return `Early signal (${answered}% of core questions answered, score margin ${margin}). Answer a few follow-ups before committing.`
+  return `Early read (${answered}% of core questions answered, score margin ${margin}). Answer a few follow-ups before committing.`
 }
 
 function getConfidenceLevel(answerRatio: number, margin: number) {
@@ -1434,13 +1434,13 @@ export function evaluateLaunchpadTool(
       }
       return {
         score: dominantWeight,
-        signal: `${truncateDriverPrompt(question.prompt)} -> ${option.label}`,
+        indicator: `${truncateDriverPrompt(question.prompt)} -> ${option.label}`,
       }
     })
-    .filter((item): item is { score: number; signal: string } => Boolean(item))
+    .filter((item): item is { score: number; indicator: string } => Boolean(item))
     .sort((left, right) => right.score - left.score)
     .slice(0, 3)
-    .map((item) => item.signal)
+    .map((item) => item.indicator)
 
   return {
     tool,
@@ -1472,7 +1472,7 @@ export function getLaunchpadResultGuidance(
         "Run a 2-week checkpoint against delivery and risk outcomes.",
       ],
       riskIfUnchanged:
-        "Execution drag and uncertainty continue to compound while decisions stay noisy.",
+        "delivery friction and uncertainty continue to compound while decisions stay noisy.",
     }
   )
 }
@@ -1496,7 +1496,7 @@ export function getToolStrategyCallHref(
       `Tool: ${result.tool.title}`,
       `Profile: ${result.category.title}`,
       `Confidence: ${confidenceLabelOverride ?? result.confidence.label}`,
-      `Top driver: ${result.topDrivers[0] ?? "Not enough signal yet"}`,
+      `Top driver: ${result.topDrivers[0] ?? "Not enough evidence yet"}`,
       "I would like a 60-minute strategy call to review this result with your team.",
     ].join("\n"),
   )
@@ -1514,11 +1514,11 @@ export function getLaunchpadKnowledgeRecommendation(slug: string): {
     },
     "operating-rhythm-after-growth": {
       toolId: "delivery-drag-diagnostic",
-      reason: "Use the diagnostic if growth has increased drag but the specific source is still unclear.",
+      reason: "Use the assessment if growth has increased drag but the specific source is still unclear.",
     },
     "decision-rights-under-complexity": {
       toolId: "delivery-drag-diagnostic",
-      reason: "This article often surfaces ownership drag. The diagnostic can tell you whether coordination is the main problem or just one symptom.",
+      reason: "This article often surfaces ownership drag. The assessment can tell you whether coordination is the main problem or just one symptom.",
     },
     "modernize-vs-rebuild": {
       toolId: "tech-stack-audit",
@@ -1538,9 +1538,10 @@ export function getLaunchpadKnowledgeRecommendation(slug: string): {
     },
     "metrics-you-can-run-the-company-on": {
       toolId: "ai-readiness-checklist",
-      reason: "This helps test whether signal quality and source-of-truth maturity are strong enough for meaningful AI adoption.",
+      reason: "This helps test whether data quality and source-of-truth maturity are strong enough for meaningful AI adoption.",
     },
   }
 
   return toolMap[slug] ?? null
 }
+

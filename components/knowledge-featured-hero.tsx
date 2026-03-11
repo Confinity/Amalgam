@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
 import { ArrowRight, Sparkles } from "lucide-react"
 import type { KnowledgeBrief, KnowledgeCategoryId } from "@/lib/knowledge-briefs"
@@ -15,19 +14,11 @@ type KnowledgeFeaturedHeroProps = {
   categories: readonly Category[]
 }
 
-function pickRandom<T>(items: readonly T[]) {
-  if (items.length === 0) {
-    return null
-  }
-
-  return items[Math.floor(Math.random() * items.length)] ?? null
-}
-
 export function KnowledgeFeaturedHero({
   candidates,
   categories,
 }: KnowledgeFeaturedHeroProps) {
-  const [active] = useState<KnowledgeBrief | null>(() => pickRandom(candidates) ?? candidates[0] ?? null)
+  const active = candidates[0] ?? null
 
   if (!active) {
     return null

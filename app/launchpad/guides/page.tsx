@@ -65,7 +65,7 @@ export default function LaunchpadGuidesPage() {
                           eventData={{ source: "launchpad_guides_collection", target: relatedTool.id }}
                           className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
                         >
-                          Start with this diagnostic
+                          Start diagnostic
                           <ArrowRight className="h-4 w-4" />
                         </TrackedLink>
                       ) : null}
@@ -117,7 +117,7 @@ export default function LaunchpadGuidesPage() {
         <ContextualTestimonial
           className="deferred-section border-t border-border py-20 lg:py-24"
           eyebrow="Client perspective"
-          title="Why teams keep coming back to guidance that matches real operating pressure"
+          title="Why teams keep coming back to guidance that matches real situations"
           testimonialId="mooney-cleanitsupply"
         />
       </main>

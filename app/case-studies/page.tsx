@@ -51,15 +51,15 @@ export default function CaseStudiesPage() {
           <div className="pointer-events-none absolute left-10 top-24 h-64 w-64 rounded-full bg-purple/8 blur-3xl" />
           <div className="mx-auto grid max-w-[1200px] gap-12 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-end">
             <div className="max-w-3xl">
-              <p className="mb-4 text-sm font-medium uppercase tracking-widest text-teal">
-                Case Studies
-              </p>
-              <h1 className="text-4xl font-semibold leading-tight tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                See how we helped in real situations like yours
-              </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-                See the problem, what changed, and why it mattered.
-              </p>
+            <p className="mb-4 text-sm font-medium uppercase tracking-widest text-teal">
+              Case Studies
+            </p>
+            <h1 className="text-4xl font-semibold leading-tight tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
+              See how teams moved forward in real situations
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+              Explore the situation teams faced, what changed, and the outcomes that followed.
+            </p>
               <div className="mt-10 grid gap-4 sm:grid-cols-3">
                 <div className="rounded-2xl border border-border bg-background/90 px-5 py-5 shadow-sm">
                   <p className="text-3xl font-semibold text-foreground">{caseStudies.length}</p>
@@ -110,8 +110,9 @@ export default function CaseStudiesPage() {
 
         <TestimonialStrip
           className="deferred-section border-t border-border bg-secondary/35 py-20 lg:py-24"
-          eyebrow="Client feedback"
-          title="What clients noticed in the work"
+          eyebrow="Client perspective"
+          title="What clients say about the work"
+          description="Clients describe the work as practical, collaborative, and focused on results."
           compact
           testimonialIds={["mooney-cleanitsupply", "mendez-pearlx"]}
           maxItems={2}
@@ -129,7 +130,7 @@ export default function CaseStudiesPage() {
               </h2>
               </div>
               <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-                Each page gives you context, what we did, and what changed.
+                Each study shows situation, problem, what we did, and outcome.
               </p>
             </div>
 
@@ -190,10 +191,10 @@ export default function CaseStudiesPage() {
 
                   <div className="flex items-center justify-between border-t border-border bg-secondary/15 px-6 py-4">
                     <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                      View details
+                      Case study
                     </span>
                     <span className="inline-flex items-center gap-1 text-sm font-medium text-teal transition-all group-hover:gap-2">
-                      Read more
+                      Read case study
                       <ArrowRight className="h-4 w-4" />
                     </span>
                   </div>

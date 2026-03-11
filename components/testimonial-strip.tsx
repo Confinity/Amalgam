@@ -6,6 +6,7 @@ type TestimonialStripProps = {
   className?: string
   eyebrow?: string
   title?: string
+  description?: string
   compact?: boolean
   testimonialIds?: string[]
   maxItems?: number
@@ -15,6 +16,7 @@ export function TestimonialStrip({
   className = "",
   eyebrow = "Client perspective",
   title = "What working together felt like",
+  description,
   compact = false,
   testimonialIds,
   maxItems,
@@ -34,6 +36,9 @@ export function TestimonialStrip({
             {eyebrow}
           </p>
           <h2 className="text-2xl font-semibold text-foreground text-balance">{title}</h2>
+          {description ? (
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{description}</p>
+          ) : null}
         </div>
 
         <div className={`grid gap-6 ${compact ? "md:grid-cols-2 xl:grid-cols-3" : "lg:grid-cols-3"}`}>

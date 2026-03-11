@@ -51,7 +51,7 @@ export async function subscribeToSignals(
 
     return {
       status: "success",
-      message: "You are in. We will send practical Launchpad signal when it is worth your attention.",
+      message: "You are in. We will send practical Launchpad updates when they are worth your attention.",
     }
   }
 
@@ -92,7 +92,7 @@ export async function subscribeToSignals(
       status: "success",
       message: alreadySubscribed
         ? "You are already subscribed."
-        : "You are in. We will send practical Launchpad signal when it is worth your attention.",
+        : "You are in. We will send practical Launchpad updates when they are worth your attention.",
     }
   } catch {
     return {
