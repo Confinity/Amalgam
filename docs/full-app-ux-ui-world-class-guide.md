@@ -266,7 +266,7 @@ Improve:
 
 Files:
 - `components/review-mode.tsx`
-- `app/api/review-notes/route.ts`
+- `NEXT_PUBLIC_REVIEW_NOTES_URL` (shared remote note store endpoint)
 
 ## 4) Copy and Voice Framework (Human, Direct, Non-Robotic)
 

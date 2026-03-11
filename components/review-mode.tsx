@@ -29,7 +29,7 @@ const REVIEW_MODE_STORAGE_KEY = "amalgam_review_mode"
 const REVIEW_REMOTE_NOTES_FALLBACK_URL =
   process.env.NEXT_PUBLIC_REVIEW_NOTES_URL?.trim() ||
   "https://jsonblob.com/api/jsonBlob/019cd9ac-4875-7fa4-9d22-d380a855b21b"
-const REVIEW_REMOTE_NOTES_URLS = ["/api/review-notes", REVIEW_REMOTE_NOTES_FALLBACK_URL].filter(
+const REVIEW_REMOTE_NOTES_URLS = [REVIEW_REMOTE_NOTES_FALLBACK_URL].filter(
   (value, index, list) => Boolean(value) && list.indexOf(value) === index
 )
 const REMOTE_SYNC_DEBOUNCE_MS = 700
