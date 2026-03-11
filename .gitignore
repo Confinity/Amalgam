@@ -12,6 +12,7 @@ node_modules/
 .codex-artifacts/
 tmp/
 out/
+.preview-out-*/
 *.log
 *.err.log
 *.tsbuildinfo

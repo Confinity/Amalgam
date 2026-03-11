@@ -1,5 +1,5 @@
 import { spawnSync, spawn } from "node:child_process"
-import { existsSync, rmSync, openSync, closeSync } from "node:fs"
+import { existsSync, rmSync, openSync, closeSync, cpSync } from "node:fs"
 import path from "node:path"
 import process from "node:process"
 
@@ -98,7 +98,7 @@ function stopExistingServer(targetPort) {
   }
 }
 
-function startPreview(targetPort) {
+function startPreview(targetPort, targetDir) {
   const fd = openSync(logPath, "w")
   const child =
     process.platform === "win32"
@@ -109,7 +109,7 @@ function startPreview(targetPort) {
             "pnpm",
             "dlx",
             "serve",
-            "out",
+            targetDir,
             "-l",
             String(targetPort),
             "--no-clipboard",
@@ -123,7 +123,7 @@ function startPreview(targetPort) {
         )
       : spawn(
           "pnpm",
-          ["dlx", "serve", "out", "-l", String(targetPort), "--no-clipboard"],
+          ["dlx", "serve", targetDir, "-l", String(targetPort), "--no-clipboard"],
           {
             cwd: root,
             detached: true,
@@ -230,6 +230,10 @@ const outDir = path.join(root, "out")
 if (existsSync(outDir)) {
   rmSync(outDir, { recursive: true, force: true })
 }
+const previewOutDir = path.join(root, `.preview-out-${port}`)
+if (existsSync(previewOutDir)) {
+  rmSync(previewOutDir, { recursive: true, force: true })
+}
 
 runPnpm(["build"], {
   env: {
@@ -239,7 +243,14 @@ runPnpm(["build"], {
   },
 })
 
-const previewPid = startPreview(port)
+if (!existsSync(outDir)) {
+  console.error("Expected build output directory `out` was not found.")
+  process.exit(1)
+}
+
+cpSync(outDir, previewOutDir, { recursive: true })
+
+const previewPid = startPreview(port, previewOutDir)
 
 try {
   await waitForHealthyPreview(port)
