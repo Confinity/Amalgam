@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
 3:I[5806,["/Amalgam/_next/static/chunks/bb4658a82538331d.js","/Amalgam/_next/static/chunks/6f198a2dfbdeb9de.js"],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"buildId":"IuiwvKKcN2osVuW1K1xgL","rsc":["$","$1","c",{"children":["$L2",null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"B0ahjRIxtw3lCw9qlHFF7","rsc":["$","$1","c",{"children":["$L2",null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
 5:null
 2:E{"digest":"NEXT_REDIRECT;replace;/research/structure-follows-architecture;308;"}
