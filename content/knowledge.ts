@@ -455,7 +455,6 @@ export const researchSourcesTracked = [
   "Microsoft Research",
   "Stanford HAI",
   "MIT CSAIL",
-  "Massachusetts Institute of Technology",
   "University of Oxford",
   "University of Cambridge",
   "Harvard University",
