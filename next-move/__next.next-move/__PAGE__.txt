@@ -1,8 +1,0 @@
-1:"$Sreact.fragment"
-2:I[60965,["/Amalgam/_next/static/chunks/d96fbd77355e0038.js","/Amalgam/_next/static/chunks/d4c36e19e0ec2773.js","/Amalgam/_next/static/chunks/33dc6e8225c25788.js","/Amalgam/_next/static/chunks/ebc2acfbc68677ba.js"],"Navbar"]
-3:I[45189,["/Amalgam/_next/static/chunks/d96fbd77355e0038.js","/Amalgam/_next/static/chunks/d4c36e19e0ec2773.js","/Amalgam/_next/static/chunks/33dc6e8225c25788.js","/Amalgam/_next/static/chunks/ebc2acfbc68677ba.js"],"LaunchpadExperience"]
-4:I[86749,["/Amalgam/_next/static/chunks/d96fbd77355e0038.js","/Amalgam/_next/static/chunks/d4c36e19e0ec2773.js","/Amalgam/_next/static/chunks/33dc6e8225c25788.js","/Amalgam/_next/static/chunks/ebc2acfbc68677ba.js"],"FooterNav"]
-5:I[5806,["/Amalgam/_next/static/chunks/bb4658a82538331d.js","/Amalgam/_next/static/chunks/6f198a2dfbdeb9de.js"],"OutletBoundary"]
-6:"$Sreact.suspense"
-0:{"buildId":"NvgUyBaIdd8tERiw-SWXK","rsc":["$","$1","c",{"children":[[["$","$L2",null,{"primaryCtaLabel":"Get a recommendation"}],["$","main",null,{"id":"main-content","children":["$","$L3",null,{}]}],["$","$L4",null,{"primaryCtaLabel":"Get a recommendation","primaryCtaHref":"/contact"}]],[["$","script","script-0",{"src":"/Amalgam/_next/static/chunks/d4c36e19e0ec2773.js","async":true}],["$","script","script-1",{"src":"/Amalgam/_next/static/chunks/33dc6e8225c25788.js","async":true}],["$","script","script-2",{"src":"/Amalgam/_next/static/chunks/ebc2acfbc68677ba.js","async":true}]],["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],"loading":null,"isPartial":false}
-7:null
