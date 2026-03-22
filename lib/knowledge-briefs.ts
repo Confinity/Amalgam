@@ -81,7 +81,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
     takeaway:
       "Use this when rewrite debates are stalling decisions and leadership needs a risk-based call.",
     readTime: "8 min read",
-    published: "March 2026",
+    published: "Mar 2026",
     featured: true,
     intro:
       "The rebuild debate usually starts too late. Delivery has slowed, integrations are brittle, onboarding new engineers takes too long, and every roadmap discussion turns into an argument about the platform. At that point, teams tend to polarize into two camps: patch what exists forever, or throw it all away and start clean. Both instincts are understandable. Neither is a strategy.",
@@ -149,7 +149,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
     takeaway:
       "Use this when roadmap planning keeps collapsing into debate because technical reality is still unclear.",
     readTime: "7 min read",
-    published: "March 2026",
+    published: "Mar 2026",
     featured: false,
     intro:
       "Many teams try to roadmap their way out of uncertainty. The result is a plan full of implied assumptions: which systems matter, which dependencies are real, where ownership starts and ends, and what can safely move in parallel. If those assumptions are wrong, the roadmap is just an attractive way of scheduling future confusion.",
@@ -210,7 +210,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
     takeaway:
       "Use this when work looks simple on paper but keeps getting slower and harder to coordinate in practice.",
     readTime: "7 min read",
-    published: "March 2026",
+    published: "Mar 2026",
     featured: true,
     intro:
       "The integration tax rarely appears as a single failure. It accumulates as small delays, duplicate entry, reconciliation work, edge-case breakage, and growing uncertainty about where responsibility actually sits. By the time leadership notices, teams feel slower without being able to explain exactly why.",
@@ -275,7 +275,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
     takeaway:
       "Use this when the company has more people and more tooling but less alignment than it had a year ago.",
     readTime: "7 min read",
-    published: "March 2026",
+    published: "Mar 2026",
     featured: false,
     intro:
       "Growth is supposed to make work easier. Instead, many teams experience the opposite: more meetings, slower alignment, and increasing uncertainty about what is actually on track. The company is not lacking effort. It is lacking operating rhythm that still fits the size and complexity of the system.",
@@ -334,7 +334,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
     takeaway:
       "Use this when metric trust is falling apart and leadership is still asking for more automation.",
     readTime: "8 min read",
-    published: "March 2026",
+    published: "Mar 2026",
     featured: true,
     intro:
       "After a raise, expectations accelerate faster than the data foundation. Leaders want tighter forecasting, clearer unit economics, and more automated workflows. The problem is that many post-Series A companies are still running on a loose collection of source systems, spreadsheets, and partially trusted dashboards. The company is scaling decisions faster than it is scaling truth.",
@@ -395,7 +395,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
     takeaway:
       "Use this when the company has dozens of dashboards but little confidence in what should drive action.",
     readTime: "6 min read",
-    published: "March 2026",
+    published: "Mar 2026",
     featured: false,
     intro:
       "Many teams mistake visibility for understanding. They accumulate dashboards, scorecards, and alerts, then discover that the business is still arguing about what matters. A company rarely suffers from too few numbers. It suffers from too many numbers with too little decision weight attached to them.",
@@ -453,7 +453,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
     takeaway:
       "Use this when leadership is asking teams to move faster without fixing the system that is making work slow.",
     readTime: "7 min read",
-    published: "March 2026",
+    published: "Mar 2026",
     featured: true,
     intro:
       "When delivery slows, organizations often search for a people explanation first: weak execution, poor planning, unclear accountability, or low urgency. Those can be real. But in many teams, shipping is slow because the system is slow. Work crosses too many boundaries, approvals arrive too late, dependencies are hidden, and the architecture makes every change more expensive than it looks at kickoff.",
@@ -514,7 +514,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
     takeaway:
       "Use this when the roadmap needs to move forward before every assumption is fully proven.",
     readTime: "7 min read",
-    published: "March 2026",
+    published: "Mar 2026",
     featured: false,
     intro:
       "Real roadmaps are built under uncertainty. Waiting for complete certainty is unrealistic. Pretending certainty exists when it does not is worse. Strong sequencing is the discipline of making the next decisions obvious enough, while keeping later commitments flexible enough to survive what the team will still learn on the way.",
@@ -573,7 +573,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
     takeaway:
       "Use this when reorg conversations start before anyone maps how work actually flows.",
     readTime: "7 min read",
-    published: "March 2026",
+    published: "Mar 2026",
     featured: true,
     intro:
       "When teams feel misaligned, the problem is not always cultural first. Often the organization is mirroring the structure of the system underneath it: fuzzy ownership, overlapping boundaries, too many shared dependencies, and work that crosses domains without clean interfaces. Changing the org chart without changing that reality usually just renames the confusion.",
@@ -632,7 +632,7 @@ export const knowledgeBriefs: KnowledgeBrief[] = [
     takeaway:
       "Use this when too many issues keep escalating because nobody is confident about where authority actually sits.",
     readTime: "6 min read",
-    published: "March 2026",
+    published: "Mar 2026",
     featured: false,
     intro:
       "In complex organizations, execution often slows not because decisions are impossible, but because decision rights are blurred. Teams hesitate, leaders intervene too late or too often, and recurring issues keep reappearing in forums that should not need to own them.",

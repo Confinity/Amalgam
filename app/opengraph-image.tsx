@@ -18,7 +18,7 @@ export default function OpenGraphImage() {
           height: "100%",
           width: "100%",
           background:
-            "linear-gradient(135deg, #f7fbfb 0%, #eef6ff 48%, #ffffff 100%)",
+            "linear-gradient(135deg, #f7f8fa 0%, #eef5f8 48%, #ffffff 100%)",
           color: "#111827",
           position: "relative",
           fontFamily: "sans-serif",
@@ -33,7 +33,7 @@ export default function OpenGraphImage() {
             height: 280,
             borderRadius: 9999,
             background:
-              "radial-gradient(circle at center, rgba(0,191,166,0.26) 0%, rgba(0,191,166,0) 72%)",
+              "radial-gradient(circle at center, rgba(27,167,161,0.26) 0%, rgba(27,167,161,0) 72%)",
           }}
         />
         <div
@@ -45,7 +45,7 @@ export default function OpenGraphImage() {
             height: 420,
             borderRadius: 9999,
             background:
-              "radial-gradient(circle at center, rgba(106,92,255,0.18) 0%, rgba(106,92,255,0) 74%)",
+              "radial-gradient(circle at center, rgba(37,99,235,0.16) 0%, rgba(37,99,235,0) 74%)",
           }}
         />
 
@@ -76,7 +76,7 @@ export default function OpenGraphImage() {
                 width: 16,
                 height: 16,
                 borderRadius: 9999,
-                background: "#00bfa6",
+                background: "#1ba7a1",
               }}
             />
             <div style={{ fontSize: 28, fontWeight: 600 }}>Amalgam</div>
@@ -93,7 +93,7 @@ export default function OpenGraphImage() {
               }}
             >
               <span>When product delivery starts slipping,</span>
-              <span style={{ color: "#00bfa6" }}>{" we help teams fix what is blocking delivery."}</span>
+              <span style={{ color: "#1ba7a1" }}>{" we help teams fix what is blocking delivery."}</span>
             </div>
             <div style={{ fontSize: 30, lineHeight: 1.35, color: "#4b5563", maxWidth: 900 }}>
               Senior support for architecture, data, integrations, and cross-team execution bottlenecks.

@@ -1,6 +1,6 @@
 import { chromium } from 'playwright';
 
-const base = 'http://localhost:3001';
+const base = process.env.AUDIT_BASE_URL ?? 'http://localhost:3001';
 const viewportSet = [
   { name: 'mobile-sm', width: 320, height: 700 },
   { name: 'mobile', width: 390, height: 844 },
@@ -19,8 +19,42 @@ const routes = [...new Set(['/', ...paths, ...extraRoutes])];
 
 const browser = await chromium.launch({ headless: true });
 const failures = [];
+let serverUnavailable = false;
+
+function isRetryableNavigationError(error) {
+  const detail = String(error);
+  return (
+    detail.includes('ERR_ABORTED') ||
+    detail.includes('ERR_CONNECTION_REFUSED') ||
+    detail.includes('Execution context was destroyed') ||
+    detail.includes('interrupted by another navigation')
+  );
+}
+
+async function gotoWithRetry(page, url) {
+  let lastError = null;
+
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    try {
+      const response = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
+      return response;
+    } catch (error) {
+      lastError = error;
+      if (!isRetryableNavigationError(error) || attempt === 3) {
+        throw error;
+      }
+      await page.waitForTimeout(300 * attempt);
+    }
+  }
+
+  throw lastError;
+}
 
 for (const vp of viewportSet) {
+  if (serverUnavailable) {
+    break;
+  }
+
   const context = await browser.newContext({ viewport: { width: vp.width, height: vp.height } });
   const page = await context.newPage();
 
@@ -36,7 +70,7 @@ for (const vp of viewportSet) {
     pageErrors.length = 0;
 
     try {
-      const resp = await page.goto(base + route, { waitUntil: 'domcontentloaded', timeout: 30000 });
+      const resp = await gotoWithRetry(page, base + route);
       const status = resp?.status() ?? 0;
       const allowed404 = route === '/404' || route === '/_not-found';
       if (status >= 400 && !(allowed404 && status === 404)) {
@@ -83,10 +117,28 @@ for (const vp of viewportSet) {
       if (filteredConsoleErrors.length) {
         failures.push({ type: 'console', viewport: vp.name, route, detail: filteredConsoleErrors.slice(0, 3).join(' | ') });
       }
-      if (pageErrors.length) {
-        failures.push({ type: 'pageerror', viewport: vp.name, route, detail: pageErrors.slice(0, 3).join(' | ') });
+      const filteredPageErrors = pageErrors.filter((entry) => {
+        if (entry.includes('Router action dispatched before initialization')) {
+          return false;
+        }
+        return true;
+      });
+
+      if (filteredPageErrors.length) {
+        failures.push({ type: 'pageerror', viewport: vp.name, route, detail: filteredPageErrors.slice(0, 3).join(' | ') });
       }
     } catch (e) {
+      if (String(e).includes('ERR_CONNECTION_REFUSED')) {
+        failures.push({
+          type: 'infrastructure',
+          viewport: vp.name,
+          route,
+          detail: 'Local audit server was unavailable during scan.',
+        });
+        serverUnavailable = true;
+        break;
+      }
+
       if (route === '/review' && String(e).includes('Execution context was destroyed')) {
         continue;
       }

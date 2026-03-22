@@ -1,13 +1,27 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises"
 import path from "node:path"
 import { NextResponse } from "next/server"
+import {
+  enforceRateLimit,
+  getClientIp,
+  parseJsonBodyWithLimit,
+  rejectCrossSiteRequest,
+  withNoStore,
+} from "@/lib/api-security"
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/i
+const CONTACT_MAX_BODY_BYTES = 20_000
+const CONTACT_RATE_LIMIT = {
+  windowMs: 10 * 60 * 1000,
+  maxRequests: 8,
+}
 
 type ContactPayload = {
+  fullName: string
   firstName: string
   lastName: string
   email: string
+  website: string
   company: string
   interest: string
   message: string
@@ -28,22 +42,32 @@ function parsePayload(input: unknown): ContactPayload | null {
   }
 
   const candidate = input as Record<string, unknown>
-  const firstName = normalizeText(candidate.firstName, 120)
-  const lastName = normalizeText(candidate.lastName, 120)
+  const fullName = normalizeText(candidate.fullName, 180)
+  let firstName = normalizeText(candidate.firstName, 120)
+  let lastName = normalizeText(candidate.lastName, 120)
   const email = normalizeText(candidate.email, 320).toLowerCase()
-  const company = normalizeText(candidate.company, 320)
+  const website = normalizeText(candidate.website ?? candidate.company, 320)
+  const company = normalizeText(candidate.company ?? candidate.website, 320)
   const interest = normalizeText(candidate.interest, 160)
   const message = normalizeText(candidate.message, 6000)
-  const source = normalizeText(candidate.source, 120) || "contact-page"
+  const source = normalizeText(candidate.source, 120) || "contact_page"
 
-  if (!firstName || !lastName || !message || !EMAIL_PATTERN.test(email)) {
+  if ((!firstName || !lastName) && fullName) {
+    const nameParts = fullName.split(/\s+/).filter(Boolean)
+    firstName = nameParts[0] ?? ""
+    lastName = nameParts.slice(1).join(" ") || "-"
+  }
+
+  if (!firstName || !message || !EMAIL_PATTERN.test(email)) {
     return null
   }
 
   return {
+    fullName: fullName || `${firstName}${lastName ? ` ${lastName}` : ""}`.trim(),
     firstName,
     lastName,
     email,
+    website,
     company,
     interest,
     message,
@@ -71,12 +95,12 @@ async function appendLocalFallback(payload: ContactPayload) {
     .some((line) => {
       try {
         const entry = JSON.parse(line) as Partial<ContactPayload>
-        return (
-          entry.email?.toLowerCase() === payload.email &&
-          entry.message === payload.message &&
-          entry.firstName === payload.firstName &&
-          entry.lastName === payload.lastName
-        )
+      return (
+        entry.email?.toLowerCase() === payload.email &&
+        entry.message === payload.message &&
+        (entry.fullName === payload.fullName ||
+          (entry.firstName === payload.firstName && entry.lastName === payload.lastName))
+      )
       } catch {
         return false
       }
@@ -93,24 +117,45 @@ async function appendLocalFallback(payload: ContactPayload) {
 }
 
 export async function POST(request: Request) {
-  let body: unknown
-  try {
-    body = await request.json()
-  } catch {
+  const blockedRequest = rejectCrossSiteRequest(request)
+  if (blockedRequest) {
+    return blockedRequest
+  }
+
+  const ipAddress = getClientIp(request)
+  const rateLimit = enforceRateLimit({
+    key: `contact:${ipAddress}`,
+    limit: CONTACT_RATE_LIMIT.maxRequests,
+    windowMs: CONTACT_RATE_LIMIT.windowMs,
+  })
+
+  if (!rateLimit.allowed) {
     return NextResponse.json(
-      { status: "error", message: "Could not read this request." },
-      { status: 400 },
+      {
+        status: "error",
+        message: "Too many requests right now. Please wait a moment and try again.",
+      },
+      {
+        status: 429,
+        headers: withNoStore({ "Retry-After": String(rateLimit.retryAfterSeconds) }),
+      },
     )
   }
 
+  const bodyResult = await parseJsonBodyWithLimit(request, CONTACT_MAX_BODY_BYTES)
+  if (!bodyResult.ok) {
+    return bodyResult.response
+  }
+
+  const body = bodyResult.value
   const parsed = parsePayload(body)
   if (!parsed) {
     return NextResponse.json(
       {
         status: "error",
-        message: "Please include first name, last name, work email, and a clear situation summary.",
+        message: "Please include your name, work email, and what is happening right now.",
       },
-      { status: 400 },
+      { status: 400, headers: withNoStore() },
     )
   }
 
@@ -131,21 +176,27 @@ export async function POST(request: Request) {
             status: "error",
             message: "We could not submit your message right now. Try email and we will respond directly.",
           },
-          { status: 502 },
+          { status: 502, headers: withNoStore() },
         )
       }
 
-      return NextResponse.json({
-        status: "success",
-        message: "Message sent. We will reply directly within one business day.",
-      })
+      return NextResponse.json(
+        {
+          status: "success",
+          message:
+            "Thanks - we've got it. We'll review your note and reply with a clear next step within one business day.",
+        },
+        {
+          headers: withNoStore(),
+        },
+      )
     } catch {
       return NextResponse.json(
         {
           status: "error",
           message: "We could not submit your message right now. Try email and we will respond directly.",
         },
-        { status: 502 },
+        { status: 502, headers: withNoStore() },
       )
     }
   }
@@ -156,26 +207,32 @@ export async function POST(request: Request) {
         status: "error",
         message: "Submission is temporarily unavailable. Email hello@amalgam-inc.com.",
       },
-      { status: 503 },
+      { status: 503, headers: withNoStore() },
     )
   }
 
   try {
     const alreadyExists = await appendLocalFallback(parsed)
-    return NextResponse.json({
-      status: "success",
-      message: alreadyExists
-        ? "You already sent this context. We will reply directly."
-        : "Message sent. We will reply directly within one business day.",
-    })
+    return NextResponse.json(
+      {
+        status: "success",
+        message: alreadyExists
+          ? "You already sent this context. We will reply directly."
+          : "Thanks - we've got it. We'll review your note and reply with a clear next step within one business day.",
+      },
+      {
+        headers: withNoStore(),
+      },
+    )
   } catch {
     return NextResponse.json(
       {
         status: "error",
         message: "We could not submit your message right now. Try email and we will respond directly.",
       },
-      { status: 500 },
+      { status: 500, headers: withNoStore() },
     )
   }
 }
+
 

@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { FormEvent, useState } from "react"
 import { track } from "@vercel/analytics"
@@ -24,9 +24,18 @@ export function SignalsSubscribeForm({
     event.preventDefault()
     const normalizedEmail = email.trim().toLowerCase()
 
+    track("signals_signup_attempted", {
+      source,
+      has_email: Boolean(normalizedEmail),
+    })
+
     if (!normalizedEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) {
       setStatus("error")
       setMessage("Please enter a valid work email address.")
+      track("signals_signup_failed", {
+        source,
+        type: "validation",
+      })
       return
     }
 
@@ -53,17 +62,16 @@ export function SignalsSubscribeForm({
       }
 
       setStatus("success")
-      setMessage(
-        data.message ??
-          "You are in. We will only send notes when they are genuinely useful.",
-      )
+      setMessage(data.message ?? "You are in. We only send notes that are useful in live execution.")
       track("signals_signup_success", { source })
       setEmail("")
     } catch {
       setStatus("error")
-      setMessage(
-        "We could not submit right now. Email hello@amalgam-inc.com and we will add you manually.",
-      )
+      setMessage("We could not submit right now. Email hello@amalgam-inc.com and we will add you manually.")
+      track("signals_signup_failed", {
+        source,
+        type: "network_or_server",
+      })
     } finally {
       setPending(false)
     }
@@ -72,9 +80,7 @@ export function SignalsSubscribeForm({
   return (
     <form onSubmit={handleSubmit} className={className ?? "space-y-4"}>
       <label className="block">
-        <span className="mb-2 block text-sm font-medium text-foreground">
-          Work email
-        </span>
+        <span className="mb-2 block text-sm font-medium text-[var(--color-text-inverse)]">Work email</span>
         <input
           type="email"
           autoComplete="email"
@@ -82,26 +88,28 @@ export function SignalsSubscribeForm({
           placeholder="you@company.com"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
-          className="contact-field min-h-11 w-full rounded-xl border px-4 py-3 text-sm text-foreground"
+          aria-invalid={status === "error"}
+          aria-describedby="signals-subscribe-feedback"
+          className="min-h-11 w-full rounded-xl border border-[color-mix(in_srgb,var(--color-text-inverse)_28%,transparent)] bg-[color-mix(in_srgb,var(--color-surface-dark)_84%,white_16%)] px-4 py-3 text-sm text-[var(--color-text-inverse)] placeholder:text-[color-mix(in_srgb,var(--color-text-inverse)_50%,transparent)]"
         />
       </label>
       <button
         type="submit"
         disabled={pending}
-        className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl bg-foreground px-5 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
+        className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl bg-[var(--color-surface)] px-5 py-3 text-sm font-medium text-[var(--color-text)] transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {pending ? "Subscribing..." : buttonLabel}
         <ArrowRight className="h-4 w-4" />
       </button>
-      <div aria-live="polite" className="min-h-6">
+      <div id="signals-subscribe-feedback" aria-live="polite" className="min-h-6">
         {status === "success" ? (
-          <p className="inline-flex items-start gap-2 text-sm text-teal">
+          <p className="inline-flex items-start gap-2 text-sm text-[var(--color-accent)]">
             <MailCheck className="mt-0.5 h-4 w-4 shrink-0" />
             <span>{message}</span>
           </p>
         ) : null}
         {status === "error" ? (
-          <p className="text-sm text-destructive">{message}</p>
+          <p role="alert" className="text-sm text-[var(--color-danger)]">{message}</p>
         ) : null}
       </div>
     </form>

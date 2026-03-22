@@ -1,28 +1,29 @@
 ﻿import type { Metadata, Viewport } from "next"
-import { Manrope } from "next/font/google"
+import { Suspense } from "react"
+import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ReviewModeLazy } from "@/components/review-mode-lazy"
 import { SiteSchema } from "@/components/site-schema"
 import { SITE_URL, absoluteUrl, withBasePath } from "@/lib/site-config"
 import "./globals.css"
 
-const manrope = Manrope({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-manrope",
+  variable: "--font-inter",
 })
 
 const analyticsEnabled = process.env.NEXT_PUBLIC_VERCEL_ANALYTICS === "1"
 
 export const metadata: Metadata = {
   title: {
-    default: "Amalgam | From idea to scale - without the chaos.",
+    default: "Amalgam | Move from idea to scale without the chaos",
     template: "%s | Amalgam",
   },
   applicationName: "Amalgam",
   description:
-    "Amalgam helps founders, entrepreneurs, and product teams turn ideas into real products and working systems.",
+    "Amalgam helps founders and product teams move from idea to scale without the chaos.",
   metadataBase: new URL(SITE_URL),
-  category: "technology consulting",
+  category: "product and systems execution",
   formatDetection: {
     email: false,
     address: false,
@@ -34,17 +35,12 @@ export const metadata: Metadata = {
     apple: withBasePath("/brand/amalgam-favicon.png"),
   },
   keywords: [
-    "systems consulting",
+    "founder review",
+    "focused intervention",
+    "outcome partnership",
     "product execution",
-    "strategy and delivery",
-    "technical leadership",
-    "product systems",
-    "execution",
-    "delivery momentum",
-    "architecture",
-    "technical debt",
-    "enterprise modernization",
-    "systems leadership",
+    "systems clarity",
+    "delivery friction",
   ],
   authors: [{ name: "Amalgam Inc." }],
   creator: "Amalgam Inc.",
@@ -54,41 +50,29 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: "Amalgam",
-    title: "Amalgam - From idea to scale without the chaos",
+    title: "Amalgam | Move from idea to scale without the chaos",
     description:
-      "Senior execution support for founders, entrepreneurs, and teams building real products and systems.",
+      "Clear read, right next step, and practical senior support for teams under execution pressure.",
     images: [
       {
         url: absoluteUrl("/opengraph-image"),
         width: 1200,
         height: 630,
-        alt: "Amalgam - Experienced support for complex systems",
+        alt: "Amalgam execution clarity",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Amalgam - From idea to scale without the chaos",
+    title: "Amalgam | Move from idea to scale without the chaos",
     description:
-      "Senior execution support for founders, entrepreneurs, and teams building real products and systems.",
+      "Clear read and practical next-step support for founders and product teams.",
     images: [absoluteUrl("/opengraph-image")],
-    creator: "@amalgam_inc",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 }
 
 export const viewport: Viewport = {
-  themeColor: "#00BFA6",
+  themeColor: "#172033",
   width: "device-width",
   initialScale: 1,
 }
@@ -99,20 +83,21 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={manrope.variable}>
-      <body className="font-sans antialiased">
+    <html lang="en" className={inter.variable}>
+      <body>
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-foreground focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-background"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-[var(--color-primary)] focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-[var(--color-text-inverse)]"
         >
           Skip to content
         </a>
         <SiteSchema />
         {children}
-        <ReviewModeLazy />
+        <Suspense fallback={null}>
+          <ReviewModeLazy />
+        </Suspense>
         {analyticsEnabled ? <Analytics /> : null}
       </body>
     </html>
   )
 }
-

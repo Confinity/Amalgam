@@ -51,10 +51,10 @@ export const teamMembers: TeamMember[] = [
     role: "CEO & Founder",
     group: "leadership",
     shortBio:
-      "Built Amalgam after years across startups, financial services, and software delivery. Focused on direct communication, structure, and real execution.",
+      "Leads product and delivery decisions so teams can move with clarity and pace.",
     bio:
       "Neeraj founded Amalgam after years in startups, financial services, and software development. He keeps the team focused on clear thinking, sound systems judgment, and practical execution.",
-    specialties: ["Strategic Leadership", "Financial Services", "Startup Advisory"],
+    specialties: ["Product & delivery leadership", "Financial services", "Startup advisory"],
     funFact: "Avid reader, dabbles in writing, and loves to travel.",
     image: "/team/neeraj.webp",
     imageAlt: "Portrait of Neeraj Vir",
@@ -65,10 +65,10 @@ export const teamMembers: TeamMember[] = [
     role: "Head of Growth & Innovation",
     group: "leadership",
     shortBio:
-      "Leads growth and operations across Amalgam's commercial systems, client experience, and day-to-day rhythm.",
+      "Leads growth and operations so client work starts clear and keeps moving.",
     bio:
       "Ryan leads growth and operations at Amalgam. He keeps the business side of delivery disciplined so engagements start clearly and move cleanly.",
-    specialties: ["Growth", "Operations", "Client Experience"],
+    specialties: ["Growth & operations", "Operations", "Client experience"],
     image: "/team/ryan-ward.png",
     imageAlt: "Portrait of Ryan Ward",
     imageClassName: "object-contain p-5",
@@ -80,10 +80,10 @@ export const teamMembers: TeamMember[] = [
     role: "Chief Architect",
     group: "architecture",
     shortBio:
-      "Architect with deep experience in enterprise applications, data pipelines, and service integration.",
+      "Helps simplify complex systems so architecture decisions do not slow delivery.",
     bio:
       "Vikas specializes in enterprise architecture, large-scale data flows, and service integration. He brings decades of experience across global technology organizations.",
-    specialties: ["Enterprise Architecture", "Data Pipelines", "Service Integration"],
+    specialties: ["System architecture", "Data pipelines", "Service integration"],
     funFact: "Loves to visit new places and explore.",
     image: "/team/vikas.webp",
     imageAlt: "Portrait of Vikas",
@@ -93,10 +93,10 @@ export const teamMembers: TeamMember[] = [
     role: "Enterprise Architect",
     group: "architecture",
     shortBio:
-      "Builds cloud-ready applications and enterprise products across regulated and high-volume industries.",
+      "Helps design resilient cloud systems for regulated and high-volume products.",
     bio:
       "Naren is a technical leader with long experience building cloud applications and enterprise products across finance, retail, telecom, and healthcare-adjacent sectors.",
-    specialties: ["Cloud Architecture", "Open Source", "Enterprise Applications"],
+    specialties: ["Cloud architecture", "Open source", "Enterprise applications"],
     funFact: "Loves to play badminton.",
     image: "/team/naren.webp",
     imageAlt: "Portrait of Naren",
@@ -106,10 +106,10 @@ export const teamMembers: TeamMember[] = [
     role: "Architect & DevOps Lead",
     group: "architecture",
     shortBio:
-      "Leads development and platform delivery for large-scale web and mobile applications.",
+      "Helps stabilize delivery pipelines and platform reliability in complex systems.",
     bio:
       "Oleg leads DevOps at Amalgam with a focus on reliable delivery across Docker, Kubernetes, and AWS-based environments.",
-    specialties: ["DevOps", "Kubernetes", "AWS", "Docker"],
+    specialties: ["Delivery pipelines", "Kubernetes", "AWS", "Docker"],
     funFact: "Loves spending time with his children and playing table tennis.",
     image: "/team/oleg.webp",
     imageAlt: "Portrait of Oleg",
@@ -119,10 +119,10 @@ export const teamMembers: TeamMember[] = [
     role: "Lead Developer",
     group: "architecture",
     shortBio:
-      "Full-stack developer known for practical problem solving across retail, financial, and insurance systems.",
+      "Helps teams ship practical full-stack solutions when timelines are tight.",
     bio:
       "Jub has spent two decades solving hard technical problems for major retail, financial, and insurance organizations.",
-    specialties: ["Full-Stack Development", "Problem Solving", "Technical Architecture"],
+    specialties: ["Full-stack delivery", "Problem solving", "Technical architecture"],
     funFact: "Listens to music and plays with his daughter.",
     image: "/team/jub.webp",
     imageAlt: "Portrait of Supamit Jub",
@@ -132,10 +132,10 @@ export const teamMembers: TeamMember[] = [
     role: "Agile Practice Lead",
     group: "delivery",
     shortBio:
-      "Leads agile delivery with experience across QA, development, and project leadership.",
+      "Helps teams keep delivery cadence steady across cross-functional work.",
     bio:
       "Lisa brings delivery leadership experience across QA, development, project management, and agile coaching in telecom, pharma, and insurance environments.",
-    specialties: ["Agile", "QA Testing", "Project Management", "Scrum"],
+    specialties: ["Agile delivery", "QA testing", "Project management", "Scrum"],
     funFact: "Amateur photographer, nature lover, and fitness enthusiast.",
     image: "/team/lisa.webp",
     imageAlt: "Portrait of Lisa",
@@ -145,10 +145,10 @@ export const teamMembers: TeamMember[] = [
     role: "Software Developer",
     group: "architecture",
     shortBio:
-      "Developer with a disciplined execution mindset and full-stack product experience.",
+      "Helps move product builds forward with disciplined full-stack delivery.",
     bio:
       "Ruben brings strong technical range and disciplined execution to product development across React, Node, and mobile-friendly stacks.",
-    specialties: ["React", "Node.js", "MongoDB", "React Native"],
+    specialties: ["Full-stack execution", "Node.js", "MongoDB", "React Native"],
     funFact: "Active runner, overlanding enthusiast, anime fan, and Brooklyn Nets supporter.",
     image: "/team/ruben.webp",
     imageAlt: "Portrait of Ruben",
@@ -158,10 +158,10 @@ export const teamMembers: TeamMember[] = [
     role: "Partner - Legal & HR",
     group: "leadership",
     shortBio:
-      "Business and legal leadership that keeps operations, agreements, and client engagements running smoothly.",
+      "Leads legal and people operations so delivery stays steady as work scales.",
     bio:
       "Sumita combines business and legal judgment to keep daily operations steady and client terms clear.",
-    specialties: ["Legal", "HR Operations", "Contract Management"],
+    specialties: ["Legal operations", "HR operations", "Contract management"],
     funFact: "Loves creating dishes in the kitchen for family, friends, and colleagues.",
     image: "/team/sumita.webp",
     imageAlt: "Portrait of Sumita",
@@ -171,10 +171,10 @@ export const teamMembers: TeamMember[] = [
     role: "Human Resources Consultant",
     group: "delivery",
     shortBio:
-      "HR consultant focused on matching talent to the right roles and building strong teams.",
+      "Helps teams hire well and strengthen day-to-day people operations.",
     bio:
       "Parul supports hiring and people operations with a practical, people-first approach to team building.",
-    specialties: ["HR Consulting", "Talent Acquisition", "Team Building"],
+    specialties: ["People operations", "Talent acquisition", "Team building"],
     funFact: "Loves to cook and watch movies with her son.",
     image: "/team/parul.webp",
     imageAlt: "Portrait of Parul",
@@ -200,14 +200,14 @@ export const unifiedTeamPortraits: Record<string, string> = {
 }
 
 export const unifiedTeamPortraitClasses: Record<string, string> = {
-  Neeraj: "object-contain object-bottom px-4 pt-4 pb-0 scale-[1.01] md:px-5 md:pt-5",
-  Ryan: "object-contain object-bottom px-5 pt-7 pb-0 scale-[0.99] md:px-6 md:pt-8",
-  Sumita: "object-contain object-bottom px-6 pt-6 pb-0 scale-[0.95] md:px-7 md:pt-7",
-  Vikas: "object-contain object-bottom px-5 pt-5 pb-0 scale-[0.98] md:px-6 md:pt-6",
-  Naren: "object-contain object-bottom px-5 pt-5 pb-0 scale-[1.02] md:px-6 md:pt-6",
-  Oleg: "object-contain object-bottom px-5 pt-5 pb-0 scale-[1.01] md:px-6 md:pt-6",
-  Ruben: "object-contain object-bottom px-5 pt-5 pb-0 scale-[0.98] md:px-6 md:pt-6",
-  "Supamit (Jub)": "object-contain object-bottom px-5 pt-5 pb-0 scale-[0.99] md:px-6 md:pt-6",
-  Lisa: "object-contain object-bottom px-6 pt-6 pb-0 scale-[0.95] md:px-7 md:pt-7",
-  Parul: "object-contain object-bottom px-6 pt-6 pb-0 scale-[0.96] md:px-7 md:pt-7",
+  Neeraj: "object-contain object-bottom px-4 pt-3 pb-0 scale-[1.04] md:px-5 md:pt-4",
+  Ryan: "object-contain object-bottom px-5 pt-6 pb-0 scale-[1.01] md:px-6 md:pt-7",
+  Sumita: "object-contain object-bottom px-6 pt-5 pb-0 scale-[0.98] md:px-7 md:pt-6",
+  Vikas: "object-contain object-bottom px-5 pt-4 pb-0 scale-[1.01] md:px-6 md:pt-5",
+  Naren: "object-contain object-bottom px-5 pt-4 pb-0 scale-[1.04] md:px-6 md:pt-5",
+  Oleg: "object-contain object-bottom px-5 pt-4 pb-0 scale-[1.03] md:px-6 md:pt-5",
+  Ruben: "object-contain object-bottom px-5 pt-4 pb-0 scale-[1.01] md:px-6 md:pt-5",
+  "Supamit (Jub)": "object-contain object-bottom px-5 pt-4 pb-0 scale-[1.01] md:px-6 md:pt-5",
+  Lisa: "object-contain object-bottom px-6 pt-5 pb-0 scale-[0.97] md:px-7 md:pt-6",
+  Parul: "object-contain object-bottom px-6 pt-5 pb-0 scale-[0.98] md:px-7 md:pt-6",
 }

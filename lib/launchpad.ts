@@ -1,4 +1,4 @@
-﻿import { getKnowledgeBriefBySlug, type KnowledgeBrief } from "@/lib/knowledge-briefs"
+import { getKnowledgeBriefBySlug, type KnowledgeBrief } from "@/lib/knowledge-briefs"
 
 export type LaunchpadToolId =
   | "delivery-drag-diagnostic"
@@ -112,29 +112,29 @@ export const launchpadPaths: LaunchpadPathCard[] = [
     title: "Not sure what is really wrong yet?",
     description:
       "You can feel the drag, but the root cause is still unclear across systems, teams, and decisions.",
-    href: "/launchpad/delivery-drag-diagnostic",
+    href: "/next-move/delivery-drag-diagnostic",
     nextStep: "Next: Delivery Drag Diagnostic",
   },
   {
     title: "You can see the issue, but need a plan",
     description:
       "The system is visibly messy and the business now needs honest sequencing, not another abstract debate.",
-    href: "/launchpad/programs",
-    nextStep: "Next: Execution Sprint path",
+    href: "/next-move/programs",
+    nextStep: "Next: Focused Intervention path",
   },
   {
     title: "You need help carrying this through",
     description:
       "The direction exists, but execution still needs senior judgment close enough to protect the work.",
-    href: "/launchpad/programs",
+    href: "/next-move/programs",
     nextStep: "Next: Outcome Partnership path",
   },
   {
     title: "Want to self-check first?",
     description:
       "Use a structured first-pass read before deciding whether this needs deeper engagement.",
-    href: "/launchpad/tools",
-    nextStep: "Browse Launchpad tools",
+    href: "/next-move/tools",
+    nextStep: "Browse Your Next Move tools",
   },
   {
     title: "Need a direct recommendation?",
@@ -159,12 +159,12 @@ export const launchpadPrograms: LaunchpadProgramCard[] = [
   },
   {
     id: "execution-sprint",
-    title: "Execution Sprint",
+    title: "Focused Intervention",
     description:
       "You trust the clear read and now need a roadmap leadership can run with.",
     whenItsRight:
       "Best when the work is clear enough to plan but still needs cross-functional sequencing and constraint mapping.",
-    href: "/execution-sprint",
+    href: "/focused-intervention",
     ctaLabel: "See how we work",
   },
   {
@@ -248,14 +248,17 @@ export const launchpadGuideCollections: LaunchpadGuideCollection[] = [
 ]
 
 export const launchpadStaticRoutes = [
-  "/launchpad",
-  "/launchpad/tools",
-  "/launchpad/guides",
-  "/launchpad/programs",
-  "/launchpad/signals",
-  "/launchpad/delivery-drag-diagnostic",
-  "/launchpad/ai-readiness-checklist",
-  "/launchpad/tech-stack-audit",
+  "/next-move",
+  "/next-move/tools",
+  "/next-move/guides",
+  "/next-move/programs",
+  "/next-move/signals",
+  "/next-move/next-step-brief",
+  "/next-move/validation-checklist",
+  "/next-move/scale-readiness-check",
+  "/next-move/delivery-drag-diagnostic",
+  "/next-move/ai-readiness-checklist",
+  "/next-move/tech-stack-audit",
 ] as const
 
 const launchpadTools: LaunchpadToolDefinition[] = [
@@ -284,7 +287,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
           "This usually means pressure is accumulating in the foundation layer. The right next move is to map the current state and identify the few structural decisions that are distorting delivery.",
         nextStep: {
           label: "Book a strategy call",
-          href: "/contact?interest=founder-review",
+          href: "https://calendly.com/ryan-amalgam-inc/30min",
           note: "The root cause still needs a direct assessment.",
         },
         relatedGuideSlugs: [
@@ -301,8 +304,8 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         whyItMatters:
           "This kind of drag often looks like a speed problem, but it is really a planning-quality problem. The organization needs a credible map before it asks for faster movement.",
         nextStep: {
-          label: "Explore Execution Sprint",
-          href: "/execution-sprint",
+          label: "Explore Focused Intervention",
+          href: "/focused-intervention",
           note: "The situation may be clear enough to turn into a roadmap.",
         },
         relatedGuideSlugs: [
@@ -320,7 +323,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
           "This usually produces noise that looks like weak execution. In reality, decision rights, workflow ownership, or operating rhythm may be under-specified.",
         nextStep: {
           label: "Book a strategy call",
-          href: "/contact?interest=founder-review",
+          href: "https://calendly.com/ryan-amalgam-inc/30min",
           note: "The team structure and workflow likely need a direct read before planning continues.",
         },
         relatedGuideSlugs: [
@@ -338,7 +341,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
           "When truth is hard to access, every planning cycle gets noisier. This usually does not get fixed with one more dashboard.",
         nextStep: {
           label: "Book a strategy call",
-          href: "/contact?interest=founder-review",
+          href: "https://calendly.com/ryan-amalgam-inc/30min",
           note: "A direct assessment can separate reporting symptoms from system causes.",
         },
         relatedGuideSlugs: [
@@ -356,7 +359,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
           "Integration drag makes simple work look deceptively easy on paper. The business needs a clearer view of boundary problems and system authority before it can simplify intelligently.",
         nextStep: {
           label: "Start the Tech Stack Audit",
-          href: "/launchpad/tech-stack-audit",
+          href: "/next-move/tech-stack-audit",
           note: "A stack-level read can sharpen where the integration burden is concentrated.",
         },
         relatedGuideSlugs: [
@@ -554,7 +557,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
           "AI tends to amplify ambiguity. If workflows and ownership are still fuzzy, the first gains usually come from stabilizing the system before automating anything meaningful.",
         nextStep: {
           label: "Book a strategy call",
-          href: "/contact?interest=founder-review",
+          href: "https://calendly.com/ryan-amalgam-inc/30min",
           note: "The system likely needs a clear assessment before AI decisions become useful.",
         },
         relatedGuideSlugs: [
@@ -572,7 +575,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
           "This is often the right moment to focus on targeted pilots with clear owners instead of trying to make AI strategy carry too much too soon.",
         nextStep: {
           label: "Book a strategy call",
-          href: "/contact?interest=founder-review",
+          href: "https://calendly.com/ryan-amalgam-inc/30min",
           note: "A direct read can help choose the right low-risk starting area.",
         },
         relatedGuideSlugs: [
@@ -590,7 +593,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
           "This is a classic stage where AI interest is justified, but system cleanup and decision discipline still need to happen before the investment becomes durable.",
         nextStep: {
           label: "Open the Tech Stack Audit",
-          href: "/launchpad/tech-stack-audit",
+          href: "/next-move/tech-stack-audit",
           note: "A stack and workflow read can clarify the blockers that matter most.",
         },
         relatedGuideSlugs: [
@@ -607,8 +610,8 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         whyItMatters:
           "This is where execution discipline matters more than enthusiasm. The opportunity is real, but it still needs practical sequencing and guardrails.",
         nextStep: {
-          label: "Explore Execution Sprint",
-          href: "/execution-sprint",
+          label: "Explore Focused Intervention",
+          href: "/focused-intervention",
           note: "The next move may be a focused plan rather than another broad assessment.",
         },
         relatedGuideSlugs: [
@@ -820,7 +823,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
           "This can look calm until key people leave, product scope expands, or the organization needs to move faster than tribal memory allows.",
         nextStep: {
           label: "Browse stack guides",
-          href: "/launchpad/guides",
+          href: "/next-move/guides",
           note: "You may be able to improve this with clearer mapping and sequencing first.",
         },
         relatedGuideSlugs: [
@@ -838,7 +841,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
           "This is where stack complexity starts shaping product speed, support load, and confidence in change. The business often needs a sharper assessment before it can simplify responsibly.",
         nextStep: {
           label: "Book a strategy call",
-          href: "/contact?interest=founder-review",
+          href: "https://calendly.com/ryan-amalgam-inc/30min",
           note: "A direct assessment can separate platform symptoms from the real architecture and workflow issues.",
         },
         relatedGuideSlugs: [
@@ -856,7 +859,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
           "This can look acceptable until a raise, replatform, enterprise customer, or high-stakes rollout exposes the cost of undocumented or brittle decisions.",
         nextStep: {
           label: "Book a strategy call",
-          href: "/contact?interest=founder-review",
+          href: "https://calendly.com/ryan-amalgam-inc/30min",
           note: "A direct read can clarify which risks actually matter before the business overreacts.",
         },
         relatedGuideSlugs: [
@@ -873,8 +876,8 @@ const launchpadTools: LaunchpadToolDefinition[] = [
         whyItMatters:
           "This creates hidden tax in onboarding, change effort, and decision-making. Simplification may create more value than adding more architecture.",
         nextStep: {
-          label: "Explore Execution Sprint",
-          href: "/execution-sprint",
+          label: "Explore Focused Intervention",
+          href: "/focused-intervention",
           note: "The situation may be ready for simplification and sequencing rather than another broad assessment.",
         },
         relatedGuideSlugs: [
@@ -892,7 +895,7 @@ const launchpadTools: LaunchpadToolDefinition[] = [
           "When the business cannot see the system well, it tends to overreact to symptoms. Better visibility can remove a surprising amount of unnecessary chaos.",
         nextStep: {
           label: "Book a strategy call",
-          href: "/contact?interest=founder-review",
+          href: "https://calendly.com/ryan-amalgam-inc/30min",
           note: "A direct read can help decide whether the right move is instrumentation, assessment, or sequencing.",
         },
         relatedGuideSlugs: [
@@ -1284,6 +1287,8 @@ const caseStudyRecommendationMap: Record<string, LaunchpadCaseStudyRecommendatio
   },
 }
 
+const STRATEGY_CALL_URL = "https://calendly.com/ryan-amalgam-inc/30min"
+
 export function getLaunchpadTool(toolId: LaunchpadToolId): LaunchpadToolDefinition {
   return launchpadToolMap.get(toolId)!
 }
@@ -1485,22 +1490,12 @@ export function getLaunchpadCaseStudyRecommendation(
 }
 
 export function getToolStrategyCallHref(
-  result: LaunchpadToolResult,
-  confidenceLabelOverride?: string,
+  _result: LaunchpadToolResult,
+  _confidenceLabelOverride?: string,
 ) {
-  const params = new URLSearchParams()
-  params.set("interest", "strategy-session")
-  params.set(
-    "context",
-    [
-      `Tool: ${result.tool.title}`,
-      `Profile: ${result.category.title}`,
-      `Confidence: ${confidenceLabelOverride ?? result.confidence.label}`,
-      `Top driver: ${result.topDrivers[0] ?? "Not enough evidence yet"}`,
-      "I would like a 60-minute strategy call to review this result with your team.",
-    ].join("\n"),
-  )
-  return `/contact?${params.toString()}`
+  void _result
+  void _confidenceLabelOverride
+  return STRATEGY_CALL_URL
 }
 
 export function getLaunchpadKnowledgeRecommendation(slug: string): {

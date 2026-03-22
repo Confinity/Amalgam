@@ -2,13 +2,29 @@
   "name": "my-project",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@10.29.3",
+  "engines": {
+    "node": ">=22 <25",
+    "pnpm": ">=10 <11"
+  },
   "scripts": {
-    "dev": "next dev",
+    "dev": "node scripts/dev-up.mjs 3001",
+    "dev:auto": "node scripts/dev-up.mjs 3001 --no-warm",
+    "dev:watch": "next dev --port 3001 --webpack",
+    "dev:up": "node scripts/dev-up.mjs 3001",
+    "dev:up:open": "node scripts/dev-up.mjs 3001 --open",
+    "dev:fresh": "node scripts/fresh-dev.mjs 3001",
+    "dev:up:clean": "node scripts/dev-up.mjs 3001 --clean",
+    "dev:status": "node scripts/dev-control.mjs status 3001",
+    "dev:stop": "node scripts/dev-control.mjs stop 3001",
+    "dev:logs": "node scripts/dev-control.mjs logs 3001",
+    "dev:logs:follow": "node scripts/dev-control.mjs logs 3001 --follow",
+    "dev:doctor": "node scripts/dev-doctor.mjs",
     "typecheck": "tsc --noEmit",
     "build": "pnpm typecheck && next build",
     "start": "next start",
     "lint": "eslint .",
-    "preview:fresh": "node scripts/fresh-preview.mjs 3001"
+    "preview:fresh": "node scripts/fresh-preview.mjs 4100"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -56,6 +72,7 @@
     "react-hook-form": "^7.54.1",
     "react-resizable-panels": "^2.1.7",
     "recharts": "2.15.0",
+    "simple-icons": "^16.13.0",
     "sonner": "^1.7.1",
     "tailwind-merge": "^3.3.1",
     "vaul": "^1.1.2",

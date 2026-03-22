@@ -34,12 +34,12 @@ export const caseStudies: CaseStudy[] = [
     client: "Premier Financial Alliance",
     industry: "Insurance",
     location: "Suwanee, Georgia",
-    headline: "How We Streamlined Premier Financial Alliance's Employee Operations",
-    heroImageSrc: "/case-studies/premier-financial-alliance.webp",
+    headline: "How We Modernized Premier Financial Alliance's Incentive and Reporting Platform",
+    heroImageSrc: "/case-study-thumbnails/premier-financial-alliance.webp",
     heroImageAlt: "Premier Financial Alliance team and operations dashboard thumbnail from the legacy Amalgam case study",
     problem: "Outdated technology and inefficient platforms created unnecessary manual processes for agent onboarding, reporting, and administrative tasks, wasting resources and risking inaccurate incentive distribution.",
-    approach: "We modernized their platform by automating complex data relationships, improving agent onboarding, and strengthening reporting capabilities. We migrated data from MySQL to PostgreSQL, refined business logic, and built an intuitive interface for administrators.",
-    outcome: "PFA now has a solid incentive management system, secure team communication, and dynamic custom reporting that enables data-driven decision-making and streamlined operations.",
+    approach: "We modernized their platform by automating complex data relationships, improving agent onboarding, and strengthening reporting capabilities. We migrated data from MySQL to PostgreSQL, refined business logic, and rebuilt the administrative interface around the workflows people actually needed to run.",
+    outcome: "PFA moved to a stronger incentive management system with secure team communication and more flexible reporting, making day-to-day operations easier to run with confidence.",
     overview: "Premier Financial Alliance is an insurance brokerage disrupting the industry with proprietary financial products focused on Middle America. They offer whole life, universal life, term life insurance, and annuities. However, their outdated platform hindered efficiency for both agents and administrators.",
     challenges: [
       "Manual processes lacked key business logic for complex data relationships",
@@ -63,14 +63,14 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         title: "UX/UI Redesign",
-        description: "Engineered a modern, intuitive interface enabling agents to create dynamic personal reports and administrators to manage complex hierarchies and relationships."
+        description: "Reworked the administrative interface so agents and administrators could manage reports, profiles, and hierarchy changes with less friction."
       }
     ],
     results: [
       {
         metric: "Efficiency",
-        value: "Dynamic Reporting",
-        description: "Admins can now create custom personal reports to review individual agent performance with ease."
+        value: "Custom reporting",
+        description: "Admins can now create and review custom agent-performance reports without relying on rigid legacy views."
       },
       {
         metric: "Security",
@@ -84,8 +84,8 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         metric: "Experience",
-        value: "Modern Platform",
-        description: "Contemporary UX/UI makes it easy for administrators to edit agent profiles and manage complex relationships."
+        value: "Clearer admin workflows",
+        description: "Administrators can manage profiles and complex relationships in a cleaner operating environment."
       }
     ],
     technologies: ["Java", "PostgreSQL", "MySQL Migration", "Modern UI/UX"],
@@ -98,15 +98,15 @@ export const caseStudies: CaseStudy[] = [
     client: "PearlX",
     industry: "Energy",
     location: "Charlottesville, Virginia",
-    headline: "How We Built PearlX's State-of-the-Art Customer Portal",
-    heroImageSrc: "/case-studies/pearlx.webp",
+    headline: "How We Built PearlX's Customer Portal Foundation",
+    heroImageSrc: "/case-study-thumbnails/pearlx.webp",
     heroImageAlt: "PearlX customer portal thumbnail from the legacy Amalgam case study",
     problem: "As a startup, PearlX lacked the resources to build their customer portal, a critical part of the business, risking delayed go-to-market and costly inefficiencies.",
     approach: "We built a robust customer portal with data infrastructure, reliable onboarding flows, and user profiles with custom permissions. The architecture uses React.js and AWS services including AWS Kinesis, AWS Lambda, and PostgreSQL.",
-    outcome: "PearlX now has a streamlined onboarding process, efficient community management, and a scalable, user-friendly portal that helps them attract and retain clients. Amalgam remains their trusted development partner.",
-    overview: "PearlX is an innovative energy startup helping multi-housing facilities access sustainable power. They provide affordable clean energy solutions for both property owners and residents.",
+    outcome: "PearlX moved forward with a stronger onboarding flow, clearer community management, and a scalable portal foundation that could support growth. Amalgam remained their development partner as the platform evolved.",
+    overview: "PearlX is an energy startup helping multi-housing facilities access sustainable power. They provide clean energy solutions for both property owners and residents.",
     challenges: [
-      "Limited startup resources prevented building a high-quality customer portal",
+      "Limited startup resources prevented building the portal quickly in-house",
       "Needed a partner who could architect a complex multi-tenant platform",
       "Tight timeline required rapid development without sacrificing quality",
       "Required support for both landlords and renters with different permission levels"
@@ -118,7 +118,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         title: "Front-End Development",
-        description: "Built responsive front-end using React.js with HTML, JavaScript, and CSS for intuitive user experience."
+        description: "Built a responsive front end in React.js so the portal would be easier to use and easier to extend."
       },
       {
         title: "Data Infrastructure & Onboarding",
@@ -132,8 +132,8 @@ export const caseStudies: CaseStudy[] = [
     results: [
       {
         metric: "Onboarding",
-        value: "Seamless Process",
-        description: "Landlords and renters can now easily onboard and manage their communities through an intuitive interface."
+        value: "Stronger onboarding flow",
+        description: "Landlords and renters can move through onboarding and community setup in a clearer workflow."
       },
       {
         metric: "Management",
@@ -142,13 +142,13 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         metric: "UX",
-        value: "Modern Portal",
-        description: "Contemporary UX/UI design wrapped around data infrastructure provides user-centric approach to community management."
+        value: "Portal built to grow",
+        description: "The portal paired user-facing clarity with the underlying infrastructure needed to support community management."
       },
       {
         metric: "Partnership",
         value: "Ongoing Support",
-        description: "Amalgam continues as PearlX's sole development partner for all technological needs as they scale."
+        description: "Amalgam continued to support the platform as PearlX's development partner while the business scaled."
       }
     ],
     technologies: ["React.js", "PostgreSQL", "AWS Kinesis", "AWS Lambda", "Python"],
@@ -162,8 +162,8 @@ export const caseStudies: CaseStudy[] = [
     industry: "Memory Preservation Platform",
     location: "Delaware",
     headline: "How We Helped Confinity Move from Early Conviction to a Real Product Foundation",
-    heroImageSrc: "/case-studies/confinity.webp",
-    heroImageAlt: "Confinity product image representing the platform's family memory-preservation experience",
+    heroImageSrc: "/clients/confinity.png",
+    heroImageAlt: "Confinity wordmark used as representative context for the engagement",
     problem: "Confinity needed more than implementation help. As a seed-stage company building a private platform for families to preserve memories and stories, it needed support across funding readiness, architecture, and day-to-day product development without the overhead of building a full engineering organization too early.",
     approach: "We partnered from the beginning as a direct product and engineering extension, helping shape the technical plan behind the business, define the architecture, and provide hands-on development support through contributors including Oleg and Ruben. The relationship stayed close and responsive as product, funding, and launch priorities evolved.",
     outcome: "Confinity moved forward with a clearer product foundation, a working platform direction, and an always-available technical partner who could support architecture, delivery, and engineering judgment as the company matured.",
@@ -212,7 +212,7 @@ export const caseStudies: CaseStudy[] = [
       {
         metric: "Partnership",
         value: "Always Available",
-        description: "Amalgam remained an always-on extension of the team, supporting product, development, and technical judgment as the company matured."
+        description: "Amalgam remained a close extension of the team, supporting product, development, and technical judgment as the company matured."
       }
     ],
     technologies: ["Product Architecture", "Embedded Engineering", "Technical Strategy", "Ongoing Development Support"],
@@ -225,12 +225,12 @@ export const caseStudies: CaseStudy[] = [
     client: "Barclays Bank US",
     industry: "Banking",
     location: "New York, New York",
-    headline: "How The Website Revamp And CMS We Implemented Enabled Barclays to Cater to its Diverse Customers",
-    heroImageSrc: "/case-studies/barclays-bank-us.webp",
-    heroImageAlt: "Barclays Bank US website thumbnail from the legacy Amalgam case study",
+    headline: "How We Rebuilt Barclays Bank US's Marketing Platform for Accessibility and Personalization",
+    heroImageSrc: "/clients/barclays-bank-us.svg",
+    heroImageAlt: "Barclays Bank US brand mark used as representative context for the engagement",
     problem: "Barclays Bank US had an outdated marketing website with poor UX, lack of accessibility compliance, and no personalization capabilities, preventing them from effectively showcasing their services and risking customer engagement.",
     approach: "We redesigned the website with modern UI/UX, implemented Magnolia CMS for content management, added personalization features like goal setters and CD ladder builders, and ensured WCAG accessibility compliance.",
-    outcome: "The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer engagement, and a modern brand perception.",
+    outcome: "The redesigned website gave Barclays Bank US a stronger digital experience with better accessibility, clearer product communication, and a more flexible content foundation.",
     overview: "Barclays Bank is a global financial services provider offering personal and business banking, student loans, home equity products, credit cards, and more. They needed a website that could effectively communicate their unique offerings and security features.",
     challenges: [
       "Outdated website with unintuitive UX and UI prevented customer engagement",
@@ -266,12 +266,12 @@ export const caseStudies: CaseStudy[] = [
       {
         metric: "Content",
         value: "Clear Homepage",
-        description: "Homepage showcases savings and CD overviews with clear terms, FDIC insurance details, and intuitive CTAs."
+        description: "The homepage and product pages communicate savings, CD offerings, and trust signals more clearly."
       },
       {
         metric: "Efficiency",
-        value: "Streamlined Updates",
-        description: "Magnolia CMS enables streamlined content updates, eliminating coordination hassles and expediting deployment."
+        value: "Faster content updates",
+        description: "Magnolia CMS made it easier for teams to update content without the same level of deployment friction."
       },
       {
         metric: "Trust",
@@ -290,9 +290,9 @@ export const caseStudies: CaseStudy[] = [
     industry: "Philanthropy",
     location: "West Conshohocken, Pennsylvania",
     headline: "How We Improved Grant Classification and Trend Analysis Using Artificial Intelligence",
-    heroImageSrc: "/case-studies/john-templeton-foundation.webp",
+    heroImageSrc: "/case-study-thumbnails/john-templeton-foundation.webp",
     heroImageAlt: "John Templeton Foundation AI grant-classification thumbnail from the legacy Amalgam case study",
-    problem: "JTF struggled to efficiently analyze and classify grant applications and academic publications, hindering their ability to scale operations, maintain data integrity, and extract actionable insights.",
+    problem: "JTF struggled to analyze and classify grant applications and academic publications efficiently, limiting scalability, data integrity, and the quality of the insights they could generate.",
     approach: "We customized OpenAlex's text classification tool to fit JTF's specific requirements by adding relevant topics, fine-tuning the classification model, and enabling API call functionality with rigorous testing.",
     outcome: "The enhanced classification system enabled JTF to streamline grant application processes, produce more informative and actionable results, and identify trends across supported research and publications.",
     overview: "John Templeton Foundation is a philanthropic organization funding interdisciplinary research with the mission to start awe-inspiring conversations. They allow people to submit ideas on any topic while focusing on strategic priority areas.",
@@ -325,8 +325,8 @@ export const caseStudies: CaseStudy[] = [
     results: [
       {
         metric: "Classification",
-        value: "Accurate & Fast",
-        description: "Automated classification system efficiently processes grant applications and publications with consistent accuracy."
+        value: "More consistent classification",
+        description: "The automated classification system processes grant applications and publications with more consistent accuracy."
       },
       {
         metric: "Insights",
@@ -335,8 +335,8 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         metric: "Operations",
-        value: "Streamlined Process",
-        description: "Grant application workflow is now streamlined with reduced manual overhead and improved consistency."
+        value: "Less manual review overhead",
+        description: "The grant workflow now runs with less manual classification work and better consistency."
       },
       {
         metric: "Data",
@@ -354,12 +354,12 @@ export const caseStudies: CaseStudy[] = [
     client: "CleanItSupply",
     industry: "Retail",
     location: "Jeffersonville, Pennsylvania",
-    headline: "How We Streamlined CleanItSupply's Operations for Enhanced Efficiency",
-    heroImageSrc: "/case-studies/cleanitsupply.webp",
+    headline: "How We Modernized CleanItSupply's Ecommerce Platform for Speed and Scalability",
+    heroImageSrc: "/case-study-thumbnails/cleanitsupply.webp",
     heroImageAlt: "CleanItSupply ecommerce modernization thumbnail from the legacy Amalgam case study",
     problem: "CleanItSupply's outdated ASP.net website had slow loading times (20+ seconds), limited scalability, and poor SEO performance, causing operational inefficiencies and reduced conversion rates.",
     approach: "We rebuilt their website using React.js for the frontend and introduced a new REST API service to decouple the backend. We transitioned search functionality from Nextopia to SearchSpring for better product management.",
-    outcome: "The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering improved engagement and conversion rates.",
+    outcome: "The new site gave CleanItSupply a faster, more scalable ecommerce foundation with stronger search behavior and a setup that is easier to maintain.",
     overview: "CleanItSupply is an online retailer for wholesale supplies offering janitorial, restaurant, and home/office cleaning supplies. They serve both small individual and large bulk orders as a B2C and B2B retail business.",
     challenges: [
       "Outdated ASP.net framework with tightly coupled frontend and backend",
@@ -379,7 +379,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         title: "Search Enhancement",
-        description: "Transitioned search functionality from Nextopia to SearchSpring for more relevant results and efficient product management."
+        description: "Transitioned search functionality from Nextopia to SearchSpring so customers could get more relevant results and teams could manage products more cleanly."
       },
       {
         title: "Single-Page Application",
@@ -389,13 +389,13 @@ export const caseStudies: CaseStudy[] = [
     results: [
       {
         metric: "Speed",
-        value: "Drastically Faster",
-        description: "Single-page React application drastically decreases loading times, dramatically improving user engagement and conversion rates."
+        value: "Faster storefront performance",
+        description: "The React application reduced load times substantially, improving the experience for shoppers moving through the site."
       },
       {
         metric: "Search",
-        value: "Improved Results",
-        description: "Search functionality now delivers more relevant results and more efficient management of products and promotions."
+        value: "More relevant search",
+        description: "Search now returns more relevant results and gives the team cleaner control over products and promotions."
       },
       {
         metric: "Maintenance",
@@ -418,12 +418,12 @@ export const caseStudies: CaseStudy[] = [
     client: "Constructive Built Environment",
     industry: "Procurement & Utility Solutions",
     location: "Pennsylvania",
-    headline: "How We Helped Constructive Built Environment Build the CART Platform",
-    heroImageSrc: "/case-studies/constructive-built-environment.webp",
+    headline: "How We Helped Constructive Built Environment Launch the CART Platform",
+    heroImageSrc: "/case-study-thumbnails/constructive-built-environment.webp",
     heroImageAlt: "Constructive Built Environment CART platform thumbnail from the legacy Amalgam case study",
     problem: "As a startup, Constructive faced resource constraints and needed a tech partner to develop their CART platform quickly without hiring overhead or managing multiple contractors.",
     approach: "We acted as an extension of Constructive's team, providing on-demand full-scope development with startup agility. We shaped the product through strategic conversations, designed UX/UI for 12+ pages, and ensured stable transitions when their tech stack evolved.",
-    outcome: "We kickstarted their product with an MVP users enjoyed, accelerating go-to-market, ensuring smooth user engagement, and avoiding overhead costs. We continue supporting their platform evolution.",
+    outcome: "Constructive launched with an MVP that gave the team a real platform foundation, faster market entry, and continued product support without the overhead of building a full internal team first.",
     overview: "Constructive Built Environment is a team of water industry professionals solving complex procurement challenges. They create value through solutions that make procurement and deployment easier, more effective, and transparent.",
     challenges: [
       "Startup resource constraints prevented rapid MVP development",
@@ -458,8 +458,8 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         metric: "UX",
-        value: "Frictionless Procurement",
-        description: "CART platform delivers frictionless procurement process ensuring smooth vendor-utility transactions."
+        value: "Cleaner procurement experience",
+        description: "The CART platform made procurement flows easier for users to move through across vendor and utility interactions."
       },
       {
         metric: "Scalability",
@@ -468,8 +468,8 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         metric: "Cost",
-        value: "Efficient Delivery",
-        description: "High-quality development and UX/UI design delivered at fraction of full-time staff hiring costs."
+        value: "Lower overhead path",
+        description: "The work gave Constructive product and UX delivery capacity without the same overhead as building a full internal team first."
       }
     ],
     technologies: ["React", "Bootstrap", "Tailwind CSS", "Gatsby", "Magnolia CMS"],
@@ -482,13 +482,13 @@ export const caseStudies: CaseStudy[] = [
     client: "Admin Partners",
     industry: "Professional Services",
     location: "United States",
-    headline: "Streamlining Core Systems for Operational Excellence",
-    heroImageSrc: "/case-studies/admin-partners.webp",
+    headline: "How We Connected Admin Partners' Core Systems to Reduce Operational Friction",
+    heroImageSrc: "/case-study-thumbnails/admin-partners.webp",
     heroImageAlt: "Admin Partners systems-integration thumbnail from the legacy Amalgam case study",
-    problem: "Admin Partners faced operational bottlenecks due to disconnected core systems that did not work reliably together, creating friction in their business processes.",
-    approach: "We assessed their core systems architecture, identified integration gaps, and implemented solutions to streamline their operational workflows and data flow.",
-    outcome: "Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.",
-    overview: "Admin Partners provides professional administrative services to help businesses improve their operations. They needed to modernize their internal systems to better serve their clients.",
+    problem: "Admin Partners was running key operational work across disconnected core systems, creating handoff friction, duplicated effort, and avoidable delays in day-to-day execution.",
+    approach: "We mapped the architecture behind their operational workflows, identified the highest-friction handoffs, and implemented a practical integration sequence to improve continuity across core processes.",
+    outcome: "Admin Partners moved toward a more connected operating model with stronger workflow reliability, less duplicate handling, and clearer visibility across core business activity.",
+    overview: "Admin Partners delivers professional administrative services for business operations. As demand increased, the company needed tighter system coordination so operations could scale without adding process drag.",
     challenges: [
       "Disconnected systems created operational inefficiencies",
       "Limited visibility across business processes",
@@ -498,41 +498,41 @@ export const caseStudies: CaseStudy[] = [
     solution: [
       {
         title: "Systems Assessment",
-        description: "Comprehensive evaluation of current core systems and integration points."
+        description: "Mapped current core systems, handoff points, and failure patterns to isolate the highest-friction operational paths."
       },
       {
         title: "Integration Planning",
-        description: "Designed integration approach to connect systems and improve data flow."
+        description: "Designed a pragmatic integration sequence to connect disconnected workflows and improve end-to-end data movement."
       },
       {
-        title: "Implementation",
-        description: "Executed system improvements to streamline operations."
+        title: "Workflow Integration",
+        description: "Implemented system changes that reduced duplicate handling and improved workflow continuity."
       },
       {
-        title: "Refinement",
-        description: "Fine-tuned processes for maximum efficiency and scalability."
+        title: "Operational Refinement",
+        description: "Refined process behavior and ownership patterns so the new system model could hold as operations grew."
       }
     ],
     results: [
       {
         metric: "Efficiency",
-        value: "Improved",
-        description: "Streamlined workflows reduced manual work and operational overhead."
+        value: "Less duplicate handling",
+        description: "Streamlined workflows reduced manual rework and lowered operational overhead."
       },
       {
         metric: "Integration",
-        value: "Connected Systems",
-        description: "Core systems now work reliably together for better data flow."
+        value: "Connected workflows",
+        description: "Core systems now work together more reliably, improving data continuity across teams."
       },
       {
         metric: "Scalability",
-        value: "Ready to Grow",
-        description: "Improved systems foundation supports business growth."
+        value: "More scalable operating model",
+        description: "A cleaner systems foundation supports growth without compounding coordination drag."
       },
       {
         metric: "Operations",
-        value: "Stronger",
-        description: "Better visibility and control across operational processes."
+        value: "Clearer process visibility",
+        description: "Operational teams gained stronger visibility and control across core processes."
       }
     ],
     technologies: ["Systems Integration", "Process Improvement"],
@@ -546,7 +546,7 @@ export const caseStudies: CaseStudy[] = [
     industry: "Banking",
     location: "New York State",
     headline: "How We Helped M&T Bank Navigate a Complex Legacy System Replacement",
-    heroImageSrc: "/case-studies/mt-bank.webp",
+    heroImageSrc: "/case-study-thumbnails/mt-bank.webp",
     heroImageAlt: "M&T Bank digital-banking modernization thumbnail from the legacy Amalgam case study",
     problem: "M&T Bank's business banking platform operated on Voyager, a legacy system. When the vendor announced discontinuation of support, M&T faced a mission-critical decision: modernize or risk operational vulnerabilities.",
     approach: "We joined as a strategic implementation partner, providing skilled consultants to support decommissioning and helping M&T reimagine their digital banking experience. We evaluated multiple digital banking vendors using a matrix of 130+ business use cases, facilitated the selection of Q2, and delivered change management including training and documentation.",
@@ -613,8 +613,8 @@ export const caseStudies: CaseStudy[] = [
     heroImageSrc: "/clients/moodys.webp",
     heroImageAlt: "Moody's brand mark used as representative context for the engagement",
     problem: "Name matching across transliterations and fragmented source data created real screening friction in risk-sensitive workflows.",
-    approach: "We designed and delivered a white-label name intelligence system focused on transliteration-aware matching, search precision, and practical review workflows across multiple data sources.",
-    outcome: "The platform gave enterprise teams a more usable way to examine name-based risk indicators and make higher-confidence screening decisions in complex global datasets.",
+    approach: "We designed and delivered a white-label name intelligence system built around transliteration-aware matching, higher search precision, and practical review workflows across multiple data sources.",
+    outcome: "The platform gave enterprise teams a more usable way to examine name-based risk indicators, review ambiguous matches, and make higher-confidence screening decisions across complex global datasets.",
     overview: "This engagement centered on the practical problem of name intelligence at enterprise scale. The work required balancing transliteration complexity, search quality, and workflow usability in a way that could be adopted inside established risk operations.",
     challenges: [
       "Name matching quality dropped quickly when transliteration and spelling variation increased",
@@ -643,22 +643,22 @@ export const caseStudies: CaseStudy[] = [
     results: [
       {
         metric: "Matching quality",
-        value: "More reliable",
+        value: "Transliteration-aware matching",
         description: "Teams gained a clearer way to evaluate ambiguous name matches in transliteration-heavy scenarios."
       },
       {
         metric: "Workflow",
-        value: "Faster reviews",
-        description: "Screening teams could move through candidate results with less manual friction and less re-checking."
+        value: "Faster analyst reviews",
+        description: "Screening teams could move through candidate results with less manual friction and less repeated checking."
       },
       {
         metric: "Adoption",
-        value: "Enterprise-ready",
+        value: "White-label enterprise fit",
         description: "The white-label approach made the solution usable in larger institutional environments."
       },
       {
         metric: "Decision support",
-        value: "Clearer evidence",
+        value: "More explainable evidence",
         description: "Risk-related search and matching decisions were based on more structured, explainable outputs."
       }
     ],
@@ -675,9 +675,9 @@ export const caseStudies: CaseStudy[] = [
     headline: "Adapting name-screening and decision-support workflows for a digital financial environment",
     heroImageSrc: "/clients/sofi.webp",
     heroImageAlt: "SoFi brand mark used as representative context for the engagement",
-    problem: "Financial workflows needed practical screening and indicator review support without slowing operational decisions.",
+    problem: "Financial workflows needed practical screening and indicator review support without slowing day-to-day operational decisions.",
     approach: "We applied proven name-intelligence and workflow patterns to a fintech operating context, adapting matching behavior, review logic, and operational integration needs for a fast-moving financial environment.",
-    outcome: "The engagement improved how risk-relevant indicators could be reviewed in day-to-day operations while keeping the workflow practical for teams under delivery pressure.",
+    outcome: "The engagement made risk-relevant indicators easier to review inside day-to-day operations, improving consistency without turning the workflow into a slower manual process.",
     overview: "This work focused on adapting screening-oriented product lineage into a different financial operating context. The goal was not abstract architecture, but a practical system that teams could actually use in real workflows.",
     challenges: [
       "Risk-related checks needed to fit high-throughput financial operations",
@@ -702,22 +702,22 @@ export const caseStudies: CaseStudy[] = [
     results: [
       {
         metric: "Operations",
-        value: "Better fit",
+        value: "Screening fit for real workflows",
         description: "Risk-support behavior aligned more cleanly with real financial workflows."
       },
       {
         metric: "Review quality",
-        value: "More consistent",
-        description: "Teams had clearer review pathways for evaluating screening outputs."
+        value: "More consistent review paths",
+        description: "Teams had clearer review pathways for evaluating screening outputs with better consistency."
       },
       {
         metric: "Decision support",
-        value: "Higher confidence",
+        value: "Higher-confidence indicator review",
         description: "Indicator interpretation became easier to apply in practical day-to-day decisions."
       },
       {
         metric: "Delivery rhythm",
-        value: "Less friction",
+        value: "Less interruption in daily work",
         description: "Teams were able to run core workflows with fewer avoidable interruptions."
       }
     ],
@@ -731,13 +731,13 @@ export const caseStudies: CaseStudy[] = [
     client: "TIAA",
     industry: "Banking and Financial Services",
     location: "United States",
-    headline: "Supporting technical execution in a regulated banking environment",
+    headline: "Supporting Technical Execution Reliability in a Regulated Banking Environment",
     heroImageSrc: "/clients/tiaa.webp",
     heroImageAlt: "TIAA brand mark used as representative context for the engagement",
-    problem: "Banking operations required technical support that respected existing systems, regulatory constraints, and delivery timelines.",
-    approach: "We provided practical technical and systems support across banking-focused workflows, helping teams move critical work forward with clearer structure and lower delivery friction.",
-    outcome: "The engagement improved execution reliability in a complex financial setting where architecture quality and operational coordination directly affected delivery outcomes.",
-    overview: "This work sat at the intersection of financial-services operations and technical execution. The focus was disciplined support: help teams improve how systems work together while maintaining practical progress.",
+    problem: "Banking operations needed technical execution support that could work within strict regulatory constraints, existing system realities, and demanding delivery timelines.",
+    approach: "We provided practical systems and execution support across core banking workflows, helping teams reduce coordination friction and move critical work forward with clearer sequencing.",
+    outcome: "The engagement improved execution reliability in a high-constraint financial environment, with stronger coordination, steadier delivery support, and fewer avoidable handoff surprises.",
+    overview: "This work sat at the intersection of regulated financial operations and technical execution. The focus was disciplined implementation support: improve how systems and teams work together without adding avoidable process drag.",
     challenges: [
       "Technical changes had to be delivered within strict operational constraints",
       "Systems coordination and handoffs increased execution complexity",
@@ -747,37 +747,37 @@ export const caseStudies: CaseStudy[] = [
     solution: [
       {
         title: "Systems and Workflow Support",
-        description: "Worked directly with teams to improve technical workflows and reduce avoidable operational friction."
+        description: "Worked directly with teams to improve technical workflows and remove avoidable operational friction."
       },
       {
         title: "Execution Structure",
-        description: "Helped shape practical implementation sequencing so delivery could move with fewer avoidable stalls."
+        description: "Helped shape practical implementation sequencing so delivery could move with fewer avoidable stalls and handoff delays."
       },
       {
         title: "Cross-Team Coordination",
-        description: "Supported clearer coordination patterns between technical and operational stakeholders."
+        description: "Supported clearer coordination patterns between technical and operational stakeholders in a regulated delivery context."
       }
     ],
     results: [
       {
         metric: "Delivery",
-        value: "More reliable",
-        description: "Execution moved with better consistency in a high-constraint environment."
+        value: "Steadier execution support",
+        description: "Execution moved with better consistency in a high-constraint operating environment."
       },
       {
         metric: "Systems quality",
-        value: "Improved coordination",
-        description: "Technical and operational interactions became more predictable and easier to manage."
+        value: "Clearer coordination patterns",
+        description: "Technical and operational interactions became more predictable and easier to coordinate."
       },
       {
         metric: "Operating cadence",
-        value: "Steadier progress",
-        description: "Teams were able to sustain progress with clearer implementation structure."
+        value: "More dependable progress",
+        description: "Teams were able to sustain progress through clearer implementation structure and sequencing."
       },
       {
         metric: "Coordination",
-        value: "Clearer handoffs",
-        description: "Cross-team execution became easier to manage with fewer surprises."
+        value: "Fewer handoff surprises",
+        description: "Cross-team execution became easier to manage with fewer avoidable surprises."
       }
     ],
     technologies: ["Banking Systems Support", "Technical Delivery", "Workflow Coordination"],
@@ -790,13 +790,13 @@ export const caseStudies: CaseStudy[] = [
     client: "FINRA",
     industry: "Financial Regulation",
     location: "United States",
-    headline: "Enhancing Operations for Financial Market Integrity",
-    heroImageSrc: "/case-studies/finra.webp",
+    headline: "Strengthening Regulatory Operations Through Targeted Systems Improvements",
+    heroImageSrc: "/case-study-thumbnails/finra.webp",
     heroImageAlt: "FINRA operations-enhancement thumbnail from the legacy Amalgam case study",
-    problem: "FINRA, the self-regulatory organization overseeing the financial industry, needed to enhance technical capabilities to support their regulatory mission and operational efficiency.",
-    approach: "We provided strategic technology consulting to strengthen FINRA's systems and operations, enabling them to better serve their core mission of protecting investors and ensuring market integrity.",
-    outcome: "FINRA gained enhanced technical capabilities supporting their regulatory responsibilities and improving operational effectiveness across the organization.",
-    overview: "FINRA is the self-regulatory organization that protects investors and ensures integrity of financial markets by regulating broker-dealers and their representatives. They administer qualifying exams, enforce rules and federal securities laws, and maintain comprehensive oversight of the securities industry.",
+    problem: "FINRA needed stronger technical support around regulatory operations so mission-critical oversight work could run with higher consistency and lower operational friction.",
+    approach: "We provided targeted technology support focused on systems evaluation, operational improvements, and implementation guidance aligned to FINRA's regulatory responsibilities.",
+    outcome: "FINRA strengthened the technical and operational capabilities behind market oversight, helping teams execute regulatory work with better consistency, control, and implementation clarity.",
+    overview: "FINRA is the self-regulatory organization responsible for protecting investors and supporting market integrity across the U.S. securities industry. The engagement focused on improving the technical foundations that support this high-accountability operating environment.",
     challenges: [
       "Supporting complex regulatory requirements across the financial industry",
       "Operating at scale with numerous broker-dealers and representatives",
@@ -806,32 +806,32 @@ export const caseStudies: CaseStudy[] = [
     solution: [
       {
         title: "Technology Assessment",
-        description: "Evaluated FINRA's existing technical infrastructure and identified practical improvement opportunities."
+        description: "Evaluated key technical infrastructure and identified practical improvement opportunities tied to regulatory operations."
       },
       {
         title: "Systems Enhancement",
-        description: "Implemented improvements to strengthen operational systems and regulatory capabilities."
+        description: "Implemented focused enhancements to strengthen operational systems supporting oversight workflows."
       },
       {
-        title: "Process Improvement",
-        description: "Streamlined processes to support FINRA's regulatory functions and oversight responsibilities."
+        title: "Operational Process Improvement",
+        description: "Improved execution processes to support regulatory functions with clearer, more consistent operating patterns."
       }
     ],
     results: [
       {
         metric: "Capability",
-        value: "Enhanced",
-        description: "Strengthened technical systems supporting regulatory mission."
+        value: "Stronger oversight foundations",
+        description: "Technical systems supporting regulatory work were strengthened for more consistent execution."
       },
       {
         metric: "Operations",
-        value: "Improved",
-        description: "Processes became more consistent and effective."
+        value: "More consistent execution",
+        description: "Operational processes became more consistent and easier to run."
       },
       {
         metric: "Impact",
-        value: "Expanded",
-        description: "Better positioned to protect investors and ensure market integrity."
+        value: "Better support for regulatory work",
+        description: "FINRA was better supported in its core mission to protect investors and uphold market integrity."
       }
     ],
     technologies: ["Enterprise Systems", "Regulatory Technology"],

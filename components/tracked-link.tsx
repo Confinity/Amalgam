@@ -15,11 +15,13 @@ export function TrackedLink({
   eventData,
   onClick,
   children,
+  prefetch,
   ...props
 }: TrackedLinkProps) {
   return (
     <Link
       {...props}
+      prefetch={prefetch ?? false}
       onClick={(event) => {
         track(eventName, eventData)
         onClick?.(event)

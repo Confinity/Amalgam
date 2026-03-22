@@ -3,21 +3,16 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { usePathname } from "next/navigation"
 import { Eye, EyeOff, MessageSquare, Plus, Trash2, X } from "lucide-react"
-
-type ReviewCategory = "urgent" | "needs-review" | "suggestion" | "idea"
-
-type ReviewNote = {
-  id: string
-  pageUrl: string
-  x: number
-  y: number
-  title: string
-  text: string
-  category: ReviewCategory
-  collapsed: boolean
-  createdAt: string
-  updatedAt: string
-}
+import {
+  hasReviewNoteContent,
+  normalizePagePath,
+  normalizeReviewNotes,
+  notesSignature,
+  pageDeletionKey,
+  sortReviewNotesByCreated,
+  type ReviewCategory,
+  type ReviewNote,
+} from "@/lib/review-notes"
 
 type DragState = {
   id: string
@@ -25,23 +20,24 @@ type DragState = {
   offsetY: number
 }
 
+type SyncStatus = "idle" | "loading" | "saving" | "synced" | "error" | "offline"
+
+type ReviewNotesStorageStatus = {
+  backend: "kv" | "file"
+  globallyShared: boolean
+  warning?: string
+}
+
+type ReviewNotesResponse = {
+  notes: ReviewNote[]
+  storage: ReviewNotesStorageStatus | null
+}
+
 const REVIEW_MODE_STORAGE_KEY = "amalgam_review_mode"
-const REVIEW_REMOTE_NOTES_FALLBACK_URL =
-  process.env.NEXT_PUBLIC_REVIEW_NOTES_URL?.trim() ||
-  "https://jsonblob.com/api/jsonBlob/019cd9ac-4875-7fa4-9d22-d380a855b21b"
-const REVIEW_REMOTE_NOTES_URLS = [REVIEW_REMOTE_NOTES_FALLBACK_URL].filter(
-  (value, index, list) => Boolean(value) && list.indexOf(value) === index
-)
+const REVIEW_ADMIN_TOKEN_STORAGE_KEY = "amalgam_review_admin_token"
+const REVIEW_API_PATH = "/api/review-notes/"
 const REMOTE_SYNC_DEBOUNCE_MS = 700
 const REMOTE_PULL_INTERVAL_MS = 3500
-const CONFIGURED_BASE_PATH = (process.env.NEXT_PUBLIC_BASE_PATH ?? "").replace(/\/+$/, "")
-const LEGACY_BASE_PATHS = ["/Amalgam", "/amalgam"] as const
-
-type ReviewRemoteStore = {
-  version: 1
-  updatedAt: string
-  pages: Record<string, ReviewNote[]>
-}
 
 const categoryMeta: Record<
   ReviewCategory,
@@ -69,223 +65,11 @@ const categoryMeta: Record<
   },
 }
 
-function normalizeNotesPathname(pathname: string) {
-  let normalized = pathname.replace(/\/+$/, "") || "/"
-  const prefixes = [CONFIGURED_BASE_PATH, ...LEGACY_BASE_PATHS].filter(Boolean)
-
-  for (const prefix of prefixes) {
-    if (!prefix || prefix === "/") {
-      continue
-    }
-
-    if (normalized === prefix) {
-      normalized = "/"
-      continue
-    }
-
-    if (normalized.startsWith(`${prefix}/`)) {
-      normalized = normalized.slice(prefix.length) || "/"
-    }
+function resolveSyncFailureStatus(): SyncStatus {
+  if (typeof navigator !== "undefined" && !navigator.onLine) {
+    return "offline"
   }
-
-  return normalized
-}
-
-function normalizeReviewNote(raw: unknown, fallbackPageUrl?: string): ReviewNote | null {
-  if (!raw || typeof raw !== "object") {
-    return null
-  }
-
-  const note = raw as Partial<ReviewNote>
-  if (
-    typeof note.id !== "string" ||
-    typeof note.x !== "number" ||
-    typeof note.y !== "number" ||
-    typeof note.text !== "string"
-  ) {
-    return null
-  }
-
-  const category: ReviewCategory =
-    note.category === "urgent" ||
-    note.category === "needs-review" ||
-    note.category === "suggestion" ||
-    note.category === "idea"
-      ? note.category
-      : "needs-review"
-
-  const pageUrl = typeof note.pageUrl === "string" ? note.pageUrl : fallbackPageUrl
-  if (!pageUrl) {
-    return null
-  }
-
-  return {
-    id: note.id,
-    pageUrl,
-    x: note.x,
-    y: note.y,
-    title: typeof note.title === "string" ? note.title : "",
-    text: note.text,
-    category,
-    collapsed: Boolean(note.collapsed),
-    createdAt: typeof note.createdAt === "string" ? note.createdAt : new Date().toISOString(),
-    updatedAt: typeof note.updatedAt === "string" ? note.updatedAt : new Date().toISOString(),
-  }
-}
-
-function normalizeReviewNotes(raw: unknown, fallbackPageUrl?: string): ReviewNote[] {
-  if (!Array.isArray(raw)) {
-    return []
-  }
-
-  return raw
-    .map((note) => normalizeReviewNote(note, fallbackPageUrl))
-    .filter((note): note is ReviewNote => Boolean(note))
-}
-
-function createEmptyRemoteStore(): ReviewRemoteStore {
-  return {
-    version: 1,
-    updatedAt: new Date().toISOString(),
-    pages: {},
-  }
-}
-
-function toIsoMillis(value: string) {
-  const parsed = Date.parse(value)
-  return Number.isNaN(parsed) ? 0 : parsed
-}
-
-function noteSignature(note: ReviewNote) {
-  return [
-    note.id,
-    note.pageUrl,
-    note.updatedAt,
-    note.x,
-    note.y,
-    note.category,
-    note.collapsed ? 1 : 0,
-    note.title,
-    note.text,
-  ].join("|")
-}
-
-function notesSignature(notes: ReviewNote[]) {
-  return notes.map((note) => noteSignature(note)).sort().join("||")
-}
-
-function pageDeletionKey(pageUrl: string, noteId: string) {
-  return `${pageUrl}::${noteId}`
-}
-
-function replacePageNotes(allNotes: ReviewNote[], pageUrl: string, nextPageNotes: ReviewNote[]) {
-  const otherPageNotes = allNotes.filter((note) => note.pageUrl !== pageUrl)
-  return [...otherPageNotes, ...nextPageNotes]
-}
-
-function mergePageNotesForSync(params: {
-  pageUrl: string
-  localNotes: ReviewNote[]
-  remoteNotes: ReviewNote[]
-  deletedNotes: Record<string, string>
-}) {
-  const { pageUrl, localNotes, remoteNotes, deletedNotes } = params
-  const merged = new Map<string, ReviewNote>()
-
-  for (const remoteNote of remoteNotes) {
-    const deletionIso = deletedNotes[pageDeletionKey(pageUrl, remoteNote.id)]
-    if (deletionIso && toIsoMillis(deletionIso) >= toIsoMillis(remoteNote.updatedAt)) {
-      continue
-    }
-    merged.set(remoteNote.id, remoteNote)
-  }
-
-  for (const localNote of localNotes) {
-    const existing = merged.get(localNote.id)
-    if (!existing || toIsoMillis(localNote.updatedAt) >= toIsoMillis(existing.updatedAt)) {
-      merged.set(localNote.id, localNote)
-    }
-  }
-
-  return Array.from(merged.values()).sort(
-    (left, right) => toIsoMillis(left.createdAt) - toIsoMillis(right.createdAt)
-  )
-}
-
-function normalizeRemoteStore(raw: unknown): ReviewRemoteStore {
-  if (!raw || typeof raw !== "object") {
-    return createEmptyRemoteStore()
-  }
-
-  const parsed = raw as {
-    version?: number
-    updatedAt?: string
-    pages?: Record<string, unknown>
-  }
-
-  const pages: Record<string, ReviewNote[]> = {}
-  if (parsed.pages && typeof parsed.pages === "object") {
-    for (const [key, value] of Object.entries(parsed.pages)) {
-      if (!key) {
-        continue
-      }
-      pages[key] = normalizeReviewNotes(value, key)
-    }
-  }
-
-  return {
-    version: 1,
-    updatedAt:
-      typeof parsed.updatedAt === "string" && parsed.updatedAt.length > 0
-        ? parsed.updatedAt
-        : new Date().toISOString(),
-    pages,
-  }
-}
-
-async function fetchRemoteStore(): Promise<ReviewRemoteStore | null> {
-  for (const endpoint of REVIEW_REMOTE_NOTES_URLS) {
-    try {
-      const response = await fetch(endpoint, {
-        method: "GET",
-        cache: "no-store",
-        headers: {
-          Accept: "application/json",
-        },
-      })
-      if (!response.ok) {
-        continue
-      }
-      const payload = (await response.json()) as unknown
-      return normalizeRemoteStore(payload)
-    } catch {
-      continue
-    }
-  }
-
-  return null
-}
-
-async function saveRemoteStore(store: ReviewRemoteStore): Promise<boolean> {
-  for (const endpoint of REVIEW_REMOTE_NOTES_URLS) {
-    try {
-      const response = await fetch(endpoint, {
-        method: "PUT",
-        cache: "no-store",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(store),
-      })
-      if (response.ok) {
-        return true
-      }
-    } catch {
-      continue
-    }
-  }
-
-  return false
+  return "error"
 }
 
 function getPageUrlForNotes() {
@@ -294,18 +78,8 @@ function getPageUrlForNotes() {
   }
 
   const url = new URL(window.location.href)
-  url.searchParams.delete("review")
-  const ignoredParams = new Set(["fbclid", "gclid"])
-  const keptParams = Array.from(url.searchParams.entries())
-    .filter(([key]) => !key.toLowerCase().startsWith("utm_") && !ignoredParams.has(key.toLowerCase()))
-    .sort(([a], [b]) => a.localeCompare(b))
-  const normalizedSearch = new URLSearchParams()
-  for (const [key, value] of keptParams) {
-    normalizedSearch.append(key, value)
-  }
-  const search = normalizedSearch.toString()
-  const cleanPath = normalizeNotesPathname(url.pathname)
-  return search ? `${cleanPath}?${search}` : cleanPath
+  // Normalize all review notes to route path only so query params do not fork note buckets.
+  return normalizePagePath(url.pathname)
 }
 
 function clearLegacyLocalNotes() {
@@ -356,6 +130,133 @@ function createNoteId() {
   return `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`
 }
 
+function normalizeStorageStatus(input: unknown): ReviewNotesStorageStatus | null {
+  if (!input || typeof input !== "object") {
+    return null
+  }
+
+  const parsed = input as Partial<ReviewNotesStorageStatus>
+  const backend = parsed.backend === "kv" || parsed.backend === "file" ? parsed.backend : null
+  if (!backend) {
+    return null
+  }
+
+  return {
+    backend,
+    globallyShared: Boolean(parsed.globallyShared),
+    warning: typeof parsed.warning === "string" && parsed.warning.trim() ? parsed.warning : undefined,
+  }
+}
+
+async function fetchRemotePageNotes(pagePath: string): Promise<ReviewNotesResponse | null> {
+  try {
+    const response = await fetch(
+      `${REVIEW_API_PATH}?pagePath=${encodeURIComponent(pagePath)}`,
+      {
+        method: "GET",
+        cache: "no-store",
+        headers: {
+          Accept: "application/json",
+        },
+      }
+    )
+    if (!response.ok) {
+      return null
+    }
+
+    const payload = (await response.json()) as { notes?: unknown; storage?: unknown }
+    return {
+      notes: normalizeReviewNotes(payload.notes, pagePath).filter((note) =>
+        hasReviewNoteContent(note)
+      ),
+      storage: normalizeStorageStatus(payload.storage),
+    }
+  } catch {
+    return null
+  }
+}
+
+async function syncRemotePageNotes(params: {
+  pagePath: string
+  notes: ReviewNote[]
+  deletedNotes: Record<string, string>
+}): Promise<ReviewNotesResponse | null> {
+  const { pagePath, notes, deletedNotes } = params
+  const deletions = Object.entries(deletedNotes)
+    .filter(([key]) => key.startsWith(`${pagePath}::`))
+    .map(([key, deletedAt]) => ({
+      id: key.slice(`${pagePath}::`.length),
+      deletedAt,
+    }))
+
+  try {
+    const response = await fetch(REVIEW_API_PATH, {
+      method: "PUT",
+      cache: "no-store",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        pagePath,
+        notes,
+        deletions,
+      }),
+    })
+
+    if (!response.ok) {
+      return null
+    }
+
+    const payload = (await response.json()) as { notes?: unknown; storage?: unknown }
+    return {
+      notes: normalizeReviewNotes(payload.notes, pagePath).filter((note) =>
+        hasReviewNoteContent(note)
+      ),
+      storage: normalizeStorageStatus(payload.storage),
+    }
+  } catch {
+    return null
+  }
+}
+
+type ClearPageResult = {
+  ok: boolean
+  status: number
+}
+
+async function clearRemotePageNotes(
+  pagePath: string,
+  adminToken: string
+): Promise<ClearPageResult> {
+  try {
+    const headers: HeadersInit = {
+      "Content-Type": "application/json",
+    }
+    if (adminToken.trim()) {
+      headers["x-review-admin-token"] = adminToken.trim()
+    }
+
+    const response = await fetch(REVIEW_API_PATH, {
+      method: "DELETE",
+      cache: "no-store",
+      headers,
+      body: JSON.stringify({
+        pagePath,
+        clear: true,
+      }),
+    })
+    return {
+      ok: response.ok,
+      status: response.status,
+    }
+  } catch {
+    return {
+      ok: false,
+      status: 0,
+    }
+  }
+}
+
 export function ReviewMode() {
   const pathname = usePathname()
   const [active, setActive] = useState(false)
@@ -365,7 +266,8 @@ export function ReviewMode() {
   const [dragging, setDragging] = useState<DragState | null>(null)
   const [pageUrl, setPageUrl] = useState("/")
   const [notes, setNotes] = useState<ReviewNote[]>([])
-  const [syncStatus, setSyncStatus] = useState<"idle" | "loading" | "synced" | "error">("idle")
+  const [storageStatus, setStorageStatus] = useState<ReviewNotesStorageStatus | null>(null)
+  const [syncStatus, setSyncStatus] = useState<SyncStatus>("idle")
   const [highlightRect, setHighlightRect] = useState<{
     left: number
     top: number
@@ -373,9 +275,10 @@ export function ReviewMode() {
     height: number
   } | null>(null)
   const pressedKeysRef = useRef<Set<string>>(new Set())
-  const remoteStoreRef = useRef<ReviewRemoteStore | null>(null)
-  const remoteHydratedPageRef = useRef<string>("")
+  const remoteHydratedPageRef = useRef("")
   const syncTimeoutRef = useRef<number | null>(null)
+  const retryTimeoutRef = useRef<number | null>(null)
+  const nextPullAllowedAtRef = useRef(0)
   const localDirtyRef = useRef(false)
   const localRevisionRef = useRef(0)
   const deletedNotesRef = useRef<Record<string, string>>({})
@@ -385,17 +288,18 @@ export function ReviewMode() {
     localRevisionRef.current += 1
   }, [])
 
-  const applyLocalNotesUpdate = useCallback((
-    updater: ReviewNote[] | ((previous: ReviewNote[]) => ReviewNote[])
-  ) => {
-    setNotes((previous) => {
-      const next = typeof updater === "function" ? updater(previous) : updater
-      if (next !== previous) {
-        markLocalDirty()
-      }
-      return next
-    })
-  }, [markLocalDirty])
+  const applyLocalNotesUpdate = useCallback(
+    (updater: ReviewNote[] | ((previous: ReviewNote[]) => ReviewNote[])) => {
+      setNotes((previous) => {
+        const next = typeof updater === "function" ? updater(previous) : updater
+        if (next !== previous) {
+          markLocalDirty()
+        }
+        return next
+      })
+    },
+    [markLocalDirty]
+  )
 
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -404,8 +308,7 @@ export function ReviewMode() {
 
     clearLegacyLocalNotes()
 
-    const fromSession =
-      window.sessionStorage.getItem(REVIEW_MODE_STORAGE_KEY) === "true"
+    const fromSession = window.sessionStorage.getItem(REVIEW_MODE_STORAGE_KEY) === "true"
     const reviewParam = new URLSearchParams(window.location.search).get("review")
     const fromQuery = reviewParam !== null && reviewParam !== "false"
 
@@ -423,35 +326,31 @@ export function ReviewMode() {
     const currentPage = getPageUrlForNotes()
     localDirtyRef.current = false
     localRevisionRef.current = 0
+    nextPullAllowedAtRef.current = 0
+    remoteHydratedPageRef.current = ""
+
     queueMicrotask(() => {
       setPageUrl(currentPage)
       setNotes([])
+      setStorageStatus(null)
       setSyncStatus("loading")
     })
-    remoteHydratedPageRef.current = ""
 
     let cancelled = false
     void (async () => {
-      const store = await fetchRemoteStore()
+      const remoteResult = await fetchRemotePageNotes(currentPage)
       if (cancelled) {
         return
       }
 
       remoteHydratedPageRef.current = currentPage
-      if (!store) {
-        remoteStoreRef.current = null
-        setSyncStatus("error")
+      if (!remoteResult) {
+        setSyncStatus(resolveSyncFailureStatus())
         return
       }
 
-      remoteStoreRef.current = store
-      const remoteNotes = store.pages[currentPage] ?? []
-      setNotes((previous) => {
-        const currentPageNotes = previous.filter((note) => note.pageUrl === currentPage)
-        return notesSignature(currentPageNotes) === notesSignature(remoteNotes)
-          ? previous
-          : replacePageNotes(previous, currentPage, remoteNotes)
-      })
+      setNotes(remoteResult.notes)
+      setStorageStatus(remoteResult.storage)
       setSyncStatus("synced")
     })()
 
@@ -461,13 +360,7 @@ export function ReviewMode() {
   }, [active, pathname])
 
   useEffect(() => {
-    if (!active) {
-      return
-    }
-
-    const pageNotes = notes.filter((note) => note.pageUrl === pageUrl)
-
-    if (remoteHydratedPageRef.current !== pageUrl || !localDirtyRef.current) {
+    if (!active || remoteHydratedPageRef.current !== pageUrl || !localDirtyRef.current) {
       return
     }
 
@@ -476,48 +369,53 @@ export function ReviewMode() {
     }
 
     const revisionSnapshot = localRevisionRef.current
+
     syncTimeoutRef.current = window.setTimeout(() => {
       void (async () => {
-        setSyncStatus("loading")
-        const latestStore = (await fetchRemoteStore()) ?? remoteStoreRef.current ?? createEmptyRemoteStore()
-        remoteStoreRef.current = latestStore
-        const remotePageNotes = latestStore.pages[pageUrl] ?? []
-        const mergedPageNotes = mergePageNotesForSync({
-          pageUrl,
-          localNotes: pageNotes,
-          remoteNotes: remotePageNotes,
+        const draftNotes = notes.filter((note) => !hasReviewNoteContent(note))
+        const syncableNotes = notes.filter((note) => hasReviewNoteContent(note))
+
+        setSyncStatus("saving")
+        const syncedRemote = await syncRemotePageNotes({
+          pagePath: pageUrl,
+          notes: syncableNotes,
           deletedNotes: deletedNotesRef.current,
         })
 
-        const nextPages = { ...latestStore.pages }
-
-        if (mergedPageNotes.length > 0) {
-          nextPages[pageUrl] = mergedPageNotes
-        } else {
-          delete nextPages[pageUrl]
-        }
-
-        const nextStore: ReviewRemoteStore = {
-          ...latestStore,
-          updatedAt: new Date().toISOString(),
-          pages: nextPages,
-        }
-
-        const saved = await saveRemoteStore(nextStore)
-        if (saved) {
-          remoteStoreRef.current = nextStore
-          if (localRevisionRef.current === revisionSnapshot) {
-            localDirtyRef.current = false
+        if (!syncedRemote) {
+          setSyncStatus(resolveSyncFailureStatus())
+          if (retryTimeoutRef.current !== null) {
+            window.clearTimeout(retryTimeoutRef.current)
           }
-          for (const key of Object.keys(deletedNotesRef.current)) {
-            if (key.startsWith(`${pageUrl}::`)) {
-              delete deletedNotesRef.current[key]
-            }
-          }
-          setSyncStatus("synced")
-        } else {
-          setSyncStatus("error")
+          retryTimeoutRef.current = window.setTimeout(() => {
+            setNotes((previous) => [...previous])
+          }, 6000)
+          return
         }
+
+        setStorageStatus(syncedRemote.storage)
+        const mergedForView = sortReviewNotesByCreated([
+          ...syncedRemote.notes,
+          ...draftNotes,
+        ])
+
+        setNotes((previous) =>
+          notesSignature(previous) === notesSignature(mergedForView)
+            ? previous
+            : mergedForView
+        )
+
+        if (localRevisionRef.current === revisionSnapshot) {
+          localDirtyRef.current = false
+        }
+
+        for (const key of Object.keys(deletedNotesRef.current)) {
+          if (key.startsWith(`${pageUrl}::`)) {
+            delete deletedNotesRef.current[key]
+          }
+        }
+
+        setSyncStatus("synced")
       })()
     }, REMOTE_SYNC_DEBOUNCE_MS)
 
@@ -525,6 +423,10 @@ export function ReviewMode() {
       if (syncTimeoutRef.current !== null) {
         window.clearTimeout(syncTimeoutRef.current)
         syncTimeoutRef.current = null
+      }
+      if (retryTimeoutRef.current !== null) {
+        window.clearTimeout(retryTimeoutRef.current)
+        retryTimeoutRef.current = null
       }
     }
   }, [active, notes, pageUrl])
@@ -535,24 +437,41 @@ export function ReviewMode() {
     }
 
     let cancelled = false
+
     const pullLatest = async () => {
-      const store = await fetchRemoteStore()
-      if (cancelled || !store) {
+      const now = Date.now()
+      if (now < nextPullAllowedAtRef.current) {
         return
       }
 
-      remoteStoreRef.current = store
+      if (typeof navigator !== "undefined" && !navigator.onLine) {
+        if (!localDirtyRef.current) {
+          setSyncStatus("offline")
+        }
+        nextPullAllowedAtRef.current = now + 12000
+        return
+      }
+
+      const remoteResult = await fetchRemotePageNotes(pageUrl)
+      if (cancelled || !remoteResult) {
+        if (!localDirtyRef.current) {
+          setSyncStatus(resolveSyncFailureStatus())
+        }
+        nextPullAllowedAtRef.current = Date.now() + 12000
+        return
+      }
+
+      nextPullAllowedAtRef.current = 0
+
       if (localDirtyRef.current) {
         return
       }
 
-      const remotePageNotes = store.pages[pageUrl] ?? []
+      setStorageStatus(remoteResult.storage)
       setNotes((previous) => {
-        const currentPageNotes = previous.filter((note) => note.pageUrl === pageUrl)
-        if (notesSignature(currentPageNotes) === notesSignature(remotePageNotes)) {
-          return previous
-        }
-        return replacePageNotes(previous, pageUrl, remotePageNotes)
+        const draftNotes = previous.filter((note) => !hasReviewNoteContent(note))
+        const next = sortReviewNotesByCreated([...remoteResult.notes, ...draftNotes])
+        return notesSignature(previous) === notesSignature(next) ? previous : next
       })
       setSyncStatus("synced")
     }
@@ -677,9 +596,7 @@ export function ReviewMode() {
         updatedAt: now,
       }
 
-      applyLocalNotesUpdate((previous) => {
-        return [...previous, nextNote]
-      })
+      applyLocalNotesUpdate((previous) => [...previous, nextNote])
     }
 
     window.addEventListener("mousemove", onMouseMove, true)
@@ -721,17 +638,14 @@ export function ReviewMode() {
       window.removeEventListener("pointermove", onPointerMove)
       window.removeEventListener("pointerup", onPointerUp)
     }
-  }, [applyLocalNotesUpdate, dragging, pageUrl])
+  }, [applyLocalNotesUpdate, dragging])
 
-  const visibleNotes = useMemo(
-    () => (notesVisible ? notes.filter((note) => note.pageUrl === pageUrl) : []),
-    [notes, notesVisible, pageUrl]
-  )
+  const visibleNotes = useMemo(() => (notesVisible ? notes : []), [notes, notesVisible])
 
   const updateNotes = (updater: ReviewNote[] | ((previous: ReviewNote[]) => ReviewNote[])) => {
-    applyLocalNotesUpdate((previous) => {
-      return typeof updater === "function" ? updater(previous) : updater
-    })
+    applyLocalNotesUpdate((previous) =>
+      typeof updater === "function" ? updater(previous) : updater
+    )
   }
 
   const updateNote = (id: string, updates: Partial<ReviewNote>) => {
@@ -747,21 +661,68 @@ export function ReviewMode() {
     updateNotes((previous) => previous.filter((note) => note.id !== id))
   }
 
-  const clearCurrentPageNotes = () => {
+  const clearCurrentPageNotes = async () => {
     const shouldClear = window.confirm(
       "Clear all review notes on this page? This cannot be undone."
     )
     if (!shouldClear) {
       return
     }
-    const now = new Date().toISOString()
-    for (const note of notes.filter((item) => item.pageUrl === pageUrl)) {
-      deletedNotesRef.current[pageDeletionKey(pageUrl, note.id)] = now
+
+    let adminToken = ""
+    if (typeof window !== "undefined") {
+      adminToken =
+        window.sessionStorage.getItem(REVIEW_ADMIN_TOKEN_STORAGE_KEY)?.trim() ?? ""
     }
-    updateNotes((previous) => previous.filter((note) => note.pageUrl !== pageUrl))
+    if (!adminToken) {
+      const promptedToken = window.prompt(
+        "Enter admin token to clear notes for this page."
+      )
+      if (!promptedToken) {
+        return
+      }
+      adminToken = promptedToken.trim()
+      if (!adminToken) {
+        return
+      }
+    }
+
+    setSyncStatus("saving")
+    const clearResult = await clearRemotePageNotes(pageUrl, adminToken)
+    if (!clearResult.ok) {
+      setSyncStatus(clearResult.status === 0 ? resolveSyncFailureStatus() : "error")
+      if (clearResult.status === 401 || clearResult.status === 403) {
+        if (typeof window !== "undefined") {
+          window.sessionStorage.removeItem(REVIEW_ADMIN_TOKEN_STORAGE_KEY)
+        }
+        window.alert("Clear failed: admin authorization is required.")
+      } else if (clearResult.status === 503) {
+        window.alert("Clear failed: admin clear token is not configured on the server.")
+      } else {
+        window.alert("Clear failed. Please try again.")
+      }
+      return
+    }
+
+    if (typeof window !== "undefined") {
+      window.sessionStorage.setItem(REVIEW_ADMIN_TOKEN_STORAGE_KEY, adminToken)
+    }
+    deletedNotesRef.current = {}
+    localDirtyRef.current = false
+    localRevisionRef.current += 1
+    setNotes([])
+    setSyncStatus("synced")
   }
 
   const exitReviewMode = () => {
+    if (syncTimeoutRef.current !== null) {
+      window.clearTimeout(syncTimeoutRef.current)
+      syncTimeoutRef.current = null
+    }
+    if (retryTimeoutRef.current !== null) {
+      window.clearTimeout(retryTimeoutRef.current)
+      retryTimeoutRef.current = null
+    }
     setActive(false)
     setPanelOpen(false)
     setAddingNote(false)
@@ -789,7 +750,7 @@ export function ReviewMode() {
       {addingNote && highlightRect ? (
         <div
           data-review-ui="true"
-          className="pointer-events-none fixed z-[220] rounded-md border border-teal/70 bg-teal/10 shadow-[0_0_0_1px_rgba(0,191,166,0.3)]"
+          className="pointer-events-none fixed z-[220] rounded-md border border-[color-mix(in_srgb,var(--color-accent-strong)_70%,transparent)] bg-[color-mix(in_srgb,var(--color-accent-soft)_44%,transparent)] shadow-[0_0_0_1px_color-mix(in_srgb,var(--color-accent)_34%,transparent)]"
           style={{
             left: highlightRect.left,
             top: highlightRect.top,
@@ -806,7 +767,7 @@ export function ReviewMode() {
           <article
             key={note.id}
             data-review-ui="true"
-            className="absolute z-[230] w-[250px] overflow-hidden rounded-xl border border-border bg-white shadow-xl"
+            className="absolute z-[230] w-[250px] overflow-hidden rounded-xl border border-border bg-[var(--color-surface)] shadow-xl"
             style={{ left: note.x, top: note.y }}
           >
             <header
@@ -835,7 +796,7 @@ export function ReviewMode() {
               <div className="flex items-center gap-1">
                 <button
                   type="button"
-                  className="rounded px-1.5 py-1 text-[11px] font-semibold hover:bg-white/20"
+                  className="rounded px-1.5 py-1 text-[11px] font-semibold hover:bg-[color-mix(in_srgb,white_22%,transparent)]"
                   onClick={() => updateNote(note.id, { collapsed: !note.collapsed })}
                   aria-label={note.collapsed ? "Expand note" : "Collapse note"}
                 >
@@ -843,7 +804,7 @@ export function ReviewMode() {
                 </button>
                 <button
                   type="button"
-                  className="rounded p-1 hover:bg-white/20"
+                  className="rounded p-1 hover:bg-[color-mix(in_srgb,white_22%,transparent)]"
                   onClick={() => deleteNote(note.id)}
                   aria-label="Delete note"
                 >
@@ -901,37 +862,56 @@ export function ReviewMode() {
         className="fixed bottom-5 right-5 z-[240] flex flex-col items-end gap-3"
       >
         {panelOpen ? (
-          <div className="w-[260px] rounded-xl border border-border bg-white p-3 shadow-2xl">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-teal">
+          <div className="w-[260px] rounded-xl border border-border bg-[var(--color-surface)] p-3 shadow-2xl">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-accent-strong)]">
               Review Mode
             </p>
             <p className="mb-3 text-xs text-muted-foreground">
               Page: <span className="font-medium text-foreground">{pageUrl}</span>
             </p>
+            {storageStatus ? (
+              <p className="mb-2 text-[11px] text-muted-foreground">
+                Storage:{" "}
+                <span className="font-medium text-foreground">
+                  {storageStatus.globallyShared
+                    ? `Global (${storageStatus.backend.toUpperCase()})`
+                    : "This server only"}
+                </span>
+              </p>
+            ) : null}
             <p
               className={`mb-3 text-[11px] font-medium ${
                 syncStatus === "synced"
                   ? "text-emerald-700"
                   : syncStatus === "error"
                     ? "text-rose-700"
-                    : "text-muted-foreground"
+                    : syncStatus === "offline"
+                      ? "text-amber-700"
+                      : "text-muted-foreground"
               }`}
             >
               Sync:{" "}
               {syncStatus === "synced"
-                ? "Shared across devices"
-                : syncStatus === "error"
-                  ? "Remote sync unavailable"
+                ? "Connected"
+                : syncStatus === "saving"
+                  ? "Saving..."
                   : syncStatus === "loading"
-                    ? "Syncing..."
-                    : "Idle"}
+                    ? "Loading..."
+                    : syncStatus === "offline"
+                      ? "Offline - not synced"
+                      : syncStatus === "error"
+                        ? "Failed - retrying"
+                        : "Idle"}
             </p>
+            {storageStatus?.warning ? (
+              <p className="mb-3 text-[11px] text-amber-700">{storageStatus.warning}</p>
+            ) : null}
             <div className="space-y-2">
               <button
                 type="button"
                 className={`flex h-9 w-full items-center justify-between rounded-lg border px-3 text-xs font-medium ${
                   addingNote
-                    ? "border-teal/40 bg-teal/10 text-foreground"
+                    ? "border-[color-mix(in_srgb,var(--color-accent-strong)_40%,var(--color-border)_60%)] bg-[color-mix(in_srgb,var(--color-accent-soft)_64%,white_36%)] text-foreground"
                     : "border-border bg-background text-foreground"
                 }`}
                 onClick={() => setAddingNote((prev) => !prev)}
@@ -946,13 +926,19 @@ export function ReviewMode() {
                 onClick={() => setNotesVisible((prev) => !prev)}
               >
                 <span>{notesVisible ? "Hide Notes" : "Show Notes"}</span>
-                {notesVisible ? <EyeOff className="h-3.5 w-3.5" /> : <Eye className="h-3.5 w-3.5" />}
+                {notesVisible ? (
+                  <EyeOff className="h-3.5 w-3.5" />
+                ) : (
+                  <Eye className="h-3.5 w-3.5" />
+                )}
               </button>
 
               <button
                 type="button"
                 className="flex h-9 w-full items-center justify-between rounded-lg border border-rose-200 bg-rose-50 px-3 text-xs font-medium text-rose-700"
-                onClick={clearCurrentPageNotes}
+                onClick={() => {
+                  void clearCurrentPageNotes()
+                }}
               >
                 <span>Clear Notes (admin)</span>
                 <Trash2 className="h-3.5 w-3.5" />

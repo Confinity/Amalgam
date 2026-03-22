@@ -1,436 +1,301 @@
-﻿import { Metadata } from "next"
-import Link from "next/link"
-import { ArrowRight, CheckCircle2, Compass, Layers, Target, Users, Wrench, Zap } from "lucide-react"
+﻿import type { Metadata } from "next"
+import { ArrowRight } from "lucide-react"
+import { ArtifactPreview } from "@/components/artifacts/ArtifactPreview"
+import { PageHero } from "@/components/heroes/PageHero"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
-import { ClientLogoWall } from "@/components/client-logo-wall"
-import { HeroDiagnosticPanel } from "@/components/hero-diagnostic-panel"
-import { HomeFeaturedCaseStudies } from "@/components/home-featured-case-studies"
-import { TestimonialStrip } from "@/components/testimonial-strip"
-import { caseStudies } from "@/lib/case-studies-data"
-import { knowledgeBriefs, knowledgeCategories } from "@/lib/knowledge-briefs"
+import { TrackedLink } from "@/components/tracked-link"
+import { OfferComparison } from "@/components/sections/OfferComparison"
+import { HomeCaseStudyRotator } from "@/components/sections/HomeCaseStudyRotator"
+import { HomeResearchRotator } from "@/components/sections/HomeResearchRotator"
+import { ResearchSourcesMarquee } from "@/components/sections/ResearchSourcesMarquee"
+import { HomeNextStepOptions } from "@/components/sections/HomeNextStepOptions"
+import { PressureCardGrid } from "@/components/sections/PressureCardGrid"
+import { TrackedButton } from "@/components/ui/TrackedButton"
+import { TrustBand } from "@/components/ui/TrustBand"
+import { homeCaseStudies } from "@/content/caseStudies"
+import {
+  homeResearchFeaturedArticles,
+  homeResearchQuickLinks,
+  homeResearchSourcesPreview,
+} from "@/content/knowledge"
+import {
+  homepageAudiences,
+  homepageCapabilities,
+  homepageCopy,
+  trustFrame,
+} from "@/content/site"
+import { clientLogos } from "@/lib/client-logos"
+import { testimonials } from "@/lib/testimonials"
 
 export const metadata: Metadata = {
-  title: "From idea to scale — without the chaos.",
+  title: "We help teams get unstuck under delivery pressure | Amalgam",
   description:
-    "Amalgam helps founders, entrepreneurs, and product teams turn ideas into real products and working systems.",
+    "We help founders, product leads, and engineering teams get unstuck when delivery pressure is high. Find what's blocked, choose the next move, and keep delivery steady.",
   alternates: {
     canonical: "/",
   },
-}
-
-function Hero() {
-  return (
-    <section className="homepage-hero relative overflow-hidden pb-20 pt-32 lg:pb-28 lg:pt-40">
-      <div className="pointer-events-none absolute top-0 right-0 h-[640px] w-[640px] -translate-y-1/2 translate-x-1/4 rounded-full bg-[radial-gradient(circle,rgba(0,191,166,0.14)_0%,transparent_72%)]" />
-      <div className="pointer-events-none absolute bottom-0 left-0 h-[440px] w-[440px] translate-y-1/3 -translate-x-1/4 rounded-full bg-[radial-gradient(circle,rgba(106,92,255,0.1)_0%,transparent_72%)]" />
-
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
-        <div className="hero-layout">
-          <div className="max-w-4xl">
-            <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight text-foreground text-balance sm:text-5xl lg:text-[58px]">
-              <span>From idea to scale —</span>
-              <span className="hero-gradient-line block bg-gradient-to-r from-teal to-purple bg-clip-text text-transparent">
-                without the chaos.
-              </span>
-            </h1>
-            <p className="mt-5 text-lg leading-relaxed text-foreground/90">
-              Amalgam helps founders, entrepreneurs, and product teams turn ideas into real products and working systems.
-            </p>
-            <p className="hero-body mt-5 text-lg leading-relaxed text-muted-foreground">
-              Building something real is rarely simple. Ideas evolve, systems grow, and delivery gets messy. We help you find the blocker and move forward with confidence.
-            </p>
-            <div className="hero-cta-row mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/launchpad"
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3 text-sm font-medium text-background transition-all hover:opacity-90"
-              >
-                Find my stage
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                href="/contact?interest=strategy-session"
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-border/90 px-6 py-3 text-sm font-medium text-foreground transition-all hover:border-border hover:bg-muted/70"
-              >
-                Book a strategy call
-              </Link>
-            </div>
-          </div>
-
-          <div className="hero-panel-shell relative">
-            <HeroDiagnosticPanel />
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function WhatWeDo() {
-  const outcomes = [
-    {
-      icon: Compass,
-      title: "Clarify product direction",
-      description: "Get clear on what to build first and why.",
-    },
-    {
-      icon: Zap,
-      title: "Fix delivery friction",
-      description: "Remove the blockers that keep work from shipping.",
-    },
-    {
-      icon: Layers,
-      title: "Simplify complex systems",
-      description: "Make architecture and workflows easier to trust.",
-    },
-    {
-      icon: Target,
-      title: "Create a clear execution path",
-      description: "Turn uncertainty into practical next steps.",
-    },
-  ]
-
-  return (
-    <section className="homepage-core-offer-section section-warm border-t border-border py-20 lg:py-24">
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
-        <div className="mb-9 max-w-3xl">
-          <h2 className="mb-4 text-2xl font-semibold text-foreground md:text-3xl">What we help builders solve</h2>
-          <p className="max-w-2xl leading-relaxed text-muted-foreground">
-            When progress gets harder than it should, we help you find the blocker and choose the next move.
-          </p>
-        </div>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {outcomes.map((outcome) => (
-            <div key={outcome.title} className="card-interactive rounded-2xl border border-border/90 bg-background p-6 shadow-sm">
-              <outcome.icon className="mb-4 h-6 w-6 text-teal" />
-              <h3 className="mb-2 font-semibold text-foreground">{outcome.title}</h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">{outcome.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function WhoWeHelp() {
-  const audienceCards = [
-    {
-      icon: Users,
-      title: "Founders building startups",
-      body: "From early direction to execution pressure.",
-    },
-    {
-      icon: Compass,
-      title: "Entrepreneurs launching new ventures",
-      body: "Clear next moves when momentum gets messy.",
-    },
-    {
-      icon: Wrench,
-      title: "Solopreneurs building independently",
-      body: "Senior thinking without heavyweight process.",
-    },
-    {
-      icon: Target,
-      title: "Product and delivery teams",
-      body: "Support for planning, systems, and execution.",
-    },
-  ]
-
-  return (
-    <section className="homepage-audiences-section deferred-section border-y border-border bg-secondary/45 py-20 lg:py-24">
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
-        <div className="mb-8 max-w-3xl">
-          <h2 className="text-2xl font-semibold text-foreground md:text-3xl">Who Amalgam helps</h2>
-          <p className="mt-3 text-muted-foreground">
-            Builders at every stage, from first release through scale.
-          </p>
-        </div>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {audienceCards.map((card) => (
-            <div key={card.title} className="card-interactive rounded-2xl border border-border bg-background p-6">
-              <card.icon className="h-5 w-5 text-teal" />
-              <h3 className="mt-4 text-lg font-semibold text-foreground">{card.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{card.body}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function TypicalTriggers() {
-  const triggers = [
-    { icon: Zap, text: "Progress keeps slowing" },
-    { icon: Target, text: "Priorities are harder to align" },
-    { icon: Layers, text: "Systems are getting harder to trust" },
-    { icon: Wrench, text: "Too much coordination for simple work" },
-    { icon: Compass, text: "Product direction feels less clear" },
-    { icon: Users, text: "Teams are busy, but outcomes still feel off" },
-  ]
-
-  return (
-    <section className="homepage-triggers-section deferred-section py-20 lg:py-24">
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
-          <div className="max-w-xl">
-            <h2 className="mb-4 text-2xl font-semibold text-foreground md:text-3xl">When teams usually reach out</h2>
-            <p className="leading-relaxed text-muted-foreground">
-              Progress slows, priorities blur, and outcomes feel off. We help teams see what is happening and choose the next move.
-            </p>
-            <Link
-              href="/contact?interest=strategy-session"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors hover:text-foreground"
-            >
-              Book a strategy call
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2">
-            {triggers.map((trigger) => (
-              <div key={trigger.text} className="support-panel card-interactive flex min-w-0 items-center gap-4 p-5">
-                <trigger.icon className="h-5 w-5 shrink-0 text-teal" />
-                <span className="min-w-0 break-words text-foreground">{trigger.text}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function Offers() {
-  const offers = [
-    {
-      title: "Founder Review",
-      subtitle: "Clear first step",
-      description:
-        "Get a clear read on what is happening and what should happen next.",
-      points: ["Clear assessment", "Practical next steps"],
-      href: "/founder-review",
-      ctaLabel: "See how we work",
-      primary: true,
-    },
-    {
-      title: "Execution Sprint",
-      subtitle: "When planning is the blocker",
-      description:
-        "Turn clarity into a roadmap your team can realistically execute.",
-      points: ["Constraint-aware planning", "Leadership-ready roadmap"],
-      href: "/execution-sprint",
-      ctaLabel: "See how we work",
-      primary: false,
-    },
-    {
-      title: "Outcome Partnership",
-      subtitle: "When follow-through is the risk",
-      description:
-        "Stay supported inside execution as priorities evolve.",
-      points: ["Senior continuity", "Fast unblocking"],
-      href: "/outcome-partnership",
-      ctaLabel: "See how we work",
-      primary: false,
-    },
-  ]
-
-  return (
-    <section className="homepage-offers-section deferred-section border-y border-border bg-secondary/45 py-20 lg:py-24">
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
-        <div className="mb-8 max-w-3xl">
-          <h2 className="mb-4 text-2xl font-semibold text-foreground md:text-3xl">Start with one clear step</h2>
-          <p className="text-muted-foreground">
-            Founder Review first. Then Execution Sprint or Outcome Partnership if needed.
-          </p>
-        </div>
-        <div className="grid gap-8 lg:grid-cols-3">
-          {offers.map((offer) => (
-            <div
-              key={offer.title}
-            className={`rounded-[26px] p-8 ${
-                offer.primary
-                  ? "border border-teal/40 bg-background shadow-[0_14px_34px_rgba(0,191,166,0.08)]"
-                  : "support-panel card-interactive"
-              }`}
-            >
-              {offer.primary ? (
-                <span className="mb-4 inline-flex rounded-full border border-teal/25 bg-teal/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                  Recommended first step
-                </span>
-              ) : null}
-              <h3 className="text-2xl font-semibold text-foreground">{offer.title}</h3>
-              <p className="mt-1 text-sm font-medium text-teal">{offer.subtitle}</p>
-              <p className="mt-4 text-muted-foreground">{offer.description}</p>
-              <ul className="mt-6 space-y-2">
-                {offer.points.map((point) => (
-                  <li key={point} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-teal" />
-                    {point}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href={offer.href}
-                className={`mt-6 inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 font-medium transition-all ${
-                  offer.primary
-                    ? "bg-foreground text-background hover:opacity-90"
-                    : "border border-border/80 text-foreground hover:bg-background"
-                }`}
-              >
-                {offer.ctaLabel}
-              </Link>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function TrustSection() {
-  return (
-    <ClientLogoWall
-      className="homepage-trust-section border-t border-border"
-      eyebrow="Client experience"
-      title="Trusted in complex environments"
-      description="We’ve supported teams across fintech, banking, energy, retail, philanthropy, and enterprise software."
-      showCaseStudiesCta
-    />
-  )
-}
-
-function FeaturedCaseStudies() {
-  const featured = caseStudies.filter((cs) => cs.featured)
-
-  return (
-    <section className="homepage-case-studies-section deferred-section section-warm border-t border-border py-20 lg:py-24">
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
-        <div className="mb-12 flex items-end justify-between">
-          <div>
-            <p className="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-teal">Case studies</p>
-            <h2 className="mb-2 text-2xl font-semibold text-foreground md:text-3xl">See work in situations like yours</h2>
-            <p className="text-muted-foreground">Real situations. Real constraints. Clear outcomes.</p>
-          </div>
-          <Link
-            href="/case-studies"
-            className="hidden items-center gap-2 text-sm font-medium text-foreground transition-colors hover:text-teal sm:inline-flex"
-          >
-            See case studies
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-
-        <HomeFeaturedCaseStudies featuredStudies={featured} />
-      </div>
-    </section>
-  )
-}
-
-function KnowledgePreview() {
-  const featuredKnowledge = knowledgeBriefs.filter((brief) => brief.featured).slice(0, 3)
-
-  return (
-    <section className="homepage-knowledge-section deferred-section border-y border-border bg-secondary/50 py-20 lg:py-24">
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="mb-3 text-sm font-medium uppercase tracking-[0.22em] text-teal">Knowledge</p>
-            <h2 className="mb-2 text-2xl font-semibold text-foreground md:text-3xl">Read this when systems get messy</h2>
-            <p className="max-w-xl text-muted-foreground">
-              Short practical notes on architecture, delivery, data, and leadership decisions.
-            </p>
-          </div>
-          <Link
-            href="/knowledge"
-            className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-border px-6 py-3 font-medium text-foreground transition-all hover:bg-background"
-          >
-            Explore knowledge
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {featuredKnowledge.map((brief) => (
-            <Link
-              key={brief.slug}
-              href={`/knowledge/${brief.slug}`}
-              className="card-interactive group flex h-full flex-col rounded-[28px] border border-border/85 bg-background p-7"
-            >
-              <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                {knowledgeCategories.find((category) => category.id === brief.category)?.label}
-              </p>
-              <h3 className="mt-4 text-2xl font-semibold text-foreground text-balance transition-colors group-hover:text-teal">
-                {brief.title}
-              </h3>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{brief.description}</p>
-              <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-teal transition-colors group-hover:text-foreground">
-                Read article
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </span>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function FinalCTA() {
-  return (
-    <section className="homepage-final-cta-section deferred-section bg-foreground py-20 lg:py-24">
-      <div className="mx-auto grid max-w-[1200px] gap-10 px-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-center">
-        <div className="max-w-3xl">
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-teal">Next step</p>
-          <h2 className="mb-4 text-3xl font-semibold text-background text-balance">Choose your next step</h2>
-          <p className="max-w-2xl text-background/70">
-            Self-serve with Launchpad, or book a strategy call for direct support.
-          </p>
-        </div>
-        <div className="homepage-final-cta-panel rounded-[24px] border border-background/12 bg-background/[0.04] p-6">
-          <p className="text-sm text-background/78">
-            Use Launchpad if you want to self-serve first. If you want direct support, book a strategy call.
-          </p>
-          <div className="mt-6 flex flex-col gap-3">
-            <Link
-              href="/launchpad"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-background px-6 py-3 font-medium text-foreground transition-all hover:opacity-90"
-            >
-              Find my stage
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="/contact?interest=strategy-session"
-              className="inline-flex items-center justify-center gap-2 rounded-lg border border-background/30 px-6 py-3 font-medium text-background transition-all hover:bg-background/10"
-            >
-              Book a strategy call
-            </Link>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
+  openGraph: {
+    title: "We help teams get unstuck under delivery pressure | Amalgam",
+    description:
+      "We help founders, product leads, and engineering teams get unstuck when delivery pressure is high. Find what's blocked, choose the next move, and keep delivery steady.",
+    url: "/",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "We help teams get unstuck under delivery pressure | Amalgam",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "We help teams get unstuck under delivery pressure | Amalgam",
+    description:
+      "We help founders, product leads, and engineering teams get unstuck when delivery pressure is high. Find what's blocked, choose the next move, and keep delivery steady.",
+    images: ["/opengraph-image"],
+  },
 }
 
 export default function HomePage() {
   return (
     <>
-      <Navigation />
-      <main id="main-content" className="bg-background">
-        <Hero />
-        <WhatWeDo />
-        <WhoWeHelp />
-        <TypicalTriggers />
-        <Offers />
-        <TestimonialStrip
-          className="deferred-section border-t border-border py-20 lg:py-24"
-          testimonialIds={["fitzmier-jtf", "mendez-pearlx", "mooney-cleanitsupply"]}
+      <Navigation primaryCtaLabel="Find your next move" primaryCtaHref="/next-move" />
+      <main id="main-content">
+        <PageHero
+          scale="large"
+          tone="soft"
+          className="hero-depth-home"
+          title={
+            <h1 className="hero-home-headline max-w-none font-semibold">
+              <span className="block xl:whitespace-nowrap">From idea to scale</span>
+              <span className="headline-accent block xl:whitespace-nowrap">without the chaos.</span>
+            </h1>
+          }
+          support={homepageCopy.support}
+          helper={homepageCopy.helper}
+          gridClassName="lg:grid-cols-[minmax(0,1.58fr)_minmax(0,1fr)] lg:items-center lg:gap-8 xl:gap-10"
+          contentClassName="max-w-none lg:max-w-[43rem]"
+          supportClassName="copy-support-strong max-w-[48ch] text-[1.12rem] leading-[1.56]"
+          actionsClassName="gap-2.5 sm:gap-3.5"
+          artifactClassName="w-full max-w-[560px] lg:max-w-[420px] lg:justify-self-end xl:max-w-[448px]"
+          actions={
+            <>
+              <TrackedButton
+                href="/next-move"
+                withArrow
+                eventName="hero_cta_clicked"
+                eventData={{
+                  surface_id: "home_hero",
+                  cta_id: "home_hero_find_stage",
+                  cta_label: "Find your next move",
+                  cta_variant: "primary",
+                  destination: "/next-move",
+                }}
+              >
+                Find your next move
+              </TrackedButton>
+              <TrackedButton
+                href="/contact"
+                variant="secondary"
+                className="border-tier-soft bg-[color-mix(in_srgb,var(--color-surface)_98%,white_2%)] text-[var(--color-text-subtle)]"
+                eventName="strategy_call_clicked"
+                eventData={{
+                  surface_id: "home_hero",
+                  cta_id: "home_hero_strategy_call",
+                  cta_label: "Get a recommendation",
+                  destination: "/contact",
+                }}
+              >
+                Get a recommendation
+              </TrackedButton>
+            </>
+          }
+          artifact={<ArtifactPreview type="execution-brief" />}
         />
-        <TrustSection />
-        <FeaturedCaseStudies />
-        <KnowledgePreview />
-        <FinalCTA />
+
+        <PressureCardGrid
+          title="How we help you get unstuck"
+          support="When things feel messy, we help you see what's blocking progress and what to do next."
+          className="border-b border-[var(--color-border)] bg-[var(--color-surface)]"
+          signals={homepageCapabilities}
+          variant="capability"
+        />
+
+        <OfferComparison />
+
+        <section
+          id="home-audience-fit"
+          className="section-space border-b border-[var(--color-border)] bg-[var(--color-surface-muted)]"
+        >
+          <div className="container-site">
+            <div>
+              <h2>Who this is for</h2>
+              <p className="copy-support-strong mt-4 max-w-2xl text-base">
+                These are the teams we help most when the next decision really matters.
+              </p>
+            </div>
+
+            <ul className="mt-11 grid gap-x-10 gap-y-7 md:grid-cols-2">
+              {homepageAudiences.map((audience) => (
+                <li
+                  key={audience.title}
+                  className="border-b border-[color-mix(in_srgb,var(--color-border)_86%,transparent)] pb-4 md:pb-5"
+                >
+                  <p className="text-lg font-semibold text-[var(--color-text)]">{audience.title}</p>
+                  <div className="brand-key-row mt-2">
+                    <span aria-hidden="true" className="brand-key-dot" />
+                    <p className="text-sm leading-6 text-[var(--color-text-muted)]">{audience.detail}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <TrustBand
+          title={homepageCopy.proofTitle}
+          support={trustFrame}
+          tone="plain"
+          className="section-space border-y border-[var(--color-border)] band-cool-subtle"
+          logos={clientLogos.map((logo) => ({
+            name: logo.name,
+            src: logo.src,
+            href: logo.href,
+          }))}
+          testimonial={{
+            quote: testimonials[0]!.quote,
+            name: testimonials[0]!.name,
+            role: testimonials[0]!.title,
+            company: testimonials[0]!.company,
+            image: testimonials[0]!.image,
+          }}
+          ctaLabel="Browse case studies"
+          ctaHref="/our-work"
+        />
+
+        <section id="home-case-studies" className="section-compact border-y border-[var(--color-border)] band-neutral-subtle">
+          <div className="container-site">
+            <div className="flex flex-wrap items-start justify-between gap-4 sm:items-end sm:gap-5">
+              <div>
+                <h2>{homepageCopy.caseStudiesTitle}</h2>
+                <p className="copy-support-strong mt-3 max-w-[56ch] text-base">
+                  Real examples of teams finding clarity and getting work moving again.
+                </p>
+              </div>
+              <TrackedLink
+                href="/our-work"
+                eventName="section_cta_clicked"
+                eventData={{
+                  surface_id: "home_featured_work",
+                  cta_id: "home_featured_work_view_all",
+                  cta_label: "See all case studies",
+                  cta_variant: "secondary",
+                  destination: "/our-work",
+                }}
+                className="inline-flex min-h-11 items-center gap-2 py-2 text-sm font-medium text-[var(--color-accent-strong)]"
+              >
+                See all case studies
+                <ArrowRight className="h-4 w-4" />
+              </TrackedLink>
+            </div>
+
+            <HomeCaseStudyRotator studies={homeCaseStudies} />
+          </div>
+        </section>
+
+        <section
+          id="home-research"
+          className="section-space border-t border-[var(--color-border)] bg-[linear-gradient(180deg,color-mix(in_srgb,var(--color-surface)_96%,white_4%)_0%,color-mix(in_srgb,var(--color-surface-muted)_60%,white_40%)_100%)]"
+        >
+          <div className="container-site">
+            <div className="flex flex-wrap items-start justify-between gap-4 sm:items-end sm:gap-5">
+              <div>
+                <h2>{homepageCopy.knowledgeTitle}</h2>
+                <p className="copy-support-strong mt-3 max-w-[56ch] text-base">
+                  We publish short briefs from delivery work and outside research so you can choose your next move faster.
+                </p>
+                <div className="mt-4 flex flex-wrap items-center gap-2.5 text-sm">
+                  <span className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-text-subtle)]">
+                    Top reads this week
+                  </span>
+                  {homeResearchQuickLinks.map((link) => (
+                    <TrackedLink
+                      key={link.slug}
+                      href={`/research/${link.slug}`}
+                      eventName="article_opened"
+                      eventData={{
+                        source: "home_research_top_reads",
+                        slug: link.slug,
+                      }}
+                      className="inline-flex min-h-8 items-center rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-3 text-sm font-medium text-[var(--color-accent-strong)]"
+                    >
+                      {link.label}
+                    </TrackedLink>
+                  ))}
+                </div>
+              </div>
+              <div className="flex flex-wrap items-center gap-3">
+                <TrackedLink
+                  href="/research#start-with-this"
+                  eventName="section_cta_clicked"
+                  eventData={{
+                    surface_id: "home_featured_briefings",
+                    cta_id: "home_featured_briefings_start_with_this",
+                    cta_label: "Start with this",
+                    cta_variant: "secondary",
+                    destination: "/research#start-with-this",
+                  }}
+                  className="inline-flex min-h-11 items-center gap-2 py-2 text-sm font-medium text-[var(--color-accent-strong)]"
+                >
+                  Start with this
+                  <ArrowRight className="h-4 w-4" />
+                </TrackedLink>
+                <TrackedLink
+                  href="/research/library"
+                  eventName="section_cta_clicked"
+                  eventData={{
+                    surface_id: "home_featured_briefings",
+                    cta_id: "home_featured_briefings_browse_all",
+                    cta_label: "Browse all research",
+                    cta_variant: "secondary",
+                    destination: "/research/library",
+                  }}
+                  className="inline-flex min-h-11 items-center gap-2 py-2 text-sm font-medium text-[var(--color-text-subtle)] hover:text-[var(--color-accent-strong)]"
+                >
+                  Browse all research
+                  <ArrowRight className="h-4 w-4" />
+                </TrackedLink>
+              </div>
+            </div>
+
+            <HomeResearchRotator articles={homeResearchFeaturedArticles} />
+
+            <div className="mt-6 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4">
+              <p className="text-sm font-medium text-[var(--color-text)]">Where we look</p>
+              <p className="mt-1 text-sm text-[var(--color-text-muted)]">
+                We review major labs, standards bodies, and universities each week.
+              </p>
+              <ResearchSourcesMarquee
+                sources={homeResearchSourcesPreview}
+                compact
+                animate
+                className="mt-3"
+              />
+              <p className="mt-2 text-xs text-[var(--color-text-subtle)]">
+                These sources inform our view. They don&apos;t endorse our conclusions.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <HomeNextStepOptions />
       </main>
-      <Footer />
+      <Footer variant="home" />
     </>
   )
 }
+
+
+

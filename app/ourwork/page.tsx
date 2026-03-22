@@ -1,14 +1,14 @@
 import type { Metadata } from "next"
-import { LegacyRouteRedirect } from "@/components/legacy-route-redirect"
+import { permanentRedirect } from "next/navigation"
 
 export const metadata: Metadata = {
-  title: "Taking you to Case Studies",
+  title: "Redirecting to Case Studies",
   robots: {
     index: false,
     follow: true,
   },
 }
 
-export default function OurWorkRedirectPage() {
-  return <LegacyRouteRedirect target="/case-studies" label="Case Studies" />
+export default function OurWorkLegacyRedirectPage() {
+  permanentRedirect("/our-work")
 }

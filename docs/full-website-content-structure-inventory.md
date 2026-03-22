@@ -1,0 +1,6636 @@
+﻿# Website Content & Structure Inventory
+
+## 1. Executive summary
+- total number of pages reviewed: 52
+- major page groups reviewed: homepage, primary nav pages, launchpad hub + subpages, case studies hub + all detail pages, knowledge hub + all article templates, services/program pages, about/team/careers/contact, legal pages, redirects, 404 routes
+- any important limitations: interactive states are included using rendered output plus source data for conditional flows
+- any broken / missing routes noticed: no hard-broken exported routes; thin redirect/helper routes: /aboutus, /contactus, /ourwork, /schedule, /review
+
+## 2. Global elements
+### Main navigation
+- full nav labels
+  - Services
+  - Launchpad
+  - Case Studies
+  - Knowledge
+  - About
+  - Book a strategy call
+  - Toggle menu
+- dropdowns if any: none visible
+- sticky nav behavior if relevant: fixed header with scroll progress indicator and mobile drawer
+
+### Footer
+- full footer structure: intro + credentials + CTA, Start Here links, Company links, Contact card, legal row
+- footer headings
+  - Start Here
+  - Contact
+  - Company
+- footer links/body copy
+  - We help teams fix architecture, data, and ownership bottlenecks so delivery gets back on track.
+  - Founded 2012
+  - Chesterbrook, PA
+  - Small focused team
+  - Book a strategy call
+  - Start Here
+  - Diagnostic Review
+  - Execution Sprint
+  - Outcome Partnership
+  - Contact
+  - Company
+  - About
+  - Launchpad
+  - Team
+  - Careers
+  - Case Studies
+  - Knowledge
+  - Best fit
+  - For founders, operators, and enterprise teams dealing with system complexity and delivery risk.
+  - hello@amalgam-inc.com
+  - +1 484-354-8498
+  - Â© 2026 Amalgam Inc. All rights reserved.
+  - Back to top
+  - Â·
+  - Privacy Policy
+  - Terms
+  - Cookies
+
+### Repeated global CTAs / banners / announcement bars
+- Book a strategy call
+- Skip to content
+- Footer contact rows (email, phone, location)
+
+## 3. Page-by-page inventory
+
+### Page 1 ? Is product delivery stalling because systems and teams are out of sync?
+- URL: /
+- Purpose: We help founders, operators, and enterprise teams pinpoint what is blocking delivery and decide what to fix first.
+
+#### Section 1 ? Hero
+- Section type: section (homepage-hero relative overflow-hidden pb-20 pt-32 lg:pb-28 lg:pt-40)
+- Section title: Are key product commitments missing target dates? We help you pinpoint the bottleneck and fix it with your team.
+- Section subtitle / eyebrow: If delivery keeps slipping
+- Full visible body copy:
+  - If delivery keeps slipping
+  - When architecture, integrations, data trust, and ownership start colliding, we help you isolate where delivery is stuck and choose the right next move.
+  - You get direct support, clearer decisions, and practical next steps.
+  - Start here
+  - Clear read on what is slowing delivery
+- CTA labels / buttons:
+  - Book a strategy call
+  - See case studies
+  - Not sure where to start? Use Launchpad
+  - See similar client situations
+  - API Gateway Gateway
+  - Auth Identity Identity
+  - Core Platform Platform
+  - Data Pipeline Pipeline
+  - Infra Deploy Deploy
+  - Monitoring Observability Observe
+- Card titles and card descriptions:
+  - 60-minute strategy call
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Cards grid
+- Section type: section (homepage-core-offer-section section-warm border-t border-border py-20 lg:py-24)
+- Section title: What does Amalgam help with?
+- Section subtitle / eyebrow: What Amalgam does
+- Full visible body copy:
+  - What Amalgam does
+  - We help you pinpoint what is slowing product delivery, then fix it with your team.
+  - Pinpoint what is blocking delivery before another sprint gets wasted.
+  - Fix weak system boundaries before they create more rework.
+  - Remove the handoffs and decision bottlenecks that slow shipping.
+  - Give leaders a direct recommendation they can act on now.
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - Find the real blocker
+  - Stabilize the stack
+  - Reduce execution drag
+  - Give leadership a clear call
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Cards grid
+- Section type: section (homepage-audiences-section deferred-section border-y border-border bg-secondary/45 py-20 lg:py-24)
+- Section title: Who this is for
+- Section subtitle / eyebrow: You're growing, but each release takes longer and confidence is dropping.
+- Full visible body copy:
+  - You're growing, but each release takes longer and confidence is dropping.
+  - You can feel system drag in every planning cycle.
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - Founders and business leaders
+  - Technical and product leaders
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+- Any visible list/bullet copy:
+  - Shipping slows after growth
+  - The stack is getting harder to trust
+  - Decisions are blocked by unclear technical risk
+  - Too many tools, not enough shared signal
+  - Architecture has become fragile
+  - Data no longer feels reliable
+  - Integration work keeps expanding
+  - Teams spend too much time verifying work
+
+#### Section 4 ? Content section
+- Section type: section (homepage-triggers-section deferred-section py-20 lg:py-24)
+- Section title: When teams usually call us
+- Section subtitle / eyebrow: Common pressure points
+- Full visible body copy:
+  - Common pressure points
+  - Teams usually call when deadlines keep slipping and each function has a different explanation.
+- CTA labels / buttons:
+  - Book a strategy call
+  - Shipping slowed after growth
+  - System changes carry too much risk
+  - Integrations keep creating drag
+  - Nobody fully trusts the numbers
+  - Roadmap priorities keep shifting
+  - Execution feels harder each quarter
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 5 ? Cards grid
+- Section type: section (homepage-offers-section deferred-section border-y border-border bg-secondary/45 py-20 lg:py-24)
+- Section title: Start here
+- Section subtitle / eyebrow: Start with one clear next step, then go deeper only if it is needed.
+- Full visible body copy:
+  - Start with one clear next step, then go deeper only if it is needed.
+  - 60 minutes
+  - A short strategy call to identify what is stuck and where to move first.
+  - Paid engagements
+  - When the issue is clear and you want senior hands-on help through execution.
+- CTA labels / buttons:
+  - Book a strategy call
+  - See engagement options
+- Card titles and card descriptions:
+  - Strategy call
+  - Already know the issue and want hands-on help?
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+- Any visible list/bullet copy:
+  - Experienced second set of eyes
+  - Fast fit check
+  - Clear recommendation
+  - Diagnostic review for root-cause diagnosis
+  - Execution Sprint for sequencing
+  - Outcome Partnership for follow-through
+
+#### Section 6 ? Content section
+- Section type: section (deferred-section border-t border-border py-20 lg:py-24)
+- Section title: What working together felt like
+- Section subtitle / eyebrow: Client perspective
+- Full visible body copy:
+  - Client perspective
+  - Partnering with Amalgam has helped us streamline our team's evaluative workflows and pilot new technologies that better show the impact of our funding and how to improve our grantmaking.
+  - Steve Fitzmier
+  - Director of Planning & Evaluation , John Templeton Foundation
+  - We've worked with many consulting firms, but finding one that delivers strong results and genuinely cares about our success is rare. The Amalgam team was responsive and easy to work with.
+  - Mike Mooney
+  - Chief Technology Officer , CleanItSupply
+  - Amalgam helped us build the virtual power plant that supported our growth. They have been trusted allies since our early days and remain our development partner.
+  - Peter Mendez
+  - Co-Founder and President , PearlX Infrastructure
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 7 ? Content section
+- Section type: section (client-experience homepage-trust-section border-t border-border)
+- Section title: Trusted by teams in complex environments
+- Section subtitle / eyebrow: Client experience
+- Full visible body copy:
+  - Client experience
+  - Selected client experience across banking, fintech, insurance, and enterprise systems.
+  - Additional experience includes Barclays, FINRA, Admin Partners, Constructive .
+- CTA labels / buttons:
+  - Read the M&T Bank case study
+  - Read the Moody's case study
+  - Read the PearlX case study
+  - Read the SoFi case study
+  - See case studies
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 8 ? Cards grid
+- Section type: section (homepage-case-studies-section deferred-section section-warm border-t border-border py-20 lg:py-24)
+- Section title: See work in situations like yours
+- Section subtitle / eyebrow: Case studies
+- Full visible body copy:
+  - Case studies
+  - A few examples from real operating conditions.
+  - Featured case
+  - Insurance
+  - Outdated technology and inefficient platforms created unnecessary manual processes for agent onboarding, reporting, and administrative tasks, wasting resources and risking...
+  - What changed
+  - PFA now has a solid incentive management system, secure team communication, and dynamic custom reporting that enables data-driven decision-making and streamlined...
+  - How we approached it
+  - We modernized their platform by automating complex data relationships, optimizing agent onboarding, and improving reporting capabilities.
+  - Energy
+  - As a startup, PearlX lacked the resources to build their customer portal, a critical part of the business, risking delayed go-to-market and...
+  - Outcome
+  - PearlX now has a streamlined onboarding process, efficient community management, and a scalable, user-friendly portal that helps them attract...
+  - Banking
+  - Barclays Bank US had an outdated marketing website with poor UX, lack of accessibility compliance, and no personalization capabilities,...
+  - The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+- CTA labels / buttons:
+  - See case studies
+  - Featured case Premier Financial Alliance Insurance Outdated technology and inefficient platforms created unnecessary manual processes for agent onboarding, reporting, and administrative tasks, wasting resources and risking... What changed PFA now has a solid incentive management system, secure team communication, and dynamic custom reporting that enables data-driven decision-making and streamlined... How we approached it We modernized their platform by automating complex data relationships, optimizing agent onboarding, and improving reporting capabilities. Read case study
+  - Energy PearlX As a startup, PearlX lacked the resources to build their customer portal, a critical part of the business, risking delayed go-to-market and... Outcome PearlX now has a streamlined onboarding process, efficient community management, and a scalable, user-friendly portal that helps them attract... Read case study
+  - Banking Barclays Bank US Barclays Bank US had an outdated marketing website with poor UX, lack of accessibility compliance, and no personalization capabilities,... Outcome The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer... Read case study
+- Card titles and card descriptions:
+  - Premier Financial Alliance
+  - PearlX
+  - Barclays Bank US
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 9 ? Cards grid
+- Section type: section (homepage-knowledge-section deferred-section border-y border-border bg-secondary/50 py-20 lg:py-24)
+- Section title: Read this when product work keeps stalling
+- Section subtitle / eyebrow: Knowledge
+- Full visible body copy:
+  - Knowledge
+  - Practical notes on architecture, shipping systems, data, and cross-team decisions under pressure.
+  - Architecture
+  - How to choose between targeted modernization, phased replacement, and a true rebuild without betting the company.
+  - Best for
+  - Use this when rewrite debates are stalling decisions and leadership needs a risk-based call.
+  - Systems Strategy
+  - Shipping slows when workflows span too many tools, owners, and hidden dependencies. This shows what to simplify first.
+  - Use this when work looks simple on paper but keeps getting slower and harder to coordinate in practice.
+  - Data
+  - What needs to be true in your data layer before reporting, forecasting, and automation can be trusted at scale.
+  - Use this when metric trust is falling apart and leadership is still asking for more automation.
+- CTA labels / buttons:
+  - Explore knowledge
+  - Architecture Should you modernize or rebuild? How to choose between targeted modernization, phased replacement, and a true rebuild without betting the company. Best for Use this when rewrite debates are stalling decisions and leadership needs a risk-based call. Read article
+  - Systems Strategy Are integrations quietly slowing you down? Shipping slows when workflows span too many tools, owners, and hidden dependencies. This shows what to simplify first. Best for Use this when work looks simple on paper but keeps getting slower and harder to coordinate in practice. Read article
+  - Data Post-Series A data foundations What needs to be true in your data layer before reporting, forecasting, and automation can be trusted at scale. Best for Use this when metric trust is falling apart and leadership is still asking for more automation. Read article
+- Card titles and card descriptions:
+  - Should you modernize or rebuild?
+  - Are integrations quietly slowing you down?
+  - Post-Series A data foundations
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 10 ? CTA band
+- Section type: section (homepage-final-cta-section deferred-section bg-foreground py-20 lg:py-24)
+- Section title: Want a second set of eyes on what's slowing product delivery?
+- Section subtitle / eyebrow: Next step
+- Full visible body copy:
+  - Next step
+  - Start with a strategy call. We'll isolate the issue and recommend the smartest next step.
+- CTA labels / buttons:
+  - Book a strategy call
+  - See engagement options
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 2 ? How We Work | Amalgam | Amalgam
+- URL: /services
+- Purpose: How working with Amalgam starts: from a short triage call to deeper diagnostic and execution support when it clearly makes sense.
+
+#### Section 1 ? Hero
+- Section type: section (relative overflow-hidden border-b border-border py-20 lg:py-28)
+- Section title: Is product work stalling between teams? We help you find the blocker and move.
+- Section subtitle / eyebrow: How we work
+- Full visible body copy:
+  - How we work
+  - If product, engineering, and operations are all shipping work but deadlines still slip, we help you pinpoint exactly where delivery is blocked.
+  - Start with a short triage call. If deeper work is needed, we map the right path and execute with your team.
+  - Most teams start here
+  - 1. 15-minute triage
+  - Quick fit check.
+  - 2. Strategy call
+  - If the situation is worth exploring further.
+  - 3. Scope + pricing
+  - Shared only after we understand the problem properly.
+  - 4. Deeper support
+  - Diagnostic review, focused sprint, or ongoing partnership.
+  - We avoid large proposals before understanding the problem.
+- CTA labels / buttons:
+  - Book a strategy call
+  - See case studies
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+- Any visible list/bullet copy:
+  - 1. 15-minute triage Quick fit check.
+  - 2. Strategy call If the situation is worth exploring further.
+  - 3. Scope + pricing Shared only after we understand the problem properly.
+  - 4. Deeper support Diagnostic review, focused sprint, or ongoing partnership.
+
+#### Section 2 ? Cards grid
+- Section type: section (deferred-section py-20 lg:py-24)
+- Section title: When teams usually reach out
+- Section subtitle / eyebrow: Usually when product delivery is stalling and no one can clearly explain why.
+- Full visible body copy:
+  - Usually when product delivery is stalling and no one can clearly explain why.
+  - What used to work now feels fragile, manual, or unpredictable.
+  - Too many moving parts. Not enough reliability.
+  - Delivery keeps stalling across product, engineering, and operations.
+  - The business needs movement, but the systems picture is unclear.
+  - Leadership knows something is off but needs a clearer path forward.
+  - Not more theory. Clear judgment and practical next steps.
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - Your systems are harder to trust
+  - Integrations keep creating drag
+  - Product delivery is slower than it should be
+  - Technical priorities are misaligned
+  - The next move isn't obvious anymore
+  - You need senior support quickly
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Cards grid
+- Section type: section (deferred-section scroll-mt-28 border-y border-border bg-secondary/35 py-20 lg:py-24)
+- Section title: How work usually begins
+- Section subtitle / eyebrow: Start small. Go deeper only when the situation actually needs it.
+- Full visible body copy:
+  - Start small. Go deeper only when the situation actually needs it.
+  - Step 1
+  - A quick conversation to understand the situation and see whether a deeper discussion makes sense.
+  - Step 2
+  - If the situation is worth exploring, we take a deeper look at the context, pressure points, and possible paths forward.
+  - Step 3
+  - If the situation needs diagnosis, we analyze systems, architecture, and execution patterns before larger work begins.
+  - Step 4
+  - Once the path is clear, we help move work forward through focused execution support or longer-term partnership.
+  - Deeper work is scoped and priced after the triage call, once the situation is clear.
+- CTA labels / buttons:
+  - Book a strategy call
+  - See the process
+  - See what comes next
+- Card titles and card descriptions:
+  - 15-minute triage call
+  - Strategy call
+  - Diagnostic review
+  - Execution support
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 4 ? Cards grid
+- Section type: section (deferred-section py-20 lg:py-24)
+- Section title: Where deeper support usually helps
+- Section subtitle / eyebrow: Once the situation is clear, we focus on the areas that actually improve execution.
+- Full visible body copy:
+  - Once the situation is clear, we focus on the areas that actually improve execution.
+  - When the underlying structure creates fragility, drag, or avoidable rework.
+  - When teams cannot trust what they are seeing or how decisions are made.
+  - When priorities, ownership, and coordination slow progress across the team.
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - Systems and architecture
+  - Data trust and operating signal
+  - Execution and operating rhythm
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 5 ? Content section
+- Section type: section (client-experience border-y border-border py-20 lg:py-24)
+- Section title: Trusted in complex execution environments
+- Section subtitle / eyebrow: Client trust
+- Full visible body copy:
+  - Client trust
+  - Selected work across financial services, product, operations, and large-scale technology environments.
+  - Additional experience includes Barclays, FINRA, Admin Partners, Constructive .
+- CTA labels / buttons:
+  - Read the M&T Bank case study
+  - Read the Moody's case study
+  - Read the PearlX case study
+  - Read the SoFi case study
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 6 ? Content section
+- Section type: section (deferred-section border-b border-border py-20 lg:py-24)
+- Section title: What clients noticed
+- Section subtitle / eyebrow: â€œ Amalgam helped us build the virtual power plant that supported our growth. They have been trusted allies since our early days and remain our development partner. â€
+- Full visible body copy:
+  - â€œ Amalgam helped us build the virtual power plant that supported our growth. They have been trusted allies since our early days and remain our development partner. â€
+  - Peter Mendez
+  - Co-Founder and President
+  - PearlX Infrastructure
+  - â€œ Partnering with Amalgam has helped us streamline our team's evaluative workflows and pilot new technologies that better show the impact of our funding and how to improve our grantmaking. â€
+  - Steve Fitzmier
+  - Director of Planning & Evaluation
+  - John Templeton Foundation
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 7 ? Content section
+- Section type: section (section-warm py-20 lg:py-24)
+- Section title: Need a clear read on what is blocking delivery right now?
+- Section subtitle / eyebrow: Start with a short call. If the situation needs deeper analysis, we will show you the right next step.
+- Full visible body copy:
+  - Start with a short call. If the situation needs deeper analysis, we will show you the right next step.
+  - START HERE
+  - Book a strategy call
+  - Quick fit check. Clear next step. No large proposal too early.
+- CTA labels / buttons:
+  - Book a strategy call
+  - See how the process works
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 3 ? Not sure why delivery keeps stalling? Start here. | Amalgam
+- URL: /founder-review
+- Purpose: When product delivery feels stuck and the root cause is unclear, the Diagnostic Review helps you identify what to fix first.
+
+#### Section 1 ? Hero
+- Section type: section (relative overflow-hidden border-b border-border py-20 lg:py-28)
+- Section title: Not sure what is actually causing the slowdown? Start here.
+- Section subtitle / eyebrow: Diagnostic Review
+- Full visible body copy:
+  - Diagnostic Review
+  - A focused two-week review to pinpoint what is slowing product delivery and what to fix first.
+  - Important
+  - This is a paid diagnostic, not a free consultation. It is built to produce a clear read quickly.
+  - For many teams, this is the cleanest front door into working with Amalgam.
+  - Self-qualify first
+- CTA labels / buttons:
+  - Book a strategy call
+  - See case studies
+  - Not sure this is the right place to start? Try a Launchpad diagnostic first
+  - Delivery Drag Diagnostic
+  - Tech Stack Audit
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Content section
+- Section type: section (py-20 lg:py-24)
+- Section title: The right first move when you need signal, not more noise
+- Section subtitle / eyebrow: Best Fit
+- Full visible body copy:
+  - Best Fit
+  - The Diagnostic Review is for teams that need a sharper view of what is creating drag.
+  - After the review
+  - Execution Sprint
+  - Go deeper when the diagnosis is clear and the team needs a roadmap.
+  - Outcome Partnership
+  - Stay engaged when the business needs steady follow-through.
+  - Internal action
+  - Use the output internally if the team already has what it needs to execute.
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Content section
+- Section type: section (border-y border-border bg-secondary/35 py-20 lg:py-24)
+- Section title: Choose this when you need sharper signal, not more meetings
+- Section subtitle / eyebrow: Fit check
+- Full visible body copy:
+  - Fit check
+  - Good fit
+  - Probably not first
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 4 ? Cards grid
+- Section type: section (py-20 lg:py-24)
+- Section title: Clear outputs that help leadership decide what to do next
+- Section subtitle / eyebrow: What You Get
+- Full visible body copy:
+  - What You Get
+  - A clear read on the architecture, workflows, constraints, and handoff failures shaping the current situation.
+  - The specific issues slowing execution, creating fragility, or distorting roadmap decisions.
+  - Practical recommendations tied to business risk, sequencing, and what leadership should move on next.
+  - A concrete path forward, whether that means internal action, an Execution Sprint, or deeper partnership.
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - What is actually happening now
+  - Where risk is building
+  - What to do next
+  - Your best next step
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 5 ? Cards grid
+- Section type: section (border-t border-border bg-secondary/45 py-20 lg:py-24)
+- Section title: A focused two-week process to get clear fast
+- Section subtitle / eyebrow: Process
+- Full visible body copy:
+  - Process
+  - We align on the situation, constraints, and where leadership most needs answers first.
+  - We review systems and workflows, then speak with the people closest to the friction.
+  - We cut through symptoms, identify the real pressure points, and clarify the trade-offs.
+  - You get a direct readout, concrete recommendations, and a clean discussion about what should happen next.
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - Kickoff and context
+  - Review and interviews
+  - Synthesis and diagnosis
+  - Readout and next step
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 6 ? Content section
+- Section type: section (border-t border-border py-20 lg:py-24)
+- Section title: Built to give you signal, not more noise
+- Section subtitle / eyebrow: Why It Works
+- Full visible body copy:
+  - Why It Works
+  - This is built for situations where unclear decisions are already getting expensive.
+  - You get a cleaner view of the system and a more direct conversation about what should happen next.
+  - It should reduce ambiguity, not create dependency.
+  - If your team is pushing hard but delivery still feels stuck, start with a quick conversation about fit and timing.
+- CTA labels / buttons:
+  - Book a strategy call
+  - See engagement options
+- Card titles and card descriptions:
+  - Want a clear read before the next sprint cycle?
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 7 ? Content section
+- Section type: section (deferred-section border-t border-border py-20 lg:py-24)
+- Section title: What this work feels like for leadership teams
+- Section subtitle / eyebrow: Client perspective
+- Full visible body copy:
+  - Client perspective
+  - â€œ We've worked with many consulting firms, but finding one that delivers strong results and genuinely cares about our success is rare. The Amalgam team was responsive and easy to work with.
+  - Mike Mooney
+  - Chief Technology Officer , CleanItSupply
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 4 ? Is your team asking for a roadmap they can actually run? | Amalgam
+- URL: /execution-sprint
+- Purpose: The Execution Sprint helps you turn a clear diagnosis into a roadmap your team can execute with confidence.
+
+#### Section 1 ? Hero
+- Section type: section (relative overflow-hidden border-b border-border py-20 lg:py-28)
+- Section title: Is your team asking for a roadmap they can actually run?
+- Section subtitle / eyebrow: Execution Sprint
+- Full visible body copy:
+  - Execution Sprint
+  - We map the current state, clarify constraints, and turn work into a sequence teams can actually run.
+  - Best use
+  - Most teams arrive here after the Diagnostic Review, but it can also stand alone if the diagnosis is already clear and the business now needs sequence.
+- CTA labels / buttons:
+  - Book a strategy call
+  - Need diagnosis first?
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Cards grid
+- Section type: section (py-20 lg:py-24)
+- Section title: You get the roadmap and the reasoning behind it
+- Section subtitle / eyebrow: What You Leave With
+- Full visible body copy:
+  - What You Leave With
+  - A working picture of the systems, dependencies, ownership lines, and pressure points shaping the roadmap.
+  - A clearer view of what is making execution slow, risky, or harder to sequence honestly.
+  - A phased plan that distinguishes what is fixed now, what is conditional, and what should move first.
+  - A roadmap designed to support real decisions, not just create an attractive planning document.
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - What your system looks like today
+  - What is blocking progress
+  - Your 30/60/90 day sequence
+  - A roadmap leadership can defend
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Cards grid
+- Section type: section (border-y border-border bg-secondary/45 py-20 lg:py-24)
+- Section title: Built so your roadmap still holds under pressure
+- Section subtitle / eyebrow: Good fit
+- Full visible body copy:
+  - Good fit
+  - Probably not first
+  - Process
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - Discovery and mapping
+  - Analysis and sequencing
+  - Roadmap and alignment
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 4 ? Content section
+- Section type: section (border-t border-border py-20 lg:py-24)
+- Section title: A roadmap only works if it reflects your real system
+- Section subtitle / eyebrow: Why It Matters
+- Full visible body copy:
+  - Why It Matters
+  - Many roadmapping efforts fail because teams sequence work before architecture, ownership, and constraints are clear enough.
+  - The Execution Sprint fixes that with a plan based on what the system can support now and which risk to remove first.
+  - The result is a roadmap that is easier to defend, communicate, and execute.
+  - If the diagnosis is already visible and the next challenge is sequencing the work properly, this is the right place to go next.
+- CTA labels / buttons:
+  - Book a strategy call
+  - Need diagnosis first?
+- Card titles and card descriptions:
+  - Want a roadmap that still works once execution starts?
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 5 ? Content section
+- Section type: section (deferred-section border-t border-border py-20 lg:py-24)
+- Section title: What teams notice when sequencing gets clearer
+- Section subtitle / eyebrow: Client perspective
+- Full visible body copy:
+  - Client perspective
+  - â€œ Partnering with Amalgam has helped us streamline our team's evaluative workflows and pilot new technologies that better show the impact of our funding and how to improve our grantmaking.
+  - Steve Fitzmier
+  - Director of Planning & Evaluation , John Templeton Foundation
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 5 ? Do you need senior support to keep execution moving? | Amalgam
+- URL: /outcome-partnership
+- Purpose: Outcome Partnership gives you ongoing senior support to keep execution moving when priorities and pressure keep changing.
+
+#### Section 1 ? Hero
+- Section type: section (relative overflow-hidden border-b border-border py-20 lg:py-28)
+- Section title: Do you need senior support to keep execution moving?
+- Section subtitle / eyebrow: Outcome Partnership
+- Full visible body copy:
+  - Outcome Partnership
+  - The Outcome Partnership carries the roadmap into execution when priorities shift and decisions cannot drift.
+  - Typical path
+  - After diagnosis
+  - Most teams reach this point after the Diagnostic Review or Execution Sprint.
+  - During execution
+  - We stay close enough to unblock work, clarify trade-offs, and help the team keep moving.
+  - Toward independence
+  - The objective is stronger internal capacity, not permanent outside dependency.
+- CTA labels / buttons:
+  - Book a strategy call
+  - Need diagnosis first?
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Cards grid
+- Section type: section (py-20 lg:py-24)
+- Section title: Direct support tied to execution, not advisory theater
+- Section subtitle / eyebrow: What We Provide
+- Full visible body copy:
+  - What We Provide
+  - People who can make sense of the situation quickly and contribute real judgment instead of adding overhead.
+  - A steady partnership model that preserves context and compounds rather than restarting every few weeks.
+  - The work stays tied to outcomes, sequencing, and shipped progress instead of drifting into generic advisory work.
+  - We help resolve decision bottlenecks, architectural friction, and cross-functional drag before they stall the roadmap.
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - Senior support inside the work
+  - Continuity across changing priorities
+  - Shared accountability for outcomes
+  - Fast unblocking and forward progress
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Content section
+- Section type: section (border-y border-border bg-secondary/45 py-20 lg:py-24)
+- Section title: What this partnership looks like week to week
+- Section subtitle / eyebrow: In Practice
+- Full visible body copy:
+  - In Practice
+  - What It Is Not
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - What this is not
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 4 ? Content section
+- Section type: section (py-20 lg:py-24)
+- Section title: Best when direction is clear and follow-through is the risk
+- Section subtitle / eyebrow: Fit check
+- Full visible body copy:
+  - Fit check
+  - Good fit
+  - Probably not first
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 5 ? Content section
+- Section type: section (border-t border-border bg-secondary/35 py-20 lg:py-24)
+- Section title: A roadmap alone will not keep execution on track
+- Section subtitle / eyebrow: Why Teams Choose This
+- Full visible body copy:
+  - Why Teams Choose This
+  - The hardest part is often not deciding what should happen. It is keeping good decisions intact as execution pressure rises.
+  - The Outcome Partnership is for that stage. It keeps judgment close to the work so the roadmap stays usable under pressure.
+  - The standard is simple: fewer blind spots, less drag, and stronger internal capability by the time the work is done.
+  - If the business already has direction but the work still needs stronger follow-through, this is the next conversation to have.
+- CTA labels / buttons:
+  - Book a strategy call
+  - See engagement options
+- Card titles and card descriptions:
+  - Want focused support while the roadmap is in motion?
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 6 ? Content section
+- Section type: section (deferred-section border-t border-border py-20 lg:py-24)
+- Section title: How this model feels during real execution pressure
+- Section subtitle / eyebrow: Client perspective
+- Full visible body copy:
+  - Client perspective
+  - â€œ Amalgam helped us build the virtual power plant that supported our growth. They have been trusted allies since our early days and remain our development partner.
+  - Peter Mendez
+  - Co-Founder and President , PearlX Infrastructure
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 6 ? See work in situations like yours | Amalgam
+- URL: /case-studies
+- Purpose: Real client work across banking, fintech, energy, retail, and enterprise systems with clear context, actions, and outcomes.
+
+#### Section 1 ? Hero
+- Section type: section (relative overflow-hidden border-b border-border px-6 py-20 md:py-28)
+- Section title: See how we helped in real situations like yours
+- Section subtitle / eyebrow: Case Studies
+- Full visible body copy:
+  - Case Studies
+  - See the problem, what changed, and why it mattered.
+  - 13
+  - Published studies
+  - 6
+  - Featured examples
+  - 12
+  - Industries
+  - How to use this page
+  - Start with the featured examples for a quick read.
+  - Use the full library to find situations close to your own.
+  - If one feels similar, book a strategy call and we can review your situation directly.
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Cards grid
+- Section type: section (deferred-section px-6 py-16 md:py-20)
+- Section title: Start with a few cases that show how we work
+- Section subtitle / eyebrow: Featured work
+- Full visible body copy:
+  - Featured work
+  - Featured examples rotate on each page load so returning visitors see broader proof.
+  - Lead example
+  - Outdated technology and inefficient platforms created unnecessary manual processes for agent onboarding, reporting, and administrative tasks,...
+  - How we approached it
+  - We modernized their platform by automating complex data relationships, optimizing agent onboarding, and improving reporting capabilities.
+  - What changed
+  - PFA now has a solid incentive management system, secure team communication, and dynamic custom reporting that enables data-driven decision-making...
+  - Featured example
+  - As a startup, PearlX lacked the resources to build their customer portal, a critical part of the business, risking delayed go-to-market and costly...
+  - We built a robust customer portal with data infrastructure, reliable onboarding flows, and user profiles with custom permissions.
+  - PearlX now has a streamlined onboarding process, efficient community management, and a scalable, user-friendly portal that helps them attract and...
+  - Barclays Bank US had an outdated marketing website with poor UX, lack of accessibility compliance, and no personalization capabilities, preventing...
+  - We redesigned the website with modern UI/UX, implemented Magnolia CMS for content management, added personalization features like goal setters and...
+  - The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+- CTA labels / buttons:
+  - Lead example Premier Financial Alliance Suwanee, Georgia Outdated technology and inefficient platforms created unnecessary manual processes for agent onboarding, reporting, and administrative tasks,... How we approached it We modernized their platform by automating complex data relationships, optimizing agent onboarding, and improving reporting capabilities. What changed PFA now has a solid incentive management system, secure team communication, and dynamic custom reporting that enables data-driven decision-making... Read case study
+  - Featured example PearlX Charlottesville, Virginia As a startup, PearlX lacked the resources to build their customer portal, a critical part of the business, risking delayed go-to-market and costly... How we approached it We built a robust customer portal with data infrastructure, reliable onboarding flows, and user profiles with custom permissions. What changed PearlX now has a streamlined onboarding process, efficient community management, and a scalable, user-friendly portal that helps them attract and... Read case study
+  - Featured example Barclays Bank US New York, New York Barclays Bank US had an outdated marketing website with poor UX, lack of accessibility compliance, and no personalization capabilities, preventing... How we approached it We redesigned the website with modern UI/UX, implemented Magnolia CMS for content management, added personalization features like goal setters and... What changed The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer... Read case study
+- Card titles and card descriptions:
+  - Premier Financial Alliance
+  - PearlX
+  - Barclays Bank US
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Content section
+- Section type: section (deferred-section border-t border-border bg-secondary/35 py-20 lg:py-24)
+- Section title: What clients noticed in the work
+- Section subtitle / eyebrow: Client feedback
+- Full visible body copy:
+  - Client feedback
+  - We've worked with many consulting firms, but finding one that delivers strong results and genuinely cares about our success is rare. The Amalgam team was responsive and easy to work with.
+  - Mike Mooney
+  - Chief Technology Officer , CleanItSupply
+  - Amalgam helped us build the virtual power plant that supported our growth. They have been trusted allies since our early days and remain our development partner.
+  - Peter Mendez
+  - Co-Founder and President , PearlX Infrastructure
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 4 ? Cards grid
+- Section type: section (deferred-section section-warm px-6 py-16 md:py-24)
+- Section title: Find a case close to your situation
+- Section subtitle / eyebrow: Full library
+- Full visible body copy:
+  - Full library
+  - Each page gives you context, what we did, and what changed.
+  - Situation
+  - Outdated technology and inefficient platforms created unnecessary manual processes for agent onboarding, reporting, and administrative tasks, wasting...
+  - What changed
+  - PFA now has a solid incentive management system, secure team communication, and dynamic custom reporting that enables data-driven decision-making and...
+  - As a startup, PearlX lacked the resources to build their customer portal, a critical part of the business, risking delayed go-to-market and costly...
+  - PearlX now has a streamlined onboarding process, efficient community management, and a scalable, user-friendly portal that helps them attract and retain...
+  - Confinity needed more than implementation help.
+  - Confinity moved forward with a clearer product foundation, a working platform direction, and an always-available technical partner who could support...
+  - Barclays Bank US had an outdated marketing website with poor UX, lack of accessibility compliance, and no personalization capabilities, preventing them...
+  - The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer engagement,...
+  - JTF struggled to efficiently analyze and classify grant applications and academic publications, hindering their ability to scale operations, maintain...
+  - The enhanced classification system enabled JTF to streamline grant application processes, produce more informative and actionable results, and identify...
+  - CleanItSupply's outdated ASP.
+  - The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering improved...
+  - As a startup, Constructive faced resource constraints and needed a tech partner to develop their CART platform quickly without hiring overhead or...
+  - We kickstarted their product with an MVP users enjoyed, accelerating go-to-market, ensuring smooth user engagement, and avoiding overhead costs.
+  - Admin Partners faced operational bottlenecks due to disconnected core systems that did not work reliably together, creating friction in their business...
+  - Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - M&T Bank's business banking platform operated on Voyager, a legacy system.
+  - M&T successfully transitioned from the aging Voyager platform to Q2's modern, cloud-based solution with reliable integration into existing tools and...
+  - Name matching across transliterations and fragmented source data created real screening friction in risk-sensitive workflows.
+  - The platform gave enterprise teams a more usable way to examine name-based risk signals and make higher-confidence screening decisions in complex global...
+  - Financial workflows needed practical screening and signal review support without slowing operational decisions.
+  - The engagement improved how risk-relevant signals could be reviewed in day-to-day operations while keeping the workflow practical for teams under...
+  - Banking operations required technical support that respected existing systems, regulatory constraints, and delivery timelines.
+  - The engagement improved execution reliability in a complex financial setting where architecture quality and operational coordination directly affected...
+  - FINRA, the self-regulatory organization overseeing the financial industry, needed to enhance technical capabilities to support their regulatory mission...
+  - FINRA gained enhanced technical capabilities supporting their regulatory responsibilities and improving operational effectiveness across the organization.
+- CTA labels / buttons:
+  - Insurance Featured Premier Financial Alliance Suwanee, Georgia Situation Outdated technology and inefficient platforms created unnecessary manual processes for agent onboarding, reporting, and administrative tasks, wasting... What changed PFA now has a solid incentive management system, secure team communication, and dynamic custom reporting that enables data-driven decision-making and... View details Read more
+  - Energy Featured PearlX Charlottesville, Virginia Situation As a startup, PearlX lacked the resources to build their customer portal, a critical part of the business, risking delayed go-to-market and costly... What changed PearlX now has a streamlined onboarding process, efficient community management, and a scalable, user-friendly portal that helps them attract and retain... View details Read more
+  - Memory Preservation Platform Confinity Delaware Situation Confinity needed more than implementation help. What changed Confinity moved forward with a clearer product foundation, a working platform direction, and an always-available technical partner who could support... View details Read more
+  - Banking Featured Barclays Bank US New York, New York Situation Barclays Bank US had an outdated marketing website with poor UX, lack of accessibility compliance, and no personalization capabilities, preventing them... What changed The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer engagement,... View details Read more
+  - Philanthropy John Templeton Foundation West Conshohocken, Pennsylvania Situation JTF struggled to efficiently analyze and classify grant applications and academic publications, hindering their ability to scale operations, maintain... What changed The enhanced classification system enabled JTF to streamline grant application processes, produce more informative and actionable results, and identify... View details Read more
+  - Retail CleanItSupply Jeffersonville, Pennsylvania Situation CleanItSupply's outdated ASP. What changed The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering improved... View details Read more
+  - Procurement & Utility Solutions Constructive Built Environment Pennsylvania Situation As a startup, Constructive faced resource constraints and needed a tech partner to develop their CART platform quickly without hiring overhead or... What changed We kickstarted their product with an MVP users enjoyed, accelerating go-to-market, ensuring smooth user engagement, and avoiding overhead costs. View details Read more
+  - Professional Services Admin Partners United States Situation Admin Partners faced operational bottlenecks due to disconnected core systems that did not work reliably together, creating friction in their business... What changed Admin Partners gained improved operational efficiency through better system integration and streamlined business processes. View details Read more
+  - Banking Featured M&T Bank New York State Situation M&T Bank's business banking platform operated on Voyager, a legacy system. What changed M&T successfully transitioned from the aging Voyager platform to Q2's modern, cloud-based solution with reliable integration into existing tools and... View details Read more
+  - Financial Services Featured Moody's United States Situation Name matching across transliterations and fragmented source data created real screening friction in risk-sensitive workflows. What changed The platform gave enterprise teams a more usable way to examine name-based risk signals and make higher-confidence screening decisions in complex global... View details Read more
+  - Fintech Featured SoFi United States Situation Financial workflows needed practical screening and signal review support without slowing operational decisions. What changed The engagement improved how risk-relevant signals could be reviewed in day-to-day operations while keeping the workflow practical for teams under... View details Read more
+  - Banking and Financial Services TIAA United States Situation Banking operations required technical support that respected existing systems, regulatory constraints, and delivery timelines. What changed The engagement improved execution reliability in a complex financial setting where architecture quality and operational coordination directly affected... View details Read more
+  - Financial Regulation FINRA United States Situation FINRA, the self-regulatory organization overseeing the financial industry, needed to enhance technical capabilities to support their regulatory mission... What changed FINRA gained enhanced technical capabilities supporting their regulatory responsibilities and improving operational effectiveness across the organization. View details Read more
+- Card titles and card descriptions:
+  - Premier Financial Alliance
+  - PearlX
+  - Confinity
+  - Barclays Bank US
+  - John Templeton Foundation
+  - CleanItSupply
+  - Constructive Built Environment
+  - Admin Partners
+  - M&T Bank
+  - Moody's
+  - SoFi
+  - TIAA
+  - FINRA
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 5 ? Content section
+- Section type: section (deferred-section border-t border-border bg-secondary/35 px-6 py-16 md:py-20)
+- Section title: Additional financial services examples
+- Section subtitle / eyebrow: Recently added
+- Full visible body copy:
+  - Recently added
+  - Short reads with conservative public detail for high-sensitivity engagements.
+  - Moody's
+  - White-label name intelligence and transliteration-heavy screening support.
+  - SoFi
+  - Operational screening and decision-support adaptation in fintech workflows.
+  - TIAA
+  - Technical execution and systems support in a banking environment.
+- CTA labels / buttons:
+  - Moody's White-label name intelligence and transliteration-heavy screening support.
+  - SoFi Operational screening and decision-support adaptation in fintech workflows.
+  - TIAA Technical execution and systems support in a banking environment.
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 6 ? CTA band
+- Section type: section (bg-foreground px-6 py-20)
+- Section title: Want a second set of eyes on your situation?
+- Section subtitle / eyebrow: Start with a strategy call and we will recommend the clearest next step.
+- Full visible body copy:
+  - Start with a strategy call and we will recommend the clearest next step.
+- CTA labels / buttons:
+  - Book a strategy call
+  - Contact us directly
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 7 ? Read this when product delivery feels stuck | Amalgam
+- URL: /knowledge
+- Purpose: A practical knowledge base for teams navigating architecture, product delivery, data, and organizational complexity.
+
+#### Section 1 ? Hero
+- Section type: section (relative overflow-hidden border-b border-border px-6 pb-18 pt-28 md:px-8 md:pb-24 md:pt-34)
+- Section title: Not sure where to start? Start with the pressure you feel most right now.
+- Section subtitle / eyebrow: Short reads on architecture, execution, data, and leadership decisions when things feel messy.
+- Full visible body copy:
+  - Short reads on architecture, execution, data, and leadership decisions when things feel messy.
+  - Execution
+  - Shipping slows for structural reasons, not just team effort. Diagnose the real drag first.
+  - Why this matters
+  - Use this when leadership is asking teams to move faster without fixing the system that is making work slow.
+- CTA labels / buttons:
+  - Start with a featured article
+  - Book a strategy call
+  - Prefer tools first? Explore diagnostics
+  - Start with this article
+- Card titles and card descriptions:
+  - Why your delivery velocity problem is really a systems problem
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Content section
+- Section type: section (border-b border-border bg-secondary/30 px-6 py-8 md:px-8)
+- Section title: None visible
+- Section subtitle / eyebrow: None visible
+- Full visible body copy:
+  - None visible
+- CTA labels / buttons:
+  - All articles
+  - Architecture 2
+  - Systems Strategy 2
+  - Data 2
+  - Execution 2
+  - Leadership 2
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Cards grid
+- Section type: section (deferred-section px-6 py-16 md:px-8 md:py-20)
+- Section title: Shipping slowed after growth
+- Section subtitle / eyebrow: Start here if...
+- Full visible body copy:
+  - Start here if...
+  - Start with the operating drag, then move into the execution mechanics underneath it.
+  - Step 1
+  - Did growth break your operating rhythm?
+  - Step 2
+  - Why your delivery velocity problem is really a systems problem
+  - Step 3
+  - How to sequence your roadmap when certainty is low
+  - Use this path when planning keeps collapsing into debate because the system is still under-mapped.
+  - Do you need an architecture map before your roadmap?
+  - Should you modernize or rebuild?
+  - Start with the data foundation, then move toward the metrics and decision model built on top of it.
+  - Post-Series A data foundations
+  - Which metrics should you actually run the company on?
+  - Who should decide what when things get complex?
+  - Library overview
+  - Start with the area that feels most constrained, then follow connected reads to build a clearer view of your system.
+  - Knowledge library
+  - 10 articles in view
+  - Built by area
+  - Architecture, systems strategy, data, execution, and leadership
+  - Best read in sequence
+  - Start with one article, then follow related paths on each page
+  - How to choose between targeted modernization, phased replacement, and a true rebuild without betting the company.
+  - Best for
+  - Use this when rewrite debates are stalling decisions and leadership needs a risk-based call.
+  - Roadmaps fail when nobody has a reliable picture of the current system, dependencies, and ownership boundaries.
+  - Use this when roadmap planning keeps collapsing into debate because technical reality is still unclear.
+  - Shipping slows when workflows span too many tools, owners, and hidden dependencies. This shows what to simplify first.
+  - Use this when work looks simple on paper but keeps getting slower and harder to coordinate in practice.
+  - Why companies lose execution rhythm after hiring, fundraising, or product expansion, and how to restore it without adding bureaucracy.
+  - Use this when the company has more people and more tooling but less alignment than it had a year ago.
+  - What needs to be true in your data layer before reporting, forecasting, and automation can be trusted at scale.
+  - Use this when metric trust is falling apart and leadership is still asking for more automation.
+  - How to choose a small set of operating metrics that help leadership make decisions instead of creating reporting theater.
+  - Use this when the company has dozens of dashboards but little confidence in what should drive action.
+  - Shipping slows for structural reasons, not just team effort. Diagnose the real drag first.
+  - Use this when leadership is asking teams to move faster without fixing the system that is making work slow.
+  - How to prioritize when the current state is only partly visible and leadership still needs a plan it can trust.
+  - Use this when the roadmap needs to move forward before every assumption is fully proven.
+  - How system boundaries, decision ownership, and team design reinforce each other for better or worse.
+  - Use this when reorg conversations start before anyone maps how work actually flows.
+  - How to reduce escalation load by clarifying which decisions belong to teams, leaders, and cross-functional forums.
+  - Use this when too many issues keep escalating because nobody is confident about where authority actually sits.
+- CTA labels / buttons:
+  - Step 1 Did growth break your operating rhythm?
+  - Step 2 Why your delivery velocity problem is really a systems problem
+  - Step 3 How to sequence your roadmap when certainty is low
+  - Step 1 Do you need an architecture map before your roadmap?
+  - Step 2 Should you modernize or rebuild?
+  - Step 1 Post-Series A data foundations
+  - Step 2 Which metrics should you actually run the company on?
+  - Step 3 Who should decide what when things get complex?
+  - Architecture 8 min read Should you modernize or rebuild? How to choose between targeted modernization, phased replacement, and a true rebuild without betting the company. Best for Use this when rewrite debates are stalling decisions and leadership needs a risk-based call. A rebuild is justified when the current system blocks core business moves or creates unacceptable operating risk. Modernization is usually the stronger choice when continuity matters more than architectural elegance. Read article
+  - Architecture 7 min read Do you need an architecture map before your roadmap? Roadmaps fail when nobody has a reliable picture of the current system, dependencies, and ownership boundaries. Best for Use this when roadmap planning keeps collapsing into debate because technical reality is still unclear. Roadmaps degrade when system boundaries are implicit rather than explicit. Current-state mapping is not documentation theater. It is the basis for sequencing work honestly. Read article
+  - Systems Strategy 7 min read Are integrations quietly slowing you down? Shipping slows when workflows span too many tools, owners, and hidden dependencies. This shows what to simplify first. Best for Use this when work looks simple on paper but keeps getting slower and harder to coordinate in practice. Hidden integration work is often the real reason delivery feels slower after growth. Buying another orchestration layer rarely helps if system authority is still unclear. Read article
+  - Systems Strategy 7 min read Did growth break your operating rhythm? Why companies lose execution rhythm after hiring, fundraising, or product expansion, and how to restore it without adding bureaucracy. Best for Use this when the company has more people and more tooling but less alignment than it had a year ago. The pre-growth operating model rarely survives hiring and complexity intact. Rhythm is about decision quality and sequencing, not just meeting frequency. Read article
+  - Data 8 min read Post-Series A data foundations What needs to be true in your data layer before reporting, forecasting, and automation can be trusted at scale. Best for Use this when metric trust is falling apart and leadership is still asking for more automation. Metrics trust is the real milestone, not dashboard count. A post-Series A data system should prioritize consistency and shared definitions before advanced complexity. Read article
+  - Data 6 min read Which metrics should you actually run the company on? How to choose a small set of operating metrics that help leadership make decisions instead of creating reporting theater. Best for Use this when the company has dozens of dashboards but little confidence in what should drive action. Metrics should exist to improve decisions, not to decorate updates. A smaller metric set with strong definitions beats a broad reporting surface nobody really trusts. Read article
+  - Execution 7 min read Why your delivery velocity problem is really a systems problem Shipping slows for structural reasons, not just team effort. Diagnose the real drag first. Best for Use this when leadership is asking teams to move faster without fixing the system that is making work slow. Slow delivery is often the result of structural friction, not lack of urgency. A team can look underperforming when the surrounding system makes every change expensive. Read article
+  - Execution 7 min read How to sequence your roadmap when certainty is low How to prioritize when the current state is only partly visible and leadership still needs a plan it can trust. Best for Use this when the roadmap needs to move forward before every assumption is fully proven. The earliest roadmap items should often be the ones that create better information, not just visible feature output. A roadmap can be decisive without pretending the future is fully knowable. Read article
+  - Leadership 7 min read Your team structure follows your architecture How system boundaries, decision ownership, and team design reinforce each other for better or worse. Best for Use this when reorg conversations start before anyone maps how work actually flows. Reorgs fail when they ignore the system boundaries generating the friction. Healthy boundaries make collaboration clearer, not more siloed. Read article
+  - Leadership 6 min read Who should decide what when things get complex? How to reduce escalation load by clarifying which decisions belong to teams, leaders, and cross-functional forums. Best for Use this when too many issues keep escalating because nobody is confident about where authority actually sits. Escalation load is often a symptom of unclear authority, not weak individual judgment. Teams need explicit space to decide within boundaries, not vague permission to be empowered. Read article
+- Card titles and card descriptions:
+  - Roadmap decisions keep stalling in technical ambiguity
+  - Your team no longer trusts the numbers
+  - This library is organized around real pressure points
+  - Should you modernize or rebuild?
+  - Do you need an architecture map before your roadmap?
+  - Are integrations quietly slowing you down?
+  - Did growth break your operating rhythm?
+  - Post-Series A data foundations
+  - Which metrics should you actually run the company on?
+  - Why your delivery velocity problem is really a systems problem
+  - How to sequence your roadmap when certainty is low
+  - Your team structure follows your architecture
+  - Who should decide what when things get complex?
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 4 ? Cards grid
+- Section type: section (deferred-section-tall border-y border-border bg-secondary/25 px-6 py-16 md:px-8 md:py-20)
+- Section title: Choose the area that feels most stuck
+- Section subtitle / eyebrow: Each collection is built around one pressure pattern we see repeatedly.
+- Full visible body copy:
+  - Each collection is built around one pressure pattern we see repeatedly.
+  - System shape, modernization choices, and the boundary decisions that determine how hard change becomes.
+  - Start here
+  - Operating friction, workflow complexity, and the hidden tax that appears when growth outruns coordination.
+  - Metrics trust, source-of-truth design, and the foundations required before automation becomes reliable.
+  - Roadmaps, sequencing, and the practical mechanics of turning diagnosis into executable plans.
+  - Decision rights, ownership, and the way team structure either reinforces or fights the system underneath it.
+- CTA labels / buttons:
+  - Should you modernize or rebuild?
+  - Do you need an architecture map before your roadmap?
+  - See all in Architecture
+  - Are integrations quietly slowing you down?
+  - Did growth break your operating rhythm?
+  - See all in Systems Strategy
+  - Post-Series A data foundations
+  - Which metrics should you actually run the company on?
+  - See all in Data
+  - Why your delivery velocity problem is really a systems problem
+  - How to sequence your roadmap when certainty is low
+  - See all in Execution
+  - Your team structure follows your architecture
+  - Who should decide what when things get complex?
+  - See all in Leadership
+- Card titles and card descriptions:
+  - Architecture
+  - Systems Strategy
+  - Data
+  - Execution
+  - Leadership
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 5 ? Content section
+- Section type: section (deferred-section px-6 py-20 md:px-8)
+- Section title: Want help applying this to your exact situation?
+- Section subtitle / eyebrow: If you want a direct read on your own situation, start with a strategy call.
+- Full visible body copy:
+  - If you want a direct read on your own situation, start with a strategy call.
+- CTA labels / buttons:
+  - Book a strategy call
+  - Contact us directly
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 8 ? From idea to scale: find your stage, pressure, and next move. | Amalgam
+- URL: /launchpad
+- Purpose: Launchpad helps founders, entrepreneurs, and teams self-locate across the full journey, see what usually breaks, and choose a practical next move.
+
+#### Section 1 ? Hero
+- Section type: section (relative overflow-hidden border-b border-border py-20 lg:py-28)
+- Section title: From first idea to scale pressure, find the right next move.
+- Section subtitle / eyebrow: Launchpad
+- Full visible body copy:
+  - Launchpad
+  - Launchpad helps founders, entrepreneurs, and teams self-locate fast, see what usually breaks, and choose one practical next step in under a minute.
+  - Start self-serve if you want. Human support is always one click away.
+  - How Launchpad helps
+  - Clarity first. Services second.
+- CTA labels / buttons:
+  - Find my stage
+  - Book a strategy call
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+- Any visible list/bullet copy:
+  - 1. Identify your stage in the journey
+  - 2. See what usually breaks and what to do next
+  - 3. Choose self-serve guidance or senior help based on real context
+
+#### Section 2 ? Content section
+- Section type: section (deferred-section border-b border-border bg-secondary/20 py-12)
+- Section title: See the full path from ideation to scale, then open the stage that fits your reality.
+- Section subtitle / eyebrow: Full journey
+- Full visible body copy:
+  - Full journey
+  - The full map stays visible. When you pick a stage, everything below becomes specific to that stage.
+  - Stage 1
+  - Ideate & Prioritize
+  - Clarify what to build first so early effort compounds instead of drifting.
+  - Stage 2
+  - Validate & De-risk
+  - Validate the biggest assumptions now so you avoid scaling the wrong thing.
+  - Stage 3
+  - Build & Ship
+  - Reduce delivery drag so shipping feels predictable again.
+  - Stage 4
+  - Productize & Systemize
+  - Stabilize internals so you can scale without constant fire drills.
+  - Stage 5
+  - Scale & Stabilize
+  - Regain control as complexity rises and execution gets less predictable.
+- CTA labels / buttons:
+  - Stage 1 Ideate & Prioritize Clarify what to build first so early effort compounds instead of drifting.
+  - Stage 2 Validate & De-risk Validate the biggest assumptions now so you avoid scaling the wrong thing.
+  - Stage 3 Build & Ship Reduce delivery drag so shipping feels predictable again.
+  - Stage 4 Productize & Systemize Stabilize internals so you can scale without constant fire drills.
+  - Stage 5 Scale & Stabilize Regain control as complexity rises and execution gets less predictable.
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Content section
+- Section type: div (sticky top-[68px] z-40 scroll-mt-24 border-b border-border bg-background/95 backdrop-blur transition-all duration-200 md:top-20 md:scroll-mt-28 md:py-5 py-4)
+- Section title: Pick your stage
+- Section subtitle / eyebrow: Choose what feels closest right now. We'll tailor everything below to your stage and pressure.
+- Full visible body copy:
+  - Choose what feels closest right now. We'll tailor everything below to your stage and pressure.
+  - Choose one stage to load focused recommendations. Use left and right arrow keys to move between options.
+  - Viewing all stages overview.
+  - Pick one stage to reveal optional pressure filters.
+- CTA labels / buttons:
+  - All stages
+  - Ideate & Prioritize
+  - Validate & De-risk
+  - Build & Ship
+  - Productize & Systemize
+  - Scale & Stabilize
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 4 ? Content section
+- Section type: section (deferred-section border-b border-border bg-secondary/20 py-10)
+- Section title: See the full journey, then focus where pressure is highest
+- Section subtitle / eyebrow: Stage snapshot
+- Full visible body copy:
+  - Stage snapshot
+  - All five stages are visible. Pick one to get a tailored next move.
+  - Pick a stage to reveal pressure filters and contextual guidance.
+  - Journey context
+  - Showing 100 % of the journey map
+  - Current stage
+  - All stages
+  - What usually breaks
+  - Most teams hit delivery drag when priorities, ownership, and system constraints are not aligned.
+  - What good looks like
+  - Clear stage fit, one practical next move, and momentum without overload.
+  - Best next moves
+  - Pick one strong first move. You can always expand after.
+  - Find my stage
+  - Switch from overview to a focused stage in one click.
+  - Start a quick diagnostic
+  - Get a practical read before deciding on deeper support.
+  - Book a strategy call
+  - Get a direct read if the path still feels unclear.
+- CTA labels / buttons:
+  - Find my stage Switch from overview to a focused stage in one click.
+  - Start a quick diagnostic Get a practical read before deciding on deeper support.
+  - Book a strategy call Get a direct read if the path still feels unclear.
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 5 ? Content section
+- Section type: section (deferred-section py-16 lg:py-20)
+- Section title: See the full path, then open the stage that matches your reality
+- Section subtitle / eyebrow: Full journey
+- Full visible body copy:
+  - Full journey
+  - Think of this as your map from idea to scale. Pick one stage and everything below adapts in place.
+  - Stage 1
+  - Ideate & Prioritize
+  - You have momentum and ideas, but priorities keep changing week to week.
+  - Stage 2
+  - Validate & De-risk
+  - Something is working, but roadmap decisions still feel riskier than they should.
+  - Stage 3
+  - Build & Ship
+  - The team is busy, yet progress still feels noisier than it should.
+  - Stage 4
+  - Productize & Systemize
+  - The product works, but internals are getting fragile under growth pressure.
+  - Stage 5
+  - Scale & Stabilize
+  - Growth is real, but follow-through and confidence are starting to slip.
+  - What changes next
+  - Next step and primary action become specific to that stage.
+  - Guides and confidence notes shift with the stage.
+  - Program fit and final CTA update to match.
+  - Start broad if you need to. Narrow when you are ready.
+- CTA labels / buttons:
+  - Show full stage map
+  - Stage 1 Ideate & Prioritize You have momentum and ideas, but priorities keep changing week to week.
+  - Stage 2 Validate & De-risk Something is working, but roadmap decisions still feel riskier than they should.
+  - Stage 3 Build & Ship The team is busy, yet progress still feels noisier than it should.
+  - Stage 4 Productize & Systemize The product works, but internals are getting fragile under growth pressure.
+  - Stage 5 Scale & Stabilize Growth is real, but follow-through and confidence are starting to slip.
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 6 ? Cards grid
+- Section type: section (deferred-section scroll-mt-24 border-y border-border bg-secondary/35 py-20 md:scroll-mt-28 lg:py-24)
+- Section title: What should you do first?
+- Section subtitle / eyebrow: Best next move
+- Full visible body copy:
+  - Best next move
+  - Start here
+  - Use the journey map to pick the stage that matches your current pressure. The page will tailor your next move instantly.
+  - Choose the stage that feels closest. Everything below updates in place.
+  - Supporting guide
+  - Shipping slows for structural reasons, not just team effort. Diagnose the real drag first.
+  - How to choose between targeted modernization, phased replacement, and a true rebuild without betting the company.
+  - Confidence note
+  - Launchpad keeps the full A-to-Z map visible while tailoring the next move to one stage.
+  - Proof
+  - â€œ Amalgam helped us build the virtual power plant that supported our growth. They have been trusted allies since our early days and remain our development partner. â€
+  - Peter Mendez , Co-Founder and President at PearlX Infrastructure
+- CTA labels / buttons:
+  - Not sure yet? Start with a quick diagnostic
+  - Find my stage
+  - Book a strategy call
+  - Supporting guide Why your delivery velocity problem is really a systems problem Shipping slows for structural reasons, not just team effort. Diagnose the real drag first.
+  - Supporting guide Should you modernize or rebuild? How to choose between targeted modernization, phased replacement, and a true rebuild without betting the company.
+- Card titles and card descriptions:
+  - Find my stage
+  - Why your delivery velocity problem is really a systems problem
+  - Should you modernize or rebuild?
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 7 ? Content section
+- Section type: section (deferred-section border-b border-border py-16 lg:py-20)
+- Section title: If you want senior help after self-serve, this is the usual start
+- Section subtitle / eyebrow: Deeper support (optional)
+- Full visible body copy:
+  - Deeper support (optional)
+  - Recommended path
+  - Not sure what is actually slowing delivery? Start here for a focused diagnostic read.
+  - Best when architecture, workflow, integrations, and operating friction are all colliding at once.
+  - Why teams trust this path
+  - Launchpad keeps the full A-to-Z map visible while tailoring the next move to one stage.
+  - â€œ Amalgam helped us build the virtual power plant that supported our growth. They have been trusted allies since our early days and remain our development partner. â€
+  - Peter Mendez , Co-Founder and President at PearlX Infrastructure
+- CTA labels / buttons:
+  - See how it works
+  - Book a strategy call
+- Card titles and card descriptions:
+  - Diagnostic Review
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 8 ? Content section
+- Section type: section (deferred-section border-b border-border py-10)
+- Section title: None visible
+- Section subtitle / eyebrow: Need the full support map?
+- Full visible body copy:
+  - Need the full support map?
+  - Open full details for all programs, trust notes, resources, and practical updates.
+- CTA labels / buttons:
+  - Show full support map
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 9 ? CTA band
+- Section type: section (deferred-section bg-foreground py-20 lg:py-24)
+- Section title: Not sure which stage fits best yet?
+- Section subtitle / eyebrow: Your next step
+- Full visible body copy:
+  - Your next step
+  - Pick your stage first. If you want a second opinion, we can help you choose the right next move.
+- CTA labels / buttons:
+  - Find my stage
+  - Book a strategy call
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 10 ? Content section
+- Section type: div (fixed inset-x-0 bottom-3 z-50 px-4 transition-all duration-200 md:hidden motion-reduce:transition-none pointer-events-none translate-y-5 opacity-0)
+- Section title: None visible
+- Section subtitle / eyebrow: None visible
+- Full visible body copy:
+  - None visible
+- CTA labels / buttons:
+  - Find stage
+  - Strategy call
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 9 ? Where is product delivery getting stuck? Run a quick diagnostic. | Amalgam
+- URL: /launchpad/tools
+- Purpose: Run a practical 5-minute diagnostic for shipping drag, AI readiness, or tech-stack risk.
+
+#### Section 1 ? Hero
+- Section type: section (relative overflow-hidden border-b border-border py-20 lg:py-24)
+- Section title: Not sure where to start? Run a quick diagnostic first.
+- Section subtitle / eyebrow: Launchpad Tools
+- Full visible body copy:
+  - Launchpad Tools
+  - In about 5 minutes, you'll get a likely profile, why it matters, and what to do next.
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Cards grid
+- Section type: section (py-20 lg:py-24)
+- Section title: Is delivery drag slowing you down?
+- Section subtitle / eyebrow: What you walk away with
+- Full visible body copy:
+  - What you walk away with
+  - Each diagnostic gives you a direct read on what is likely causing drag, why it matters now, and the best next step.
+  - Answer 5 questions -> See your profile -> Choose self-serve or strategy call.
+  - Delivery Drag
+  - Example profiles
+  - Structural delivery drag | Sequencing drag
+  - AI Readiness
+  - Not ready yet | Tactically ready in a few areas
+  - Tech Stack Audit
+  - Stable but under-documented | Fragmented and fragile
+  - Structured diagnostic
+  - Check whether shipping slowdowns are coming from architecture complexity, coordination overhead, weak data visibility, or sequencing.
+  - Who it's for
+  - For teams that know delivery is slower than it should be and need a sharper read on why.
+  - What you get
+  - Likely drag profile
+  - 4-5 minutes
+  - Practical checklist
+  - Assess whether the company is ready for meaningful AI usage or still needs better workflows, ownership, and system foundations first.
+  - For teams deciding whether AI will create real value or just add to existing fragmentation.
+  - Current readiness level
+  - 4 minutes
+  - First-pass stack read
+  - Get a credible first-pass view of whether the stack is coherent, fragmented, overgrown, risky, or under-documented for your current stage.
+  - For teams that feel technical drag, integration burden, or platform risk and need a sharper read on system health.
+  - Likely stack state
+  - 5 minutes
+- CTA labels / buttons:
+  - Run diagnostic
+- Card titles and card descriptions:
+  - Are you actually ready for AI adoption?
+  - Is your tech stack helping or hurting?
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Content section
+- Section type: section (deferred-section border-t border-border py-20 lg:py-24)
+- Section title: What teams value after using diagnostics first
+- Section subtitle / eyebrow: Client perspective
+- Full visible body copy:
+  - Client perspective
+  - â€œ Partnering with Amalgam has helped us streamline our team's evaluative workflows and pilot new technologies that better show the impact of our funding and how to improve our grantmaking.
+  - Steve Fitzmier
+  - Director of Planning & Evaluation , John Templeton Foundation
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 10 ? Execution pressure is rising? Start with the right guide path. | Amalgam
+- URL: /launchpad/guides
+- Purpose: Practical guide paths for shipping drag, fragile systems, integration pain, and AI readiness.
+
+#### Section 1 ? Hero
+- Section type: section (relative overflow-hidden border-b border-border py-20 lg:py-24)
+- Section title: Execution pressure is rising. Start with the path that matches your situation.
+- Section subtitle / eyebrow: Launchpad Guides
+- Full visible body copy:
+  - Launchpad Guides
+  - Each path includes three practical reads and one clear next action.
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Cards grid
+- Section type: section (py-20 lg:py-24)
+- Section title: Delivery is slowing. Start here.
+- Section subtitle / eyebrow: Use these when the team is shipping slower, more work is getting stuck, and no one trusts the clean explanation yet.
+- Full visible body copy:
+  - Use these when the team is shipping slower, more work is getting stuck, and no one trusts the clean explanation yet.
+  - Why your delivery velocity problem is really a systems problem
+  - Shipping slows for structural reasons, not just team effort. Diagnose the real drag first.
+  - Did growth break your operating rhythm?
+  - Why companies lose execution rhythm after hiring, fundraising, or product expansion, and how to restore it without adding bureaucracy.
+  - Who should decide what when things get complex?
+  - How to reduce escalation load by clarifying which decisions belong to teams, leaders, and cross-functional forums.
+  - If this points to deeper work
+  - Not sure what is actually slowing delivery? Start here for a focused diagnostic read.
+  - Use these when platform complexity, modernization pressure, and hidden architecture constraints are driving business decisions.
+  - Should you modernize or rebuild?
+  - How to choose between targeted modernization, phased replacement, and a true rebuild without betting the company.
+  - Do you need an architecture map before your roadmap?
+  - Roadmaps fail when nobody has a reliable picture of the current system, dependencies, and ownership boundaries.
+  - Your team structure follows your architecture
+  - How system boundaries, decision ownership, and team design reinforce each other for better or worse.
+  - Use these when the organization feels pressure to move on AI, but workflows, data quality, and ownership still need a reality check.
+  - Post-Series A data foundations
+  - What needs to be true in your data layer before reporting, forecasting, and automation can be trusted at scale.
+  - Which metrics should you actually run the company on?
+  - How to choose a small set of operating metrics that help leadership make decisions instead of creating reporting theater.
+  - Use these when the system is only partly visible, the roadmap is fragile, and the next move needs less guesswork.
+  - How to sequence your roadmap when certainty is low
+  - How to prioritize when the current state is only partly visible and leadership still needs a plan it can trust.
+  - You trust the diagnosis and now need a roadmap leadership can run with.
+  - Use these when cross-system handoffs, workflow boundaries, and operational coupling are creating hidden cost and slower decisions.
+  - Are integrations quietly slowing you down?
+  - Shipping slows when workflows span too many tools, owners, and hidden dependencies. This shows what to simplify first.
+- CTA labels / buttons:
+  - Start with this diagnostic
+  - Why your delivery velocity problem is really a systems problem Shipping slows for structural reasons, not just team effort. Diagnose the real drag first.
+  - Did growth break your operating rhythm? Why companies lose execution rhythm after hiring, fundraising, or product expansion, and how to restore it without adding bureaucracy.
+  - Who should decide what when things get complex? How to reduce escalation load by clarifying which decisions belong to teams, leaders, and cross-functional forums.
+  - See how it works
+  - Should you modernize or rebuild? How to choose between targeted modernization, phased replacement, and a true rebuild without betting the company.
+  - Do you need an architecture map before your roadmap? Roadmaps fail when nobody has a reliable picture of the current system, dependencies, and ownership boundaries.
+  - Your team structure follows your architecture How system boundaries, decision ownership, and team design reinforce each other for better or worse.
+  - Post-Series A data foundations What needs to be true in your data layer before reporting, forecasting, and automation can be trusted at scale.
+  - Which metrics should you actually run the company on? How to choose a small set of operating metrics that help leadership make decisions instead of creating reporting theater.
+  - How to sequence your roadmap when certainty is low How to prioritize when the current state is only partly visible and leadership still needs a plan it can trust.
+  - See what's included
+  - Are integrations quietly slowing you down? Shipping slows when workflows span too many tools, owners, and hidden dependencies. This shows what to simplify first.
+- Card titles and card descriptions:
+  - Stack feels fragile. Start here.
+  - AI pressure is rising. Start here.
+  - Sequencing is unclear. Start here.
+  - Integrations are causing drag. Start here.
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Content section
+- Section type: section (deferred-section border-t border-border py-20 lg:py-24)
+- Section title: Why teams keep coming back to guidance that matches real operating pressure
+- Section subtitle / eyebrow: Client perspective
+- Full visible body copy:
+  - Client perspective
+  - â€œ We've worked with many consulting firms, but finding one that delivers strong results and genuinely cares about our success is rare. The Amalgam team was responsive and easy to work with.
+  - Mike Mooney
+  - Chief Technology Officer , CleanItSupply
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 11 ? Need deeper help now? Choose the support level that fits. | Amalgam
+- URL: /launchpad/programs
+- Purpose: Choose between Diagnostic Review, Execution Sprint, and Outcome Partnership based on what your team needs right now.
+
+#### Section 1 ? Hero
+- Section type: section (relative overflow-hidden border-b border-border py-20 lg:py-24)
+- Section title: If self-serve is not enough, choose the level of support that fits right now.
+- Section subtitle / eyebrow: Launchpad Programs
+- Full visible body copy:
+  - Launchpad Programs
+  - Pick based on what you need most right now: diagnosis, sequencing, or execution continuity.
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Cards grid
+- Section type: section (py-20 lg:py-24)
+- Section title: Diagnostic Review
+- Section subtitle / eyebrow: Recommended first move
+- Full visible body copy:
+  - Recommended first move
+  - Not sure what is actually slowing delivery? Start here for a focused diagnostic read.
+  - Best when architecture, workflow, integrations, and operating friction are all colliding at once.
+  - You trust the diagnosis and now need a roadmap leadership can run with.
+  - Best when the work is clear enough to plan but still needs cross-functional sequencing and constraint mapping.
+  - You have a path and need senior continuity to keep execution on track.
+  - Best when direction is clear and the business needs continuity, unblockers, and direct decision support over time.
+- CTA labels / buttons:
+  - See how it works
+  - See what's included
+  - See how support works
+- Card titles and card descriptions:
+  - Execution Sprint
+  - Outcome Partnership
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Cards grid
+- Section type: section (border-t border-border bg-secondary/35 py-20 lg:py-24)
+- Section title: Which level of support fits right now?
+- Section subtitle / eyebrow: Which one is right?
+- Full visible body copy:
+  - Which one is right?
+  - If the drag is visible but the system still needs a direct read, Diagnostic Review is the cleanest entry point.
+  - If the diagnosis is trusted and the organization needs a roadmap that can survive scrutiny, move into the Execution Sprint.
+  - If the path exists but execution still needs close follow-through, Outcome Partnership becomes the continuity layer.
+- CTA labels / buttons:
+  - Need diagnosis first If the drag is visible but the system still needs a direct read, Diagnostic Review is the cleanest entry point. Explore this path
+  - Need a roadmap plan If the diagnosis is trusted and the organization needs a roadmap that can survive scrutiny, move into the Execution Sprint. Explore this path
+  - Need continuity in execution If the path exists but execution still needs close follow-through, Outcome Partnership becomes the continuity layer. Explore this path
+- Card titles and card descriptions:
+  - Need diagnosis first
+  - Need a roadmap plan
+  - Need continuity in execution
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 4 ? Content section
+- Section type: section (deferred-section border-t border-border py-20 lg:py-24)
+- Section title: What clients say when support is sequenced the right way
+- Section subtitle / eyebrow: Client perspective
+- Full visible body copy:
+  - Client perspective
+  - â€œ Amalgam helped us build the virtual power plant that supported our growth. They have been trusted allies since our early days and remain our development partner.
+  - Peter Mendez
+  - Co-Founder and President , PearlX Infrastructure
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 12 ? Want practical updates you can use this quarter? | Amalgam
+- URL: /launchpad/signals
+- Purpose: Get short practical updates on execution pressure, architecture decisions, and what to do next.
+
+#### Section 1 ? Hero
+- Section type: section (relative overflow-hidden border-b border-border py-20 lg:py-24)
+- Section title: Want practical notes you can use this quarter?
+- Section subtitle / eyebrow: Launchpad Signals
+- Full visible body copy:
+  - Launchpad Signals
+  - Short updates on execution pressure, architecture decisions, and what to do next.
+  - Subscribe
+  - Useful notes on system health, architecture decisions, and what to do next when complexity slows the business.
+  - 1-2 useful notes per month. No noise.
+- CTA labels / buttons:
+  - Subscribe for practical updates
+- Card titles and card descriptions:
+  - Get updates you can actually use
+- Any microcopy / helper text:
+  - Work email
+- Any visible form fields / placeholders / labels:
+  - email | you@company.com
+
+#### Section 2 ? Cards grid
+- Section type: section (py-20 lg:py-24)
+- Section title: Start with notes teams are using right now
+- Section subtitle / eyebrow: Recent signal
+- Full visible body copy:
+  - Recent signal
+  - Signal preview
+  - Shipping slows for structural reasons, not just team effort. Diagnose the real drag first.
+  - How to choose between targeted modernization, phased replacement, and a true rebuild without betting the company.
+  - How to choose a small set of operating metrics that help leadership make decisions instead of creating reporting theater.
+- CTA labels / buttons:
+  - Signal preview Why your delivery velocity problem is really a systems problem Shipping slows for structural reasons, not just team effort. Diagnose the real drag first.
+  - Signal preview Should you modernize or rebuild? How to choose between targeted modernization, phased replacement, and a true rebuild without betting the company.
+  - Signal preview Which metrics should you actually run the company on? How to choose a small set of operating metrics that help leadership make decisions instead of creating reporting theater.
+  - Explore knowledge
+- Card titles and card descriptions:
+  - Why your delivery velocity problem is really a systems problem
+  - Should you modernize or rebuild?
+  - Which metrics should you actually run the company on?
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Content section
+- Section type: section (deferred-section border-t border-border py-20 lg:py-24)
+- Section title: Signal teams describe as useful and grounded
+- Section subtitle / eyebrow: Client perspective
+- Full visible body copy:
+  - Client perspective
+  - â€œ Partnering with Amalgam has helped us streamline our team's evaluative workflows and pilot new technologies that better show the impact of our funding and how to improve our grantmaking.
+  - Steve Fitzmier
+  - Director of Planning & Evaluation , John Templeton Foundation
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 13 ? Is delivery drag slowing you down? | Amalgam
+- URL: /launchpad/delivery-drag-diagnostic
+- Purpose: A structured diagnostic to pinpoint whether delivery slowdowns are being shaped by architecture, sequencing, coordination, data quality, or integration complexity.
+
+#### Canonical tool flow content (from data source)
+- Tool title: Is delivery drag slowing you down?
+- Kicker: Structured diagnostic
+- Description: Check whether shipping slowdowns are coming from architecture complexity, coordination overhead, weak data visibility, or sequencing.
+- Audience: For teams that know delivery is slower than it should be and need a sharper read on why.
+- Estimated time: 4-5 minutes
+- Output label: Likely drag profile
+- Question intro: Answer these questions based on the last one or two quarters, not on your ideal future state.
+- Result categories
+  - Structural delivery drag
+    - Summary: The system itself is making change expensive. Core boundaries, architecture shape, or the platform's current structure are likely slowing work down before team effort even becomes the issue.
+    - Why it matters: This usually means pressure is accumulating in the foundation layer. The right next move is to map the current state and identify the few structural decisions that are distorting delivery.
+    - Next step label: Book a strategy call
+    - Next step href: /contact?interest=founder-review
+    - Next step note: The root cause still needs a direct diagnostic.
+    - Related guides: modernize-vs-rebuild, architecture-map-before-roadmap, delivery-velocity-is-a-systems-problem
+  - Sequencing drag
+    - Summary: The business can see the work that matters, but the roadmap is entering execution before constraints and dependencies are sequenced honestly.
+    - Why it matters: This kind of drag often looks like a speed problem, but it is really a planning-quality problem. The organization needs a credible map before it asks for faster movement.
+    - Next step label: Explore Execution Sprint
+    - Next step href: /execution-sprint
+    - Next step note: The situation may be clear enough to turn into a roadmap.
+    - Related guides: sequencing-roadmaps-under-uncertainty, architecture-map-before-roadmap, decision-rights-under-complexity
+  - Ownership and coordination drag
+    - Summary: Work is slowing down because too much effort is being spent on cross-functional translation, escalation, and repeated ownership negotiation.
+    - Why it matters: This usually produces noise that looks like weak execution. In reality, decision rights, workflow ownership, or operating rhythm may be under-specified.
+    - Next step label: Book a strategy call
+    - Next step href: /contact?interest=founder-review
+    - Next step note: The operating model likely needs a direct read before planning continues.
+    - Related guides: operating-rhythm-after-growth, structure-follows-architecture, decision-rights-under-complexity
+  - Visibility and data drag
+    - Summary: The team is making decisions with weak signal. Reporting, source-of-truth confidence, or operational visibility gaps are likely making it harder to sequence and execute well.
+    - Why it matters: When truth is hard to access, every planning cycle gets noisier. This usually does not get fixed with one more dashboard.
+    - Next step label: Book a strategy call
+    - Next step href: /contact?interest=founder-review
+    - Next step note: A direct diagnostic can separate reporting symptoms from system causes.
+    - Related guides: metrics-you-can-run-the-company-on, post-series-a-data-foundations, delivery-velocity-is-a-systems-problem
+  - Integration-driven drag
+    - Summary: Too many tools, handoffs, and hidden dependencies are likely compounding the cost of every meaningful change.
+    - Why it matters: Integration drag makes simple work look deceptively easy on paper. The business needs a clearer view of boundary problems and system authority before it can simplify intelligently.
+    - Next step label: Start the Tech Stack Audit
+    - Next step href: /launchpad/tech-stack-audit
+    - Next step note: A stack-level read can sharpen where the integration burden is concentrated.
+    - Related guides: integration-tax, modernize-vs-rebuild, architecture-map-before-roadmap
+- Questions and options
+  - Question 1: When one meaningful change hits the roadmap, what usually makes it slow?
+    - Helper: Pick the answer that most often shapes the real delivery timeline.
+    - Option 1: The system itself is hard to change safely.
+      - Description: Core architecture or platform constraints dominate timelines.
+    - Option 2: Dependencies and sequencing keep surprising us.
+      - Description: The work looked straightforward until hidden constraints appeared.
+    - Option 3: Teams need too much alignment and escalation to move.
+      - Description: Cross-functional coordination and ownership questions dominate.
+    - Option 4: We do not trust the signal well enough to decide confidently.
+      - Description: Data, reporting, or operating visibility issues keep slowing decisions.
+  - Question 2: What does slowdown look like in practice right now?
+    - Helper: Choose the pattern that feels most familiar in the last quarter.
+    - Option 1: Changes create rework because the foundation is brittle.
+      - Description: Work lands, but too much of it reopens or breaks adjacent areas.
+    - Option 2: Roadmaps keep shifting because we learn too late.
+      - Description: The problem is not effort; it is sequencing without a good map.
+    - Option 3: Work slows as soon as more than one team is involved.
+      - Description: Cross-functional coordination adds drag quickly.
+    - Option 4: It is hard to know which issue deserves attention first.
+      - Description: Signal quality or data trust keeps muddying the call.
+  - Question 3: How much does cross-system behavior shape the pain?
+    - Helper: Think about tooling, APIs, data flows, and manual reconciliation.
+    - Option 1: Not much. The core issue is inside the platform itself.
+      - Description: The drag feels mainly architectural or structural.
+    - Option 2: Some. Integration issues matter, but they are not the whole story.
+      - Description: They add risk but are not the only driver.
+    - Option 3: A lot. Cross-system behavior is where the work gets messy fast.
+      - Description: Dependencies, tooling, and handoffs are constant friction points.
+    - Option 4: We cannot really tell because visibility is too weak.
+      - Description: The organization does not have a trustworthy view of what is happening.
+  - Question 4: When leadership asks what is slowing delivery, how clear is the answer?
+    - Helper: Choose the answer that best matches executive conversations.
+    - Option 1: Clear enough that the next move is probably a roadmap and sequencing problem.
+      - Description: The diagnosis exists. What is missing is the execution plan.
+    - Option 2: We know the platform is part of the issue, but not how to unwind it safely.
+      - Description: The structural shape is visible, but the path forward is not.
+    - Option 3: Everyone has a different explanation depending on their function.
+      - Description: The organization lacks a shared picture of the problem.
+    - Option 4: We know it is slow, but the evidence is too noisy to trust.
+      - Description: Signal quality and operational visibility are both weak.
+  - Question 5: What would be most useful right now?
+    - Helper: This helps anchor the recommended next step.
+    - Option 1: A direct read on what is actually creating the drag.
+      - Description: The situation still needs diagnosis more than planning.
+    - Option 2: A roadmap that sequences the work honestly.
+      - Description: The diagnosis is good enough that planning should come next.
+    - Option 3: A stack-level read on integrations, platform shape, and risk.
+      - Description: The business needs a direct read on technical condition and weak points.
+    - Option 4: A better picture of ownership, signal, and operating friction.
+      - Description: The way decisions and handoffs are working needs a direct look.
+
+#### Section 1 ? Content section
+- Section type: section (border-b border-border py-16 lg:py-20)
+- Section title: None visible
+- Section subtitle / eyebrow: None visible
+- Full visible body copy:
+  - None visible
+- CTA labels / buttons:
+  - Back to Launchpad tools
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Content section
+- Section type: section (py-16 lg:py-20)
+- Section title: Is delivery drag slowing you down?
+- Section subtitle / eyebrow: Structured diagnostic
+- Full visible body copy:
+  - Structured diagnostic
+  - Check whether shipping slowdowns are coming from architecture complexity, coordination overhead, weak data visibility, or sequencing.
+  - Before you start
+  - Answer these questions based on the last one or two quarters, not on your ideal future state.
+  - Takes about 5 minutes. You'll leave with a specific next move.
+- CTA labels / buttons:
+  - Start 5-minute diagnostic
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - Best for
+  - For teams that know delivery is slower than it should be and need a sharper read on why.
+  - Estimated time
+  - 4-5 minutes
+  - Output
+  - Likely drag profile
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 14 ? Are you actually ready for AI adoption? | Amalgam
+- URL: /launchpad/ai-readiness-checklist
+- Purpose: A practical first-pass checklist for deciding whether your workflows, ownership, and data foundations are actually ready for meaningful AI usage.
+
+#### Canonical tool flow content (from data source)
+- Tool title: Are you actually ready for AI adoption?
+- Kicker: Practical checklist
+- Description: Assess whether the company is ready for meaningful AI usage or still needs better workflows, ownership, and system foundations first.
+- Audience: For teams deciding whether AI will create real value or just add to existing fragmentation.
+- Estimated time: 4 minutes
+- Output label: Current readiness level
+- Question intro: Answer based on the team's current operating reality, not on the AI roadmap you wish you had.
+- Result categories
+  - Not ready yet
+    - Summary: The current workflows, ownership, or system foundations are too unstable for AI to create reliable value right now.
+    - Why it matters: AI tends to amplify ambiguity. If the operating model is still fuzzy, the first gains usually come from stabilizing the system before automating anything meaningful.
+    - Next step label: Book a strategy call
+    - Next step href: /contact?interest=founder-review
+    - Next step note: The system likely needs diagnosis before AI decisions become useful.
+    - Related guides: post-series-a-data-foundations, metrics-you-can-run-the-company-on, operating-rhythm-after-growth
+  - Tactically ready in a few areas
+    - Summary: There are likely one or two narrow workflows where AI can help, but the broader organization is not ready for company-wide adoption.
+    - Why it matters: This is often the right moment to focus on targeted pilots with clear owners instead of trying to make AI strategy carry too much too soon.
+    - Next step label: Book a strategy call
+    - Next step href: /contact?interest=founder-review
+    - Next step note: A direct read can help choose the right low-risk starting area.
+    - Related guides: metrics-you-can-run-the-company-on, delivery-velocity-is-a-systems-problem, post-series-a-data-foundations
+  - Promising but blocked
+    - Summary: The organization has promising workflows and real interest, but data trust, tooling fragmentation, or ownership gaps are holding back reliable progress.
+    - Why it matters: This is a classic stage where AI interest is justified, but system cleanup and decision discipline still need to happen before the investment becomes durable.
+    - Next step label: Open the Tech Stack Audit
+    - Next step href: /launchpad/tech-stack-audit
+    - Next step note: A stack and workflow read can clarify the blockers that matter most.
+    - Related guides: post-series-a-data-foundations, integration-tax, metrics-you-can-run-the-company-on
+  - Ready for focused adoption
+    - Summary: The company has enough workflow definition, ownership, and usable signal to move on AI in a focused, practical way.
+    - Why it matters: This is where execution discipline matters more than enthusiasm. The opportunity is real, but it still needs practical sequencing and guardrails.
+    - Next step label: Explore Execution Sprint
+    - Next step href: /execution-sprint
+    - Next step note: The next move may be a focused plan rather than another broad diagnostic.
+    - Related guides: sequencing-roadmaps-under-uncertainty, metrics-you-can-run-the-company-on, architecture-map-before-roadmap
+  - Ready, governance is the issue
+    - Summary: The workflows and system foundations are reasonably strong, but the remaining challenge is governance, guardrails, and ensuring adoption stays accountable.
+    - Why it matters: At this stage, speed is less dangerous than drift. The business needs clear ownership, measurement, and risk boundaries so adoption stays useful over time.
+    - Next step label: Book a strategy call
+    - Next step href: /contact
+    - Next step note: A focused discussion can help decide whether the next issue is governance, architecture, or operating design.
+    - Related guides: decision-rights-under-complexity, metrics-you-can-run-the-company-on, structure-follows-architecture
+- Questions and options
+  - Question 1: How clear are the workflows you would actually want AI to touch?
+    - Helper: Think about real operating work, not general enthusiasm.
+    - Option 1: They are still fuzzy or inconsistent across teams.
+      - Description: The organization is still arguing about what the workflow really is.
+    - Option 2: A few workflows are clear, but only in specific pockets.
+      - Description: There are narrow starting points, not a broad readiness story.
+    - Option 3: Most target workflows are clear enough to improve deliberately.
+      - Description: The operating model is reasonably clear.
+    - Option 4: They are clear, owned, and already measured.
+      - Description: The remaining work is mostly around guardrails and rollout quality.
+  - Question 2: How usable is the underlying data or source-of-truth layer?
+    - Helper: If AI touches weak data, it usually creates louder confusion rather than value.
+    - Option 1: Too weak to trust for meaningful automation.
+      - Description: Signal quality and source-of-truth design are both shaky.
+    - Option 2: Usable in a few places, unreliable in others.
+      - Description: There are promising workflows, but the data layer is uneven.
+    - Option 3: Good enough for focused use cases.
+      - Description: There is enough trust to move carefully in the right areas.
+    - Option 4: Strong enough that governance now matters more than cleanup.
+      - Description: The data layer is a foundation, not the blocker.
+  - Question 3: How real is ownership for AI-related decisions?
+    - Helper: This includes who decides, who governs, and who measures outcomes.
+    - Option 1: Ownership is vague or aspirational.
+      - Description: Interest exists, but responsibility does not.
+    - Option 2: There are one or two likely owners for a pilot area.
+      - Description: Targeted work may be possible even if the system is not broadly ready.
+    - Option 3: Ownership exists, but execution still hits system blockers.
+      - Description: The organization is serious, but the foundations are slowing it down.
+    - Option 4: Ownership and review structures are already mostly defined.
+      - Description: The conversation is now about scale and guardrails, not whether anyone owns it.
+  - Question 4: How much fragmentation sits beneath the workflows you want to improve?
+    - Helper: Think about tools, handoffs, systems of record, and manual work.
+    - Option 1: A lot. The workflow is still spread across too many tools and unclear boundaries.
+      - Description: AI would likely magnify system fragmentation first.
+    - Option 2: Some. It is workable, but cleanup would improve confidence.
+      - Description: There is enough shape to test a few narrow use cases.
+    - Option 3: It is fairly contained around the highest-value workflows.
+      - Description: Tooling complexity exists but is not the main blocker.
+    - Option 4: Minimal. The bigger issue is how to govern and scale responsibly.
+      - Description: The system shape is usable enough to move with discipline.
+  - Question 5: What would be most useful right now?
+    - Helper: Choose the answer that reflects the real decision in front of the business.
+    - Option 1: A clear read on whether the foundations are ready at all.
+      - Description: The business needs signal before it starts calling things AI strategy.
+    - Option 2: A narrower read on where one useful pilot could start.
+      - Description: The goal is not a grand program, just a credible first use case.
+    - Option 3: A cleaner view of the blockers slowing good opportunities down.
+      - Description: There is appetite and some readiness, but friction still clouds the path.
+    - Option 4: A plan for moving responsibly with AI where it can already help.
+      - Description: The organization is ready enough that sequencing now matters most.
+
+#### Section 1 ? Content section
+- Section type: section (border-b border-border py-16 lg:py-20)
+- Section title: None visible
+- Section subtitle / eyebrow: None visible
+- Full visible body copy:
+  - None visible
+- CTA labels / buttons:
+  - Back to Launchpad tools
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Content section
+- Section type: section (py-16 lg:py-20)
+- Section title: Are you actually ready for AI adoption?
+- Section subtitle / eyebrow: Practical checklist
+- Full visible body copy:
+  - Practical checklist
+  - Assess whether the company is ready for meaningful AI usage or still needs better workflows, ownership, and system foundations first.
+  - Before you start
+  - Answer based on the team's current operating reality, not on the AI roadmap you wish you had.
+  - Takes about 5 minutes. You'll leave with a specific next move.
+- CTA labels / buttons:
+  - Start 5-minute diagnostic
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - Best for
+  - For teams deciding whether AI will create real value or just add to existing fragmentation.
+  - Estimated time
+  - 4 minutes
+  - Output
+  - Current readiness level
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 15 ? Is your tech stack helping or hurting? | Amalgam
+- URL: /launchpad/tech-stack-audit
+- Purpose: A first-pass audit for deciding whether the stack is stable, fragmented, over-complex, risky, or under-instrumented for reliable execution.
+
+#### Canonical tool flow content (from data source)
+- Tool title: Is your tech stack helping or hurting?
+- Kicker: First-pass stack read
+- Description: Get a credible first-pass view of whether the stack is coherent, fragmented, overgrown, risky, or under-documented for your current stage.
+- Audience: For teams that feel technical drag, integration burden, or platform risk and need a sharper read on system health.
+- Estimated time: 5 minutes
+- Output label: Likely stack state
+- Question intro: Answer based on the current stack you are actually carrying, not the architecture you would design from a blank slate.
+- Result categories
+  - Stable but under-documented
+    - Summary: The stack is probably workable enough for the stage, but knowledge, documentation, and system legibility are not keeping up with the business.
+    - Why it matters: This can look calm until key people leave, product scope expands, or the organization needs to move faster than tribal memory allows.
+    - Next step label: Browse stack guides
+    - Next step href: /launchpad/guides
+    - Next step note: You may be able to improve this with clearer mapping and sequencing first.
+    - Related guides: architecture-map-before-roadmap, structure-follows-architecture, metrics-you-can-run-the-company-on
+  - Fragmented and fragile
+    - Summary: Too many tools, unclear boundaries, and handoff risk are likely making simple work harder than it should be.
+    - Why it matters: This is where stack complexity starts shaping product speed, support load, and confidence in change. The business often needs a sharper diagnostic before it can simplify responsibly.
+    - Next step label: Book a strategy call
+    - Next step href: /contact?interest=founder-review
+    - Next step note: A direct diagnostic can separate platform symptoms from the real architecture and workflow issues.
+    - Related guides: integration-tax, modernize-vs-rebuild, delivery-velocity-is-a-systems-problem
+  - Scaling with risk
+    - Summary: The stack is carrying the business, but the margin for error is getting thinner as customer demands, integrations, or operational load increase.
+    - Why it matters: This can look acceptable until a raise, replatform, enterprise customer, or high-stakes rollout exposes the cost of undocumented or brittle decisions.
+    - Next step label: Book a strategy call
+    - Next step href: /contact?interest=founder-review
+    - Next step note: A direct read can clarify which risks actually matter before the business overreacts.
+    - Related guides: modernize-vs-rebuild, architecture-map-before-roadmap, sequencing-roadmaps-under-uncertainty
+  - Over-complex for the current stage
+    - Summary: The system likely carries more abstraction, tooling, or platform ambition than the business currently needs or can easily support.
+    - Why it matters: This creates hidden tax in onboarding, change effort, and decision-making. Simplification may create more value than adding more architecture.
+    - Next step label: Explore Execution Sprint
+    - Next step href: /execution-sprint
+    - Next step note: The situation may be ready for simplification and sequencing rather than another broad diagnostic.
+    - Related guides: modernize-vs-rebuild, delivery-velocity-is-a-systems-problem, sequencing-roadmaps-under-uncertainty
+  - Under-instrumented for reliable delivery
+    - Summary: The stack may be more coherent than it feels, but observability, reporting, or operational signal are too weak to support confident decision-making.
+    - Why it matters: When the business cannot see the system well, it tends to overreact to symptoms. Better signal can remove a surprising amount of unnecessary chaos.
+    - Next step label: Book a strategy call
+    - Next step href: /contact?interest=founder-review
+    - Next step note: A direct read can help decide whether the right move is instrumentation, diagnosis, or sequencing.
+    - Related guides: metrics-you-can-run-the-company-on, post-series-a-data-foundations, architecture-map-before-roadmap
+- Questions and options
+  - Question 1: How would you describe the current stack shape?
+    - Helper: Think about tools, services, platforms, and how many moving parts are involved in normal delivery.
+    - Option 1: Fairly manageable, but too much still lives in people's heads.
+      - Description: The stack is workable, but knowledge concentration is a risk.
+    - Option 2: Messy, with too many integrations and unclear system boundaries.
+      - Description: The stack feels fragmented rather than intentionally designed.
+    - Option 3: Powerful, but probably more complex than this stage really needs.
+      - Description: The business may be carrying extra architecture weight.
+    - Option 4: Hard to see clearly because instrumentation and visibility are weak.
+      - Description: The stack may not be broken, but signal is too poor to judge it well.
+  - Question 2: How safe does meaningful change feel right now?
+    - Helper: Think about releases, integrations, and confidence in what a change might break.
+    - Option 1: Reasonably safe, but dependent on a few people knowing the edges.
+      - Description: The stack works, but its safety margin depends on tacit knowledge.
+    - Option 2: Fragile. Changes can create side effects quickly.
+      - Description: Confidence drops as soon as the work touches multiple systems.
+    - Option 3: Safe enough today, but risk is rising with scale, customers, or complexity.
+      - Description: The system is carrying real load, but with thinning margin.
+    - Option 4: Hard to judge because observability and reporting are too weak.
+      - Description: The risk may be real, but the signal is underpowered.
+  - Question 3: How fast can a strong new engineer become productively useful in the current system?
+    - Helper: This is often one of the strongest tests of stack legibility.
+    - Option 1: Fairly fast, once they get a basic map of the system.
+      - Description: The architecture is understandable, but knowledge transfer still needs work.
+    - Option 2: Slow, because too much context lives across many tools and handoffs.
+      - Description: The stack shape and workflow boundaries are hard to internalize.
+    - Option 3: Slow, because the system carries more abstraction than the team can absorb easily.
+      - Description: The architecture may be ahead of the stage or team size.
+    - Option 4: Hard to tell because the team still lacks consistent visibility into system behavior.
+      - Description: The issue is not just onboarding; it is signal quality.
+  - Question 4: How well does the current stack match the business as it exists today?
+    - Helper: Ignore the future ideal for a moment and answer for the current operating reality.
+    - Option 1: Pretty well, but it needs better documentation and operating alignment.
+      - Description: The core shape is acceptable; shared understanding is not.
+    - Option 2: It works, but mainly through workarounds and careful handling.
+      - Description: The stack is functional, but fragility is obvious.
+    - Option 3: It feels overbuilt for the company's current needs.
+      - Description: The business may be paying complexity tax without enough value in return.
+    - Option 4: We cannot really judge because the system's behavior is hard to observe cleanly.
+      - Description: Operational signal is too weak to evaluate fit confidently.
+  - Question 5: What would be most useful next?
+    - Helper: Choose the answer that best matches the business decision in front of you.
+    - Option 1: A current-state read on the stack and where fragility is hiding.
+      - Description: The business needs a more honest diagnosis first.
+    - Option 2: A plan to simplify and sequence the stack more responsibly.
+      - Description: The situation may be clear enough for planning rather than broad diagnosis.
+    - Option 3: Better visibility, instrumentation, and signal before bigger decisions.
+      - Description: The organization needs to see the system more clearly before moving.
+    - Option 4: A direct read on whether the current stack is risky or just messy.
+      - Description: The business needs judgment more than a generic stack cleanup list.
+
+#### Section 1 ? Content section
+- Section type: section (border-b border-border py-16 lg:py-20)
+- Section title: None visible
+- Section subtitle / eyebrow: None visible
+- Full visible body copy:
+  - None visible
+- CTA labels / buttons:
+  - Back to Launchpad tools
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Content section
+- Section type: section (py-16 lg:py-20)
+- Section title: Is your tech stack helping or hurting?
+- Section subtitle / eyebrow: First-pass stack read
+- Full visible body copy:
+  - First-pass stack read
+  - Get a credible first-pass view of whether the stack is coherent, fragmented, overgrown, risky, or under-documented for your current stage.
+  - Before you start
+  - Answer based on the current stack you are actually carrying, not the architecture you would design from a blank slate.
+  - Takes about 5 minutes. You'll leave with a specific next move.
+- CTA labels / buttons:
+  - Start 5-minute diagnostic
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - Best for
+  - For teams that feel technical drag, integration burden, or platform risk and need a sharper read on system health.
+  - Estimated time
+  - 5 minutes
+  - Output
+  - Likely stack state
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 16 ? Who you work with at Amalgam | Amalgam
+- URL: /about
+- Purpose: Founded in 2012, Amalgam helps business and technical leaders fix complex system issues that slow execution.
+
+#### Section 1 ? Hero
+- Section type: section (relative overflow-hidden border-b border-border py-20 lg:py-28)
+- Section title: Want to know who you'll actually work with?
+- Section subtitle / eyebrow: About Amalgam
+- Full visible body copy:
+  - About Amalgam
+  - Amalgam helps business and technical leaders fix complex system issues so shipping becomes more reliable.
+  - What clients hire us for
+  - A sharp diagnostic when the real issue is still unclear.
+  - Clear sequencing when teams need a roadmap they can trust.
+  - Hands-on follow-through when execution needs to stay on track.
+  - 2012
+  - Founded
+  - 10
+  - Team members
+  - 3
+  - Core ways to engage
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Content section
+- Section type: section (section-warm py-20 lg:py-24)
+- Section title: A quick note from our founder
+- Section subtitle / eyebrow: I started Amalgam to keep the work practical and honest. Too many projects create dependency instead of progress. We focus on what is actually slowing the business, make the next move clear, and help teams ship again.
+- Full visible body copy:
+  - I started Amalgam to keep the work practical and honest. Too many projects create dependency instead of progress. We focus on what is actually slowing the business, make the next move clear, and help teams ship again.
+  - I started Amalgam to keep the work practical and honest.
+  - Too many projects create dependency instead of progress. We focus on what is actually slowing the business, make the next move clear, and help teams ship again.
+  - Neeraj Vir
+  - CEO & Founder
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Content section
+- Section type: section (deferred-section border-y border-border bg-secondary/50 py-20 lg:py-24)
+- Section title: Most execution problems cross team boundaries
+- Section subtitle / eyebrow: Why this model works now
+- Full visible body copy:
+  - Why this model works now
+  - Most execution problems are no longer confined to one team. Architecture, product, operations, and decision-making are usually all involved.
+  - That is where Amalgam is most useful: when leaders need clear judgment that connects the full system and gives teams a path they can execute.
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 4 ? Cards grid
+- Section type: section (deferred-section py-20 lg:py-24)
+- Section title: How we operate
+- Section subtitle / eyebrow: How you can expect us to work with you.
+- Full visible body copy:
+  - How you can expect us to work with you.
+  - We focus on what matters and make the next move clear.
+  - You work with people who have handled this before.
+  - We remove blockers so teams can move with less drag.
+  - We say what we see and explain every recommendation clearly.
+  - Outcomes matter more than hours. We care about what gets shipped.
+  - We work with your real constraints and focus on practical progress.
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - We make the next move clear
+  - You get experienced judgment
+  - We keep execution moving
+  - We tell you what we actually see
+  - We focus on what gets shipped
+  - We stay practical under constraints
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 5 ? Cards grid
+- Section type: section (deferred-section border-y border-border bg-secondary/35 py-20 lg:py-24)
+- Section title: How we work when stakes are high
+- Section subtitle / eyebrow: Operating Model
+- Full visible body copy:
+  - Operating Model
+  - We are intentionally small and direct. The model is built for hard, high-constraint situations where decisions need to move.
+  - We start by understanding the real system, the real constraints, and the real decision pressure. No pre-packaged playbooks.
+  - We do not treat execution problems as isolated engineering problems when architecture, workflow, and decision models are all involved.
+  - The goal is not perfect theory. The goal is a path leadership can trust and teams can actually move on.
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - First, understand your real system
+  - Then solve at the system level
+  - Always bias toward usable progress
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 6 ? Cards grid
+- Section type: section (deferred-section section-warm border-t border-border py-20 lg:py-24)
+- Section title: The people you'll work with
+- Section subtitle / eyebrow: Focused support across systems, architecture, and execution.
+- Full visible body copy:
+  - Focused support across systems, architecture, and execution.
+  - Leadership
+  - Head of Growth & Innovation
+  - Leads growth and operations across Amalgam's commercial systems, client experience, and day-to-day rhythm.
+  - Partner - Legal & HR
+  - Business and legal leadership that keeps operations, agreements, and client engagements running smoothly.
+  - Architecture
+  - Chief Architect
+  - Architect with deep experience in enterprise applications, data pipelines, and service integration.
+  - Enterprise Architect
+  - Builds cloud-ready applications and enterprise products across regulated and high-volume industries.
+  - Architect & DevOps Lead
+  - Leads development and platform delivery for large-scale web and mobile applications.
+  - Lead Developer
+  - Full-stack developer known for practical problem solving across retail, financial, and insurance systems.
+  - Software Developer
+  - Developer with a disciplined execution mindset and full-stack product experience.
+  - Delivery
+  - Agile Practice Lead
+  - Leads agile delivery with experience across QA, development, and project leadership.
+  - Human Resources Consultant
+  - HR consultant focused on matching talent to the right roles and building strong teams.
+- CTA labels / buttons:
+  - View full team
+- Card titles and card descriptions:
+  - Ryan Ward
+  - Sumita
+  - Vikas
+  - Naren
+  - Oleg
+  - Supamit (Jub)
+  - Ruben
+  - Lisa
+  - Parul
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 7 ? Content section
+- Section type: section (client-experience py-20 lg:py-24)
+- Section title: Trusted in complex environments
+- Section subtitle / eyebrow: Client Experience
+- Full visible body copy:
+  - Client Experience
+  - The kinds of complex environments this team has operated in across regulated institutions, operationally demanding companies, and high-growth teams where systems quality directly affects execution.
+  - Additional experience includes Barclays, FINRA, Admin Partners, Constructive .
+- CTA labels / buttons:
+  - Read the M&T Bank case study
+  - Read the Moody's case study
+  - Read the PearlX case study
+  - Read the SoFi case study
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 8 ? Content section
+- Section type: section (deferred-section border-t border-border py-20 lg:py-24)
+- Section title: What working together felt like
+- Section subtitle / eyebrow: Client perspective
+- Full visible body copy:
+  - Client perspective
+  - Partnering with Amalgam has helped us streamline our team's evaluative workflows and pilot new technologies that better show the impact of our funding and how to improve our grantmaking.
+  - Steve Fitzmier
+  - Director of Planning & Evaluation , John Templeton Foundation
+  - We've worked with many consulting firms, but finding one that delivers strong results and genuinely cares about our success is rare. The Amalgam team was responsive and easy to work with.
+  - Mike Mooney
+  - Chief Technology Officer , CleanItSupply
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 9 ? CTA band
+- Section type: section (deferred-section bg-foreground py-20 lg:py-24)
+- Section title: Want to see if we're the right fit for your situation?
+- Section subtitle / eyebrow: Start with a strategy call. If deeper support is needed, we will recommend the right engagement.
+- Full visible body copy:
+  - Start with a strategy call. If deeper support is needed, we will recommend the right engagement.
+- CTA labels / buttons:
+  - Book a strategy call
+  - See engagement options
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 17 ? Meet the people you work with | Amalgam
+- URL: /team
+- Purpose: Meet the Amalgam team across architecture, engineering, product delivery, legal, and HR.
+
+#### Section 1 ? Hero
+- Section type: section (relative overflow-hidden border-b border-border pt-32 pb-20)
+- Section title: Meet the people who help you ship through complex systems
+- Section subtitle / eyebrow: Amalgam stays intentionally small. The team spans product, architecture, engineering, operations, and leadership.
+- Full visible body copy:
+  - Amalgam stays intentionally small. The team spans product, architecture, engineering, operations, and leadership.
+  - Neeraj Vir
+  - CEO & Founder
+  - Ryan Ward
+  - Head of Growth & Innovation
+  - Sumita
+  - Partner - Legal & HR
+  - Vikas
+  - Chief Architect
+  - Naren
+  - Enterprise Architect
+  - Parul
+  - Human Resources Consultant
+  - 2012
+  - Founded
+  - 10
+  - Core team members
+  - 3
+  - Operating groups
+  - Experienced
+  - Default level of engagement
+- CTA labels / buttons:
+  - Book a strategy call
+  - See how we work
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Cards grid
+- Section type: section (deferred-section px-6 py-20 section-warm)
+- Section title: Leadership, growth, and operations
+- Section subtitle / eyebrow: Leadership
+- Full visible body copy:
+  - Leadership
+  - The team setting direction, shaping engagements, and keeping delivery tied to business outcomes.
+  - 3 people
+  - Founder
+  - CEO & Founder
+  - Built Amalgam after years across startups, financial services, and software delivery. Focused on direct communication, structure, and real execution.
+  - Head of Growth & Innovation
+  - Leads growth and operations across Amalgam's commercial systems, client experience, and day-to-day rhythm.
+  - Partner - Legal & HR
+  - Business and legal leadership that keeps operations, agreements, and client engagements running smoothly.
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - Neeraj Vir
+  - Ryan Ward
+  - Sumita
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Cards grid
+- Section type: section (deferred-section px-6 py-20 bg-secondary/45)
+- Section title: Technical architecture and engineering
+- Section subtitle / eyebrow: Architecture & Engineering
+- Full visible body copy:
+  - Architecture & Engineering
+  - Hands-on architects and builders working across systems, platforms, data, and real delivery constraints.
+  - 5 people
+  - Chief Architect
+  - Architect with deep experience in enterprise applications, data pipelines, and service integration.
+  - Enterprise Architect
+  - Builds cloud-ready applications and enterprise products across regulated and high-volume industries.
+  - Architect & DevOps Lead
+  - Leads development and platform delivery for large-scale web and mobile applications.
+  - Lead Developer
+  - Full-stack developer known for practical problem solving across retail, financial, and insurance systems.
+  - Software Developer
+  - Developer with a disciplined execution mindset and full-stack product experience.
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - Vikas
+  - Naren
+  - Oleg
+  - Supamit (Jub)
+  - Ruben
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 4 ? Cards grid
+- Section type: section (deferred-section px-6 py-20 section-warm)
+- Section title: Execution, cadence, and team effectiveness
+- Section subtitle / eyebrow: Delivery & People
+- Full visible body copy:
+  - Delivery & People
+  - Leaders focused on cadence, hiring, and team effectiveness so strong plans turn into reliable execution.
+  - 2 people
+  - Agile Practice Lead
+  - Leads agile delivery with experience across QA, development, and project leadership.
+  - Human Resources Consultant
+  - HR consultant focused on matching talent to the right roles and building strong teams.
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - Lisa
+  - Parul
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 5 ? CTA band
+- Section type: section (deferred-section border-t border-border bg-foreground px-6 py-20)
+- Section title: Want experienced operators in the room while you execute?
+- Section subtitle / eyebrow: Start with a strategy call if system issues are slowing execution. If you already know where you need help, contact us directly.
+- Full visible body copy:
+  - Start with a strategy call if system issues are slowing execution. If you already know where you need help, contact us directly.
+- CTA labels / buttons:
+  - Book a strategy call
+  - Contact us directly
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 18 ? Careers at Amalgam | Amalgam
+- URL: /careers
+- Purpose: Explore open roles at Amalgam and contact the team directly about current opportunities.
+
+#### Section 1 ? Hero
+- Section type: section (relative overflow-hidden border-b border-border py-20 lg:py-28)
+- Section title: Want to do meaningful work with a small, high-trust team?
+- Section subtitle / eyebrow: Careers
+- Full visible body copy:
+  - Careers
+  - We care about clear thinking, strong execution, and real client outcomes. If that sounds like your style, review the open roles below.
+  - Snapshot
+  - 3 current openings from the published legacy listing.
+  - Remote-first operating model with direct collaboration.
+  - Small-team environment where ownership and professionalism matter.
+- CTA labels / buttons:
+  - Ask about this role
+  - Email directly
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Cards grid
+- Section type: section (py-20 lg:py-24)
+- Section title: Roles you can step into now
+- Section subtitle / eyebrow: Open roles
+- Full visible body copy:
+  - Open roles
+  - Role titles, summaries, and ranges below are sourced from the prior published careers listing.
+  - Compensation range: $40,000-$60,000
+  - Support Amalgam's sales and marketing efforts while learning technical sales fundamentals and cloud delivery context in a lean operating team.
+  - What you'll do
+  - Compensation range: $80,000-$120,000
+  - Build full-stack solutions across Java and JavaScript with hands-on delivery in distributed systems, API design, and cloud deployment environments.
+  - Create clear, high-quality web and product experiences in close collaboration with engineering, from early structure through shipped interface quality.
+- CTA labels / buttons:
+  - Ask about this role
+  - Email application details
+- Card titles and card descriptions:
+  - Sales & Marketing Intern (Remote)
+  - Java Full Stack Developer (Remote)
+  - UX/UI Designer (Remote)
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+- Any visible list/bullet copy:
+  - Shadow leadership across prospect calls, client meetings, and active commercial workflows.
+  - Build and maintain core go-to-market materials, including case-study and website content updates.
+  - Help manage pipeline tracking and support practical sales operations day to day.
+  - Design and build RESTful services and microservices-oriented solutions.
+  - Deliver frontend work in modern JavaScript frameworks including React and related tooling.
+  - Contribute through agile practices, clear technical communication, and production-grade deployment discipline.
+  - Lead UX/UI direction for client websites and software experiences.
+  - Translate design ideas into user flows, wireframes, and implementation-ready visual systems.
+  - Collaborate with development teams to improve shipped quality and maintain design consistency.
+
+#### Section 3 ? Cards grid
+- Section type: section (border-y border-border bg-secondary/35 py-20 lg:py-24)
+- Section title: You'll fit here if ownership and direct communication matter to you
+- Section subtitle / eyebrow: You'll fit well here if
+- Full visible body copy:
+  - You'll fit well here if
+  - Everyone has a voice, and ownership matters. Strong judgment and clear execution are recognized here.
+  - We are serious about client outcomes and expect thoughtful, high-quality work that earns trust.
+  - We give clear direction and real space to execute. We also work asynchronously across locations.
+  - We stay curious, test ideas, and treat mistakes as learning data for better decisions.
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - You want to be valued for your professionalism.
+  - You always put the client first.
+  - You value your freedom.
+  - You're a lifelong student.
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 4 ? CTA band
+- Section type: section (bg-foreground py-20 lg:py-24)
+- Section title: Interested in one of these roles? Let's talk.
+- Section subtitle / eyebrow: Next step
+- Full visible body copy:
+  - Next step
+  - Use the contact page to start a conversation with the team. Include the role title and a short note on fit.
+- CTA labels / buttons:
+  - Ask about open roles
+  - Email hello@amalgam-inc.com
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 19 ? What is slowing your team right now? | Amalgam
+- URL: /contact
+- Purpose: Talk with Amalgam about what is blocking delivery and get a clear recommendation on the next step.
+
+#### Section 1 ? Hero
+- Section type: section (contact-hero-section relative overflow-hidden border-b border-border py-20 lg:py-28)
+- Section title: What is slowing your team right now?
+- Section subtitle / eyebrow: Contact
+- Full visible body copy:
+  - Contact
+  - Tell us where execution is getting stuck and which decision you need to make next.
+  - Best first move
+  - If the root cause is still unclear, start with a strategy call. If the path is already clear, choose the engagement that fits.
+  - Email
+  - Phone
+  - Office
+  - 851 Duportail Road, 2nd Floor Chesterbrook, PA 19087
+  - How we reply
+  - You hear back directly from Amalgam, not a ticket queue.
+  - Direct intake
+  - Best for high-stakes release and system issues
+  - Send context directly through the site and we route it to the team.
+  - Prefer email? That still works
+  - You can open a ready-to-send email draft with your details prefilled.
+  - We usually reply within one business day.
+  - Your draft autosaves in this browser tab while you write.
+  - Quick paths
+  - Pick the closest fit. If unsure, choose general inquiry.
+- CTA labels / buttons:
+  - hello@amalgam-inc.com
+  - +1 484-354-8498
+  - Strategy call
+  - Diagnostic Review
+  - Execution Sprint
+  - Outcome Partnership
+  - Careers
+  - General inquiry
+  - Send through website
+  - Open email draft
+  - Email directly
+  - Call Amalgam
+  - Clear saved draft
+- Card titles and card descriptions:
+  - Share your situation
+- Any microcopy / helper text:
+  - First name
+  - Last name
+  - Work email
+  - Company
+  - What kind of help do you want?
+  - What is happening right now?
+- Any visible form fields / placeholders / labels:
+  - text | firstName | Jane
+  - text | lastName | Smith
+  - email | email | jane@company.com
+  - text | company | Your company
+  - interest
+  - message | What is slowing things down, what outcome do you need, and where is the risk showing up?
+
+#### Section 2 ? Content section
+- Section type: section (deferred-section border-b border-border py-20 lg:py-24)
+- Section title: How clients describe the way we show up
+- Section subtitle / eyebrow: Client perspective
+- Full visible body copy:
+  - Client perspective
+  - â€œ Partnering with Amalgam has helped us streamline our team's evaluative workflows and pilot new technologies that better show the impact of our funding and how to improve our grantmaking.
+  - Steve Fitzmier
+  - Director of Planning & Evaluation , John Templeton Foundation
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Cards grid
+- Section type: section (contact-next-section section-warm py-16 lg:py-20)
+- Section title: Here's how this works
+- Section subtitle / eyebrow: What happens next
+- Full visible body copy:
+  - What happens next
+  - Tell us what is slowing delivery and where decisions are getting stuck.
+  - You hear back from the team, not a sales queue.
+  - That may be a strategy call, a focused diagnostic, or a practical internal next move.
+  - Best first move
+  - If delivery is stalling and the root cause is unclear, this is usually the fastest place to start.
+- CTA labels / buttons:
+  - Book a strategy call
+  - See how the diagnostic works
+  - Prefer self-check first? Explore diagnostics
+- Card titles and card descriptions:
+  - You tell us what is stuck
+  - We reply directly
+  - You get a clear next step
+  - Start with a strategy call
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 20 ? How we protect your information | Amalgam
+- URL: /privacy-policy
+- Purpose: Amalgam's privacy policy explains how we collect, use, and protect personal information shared through this website and our services.
+
+#### Section 1 ? Hero
+- Section type: section (border-b border-border px-6 py-16 md:py-22)
+- Section title: Privacy Policy
+- Section subtitle / eyebrow: Legal
+- Full visible body copy:
+  - Legal
+  - This policy explains how Amalgam collects, uses, and protects personal information shared through our website and service conversations.
+  - Last updated: March 9, 2026
+  - Questions?
+  - If you have a question about this policy or how Amalgam handles your information, reach out directly.
+- CTA labels / buttons:
+  - hello@amalgam-inc.com
+  - +1 484-354-8498
+  - Contact Amalgam
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Cards grid
+- Section type: article (px-6 py-16 md:py-20)
+- Section title: Overview
+- Section subtitle / eyebrow: Amalgam Inc. ("Amalgam," "we," "us," or "our") respects your privacy. This policy explains how we collect, use, and protect information when you visit our website or contact us.
+- Full visible body copy:
+  - Amalgam Inc. ("Amalgam," "we," "us," or "our") respects your privacy. This policy explains how we collect, use, and protect information when you visit our website or contact us.
+  - We collect information based on how you use the site.
+  - Contact information
+  - Name, work email, phone number, company name, and other details you choose to share when contacting us.
+  - Usage information
+  - Information about how visitors use the website, such as pages visited, navigation patterns, and approximate device or browser context.
+  - Technical information
+  - IP address, browser type, operating system, and related technical data typically collected during normal website use.
+  - We do not sell personal information. We may share information with service providers who help us operate the site or support our business, with professional advisers such as legal or accounting counsel, or when required by law, regulation, or a valid legal process.
+  - We use reasonable technical and organizational measures to protect information against unauthorized access, alteration, disclosure, or destruction. No website or transmission method can guarantee absolute security, so visitors should use appropriate judgment when sharing sensitive information online.
+  - Depending on your location, you may have rights to request access to, correction of, or deletion of personal information, or to opt out of certain communications. To make a request, contact us using the details provided on this page.
+  - Amalgam Inc.
+  - 851 Duportail Road, 2nd Floor
+  - Chesterbrook, PA 19087
+  - hello@amalgam-inc.com
+  - +1 484-354-8498
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - Information We Collect
+  - How We Use Information
+  - Information Sharing
+  - Data Security
+  - Your Choices
+  - Contact
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 21 ? Website terms you should know | Amalgam
+- URL: /terms-and-conditions
+- Purpose: Terms and conditions governing the use of Amalgam's website and the general framing of our services.
+
+#### Section 1 ? Hero
+- Section type: section (border-b border-border px-6 py-16 md:py-22)
+- Section title: Terms and Conditions
+- Section subtitle / eyebrow: Legal
+- Full visible body copy:
+  - Legal
+  - These terms govern use of the Amalgam website. Commercial terms for consulting work are defined separately in statements of work and service agreements.
+  - Last updated: March 9, 2026
+  - Questions?
+  - If you have a question about this policy or how Amalgam handles your information, reach out directly.
+- CTA labels / buttons:
+  - hello@amalgam-inc.com
+  - +1 484-354-8498
+  - Contact Amalgam
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Cards grid
+- Section type: article (px-6 py-16 md:py-20)
+- Section title: Agreement to Terms
+- Section subtitle / eyebrow: By using the Amalgam website, you agree to these Terms and Conditions. If you do not agree, please do not use the website.
+- Full visible body copy:
+  - By using the Amalgam website, you agree to these Terms and Conditions. If you do not agree, please do not use the website.
+  - Amalgam provides consulting services that may include Diagnostic Review engagements, Execution Sprint roadmapping work, Outcome Partnership support, systems architecture consulting, and related technical advisory services.
+  - Specific terms, fees, deliverables, and responsibilities for any paid engagement are defined separately in a statement of work, proposal, or service agreement.
+  - Unless otherwise stated, content on this website, including text, graphics, logos, and design elements, is the property of Amalgam Inc. and is protected by applicable intellectual property laws. You may not reproduce or distribute website content without prior written permission.
+  - The website and its content are provided on an "as is" and "as available" basis without warranties of any kind, whether express or implied. We do not guarantee uninterrupted operation of the site or that website content will always be complete, current, or error-free.
+  - To the maximum extent permitted by law, Amalgam will not be liable for indirect, incidental, special, consequential, or punitive damages arising from use of the website. Any liability relating to a paid engagement is governed by the specific contract for that work.
+  - These terms are governed by the laws of the Commonwealth of Pennsylvania, without regard to conflict of law principles.
+  - We may update these Terms and Conditions from time to time. Material updates will be reflected by revising the "Last updated" date on this page.
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - Services
+  - Intellectual Property
+  - Acceptable Use
+  - Disclaimers
+  - Limitation of Liability
+  - Governing Law
+  - Changes
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 22 ? How cookies are used on this site | Amalgam
+- URL: /cookie-policy
+- Purpose: Learn how Amalgam uses cookies and similar technologies on this website.
+
+#### Section 1 ? Hero
+- Section type: section (border-b border-border px-6 py-16 md:py-22)
+- Section title: Cookie Policy
+- Section subtitle / eyebrow: Legal
+- Full visible body copy:
+  - Legal
+  - This page explains what cookies are, how we use them on the Amalgam website, and what choices visitors have through browser settings.
+  - Last updated: March 9, 2026
+  - Questions?
+  - If you have a question about this policy or how Amalgam handles your information, reach out directly.
+- CTA labels / buttons:
+  - hello@amalgam-inc.com
+  - +1 484-354-8498
+  - Contact Amalgam
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Cards grid
+- Section type: article (px-6 py-16 md:py-20)
+- Section title: What Cookies Are
+- Section subtitle / eyebrow: Cookies are small text files stored on your device when you visit a website. We use them to help the site run, remember settings, and understand usage patterns.
+- Full visible body copy:
+  - Cookies are small text files stored on your device when you visit a website. We use them to help the site run, remember settings, and understand usage patterns.
+  - Essential cookies
+  - These support core website functions such as page delivery and basic navigation behavior.
+  - Analytics-related cookies
+  - We use these to understand site usage and improve readability, performance, and usability over time.
+  - Functional cookies
+  - These can help remember preferences or support a smoother browsing experience.
+  - We may update this Cookie Policy from time to time to reflect changes in website practices, operations, or legal requirements. Updates will be reflected by revising the "Last updated" date on this page.
+- CTA labels / buttons:
+  - None visible
+- Card titles and card descriptions:
+  - How We Use Cookies
+  - Managing Cookies
+  - Changes to This Policy
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 23 ? Can't find that page? | Amalgam
+- URL: /404
+- Purpose: The page you were looking for does not exist. Use the navigation to return to Amalgam's services, case studies, knowledge, or contact pages.
+
+#### Section 1 ? Hero
+- Section type: section (py-28 lg:py-36)
+- Section title: Can't find that page?
+- Section subtitle / eyebrow: 404
+- Full visible body copy:
+  - 404
+  - The page you're looking for doesn't exist or has moved. Try one of these pages next.
+- CTA labels / buttons:
+  - Book a strategy call
+  - See case studies
+  - Home
+  - Services
+  - Launchpad
+  - Knowledge
+  - Contact
+  - Go home
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 24 ? Can't find that page? | Amalgam
+- URL: /_not-found
+- Purpose: The page you were looking for does not exist. Use the navigation to return to Amalgam's services, case studies, knowledge, or contact pages.
+
+#### Section 1 ? Hero
+- Section type: section (py-28 lg:py-36)
+- Section title: Can't find that page?
+- Section subtitle / eyebrow: 404
+- Full visible body copy:
+  - 404
+  - The page you're looking for doesn't exist or has moved. Try one of these pages next.
+- CTA labels / buttons:
+  - Book a strategy call
+  - See case studies
+  - Home
+  - Services
+  - Launchpad
+  - Knowledge
+  - Contact
+  - Go home
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 25 ? Taking you to About | Amalgam
+- URL: /aboutus
+- Purpose: Amalgam helps founders, operators, and enterprise teams fix architecture, data, and delivery bottlenecks so critical product work ships with confidence.
+- Notes: Appears to be a redirect/legacy route
+
+#### Section 1 ? Hero
+- Section type: div (mx-auto max-w-xl rounded-[28px] border border-border bg-background p-8 text-center)
+- Section title: This page moved
+- Section subtitle / eyebrow: Redirecting
+- Full visible body copy:
+  - Redirecting
+  - We're sending you to the current About page.
+- CTA labels / buttons:
+  - Continue to About
+  - Go to homepage instead
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 26 ? Taking you to Contact | Amalgam
+- URL: /contactus
+- Purpose: Amalgam helps founders, operators, and enterprise teams fix architecture, data, and delivery bottlenecks so critical product work ships with confidence.
+- Notes: Appears to be a redirect/legacy route
+
+#### Section 1 ? Hero
+- Section type: div (mx-auto max-w-xl rounded-[28px] border border-border bg-background p-8 text-center)
+- Section title: This page moved
+- Section subtitle / eyebrow: Redirecting
+- Full visible body copy:
+  - Redirecting
+  - We're sending you to the current Contact page.
+- CTA labels / buttons:
+  - Continue to Contact
+  - Go to homepage instead
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 27 ? Taking you to Case Studies | Amalgam
+- URL: /ourwork
+- Purpose: Amalgam helps founders, operators, and enterprise teams fix architecture, data, and delivery bottlenecks so critical product work ships with confidence.
+- Notes: Appears to be a redirect/legacy route
+
+#### Section 1 ? Hero
+- Section type: div (mx-auto max-w-xl rounded-[28px] border border-border bg-background p-8 text-center)
+- Section title: This page moved
+- Section subtitle / eyebrow: Redirecting
+- Full visible body copy:
+  - Redirecting
+  - We're sending you to the current Case Studies page.
+- CTA labels / buttons:
+  - Continue to Case Studies
+  - Go to homepage instead
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 28 ? Taking you to your strategy call | Amalgam
+- URL: /schedule
+- Purpose: Amalgam helps founders, operators, and enterprise teams fix architecture, data, and delivery bottlenecks so critical product work ships with confidence.
+- Notes: Appears to be a redirect/legacy route
+
+#### Section 1 ? Hero
+- Section type: div (mx-auto max-w-xl rounded-[28px] border border-border bg-background p-8 text-center)
+- Section title: This page moved
+- Section subtitle / eyebrow: Redirecting
+- Full visible body copy:
+  - Redirecting
+  - We're sending you to the current strategy call page.
+- CTA labels / buttons:
+  - Continue to strategy call
+  - Go to homepage instead
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 29 ? Amalgam | Is product delivery stalling because systems and teams are out of sync?
+- URL: /review
+- Purpose: Amalgam helps founders, operators, and enterprise teams fix architecture, data, and delivery bottlenecks so critical product work ships with confidence.
+- Notes: Appears to be a redirect/legacy route
+
+#### Section 1 ? Hero
+- Section type: div (mx-auto max-w-lg rounded-2xl border border-border bg-card p-8 text-center)
+- Section title: Opening review mode...
+- Section subtitle / eyebrow: Review Mode
+- Full visible body copy:
+  - Review Mode
+  - If redirect does not start automatically, use the link below.
+- CTA labels / buttons:
+  - Continue
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 30 ? Admin Partners Case Study | Amalgam
+- URL: /case-studies/admin-partners
+- Purpose: Streamlining Core Systems for Operational Excellence
+
+#### Canonical case-study content (from data source)
+- Client: Admin Partners
+- Industry: Professional Services
+- Location: United States
+- Headline: Streamlining Core Systems for Operational Excellence
+- Overview: Admin Partners provides professional administrative services to help businesses improve their operations. They needed to modernize their internal systems to better serve their clients.
+- Situation: Admin Partners faced operational bottlenecks due to disconnected core systems that did not work reliably together, creating friction in their business processes.
+- Amalgam's role: We assessed their core systems architecture, identified integration gaps, and implemented solutions to streamline their operational workflows and data flow.
+- What changed: Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+- Challenges
+  - Disconnected systems created operational inefficiencies
+  - Limited visibility across business processes
+  - Manual data entry and duplicate efforts
+  - Difficulty scaling operations
+- Solution cards
+  - Card 1
+    - Title: Systems Assessment
+    - Body: Comprehensive evaluation of current core systems and integration points.
+  - Card 2
+    - Title: Integration Planning
+    - Body: Designed integration approach to connect systems and improve data flow.
+  - Card 3
+    - Title: Implementation
+    - Body: Executed system improvements to streamline operations.
+  - Card 4
+    - Title: Optimization
+    - Body: Fine-tuned processes for maximum efficiency and scalability.
+- Result cards
+  - Card 1
+    - Title: Efficiency ? Improved
+    - Body: Streamlined workflows reduced manual work and operational overhead.
+  - Card 2
+    - Title: Integration ? Connected Systems
+    - Body: Core systems now work reliably together for better data flow.
+  - Card 3
+    - Title: Scalability ? Ready to Grow
+    - Body: Improved systems foundation supports business growth.
+  - Card 4
+    - Title: Operations ? Optimized
+    - Body: Better visibility and control across operational processes.
+- Technologies and methods
+  - Systems Integration
+  - Process Optimization
+
+#### Section 1 ? Hero
+- Section type: section (border-b border-border px-6 py-16 md:py-24)
+- Section title: Streamlining Core Systems for Operational Excellence
+- Section subtitle / eyebrow: Admin Partners
+- Full visible body copy:
+  - Admin Partners
+  - Admin Partners provides professional administrative services to help businesses improve their operations. They needed to modernize their internal systems to better serve their clients.
+  - Visual context
+  - Representative project imagery drawn from public client context and Amalgam&apos;s published case-study materials.
+  - At a glance
+  - Situation
+  - Admin Partners faced operational bottlenecks due to disconnected core systems that did not work reliably together, creating friction in their business processes.
+  - Amalgam's role
+  - We assessed their core systems architecture, identified integration gaps, and implemented solutions to streamline their operational workflows and data flow.
+  - What changed
+  - Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+- CTA labels / buttons:
+  - Back to case studies
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Cards grid
+- Section type: section (px-6 py-16 md:py-24)
+- Section title: The real constraints
+- Section subtitle / eyebrow: Constraints
+- Full visible body copy:
+  - Constraints
+  - Disconnected systems created operational inefficiencies
+  - Limited visibility across business processes
+  - Manual data entry and duplicate efforts
+  - Difficulty scaling operations
+  - Execution
+  - Comprehensive evaluation of current core systems and integration points.
+  - Designed integration approach to connect systems and improve data flow.
+  - Executed system improvements to streamline operations.
+  - Fine-tuned processes for maximum efficiency and scalability.
+  - Results
+  - Why it mattered
+  - Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - Improved
+  - Streamlined workflows reduced manual work and operational overhead.
+  - Connected Systems
+  - Core systems now work reliably together for better data flow.
+  - Ready to Grow
+  - Improved systems foundation supports business growth.
+  - Optimized
+  - Better visibility and control across operational processes.
+  - Related proof
+  - Banking
+  - Barclays Bank US
+  - The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+  - Retail
+  - CleanItSupply
+  - The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering...
+  - Memory Preservation Platform
+  - Confinity
+  - Confinity moved forward with a clearer product foundation, a working platform direction, and an always-available technical partner who could...
+- CTA labels / buttons:
+  - Banking Barclays Bank US The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+  - Retail CleanItSupply The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering...
+  - Memory Preservation Platform Confinity Confinity moved forward with a clearer product foundation, a working platform direction, and an always-available technical partner who could...
+- Card titles and card descriptions:
+  - What we did
+  - Systems Assessment
+  - Integration Planning
+  - Implementation
+  - Optimization
+  - What changed
+  - Technologies and Methods
+  - More situations with similar pressure
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Content section
+- Section type: section (border-t border-border bg-muted/30 px-6 py-8)
+- Section title: None visible
+- Section subtitle / eyebrow: Previous
+- Full visible body copy:
+  - Previous
+  - Constructive Built Environment
+  - Next
+  - M&T Bank
+- CTA labels / buttons:
+  - Previous Constructive Built Environment
+  - Next M&T Bank
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 4 ? CTA band
+- Section type: section (bg-foreground px-6 py-20)
+- Section title: Seeing something similar?
+- Section subtitle / eyebrow: If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- Full visible body copy:
+  - If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- CTA labels / buttons:
+  - Book a strategy call
+  - Contact us directly
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 31 ? Barclays Bank US Case Study | Amalgam
+- URL: /case-studies/barclays-bank-us
+- Purpose: How The Website Revamp And CMS We Implemented Enabled Barclays to Cater to its Diverse Customers
+
+#### Canonical case-study content (from data source)
+- Client: Barclays Bank US
+- Industry: Banking
+- Location: New York, New York
+- Headline: How The Website Revamp And CMS We Implemented Enabled Barclays to Cater to its Diverse Customers
+- Overview: Barclays Bank is a global financial services provider offering personal and business banking, student loans, home equity products, credit cards, and more. They needed a website that could effectively communicate their unique offerings and security features.
+- Situation: Barclays Bank US had an outdated marketing website with poor UX, lack of accessibility compliance, and no personalization capabilities, preventing them from effectively showcasing their services and risking customer engagement.
+- Amalgam's role: We redesigned the website with modern UI/UX, implemented Magnolia CMS for content management, added personalization features like goal setters and CD ladder builders, and ensured WCAG accessibility compliance.
+- What changed: The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer engagement, and a modern brand perception.
+- Challenges
+  - Outdated website with unintuitive UX and UI prevented customer engagement
+  - Lack of accessibility compliance limited reach and brand perception
+  - No personalization capabilities to tailor information to diverse customer needs
+  - Inability to effectively communicate competitive advantages and security
+  - Content management challenges slowed marketing updates
+- Solution cards
+  - Card 1
+    - Title: Website Redesign
+    - Body: Created a smooth, dynamic user experience with CSS transitions, parallax scrolling, intelligent page indicators, and a modern identity with accessible imagery.
+  - Card 2
+    - Title: Personalization Engine
+    - Body: Incorporated banking tools like goal setters, FDIC maximizers, and CD ladder builders. Integrated rate comparisons and product bundles with flexibility for future additions.
+  - Card 3
+    - Title: Magnolia CMS Implementation
+    - Body: Enabled rules-based content and image delivery across the site with support for infographics, videos, blogging, and integrated social media content.
+  - Card 4
+    - Title: Accessibility & Responsiveness
+    - Body: Ensured WCAG compliance and improved responsiveness across all devices while maintaining modern design integrity.
+- Result cards
+  - Card 1
+    - Title: Experience ? WCAG Compliant
+    - Body: Inclusive and visitor-friendly digital experience that works across devices in adherence to WCAG standards.
+  - Card 2
+    - Title: Content ? Clear Homepage
+    - Body: Homepage showcases Savings and CD overviews with market-leading rates, minimum deposits, FDIC insurance, fees, and intuitive CTAs.
+  - Card 3
+    - Title: Efficiency ? Streamlined Updates
+    - Body: Magnolia CMS enables streamlined content updates, eliminating coordination hassles and expediting deployment.
+  - Card 4
+    - Title: Trust ? Modern Bank
+    - Body: Customers perceive Barclays as secure, dependable, and customer-centric through modern, accessible design.
+- Technologies and methods
+  - Magnolia CMS
+  - CSS
+  - Responsive Design
+  - WCAG Accessibility
+
+#### Section 1 ? Hero
+- Section type: section (border-b border-border px-6 py-16 md:py-24)
+- Section title: How The Website Revamp And CMS We Implemented Enabled Barclays to Cater to its Diverse Customers
+- Section subtitle / eyebrow: Barclays Bank US
+- Full visible body copy:
+  - Barclays Bank US
+  - Barclays Bank is a global financial services provider offering personal and business banking, student loans, home equity products, credit cards, and more. They needed a website that could effectively communicate their unique offerings and security features.
+  - Visual context
+  - Representative project imagery drawn from public client context and Amalgam&apos;s published case-study materials.
+  - At a glance
+  - Situation
+  - Barclays Bank US had an outdated marketing website with poor UX, lack of accessibility compliance, and no personalization capabilities, preventing them from effectively showcasing...
+  - Amalgam's role
+  - We redesigned the website with modern UI/UX, implemented Magnolia CMS for content management, added personalization features like goal setters and CD ladder builders, and ensured WCAG...
+  - What changed
+  - The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer engagement, and a modern brand perception.
+- CTA labels / buttons:
+  - Back to case studies
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Cards grid
+- Section type: section (px-6 py-16 md:py-24)
+- Section title: The real constraints
+- Section subtitle / eyebrow: Constraints
+- Full visible body copy:
+  - Constraints
+  - Outdated website with unintuitive UX and UI prevented customer engagement
+  - Lack of accessibility compliance limited reach and brand perception
+  - No personalization capabilities to tailor information to diverse customer needs
+  - Inability to effectively communicate competitive advantages and security
+  - Content management challenges slowed marketing updates
+  - Execution
+  - Created a smooth, dynamic user experience with CSS transitions, parallax scrolling, intelligent page indicators, and a modern identity with accessible imagery.
+  - Incorporated banking tools like goal setters, FDIC maximizers, and CD ladder builders. Integrated rate comparisons and product bundles with flexibility for future additions.
+  - Enabled rules-based content and image delivery across the site with support for infographics, videos, blogging, and integrated social media content.
+  - Ensured WCAG compliance and improved responsiveness across all devices while maintaining modern design integrity.
+  - Results
+  - Why it mattered
+  - The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer engagement, and a modern brand perception.
+  - WCAG Compliant
+  - Inclusive and visitor-friendly digital experience that works across devices in adherence to WCAG standards.
+  - Clear Homepage
+  - Homepage showcases Savings and CD overviews with market-leading rates, minimum deposits, FDIC insurance, fees, and intuitive CTAs.
+  - Streamlined Updates
+  - Magnolia CMS enables streamlined content updates, eliminating coordination hassles and expediting deployment.
+  - Modern Bank
+  - Customers perceive Barclays as secure, dependable, and customer-centric through modern, accessible design.
+  - Related proof
+  - Banking
+  - M&T Bank
+  - M&T successfully transitioned from the aging Voyager platform to Q2's modern, cloud-based solution with reliable integration into existing...
+  - Professional Services
+  - Admin Partners
+  - Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - Retail
+  - CleanItSupply
+  - The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering...
+- CTA labels / buttons:
+  - Banking M&T Bank M&T successfully transitioned from the aging Voyager platform to Q2's modern, cloud-based solution with reliable integration into existing...
+  - Professional Services Admin Partners Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - Retail CleanItSupply The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering...
+- Card titles and card descriptions:
+  - What we did
+  - Website Redesign
+  - Personalization Engine
+  - Magnolia CMS Implementation
+  - Accessibility & Responsiveness
+  - What changed
+  - Technologies and Methods
+  - More situations with similar pressure
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Content section
+- Section type: section (border-t border-border bg-muted/30 px-6 py-8)
+- Section title: None visible
+- Section subtitle / eyebrow: Previous
+- Full visible body copy:
+  - Previous
+  - Confinity
+  - Next
+  - John Templeton Foundation
+- CTA labels / buttons:
+  - Previous Confinity
+  - Next John Templeton Foundation
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 4 ? CTA band
+- Section type: section (bg-foreground px-6 py-20)
+- Section title: Seeing something similar?
+- Section subtitle / eyebrow: If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- Full visible body copy:
+  - If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- CTA labels / buttons:
+  - Book a strategy call
+  - Contact us directly
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 32 ? CleanItSupply Case Study | Amalgam
+- URL: /case-studies/cleanitsupply
+- Purpose: How We Streamlined CleanItSupply's Operations for Enhanced Efficiency
+
+#### Canonical case-study content (from data source)
+- Client: CleanItSupply
+- Industry: Retail
+- Location: Jeffersonville, Pennsylvania
+- Headline: How We Streamlined CleanItSupply's Operations for Enhanced Efficiency
+- Overview: CleanItSupply is an online retailer for wholesale supplies offering janitorial, restaurant, and home/office cleaning supplies. They serve both small individual and large bulk orders as a B2C and B2B retail business.
+- Situation: CleanItSupply's outdated ASP.net website had slow loading times (20+ seconds), limited scalability, and poor SEO performance, causing operational inefficiencies and reduced conversion rates.
+- Amalgam's role: We rebuilt their website using React.js for the frontend and introduced a new REST API service to decouple the backend. We transitioned search functionality from Nextopia to SearchSpring for better product management.
+- What changed: The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering improved engagement and conversion rates.
+- Challenges
+  - Outdated ASP.net framework with tightly coupled frontend and backend
+  - Slow loading times (20+ seconds) limited user engagement
+  - Poor SEO performance due to speed and crawlability issues
+  - Limited scalability for business growth
+  - Lack of in-house frontend development expertise
+- Solution cards
+  - Card 1
+    - Title: Frontend Modernization
+    - Body: Rebuilt frontend using React.js library to separate frontend from tightly coupled ASP.net backend.
+  - Card 2
+    - Title: API Decoupling
+    - Body: Revamped backend to incorporate new REST API service supporting decoupled architecture.
+  - Card 3
+    - Title: Search Enhancement
+    - Body: Transitioned search functionality from Nextopia to SearchSpring for more relevant results and efficient product management.
+  - Card 4
+    - Title: Single-Page Application
+    - Body: Converted static designs into a React.js application with significantly improved performance.
+- Result cards
+  - Card 1
+    - Title: Speed ? Drastically Faster
+    - Body: Single-page React application drastically decreases loading times, dramatically improving user engagement and conversion rates.
+  - Card 2
+    - Title: Search ? Improved Results
+    - Body: Optimized search functionality provides more relevant results and efficient management of products and promotions.
+  - Card 3
+    - Title: Maintenance ? Simplified Upkeep
+    - Body: Decoupled frontend and backend facilitate implementation of future updates, features, and enhancements.
+  - Card 4
+    - Title: Performance ? High-Performance Site
+    - Body: Modern architecture positions CleanItSupply for scalability and long-term technical sustainability.
+- Technologies and methods
+  - React.js
+  - REST API
+  - SearchSpring
+  - PostgreSQL
+  - ASP.net
+
+#### Section 1 ? Hero
+- Section type: section (border-b border-border px-6 py-16 md:py-24)
+- Section title: How We Streamlined CleanItSupply's Operations for Enhanced Efficiency
+- Section subtitle / eyebrow: CleanItSupply
+- Full visible body copy:
+  - CleanItSupply
+  - CleanItSupply is an online retailer for wholesale supplies offering janitorial, restaurant, and home/office cleaning supplies. They serve both small individual and large bulk orders as a B2C and B2B retail business.
+  - Visual context
+  - Representative project imagery drawn from public client context and Amalgam&apos;s published case-study materials.
+  - At a glance
+  - Situation
+  - CleanItSupply's outdated ASP.
+  - Amalgam's role
+  - We rebuilt their website using React.
+  - What changed
+  - The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering improved engagement and conversion rates.
+- CTA labels / buttons:
+  - Back to case studies
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Cards grid
+- Section type: section (px-6 py-16 md:py-24)
+- Section title: The real constraints
+- Section subtitle / eyebrow: Constraints
+- Full visible body copy:
+  - Constraints
+  - Outdated ASP.net framework with tightly coupled frontend and backend
+  - Slow loading times (20+ seconds) limited user engagement
+  - Poor SEO performance due to speed and crawlability issues
+  - Limited scalability for business growth
+  - Lack of in-house frontend development expertise
+  - Execution
+  - Rebuilt frontend using React.js library to separate frontend from tightly coupled ASP.net backend.
+  - Revamped backend to incorporate new REST API service supporting decoupled architecture.
+  - Transitioned search functionality from Nextopia to SearchSpring for more relevant results and efficient product management.
+  - Converted static designs into a React.js application with significantly improved performance.
+  - Results
+  - Why it mattered
+  - The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering improved engagement and conversion rates.
+  - Drastically Faster
+  - Single-page React application drastically decreases loading times, dramatically improving user engagement and conversion rates.
+  - Improved Results
+  - Optimized search functionality provides more relevant results and efficient management of products and promotions.
+  - Simplified Upkeep
+  - Decoupled frontend and backend facilitate implementation of future updates, features, and enhancements.
+  - High-Performance Site
+  - Modern architecture positions CleanItSupply for scalability and long-term technical sustainability.
+  - Related proof
+  - Professional Services
+  - Admin Partners
+  - Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - Banking
+  - Barclays Bank US
+  - The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+  - Memory Preservation Platform
+  - Confinity
+  - Confinity moved forward with a clearer product foundation, a working platform direction, and an always-available technical partner who could...
+- CTA labels / buttons:
+  - Professional Services Admin Partners Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - Banking Barclays Bank US The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+  - Memory Preservation Platform Confinity Confinity moved forward with a clearer product foundation, a working platform direction, and an always-available technical partner who could...
+- Card titles and card descriptions:
+  - What we did
+  - Frontend Modernization
+  - API Decoupling
+  - Search Enhancement
+  - Single-Page Application
+  - What changed
+  - Technologies and Methods
+  - More situations with similar pressure
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Content section
+- Section type: section (border-t border-border bg-muted/30 px-6 py-8)
+- Section title: None visible
+- Section subtitle / eyebrow: Previous
+- Full visible body copy:
+  - Previous
+  - John Templeton Foundation
+  - Next
+  - Constructive Built Environment
+- CTA labels / buttons:
+  - Previous John Templeton Foundation
+  - Next Constructive Built Environment
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 4 ? CTA band
+- Section type: section (bg-foreground px-6 py-20)
+- Section title: Seeing something similar?
+- Section subtitle / eyebrow: If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- Full visible body copy:
+  - If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- CTA labels / buttons:
+  - Book a strategy call
+  - Contact us directly
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 33 ? Confinity Case Study | Amalgam
+- URL: /case-studies/confinity
+- Purpose: How We Helped Confinity Move from Early Conviction to a Real Product Foundation
+
+#### Canonical case-study content (from data source)
+- Client: Confinity
+- Industry: Memory Preservation Platform
+- Location: Delaware
+- Headline: How We Helped Confinity Move from Early Conviction to a Real Product Foundation
+- Overview: Confinity is a Delaware company building a private platform for families to capture milestones, organize memories, and preserve stories across generations. As the company took shape, it needed a partner that could help translate early conviction into a real product and an architecture the team could grow with.
+- Situation: Confinity needed more than implementation help. As a seed-stage company building a private platform for families to preserve memories and stories, it needed support across funding readiness, architecture, and day-to-day product development without the overhead of building a full engineering organization too early.
+- Amalgam's role: We partnered from the beginning as a direct product and engineering extension, helping shape the technical plan behind the business, define the architecture, and provide hands-on development support through contributors including Oleg and Ruben. The relationship stayed close and responsive as product, funding, and launch priorities evolved.
+- What changed: Confinity moved forward with a clearer product foundation, a working platform direction, and an always-available technical partner who could support architecture, delivery, and engineering judgment as the company matured.
+- Challenges
+  - Balancing fundraising conversations with early product and technical decisions
+  - Needing architecture leadership before a full internal engineering team existed
+  - Moving from concept to working product without fragmented freelancer handoffs
+  - Maintaining responsive development support while priorities evolved quickly
+  - Creating a foundation the business could keep building on as the roadmap matured
+- Solution cards
+  - Card 1
+    - Title: Early Product & Funding Support
+    - Body: Worked with the founding team from the outset to support funding conversations, sharpen the product story, and connect business ambition to a credible technical plan.
+  - Card 2
+    - Title: Architecture & System Design
+    - Body: Helped define the application structure, technical foundations, and delivery approach for a private platform centered on stories, memories, and family connections.
+  - Card 3
+    - Title: Embedded Development Support
+    - Body: Provided hands-on development support through Amalgam contributors including Oleg and Ruben, giving the company reliable engineering capacity without slowing decisions.
+  - Card 4
+    - Title: Always-On Technical Partnership
+    - Body: Stayed close as an on-call technical partner, helping navigate product tradeoffs, unblock delivery, and adapt the roadmap as the company evolved.
+- Result cards
+  - Card 1
+    - Title: Foundation ? Product Direction Built
+    - Body: Confinity moved from early concept work into a clearer product foundation with architecture aligned to the platform's long-term direction.
+  - Card 2
+    - Title: Delivery ? Embedded Capacity
+    - Body: The founding team had immediate access to direct technical help without having to assemble a full internal engineering function too early.
+  - Card 3
+    - Title: Decisions ? Clearer Tradeoffs
+    - Body: Architecture, sequencing, and development decisions could move faster because the business had a consistent technical partner close to the work.
+  - Card 4
+    - Title: Partnership ? Always Available
+    - Body: Amalgam remained an always-on extension of the team, supporting product, development, and technical judgment as the company matured.
+- Technologies and methods
+  - Product Architecture
+  - Embedded Engineering
+  - Technical Strategy
+  - Ongoing Development Support
+
+#### Section 1 ? Hero
+- Section type: section (border-b border-border px-6 py-16 md:py-24)
+- Section title: How We Helped Confinity Move from Early Conviction to a Real Product Foundation
+- Section subtitle / eyebrow: Confinity
+- Full visible body copy:
+  - Confinity
+  - Confinity is a Delaware company building a private platform for families to capture milestones, organize memories, and preserve stories across generations. As the company took shape, it needed a partner that could help translate early conviction into a real product and an architecture the team could grow with.
+  - Visual context
+  - Representative project imagery drawn from public client context and Amalgam&apos;s published case-study materials.
+  - At a glance
+  - Situation
+  - Confinity needed more than implementation help.
+  - Amalgam's role
+  - We partnered from the beginning as a direct product and engineering extension, helping shape the technical plan behind the business, define the architecture, and provide hands-on...
+  - What changed
+  - Confinity moved forward with a clearer product foundation, a working platform direction, and an always-available technical partner who could support architecture, delivery, and...
+- CTA labels / buttons:
+  - Back to case studies
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Cards grid
+- Section type: section (px-6 py-16 md:py-24)
+- Section title: The real constraints
+- Section subtitle / eyebrow: Constraints
+- Full visible body copy:
+  - Constraints
+  - Balancing fundraising conversations with early product and technical decisions
+  - Needing architecture leadership before a full internal engineering team existed
+  - Moving from concept to working product without fragmented freelancer handoffs
+  - Maintaining responsive development support while priorities evolved quickly
+  - Creating a foundation the business could keep building on as the roadmap matured
+  - Execution
+  - Worked with the founding team from the outset to support funding conversations, sharpen the product story, and connect business ambition to a credible technical plan.
+  - Helped define the application structure, technical foundations, and delivery approach for a private platform centered on stories, memories, and family connections.
+  - Provided hands-on development support through Amalgam contributors including Oleg and Ruben, giving the company reliable engineering capacity without slowing decisions.
+  - Stayed close as an on-call technical partner, helping navigate product tradeoffs, unblock delivery, and adapt the roadmap as the company evolved.
+  - Results
+  - Why it mattered
+  - Confinity moved forward with a clearer product foundation, a working platform direction, and an always-available technical partner who could support architecture, delivery, and engineering judgment as the company matured.
+  - Product Direction Built
+  - Confinity moved from early concept work into a clearer product foundation with architecture aligned to the platform's long-term direction.
+  - Embedded Capacity
+  - The founding team had immediate access to direct technical help without having to assemble a full internal engineering function too early.
+  - Clearer Tradeoffs
+  - Architecture, sequencing, and development decisions could move faster because the business had a consistent technical partner close to the work.
+  - Always Available
+  - Amalgam remained an always-on extension of the team, supporting product, development, and technical judgment as the company matured.
+  - Related proof
+  - Professional Services
+  - Admin Partners
+  - Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - Banking
+  - Barclays Bank US
+  - The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+  - Retail
+  - CleanItSupply
+  - The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering...
+- CTA labels / buttons:
+  - Professional Services Admin Partners Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - Banking Barclays Bank US The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+  - Retail CleanItSupply The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering...
+- Card titles and card descriptions:
+  - What we did
+  - Early Product & Funding Support
+  - Architecture & System Design
+  - Embedded Development Support
+  - Always-On Technical Partnership
+  - What changed
+  - Technologies and Methods
+  - More situations with similar pressure
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Content section
+- Section type: section (border-t border-border bg-muted/30 px-6 py-8)
+- Section title: None visible
+- Section subtitle / eyebrow: Previous
+- Full visible body copy:
+  - Previous
+  - PearlX
+  - Next
+  - Barclays Bank US
+- CTA labels / buttons:
+  - Previous PearlX
+  - Next Barclays Bank US
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 4 ? CTA band
+- Section type: section (bg-foreground px-6 py-20)
+- Section title: Seeing something similar?
+- Section subtitle / eyebrow: If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- Full visible body copy:
+  - If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- CTA labels / buttons:
+  - Book a strategy call
+  - Contact us directly
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 34 ? Constructive Built Environment Case Study | Amalgam
+- URL: /case-studies/constructive-built-environment
+- Purpose: How We Helped Constructive Built Environment Build the CART Platform
+
+#### Canonical case-study content (from data source)
+- Client: Constructive Built Environment
+- Industry: Procurement & Utility Solutions
+- Location: Pennsylvania
+- Headline: How We Helped Constructive Built Environment Build the CART Platform
+- Overview: Constructive Built Environment is a team of water industry professionals solving complex procurement challenges. They create value through solutions that make procurement and deployment easier, more effective, and transparent.
+- Situation: As a startup, Constructive faced resource constraints and needed a tech partner to develop their CART platform quickly without hiring overhead or managing multiple contractors.
+- Amalgam's role: We acted as an extension of Constructive's team, providing on-demand full-scope development with startup agility. We shaped the product through strategic conversations, designed UX/UI for 12+ pages, and ensured stable transitions when their tech stack evolved.
+- What changed: We kickstarted their product with an MVP users enjoyed, accelerating go-to-market, ensuring smooth user engagement, and avoiding overhead costs. We continue supporting their platform evolution.
+- Challenges
+  - Startup resource constraints prevented rapid MVP development
+  - Needed an all-in-one partner instead of fragmented support
+  - Hiring full-time team would be costly and slow
+  - Managing multiple contractors threatened process speed
+  - Required rapid market entry for early adopter capture
+- Solution cards
+  - Card 1
+    - Title: Strategic Partnership
+    - Body: Operated as extension of Constructive team, clarifying vision, uncovering friction points, and proposing improvements beyond initial scope.
+  - Card 2
+    - Title: MVP Development
+    - Body: Custom-developed UX/UI for 12+ pages: invoicing, project tracking, lead management, service publishing, vendor listings, and multi-step registration.
+  - Card 3
+    - Title: Platform Architecture
+    - Body: Designed architecture for long-term scalability and tested full user journey before handoff with rapid iteration feedback.
+  - Card 4
+    - Title: Framework Flexibility
+    - Body: When client switched to Tailwind CSS and Gatsby, ensured painless transition while adapting work and maintaining design integrity.
+- Result cards
+  - Card 1
+    - Title: Timeline ? Accelerated Launch
+    - Body: Rapid MVP delivery enabled faster go-to-market without delays of internal hiring or multi-contractor management.
+  - Card 2
+    - Title: UX ? Frictionless Procurement
+    - Body: CART platform delivers frictionless procurement process ensuring smooth vendor-utility transactions.
+  - Card 3
+    - Title: Scalability ? On-Demand Growth
+    - Body: On-demand model allows scaling development efforts based on evolving needs without fixed overhead.
+  - Card 4
+    - Title: Cost ? Efficient Delivery
+    - Body: High-quality development and UX/UI design delivered at fraction of full-time staff hiring costs.
+- Technologies and methods
+  - React
+  - Bootstrap
+  - Tailwind CSS
+  - Gatsby
+  - Magnolia CMS
+
+#### Section 1 ? Hero
+- Section type: section (border-b border-border px-6 py-16 md:py-24)
+- Section title: How We Helped Constructive Built Environment Build the CART Platform
+- Section subtitle / eyebrow: Constructive Built Environment
+- Full visible body copy:
+  - Constructive Built Environment
+  - Constructive Built Environment is a team of water industry professionals solving complex procurement challenges. They create value through solutions that make procurement and deployment easier, more effective, and transparent.
+  - Visual context
+  - Representative project imagery drawn from public client context and Amalgam&apos;s published case-study materials.
+  - At a glance
+  - Situation
+  - As a startup, Constructive faced resource constraints and needed a tech partner to develop their CART platform quickly without hiring overhead or managing multiple contractors.
+  - Amalgam's role
+  - We acted as an extension of Constructive's team, providing on-demand full-scope development with startup agility.
+  - What changed
+  - We kickstarted their product with an MVP users enjoyed, accelerating go-to-market, ensuring smooth user engagement, and avoiding overhead costs.
+- CTA labels / buttons:
+  - Back to case studies
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Cards grid
+- Section type: section (px-6 py-16 md:py-24)
+- Section title: The real constraints
+- Section subtitle / eyebrow: Constraints
+- Full visible body copy:
+  - Constraints
+  - Startup resource constraints prevented rapid MVP development
+  - Needed an all-in-one partner instead of fragmented support
+  - Hiring full-time team would be costly and slow
+  - Managing multiple contractors threatened process speed
+  - Required rapid market entry for early adopter capture
+  - Execution
+  - Operated as extension of Constructive team, clarifying vision, uncovering friction points, and proposing improvements beyond initial scope.
+  - Custom-developed UX/UI for 12+ pages: invoicing, project tracking, lead management, service publishing, vendor listings, and multi-step registration.
+  - Designed architecture for long-term scalability and tested full user journey before handoff with rapid iteration feedback.
+  - When client switched to Tailwind CSS and Gatsby, ensured painless transition while adapting work and maintaining design integrity.
+  - Results
+  - Why it mattered
+  - We kickstarted their product with an MVP users enjoyed, accelerating go-to-market, ensuring smooth user engagement, and avoiding overhead costs. We continue supporting their platform evolution.
+  - Accelerated Launch
+  - Rapid MVP delivery enabled faster go-to-market without delays of internal hiring or multi-contractor management.
+  - Frictionless Procurement
+  - CART platform delivers frictionless procurement process ensuring smooth vendor-utility transactions.
+  - On-Demand Growth
+  - On-demand model allows scaling development efforts based on evolving needs without fixed overhead.
+  - Efficient Delivery
+  - High-quality development and UX/UI design delivered at fraction of full-time staff hiring costs.
+  - Related proof
+  - Professional Services
+  - Admin Partners
+  - Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - Banking
+  - Barclays Bank US
+  - The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+  - Retail
+  - CleanItSupply
+  - The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering...
+- CTA labels / buttons:
+  - Professional Services Admin Partners Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - Banking Barclays Bank US The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+  - Retail CleanItSupply The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering...
+- Card titles and card descriptions:
+  - What we did
+  - Strategic Partnership
+  - MVP Development
+  - Platform Architecture
+  - Framework Flexibility
+  - What changed
+  - Technologies and Methods
+  - More situations with similar pressure
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Content section
+- Section type: section (border-t border-border bg-muted/30 px-6 py-8)
+- Section title: None visible
+- Section subtitle / eyebrow: Previous
+- Full visible body copy:
+  - Previous
+  - CleanItSupply
+  - Next
+  - Admin Partners
+- CTA labels / buttons:
+  - Previous CleanItSupply
+  - Next Admin Partners
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 4 ? CTA band
+- Section type: section (bg-foreground px-6 py-20)
+- Section title: Seeing something similar?
+- Section subtitle / eyebrow: If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- Full visible body copy:
+  - If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- CTA labels / buttons:
+  - Book a strategy call
+  - Contact us directly
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 35 ? FINRA Case Study | Amalgam
+- URL: /case-studies/finra
+- Purpose: Enhancing Operations for Financial Market Integrity
+
+#### Canonical case-study content (from data source)
+- Client: FINRA
+- Industry: Financial Regulation
+- Location: United States
+- Headline: Enhancing Operations for Financial Market Integrity
+- Overview: FINRA is the self-regulatory organization that protects investors and ensures integrity of financial markets by regulating broker-dealers and their representatives. They administer qualifying exams, enforce rules and federal securities laws, and maintain comprehensive oversight of the securities industry.
+- Situation: FINRA, the self-regulatory organization overseeing the financial industry, needed to enhance technical capabilities to support their regulatory mission and operational efficiency.
+- Amalgam's role: We provided strategic technology consulting to strengthen FINRA's systems and operations, enabling them to better serve their core mission of protecting investors and ensuring market integrity.
+- What changed: FINRA gained enhanced technical capabilities supporting their regulatory responsibilities and improving operational effectiveness across the organization.
+- Challenges
+  - Supporting complex regulatory requirements across the financial industry
+  - Operating at scale with numerous broker-dealers and representatives
+  - Maintaining rigorous compliance and security standards
+  - Coordinating examinations, rule enforcement, and market monitoring
+- Solution cards
+  - Card 1
+    - Title: Technology Assessment
+    - Body: Evaluated FINRA's existing technical infrastructure and identified optimization opportunities.
+  - Card 2
+    - Title: Systems Enhancement
+    - Body: Implemented improvements to strengthen operational systems and regulatory capabilities.
+  - Card 3
+    - Title: Process Optimization
+    - Body: Streamlined processes to support FINRA's regulatory functions and oversight responsibilities.
+- Result cards
+  - Card 1
+    - Title: Capability ? Enhanced
+    - Body: Strengthened technical systems supporting regulatory mission.
+  - Card 2
+    - Title: Operations ? Improved
+    - Body: Optimized processes for better effectiveness and efficiency.
+  - Card 3
+    - Title: Impact ? Expanded
+    - Body: Better positioned to protect investors and ensure market integrity.
+- Technologies and methods
+  - Enterprise Systems
+  - Regulatory Technology
+
+#### Section 1 ? Hero
+- Section type: section (border-b border-border px-6 py-16 md:py-24)
+- Section title: Enhancing Operations for Financial Market Integrity
+- Section subtitle / eyebrow: FINRA
+- Full visible body copy:
+  - FINRA
+  - FINRA is the self-regulatory organization that protects investors and ensures integrity of financial markets by regulating broker-dealers and their representatives. They administer qualifying exams, enforce rules and federal securities laws, and maintain comprehensive oversight of the securities industry.
+  - Visual context
+  - Representative project imagery drawn from public client context and Amalgam&apos;s published case-study materials.
+  - At a glance
+  - Situation
+  - FINRA, the self-regulatory organization overseeing the financial industry, needed to enhance technical capabilities to support their regulatory mission and operational efficiency.
+  - Amalgam's role
+  - We provided strategic technology consulting to strengthen FINRA's systems and operations, enabling them to better serve their core mission of protecting investors and ensuring market...
+  - What changed
+  - FINRA gained enhanced technical capabilities supporting their regulatory responsibilities and improving operational effectiveness across the organization.
+- CTA labels / buttons:
+  - Back to case studies
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Cards grid
+- Section type: section (px-6 py-16 md:py-24)
+- Section title: The real constraints
+- Section subtitle / eyebrow: Constraints
+- Full visible body copy:
+  - Constraints
+  - Supporting complex regulatory requirements across the financial industry
+  - Operating at scale with numerous broker-dealers and representatives
+  - Maintaining rigorous compliance and security standards
+  - Coordinating examinations, rule enforcement, and market monitoring
+  - Execution
+  - Evaluated FINRA's existing technical infrastructure and identified optimization opportunities.
+  - Implemented improvements to strengthen operational systems and regulatory capabilities.
+  - Streamlined processes to support FINRA's regulatory functions and oversight responsibilities.
+  - Results
+  - Why it mattered
+  - FINRA gained enhanced technical capabilities supporting their regulatory responsibilities and improving operational effectiveness across the organization.
+  - Enhanced
+  - Strengthened technical systems supporting regulatory mission.
+  - Improved
+  - Optimized processes for better effectiveness and efficiency.
+  - Expanded
+  - Better positioned to protect investors and ensure market integrity.
+  - Related proof
+  - Professional Services
+  - Admin Partners
+  - Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - Banking
+  - Barclays Bank US
+  - The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+  - Retail
+  - CleanItSupply
+  - The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering...
+- CTA labels / buttons:
+  - Professional Services Admin Partners Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - Banking Barclays Bank US The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+  - Retail CleanItSupply The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering...
+- Card titles and card descriptions:
+  - What we did
+  - Technology Assessment
+  - Systems Enhancement
+  - Process Optimization
+  - What changed
+  - Technologies and Methods
+  - More situations with similar pressure
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 4 ? CTA band
+- Section type: section (bg-foreground px-6 py-20)
+- Section title: Seeing something similar?
+- Section subtitle / eyebrow: If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- Full visible body copy:
+  - If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- CTA labels / buttons:
+  - Book a strategy call
+  - Contact us directly
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 36 ? John Templeton Foundation Case Study | Amalgam
+- URL: /case-studies/john-templeton-foundation
+- Purpose: How We Improved Grant Classification and Trend Analysis Using Artificial Intelligence
+
+#### Canonical case-study content (from data source)
+- Client: John Templeton Foundation
+- Industry: Philanthropy
+- Location: West Conshohocken, Pennsylvania
+- Headline: How We Improved Grant Classification and Trend Analysis Using Artificial Intelligence
+- Overview: John Templeton Foundation is a philanthropic organization funding interdisciplinary research with the mission to start awe-inspiring conversations. They allow people to submit ideas on any topic while focusing on strategic priority areas.
+- Situation: JTF struggled to efficiently analyze and classify grant applications and academic publications, hindering their ability to scale operations, maintain data integrity, and extract actionable insights.
+- Amalgam's role: We customized OpenAlex's text classification tool to fit JTF's specific requirements by adding relevant topics, fine-tuning the classification model, and enabling API call functionality with rigorous testing.
+- What changed: The enhanced classification system enabled JTF to streamline grant application processes, produce more informative and actionable results, and identify trends across supported research and publications.
+- Challenges
+  - Manual grant classification processes were cumbersome and inconsistent
+  - Existing proprietary meta-databases were inadequate and expensive
+  - Traditional machine learning required extensive data and training sets
+  - Data integrity and security risks with manual processing
+  - Issues with scalability due to unsustainable manual processes
+  - Limited insights due to data silos
+- Solution cards
+  - Card 1
+    - Title: OpenAlex Customization
+    - Body: Customized OpenAlex's text classification tool to fit JTF's specific requirements and research focus areas.
+  - Card 2
+    - Title: Model Fine-Tuning
+    - Body: Added relevant topics to the classification model and fine-tuned it for improved accuracy in grant and publication categorization.
+  - Card 3
+    - Title: API Integration
+    - Body: Enabled API calls for reliable integration with JTF's existing systems and workflows.
+  - Card 4
+    - Title: Rigorous Testing
+    - Body: Ensured accuracy and reliability through comprehensive testing and validation processes.
+- Result cards
+  - Card 1
+    - Title: Classification ? Accurate & Fast
+    - Body: Automated classification system efficiently processes grant applications and publications with consistent accuracy.
+  - Card 2
+    - Title: Insights ? Trend Analysis
+    - Body: JTF can now identify trends across supported research and extract actionable insights for strategic decisions.
+  - Card 3
+    - Title: Operations ? Streamlined Process
+    - Body: Grant application workflow is now streamlined with reduced manual overhead and improved consistency.
+  - Card 4
+    - Title: Data ? Integrated Data
+    - Body: Eliminates data silos and enables comprehensive analysis across all grant and publication information.
+- Technologies and methods
+  - OpenAlex
+  - Machine Learning
+  - API Integration
+  - Text Classification
+
+#### Section 1 ? Hero
+- Section type: section (border-b border-border px-6 py-16 md:py-24)
+- Section title: How We Improved Grant Classification and Trend Analysis Using Artificial Intelligence
+- Section subtitle / eyebrow: John Templeton Foundation
+- Full visible body copy:
+  - John Templeton Foundation
+  - John Templeton Foundation is a philanthropic organization funding interdisciplinary research with the mission to start awe-inspiring conversations. They allow people to submit ideas on any topic while focusing on strategic priority areas.
+  - Visual context
+  - Representative project imagery drawn from public client context and Amalgam&apos;s published case-study materials.
+  - At a glance
+  - Situation
+  - JTF struggled to efficiently analyze and classify grant applications and academic publications, hindering their ability to scale operations, maintain data integrity, and extract...
+  - Amalgam's role
+  - We customized OpenAlex's text classification tool to fit JTF's specific requirements by adding relevant topics, fine-tuning the classification model, and enabling API call...
+  - What changed
+  - The enhanced classification system enabled JTF to streamline grant application processes, produce more informative and actionable results, and identify trends across supported...
+- CTA labels / buttons:
+  - Back to case studies
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Cards grid
+- Section type: section (px-6 py-16 md:py-24)
+- Section title: The real constraints
+- Section subtitle / eyebrow: Constraints
+- Full visible body copy:
+  - Constraints
+  - Manual grant classification processes were cumbersome and inconsistent
+  - Existing proprietary meta-databases were inadequate and expensive
+  - Traditional machine learning required extensive data and training sets
+  - Data integrity and security risks with manual processing
+  - Issues with scalability due to unsustainable manual processes
+  - Limited insights due to data silos
+  - Execution
+  - Customized OpenAlex's text classification tool to fit JTF's specific requirements and research focus areas.
+  - Added relevant topics to the classification model and fine-tuned it for improved accuracy in grant and publication categorization.
+  - Enabled API calls for reliable integration with JTF's existing systems and workflows.
+  - Ensured accuracy and reliability through comprehensive testing and validation processes.
+  - Results
+  - Why it mattered
+  - The enhanced classification system enabled JTF to streamline grant application processes, produce more informative and actionable results, and identify trends across supported research and publications.
+  - Accurate & Fast
+  - Automated classification system efficiently processes grant applications and publications with consistent accuracy.
+  - Trend Analysis
+  - JTF can now identify trends across supported research and extract actionable insights for strategic decisions.
+  - Streamlined Process
+  - Grant application workflow is now streamlined with reduced manual overhead and improved consistency.
+  - Integrated Data
+  - Eliminates data silos and enables comprehensive analysis across all grant and publication information.
+  - Related proof
+  - Professional Services
+  - Admin Partners
+  - Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - Banking
+  - Barclays Bank US
+  - The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+  - Retail
+  - CleanItSupply
+  - The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering...
+- CTA labels / buttons:
+  - Professional Services Admin Partners Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - Banking Barclays Bank US The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+  - Retail CleanItSupply The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering...
+- Card titles and card descriptions:
+  - What we did
+  - OpenAlex Customization
+  - Model Fine-Tuning
+  - API Integration
+  - Rigorous Testing
+  - What changed
+  - Technologies and Methods
+  - More situations with similar pressure
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Content section
+- Section type: section (border-t border-border bg-muted/30 px-6 py-8)
+- Section title: None visible
+- Section subtitle / eyebrow: Previous
+- Full visible body copy:
+  - Previous
+  - Barclays Bank US
+  - Next
+  - CleanItSupply
+- CTA labels / buttons:
+  - Previous Barclays Bank US
+  - Next CleanItSupply
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 4 ? CTA band
+- Section type: section (bg-foreground px-6 py-20)
+- Section title: Seeing something similar?
+- Section subtitle / eyebrow: If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- Full visible body copy:
+  - If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- CTA labels / buttons:
+  - Book a strategy call
+  - Contact us directly
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 37 ? Moody's Case Study | Amalgam
+- URL: /case-studies/moodys
+- Purpose: Building a white-label name intelligence layer for enterprise risk workflows
+
+#### Canonical case-study content (from data source)
+- Client: Moody's
+- Industry: Financial Services
+- Location: United States
+- Headline: Building a white-label name intelligence layer for enterprise risk workflows
+- Overview: This engagement centered on the practical problem of name intelligence at enterprise scale. The work required balancing transliteration complexity, search quality, and workflow usability in a way that could be adopted inside established risk operations.
+- Situation: Name matching across transliterations and fragmented source data created real screening friction in risk-sensitive workflows.
+- Amalgam's role: We designed and delivered a white-label name intelligence system focused on transliteration-aware matching, search precision, and practical review workflows across multiple data sources.
+- What changed: The platform gave enterprise teams a more usable way to examine name-based risk signals and make higher-confidence screening decisions in complex global datasets.
+- Challenges
+  - Name matching quality dropped quickly when transliteration and spelling variation increased
+  - Analysts needed more precise search and review behavior across multiple source streams
+  - Risk workflows required clear handling of low-confidence and ambiguous matches
+  - The product had to work as a white-label software layer in enterprise settings
+- Solution cards
+  - Card 1
+    - Title: Name Intelligence Architecture
+    - Body: Designed a system model for transliteration-aware matching, alias handling, and confidence-based result grouping.
+  - Card 2
+    - Title: Search and Review Experience
+    - Body: Built screening flows that made it easier to review potential matches, compare alternatives, and move through high-volume queues.
+  - Card 3
+    - Title: Data and Signal Normalization
+    - Body: Structured ingestion and normalization patterns so signals from different sources could be examined consistently.
+  - Card 4
+    - Title: White-Label Delivery
+    - Body: Packaged the platform for enterprise use as a licensable/white-label solution with flexible integration options.
+- Result cards
+  - Card 1
+    - Title: Matching quality ? More reliable
+    - Body: Teams gained a clearer way to evaluate ambiguous name matches in transliteration-heavy scenarios.
+  - Card 2
+    - Title: Workflow ? Faster reviews
+    - Body: Screening teams could move through candidate results with less manual friction and less re-checking.
+  - Card 3
+    - Title: Adoption ? Enterprise-ready
+    - Body: The white-label approach made the solution usable in larger institutional environments.
+  - Card 4
+    - Title: Decision support ? Clearer signal
+    - Body: Risk-related search and matching decisions were based on more structured, explainable outputs.
+- Technologies and methods
+  - Name Matching
+  - Transliteration Logic
+  - Search Engineering
+  - Risk Workflow Design
+
+#### Section 1 ? Hero
+- Section type: section (border-b border-border px-6 py-16 md:py-24)
+- Section title: Building a white-label name intelligence layer for enterprise risk workflows
+- Section subtitle / eyebrow: Moody's
+- Full visible body copy:
+  - Moody's
+  - This engagement centered on the practical problem of name intelligence at enterprise scale. The work required balancing transliteration complexity, search quality, and workflow usability in a way that could be adopted inside established risk operations.
+  - Visual context
+  - Client brand mark shown as context where public project imagery is limited.
+  - At a glance
+  - Situation
+  - Name matching across transliterations and fragmented source data created real screening friction in risk-sensitive workflows.
+  - Amalgam's role
+  - We designed and delivered a white-label name intelligence system focused on transliteration-aware matching, search precision, and practical review workflows across multiple data...
+  - What changed
+  - The platform gave enterprise teams a more usable way to examine name-based risk signals and make higher-confidence screening decisions in complex global datasets.
+- CTA labels / buttons:
+  - Back to case studies
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Cards grid
+- Section type: section (px-6 py-16 md:py-24)
+- Section title: The real constraints
+- Section subtitle / eyebrow: Constraints
+- Full visible body copy:
+  - Constraints
+  - Name matching quality dropped quickly when transliteration and spelling variation increased
+  - Analysts needed more precise search and review behavior across multiple source streams
+  - Risk workflows required clear handling of low-confidence and ambiguous matches
+  - The product had to work as a white-label software layer in enterprise settings
+  - Execution
+  - Designed a system model for transliteration-aware matching, alias handling, and confidence-based result grouping.
+  - Built screening flows that made it easier to review potential matches, compare alternatives, and move through high-volume queues.
+  - Structured ingestion and normalization patterns so signals from different sources could be examined consistently.
+  - Packaged the platform for enterprise use as a licensable/white-label solution with flexible integration options.
+  - Results
+  - Why it mattered
+  - The platform gave enterprise teams a more usable way to examine name-based risk signals and make higher-confidence screening decisions in complex global datasets.
+  - More reliable
+  - Teams gained a clearer way to evaluate ambiguous name matches in transliteration-heavy scenarios.
+  - Faster reviews
+  - Screening teams could move through candidate results with less manual friction and less re-checking.
+  - Enterprise-ready
+  - The white-label approach made the solution usable in larger institutional environments.
+  - Clearer signal
+  - Risk-related search and matching decisions were based on more structured, explainable outputs.
+  - Related proof
+  - Professional Services
+  - Admin Partners
+  - Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - Banking
+  - Barclays Bank US
+  - The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+  - Retail
+  - CleanItSupply
+  - The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering...
+- CTA labels / buttons:
+  - Professional Services Admin Partners Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - Banking Barclays Bank US The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+  - Retail CleanItSupply The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering...
+- Card titles and card descriptions:
+  - What we did
+  - Name Intelligence Architecture
+  - Search and Review Experience
+  - Data and Signal Normalization
+  - White-Label Delivery
+  - What changed
+  - Technologies and Methods
+  - More situations with similar pressure
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Content section
+- Section type: section (border-t border-border bg-muted/30 px-6 py-8)
+- Section title: None visible
+- Section subtitle / eyebrow: Previous
+- Full visible body copy:
+  - Previous
+  - M&T Bank
+  - Next
+  - SoFi
+- CTA labels / buttons:
+  - Previous M&T Bank
+  - Next SoFi
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 4 ? CTA band
+- Section type: section (bg-foreground px-6 py-20)
+- Section title: Seeing something similar?
+- Section subtitle / eyebrow: If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- Full visible body copy:
+  - If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- CTA labels / buttons:
+  - Book a strategy call
+  - Contact us directly
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 38 ? M&T Bank Case Study | Amalgam
+- URL: /case-studies/mt-bank
+- Purpose: How We Helped M&T Bank Navigate a Complex Legacy System Replacement
+
+#### Canonical case-study content (from data source)
+- Client: M&T Bank
+- Industry: Banking
+- Location: New York State
+- Headline: How We Helped M&T Bank Navigate a Complex Legacy System Replacement
+- Overview: M&T Bank is one of the largest commercial banks in the United States, offering financial solutions across retail, commercial, and institutional markets. The bank needed to modernize its digital infrastructure to better serve evolving customer needs and address vendor discontinuation.
+- Situation: M&T Bank's business banking platform operated on Voyager, a legacy system. When the vendor announced discontinuation of support, M&T faced a mission-critical decision: modernize or risk operational vulnerabilities.
+- Amalgam's role: We joined as a strategic implementation partner, providing skilled consultants to support decommissioning and helping M&T reimagine their digital banking experience. We evaluated multiple digital banking vendors using a matrix of 130+ business use cases, facilitated the selection of Q2, and delivered change management including training and documentation.
+- What changed: M&T successfully transitioned from the aging Voyager platform to Q2's modern, cloud-based solution with reliable integration into existing tools and successful cross-departmental adoption.
+- Challenges
+  - Vendor discontinuation of legacy Voyager platform requiring immediate action
+  - Complex technical integration: Voyager deeply embedded with dependencies across IT, operations, compliance, and business units
+  - High licensing costs for legacy systems creating unnecessary overhead
+  - Internal delays in vendor selection slowing the modernization timeline
+  - Needed extensive change management across business and technical teams
+- Solution cards
+  - Card 1
+    - Title: Vendor Evaluation & Selection
+    - Body: Conducted comprehensive side-by-side assessments of multiple platforms across scalability, security, UX, and integration capabilities using 130+ business use cases.
+  - Card 2
+    - Title: Middleware Modernization
+    - Body: Replaced Tibco middleware with a Spring Boot-based microservices framework, enabling modern API-first integrations and reducing infrastructure costs.
+  - Card 3
+    - Title: Data Migration & Integration
+    - Body: Built batch data pipelines and integration APIs for real-time and overnight synchronization, migrating data from Voyager to Q2 with validated mapping and transformation.
+  - Card 4
+    - Title: Change Management & Training
+    - Body: Delivered internal training programs, clear stakeholder communications, and comprehensive operational documentation for smooth adoption across teams.
+- Result cards
+  - Card 1
+    - Title: Platform ? Modernized
+    - Body: Successfully implemented Q2 digital banking platform replacing legacy Voyager system.
+  - Card 2
+    - Title: Infrastructure ? Optimized
+    - Body: Replaced costly Tibco middleware with scalable, maintainable Spring Boot microservices.
+  - Card 3
+    - Title: Integration ? Seamless
+    - Body: Built secure integrations connecting Q2 to core banking systems and third-party solutions.
+  - Card 4
+    - Title: Adoption ? Successful
+    - Body: Enabled cross-departmental adoption through training, documentation, and change enablement.
+- Technologies and methods
+  - Q2 Platform
+  - Spring Boot
+  - AWS
+  - PostgreSQL
+  - RESTful APIs
+  - Microservices
+
+#### Section 1 ? Hero
+- Section type: section (border-b border-border px-6 py-16 md:py-24)
+- Section title: How We Helped M&T Bank Navigate a Complex Legacy System Replacement
+- Section subtitle / eyebrow: M&T Bank
+- Full visible body copy:
+  - M&T Bank
+  - M&T Bank is one of the largest commercial banks in the United States, offering financial solutions across retail, commercial, and institutional markets. The bank needed to modernize its digital infrastructure to better serve evolving customer needs and address vendor discontinuation.
+  - Visual context
+  - Representative project imagery drawn from public client context and Amalgam&apos;s published case-study materials.
+  - At a glance
+  - Situation
+  - M&T Bank's business banking platform operated on Voyager, a legacy system.
+  - Amalgam's role
+  - We joined as a strategic implementation partner, providing skilled consultants to support decommissioning and helping M&T reimagine their digital banking experience.
+  - What changed
+  - M&T successfully transitioned from the aging Voyager platform to Q2's modern, cloud-based solution with reliable integration into existing tools and successful cross-departmental...
+- CTA labels / buttons:
+  - Back to case studies
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Cards grid
+- Section type: section (px-6 py-16 md:py-24)
+- Section title: The real constraints
+- Section subtitle / eyebrow: Constraints
+- Full visible body copy:
+  - Constraints
+  - Vendor discontinuation of legacy Voyager platform requiring immediate action
+  - Complex technical integration: Voyager deeply embedded with dependencies across IT, operations, compliance, and business units
+  - High licensing costs for legacy systems creating unnecessary overhead
+  - Internal delays in vendor selection slowing the modernization timeline
+  - Needed extensive change management across business and technical teams
+  - Execution
+  - Conducted comprehensive side-by-side assessments of multiple platforms across scalability, security, UX, and integration capabilities using 130+ business use cases.
+  - Replaced Tibco middleware with a Spring Boot-based microservices framework, enabling modern API-first integrations and reducing infrastructure costs.
+  - Built batch data pipelines and integration APIs for real-time and overnight synchronization, migrating data from Voyager to Q2 with validated mapping and transformation.
+  - Delivered internal training programs, clear stakeholder communications, and comprehensive operational documentation for smooth adoption across teams.
+  - Results
+  - Why it mattered
+  - M&T successfully transitioned from the aging Voyager platform to Q2's modern, cloud-based solution with reliable integration into existing tools and successful cross-departmental adoption.
+  - Modernized
+  - Successfully implemented Q2 digital banking platform replacing legacy Voyager system.
+  - Optimized
+  - Replaced costly Tibco middleware with scalable, maintainable Spring Boot microservices.
+  - Seamless
+  - Built secure integrations connecting Q2 to core banking systems and third-party solutions.
+  - Successful
+  - Enabled cross-departmental adoption through training, documentation, and change enablement.
+  - Related proof
+  - Banking
+  - Barclays Bank US
+  - The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+  - Professional Services
+  - Admin Partners
+  - Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - Retail
+  - CleanItSupply
+  - The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering...
+- CTA labels / buttons:
+  - Banking Barclays Bank US The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+  - Professional Services Admin Partners Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - Retail CleanItSupply The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering...
+- Card titles and card descriptions:
+  - What we did
+  - Vendor Evaluation & Selection
+  - Middleware Modernization
+  - Data Migration & Integration
+  - Change Management & Training
+  - What changed
+  - Technologies and Methods
+  - More situations with similar pressure
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Content section
+- Section type: section (border-t border-border bg-muted/30 px-6 py-8)
+- Section title: None visible
+- Section subtitle / eyebrow: Previous
+- Full visible body copy:
+  - Previous
+  - Admin Partners
+  - Next
+  - Moody's
+- CTA labels / buttons:
+  - Previous Admin Partners
+  - Next Moody's
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 4 ? CTA band
+- Section type: section (bg-foreground px-6 py-20)
+- Section title: Seeing something similar?
+- Section subtitle / eyebrow: If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- Full visible body copy:
+  - If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- CTA labels / buttons:
+  - Book a strategy call
+  - Contact us directly
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 39 ? PearlX Case Study | Amalgam
+- URL: /case-studies/pearlx
+- Purpose: How We Built PearlX's State-of-the-Art Customer Portal
+
+#### Canonical case-study content (from data source)
+- Client: PearlX
+- Industry: Energy
+- Location: Charlottesville, Virginia
+- Headline: How We Built PearlX's State-of-the-Art Customer Portal
+- Overview: PearlX is an innovative energy startup helping multi-housing facilities access sustainable power. They provide affordable clean energy solutions for both property owners and residents.
+- Situation: As a startup, PearlX lacked the resources to build their customer portal, a critical part of the business, risking delayed go-to-market and costly inefficiencies.
+- Amalgam's role: We built a robust customer portal with data infrastructure, reliable onboarding flows, and user profiles with custom permissions. The architecture uses React.js and AWS services including AWS Kinesis, AWS Lambda, and PostgreSQL.
+- What changed: PearlX now has a streamlined onboarding process, efficient community management, and a scalable, user-friendly portal that helps them attract and retain clients. Amalgam remains their trusted development partner.
+- Challenges
+  - Limited startup resources prevented building a high-quality customer portal
+  - Needed a partner who could architect a complex multi-tenant platform
+  - Tight timeline required rapid development without sacrificing quality
+  - Required support for both landlords and renters with different permission levels
+- Solution cards
+  - Card 1
+    - Title: Vision & Architecture Planning
+    - Body: Analyzed current vision and outlined roadmap for portal architecture and UX design.
+  - Card 2
+    - Title: Front-End Development
+    - Body: Built responsive front-end using React.js with HTML, JavaScript, and CSS for intuitive user experience.
+  - Card 3
+    - Title: Data Infrastructure & Onboarding
+    - Body: Architected PostgreSQL-based data infrastructure with AWS services for document management and secure data handling.
+  - Card 4
+    - Title: Permission & Community Management
+    - Body: Developed different user profiles with associated permissions and logic to enable community-specific onboarding.
+- Result cards
+  - Card 1
+    - Title: Onboarding ? Seamless Process
+    - Body: Landlords and renters can now easily onboard and manage their communities through an intuitive interface.
+  - Card 2
+    - Title: Management ? Community Control
+    - Body: Landlords can effectively manage multiple communities with community-specific onboarding and document management.
+  - Card 3
+    - Title: UX ? Modern Portal
+    - Body: Contemporary UX/UI design wrapped around data infrastructure provides user-centric approach to community management.
+  - Card 4
+    - Title: Partnership ? Ongoing Support
+    - Body: Amalgam continues as PearlX's sole development partner for all technological needs as they scale.
+- Technologies and methods
+  - React.js
+  - PostgreSQL
+  - AWS Kinesis
+  - AWS Lambda
+  - Python
+
+#### Section 1 ? Hero
+- Section type: section (border-b border-border px-6 py-16 md:py-24)
+- Section title: How We Built PearlX's State-of-the-Art Customer Portal
+- Section subtitle / eyebrow: PearlX
+- Full visible body copy:
+  - PearlX
+  - PearlX is an innovative energy startup helping multi-housing facilities access sustainable power. They provide affordable clean energy solutions for both property owners and residents.
+  - Visual context
+  - Representative project imagery drawn from public client context and Amalgam&apos;s published case-study materials.
+  - At a glance
+  - Situation
+  - As a startup, PearlX lacked the resources to build their customer portal, a critical part of the business, risking delayed go-to-market and costly inefficiencies.
+  - Amalgam's role
+  - We built a robust customer portal with data infrastructure, reliable onboarding flows, and user profiles with custom permissions.
+  - What changed
+  - PearlX now has a streamlined onboarding process, efficient community management, and a scalable, user-friendly portal that helps them attract and retain clients.
+- CTA labels / buttons:
+  - Back to case studies
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Cards grid
+- Section type: section (px-6 py-16 md:py-24)
+- Section title: The real constraints
+- Section subtitle / eyebrow: Constraints
+- Full visible body copy:
+  - Constraints
+  - Limited startup resources prevented building a high-quality customer portal
+  - Needed a partner who could architect a complex multi-tenant platform
+  - Tight timeline required rapid development without sacrificing quality
+  - Required support for both landlords and renters with different permission levels
+  - Execution
+  - Analyzed current vision and outlined roadmap for portal architecture and UX design.
+  - Built responsive front-end using React.js with HTML, JavaScript, and CSS for intuitive user experience.
+  - Architected PostgreSQL-based data infrastructure with AWS services for document management and secure data handling.
+  - Developed different user profiles with associated permissions and logic to enable community-specific onboarding.
+  - Results
+  - Why it mattered
+  - PearlX now has a streamlined onboarding process, efficient community management, and a scalable, user-friendly portal that helps them attract and retain clients. Amalgam remains their trusted development partner.
+  - Seamless Process
+  - Landlords and renters can now easily onboard and manage their communities through an intuitive interface.
+  - Community Control
+  - Landlords can effectively manage multiple communities with community-specific onboarding and document management.
+  - Modern Portal
+  - Contemporary UX/UI design wrapped around data infrastructure provides user-centric approach to community management.
+  - Ongoing Support
+  - Amalgam continues as PearlX's sole development partner for all technological needs as they scale.
+  - Related proof
+  - Professional Services
+  - Admin Partners
+  - Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - Banking
+  - Barclays Bank US
+  - The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+  - Retail
+  - CleanItSupply
+  - The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering...
+- CTA labels / buttons:
+  - Professional Services Admin Partners Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - Banking Barclays Bank US The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+  - Retail CleanItSupply The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering...
+- Card titles and card descriptions:
+  - What we did
+  - Vision & Architecture Planning
+  - Front-End Development
+  - Data Infrastructure & Onboarding
+  - Permission & Community Management
+  - What changed
+  - Technologies and Methods
+  - More situations with similar pressure
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Content section
+- Section type: section (border-t border-border bg-muted/30 px-6 py-8)
+- Section title: None visible
+- Section subtitle / eyebrow: Previous
+- Full visible body copy:
+  - Previous
+  - Premier Financial Alliance
+  - Next
+  - Confinity
+- CTA labels / buttons:
+  - Previous Premier Financial Alliance
+  - Next Confinity
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 4 ? CTA band
+- Section type: section (bg-foreground px-6 py-20)
+- Section title: Seeing something similar?
+- Section subtitle / eyebrow: If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- Full visible body copy:
+  - If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- CTA labels / buttons:
+  - Book a strategy call
+  - Contact us directly
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 40 ? Premier Financial Alliance Case Study | Amalgam
+- URL: /case-studies/premier-financial-alliance
+- Purpose: How We Streamlined Premier Financial Alliance's Employee Operations
+
+#### Canonical case-study content (from data source)
+- Client: Premier Financial Alliance
+- Industry: Insurance
+- Location: Suwanee, Georgia
+- Headline: How We Streamlined Premier Financial Alliance's Employee Operations
+- Overview: Premier Financial Alliance is an insurance brokerage disrupting the industry with proprietary financial products focused on Middle America. They offer whole life, universal life, term life insurance, and annuities. However, their outdated platform hindered efficiency for both agents and administrators.
+- Situation: Outdated technology and inefficient platforms created unnecessary manual processes for agent onboarding, reporting, and administrative tasks, wasting resources and risking inaccurate incentive distribution.
+- Amalgam's role: We modernized their platform by automating complex data relationships, optimizing agent onboarding, and improving reporting capabilities. We migrated data from MySQL to PostgreSQL, refined business logic, and built an intuitive interface for administrators.
+- What changed: PFA now has a solid incentive management system, secure team communication, and dynamic custom reporting that enables data-driven decision-making and streamlined operations.
+- Challenges
+  - Manual processes lacked key business logic for complex data relationships
+  - Inflexible reporting and counterintuitive UI prevented data-driven insights
+  - Inconsistent data management created poor decision-making foundation
+  - Non-standardized administrative tasks slowed agent onboarding
+  - Risk of inaccurate or unfair incentive distribution
+- Solution cards
+  - Card 1
+    - Title: Application Assessment & Architecture
+    - Body: Evaluated PFA's existing application structure and designed a comprehensive improvement plan.
+  - Card 2
+    - Title: Data Migration & Modernization
+    - Body: Migrated legacy data from MySQL to PostgreSQL, scrubbed data, and added new fields to facilitate agent management using Java-based data access objects.
+  - Card 3
+    - Title: Process Automation & Business Logic
+    - Body: Created new administrative and reporting logic to improve agent onboarding, team communication, and incentive management.
+  - Card 4
+    - Title: UX/UI Redesign
+    - Body: Engineered a modern, intuitive interface enabling agents to create dynamic personal reports and administrators to manage complex hierarchies and relationships.
+- Result cards
+  - Card 1
+    - Title: Efficiency ? Dynamic Reporting
+    - Body: Admins can now create custom personal reports to review individual agent performance with ease.
+  - Card 2
+    - Title: Security ? Encrypted Communications
+    - Body: Modern email server with key security and backup protocols ensures critical communications are never lost.
+  - Card 3
+    - Title: Management ? Automated Hierarchy
+    - Body: Automated agent hierarchy management replaced manual commission payout processes while maintaining data integrity.
+  - Card 4
+    - Title: Experience ? Modern Platform
+    - Body: Contemporary UX/UI makes it easy for administrators to edit agent profiles and manage complex relationships.
+- Technologies and methods
+  - Java
+  - PostgreSQL
+  - MySQL Migration
+  - Modern UI/UX
+
+#### Section 1 ? Hero
+- Section type: section (border-b border-border px-6 py-16 md:py-24)
+- Section title: How We Streamlined Premier Financial Alliance's Employee Operations
+- Section subtitle / eyebrow: Premier Financial Alliance
+- Full visible body copy:
+  - Premier Financial Alliance
+  - Premier Financial Alliance is an insurance brokerage disrupting the industry with proprietary financial products focused on Middle America. They offer whole life, universal life, term life insurance, and annuities.
+  - Visual context
+  - Representative project imagery drawn from public client context and Amalgam&apos;s published case-study materials.
+  - At a glance
+  - Situation
+  - Outdated technology and inefficient platforms created unnecessary manual processes for agent onboarding, reporting, and administrative tasks, wasting resources and risking inaccurate...
+  - Amalgam's role
+  - We modernized their platform by automating complex data relationships, optimizing agent onboarding, and improving reporting capabilities.
+  - What changed
+  - PFA now has a solid incentive management system, secure team communication, and dynamic custom reporting that enables data-driven decision-making and streamlined operations.
+- CTA labels / buttons:
+  - Back to case studies
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Cards grid
+- Section type: section (px-6 py-16 md:py-24)
+- Section title: The real constraints
+- Section subtitle / eyebrow: Constraints
+- Full visible body copy:
+  - Constraints
+  - Manual processes lacked key business logic for complex data relationships
+  - Inflexible reporting and counterintuitive UI prevented data-driven insights
+  - Inconsistent data management created poor decision-making foundation
+  - Non-standardized administrative tasks slowed agent onboarding
+  - Risk of inaccurate or unfair incentive distribution
+  - Execution
+  - Evaluated PFA's existing application structure and designed a comprehensive improvement plan.
+  - Migrated legacy data from MySQL to PostgreSQL, scrubbed data, and added new fields to facilitate agent management using Java-based data access objects.
+  - Created new administrative and reporting logic to improve agent onboarding, team communication, and incentive management.
+  - Engineered a modern, intuitive interface enabling agents to create dynamic personal reports and administrators to manage complex hierarchies and relationships.
+  - Results
+  - Why it mattered
+  - PFA now has a solid incentive management system, secure team communication, and dynamic custom reporting that enables data-driven decision-making and streamlined operations.
+  - Dynamic Reporting
+  - Admins can now create custom personal reports to review individual agent performance with ease.
+  - Encrypted Communications
+  - Modern email server with key security and backup protocols ensures critical communications are never lost.
+  - Automated Hierarchy
+  - Automated agent hierarchy management replaced manual commission payout processes while maintaining data integrity.
+  - Modern Platform
+  - Contemporary UX/UI makes it easy for administrators to edit agent profiles and manage complex relationships.
+  - Related proof
+  - Professional Services
+  - Admin Partners
+  - Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - Banking
+  - Barclays Bank US
+  - The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+  - Retail
+  - CleanItSupply
+  - The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering...
+- CTA labels / buttons:
+  - Professional Services Admin Partners Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - Banking Barclays Bank US The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+  - Retail CleanItSupply The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering...
+- Card titles and card descriptions:
+  - What we did
+  - Application Assessment & Architecture
+  - Data Migration & Modernization
+  - Process Automation & Business Logic
+  - UX/UI Redesign
+  - What changed
+  - Technologies and Methods
+  - More situations with similar pressure
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 4 ? CTA band
+- Section type: section (bg-foreground px-6 py-20)
+- Section title: Seeing something similar?
+- Section subtitle / eyebrow: If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- Full visible body copy:
+  - If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- CTA labels / buttons:
+  - Book a strategy call
+  - Contact us directly
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 41 ? SoFi Case Study | Amalgam
+- URL: /case-studies/sofi
+- Purpose: Adapting name-screening and decision-support workflows for a digital financial environment
+
+#### Canonical case-study content (from data source)
+- Client: SoFi
+- Industry: Fintech
+- Location: United States
+- Headline: Adapting name-screening and decision-support workflows for a digital financial environment
+- Overview: This work focused on adapting screening-oriented product lineage into a different financial operating context. The goal was not abstract architecture, but a practical system that teams could actually use in real workflows.
+- Situation: Financial workflows needed practical screening and signal review support without slowing operational decisions.
+- Amalgam's role: We applied proven name-intelligence and workflow patterns to a fintech operating context, adapting matching behavior, review logic, and operational integration needs for a fast-moving financial environment.
+- What changed: The engagement improved how risk-relevant signals could be reviewed in day-to-day operations while keeping the workflow practical for teams under delivery pressure.
+- Challenges
+  - Risk-related checks needed to fit high-throughput financial operations
+  - Signal review quality had to improve without creating heavy process drag
+  - Workflow design needed to support practical decision speed and consistency
+  - Implementation had to stay aligned with existing operational and technical constraints
+- Solution cards
+  - Card 1
+    - Title: Workflow Adaptation
+    - Body: Mapped screening and review logic to the realities of a digital financial operations environment.
+  - Card 2
+    - Title: Matching and Signal Tuning
+    - Body: Refined matching behaviors and review paths so teams could evaluate potential risk indicators with better consistency.
+  - Card 3
+    - Title: Operational Fit
+    - Body: Shaped the implementation to support day-to-day decision support instead of creating a heavyweight standalone process.
+- Result cards
+  - Card 1
+    - Title: Operations ? Better fit
+    - Body: Risk-support behavior aligned more cleanly with real financial workflows.
+  - Card 2
+    - Title: Review quality ? More consistent
+    - Body: Teams had clearer review pathways for evaluating screening outputs.
+  - Card 3
+    - Title: Decision support ? Higher confidence
+    - Body: Signal interpretation became easier to apply in practical day-to-day decisions.
+  - Card 4
+    - Title: Delivery rhythm ? Less friction
+    - Body: Teams were able to run core workflows with fewer avoidable interruptions.
+- Technologies and methods
+  - Workflow Engineering
+  - Screening Support
+  - Signal Review Design
+  - Fintech Operations
+
+#### Section 1 ? Hero
+- Section type: section (border-b border-border px-6 py-16 md:py-24)
+- Section title: Adapting name-screening and decision-support workflows for a digital financial environment
+- Section subtitle / eyebrow: SoFi
+- Full visible body copy:
+  - SoFi
+  - This work focused on adapting screening-oriented product lineage into a different financial operating context. The goal was not abstract architecture, but a practical system that teams could actually use in real workflows.
+  - Visual context
+  - Client brand mark shown as context where public project imagery is limited.
+  - At a glance
+  - Situation
+  - Financial workflows needed practical screening and signal review support without slowing operational decisions.
+  - Amalgam's role
+  - We applied proven name-intelligence and workflow patterns to a fintech operating context, adapting matching behavior, review logic, and operational integration needs for a fast-moving...
+  - What changed
+  - The engagement improved how risk-relevant signals could be reviewed in day-to-day operations while keeping the workflow practical for teams under delivery pressure.
+- CTA labels / buttons:
+  - Back to case studies
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Cards grid
+- Section type: section (px-6 py-16 md:py-24)
+- Section title: The real constraints
+- Section subtitle / eyebrow: Constraints
+- Full visible body copy:
+  - Constraints
+  - Risk-related checks needed to fit high-throughput financial operations
+  - Signal review quality had to improve without creating heavy process drag
+  - Workflow design needed to support practical decision speed and consistency
+  - Implementation had to stay aligned with existing operational and technical constraints
+  - Execution
+  - Mapped screening and review logic to the realities of a digital financial operations environment.
+  - Refined matching behaviors and review paths so teams could evaluate potential risk indicators with better consistency.
+  - Shaped the implementation to support day-to-day decision support instead of creating a heavyweight standalone process.
+  - Results
+  - Why it mattered
+  - The engagement improved how risk-relevant signals could be reviewed in day-to-day operations while keeping the workflow practical for teams under delivery pressure.
+  - Better fit
+  - Risk-support behavior aligned more cleanly with real financial workflows.
+  - More consistent
+  - Teams had clearer review pathways for evaluating screening outputs.
+  - Higher confidence
+  - Signal interpretation became easier to apply in practical day-to-day decisions.
+  - Less friction
+  - Teams were able to run core workflows with fewer avoidable interruptions.
+  - Related proof
+  - Professional Services
+  - Admin Partners
+  - Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - Banking
+  - Barclays Bank US
+  - The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+  - Retail
+  - CleanItSupply
+  - The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering...
+- CTA labels / buttons:
+  - Professional Services Admin Partners Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - Banking Barclays Bank US The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+  - Retail CleanItSupply The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering...
+- Card titles and card descriptions:
+  - What we did
+  - Workflow Adaptation
+  - Matching and Signal Tuning
+  - Operational Fit
+  - What changed
+  - Technologies and Methods
+  - More situations with similar pressure
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Content section
+- Section type: section (border-t border-border bg-muted/30 px-6 py-8)
+- Section title: None visible
+- Section subtitle / eyebrow: Previous
+- Full visible body copy:
+  - Previous
+  - Moody's
+  - Next
+  - TIAA
+- CTA labels / buttons:
+  - Previous Moody's
+  - Next TIAA
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 4 ? CTA band
+- Section type: section (bg-foreground px-6 py-20)
+- Section title: Seeing something similar?
+- Section subtitle / eyebrow: If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- Full visible body copy:
+  - If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- CTA labels / buttons:
+  - Book a strategy call
+  - Contact us directly
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 42 ? TIAA Case Study | Amalgam
+- URL: /case-studies/tiaa
+- Purpose: Supporting technical execution in a regulated banking environment
+
+#### Canonical case-study content (from data source)
+- Client: TIAA
+- Industry: Banking and Financial Services
+- Location: United States
+- Headline: Supporting technical execution in a regulated banking environment
+- Overview: This work sat at the intersection of financial-services operations and technical execution. The focus was disciplined support: help teams improve how systems work together while maintaining practical progress.
+- Situation: Banking operations required technical support that respected existing systems, regulatory constraints, and delivery timelines.
+- Amalgam's role: We provided practical technical and systems support across banking-focused workflows, helping teams move critical work forward with clearer structure and lower delivery friction.
+- What changed: The engagement improved execution reliability in a complex financial setting where architecture quality and operational coordination directly affected delivery outcomes.
+- Challenges
+  - Technical changes had to be delivered within strict operational constraints
+  - Systems coordination and handoffs increased execution complexity
+  - Teams needed support that improved reliability without introducing new process overhead
+  - The environment required conservative, implementation-focused decision making
+- Solution cards
+  - Card 1
+    - Title: Systems and Workflow Support
+    - Body: Worked directly with teams to improve technical workflows and reduce avoidable operational friction.
+  - Card 2
+    - Title: Execution Structure
+    - Body: Helped shape practical implementation sequencing so delivery could move with fewer avoidable stalls.
+  - Card 3
+    - Title: Cross-Team Coordination
+    - Body: Supported clearer coordination patterns between technical and operational stakeholders.
+- Result cards
+  - Card 1
+    - Title: Delivery ? More reliable
+    - Body: Execution moved with better consistency in a high-constraint environment.
+  - Card 2
+    - Title: Systems quality ? Improved coordination
+    - Body: Technical and operational interactions became more predictable and easier to manage.
+  - Card 3
+    - Title: Operating cadence ? Steadier progress
+    - Body: Teams were able to sustain progress with clearer implementation structure.
+  - Card 4
+    - Title: Coordination ? Clearer handoffs
+    - Body: Cross-team execution became easier to manage with fewer surprises.
+- Technologies and methods
+  - Banking Systems Support
+  - Technical Delivery
+  - Workflow Coordination
+
+#### Section 1 ? Hero
+- Section type: section (border-b border-border px-6 py-16 md:py-24)
+- Section title: Supporting technical execution in a regulated banking environment
+- Section subtitle / eyebrow: TIAA
+- Full visible body copy:
+  - TIAA
+  - This work sat at the intersection of financial-services operations and technical execution. The focus was disciplined support: help teams improve how systems work together while maintaining practical progress.
+  - Visual context
+  - Client brand mark shown as context where public project imagery is limited.
+  - At a glance
+  - Situation
+  - Banking operations required technical support that respected existing systems, regulatory constraints, and delivery timelines.
+  - Amalgam's role
+  - We provided practical technical and systems support across banking-focused workflows, helping teams move critical work forward with clearer structure and lower delivery friction.
+  - What changed
+  - The engagement improved execution reliability in a complex financial setting where architecture quality and operational coordination directly affected delivery outcomes.
+- CTA labels / buttons:
+  - Back to case studies
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Cards grid
+- Section type: section (px-6 py-16 md:py-24)
+- Section title: The real constraints
+- Section subtitle / eyebrow: Constraints
+- Full visible body copy:
+  - Constraints
+  - Technical changes had to be delivered within strict operational constraints
+  - Systems coordination and handoffs increased execution complexity
+  - Teams needed support that improved reliability without introducing new process overhead
+  - The environment required conservative, implementation-focused decision making
+  - Execution
+  - Worked directly with teams to improve technical workflows and reduce avoidable operational friction.
+  - Helped shape practical implementation sequencing so delivery could move with fewer avoidable stalls.
+  - Supported clearer coordination patterns between technical and operational stakeholders.
+  - Results
+  - Why it mattered
+  - The engagement improved execution reliability in a complex financial setting where architecture quality and operational coordination directly affected delivery outcomes.
+  - More reliable
+  - Execution moved with better consistency in a high-constraint environment.
+  - Improved coordination
+  - Technical and operational interactions became more predictable and easier to manage.
+  - Steadier progress
+  - Teams were able to sustain progress with clearer implementation structure.
+  - Clearer handoffs
+  - Cross-team execution became easier to manage with fewer surprises.
+  - Related proof
+  - Professional Services
+  - Admin Partners
+  - Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - Banking
+  - Barclays Bank US
+  - The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+  - Retail
+  - CleanItSupply
+  - The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering...
+- CTA labels / buttons:
+  - Professional Services Admin Partners Admin Partners gained improved operational efficiency through better system integration and streamlined business processes.
+  - Banking Barclays Bank US The redesigned website helped Barclays Bank US stand out in a competitive market with a stronger online banking experience, higher customer...
+  - Retail CleanItSupply The new site is significantly faster, more user-friendly, and scalable with stronger search functionality and easier maintenance, delivering...
+- Card titles and card descriptions:
+  - What we did
+  - Systems and Workflow Support
+  - Execution Structure
+  - Cross-Team Coordination
+  - What changed
+  - Technologies and Methods
+  - More situations with similar pressure
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 3 ? Content section
+- Section type: section (border-t border-border bg-muted/30 px-6 py-8)
+- Section title: None visible
+- Section subtitle / eyebrow: Previous
+- Full visible body copy:
+  - Previous
+  - SoFi
+  - Next
+  - FINRA
+- CTA labels / buttons:
+  - Previous SoFi
+  - Next FINRA
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 4 ? CTA band
+- Section type: section (bg-foreground px-6 py-20)
+- Section title: Seeing something similar?
+- Section subtitle / eyebrow: If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- Full visible body copy:
+  - If this situation feels familiar, the clearest next step is a direct conversation about what is stuck in your system and what should move first.
+- CTA labels / buttons:
+  - Book a strategy call
+  - Contact us directly
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 43 ? Do you need an architecture map before your roadmap? | Amalgam
+- URL: /knowledge/architecture-map-before-roadmap
+- Purpose: Roadmaps fail when nobody has a reliable picture of the current system, dependencies, and ownership boundaries.
+
+#### Canonical article content (from data source)
+- Category: architecture
+- Read time: 7 min read
+- Published: March 2026
+- Title: Do you need an architecture map before your roadmap?
+- Description: Roadmaps fail when nobody has a reliable picture of the current system, dependencies, and ownership boundaries.
+- Intro: Many teams try to roadmap their way out of uncertainty. The result is a plan full of implied assumptions: which systems matter, which dependencies are real, where ownership starts and ends, and what can safely move in parallel. If those assumptions are wrong, the roadmap is just an attractive way of scheduling future confusion.
+- Summary: A usable roadmap depends on a usable map. Before sequencing work, teams need a clear picture of architecture boundaries, critical workflows, ownership lines, and the places where hidden coupling will distort timelines.
+- Key takeaways
+  - Roadmaps degrade when system boundaries are implicit rather than explicit.
+  - Current-state mapping is not documentation theater. It is the basis for sequencing work honestly.
+  - If nobody can explain the system end to end, leadership should distrust precise delivery promises.
+- Article section 1
+  - Title: Why roadmaps fail before execution even starts
+  - Kicker: None
+  - Paragraphs
+    - Most failed roadmaps are not failures of ambition. They are failures of visibility. A team promises work based on an imagined system, then discovers the real system only after execution begins: a hidden dependency, a brittle integration, an unowned workflow, a compliance constraint nobody surfaced in planning.
+    - When that happens repeatedly, the organization starts blaming estimation. The deeper problem is that sequencing happened before the architecture and operating model were clear enough to plan confidently.
+- Article section 2
+  - Title: What a real architecture map includes
+  - Kicker: None
+  - Paragraphs
+    - A useful map is not a giant system diagram built for posterity. It is a working view of what matters for decision-making now. That means core domains, external dependencies, systems of record, integration points, deployment boundaries, and ownership.
+    - It should also identify where business-critical workflows cross too many boundaries. Those are the places where a roadmap will look confident on paper but collapse under real coordination load.
+  - Bullets
+    - Core business workflows and the systems they traverse.
+    - Known fragile interfaces and manual interventions.
+    - Ownership boundaries, including the parts nobody really owns.
+    - Constraints that shape sequencing: vendor, compliance, staffing, or platform limits.
+- Article section 3
+  - Title: How the map changes roadmap quality
+  - Kicker: None
+  - Paragraphs
+    - Once the current state is clear, prioritization becomes more honest. Teams can distinguish foundational work from optional enhancement, separate visible roadmap progress from hidden risk reduction, and sequence around real pressure points instead of the loudest opinions.
+    - This also improves leadership communication. Instead of vague language about technical debt, you can point to the specific architectural boundaries or workflow collisions that make certain promises unsafe today.
+- Article section 4
+  - Title: The practical standard
+  - Kicker: None
+  - Paragraphs
+    - If your roadmap requires everyone to 'just understand the system,' it is underbuilt. Teams should be able to explain why an initiative is first, what it depends on, and what gets safer or easier once it lands.
+    - That is the point of the map: not exhaustive documentation, but better decisions with fewer unpleasant surprises.
+
+#### Section 1 ? Hero
+- Section type: section (relative overflow-hidden border-b border-border px-6 py-16 md:px-8 md:py-24)
+- Section title: Do you need an architecture map before your roadmap?
+- Section subtitle / eyebrow: Many teams try to roadmap their way out of uncertainty. The result is a plan full of implied assumptions: which systems matter, which dependencies are real, where ownership starts and ends, and what can safely move in parallel.
+- Full visible body copy:
+  - Many teams try to roadmap their way out of uncertainty. The result is a plan full of implied assumptions: which systems matter, which dependencies are real, where ownership starts and ends, and what can safely move in parallel.
+  - Quick summary
+  - A usable roadmap depends on a usable map. Before sequencing work, teams need a clear picture of architecture boundaries, critical workflows, ownership lines, and the places where hidden coupling will distort timelines.
+- CTA labels / buttons:
+  - Back to knowledge base
+  - Architecture
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Form block
+- Section type: section (px-6 py-16 md:px-8 md:py-20)
+- Section title: Why roadmaps fail before execution even starts
+- Section subtitle / eyebrow: Most failed roadmaps are not failures of ambition. They are failures of visibility. A team promises work based on an imagined system, then discovers the real system only after execution begins: a hidden dependency, a brittle integration, an unowned workflow, a compliance constraint nobody surfaced in planning.
+- Full visible body copy:
+  - Most failed roadmaps are not failures of ambition. They are failures of visibility. A team promises work based on an imagined system, then discovers the real system only after execution begins: a hidden dependency, a brittle integration, an unowned workflow, a compliance constraint nobody surfaced in planning.
+  - When that happens repeatedly, the organization starts blaming estimation. The deeper problem is that sequencing happened before the architecture and operating model were clear enough to plan confidently.
+  - A useful map is not a giant system diagram built for posterity. It is a working view of what matters for decision-making now. That means core domains, external dependencies, systems of record, integration points, deployment boundaries, and ownership.
+  - It should also identify where business-critical workflows cross too many boundaries. Those are the places where a roadmap will look confident on paper but collapse under real coordination load.
+  - Key takeaways
+  - Once the current state is clear, prioritization becomes more honest. Teams can distinguish foundational work from optional enhancement, separate visible roadmap progress from hidden risk reduction, and sequence around real pressure points instead of the loudest opinions.
+  - This also improves leadership communication. Instead of vague language about technical debt, you can point to the specific architectural boundaries or workflow collisions that make certain promises unsafe today.
+  - If your roadmap requires everyone to 'just understand the system,' it is underbuilt. Teams should be able to explain why an initiative is first, what it depends on, and what gets safer or easier once it lands.
+  - That is the point of the map: not exhaustive documentation, but better decisions with fewer unpleasant surprises.
+  - Continue reading
+  - Previous article
+  - Should you modernize or rebuild?
+  - Next article
+  - Are integrations quietly slowing you down?
+  - Apply this now
+  - Use this when roadmap planning keeps collapsing into debate because technical reality is still unclear.
+  - Recommended diagnostic
+  - Is your tech stack helping or hurting?
+  - This article pairs well with a stack read when the current system still needs to be clear enough to plan confidently.
+  - More to explore
+  - Architecture
+  - Systems Strategy
+  - Did growth break your operating rhythm?
+  - Signal
+  - Get practical notes on systems, execution drag, and architecture decisions when they are worth your attention.
+  - Want help with your specific situation?
+  - Articles sharpen judgment. They do not replace a direct read on your architecture, operating model, and execution constraints.
+- CTA labels / buttons:
+  - Previous article Should you modernize or rebuild?
+  - Next article Are integrations quietly slowing you down?
+  - 1 Why roadmaps fail before execution even starts
+  - 2 What a real architecture map includes
+  - 3 How the map changes roadmap quality
+  - 4 The practical standard
+  - See how the diagnostic works
+  - Explore all Architecture articles
+  - Architecture Should you modernize or rebuild?
+  - Systems Strategy Are integrations quietly slowing you down?
+  - Systems Strategy Did growth break your operating rhythm?
+  - Subscribe for practical updates
+  - Book a strategy call
+- Card titles and card descriptions:
+  - What a real architecture map includes
+  - How the map changes roadmap quality
+  - The practical standard
+- Any microcopy / helper text:
+  - Work email
+- Any visible form fields / placeholders / labels:
+  - email | you@company.com
+- Any visible list/bullet copy:
+  - Core business workflows and the systems they traverse.
+  - Known fragile interfaces and manual interventions.
+  - Ownership boundaries, including the parts nobody really owns.
+  - Constraints that shape sequencing: vendor, compliance, staffing, or platform limits.
+
+#### Section 3 ? Content section
+- Section type: section (border-t border-border bg-secondary/25 px-6 py-16 md:px-8 md:py-18)
+- Section title: None visible
+- Section subtitle / eyebrow: None visible
+- Full visible body copy:
+  - None visible
+- CTA labels / buttons:
+  - Home
+  - Knowledge Base
+  - Architecture
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 44 ? Who should decide what when things get complex? | Amalgam
+- URL: /knowledge/decision-rights-under-complexity
+- Purpose: How to reduce escalation load by clarifying which decisions belong to teams, leaders, and cross-functional forums.
+
+#### Canonical article content (from data source)
+- Category: org-design
+- Read time: 6 min read
+- Published: March 2026
+- Title: Who should decide what when things get complex?
+- Description: How to reduce escalation load by clarifying which decisions belong to teams, leaders, and cross-functional forums.
+- Intro: In complex organizations, execution often slows not because decisions are impossible, but because decision rights are blurred. Teams hesitate, leaders intervene too late or too often, and recurring issues keep reappearing in forums that should not need to own them.
+- Summary: Clear decision rights reduce escalation noise and speed up execution. The goal is not to centralize everything. It is to make authority clear enough that teams can act with confidence and leadership can intervene deliberately instead of constantly.
+- Key takeaways
+  - Escalation load is often a symptom of unclear authority, not weak individual judgment.
+  - Teams need explicit space to decide within boundaries, not vague permission to be empowered.
+  - Cross-functional forums should exist for genuine coordination, not routine ownership confusion.
+- Article section 1
+  - Title: How decision blur happens
+  - Kicker: None
+  - Paragraphs
+    - As systems and teams expand, authority becomes easier to imply than define. Product thinks engineering owns the decision. Engineering thinks it needs leadership alignment. Operations assumes the answer depends on downstream constraints. Everyone is being reasonable, but the system has stopped making authority obvious.
+    - The result is predictable: issues float upward, decisions are delayed, and recurring work keeps returning to leadership forums because nobody trusts the boundary.
+- Article section 2
+  - Title: What good decision rights look like
+  - Kicker: None
+  - Paragraphs
+    - Good decision rights are specific enough that people know when they can act and when they must escalate. They define scope, not just titles. You do not need to document every edge case. You need to remove the recurring ambiguity that keeps slowing work.
+    - This is particularly important in cross-functional areas like platform investment, data quality, workflow changes, and delivery sequencing, where technical and operational decisions overlap.
+  - Bullets
+    - Clarify the boundary of team-owned decisions.
+    - Name the triggers that require escalation.
+    - Use leadership forums for trade-offs, not routine execution questions.
+- Article section 3
+  - Title: How to tighten the system
+  - Kicker: None
+  - Paragraphs
+    - Start with the decisions that recur most often and create the most delay. Document who decides, who is consulted, what inputs are required, and what constitutes enough information to move forward. Then test those boundaries in live work rather than treating them as static policy.
+    - The real proof is behavioral. If the same question still returns to the same leadership meeting every two weeks, the decision right is not actually clear yet.
+- Article section 4
+  - Title: What changes when this is working
+  - Kicker: None
+  - Paragraphs
+    - Teams move faster, leaders spend less time arbitrating routine issues, and cross-functional forums focus on the trade-offs that actually deserve leadership attention. That is what clearer authority buys: less friction, not more hierarchy.
+
+#### Section 1 ? Hero
+- Section type: section (relative overflow-hidden border-b border-border px-6 py-16 md:px-8 md:py-24)
+- Section title: Who should decide what when things get complex?
+- Section subtitle / eyebrow: In complex organizations, execution often slows not because decisions are impossible, but because decision rights are blurred. Teams hesitate, leaders intervene too late or too often, and recurring issues keep reappearing in forums that should not need to own them.
+- Full visible body copy:
+  - In complex organizations, execution often slows not because decisions are impossible, but because decision rights are blurred. Teams hesitate, leaders intervene too late or too often, and recurring issues keep reappearing in forums that should not need to own them.
+  - Quick summary
+  - Clear decision rights reduce escalation noise and speed up execution. The goal is not to centralize everything. It is to make authority clear enough that teams can act with confidence and leadership can intervene deliberately instead of constantly.
+- CTA labels / buttons:
+  - Back to knowledge base
+  - Leadership
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Form block
+- Section type: section (px-6 py-16 md:px-8 md:py-20)
+- Section title: How decision blur happens
+- Section subtitle / eyebrow: As systems and teams expand, authority becomes easier to imply than define. Product thinks engineering owns the decision. Engineering thinks it needs leadership alignment. Operations assumes the answer depends on downstream constraints. Everyone is being reasonable, but the system has stopped making authority obvious.
+- Full visible body copy:
+  - As systems and teams expand, authority becomes easier to imply than define. Product thinks engineering owns the decision. Engineering thinks it needs leadership alignment. Operations assumes the answer depends on downstream constraints. Everyone is being reasonable, but the system has stopped making authority obvious.
+  - The result is predictable: issues float upward, decisions are delayed, and recurring work keeps returning to leadership forums because nobody trusts the boundary.
+  - Good decision rights are specific enough that people know when they can act and when they must escalate. They define scope, not just titles. You do not need to document every edge case. You need to remove the recurring ambiguity that keeps slowing work.
+  - This is particularly important in cross-functional areas like platform investment, data quality, workflow changes, and delivery sequencing, where technical and operational decisions overlap.
+  - Key takeaways
+  - Start with the decisions that recur most often and create the most delay. Document who decides, who is consulted, what inputs are required, and what constitutes enough information to move forward. Then test those boundaries in live work rather than treating them as static policy.
+  - The real proof is behavioral. If the same question still returns to the same leadership meeting every two weeks, the decision right is not actually clear yet.
+  - Teams move faster, leaders spend less time arbitrating routine issues, and cross-functional forums focus on the trade-offs that actually deserve leadership attention. That is what clearer authority buys: less friction, not more hierarchy.
+  - Continue reading
+  - Previous article
+  - Your team structure follows your architecture
+  - Next article
+  - You have reached the end of the current sequence.
+  - Apply this now
+  - Use this when too many issues keep escalating because nobody is confident about where authority actually sits.
+  - Recommended diagnostic
+  - Is delivery drag slowing you down?
+  - This article often surfaces ownership drag. The diagnostic can tell you whether coordination is the main problem or just one symptom.
+  - More to explore
+  - Leadership
+  - Architecture
+  - Should you modernize or rebuild?
+  - Do you need an architecture map before your roadmap?
+  - Signal
+  - Get practical notes on systems, execution drag, and architecture decisions when they are worth your attention.
+  - Want help with your specific situation?
+  - Articles sharpen judgment. They do not replace a direct read on your architecture, operating model, and execution constraints.
+- CTA labels / buttons:
+  - Previous article Your team structure follows your architecture
+  - 1 How decision blur happens
+  - 2 What good decision rights look like
+  - 3 How to tighten the system
+  - 4 What changes when this is working
+  - See how the diagnostic works
+  - Explore all Leadership articles
+  - Leadership Your team structure follows your architecture
+  - Architecture Should you modernize or rebuild?
+  - Architecture Do you need an architecture map before your roadmap?
+  - Subscribe for practical updates
+  - Book a strategy call
+- Card titles and card descriptions:
+  - What good decision rights look like
+  - How to tighten the system
+  - What changes when this is working
+- Any microcopy / helper text:
+  - Work email
+- Any visible form fields / placeholders / labels:
+  - email | you@company.com
+- Any visible list/bullet copy:
+  - Clarify the boundary of team-owned decisions.
+  - Name the triggers that require escalation.
+  - Use leadership forums for trade-offs, not routine execution questions.
+
+#### Section 3 ? Content section
+- Section type: section (border-t border-border bg-secondary/25 px-6 py-16 md:px-8 md:py-18)
+- Section title: None visible
+- Section subtitle / eyebrow: None visible
+- Full visible body copy:
+  - None visible
+- CTA labels / buttons:
+  - Home
+  - Knowledge Base
+  - Leadership
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 45 ? Why your delivery velocity problem is really a systems problem | Amalgam
+- URL: /knowledge/delivery-velocity-is-a-systems-problem
+- Purpose: Shipping slows for structural reasons, not just team effort. Diagnose the real drag first.
+
+#### Canonical article content (from data source)
+- Category: execution
+- Read time: 7 min read
+- Published: March 2026
+- Title: Why your delivery velocity problem is really a systems problem
+- Description: Shipping slows for structural reasons, not just team effort. Diagnose the real drag first.
+- Intro: When delivery slows, organizations often search for a people explanation first: weak execution, poor planning, unclear accountability, or low urgency. Those can be real. But in many teams, shipping is slow because the system is slow. Work crosses too many boundaries, approvals arrive too late, dependencies are hidden, and the architecture makes every change more expensive than it looks at kickoff.
+- Summary: Velocity is not just a measure of effort. It is an outcome produced by system design, architecture boundaries, ownership definition, and decision cadence. Teams move faster when the system makes progress easier, not when leadership simply asks harder.
+- Key takeaways
+  - Slow delivery is often the result of structural friction, not lack of urgency.
+  - A team can look underperforming when the surrounding system makes every change expensive.
+  - Improving velocity usually means removing friction from the operating system, not pressuring individuals harder.
+- Article section 1
+  - Title: Why the usual framing fails
+  - Kicker: None
+  - Paragraphs
+    - The standard response to slow shipping is to tighten management: more check-ins, more escalation, more status detail, more pressure. This can temporarily increase visible motion, but it rarely changes the structural reasons work was slow in the first place.
+    - If a change requires five approvals, crosses three systems, and depends on an undocumented interface, no amount of urgency language will make it truly fast. It may only make the organization noisier.
+- Article section 2
+  - Title: Where friction actually lives
+  - Kicker: None
+  - Paragraphs
+    - Friction tends to cluster in a few places: handoffs between teams, high-risk architectural boundaries, unclear product or data ownership, and work that enters execution before requirements or constraints are clear enough.
+    - You are not trying to remove all complexity. You are trying to stop treating this as a performance problem when the system is still set up to manufacture delay.
+  - Bullets
+    - Too many cross-functional approvals.
+    - Unowned dependencies and hidden technical risk.
+    - Roadmaps that commit before sequencing is real.
+    - Metrics that reward activity but obscure rework.
+- Article section 3
+  - Title: What to measure instead
+  - Kicker: None
+  - Paragraphs
+    - If leadership wants a more honest view of velocity, it should measure what shapes flow: lead time, blocked work, rework rate, cross-team dependency load, release confidence, and time lost to manual coordination. These signals reveal where the system is making work expensive.
+    - This does not replace judgment. It gives judgment better material to work with. The goal is not a more complicated dashboard. It is a clearer picture of why delivery feels slow.
+- Article section 4
+  - Title: What actually improves speed
+  - Kicker: None
+  - Paragraphs
+    - Teams move faster when architecture boundaries are clearer, decision rights are tighter, work enters planning with fewer hidden assumptions, and integrations are simpler to reason about. In other words: when the operating system of delivery becomes less fragile.
+    - That is why meaningful velocity work often looks indirect. You simplify workflows, reduce ambiguity, sequence foundational work properly, and remove sources of predictable delay. The result is not just faster shipping. It is shipping that feels less chaotic.
+
+#### Section 1 ? Hero
+- Section type: section (relative overflow-hidden border-b border-border px-6 py-16 md:px-8 md:py-24)
+- Section title: Why your delivery velocity problem is really a systems problem
+- Section subtitle / eyebrow: When delivery slows, organizations often search for a people explanation first: weak execution, poor planning, unclear accountability, or low urgency. Those can be real.
+- Full visible body copy:
+  - When delivery slows, organizations often search for a people explanation first: weak execution, poor planning, unclear accountability, or low urgency. Those can be real.
+  - Quick summary
+  - Velocity is not just a measure of effort. It is an outcome produced by system design, architecture boundaries, ownership definition, and decision cadence. Teams move faster when the system makes progress easier, not when leadership simply asks harder.
+- CTA labels / buttons:
+  - Back to knowledge base
+  - Execution
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Form block
+- Section type: section (px-6 py-16 md:px-8 md:py-20)
+- Section title: Why the usual framing fails
+- Section subtitle / eyebrow: The standard response to slow shipping is to tighten management: more check-ins, more escalation, more status detail, more pressure. This can temporarily increase visible motion, but it rarely changes the structural reasons work was slow in the first place.
+- Full visible body copy:
+  - The standard response to slow shipping is to tighten management: more check-ins, more escalation, more status detail, more pressure. This can temporarily increase visible motion, but it rarely changes the structural reasons work was slow in the first place.
+  - If a change requires five approvals, crosses three systems, and depends on an undocumented interface, no amount of urgency language will make it truly fast. It may only make the organization noisier.
+  - Friction tends to cluster in a few places: handoffs between teams, high-risk architectural boundaries, unclear product or data ownership, and work that enters execution before requirements or constraints are clear enough.
+  - You are not trying to remove all complexity. You are trying to stop treating this as a performance problem when the system is still set up to manufacture delay.
+  - Key takeaways
+  - If leadership wants a more honest view of velocity, it should measure what shapes flow: lead time, blocked work, rework rate, cross-team dependency load, release confidence, and time lost to manual coordination. These signals reveal where the system is making work expensive.
+  - This does not replace judgment. It gives judgment better material to work with. The goal is not a more complicated dashboard. It is a clearer picture of why delivery feels slow.
+  - Teams move faster when architecture boundaries are clearer, decision rights are tighter, work enters planning with fewer hidden assumptions, and integrations are simpler to reason about. In other words: when the operating system of delivery becomes less fragile.
+  - That is why meaningful velocity work often looks indirect. You simplify workflows, reduce ambiguity, sequence foundational work properly, and remove sources of predictable delay. The result is not just faster shipping. It is shipping that feels less chaotic.
+  - Continue reading
+  - Previous article
+  - Which metrics should you actually run the company on?
+  - Next article
+  - How to sequence your roadmap when certainty is low
+  - Apply this now
+  - Use this when leadership is asking teams to move faster without fixing the system that is making work slow.
+  - Recommended diagnostic
+  - Is delivery drag slowing you down?
+  - This article is strongest when the next step is testing what kind of drag is really shaping delivery.
+  - More to explore
+  - Execution
+  - Architecture
+  - Should you modernize or rebuild?
+  - Do you need an architecture map before your roadmap?
+  - Signal
+  - Get practical notes on systems, execution drag, and architecture decisions when they are worth your attention.
+  - Want help with your specific situation?
+  - Articles sharpen judgment. They do not replace a direct read on your architecture, operating model, and execution constraints.
+- CTA labels / buttons:
+  - Previous article Which metrics should you actually run the company on?
+  - Next article How to sequence your roadmap when certainty is low
+  - 1 Why the usual framing fails
+  - 2 Where friction actually lives
+  - 3 What to measure instead
+  - 4 What actually improves speed
+  - See how the diagnostic works
+  - Explore all Execution articles
+  - Execution How to sequence your roadmap when certainty is low
+  - Architecture Should you modernize or rebuild?
+  - Architecture Do you need an architecture map before your roadmap?
+  - Subscribe for practical updates
+  - Book a strategy call
+- Card titles and card descriptions:
+  - Where friction actually lives
+  - What to measure instead
+  - What actually improves speed
+- Any microcopy / helper text:
+  - Work email
+- Any visible form fields / placeholders / labels:
+  - email | you@company.com
+- Any visible list/bullet copy:
+  - Too many cross-functional approvals.
+  - Unowned dependencies and hidden technical risk.
+  - Roadmaps that commit before sequencing is real.
+  - Metrics that reward activity but obscure rework.
+
+#### Section 3 ? Content section
+- Section type: section (border-t border-border bg-secondary/25 px-6 py-16 md:px-8 md:py-18)
+- Section title: None visible
+- Section subtitle / eyebrow: None visible
+- Full visible body copy:
+  - None visible
+- CTA labels / buttons:
+  - Home
+  - Knowledge Base
+  - Execution
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 46 ? Are integrations quietly slowing you down? | Amalgam
+- URL: /knowledge/integration-tax
+- Purpose: Shipping slows when workflows span too many tools, owners, and hidden dependencies. This shows what to simplify first.
+
+#### Canonical article content (from data source)
+- Category: operations
+- Read time: 7 min read
+- Published: March 2026
+- Title: Are integrations quietly slowing you down?
+- Description: Shipping slows when workflows span too many tools, owners, and hidden dependencies. This shows what to simplify first.
+- Intro: The integration tax rarely appears as a single failure. It accumulates as small delays, duplicate entry, reconciliation work, edge-case breakage, and growing uncertainty about where responsibility actually sits. By the time leadership notices, teams feel slower without being able to explain exactly why.
+- Summary: Every cross-system workflow carries coordination cost. When too many tools share authority, teams pay the tax through manual work, unclear ownership, and collapsing delivery confidence. The fix is usually simpler boundaries, not more software.
+- Key takeaways
+  - Hidden integration work is often the real reason delivery feels slower after growth.
+  - Buying another orchestration layer rarely helps if system authority is still unclear.
+  - The fastest wins usually come from simplifying high-frequency operational paths, not every workflow in the company.
+- Article section 1
+  - Title: Where the tax actually shows up
+  - Kicker: None
+  - Paragraphs
+    - The tax is visible in operational behavior long before it is visible in architecture diagrams. Teams create shadow processes to compensate for tool disagreement. Support incidents bounce between teams because no single owner can see the full workflow. Reporting differs depending on who pulled the number and from where.
+    - At a certain point, the system is technically integrated but operationally incoherent. Data moves, yet decisions remain slow because the human coordination burden keeps rising.
+  - Bullets
+    - Manual re-entry because systems disagree.
+    - Escalations caused by failures that span multiple tools.
+    - Planning overhead rising faster than product complexity.
+- Article section 2
+  - Title: Why adding more tooling often makes it worse
+  - Kicker: None
+  - Paragraphs
+    - When friction becomes visible, the default response is often additive: another dashboard, another sync, another automation service, another layer to normalize the chaos. This can help temporarily, but if the underlying workflow is still unclear, the new tool becomes one more place where partial truth lives.
+    - The real issue is usually boundary definition. Teams need to know which system is authoritative, which events matter, where state changes should happen, and who owns failures when those flows break.
+- Article section 3
+  - Title: Where to simplify first
+  - Kicker: None
+  - Paragraphs
+    - Do not begin with a company-wide integration cleanup. Start with the workflows that matter most to revenue, onboarding, support burden, or reporting trust. These are the places where simplification buys back confidence fastest.
+    - The right first move is not always technical. Sometimes it is documenting the real workflow, eliminating duplicate ownership, or removing a low-value sync that only exists because nobody wanted to challenge it.
+  - Bullets
+    - Reduce duplicate systems of record.
+    - Make hidden manual work visible before automating it.
+    - Name a single owner for each critical workflow, not just each tool.
+- Article section 4
+  - Title: A better way to explain the problem to leadership
+  - Kicker: None
+  - Paragraphs
+    - Leaders rarely need another warning about complexity in the abstract. They need to understand where complexity is producing specific cost: slower launches, support load, reporting drift, implementation risk, or inability to delegate decisions confidently.
+    - Once the tax is framed in those terms, simplification becomes easier to prioritize because it is no longer presented as cleanup. It becomes capacity recovery.
+
+#### Section 1 ? Hero
+- Section type: section (relative overflow-hidden border-b border-border px-6 py-16 md:px-8 md:py-24)
+- Section title: Are integrations quietly slowing you down?
+- Section subtitle / eyebrow: The integration tax rarely appears as a single failure. It accumulates as small delays, duplicate entry, reconciliation work, edge-case breakage, and growing uncertainty about where responsibility actually sits.
+- Full visible body copy:
+  - The integration tax rarely appears as a single failure. It accumulates as small delays, duplicate entry, reconciliation work, edge-case breakage, and growing uncertainty about where responsibility actually sits.
+  - Quick summary
+  - Every cross-system workflow carries coordination cost. When too many tools share authority, teams pay the tax through manual work, unclear ownership, and collapsing delivery confidence. The fix is usually simpler boundaries, not more software.
+- CTA labels / buttons:
+  - Back to knowledge base
+  - Systems Strategy
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Form block
+- Section type: section (px-6 py-16 md:px-8 md:py-20)
+- Section title: Where the tax actually shows up
+- Section subtitle / eyebrow: The tax is visible in operational behavior long before it is visible in architecture diagrams. Teams create shadow processes to compensate for tool disagreement. Support incidents bounce between teams because no single owner can see the full workflow. Reporting differs depending on who pulled the number and from where.
+- Full visible body copy:
+  - The tax is visible in operational behavior long before it is visible in architecture diagrams. Teams create shadow processes to compensate for tool disagreement. Support incidents bounce between teams because no single owner can see the full workflow. Reporting differs depending on who pulled the number and from where.
+  - At a certain point, the system is technically integrated but operationally incoherent. Data moves, yet decisions remain slow because the human coordination burden keeps rising.
+  - Key takeaways
+  - When friction becomes visible, the default response is often additive: another dashboard, another sync, another automation service, another layer to normalize the chaos. This can help temporarily, but if the underlying workflow is still unclear, the new tool becomes one more place where partial truth lives.
+  - The real issue is usually boundary definition. Teams need to know which system is authoritative, which events matter, where state changes should happen, and who owns failures when those flows break.
+  - Do not begin with a company-wide integration cleanup. Start with the workflows that matter most to revenue, onboarding, support burden, or reporting trust. These are the places where simplification buys back confidence fastest.
+  - The right first move is not always technical. Sometimes it is documenting the real workflow, eliminating duplicate ownership, or removing a low-value sync that only exists because nobody wanted to challenge it.
+  - Leaders rarely need another warning about complexity in the abstract. They need to understand where complexity is producing specific cost: slower launches, support load, reporting drift, implementation risk, or inability to delegate decisions confidently.
+  - Once the tax is framed in those terms, simplification becomes easier to prioritize because it is no longer presented as cleanup. It becomes capacity recovery.
+  - Continue reading
+  - Previous article
+  - Do you need an architecture map before your roadmap?
+  - Next article
+  - Did growth break your operating rhythm?
+  - Apply this now
+  - Use this when work looks simple on paper but keeps getting slower and harder to coordinate in practice.
+  - Recommended diagnostic
+  - Is your tech stack helping or hurting?
+  - The stack audit is the clearest next move when integration burden is distorting the cost of change.
+  - More to explore
+  - Systems Strategy
+  - Architecture
+  - Should you modernize or rebuild?
+  - Signal
+  - Get practical notes on systems, execution drag, and architecture decisions when they are worth your attention.
+  - Want help with your specific situation?
+  - Articles sharpen judgment. They do not replace a direct read on your architecture, operating model, and execution constraints.
+- CTA labels / buttons:
+  - Previous article Do you need an architecture map before your roadmap?
+  - Next article Did growth break your operating rhythm?
+  - 1 Where the tax actually shows up
+  - 2 Why adding more tooling often makes it worse
+  - 3 Where to simplify first
+  - 4 A better way to explain the problem to leadership
+  - See how the diagnostic works
+  - Explore all Systems Strategy articles
+  - Systems Strategy Did growth break your operating rhythm?
+  - Architecture Should you modernize or rebuild?
+  - Architecture Do you need an architecture map before your roadmap?
+  - Subscribe for practical updates
+  - Book a strategy call
+- Card titles and card descriptions:
+  - Why adding more tooling often makes it worse
+  - Where to simplify first
+  - A better way to explain the problem to leadership
+- Any microcopy / helper text:
+  - Work email
+- Any visible form fields / placeholders / labels:
+  - email | you@company.com
+- Any visible list/bullet copy:
+  - Manual re-entry because systems disagree.
+  - Escalations caused by failures that span multiple tools.
+  - Planning overhead rising faster than product complexity.
+  - Reduce duplicate systems of record.
+  - Make hidden manual work visible before automating it.
+  - Name a single owner for each critical workflow, not just each tool.
+
+#### Section 3 ? Content section
+- Section type: section (border-t border-border bg-secondary/25 px-6 py-16 md:px-8 md:py-18)
+- Section title: None visible
+- Section subtitle / eyebrow: None visible
+- Full visible body copy:
+  - None visible
+- CTA labels / buttons:
+  - Home
+  - Knowledge Base
+  - Systems Strategy
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 47 ? Which metrics should you actually run the company on? | Amalgam
+- URL: /knowledge/metrics-you-can-run-the-company-on
+- Purpose: How to choose a small set of operating metrics that help leadership make decisions instead of creating reporting theater.
+
+#### Canonical article content (from data source)
+- Category: data
+- Read time: 6 min read
+- Published: March 2026
+- Title: Which metrics should you actually run the company on?
+- Description: How to choose a small set of operating metrics that help leadership make decisions instead of creating reporting theater.
+- Intro: Many teams mistake visibility for understanding. They accumulate dashboards, scorecards, and alerts, then discover that the business is still arguing about what matters. A company rarely suffers from too few numbers. It suffers from too many numbers with too little decision weight attached to them.
+- Summary: A strong operating metric earns its place by shaping action. The best metrics are few, stable enough to trust, and directly connected to the decisions leadership and teams have to make repeatedly.
+- Key takeaways
+  - Metrics should exist to improve decisions, not to decorate updates.
+  - A smaller metric set with strong definitions beats a broad reporting surface nobody really trusts.
+  - Every metric should answer a practical question about movement, risk, or capacity.
+- Article section 1
+  - Title: Why dashboard sprawl happens
+  - Kicker: None
+  - Paragraphs
+    - As companies grow, every function starts building visibility for its own needs. That is normal. The problem begins when none of those views are reconciled into a common operating picture, so leadership sees many snapshots but no durable signal.
+    - This creates a familiar pattern: status meetings turn into interpretation exercises. People present numbers, but the organization still cannot agree what those numbers mean for priorities, risk, or execution.
+- Article section 2
+  - Title: What good operating metrics actually do
+  - Kicker: None
+  - Paragraphs
+    - A good metric reduces ambiguity around a recurring decision. It helps leadership recognize whether the business is healthier, riskier, or less capable than it appears. It should also be stable enough to compare over time without constant redefinition.
+    - The best metrics often sit closer to the system than teams expect: lead time, onboarding completion, support burden, conversion by stage, rework rate, delivery predictability, or churn pattern by segment. These are metrics with operational consequences.
+- Article section 3
+  - Title: A better selection standard
+  - Kicker: None
+  - Paragraphs
+    - Before adding a metric, ask three questions: what decision will this improve, who will act on it, and what would we do differently if it changed materially? If those answers are weak, the metric is probably informational but not operational.
+  - Bullets
+    - Keep the top layer small enough to review consistently.
+    - Define each metric in business language, not only warehouse language.
+    - Pair each metric with an owner and an expected response when it drifts.
+- Article section 4
+  - Title: Where this lands in practice
+  - Kicker: None
+  - Paragraphs
+    - A useful metric system gives leaders a cleaner view of reality and gives teams a fairer basis for action. It does not remove judgment, but it keeps the organization from repeatedly burning time on arguments that should already be settled.
+
+#### Section 1 ? Hero
+- Section type: section (relative overflow-hidden border-b border-border px-6 py-16 md:px-8 md:py-24)
+- Section title: Which metrics should you actually run the company on?
+- Section subtitle / eyebrow: Many teams mistake visibility for understanding. They accumulate dashboards, scorecards, and alerts, then discover that the business is still arguing about what matters.
+- Full visible body copy:
+  - Many teams mistake visibility for understanding. They accumulate dashboards, scorecards, and alerts, then discover that the business is still arguing about what matters.
+  - Quick summary
+  - A strong operating metric earns its place by shaping action. The best metrics are few, stable enough to trust, and directly connected to the decisions leadership and teams have to make repeatedly.
+- CTA labels / buttons:
+  - Back to knowledge base
+  - Data
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Form block
+- Section type: section (px-6 py-16 md:px-8 md:py-20)
+- Section title: Why dashboard sprawl happens
+- Section subtitle / eyebrow: As companies grow, every function starts building visibility for its own needs. That is normal. The problem begins when none of those views are reconciled into a common operating picture, so leadership sees many snapshots but no durable signal.
+- Full visible body copy:
+  - As companies grow, every function starts building visibility for its own needs. That is normal. The problem begins when none of those views are reconciled into a common operating picture, so leadership sees many snapshots but no durable signal.
+  - This creates a familiar pattern: status meetings turn into interpretation exercises. People present numbers, but the organization still cannot agree what those numbers mean for priorities, risk, or execution.
+  - A good metric reduces ambiguity around a recurring decision. It helps leadership recognize whether the business is healthier, riskier, or less capable than it appears. It should also be stable enough to compare over time without constant redefinition.
+  - The best metrics often sit closer to the system than teams expect: lead time, onboarding completion, support burden, conversion by stage, rework rate, delivery predictability, or churn pattern by segment. These are metrics with operational consequences.
+  - Before adding a metric, ask three questions: what decision will this improve, who will act on it, and what would we do differently if it changed materially? If those answers are weak, the metric is probably informational but not operational.
+  - Key takeaways
+  - A useful metric system gives leaders a cleaner view of reality and gives teams a fairer basis for action. It does not remove judgment, but it keeps the organization from repeatedly burning time on arguments that should already be settled.
+  - Continue reading
+  - Previous article
+  - Post-Series A data foundations
+  - Next article
+  - Why your delivery velocity problem is really a systems problem
+  - Apply this now
+  - Use this when the company has dozens of dashboards but little confidence in what should drive action.
+  - Recommended diagnostic
+  - Are you actually ready for AI adoption?
+  - This helps test whether signal quality and source-of-truth maturity are strong enough for meaningful AI adoption.
+  - More to explore
+  - Data
+  - Architecture
+  - Should you modernize or rebuild?
+  - Do you need an architecture map before your roadmap?
+  - Signal
+  - Get practical notes on systems, execution drag, and architecture decisions when they are worth your attention.
+  - Want help with your specific situation?
+  - Articles sharpen judgment. They do not replace a direct read on your architecture, operating model, and execution constraints.
+- CTA labels / buttons:
+  - Previous article Post-Series A data foundations
+  - Next article Why your delivery velocity problem is really a systems problem
+  - 1 Why dashboard sprawl happens
+  - 2 What good operating metrics actually do
+  - 3 A better selection standard
+  - 4 Where this lands in practice
+  - See how the diagnostic works
+  - Explore all Data articles
+  - Data Post-Series A data foundations
+  - Architecture Should you modernize or rebuild?
+  - Architecture Do you need an architecture map before your roadmap?
+  - Subscribe for practical updates
+  - Book a strategy call
+- Card titles and card descriptions:
+  - What good operating metrics actually do
+  - A better selection standard
+  - Where this lands in practice
+- Any microcopy / helper text:
+  - Work email
+- Any visible form fields / placeholders / labels:
+  - email | you@company.com
+- Any visible list/bullet copy:
+  - Keep the top layer small enough to review consistently.
+  - Define each metric in business language, not only warehouse language.
+  - Pair each metric with an owner and an expected response when it drifts.
+
+#### Section 3 ? Content section
+- Section type: section (border-t border-border bg-secondary/25 px-6 py-16 md:px-8 md:py-18)
+- Section title: None visible
+- Section subtitle / eyebrow: None visible
+- Full visible body copy:
+  - None visible
+- CTA labels / buttons:
+  - Home
+  - Knowledge Base
+  - Data
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 48 ? Should you modernize or rebuild? | Amalgam
+- URL: /knowledge/modernize-vs-rebuild
+- Purpose: How to choose between targeted modernization, phased replacement, and a true rebuild without betting the company.
+
+#### Canonical article content (from data source)
+- Category: architecture
+- Read time: 8 min read
+- Published: March 2026
+- Title: Should you modernize or rebuild?
+- Description: How to choose between targeted modernization, phased replacement, and a true rebuild without betting the company.
+- Intro: The rebuild debate usually starts too late. Delivery has slowed, integrations are brittle, onboarding new engineers takes too long, and every roadmap discussion turns into an argument about the platform. At that point, teams tend to polarize into two camps: patch what exists forever, or throw it all away and start clean. Both instincts are understandable. Neither is a strategy.
+- Summary: A useful modernization decision starts with business constraint, not technical frustration. Most teams need less heroism and more sequence: isolate critical risk, preserve continuity where it matters, and only rebuild where old assumptions now block the business itself.
+- Key takeaways
+  - A rebuild is justified when the current system blocks core business moves or creates unacceptable operating risk.
+  - Modernization is usually the stronger choice when continuity matters more than architectural elegance.
+  - The real decision is not whether a new stack would be cleaner. It is whether the migration can happen without breaking revenue, trust, and timing.
+- Article section 1
+  - Title: Start with the constraint, not the complaint
+  - Kicker: Most rewrite discussions are really business discussions in disguise.
+  - Paragraphs
+    - Teams often frame the problem as technical debt, but leadership rarely feels debt directly. Leadership feels missed commitments, operational fragility, poor forecasting, and rising cost of change. That difference matters. If the system is ugly but stable, the right answer may be disciplined modernization. If the system makes key business moves unsafe or prohibitively slow, then the business is already paying for the wrong architecture every quarter.
+    - This is why the first question should never be 'How bad is the codebase?' It should be 'What is the business no longer able to do confidently because of the current system?' If the answer is vague, the team probably does not yet know enough to justify a rebuild.
+  - Bullets
+    - Good signal: customer-facing continuity is at risk because the system cannot support core product changes safely.
+    - Weak signal: engineers are frustrated because the current stack feels dated or unpleasant.
+    - Critical signal: business priorities are repeatedly being reshaped to accommodate platform weakness rather than market opportunity.
+- Article section 2
+  - Title: Where modernization usually wins
+  - Kicker: Most companies need less disruption, not more.
+  - Paragraphs
+    - Modernization is strongest when the business cannot tolerate interruption. You improve observability, isolate unstable integrations, simplify core workflows, and gradually replace the areas where fragility is actually concentrated. This path is less dramatic, but it protects the system while you learn where the true risk lives.
+    - It also creates better information. A phased modernization forces the team to articulate ownership boundaries, expose hidden dependencies, and identify where the real handoff failures occur. That learning often removes the need for a rebuild entirely, or at least narrows its scope to a few highest-impact domains.
+- Article section 3
+  - Title: When a rebuild becomes the right call
+  - Kicker: Rebuild only when old assumptions have become the trap.
+  - Paragraphs
+    - A rebuild becomes defensible when the system is not just hard to change, but fundamentally shaped around assumptions the business can no longer live with. That can mean a broken domain model, an unsafe deployment pattern, a vendor or stack the company cannot staff, or a platform structure that makes new revenue-critical capabilities unnaturally expensive.
+    - Even then, the rebuild should be framed as a migration strategy. The work is not 'build a cleaner thing.' The work is to move the business from one operating substrate to another without breaking trust. That means coexistence planning, data synchronization, clear boundaries, and ruthless sequencing.
+  - Bullets
+    - Define which capabilities move first and why.
+    - Design for old and new coexistence instead of pretending the cutover will be clean.
+    - Tie milestones to risk removed and delivery regained, not code rewritten.
+- Article section 4
+  - Title: A better decision standard
+  - Kicker: None
+  - Paragraphs
+    - The right architecture decision is the one that creates the most future freedom at the least avoidable risk. Sometimes that means modernization with discipline. Sometimes it means targeted replacement. Sometimes it means a rebuild. What it should never mean is letting technical ideology masquerade as strategy.
+    - If the team cannot explain the path in terms leadership can weigh, the decision is not mature yet. Good technical strategy is clear, defensible, and connected to what the business is trying to make possible next.
+
+#### Section 1 ? Hero
+- Section type: section (relative overflow-hidden border-b border-border px-6 py-16 md:px-8 md:py-24)
+- Section title: Should you modernize or rebuild?
+- Section subtitle / eyebrow: The rebuild debate usually starts too late. Delivery has slowed, integrations are brittle, onboarding new engineers takes too long, and every roadmap discussion turns into an argument about the platform.
+- Full visible body copy:
+  - The rebuild debate usually starts too late. Delivery has slowed, integrations are brittle, onboarding new engineers takes too long, and every roadmap discussion turns into an argument about the platform.
+  - Quick summary
+  - A useful modernization decision starts with business constraint, not technical frustration. Most teams need less heroism and more sequence: isolate critical risk, preserve continuity where it matters, and only rebuild where old assumptions now block the business itself.
+- CTA labels / buttons:
+  - Back to knowledge base
+  - Architecture
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Form block
+- Section type: section (px-6 py-16 md:px-8 md:py-20)
+- Section title: Start with the constraint, not the complaint
+- Section subtitle / eyebrow: Most rewrite discussions are really business discussions in disguise.
+- Full visible body copy:
+  - Most rewrite discussions are really business discussions in disguise.
+  - Teams often frame the problem as technical debt, but leadership rarely feels debt directly. Leadership feels missed commitments, operational fragility, poor forecasting, and rising cost of change. That difference matters. If the system is ugly but stable, the right answer may be disciplined modernization. If the system makes key business moves unsafe or prohibitively slow, then the business is already paying for the wrong architecture every quarter.
+  - This is why the first question should never be 'How bad is the codebase?' It should be 'What is the business no longer able to do confidently because of the current system?' If the answer is vague, the team probably does not yet know enough to justify a rebuild.
+  - Key takeaways
+  - Most companies need less disruption, not more.
+  - Modernization is strongest when the business cannot tolerate interruption. You improve observability, isolate unstable integrations, simplify core workflows, and gradually replace the areas where fragility is actually concentrated. This path is less dramatic, but it protects the system while you learn where the true risk lives.
+  - It also creates better information. A phased modernization forces the team to articulate ownership boundaries, expose hidden dependencies, and identify where the real handoff failures occur. That learning often removes the need for a rebuild entirely, or at least narrows its scope to a few highest-impact domains.
+  - Rebuild only when old assumptions have become the trap.
+  - A rebuild becomes defensible when the system is not just hard to change, but fundamentally shaped around assumptions the business can no longer live with. That can mean a broken domain model, an unsafe deployment pattern, a vendor or stack the company cannot staff, or a platform structure that makes new revenue-critical capabilities unnaturally expensive.
+  - Even then, the rebuild should be framed as a migration strategy. The work is not 'build a cleaner thing.' The work is to move the business from one operating substrate to another without breaking trust. That means coexistence planning, data synchronization, clear boundaries, and ruthless sequencing.
+  - The right architecture decision is the one that creates the most future freedom at the least avoidable risk. Sometimes that means modernization with discipline. Sometimes it means targeted replacement. Sometimes it means a rebuild. What it should never mean is letting technical ideology masquerade as strategy.
+  - If the team cannot explain the path in terms leadership can weigh, the decision is not mature yet. Good technical strategy is clear, defensible, and connected to what the business is trying to make possible next.
+  - Continue reading
+  - Previous article
+  - You are at the start of the library.
+  - Next article
+  - Do you need an architecture map before your roadmap?
+  - Apply this now
+  - Use this when rewrite debates are stalling decisions and leadership needs a risk-based call.
+  - Recommended diagnostic
+  - Is your tech stack helping or hurting?
+  - Use the stack audit when the modernization debate needs a clearer first-pass read on stack condition and weak spots.
+  - More to explore
+  - Architecture
+  - Systems Strategy
+  - Are integrations quietly slowing you down?
+  - Did growth break your operating rhythm?
+  - Signal
+  - Get practical notes on systems, execution drag, and architecture decisions when they are worth your attention.
+  - Want help with your specific situation?
+  - Articles sharpen judgment. They do not replace a direct read on your architecture, operating model, and execution constraints.
+- CTA labels / buttons:
+  - Next article Do you need an architecture map before your roadmap?
+  - 1 Start with the constraint, not the complaint
+  - 2 Where modernization usually wins
+  - 3 When a rebuild becomes the right call
+  - 4 A better decision standard
+  - See how the diagnostic works
+  - Explore all Architecture articles
+  - Architecture Do you need an architecture map before your roadmap?
+  - Systems Strategy Are integrations quietly slowing you down?
+  - Systems Strategy Did growth break your operating rhythm?
+  - Subscribe for practical updates
+  - Book a strategy call
+- Card titles and card descriptions:
+  - Where modernization usually wins
+  - When a rebuild becomes the right call
+  - A better decision standard
+- Any microcopy / helper text:
+  - Work email
+- Any visible form fields / placeholders / labels:
+  - email | you@company.com
+- Any visible list/bullet copy:
+  - Good signal: customer-facing continuity is at risk because the system cannot support core product changes safely.
+  - Weak signal: engineers are frustrated because the current stack feels dated or unpleasant.
+  - Critical signal: business priorities are repeatedly being reshaped to accommodate platform weakness rather than market opportunity.
+  - Define which capabilities move first and why.
+  - Design for old and new coexistence instead of pretending the cutover will be clean.
+  - Tie milestones to risk removed and delivery regained, not code rewritten.
+
+#### Section 3 ? Content section
+- Section type: section (border-t border-border bg-secondary/25 px-6 py-16 md:px-8 md:py-18)
+- Section title: None visible
+- Section subtitle / eyebrow: None visible
+- Full visible body copy:
+  - None visible
+- CTA labels / buttons:
+  - Home
+  - Knowledge Base
+  - Architecture
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 49 ? Did growth break your operating rhythm? | Amalgam
+- URL: /knowledge/operating-rhythm-after-growth
+- Purpose: Why companies lose execution rhythm after hiring, fundraising, or product expansion, and how to restore it without adding bureaucracy.
+
+#### Canonical article content (from data source)
+- Category: operations
+- Read time: 7 min read
+- Published: March 2026
+- Title: Did growth break your operating rhythm?
+- Description: Why companies lose execution rhythm after hiring, fundraising, or product expansion, and how to restore it without adding bureaucracy.
+- Intro: Growth is supposed to make work easier. Instead, many teams experience the opposite: more meetings, slower alignment, and increasing uncertainty about what is actually on track. The company is not lacking effort. It is lacking operating rhythm that still fits the size and complexity of the system.
+- Summary: Execution cadence degrades after growth when old coordination habits break but new ones are never designed. Restoring rhythm requires clearer decision points, fewer ambiguous handoffs, and a cadence that matches actual work, not management theater.
+- Key takeaways
+  - The pre-growth operating model rarely survives hiring and complexity intact.
+  - Rhythm is about decision quality and sequencing, not just meeting frequency.
+  - You do not fix slow execution by layering more reporting on top of unclear ownership.
+- Article section 1
+  - Title: How rhythm breaks
+  - Kicker: None
+  - Paragraphs
+    - Early-stage teams often rely on high-context coordination. A few people know enough to keep priorities aligned informally. Once the team grows, that model collapses. Work depends on more functions, more approvals, and more systems, but the company still behaves as if alignment will happen by osmosis.
+    - This is when execution starts to feel slippery. Commitments become soft, updates become less trustworthy, and planning conversations are crowded with uncertainty nobody has named directly.
+- Article section 2
+  - Title: What strong rhythm actually requires
+  - Kicker: None
+  - Paragraphs
+    - A strong operating rhythm creates predictable decision points, clear escalation paths, and a shared understanding of what constitutes progress. It reduces ambiguity without drowning people in process.
+    - The best rhythms are not heavy. They are specific. Teams know what needs to be decided weekly, what should only be reviewed monthly, what metrics are trustworthy, and who resolves cross-functional conflict when work stalls.
+  - Bullets
+    - A small set of decisions that happen on a reliable cadence.
+    - Clear definition of who owns each cross-functional issue.
+    - A progress model tied to shipped outcomes, not status theater.
+- Article section 3
+  - Title: What to change first
+  - Kicker: None
+  - Paragraphs
+    - Start by reducing ambiguity, not by adding ceremony. Clarify the handful of operating meetings that actually need to exist. Remove duplicate reporting. Tighten ownership for cross-functional work. Ensure the same metrics appear in the same way across the same conversations.
+    - Then look at the system beneath the rhythm. If teams are using cadence to compensate for poor system boundaries, process alone will not fix the problem. The operating model and architecture have to reinforce each other.
+- Article section 4
+  - Title: What good feels like
+  - Kicker: None
+  - Paragraphs
+    - When rhythm is working, the company feels calmer without slowing down. Fewer issues require executive intervention. Teams are clearer about what matters now. Escalations are faster because people know where they belong. Delivery becomes more predictable because coordination no longer depends on heroics.
+
+#### Section 1 ? Hero
+- Section type: section (relative overflow-hidden border-b border-border px-6 py-16 md:px-8 md:py-24)
+- Section title: Did growth break your operating rhythm?
+- Section subtitle / eyebrow: Growth is supposed to make work easier. Instead, many teams experience the opposite: more meetings, slower alignment, and increasing uncertainty about what is actually on track.
+- Full visible body copy:
+  - Growth is supposed to make work easier. Instead, many teams experience the opposite: more meetings, slower alignment, and increasing uncertainty about what is actually on track.
+  - Quick summary
+  - Execution cadence degrades after growth when old coordination habits break but new ones are never designed. Restoring rhythm requires clearer decision points, fewer ambiguous handoffs, and a cadence that matches actual work, not management theater.
+- CTA labels / buttons:
+  - Back to knowledge base
+  - Systems Strategy
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Form block
+- Section type: section (px-6 py-16 md:px-8 md:py-20)
+- Section title: How rhythm breaks
+- Section subtitle / eyebrow: Early-stage teams often rely on high-context coordination. A few people know enough to keep priorities aligned informally. Once the team grows, that model collapses. Work depends on more functions, more approvals, and more systems, but the company still behaves as if alignment will happen by osmosis.
+- Full visible body copy:
+  - Early-stage teams often rely on high-context coordination. A few people know enough to keep priorities aligned informally. Once the team grows, that model collapses. Work depends on more functions, more approvals, and more systems, but the company still behaves as if alignment will happen by osmosis.
+  - This is when execution starts to feel slippery. Commitments become soft, updates become less trustworthy, and planning conversations are crowded with uncertainty nobody has named directly.
+  - A strong operating rhythm creates predictable decision points, clear escalation paths, and a shared understanding of what constitutes progress. It reduces ambiguity without drowning people in process.
+  - The best rhythms are not heavy. They are specific. Teams know what needs to be decided weekly, what should only be reviewed monthly, what metrics are trustworthy, and who resolves cross-functional conflict when work stalls.
+  - Key takeaways
+  - Start by reducing ambiguity, not by adding ceremony. Clarify the handful of operating meetings that actually need to exist. Remove duplicate reporting. Tighten ownership for cross-functional work. Ensure the same metrics appear in the same way across the same conversations.
+  - Then look at the system beneath the rhythm. If teams are using cadence to compensate for poor system boundaries, process alone will not fix the problem. The operating model and architecture have to reinforce each other.
+  - When rhythm is working, the company feels calmer without slowing down. Fewer issues require executive intervention. Teams are clearer about what matters now. Escalations are faster because people know where they belong. Delivery becomes more predictable because coordination no longer depends on heroics.
+  - Continue reading
+  - Previous article
+  - Are integrations quietly slowing you down?
+  - Next article
+  - Post-Series A data foundations
+  - Apply this now
+  - Use this when the company has more people and more tooling but less alignment than it had a year ago.
+  - Recommended diagnostic
+  - Is delivery drag slowing you down?
+  - Use the diagnostic if growth has increased drag but the specific source is still unclear.
+  - More to explore
+  - Systems Strategy
+  - Architecture
+  - Should you modernize or rebuild?
+  - Do you need an architecture map before your roadmap?
+  - Signal
+  - Get practical notes on systems, execution drag, and architecture decisions when they are worth your attention.
+  - Want help with your specific situation?
+  - Articles sharpen judgment. They do not replace a direct read on your architecture, operating model, and execution constraints.
+- CTA labels / buttons:
+  - Previous article Are integrations quietly slowing you down?
+  - Next article Post-Series A data foundations
+  - 1 How rhythm breaks
+  - 2 What strong rhythm actually requires
+  - 3 What to change first
+  - 4 What good feels like
+  - See how the diagnostic works
+  - Explore all Systems Strategy articles
+  - Systems Strategy Are integrations quietly slowing you down?
+  - Architecture Should you modernize or rebuild?
+  - Architecture Do you need an architecture map before your roadmap?
+  - Subscribe for practical updates
+  - Book a strategy call
+- Card titles and card descriptions:
+  - What strong rhythm actually requires
+  - What to change first
+  - What good feels like
+- Any microcopy / helper text:
+  - Work email
+- Any visible form fields / placeholders / labels:
+  - email | you@company.com
+- Any visible list/bullet copy:
+  - A small set of decisions that happen on a reliable cadence.
+  - Clear definition of who owns each cross-functional issue.
+  - A progress model tied to shipped outcomes, not status theater.
+
+#### Section 3 ? Content section
+- Section type: section (border-t border-border bg-secondary/25 px-6 py-16 md:px-8 md:py-18)
+- Section title: None visible
+- Section subtitle / eyebrow: None visible
+- Full visible body copy:
+  - None visible
+- CTA labels / buttons:
+  - Home
+  - Knowledge Base
+  - Systems Strategy
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 50 ? Post-Series A data foundations | Amalgam
+- URL: /knowledge/post-series-a-data-foundations
+- Purpose: What needs to be true in your data layer before reporting, forecasting, and automation can be trusted at scale.
+
+#### Canonical article content (from data source)
+- Category: data
+- Read time: 8 min read
+- Published: March 2026
+- Title: Post-Series A data foundations
+- Description: What needs to be true in your data layer before reporting, forecasting, and automation can be trusted at scale.
+- Intro: After a raise, expectations accelerate faster than the data foundation. Leaders want tighter forecasting, clearer unit economics, and more automated workflows. The problem is that many post-Series A companies are still running on a loose collection of source systems, spreadsheets, and partially trusted dashboards. The company is scaling decisions faster than it is scaling truth.
+- Summary: Before a business needs sophisticated analytics, it needs trusted definitions, clear source systems, and reviewable transformation logic. Without that substrate, automation and forecasting only make ambiguity faster.
+- Key takeaways
+  - Metrics trust is the real milestone, not dashboard count.
+  - A post-Series A data system should prioritize consistency and shared definitions before advanced complexity.
+  - Automation becomes a force multiplier only after the operating data model is stable enough to trust.
+- Article section 1
+  - Title: Trust is the first milestone
+  - Kicker: None
+  - Paragraphs
+    - If sales, product, operations, and finance produce different answers to the same question, the company does not have a tooling problem first. It has a trust problem. Leaders start compensating with side conversations and manual reconciliation, which means important decisions drift away from the supposedly official system.
+    - A sound data foundation makes core operating metrics boring. The number is easy to find, the definition is explicit, and the path back to source systems is understandable enough that teams can challenge it constructively.
+- Article section 2
+  - Title: What good enough actually looks like
+  - Kicker: None
+  - Paragraphs
+    - A post-Series A company usually does not need a giant centralized data platform immediately. It needs coherence around the handful of entities and metrics leadership uses every week: customers, deals, revenue, delivery, retention, onboarding, support load, or whatever truly drives the business.
+    - That means documenting critical sources, normalizing definitions, and ensuring transformation logic is visible and reviewable. The system should help the company make better operating decisions, not merely generate prettier reporting.
+  - Bullets
+    - Critical sources are known and treated as intentional systems of record.
+    - Core business entities have stable definitions across teams.
+    - Transformations are explicit enough to review when numbers drift.
+    - Dashboards correspond to decisions, not vanity visibility.
+- Article section 3
+  - Title: Why automation has to come in the right sequence
+  - Kicker: None
+  - Paragraphs
+    - Teams often reach for automation as soon as manual work becomes painful. That instinct makes sense. But automating on top of unclear definitions only accelerates inconsistency. You end up with faster confusion, not better outcomes.
+    - The better sequence is shared definitions, then reliability, then automation. Once definitions and ownership are solid, automation becomes a way to remove toil. Before that, it tends to hide broken assumptions.
+- Article section 4
+  - Title: The leadership standard to aim for
+  - Kicker: None
+  - Paragraphs
+    - A good data foundation allows leadership to ask harder questions without restarting the argument over whose number is right. That does not require perfection. It requires a system where disagreements become tractable and where the path to resolution is visible.
+    - That is what makes forecasting, planning, and automation possible at a higher level of confidence. The business moves faster because truth is easier to access, not because there are more dashboards floating around.
+
+#### Section 1 ? Hero
+- Section type: section (relative overflow-hidden border-b border-border px-6 py-16 md:px-8 md:py-24)
+- Section title: Post-Series A data foundations
+- Section subtitle / eyebrow: After a raise, expectations accelerate faster than the data foundation. Leaders want tighter forecasting, clearer unit economics, and more automated workflows.
+- Full visible body copy:
+  - After a raise, expectations accelerate faster than the data foundation. Leaders want tighter forecasting, clearer unit economics, and more automated workflows.
+  - Quick summary
+  - Before a business needs sophisticated analytics, it needs trusted definitions, clear source systems, and reviewable transformation logic. Without that substrate, automation and forecasting only make ambiguity faster.
+- CTA labels / buttons:
+  - Back to knowledge base
+  - Data
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Form block
+- Section type: section (px-6 py-16 md:px-8 md:py-20)
+- Section title: Trust is the first milestone
+- Section subtitle / eyebrow: If sales, product, operations, and finance produce different answers to the same question, the company does not have a tooling problem first. It has a trust problem. Leaders start compensating with side conversations and manual reconciliation, which means important decisions drift away from the supposedly official system.
+- Full visible body copy:
+  - If sales, product, operations, and finance produce different answers to the same question, the company does not have a tooling problem first. It has a trust problem. Leaders start compensating with side conversations and manual reconciliation, which means important decisions drift away from the supposedly official system.
+  - A sound data foundation makes core operating metrics boring. The number is easy to find, the definition is explicit, and the path back to source systems is understandable enough that teams can challenge it constructively.
+  - A post-Series A company usually does not need a giant centralized data platform immediately. It needs coherence around the handful of entities and metrics leadership uses every week: customers, deals, revenue, delivery, retention, onboarding, support load, or whatever truly drives the business.
+  - That means documenting critical sources, normalizing definitions, and ensuring transformation logic is visible and reviewable. The system should help the company make better operating decisions, not merely generate prettier reporting.
+  - Key takeaways
+  - Teams often reach for automation as soon as manual work becomes painful. That instinct makes sense. But automating on top of unclear definitions only accelerates inconsistency. You end up with faster confusion, not better outcomes.
+  - The better sequence is shared definitions, then reliability, then automation. Once definitions and ownership are solid, automation becomes a way to remove toil. Before that, it tends to hide broken assumptions.
+  - A good data foundation allows leadership to ask harder questions without restarting the argument over whose number is right. That does not require perfection. It requires a system where disagreements become tractable and where the path to resolution is visible.
+  - That is what makes forecasting, planning, and automation possible at a higher level of confidence. The business moves faster because truth is easier to access, not because there are more dashboards floating around.
+  - Continue reading
+  - Previous article
+  - Did growth break your operating rhythm?
+  - Next article
+  - Which metrics should you actually run the company on?
+  - Apply this now
+  - Use this when metric trust is falling apart and leadership is still asking for more automation.
+  - Recommended diagnostic
+  - Are you actually ready for AI adoption?
+  - Use the AI checklist if the business is starting to ask for automation but the data layer may not be ready.
+  - More to explore
+  - Data
+  - Architecture
+  - Should you modernize or rebuild?
+  - Do you need an architecture map before your roadmap?
+  - Signal
+  - Get practical notes on systems, execution drag, and architecture decisions when they are worth your attention.
+  - Want help with your specific situation?
+  - Articles sharpen judgment. They do not replace a direct read on your architecture, operating model, and execution constraints.
+- CTA labels / buttons:
+  - Previous article Did growth break your operating rhythm?
+  - Next article Which metrics should you actually run the company on?
+  - 1 Trust is the first milestone
+  - 2 What good enough actually looks like
+  - 3 Why automation has to come in the right sequence
+  - 4 The leadership standard to aim for
+  - See how the diagnostic works
+  - Explore all Data articles
+  - Data Which metrics should you actually run the company on?
+  - Architecture Should you modernize or rebuild?
+  - Architecture Do you need an architecture map before your roadmap?
+  - Subscribe for practical updates
+  - Book a strategy call
+- Card titles and card descriptions:
+  - What good enough actually looks like
+  - Why automation has to come in the right sequence
+  - The leadership standard to aim for
+- Any microcopy / helper text:
+  - Work email
+- Any visible form fields / placeholders / labels:
+  - email | you@company.com
+- Any visible list/bullet copy:
+  - Critical sources are known and treated as intentional systems of record.
+  - Core business entities have stable definitions across teams.
+  - Transformations are explicit enough to review when numbers drift.
+  - Dashboards correspond to decisions, not vanity visibility.
+
+#### Section 3 ? Content section
+- Section type: section (border-t border-border bg-secondary/25 px-6 py-16 md:px-8 md:py-18)
+- Section title: None visible
+- Section subtitle / eyebrow: None visible
+- Full visible body copy:
+  - None visible
+- CTA labels / buttons:
+  - Home
+  - Knowledge Base
+  - Data
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 51 ? How to sequence your roadmap when certainty is low | Amalgam
+- URL: /knowledge/sequencing-roadmaps-under-uncertainty
+- Purpose: How to prioritize when the current state is only partly visible and leadership still needs a plan it can trust.
+
+#### Canonical article content (from data source)
+- Category: execution
+- Read time: 7 min read
+- Published: March 2026
+- Title: How to sequence your roadmap when certainty is low
+- Description: How to prioritize when the current state is only partly visible and leadership still needs a plan it can trust.
+- Intro: Real roadmaps are built under uncertainty. Waiting for complete certainty is unrealistic. Pretending certainty exists when it does not is worse. Strong sequencing is the discipline of making the next decisions obvious enough, while keeping later commitments flexible enough to survive what the team will still learn on the way.
+- Summary: Good sequencing does not eliminate uncertainty. It contains it. Teams should front-load the work that removes risk, clarifies architecture, and makes later commitments easier to trust.
+- Key takeaways
+  - The earliest roadmap items should often be the ones that create better information, not just visible feature output.
+  - A roadmap can be decisive without pretending the future is fully knowable.
+  - If later phases depend on assumptions not yet tested, the roadmap should say so explicitly.
+- Article section 1
+  - Title: Avoid the certainty trap
+  - Kicker: None
+  - Paragraphs
+    - Teams under pressure often over-specify later work because leadership wants confidence now. That usually creates fragile commitments. The organization acts as if sequence is settled, then gets destabilized when the first foundational work exposes new constraints.
+    - A better pattern is to be explicit about what is known, what is assumed, and which early initiatives exist to reduce uncertainty itself.
+- Article section 2
+  - Title: What should go first
+  - Kicker: None
+  - Paragraphs
+    - Early roadmap work should buy optionality. That means reducing architectural risk, clarifying system ownership, cleaning up core workflow bottlenecks, or producing enough operating visibility that later decisions become meaningfully better.
+    - Visible customer outcomes matter, but if the foundation underneath them is still unstable, those wins can create a misleading sense of progress.
+  - Bullets
+    - Prioritize work that reduces future rework.
+    - Sequence around dependencies that threaten multiple later initiatives.
+    - Treat definition work as strategic, not administrative.
+- Article section 3
+  - Title: How to communicate the plan
+  - Kicker: None
+  - Paragraphs
+    - Leadership generally accepts uncertainty when it is named clearly and handled responsibly. The problem is not saying 'we do not know everything yet.' The problem is hiding uncertainty inside confident-looking plans.
+    - A good roadmap tells leadership what is fixed, what is conditional, and what new information the next phase is intended to produce.
+- Article section 4
+  - Title: Why this builds more trust, not less
+  - Kicker: None
+  - Paragraphs
+    - Roadmap trust comes from honest sequence, not polished certainty. Teams that acknowledge where they are still learning tend to make fewer avoidable promises and earn more credibility when later commitments become firmer.
+
+#### Section 1 ? Hero
+- Section type: section (relative overflow-hidden border-b border-border px-6 py-16 md:px-8 md:py-24)
+- Section title: How to sequence your roadmap when certainty is low
+- Section subtitle / eyebrow: Real roadmaps are built under uncertainty. Waiting for complete certainty is unrealistic.
+- Full visible body copy:
+  - Real roadmaps are built under uncertainty. Waiting for complete certainty is unrealistic.
+  - Quick summary
+  - Good sequencing does not eliminate uncertainty. It contains it. Teams should front-load the work that removes risk, clarifies architecture, and makes later commitments easier to trust.
+- CTA labels / buttons:
+  - Back to knowledge base
+  - Execution
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Form block
+- Section type: section (px-6 py-16 md:px-8 md:py-20)
+- Section title: Avoid the certainty trap
+- Section subtitle / eyebrow: Teams under pressure often over-specify later work because leadership wants confidence now. That usually creates fragile commitments. The organization acts as if sequence is settled, then gets destabilized when the first foundational work exposes new constraints.
+- Full visible body copy:
+  - Teams under pressure often over-specify later work because leadership wants confidence now. That usually creates fragile commitments. The organization acts as if sequence is settled, then gets destabilized when the first foundational work exposes new constraints.
+  - A better pattern is to be explicit about what is known, what is assumed, and which early initiatives exist to reduce uncertainty itself.
+  - Early roadmap work should buy optionality. That means reducing architectural risk, clarifying system ownership, cleaning up core workflow bottlenecks, or producing enough operating visibility that later decisions become meaningfully better.
+  - Visible customer outcomes matter, but if the foundation underneath them is still unstable, those wins can create a misleading sense of progress.
+  - Key takeaways
+  - Leadership generally accepts uncertainty when it is named clearly and handled responsibly. The problem is not saying 'we do not know everything yet.' The problem is hiding uncertainty inside confident-looking plans.
+  - A good roadmap tells leadership what is fixed, what is conditional, and what new information the next phase is intended to produce.
+  - Roadmap trust comes from honest sequence, not polished certainty. Teams that acknowledge where they are still learning tend to make fewer avoidable promises and earn more credibility when later commitments become firmer.
+  - Continue reading
+  - Previous article
+  - Why your delivery velocity problem is really a systems problem
+  - Next article
+  - Your team structure follows your architecture
+  - Apply this now
+  - Use this when the roadmap needs to move forward before every assumption is fully proven.
+  - More to explore
+  - Execution
+  - Architecture
+  - Should you modernize or rebuild?
+  - Do you need an architecture map before your roadmap?
+  - Signal
+  - Get practical notes on systems, execution drag, and architecture decisions when they are worth your attention.
+  - Want help with your specific situation?
+  - Articles sharpen judgment. They do not replace a direct read on your architecture, operating model, and execution constraints.
+- CTA labels / buttons:
+  - Previous article Why your delivery velocity problem is really a systems problem
+  - Next article Your team structure follows your architecture
+  - 1 Avoid the certainty trap
+  - 2 What should go first
+  - 3 How to communicate the plan
+  - 4 Why this builds more trust, not less
+  - Explore all Execution articles
+  - Execution Why your delivery velocity problem is really a systems problem
+  - Architecture Should you modernize or rebuild?
+  - Architecture Do you need an architecture map before your roadmap?
+  - Subscribe for practical updates
+  - Book a strategy call
+  - See how the diagnostic works
+- Card titles and card descriptions:
+  - What should go first
+  - How to communicate the plan
+  - Why this builds more trust, not less
+- Any microcopy / helper text:
+  - Work email
+- Any visible form fields / placeholders / labels:
+  - email | you@company.com
+- Any visible list/bullet copy:
+  - Prioritize work that reduces future rework.
+  - Sequence around dependencies that threaten multiple later initiatives.
+  - Treat definition work as strategic, not administrative.
+
+#### Section 3 ? Content section
+- Section type: section (border-t border-border bg-secondary/25 px-6 py-16 md:px-8 md:py-18)
+- Section title: None visible
+- Section subtitle / eyebrow: None visible
+- Full visible body copy:
+  - None visible
+- CTA labels / buttons:
+  - Home
+  - Knowledge Base
+  - Execution
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+### Page 52 ? Your team structure follows your architecture | Amalgam
+- URL: /knowledge/structure-follows-architecture
+- Purpose: How system boundaries, decision ownership, and team design reinforce each other for better or worse.
+
+#### Canonical article content (from data source)
+- Category: org-design
+- Read time: 7 min read
+- Published: March 2026
+- Title: Your team structure follows your architecture
+- Description: How system boundaries, decision ownership, and team design reinforce each other for better or worse.
+- Intro: When teams feel misaligned, the problem is not always cultural first. Often the organization is mirroring the structure of the system underneath it: fuzzy ownership, overlapping boundaries, too many shared dependencies, and work that crosses domains without clean interfaces. Changing the org chart without changing that reality usually just renames the confusion.
+- Summary: Team design and system design are tightly linked. If the architecture encourages constant cross-boundary negotiation, the organization will feel slow and misaligned no matter how many reporting lines get redrawn.
+- Key takeaways
+  - Reorgs fail when they ignore the system boundaries generating the friction.
+  - Healthy boundaries make collaboration clearer, not more siloed.
+  - Ownership becomes easier when teams and architecture are designed together rather than independently.
+- Article section 1
+  - Title: The org chart mirrors the system
+  - Kicker: None
+  - Paragraphs
+    - If a routine product change needs engineering, operations, data, and support to renegotiate ownership every time, the architecture likely has the same boundary problem the teams do. Work is not slow because people are uncooperative. It is slow because the system does not make responsibility clear.
+    - This is why many reorgs disappoint. They change reporting relationships but leave dependencies, domain overlap, and escalation ambiguity intact.
+- Article section 2
+  - Title: What good boundaries actually enable
+  - Kicker: None
+  - Paragraphs
+    - Good boundaries do not isolate teams from one another. They make collaboration cleaner. Teams know what they own, where their interfaces begin and end, and which decisions they can make without performing cross-functional diplomacy every day.
+    - That definition work improves both execution and morale because fewer issues require negotiation simply to get work moving.
+  - Bullets
+    - Fewer meetings to resolve basic ownership questions.
+    - Cleaner handoffs between product, platform, and operations work.
+    - Roadmaps that reflect actual system dependencies instead of optimistic guesses.
+- Article section 3
+  - Title: Design team shape and system shape together
+  - Kicker: None
+  - Paragraphs
+    - If responsibilities are being redrawn, redraw the system map at the same time. Decide which domains deserve dedicated ownership, which shared services need clearer contracts, and which decisions leadership should stop having to referee.
+    - The objective is not maximum decentralization. It is fewer avoidable collisions and more confident autonomous execution.
+- Article section 4
+  - Title: The standard to hold
+  - Kicker: None
+  - Paragraphs
+    - A healthy organization makes it easier to predict where a decision belongs. A healthy architecture makes it easier to implement that decision without touching five unrelated systems. When those two conditions reinforce each other, the company feels meaningfully more coherent.
+
+#### Section 1 ? Hero
+- Section type: section (relative overflow-hidden border-b border-border px-6 py-16 md:px-8 md:py-24)
+- Section title: Your team structure follows your architecture
+- Section subtitle / eyebrow: When teams feel misaligned, the problem is not always cultural first. Often the organization is mirroring the structure of the system underneath it: fuzzy ownership, overlapping boundaries, too many shared dependencies, and work that crosses domains without clean interfaces.
+- Full visible body copy:
+  - When teams feel misaligned, the problem is not always cultural first. Often the organization is mirroring the structure of the system underneath it: fuzzy ownership, overlapping boundaries, too many shared dependencies, and work that crosses domains without clean interfaces.
+  - Quick summary
+  - Team design and system design are tightly linked. If the architecture encourages constant cross-boundary negotiation, the organization will feel slow and misaligned no matter how many reporting lines get redrawn.
+- CTA labels / buttons:
+  - Back to knowledge base
+  - Leadership
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+#### Section 2 ? Form block
+- Section type: section (px-6 py-16 md:px-8 md:py-20)
+- Section title: The org chart mirrors the system
+- Section subtitle / eyebrow: If a routine product change needs engineering, operations, data, and support to renegotiate ownership every time, the architecture likely has the same boundary problem the teams do. Work is not slow because people are uncooperative. It is slow because the system does not make responsibility clear.
+- Full visible body copy:
+  - If a routine product change needs engineering, operations, data, and support to renegotiate ownership every time, the architecture likely has the same boundary problem the teams do. Work is not slow because people are uncooperative. It is slow because the system does not make responsibility clear.
+  - This is why many reorgs disappoint. They change reporting relationships but leave dependencies, domain overlap, and escalation ambiguity intact.
+  - Good boundaries do not isolate teams from one another. They make collaboration cleaner. Teams know what they own, where their interfaces begin and end, and which decisions they can make without performing cross-functional diplomacy every day.
+  - That definition work improves both execution and morale because fewer issues require negotiation simply to get work moving.
+  - Key takeaways
+  - If responsibilities are being redrawn, redraw the system map at the same time. Decide which domains deserve dedicated ownership, which shared services need clearer contracts, and which decisions leadership should stop having to referee.
+  - The objective is not maximum decentralization. It is fewer avoidable collisions and more confident autonomous execution.
+  - A healthy organization makes it easier to predict where a decision belongs. A healthy architecture makes it easier to implement that decision without touching five unrelated systems. When those two conditions reinforce each other, the company feels meaningfully more coherent.
+  - Continue reading
+  - Previous article
+  - How to sequence your roadmap when certainty is low
+  - Next article
+  - Who should decide what when things get complex?
+  - Apply this now
+  - Use this when reorg conversations start before anyone maps how work actually flows.
+  - More to explore
+  - Leadership
+  - Architecture
+  - Should you modernize or rebuild?
+  - Do you need an architecture map before your roadmap?
+  - Signal
+  - Get practical notes on systems, execution drag, and architecture decisions when they are worth your attention.
+  - Want help with your specific situation?
+  - Articles sharpen judgment. They do not replace a direct read on your architecture, operating model, and execution constraints.
+- CTA labels / buttons:
+  - Previous article How to sequence your roadmap when certainty is low
+  - Next article Who should decide what when things get complex?
+  - 1 The org chart mirrors the system
+  - 2 What good boundaries actually enable
+  - 3 Design team shape and system shape together
+  - 4 The standard to hold
+  - Explore all Leadership articles
+  - Leadership Who should decide what when things get complex?
+  - Architecture Should you modernize or rebuild?
+  - Architecture Do you need an architecture map before your roadmap?
+  - Subscribe for practical updates
+  - Book a strategy call
+  - See how the diagnostic works
+- Card titles and card descriptions:
+  - What good boundaries actually enable
+  - Design team shape and system shape together
+  - The standard to hold
+- Any microcopy / helper text:
+  - Work email
+- Any visible form fields / placeholders / labels:
+  - email | you@company.com
+- Any visible list/bullet copy:
+  - Fewer meetings to resolve basic ownership questions.
+  - Cleaner handoffs between product, platform, and operations work.
+  - Roadmaps that reflect actual system dependencies instead of optimistic guesses.
+
+#### Section 3 ? Content section
+- Section type: section (border-t border-border bg-secondary/25 px-6 py-16 md:px-8 md:py-18)
+- Section title: None visible
+- Section subtitle / eyebrow: None visible
+- Full visible body copy:
+  - None visible
+- CTA labels / buttons:
+  - Home
+  - Knowledge Base
+  - Leadership
+- Card titles and card descriptions:
+  - None visible
+- Any microcopy / helper text:
+  - None visible
+- Any visible form fields / placeholders / labels:
+  - None visible
+
+## 4. Templates and repeated structures
+- case study template: hero + at-a-glance triad + constraints + solution cards + result cards + technologies + prev/next + CTA band
+- article template: hero + summary + key takeaways + section body + next article + related cards
+- launchpad tool template: intro/start + question flow + result state + rationale + related guides + summary actions
+- legal template: legal hero + contact sidebar + policy sections
+- redirect template: Redirecting + This page moved + Continue + homepage fallback
+
+## 5. Broken / thin / placeholder pages
+- /aboutus, /contactus, /ourwork, /schedule: thin redirect pages
+- /review: thin review helper redirect
+- /404 and /_not-found: custom not-found templates
+
+## 6. Final notes
+- Dynamic/conditional copy captured from source: `lib/launchpad.ts`, `components/tool-assessment.tsx`, `components/contact-form.tsx`, `components/signals-subscribe-form.tsx`.
+- Footer/nav boilerplate is repeated globally; fully listed once under Global elements and still included in visible per-page extraction.

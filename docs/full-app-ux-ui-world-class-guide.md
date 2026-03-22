@@ -1,366 +1,173 @@
-﻿# Amalgam Full-App UX/UI Audit and Upgrade Guide
+# Amalgam Full-App UX/UI Audit, Strategy, and Execution Plan
 
-Date: March 11, 2026  
-Reviewer: Codex (UX/UI + conversion + product experience pass)
+Date: March 15, 2026  
+Reviewer: Codex (`confinity-design-audit` workflow)
 
-## 1) Executive Summary
+## 1) Executive Verdict
 
-The site is already strong on trust, visual quality, and depth. It feels credible and intentional.  
-The biggest gap is not aesthetics. It is decision friction.
+Amalgam is already above-average across trust, structure, and product logic. The strongest parts are the stage-aware `next-move` flow, credible proof placement, and consistent action framing around strategy calls.
 
-The current experience asks visitors to process too many parallel choices before it gives them one obvious next move. Across pages, CTA language and flow logic vary enough to add cognitive load.
+The remaining gap is not foundational quality. It is coherence under scale: repeated but slightly different surface patterns, uneven interaction instrumentation outside core flows, and a few mobile orientation points where confidence can drop.
 
-### Current score (estimated)
+### What is already strong and should be preserved
 
-| Area | Score | Notes |
-| --- | --- | --- |
-| Visual quality | 8.4/10 | Strong hierarchy, modern cards, good section rhythm |
-| Brand trust | 8.7/10 | Strong proof, testimonials, enterprise logos, case studies |
-| Message clarity | 7.3/10 | Improved, but still has repeated/abstract phrasing in places |
-| Conversion architecture | 6.8/10 | CTA taxonomy and path logic are fragmented |
-| Information architecture | 7.5/10 | Rich content, but several pages are still too dense |
-| Accessibility baseline | 7.8/10 | Good focus/targets; still needs tighter mobile scan behavior checks |
-| Design-system hygiene | 6.9/10 | Token system exists, but many hardcoded visual values remain |
+- Stage logic and journey architecture in `next-move`.
+- Clear “self-serve or assisted” escalation model.
+- Strong trust cues: case studies, testimonial framing, and logos.
+- Accessible baseline: skip link, target sizes, and semantic structure.
+- Conversion language consistency on primary pages (“Book a strategy call”).
 
-### Priority outcome
+### Biggest product-level weaknesses
 
-If you do only one strategic thing: make the entire site feel like one guided decision journey with one primary action language and one clear escalation ladder.
+- Analytics coverage is strong in contact + launchpad but thin in global navigation and discovery surfaces.
+- Shared visual primitives still rely on scattered, component-level color/overlay expressions.
+- Mobile menu interaction is usable but can be more robust (focus/escape behavior, interaction telemetry).
+- Case-study filtering is useful but under-instrumented for product-learning and drop-off analysis.
+- Contact/Signals forms track outcomes, but not enough intent/attempt context for optimization.
 
-## 2) Critical Opportunities (Highest ROI)
+### Biggest creativity opportunities (restrained)
 
-## P0: Unify CTA architecture and labels
+- Improve section pacing with stronger “quiet vs emphasis” surface rhythm.
+- Make sticky/final CTA blocks feel more productized and less generic dark-band repetition.
+- Sharpen micro-interactions on actionable surfaces (chips, filters, nav, cards) for confidence feedback.
 
-Problem:
-- Primary CTA language varies by page: `Book a strategy call`, `Book a 15-minute call`, `Start a conversation`, `Learn more`, `See how we can help`.
-- Different labels often point to the same intent, making decision confidence weaker.
+## 2) Page-by-Page Audit
 
-What to do:
-- Define one primary CTA for uncertain visitors: `Book a strategy call`.
-- Define one secondary CTA for exploration: `See case studies` or `Use Launchpad`.
-- Reserve `Start a conversation` for specific pages where custom engagement is clearly the point.
-- Apply consistent labels in navigation, footer, hero sections, and terminal CTAs.
+## Home (`/`)
 
-Evidence:
-- `components/navigation.tsx`
-- `components/footer.tsx`
-- `app/page.tsx`
-- `app/services/page.tsx`
-- `app/team/page.tsx`
-- `app/case-studies/page.tsx`
+- Purpose: orient quickly, establish trust, route to next move.
+- Working: hero clarity, trust progression, clear CTAs.
+- Weakness: recurring section pattern can feel repetitive on long scroll.
+- Preserve: current narrative order and CTA pair.
+- Change: improve surface rhythm and interaction feedback systemically.
 
-## P0: Reduce homepage decision overload
+## Services (`/services`) and Program Pages
 
-Problem:
-- Homepage has many sections and repeated persuasion blocks.
-- Strong content exists, but the first-time path is still long before commitment.
+- Purpose: explain support ladder and help users self-identify fit.
+- Working: practical language and progression from pressure to support model.
+- Weakness: visual blocks can feel too equivalent in weight.
+- Preserve: existing offer sequencing and copy architecture.
+- Change: increase visual hierarchy contrast between summary, detail, and action modules.
 
-What to do:
-- Keep content depth, but compress first-view narrative into 4 decision blocks:
-1. What pressure are you under?
-2. What is the fastest next move?
-3. Why trust Amalgam?
-4. Choose path (call, launchpad, proof)
-- Move secondary educational sections lower or behind expandable "See deeper context".
+## Next Move (`/next-move`) and Tool/Guide/Program subroutes
 
-Evidence:
-- `app/page.tsx` has high section density and repeated CTA clusters.
+- Purpose: diagnose stage and route to action.
+- Working: strongest productized flow in the app; meaningful interaction model.
+- Weakness: high block count on mobile can increase cognitive overhead; event taxonomy is mixed.
+- Preserve: stage mapping logic, pressure model, and core disclosure pattern.
+- Change: tighten surface semantics, interaction polish, and analytics consistency.
 
-## P0: Improve contact completion reliability
+## Our Work (`/our-work`) + Case Study Detail
 
-Problem:
-- Contact submission relies on `mailto:` flow with clipboard fallback.
-- This can fail or feel broken depending on environment and email client setup.
+- Purpose: proof-led conversion support through relevant examples.
+- Working: strong filter utility and rich proof set.
+- Weakness: filter interactions and no-match states are weakly instrumented.
+- Preserve: featured/library split and pressure-first filtering model.
+- Change: instrument filter and result behavior; improve empty-state action clarity.
 
-What to do:
-- Keep mailto option, but add first-party API submission as primary fallback.
-- Offer explicit choice: `Send through website` or `Open in my email app`.
-- Preserve current good behavior of carrying Launchpad context.
+## Our Take (`/our-take`) + Brief Detail
 
-Evidence:
-- `components/contact-form.tsx`
-
-## P1: Simplify Launchpad progressive disclosure
-
-Problem:
-- Launchpad is feature-rich and impressive, but the full-map and deep modules can still feel heavy.
-- New users can lose the "one next move" feeling if too many blocks are open.
-
-What to do:
-- Keep current flow, but default to "one-screen decision" on first load:
-1. Pick stage
-2. Pick pressure
-3. Show one recommended next action + one backup
-- Gate deeper content under explicit "Show full map".
-
-Evidence:
-- `components/launchpad-stage-navigator.tsx`
-
-## P1: Complete token-first design system pass
-
-Problem:
-- CSS variables exist, but many component utility classes still use hardcoded `rgba(...)` and literal color values.
-- This reduces maintainability and theme consistency.
-
-What to do:
-- Introduce semantic tokens for panel surfaces, strokes, overlays, and accent shadows.
-- Replace hardcoded values in `globals.css` utilities with semantic tokens.
-- Keep current visual style; improve consistency and future speed.
-
-Evidence:
-- `app/globals.css`
-- `components/review-mode.tsx` category colors
-
-## 3) Route-by-Route Opportunities
-
-## Global Shell (`Navigation`, `Footer`, layout)
-
-Working:
-- Clean fixed header, active states, scroll progress, strong mobile menu.
-- Footer has good trust details and legal structure.
-
-Improve:
-- Unify conversion language between desktop and mobile menu.
-- Remove intent overlap between footer "Start Here" and "Start a Conversation" blocks.
-- Make one canonical path ladder visible everywhere:
-`Strategy Call -> Diagnostic -> Execution Sprint -> Outcome Partnership`.
-
-Files:
-- `components/navigation.tsx`
-- `components/footer.tsx`
-- `app/layout.tsx`
-
-## Homepage (`/`)
-
-Working:
-- Strong hero question, strong trust strip, strong proof modules.
-
-Improve:
-- Collapse repeated "start here" moments into one decisive module.
-- Reduce overlap between "What we do", "When teams call us", and "Start here".
-- Keep one dominant CTA in hero and one clear secondary path.
-
-File:
-- `app/page.tsx`
-
-## Services (`/services`)
-
-Working:
-- Clear staged engagement model and practical flow.
-
-Improve:
-- Reduce repetitive "start with call" references.
-- Replace weaker CTA labels like `Learn more` with intent-specific actions.
-- Add one compact "choose your path" decision panel near top.
-
-File:
-- `app/services/page.tsx`
+- Purpose: authority, practical education, and assisted conversion support.
+- Working: strong categorization and clear bridge back to action.
+- Weakness: click-intent measurement for reading journeys is thin.
+- Preserve: domain + pressure framing.
+- Change: improve article click instrumentation from cards.
 
 ## Contact (`/contact`)
 
-Working:
-- Strong direct tone and clear expectation setting.
-- Good context seeding from Launchpad.
+- Purpose: convert uncertainty into structured intake.
+- Working: humane copy, clear expectation setting, solid validation.
+- Weakness: minimal analytics on form start/progression and submission latency context.
+- Preserve: field order and low-friction structure.
+- Change: add start/attempt/failure instrumentation detail and in-form confidence cues.
 
-Improve:
-- Add non-mailto submission fallback.
-- Reduce explanatory copy blocks above form.
-- Surface "response time expectation" in one clear, high-contrast line.
+## About/Team/Careers
 
-Files:
-- `app/contact/page.tsx`
-- `components/contact-form.tsx`
+- Purpose: trust and fit confirmation.
+- Working: credible team framing and role clarity.
+- Weakness: behavior analytics on deeper exploration links is limited.
+- Preserve: content depth and team card system.
+- Change: improve shared card interaction consistency and telemetry.
 
-## Launchpad Hub + Subpages
+## Legal + Error/NotFound/Redirect routes
 
-Working:
-- Best-in-class guided interaction architecture.
-- Great stage model, pressure filters, contextual paths, and analytics instrumentation.
+- Purpose: resilience and trust continuity.
+- Working: consistent style language and fallback clarity.
+- Weakness: minor interaction polish opportunities on mobile shell behavior.
+- Preserve: current structure and concise recovery actions.
+- Change: align shared interaction polish and tracking where meaningful.
 
-Improve:
-- Default narrower first-run mode for speed.
-- Reduce copy density in overview mode blocks.
-- Make "recommended next action" sticky above fold on tablet/mobile once selected.
-- Keep detailed rationale hidden by default in tools until requested.
+## 3) System-Level Audit
 
-Files:
-- `components/launchpad-stage-navigator.tsx`
-- `components/tool-assessment.tsx`
-- `app/launchpad/page.tsx`
-- `app/launchpad/tools/page.tsx`
-- `app/launchpad/guides/page.tsx`
-- `app/launchpad/programs/page.tsx`
-- `app/launchpad/signals/page.tsx`
+## Typography and Hierarchy
 
-## Knowledge (`/knowledge` + article page)
+- Strong: clear headline scales and readable body defaults.
+- Gap: repeated near-identical section block weight lowers information contrast over long pages.
 
-Working:
-- Excellent depth and useful categorization.
-- Strong "apply this now" and related-path behavior.
+## Spacing and Layout Rhythm
 
-Improve:
-- Tighten scan performance on index by reducing card payload above fold.
-- In article page sidebar, prioritize one action card and compress lower-priority modules.
-- Add reading progress indicator on long-form article pages.
+- Strong: broadly consistent section spacing.
+- Gap: some card-heavy sections benefit from stronger elevation/surface differentiation.
 
-Files:
-- `app/knowledge/page.tsx`
-- `app/knowledge/[slug]/page.tsx`
+## Components and Surfaces
 
-## Case Studies (`/case-studies` + detail)
+- Strong: reusable primitives (`Card`, `Button`, `PageHero`) already exist.
+- Gap: semantic token usage is inconsistent in some shared components; some hardcoded gradients remain.
 
-Working:
-- Strong social proof structure and clear narrative sections.
+## Interaction and Motion
 
-Improve:
-- Reduce duplicate CTA labels at page bottoms.
-- Add quick "situation tags" on cards for faster matching (for example: `integration drag`, `data reliability`, `post-raise scaling`).
-- On detail pages, add top summary strip with 3 outcomes for faster executive scan.
+- Strong: hover/press support exists, reduced-motion handling present globally.
+- Gap: mobile menu focus/escape patterns and event instrumentation can be stronger.
 
-Files:
-- `app/case-studies/page.tsx`
-- `app/case-studies/[slug]/page.tsx`
+## Forms
 
-## About, Team, Careers
+- Strong: clear labels, inline errors, and useful success messaging.
+- Gap: start/attempt telemetry and detailed failure classification are incomplete.
 
-Working:
-- Human credibility and trust are strong.
-- Portrait and team composition presentation is high quality.
+## Conversion Logic
 
-Improve:
-- Reduce repeated call-to-action variation across closing sections.
-- Tighten role-page verbosity in careers so scanning decision is faster.
-- Add a short "Who should contact us from your team?" panel on About/Team.
+- Strong: clear dual path (self-serve + assisted) throughout.
+- Gap: low-level interaction telemetry is uneven across discovery surfaces and global navigation.
 
-Files:
-- `app/about/page.tsx`
-- `app/team/page.tsx`
-- `app/careers/page.tsx`
+## Analytics Instrumentation
 
-## Legal and Edge Routes
+- Present: `@vercel/analytics` + custom `track()` events in launchpad/contact/signals.
+- Missing or weak:
+  - Global nav/footer click tracking.
+  - Case-study filter interaction and no-result behavior tracking.
+  - Knowledge/case card click tracking consistency.
+  - Signals/contact intent events (start/attempt/failure context).
+- Taxonomy issue: mixed naming conventions (`launchpad_*`, `ynm_*`) without a clear shared pattern.
 
-Working:
-- Clean legal shell and clear structure.
-- Good redirect fallback experiences.
+## 4) Prioritized Improvement Plan
 
-Improve:
-- Add in-page table of contents for legal pages.
-- Harmonize top-level CTA style with primary site system.
+## Critical
 
-Files:
-- `components/legal-page-shell.tsx`
-- `app/privacy-policy/page.tsx`
-- `app/terms-and-conditions/page.tsx`
-- `app/cookie-policy/page.tsx`
-- `components/legacy-route-redirect.tsx`
+1. Strengthen analytics coverage for global navigation and discovery surfaces.
+2. Improve contact/signals instrumentation for attempt/failure/start context.
+3. Tighten mobile navigation interaction robustness and accessibility behavior.
 
-## Review Mode Collaboration UX
+## High Leverage
 
-Working:
-- Remote sync architecture is in place and cross-page notes are robust.
-- Good merge behavior and polling strategy.
+1. Refine global visual tokens and shared surface classes for stronger hierarchy rhythm.
+2. Improve card-level and filter-level interaction feedback and telemetry.
+3. Reduce repeated low-contrast block patterns through shared style refinement.
 
-Improve:
-- Add visible "Last synced at" timestamp and "Sync source" status.
-- Add lightweight collaborator indicators (who last edited note).
-- Add optional color-token alignment for note categories to match brand system.
+## Medium
 
-Files:
-- `components/review-mode.tsx`
-- `NEXT_PUBLIC_REVIEW_NOTES_URL` (shared remote note store endpoint)
+1. Expand click instrumentation from knowledge/case cards.
+2. Align CTA band styling and section contrast for stronger pacing.
 
-## 4) Copy and Voice Framework (Human, Direct, Non-Robotic)
+## Polish
 
-Use this rule across all pages:
-- Lead with the pressure they feel now.
-- Name the concrete system issue.
-- Offer one clear next move.
+1. Improve tiny interaction details (focus and state visibility in edge components).
+2. Clean residual token leaks in shared components where practical.
 
-Preferred copy pattern:
-- Question: "Are releases slipping after growth?"
-- Clarifier: "We help you find the specific bottleneck across architecture, data, and ownership."
-- Action: "Book a strategy call."
+## 5) Execution Plan (Implementation Order)
 
-Avoid:
-- Generic abstractions like "regain momentum" without context.
-- Multiple CTAs with similar intent but different labels.
-- Repeating the same promise across adjacent sections.
-
-## 5) UX/UI System Upgrades
-
-## Design tokens
-
-- Create semantic tokens for:
-`--surface-elevated`, `--surface-soft`, `--surface-contrast`, `--stroke-subtle`, `--stroke-strong`, `--shadow-soft`, `--shadow-focus`.
-- Refactor utility classes in `globals.css` to use semantic tokens.
-
-## Interaction model
-
-- Standardize button hierarchy:
-`Primary (solid)`, `Secondary (outline)`, `Tertiary (text link)`.
-- Enforce one primary CTA per section.
-
-## Motion and performance perception
-
-- Keep existing tasteful motion.
-- Cap simultaneous animated elements above fold on mobile.
-- Ensure reduced-motion mode is equivalent in information clarity.
-
-## Accessibility hardening
-
-- Add skip-link visibility checks on all route templates.
-- Audit tab order for Launchpad stage selector and tool assessments.
-- Validate color contrast for text inside translucent surfaces.
-
-## 6) Phased Roadmap to 10/10
-
-## Phase 1 (1-2 weeks): Conversion and clarity
-
-1. Standardize CTA taxonomy across nav/footer/page heroes.
-2. Simplify homepage top narrative and decision flow.
-3. Add web-submit fallback to contact flow.
-4. Tighten Launchpad first-run state.
-
-## Phase 2 (2-4 weeks): UX polish and system consistency
-
-1. Tokenize remaining hardcoded color/stroke/shadow utilities.
-2. Reduce dense card copy on knowledge and case-study index pages.
-3. Add progress affordances to long article pages.
-4. Improve cross-page action consistency and endpoint CTAs.
-
-## Phase 3 (4-8 weeks): Premium product experience
-
-1. Add personalization layer (remember selected stage/pressure from Launchpad).
-2. Add contextual proof injection (case study cards matched to selected pressure).
-3. Add lightweight guided onboarding on first site visit.
-4. Add advanced review-mode collaboration metadata (editor/time/source).
-
-## 7) Success Metrics
-
-Track before and after:
-
-1. Hero CTA click-through rate by route group.
-2. Contact form completion rate.
-3. Launchpad start-to-completion rate.
-4. Launchpad completion-to-strategy-call rate.
-5. Knowledge article depth and assisted conversion rate.
-6. Mobile bounce rate on home/services/contact.
-
-Target ranges after improvements:
-- +20-35% hero-to-primary-action CTR.
-- +15-30% contact completion rate.
-- +10-20% launchpad completion rate.
-- +15-25% launchpad-to-call conversion.
-
-## 8) Final Recommendation
-
-The app is already high quality.  
-To make it world class, prioritize decision clarity over additional content.
-
-The fastest path to 10/10:
-1. One CTA language system.
-2. One guided decision journey.
-3. One resilient contact conversion flow.
-4. One fully tokenized visual system.
-
-
-
+1. Update shared design tokens and `globals.css` surface primitives.
+2. Upgrade nav/footer behavior and analytics instrumentation.
+3. Instrument discovery surfaces (`CaseStudiesExplorer`, card links).
+4. Expand form instrumentation (`ContactIntakeForm`, `SignalsSubscribeForm`).
+5. Refine high-impact shared interaction surfaces (`FinalCtaBand`, shared cards).
+6. Validate at `380/768/1280` breakpoints and run lint/type checks.

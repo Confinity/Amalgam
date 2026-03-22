@@ -1,342 +1,272 @@
-import { Metadata } from "next"
+import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import {
-  ArrowRight,
-  Users,
-  Target,
-  Zap,
-  Eye,
-  Shield,
-  Clock,
-  Compass,
-  Layers3,
-} from "lucide-react"
+import { TeamMemberCard } from "@/components/cards/TeamMemberCard"
+import { PageHero } from "@/components/heroes/PageHero"
 import { Navigation } from "@/components/navigation"
-import { ClientLogoWall } from "@/components/client-logo-wall"
-import { TestimonialStrip } from "@/components/testimonial-strip"
 import { Footer } from "@/components/footer"
-import {
-  teamMembers,
-  unifiedTeamPortraitBackgroundClass,
-  unifiedTeamPortraitClasses,
-  unifiedTeamPortraits,
-} from "@/lib/team-members"
+import { TrackedButton } from "@/components/ui/TrackedButton"
+import { Card } from "@/components/ui/Card"
+import { TrustBand } from "@/components/ui/TrustBand"
+import { FinalCtaBand } from "@/components/sections/FinalCtaBand"
+import { caseStudies } from "@/content/caseStudies"
+import { leadershipTeam, teamProfiles } from "@/content/team"
+import { getCaseStudyPath } from "@/lib/case-study-system"
+import { clientLogos } from "@/lib/client-logos"
 import { withBasePath } from "@/lib/site-config"
+import { testimonials } from "@/lib/testimonials"
 
 export const metadata: Metadata = {
-  title: "Who you work with at Amalgam",
+  title: "Meet the team you'll actually work with",
   description:
-    "Amalgam helps founders, entrepreneurs, and product teams turn ideas into real products and keep progress moving as complexity grows.",
+    "A small leadership team helping founders and product teams make clear decisions and keep work moving.",
   alternates: {
     canonical: "/about",
   },
 }
 
-const principles = [
+const howWeShowUp = [
   {
-    icon: Target,
-    title: "We make the next move clear",
-    description:
-      "We focus on what matters first.",
+    title: "We work directly",
+    detail: "You work with experienced people close to the decisions, not layers of handoff.",
   },
   {
-    icon: Shield,
-    title: "You get experienced judgment",
-    description:
-      "You work with people who have handled this before.",
+    title: "We go to the real blocker",
+    detail: "We focus on what is actually slowing the work down, not the loudest symptom.",
   },
   {
-    icon: Zap,
-    title: "We keep execution moving",
-    description:
-      "We remove blockers so teams can keep moving.",
+    title: "We stay close to the work",
+    detail: "We help make the next move clear, then stay with the work until momentum returns.",
   },
   {
-    icon: Eye,
-    title: "We tell you what we actually see",
-    description:
-      "Direct communication, clear reasoning.",
-  },
-  {
-    icon: Users,
-    title: "We focus on what gets shipped",
-    description:
-      "Outcomes matter more than hours.",
-  },
-  {
-    icon: Clock,
-    title: "We stay practical under constraints",
-    description:
-      "We work with real constraints and practical progress.",
+    title: "We give judgment, not just advice",
+    detail: "We help teams choose, sequence, and move instead of adding more abstraction.",
   },
 ]
 
-const founder = teamMembers[0]!
-const groupOrder = {
-  leadership: 0,
-  architecture: 1,
-  delivery: 2,
-} as const
-
-const aboutPreviewTeamMembers = teamMembers
-  .filter((member) => member.name !== "Neeraj")
-  .sort((a, b) => groupOrder[a.group] - groupOrder[b.group])
-const aboutStats = [
-  { value: "2012", label: "Founded" },
-  { value: String(teamMembers.length), label: "Team members" },
-  { value: "3", label: "Core ways to engage" },
+const fitSignals = [
+  "Direction, delivery, and architecture are pulling in different directions",
+  "The team needs a clear next move, not another layer of advice",
+  "Work is active, and leadership needs sharper sequencing quickly",
 ]
 
-const operatingModel = [
-  {
-    icon: Compass,
-    title: "First, understand your real system",
-    description:
-      "We start with your actual system, constraints, and decision pressure.",
-  },
-  {
-    icon: Layers3,
-    title: "Then solve at the system level",
-    description:
-      "We solve across architecture, workflow, and decision flow together.",
-  },
-  {
-    icon: Zap,
-    title: "Always bias toward usable progress",
-    description:
-      "The goal is a path leadership can trust and teams can execute.",
-  },
-]
+const primaryProofSlug = "mt-bank"
+const secondaryProofSlug = "barclays-bank-us"
 
 export default function AboutPage() {
+  const founder = leadershipTeam[0] ?? teamProfiles[0]!
+  const primaryProofCase =
+    caseStudies.find((study) => study.slug === primaryProofSlug) ?? caseStudies[0]!
+  const secondaryProofCase =
+    caseStudies.find((study) => study.slug === secondaryProofSlug) ??
+    caseStudies.find((study) => study.slug !== primaryProofCase.slug) ??
+    primaryProofCase
+  const aboutTestimonial =
+    testimonials.find((testimonial) => testimonial.id === "mendez-pearlx") ??
+    testimonials[1] ??
+    testimonials[0]!
+
   return (
     <>
       <Navigation />
-      <main id="main-content" className="min-h-screen bg-background pt-20">
-        <section className="relative overflow-hidden border-b border-border py-20 lg:py-28">
-          <div className="pointer-events-none absolute right-0 top-0 h-72 w-72 rounded-full bg-teal/8 blur-3xl" />
-          <div className="pointer-events-none absolute left-8 top-20 h-56 w-56 rounded-full bg-purple/8 blur-3xl" />
-          <div className="mx-auto max-w-[1200px] px-6">
-            <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-end">
-              <div className="max-w-3xl">
-                <p className="mb-4 text-sm font-medium uppercase tracking-widest text-teal">
-                  About Amalgam
-                </p>
-                <h1 className="text-4xl font-semibold leading-tight tracking-tight text-foreground text-balance md:text-5xl lg:text-6xl">
-                  Want to know who you&apos;ll actually work with?
-                </h1>
-                <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                  Amalgam helps founders, entrepreneurs, and product teams turn ideas into real products and keep progress moving as complexity grows.
-                </p>
-              </div>
-              <div className="support-panel rounded-[28px] p-7">
-                <p className="text-xs font-medium uppercase tracking-[0.22em] text-teal">
-                  What clients hire us for
-                </p>
-                <div className="mt-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
-                  <p>Clear read when the issue is unclear.</p>
-                  <p>Sequencing when teams need a roadmap they can trust.</p>
-                  <p>Hands-on follow-through during execution.</p>
-                </div>
-              </div>
-            </div>
-            <div className="mt-10 grid gap-4 sm:grid-cols-3">
-              {aboutStats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="support-panel card-interactive rounded-2xl px-5 py-5"
-                >
-                  <p className="text-3xl font-bold text-teal">{stat.value}</p>
-                  <p className="mt-2 text-sm text-muted-foreground">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section-warm py-20 lg:py-24">
-          <div className="mx-auto max-w-[1200px] px-6">
-            <div className="grid gap-10 lg:grid-cols-[320px_minmax(0,1fr)] lg:items-center">
-              <div className="relative mx-auto aspect-[4/4.2] w-full max-w-sm overflow-hidden rounded-3xl border border-border bg-secondary/50">
+      <main id="main-content">
+        <PageHero
+          eyebrow="Who we are"
+          scale="mediumLarge"
+          tone="soft"
+          className="pt-[128px] pb-[50px] md:pt-[144px] md:pb-[62px] lg:pt-[158px] lg:pb-[74px]"
+          gridClassName="lg:grid-cols-[minmax(0,1.08fr)_minmax(0,1fr)] lg:items-center lg:gap-10"
+          artifactClassName="w-full max-w-[430px] lg:justify-self-end"
+          title={
+            <h1 className="max-w-[20ch]">
+              Meet the team you&rsquo;ll <span className="hero-title-accent">actually work with.</span>
+            </h1>
+          }
+          support="A small leadership team helping founders and product teams make clear decisions and keep work moving."
+          actions={
+            <>
+              <TrackedButton
+                href="/contact"
+                eventName="strategy_call_clicked"
+                eventData={{
+                  surface_id: "about_hero",
+                  cta_id: "about_hero_strategy_call",
+                  cta_label: "Get a recommendation",
+                  destination: "/contact",
+                }}
+              >
+                Get a recommendation
+              </TrackedButton>
+              <TrackedButton
+                href="/team"
+                variant="secondary"
+                eventName="section_cta_clicked"
+                eventData={{
+                  surface_id: "about_hero",
+                  cta_id: "about_hero_view_team",
+                  cta_label: "View full team",
+                  cta_variant: "secondary",
+                  destination: "/team",
+                }}
+              >
+                View full team
+              </TrackedButton>
+            </>
+          }
+          artifact={
+            <Card variant="primary" className="overflow-hidden p-0">
+              <div className="relative aspect-[4/3] overflow-hidden bg-[linear-gradient(176deg,rgba(242,247,246,0.95),rgba(240,244,248,0.9))]">
                 <Image
                   src={withBasePath(founder.image)}
                   alt={founder.imageAlt}
                   fill
-                  sizes="(min-width: 1024px) 320px, 100vw"
+                  sizes="(min-width: 1024px) 380px, 100vw"
+                  className="object-contain object-bottom px-4 pt-4"
+                />
+              </div>
+              <div className="p-5">
+                <p className="text-xs uppercase tracking-[0.14em] text-[var(--color-accent-strong)]">Founder</p>
+                <p className="mt-2 text-lg font-semibold text-[var(--color-text)]">{founder.name}</p>
+                <p className="text-sm text-[var(--color-text-muted)]">{founder.role}</p>
+                <p className="mt-3 text-sm text-[var(--color-text)]">Works directly with teams on product, delivery, and systems decisions.</p>
+              </div>
+            </Card>
+          }
+        />
+
+        <section className="section-compact border-y border-[var(--color-border)] bg-[var(--color-surface-muted)]">
+          <div className="container-site">
+            <h2>How we show up when the work is hard</h2>
+            <div className="mt-8 grid gap-4 md:grid-cols-2">
+              {howWeShowUp.map((item) => (
+                <Card key={item.title} interactive>
+                  <h3 className="text-base font-semibold text-[var(--color-text)]">{item.title}</h3>
+                  <p className="mt-2 text-sm text-[var(--color-text-muted)]">{item.detail}</p>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section-compact">
+          <div className="container-site grid gap-6 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-start">
+            <Card variant="primary" className="p-6 md:p-8">
+              <p className="text-xs uppercase tracking-[0.16em] text-[var(--color-accent-strong)]">Why Amalgam exists</p>
+              <h2 className="mt-3 text-3xl font-semibold">Built to help teams get clear and keep work moving</h2>
+              <p className="mt-4 text-base">
+                We built Amalgam to help teams get clear faster, choose the next move, and keep the work moving.
+              </p>
+              <p className="mt-5 text-sm font-semibold text-[var(--color-text)]">{founder.name}, {founder.role}</p>
+            </Card>
+
+            <Card className="p-6 md:p-7">
+              <h3 className="text-2xl font-semibold">When teams usually bring us in</h3>
+              <ul className="mt-4 space-y-3 text-sm text-[var(--color-text)]">
+                {fitSignals.map((signal) => (
+                  <li key={signal} className="flex items-start gap-2.5">
+                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--color-accent-strong)]" />
+                    <span>{signal}</span>
+                  </li>
+                ))}
+              </ul>
+            </Card>
+          </div>
+        </section>
+
+        <section className="section-compact border-y border-[var(--color-border)] bg-[var(--color-surface-muted)]">
+          <div className="container-site">
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <h2>Who you&rsquo;ll work with</h2>
+                <p className="mt-4 max-w-2xl text-base">A quick look at the people you&apos;ll work with directly.</p>
+              </div>
+              <Link href="/team" className="inline-flex min-h-11 items-center py-2 text-sm font-medium text-[var(--color-accent-strong)]">
+                View full team
+              </Link>
+            </div>
+
+            <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {leadershipTeam.slice(0, 3).map((member) => (
+                <TeamMemberCard key={member.id} member={member} featured expertiseLimit={1} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section-tight border-b border-[var(--color-border)] bg-[var(--color-surface)]">
+          <div className="container-site">
+            <Card variant="secondary" className="overflow-hidden p-0 md:grid md:grid-cols-[220px_minmax(0,1fr)]">
+              <div className="relative aspect-[16/9] overflow-hidden bg-[var(--color-surface-muted)] md:aspect-auto md:min-h-[168px]">
+                <Image
+                  src={withBasePath(primaryProofCase.source.heroImageSrc)}
+                  alt={`${primaryProofCase.company} case study thumbnail`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 220px"
                   className="object-cover"
                 />
               </div>
-
-              <div className="max-w-3xl">
-                <h2 className="mb-6 text-2xl font-semibold text-foreground">A quick note from our founder</h2>
-                <blockquote className="space-y-4 text-lg leading-relaxed text-muted-foreground">
-                  <p>
-                    I started Amalgam to keep the work practical and honest.
-                  </p>
-                  <p>
-                    Too many projects create dependency instead of progress. We focus on what is actually slowing the business, make the next move clear, and help teams ship again.
-                  </p>
-                </blockquote>
-                <p className="mt-6 font-medium text-foreground">{founder.fullName ?? founder.name}</p>
-                <p className="text-sm text-muted-foreground">{founder.role}</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="deferred-section border-y border-border bg-secondary/50 py-20 lg:py-24">
-          <div className="mx-auto max-w-[1200px] px-6">
-            <div className="max-w-3xl">
-              <p className="mb-4 text-sm font-medium uppercase tracking-widest text-teal">
-                Why this model works now
-              </p>
-              <h2 className="mb-6 text-3xl font-semibold text-foreground text-balance">
-                Most execution problems cross team boundaries
-              </h2>
-              <p className="leading-relaxed text-muted-foreground">
-                Most difficult problems cross product, architecture, and execution. We help teams see the full system and move forward.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="deferred-section py-20 lg:py-24">
-          <div className="mx-auto max-w-[1200px] px-6">
-            <div className="mb-12">
-              <h2 className="text-2xl font-semibold text-foreground">How we operate</h2>
-              <p className="mt-2 text-muted-foreground">Direct communication. Practical recommendations. Clear accountability.</p>
-            </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {principles.map((principle) => (
-                <div key={principle.title} className="support-panel card-interactive rounded-[24px] p-6">
-                  <principle.icon className="mb-4 h-6 w-6 text-teal" />
-                  <h3 className="mb-2 font-semibold text-foreground">{principle.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">
-                    {principle.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="deferred-section border-y border-border bg-secondary/35 py-20 lg:py-24">
-          <div className="mx-auto max-w-[1200px] px-6">
-            <div className="mb-12 max-w-3xl">
-              <p className="mb-4 text-sm font-medium uppercase tracking-widest text-teal">Approach</p>
-              <h2 className="text-3xl font-semibold text-foreground text-balance">
-                How we work when stakes are high
-              </h2>
-              <p className="mt-4 leading-relaxed text-muted-foreground">
-                We are intentionally small and direct. The model is built for
-                hard, high-constraint situations where decisions need to move.
-              </p>
-            </div>
-            <div className="grid gap-6 lg:grid-cols-3">
-              {operatingModel.map((item) => (
-                <div key={item.title} className="card-interactive border-l border-border/80 pl-5 pr-4 py-2">
-                  <item.icon className="h-6 w-6 text-teal" />
-                  <h3 className="mt-4 text-xl font-semibold text-foreground">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="deferred-section section-warm border-t border-border py-20 lg:py-24">
-          <div className="mx-auto max-w-[1200px] px-6">
-            <div className="mb-12 flex items-end justify-between gap-6">
-              <div>
-                <h2 className="text-2xl font-semibold text-foreground">The people you&apos;ll work with</h2>
-                <p className="mt-2 text-muted-foreground">
-                  Focused support across systems, architecture, and execution.
+              <div className="p-5 md:p-6">
+                <p className="text-xs uppercase tracking-[0.14em] text-[var(--color-accent-strong)]">Case study</p>
+                <h3 className="mt-2 text-xl font-semibold text-[var(--color-text)]">{primaryProofCase.company}</h3>
+                <p className="mt-2 text-sm text-[var(--color-text-muted)]">
+                  <span className="font-semibold text-[var(--color-text)]">Problem:</span> {primaryProofCase.challenge}
                 </p>
-              </div>
-              <Link href="/team" className="flex items-center gap-1 text-sm font-medium text-teal hover:underline">
-                View full team <ArrowRight className="h-3.5 w-3.5" />
-              </Link>
-            </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {aboutPreviewTeamMembers.map((member) => (
-                <div key={member.name} className="card-interactive overflow-hidden rounded-[26px] border border-border/80 bg-background">
-                  <div
-                    className={`relative aspect-[4/4.15] overflow-hidden ${unifiedTeamPortraitBackgroundClass}`}
+                <p className="mt-2 text-sm text-[var(--color-text-muted)]">
+                  <span className="font-semibold text-[var(--color-text)]">What changed:</span> {primaryProofCase.whatMovedForward}
+                </p>
+                <div className="mt-4 flex flex-wrap items-center gap-4">
+                  <TrackedButton
+                    href={getCaseStudyPath(primaryProofCase.slug)}
+                    variant="secondary"
+                    eventName="section_cta_clicked"
+                    eventData={{
+                      surface_id: "about_case_proof",
+                      cta_id: "about_case_proof_open",
+                      cta_label: "Open case study",
+                      cta_variant: "secondary",
+                      destination: getCaseStudyPath(primaryProofCase.slug),
+                    }}
                   >
-                    <Image
-                      src={withBasePath(unifiedTeamPortraits[member.name] ?? member.image)}
-                      alt={member.imageAlt}
-                      fill
-                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                      className={`${unifiedTeamPortraitClasses[member.name] ?? "object-contain object-bottom px-5 pt-6 pb-0 md:px-6 md:pt-7"} drop-shadow-[0_18px_32px_rgba(15,23,42,0.12)]`}
-                    />
-                    <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(252,252,250,0.06),rgba(252,252,250,0.18))]" />
-                  </div>
-                  <div className="p-6">
-                    <p className="mb-2 text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
-                      {member.group === "leadership"
-                        ? "Leadership"
-                        : member.group === "architecture"
-                          ? "Architecture"
-                          : "Delivery"}
-                    </p>
-                    <h3 className="text-lg font-semibold text-foreground">
-                      {member.fullName ?? member.name}
-                    </h3>
-                    <p className="mb-3 mt-1 text-sm text-teal">{member.role}</p>
-                    <p className="text-sm leading-relaxed text-muted-foreground">{member.shortBio}</p>
-                  </div>
+                    Open case study
+                  </TrackedButton>
+                  <Link
+                    href={getCaseStudyPath(secondaryProofCase.slug)}
+                    className="inline-flex min-h-11 items-center text-sm font-medium text-[var(--color-accent-strong)]"
+                  >
+                    See another example
+                  </Link>
                 </div>
-              ))}
-            </div>
+              </div>
+            </Card>
           </div>
         </section>
 
-        <ClientLogoWall
-          className="py-20 lg:py-24"
-          eyebrow="Client Experience"
-          title="Trusted in complex environments"
-          description="Work across regulated institutions, operationally demanding companies, and high-growth teams where systems quality directly affects execution."
+        <TrustBand
+          eyebrow="Proof"
+          title="Trusted when execution gets hard"
+          support="Teams bring us in when the next move is unclear and execution quality has to stay high."
+          logos={clientLogos.map((logo) => ({ name: logo.name, src: logo.src, href: logo.href }))}
+          testimonial={{
+            quote: aboutTestimonial.quote,
+            name: aboutTestimonial.name,
+            role: aboutTestimonial.title,
+            company: aboutTestimonial.company,
+            image: aboutTestimonial.image,
+          }}
+          ctaLabel="View all case studies"
+          ctaHref="/our-work"
         />
 
-        <TestimonialStrip
-          className="deferred-section border-t border-border py-20 lg:py-24"
-          testimonialIds={["fitzmier-jtf", "mooney-cleanitsupply"]}
-          maxItems={2}
+        <FinalCtaBand
+          headline="Want to talk through whether this is the right fit?"
+          support="Share your context and we&apos;ll recommend the clearest next step for how we should work together."
+          primary={{ label: "Get a recommendation", href: "/contact" }}
         />
-
-        <section className="deferred-section bg-foreground py-20 lg:py-24">
-          <div className="mx-auto max-w-[1200px] px-6 text-center">
-            <h2 className="mb-4 text-3xl font-semibold text-background text-balance md:text-4xl">
-              Want to see if we&apos;re the right fit for your situation?
-            </h2>
-            <p className="mx-auto mb-8 max-w-xl text-background/70">
-              Start with a strategy call. If deeper support is needed, we
-              will recommend the right engagement.
-            </p>
-            <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <Link
-                href="/contact?interest=strategy-session"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-background px-6 py-3 font-medium text-foreground transition-all hover:opacity-90"
-              >
-                Book a strategy call
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                href="/services"
-                className="inline-flex items-center justify-center gap-2 rounded-lg border border-background/30 px-6 py-3 font-medium text-background transition-all hover:bg-background/10"
-              >
-                See how we work
-              </Link>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </>
   )
 }
+
+
 

@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { LegacyRouteRedirect } from "@/components/legacy-route-redirect"
+import { LegacyRedirectFallback } from "@/components/navigation/LegacyRedirectFallback"
 
 export const metadata: Metadata = {
   title: "Taking you to Contact",
@@ -9,6 +9,6 @@ export const metadata: Metadata = {
   },
 }
 
-export default function ContactUsRedirectPage() {
-  return <LegacyRouteRedirect target="/contact" label="Contact" />
+export default function LegacyRedirectPage() {
+  return <LegacyRedirectFallback target="/contact" />
 }

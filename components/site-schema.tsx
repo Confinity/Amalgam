@@ -1,4 +1,5 @@
-﻿import { SITE_URL, absoluteUrl } from "@/lib/site-config"
+import { serializeJsonLd } from "@/lib/json-ld"
+import { SITE_URL, absoluteUrl } from "@/lib/site-config"
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -36,9 +37,8 @@ export function SiteSchema() {
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify([organizationSchema, websiteSchema]),
+        __html: serializeJsonLd([organizationSchema, websiteSchema]),
       }}
     />
   )
 }
-

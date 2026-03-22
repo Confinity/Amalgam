@@ -1,3 +1,5 @@
+import { serializeJsonLd } from "@/lib/json-ld"
+
 type JsonLdProps = {
   data: Record<string, unknown> | Array<Record<string, unknown>>
 }
@@ -7,7 +9,7 @@ export function JsonLd({ data }: JsonLdProps) {
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify(data),
+        __html: serializeJsonLd(data),
       }}
     />
   )

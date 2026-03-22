@@ -11,8 +11,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "Amalgam helps teams fix architecture, data, and delivery bottlenecks so critical product work ships on time.",
     start_url: withBasePath("/"),
     display: "standalone",
-    background_color: "#FCFCFA",
-    theme_color: "#00BFA6",
+    background_color: "#F7F8FA",
+    theme_color: "#172033",
     icons: [
       {
         src: withBasePath("/brand/amalgam-icon-192.png"),

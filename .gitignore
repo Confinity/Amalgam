@@ -16,3 +16,4 @@ out/
 *.log
 *.err.log
 *.tsbuildinfo
+data/review/notes-store.json

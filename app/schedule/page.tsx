@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { LegacyRouteRedirect } from "@/components/legacy-route-redirect"
+import { LegacyRedirectFallback } from "@/components/navigation/LegacyRedirectFallback"
 
 export const metadata: Metadata = {
   title: "Taking you to your strategy call",
@@ -9,11 +9,6 @@ export const metadata: Metadata = {
   },
 }
 
-export default function ScheduleRedirectPage() {
-  return (
-    <LegacyRouteRedirect
-      target="/contact?interest=strategy-session"
-      label="strategy call"
-    />
-  )
+export default function LegacyRedirectPage() {
+  return <LegacyRedirectFallback target="https://calendly.com/ryan-amalgam-inc/30min" omitKeys={["interest"]} />
 }

@@ -1,8 +1,20 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises"
 import path from "node:path"
 import { NextResponse } from "next/server"
+import {
+  enforceRateLimit,
+  getClientIp,
+  parseJsonBodyWithLimit,
+  rejectCrossSiteRequest,
+  withNoStore,
+} from "@/lib/api-security"
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/i
+const SIGNALS_MAX_BODY_BYTES = 4_000
+const SIGNALS_RATE_LIMIT = {
+  windowMs: 10 * 60 * 1000,
+  maxRequests: 12,
+}
 
 type SignalsPayload = {
   email: string
@@ -17,7 +29,7 @@ function parsePayload(input: unknown): SignalsPayload | null {
   const email = String(candidate.email ?? "")
     .trim()
     .toLowerCase()
-  const source = String(candidate.source ?? "launchpad").trim()
+  const source = String(candidate.source ?? "next-move").trim()
 
   if (!email || !EMAIL_PATTERN.test(email)) {
     return null
@@ -66,22 +78,43 @@ async function appendLocalFallback(payload: {
 }
 
 export async function POST(request: Request) {
-  let body: unknown
-  try {
-    body = await request.json()
-  } catch {
+  const blockedRequest = rejectCrossSiteRequest(request)
+  if (blockedRequest) {
+    return blockedRequest
+  }
+
+  const ipAddress = getClientIp(request)
+  const rateLimit = enforceRateLimit({
+    key: `signals:${ipAddress}`,
+    limit: SIGNALS_RATE_LIMIT.maxRequests,
+    windowMs: SIGNALS_RATE_LIMIT.windowMs,
+  })
+
+  if (!rateLimit.allowed) {
     return NextResponse.json(
-      { status: "error", message: "Could not read this signup request." },
-      { status: 400 },
+      {
+        status: "error",
+        message: "Too many signup attempts right now. Please wait and try again.",
+      },
+      {
+        status: 429,
+        headers: withNoStore({ "Retry-After": String(rateLimit.retryAfterSeconds) }),
+      },
     )
   }
 
+  const bodyResult = await parseJsonBodyWithLimit(request, SIGNALS_MAX_BODY_BYTES)
+  if (!bodyResult.ok) {
+    return bodyResult.response
+  }
+
+  const body = bodyResult.value
   const parsed = parsePayload(body)
 
   if (!parsed) {
     return NextResponse.json(
       { status: "error", message: "Use a valid work email." },
-      { status: 400 },
+      { status: 400, headers: withNoStore() },
     )
   }
 
@@ -108,21 +141,26 @@ export async function POST(request: Request) {
             status: "error",
             message: "The signup did not go through. Try again or email us directly.",
           },
-          { status: 502 },
+          { status: 502, headers: withNoStore() },
         )
       }
 
-      return NextResponse.json({
-        status: "success",
-        message: "You are in. We will send practical updates when they are worth your attention.",
-      })
+      return NextResponse.json(
+        {
+          status: "success",
+          message: "You are in. We will send practical updates when they are worth your attention.",
+        },
+        {
+          headers: withNoStore(),
+        },
+      )
     } catch {
       return NextResponse.json(
         {
           status: "error",
           message: "The signup did not go through. Try again or email us directly.",
         },
-        { status: 502 },
+        { status: 502, headers: withNoStore() },
       )
     }
   }
@@ -133,25 +171,30 @@ export async function POST(request: Request) {
         status: "error",
         message: "Signup is temporarily unavailable. Email hello@amalgam-inc.com.",
       },
-      { status: 503 },
+      { status: 503, headers: withNoStore() },
     )
   }
 
   try {
     const alreadySubscribed = await appendLocalFallback(payload)
-    return NextResponse.json({
-      status: "success",
-      message: alreadySubscribed
-        ? "You are already subscribed."
-        : "You are in. We will send practical updates when they are worth your attention.",
-    })
+    return NextResponse.json(
+      {
+        status: "success",
+        message: alreadySubscribed
+          ? "You are already subscribed."
+          : "You are in. We will send practical updates when they are worth your attention.",
+      },
+      {
+        headers: withNoStore(),
+      },
+    )
   } catch {
     return NextResponse.json(
       {
         status: "error",
         message: "The signup did not go through. Try again or email us directly.",
       },
-      { status: 500 },
+      { status: 500, headers: withNoStore() },
     )
   }
 }

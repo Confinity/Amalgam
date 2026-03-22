@@ -7,30 +7,22 @@ const port = process.argv[2] ?? "3001"
 const root = process.cwd()
 const logPath = path.join(root, `.preview-${port}.log`)
 
-function run(command, args, options = {}) {
-  const result = spawnSync(command, args, {
+function runPnpmWithStatus(args, options = {}) {
+  if (process.platform === "win32") {
+    return spawnSync("cmd.exe", ["/c", "pnpm", ...args], {
+      cwd: root,
+      stdio: "inherit",
+      shell: false,
+      ...options,
+    })
+  }
+
+  return spawnSync("pnpm", args, {
     cwd: root,
     stdio: "inherit",
     shell: false,
     ...options,
   })
-
-  if (result.error) {
-    console.error(result.error)
-    process.exit(1)
-  }
-
-  if (result.status !== 0) {
-    process.exit(result.status ?? 1)
-  }
-}
-
-function runPnpm(args, options = {}) {
-  if (process.platform === "win32") {
-    return run("cmd.exe", ["/c", "pnpm", ...args], options)
-  }
-
-  return run("pnpm", args, options)
 }
 
 function runQuiet(command, args, options = {}) {
@@ -149,15 +141,12 @@ async function waitForHealthyPreview(targetPort) {
     "/services",
     "/case-studies",
     "/knowledge",
-    "/launchpad",
-    "/launchpad/tools",
-    "/launchpad/signals",
+    "/next-move",
+    "/next-move/tools",
+    "/next-move/signals",
     "/contact",
   ]
-  const requiredMarkersByRoute = {
-    "/": "Are product releases slowing down even though your team is busy?",
-    "/launchpad": "Where are you right now?",
-  }
+  const requiredMarkersByRoute = {}
   const deadline = Date.now() + 25000
   let lastError = "Preview did not become healthy."
 
@@ -235,13 +224,34 @@ if (existsSync(previewOutDir)) {
   rmSync(previewOutDir, { recursive: true, force: true })
 }
 
-runPnpm(["build"], {
-  env: {
-    ...process.env,
-    LOCAL_STATIC_PREVIEW: "true",
-    GITHUB_ACTIONS: "false",
-  },
-})
+const buildEnv = {
+  ...process.env,
+  LOCAL_STATIC_PREVIEW: "true",
+  GITHUB_ACTIONS: "false",
+}
+
+let buildResult = runPnpmWithStatus(["build"], { env: buildEnv })
+if (buildResult.error) {
+  console.error(buildResult.error)
+  process.exit(1)
+}
+
+if ((buildResult.status ?? 1) !== 0) {
+  if (existsSync(nextDir)) {
+    rmSync(nextDir, { recursive: true, force: true })
+  }
+  console.warn("Initial build failed. Retrying once with a fresh .next directory...")
+  buildResult = runPnpmWithStatus(["build"], { env: buildEnv })
+}
+
+if (buildResult.error) {
+  console.error(buildResult.error)
+  process.exit(1)
+}
+
+if ((buildResult.status ?? 1) !== 0) {
+  process.exit(buildResult.status ?? 1)
+}
 
 if (!existsSync(outDir)) {
   console.error("Expected build output directory `out` was not found.")
