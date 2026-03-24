@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-3:I[95276,["/Amalgam/_next/static/chunks/221e0744b683f94b.js","/Amalgam/_next/static/chunks/54acdc74ad0965ad.js"],"OutletBoundary"]
+3:I[22798,["/Amalgam/_next/static/chunks/93d85277ad67d9ee.js","/Amalgam/_next/static/chunks/6c3f0ccad266511d.js"],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"buildId":"Tq0FpnBgDo-BuOEZJFfhP","rsc":["$","$1","c",{"children":["$L2",null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"2e4-VcaIEKtR_RG7bO81J","rsc":["$","$1","c",{"children":["$L2",null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
 5:null
 2:E{"digest":"NEXT_REDIRECT;replace;/research/metrics-you-can-run-the-company-on;308;"}
