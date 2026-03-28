@@ -1,0 +1,11 @@
+1:"$Sreact.fragment"
+2:I[60965,["/Amalgam/_next/static/chunks/6b320eb274f66928.js","/Amalgam/_next/static/chunks/a0219e3db1f3a4f5.js","/Amalgam/_next/static/chunks/89fb8fef5a1a8c61.js"],"Navbar"]
+3:I[50709,["/Amalgam/_next/static/chunks/6b320eb274f66928.js","/Amalgam/_next/static/chunks/a0219e3db1f3a4f5.js","/Amalgam/_next/static/chunks/89fb8fef5a1a8c61.js"],"ContactHero"]
+4:I[32833,["/Amalgam/_next/static/chunks/6b320eb274f66928.js","/Amalgam/_next/static/chunks/a0219e3db1f3a4f5.js","/Amalgam/_next/static/chunks/89fb8fef5a1a8c61.js"],"ContactMethodsStrip"]
+5:I[33404,["/Amalgam/_next/static/chunks/6b320eb274f66928.js","/Amalgam/_next/static/chunks/a0219e3db1f3a4f5.js","/Amalgam/_next/static/chunks/89fb8fef5a1a8c61.js"],"ContactIntakeForm"]
+6:I[80565,["/Amalgam/_next/static/chunks/6b320eb274f66928.js","/Amalgam/_next/static/chunks/a0219e3db1f3a4f5.js","/Amalgam/_next/static/chunks/89fb8fef5a1a8c61.js"],"ContactFinalCtaBand"]
+7:I[86749,["/Amalgam/_next/static/chunks/6b320eb274f66928.js","/Amalgam/_next/static/chunks/a0219e3db1f3a4f5.js","/Amalgam/_next/static/chunks/89fb8fef5a1a8c61.js"],"FooterNav"]
+8:I[37062,["/Amalgam/_next/static/chunks/7b1041bdd1af7f17.js","/Amalgam/_next/static/chunks/5f774a6474a28579.js"],"OutletBoundary"]
+9:"$Sreact.suspense"
+0:{"buildId":"421lfOKSuB_wtCrHjk2SU","rsc":["$","$1","c",{"children":[[["$","$L2",null,{}],["$","main",null,{"id":"main-content","children":[["$","$L3",null,{}],["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}]]}],["$","$L7",null,{"primaryCtaLabel":"Get a recommendation","primaryCtaHref":"/contact"}]],[["$","script","script-0",{"src":"/Amalgam/_next/static/chunks/a0219e3db1f3a4f5.js","async":true}],["$","script","script-1",{"src":"/Amalgam/_next/static/chunks/89fb8fef5a1a8c61.js","async":true}]],["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]]}],"loading":null,"isPartial":false}
+a:null
