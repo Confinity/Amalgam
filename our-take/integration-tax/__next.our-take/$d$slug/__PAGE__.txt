@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-3:I[51005,["/Amalgam/_next/static/chunks/05f_49o2hwq.s.js","/Amalgam/_next/static/chunks/0tsithg97tikq.js"],"OutletBoundary"]
+3:I[551005,["/Amalgam/_next/static/chunks/0r2hjic7c9vjg.js","/Amalgam/_next/static/chunks/0x.kcnrbzh9e4.js"],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":["$L2",null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"Zp9wXSdnunN0XewR6eKCy"}
+0:{"rsc":["$","$1","c",{"children":["$L2",null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"hUhVJLGwPfG7V9yubUHLg"}
 5:null
 2:E{"digest":"NEXT_REDIRECT;replace;/research/integration-tax;308;"}
