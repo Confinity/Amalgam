@@ -1,4 +1,4 @@
 :HL["/Amalgam/_next/static/media/e4af272ccee01ff0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/Amalgam/_next/static/css/45939844a72de570.css","style"]
+:HL["/Amalgam/_next/static/css/a2a37857d7d0cc33.css","style"]
 :HL["/Amalgam/_next/static/css/9148b4056fef56b3.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":20,"slots":{"children":{"name":"research","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"claude-in-the-cloud-founder-setup-security","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"iyNB230BSswn2p8ObnubZ"}
+0:{"tree":{"name":"","param":null,"prefetchHints":20,"slots":{"children":{"name":"research","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"claude-in-the-cloud-founder-setup-security","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"Jc00PZomEdTj5hALCOPwG"}
