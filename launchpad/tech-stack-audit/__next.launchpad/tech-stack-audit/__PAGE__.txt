@@ -2,5 +2,5 @@
 2:I[4197,["2609","static/chunks/app/launchpad/tech-stack-audit/page-b8a0f8ba10667a18.js"],"LegacyRedirectFallback"]
 3:I[337,[],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"target":"/next-move/tech-stack-audit"}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"k_56yNbJ4kBPWmI9q5Hvw"}
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"target":"/next-move/tech-stack-audit"}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"dDU-UthXYKKZ1HxuE-iz5"}
 5:null
