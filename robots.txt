@@ -2,6 +2,7 @@ User-Agent: *
 Allow: /
 Disallow: /api/
 Disallow: /_next/
+Disallow: /next-move-backup
 
 Host: https://amalgam-inc.com
 Sitemap: https://amalgam-inc.com/sitemap.xml
