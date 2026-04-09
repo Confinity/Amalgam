@@ -3,5 +3,5 @@ Allow: /
 Disallow: /api/
 Disallow: /_next/
 
-Host: https://confinity.github.io/Amalgam
-Sitemap: https://confinity.github.io/Amalgam/sitemap.xml
+Host: https://amalgam-inc.com
+Sitemap: https://amalgam-inc.com/sitemap.xml
