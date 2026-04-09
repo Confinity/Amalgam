@@ -2,5 +2,5 @@
 2:I[4197,["5129","static/chunks/app/launchpad/tools/page-b8a0f8ba10667a18.js"],"LegacyRedirectFallback"]
 3:I[337,[],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"target":"/next-move/tools"}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"ijbwH9a2S3ucik2eFI3sy"}
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"target":"/next-move/tools"}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"l031LoEb5ZA_ovNGSWlEQ"}
 5:null
