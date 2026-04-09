@@ -1,3 +1,3 @@
-:HL["/Amalgam/_next/static/css/72d07d639f8cbf65.css","style"]
+:HL["/Amalgam/_next/static/css/6f036ccc9675dbf4.css","style"]
 :HL["/Amalgam/_next/static/css/9148b4056fef56b3.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":20,"slots":{"children":{"name":"playbooks","param":null,"prefetchHints":0,"slots":{"children":{"name":"roll-out-ai-agents-the-right-way","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"wtW4Yw1_zzAB1klk7Imwi"}
+0:{"tree":{"name":"","param":null,"prefetchHints":20,"slots":{"children":{"name":"playbooks","param":null,"prefetchHints":0,"slots":{"children":{"name":"roll-out-ai-agents-the-right-way","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"ijbwH9a2S3ucik2eFI3sy"}
