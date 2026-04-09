@@ -2,5 +2,5 @@
 2:I[4197,["8898","static/chunks/app/team/page-b8a0f8ba10667a18.js"],"LegacyRedirectFallback"]
 3:I[337,[],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"target":"/about"}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"dDU-UthXYKKZ1HxuE-iz5"}
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"target":"/about"}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"msdfmOrejIbmPZQylN9y6"}
 5:null
