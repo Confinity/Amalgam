@@ -1,3 +1,3 @@
-:HL["/Amalgam/_next/static/css/569509191215bf1f.css","style"]
+:HL["/Amalgam/_next/static/css/72d07d639f8cbf65.css","style"]
 :HL["/Amalgam/_next/static/css/9148b4056fef56b3.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":20,"slots":{"children":{"name":"playbooks","param":null,"prefetchHints":0,"slots":{"children":{"name":"redesign-your-team-for-ai","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"7pufIyrKQhCbPelRfAhEg"}
+0:{"tree":{"name":"","param":null,"prefetchHints":20,"slots":{"children":{"name":"playbooks","param":null,"prefetchHints":0,"slots":{"children":{"name":"redesign-your-team-for-ai","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"k_56yNbJ4kBPWmI9q5Hvw"}
