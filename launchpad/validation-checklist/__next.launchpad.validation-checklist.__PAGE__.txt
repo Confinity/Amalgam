@@ -1,6 +1,0 @@
-1:"$Sreact.fragment"
-2:I[164,["6396","static/chunks/app/launchpad/validation-checklist/page-7e5f339a7681453e.js"],"LegacyRedirectFallback"]
-3:I[4829,[],"OutletBoundary"]
-4:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"target":"/next-move/validation-checklist"}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"7LZr410nWY7er4JTyTb5W"}
-5:null

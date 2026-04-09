@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[4197,["7826","static/chunks/app/schedule/page-b8a0f8ba10667a18.js"],"LegacyRedirectFallback"]
+3:I[337,[],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"target":"https://calendly.com/ryan-amalgam-inc/30min","omitKeys":["interest"]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"UkhbM6u6Bt2dgK7yKjzoC"}
+5:null
