@@ -1,4 +1,4 @@
 :HL["/_next/static/media/e4af272ccee01ff0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/_next/static/css/73cbb055c933a787.css","style"]
+:HL["/_next/static/css/e971194c423b8abd.css","style"]
 :HL["/_next/static/css/081a0afca5a9bd20.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":20,"slots":{"children":{"name":"knowledge","param":null,"prefetchHints":0,"slots":{"children":{"name":"why-amalgam-is-an-entrepreneurs-best-friend","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"UxmzIq2Z0PDuGtVgeO4c9"}
+0:{"tree":{"name":"","param":null,"prefetchHints":20,"slots":{"children":{"name":"knowledge","param":null,"prefetchHints":0,"slots":{"children":{"name":"why-amalgam-is-an-entrepreneurs-best-friend","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"wWdv5xXgbsQuOO6JpHvOS"}
