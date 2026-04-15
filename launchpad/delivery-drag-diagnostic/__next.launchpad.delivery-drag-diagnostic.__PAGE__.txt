@@ -2,5 +2,5 @@
 2:I[164,["2653","static/chunks/app/launchpad/delivery-drag-diagnostic/page-7e5f339a7681453e.js"],"LegacyRedirectFallback"]
 3:I[4829,[],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"target":"/next-move/delivery-drag-diagnostic"}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"o4_2kXSE8CIMcJecKvxBm"}
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"target":"/next-move/delivery-drag-diagnostic"}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"98ZjPsL5D3mUOnS8H5dqZ"}
 5:null
