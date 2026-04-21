@@ -2,5 +2,5 @@
 2:I[164,["8975","static/chunks/app/review/page-7e5f339a7681453e.js"],"LegacyRedirectFallback"]
 3:I[4829,[],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"target":"/?review=true","omitKeys":["review"]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"q4p5Hd1MqEoAPMcNB_BrJ"}
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"target":"/?review=true","omitKeys":["review"]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"KCMbm8J5DdylpyXIf0jMf"}
 5:null
