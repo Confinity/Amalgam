@@ -1,23 +1,23 @@
 # Amalgam
 
-> Amalgam is a software studio that builds agent-ready software and the systems around it — so teams can ship fast, stay safe, and keep running once agents get involved. We work with founders, CTOs, and operators from startup to enterprise.
+> Amalgam is a software studio. We design and build software with your team, from strategy through delivery. Built to ship fast, stay safe, and keep running when agents are in the mix. We work with founders, CTOs, and operators from startup to enterprise.
 
 ## What we do
 
-- **Founder Review** — 1 to 2 focused weeks. You walk away with an architecture map, a 30-day next-step plan, and a read on whether your stack is agent-ready. https://amalgam-inc.com/founder-review
-- **Expert Guidance** — 2 to 6 weeks on one critical path. You walk away with a critical-path plan and an agent-safe release checklist. https://amalgam-inc.com/expert-guidance
-- **Outcome Partnership** — Ongoing. Weekly operating review, live dashboards, and ongoing review of agent performance, cost, and guardrails. https://amalgam-inc.com/outcome-partnership
+- **Founder Review**: 1 to 2 focused weeks. You walk away with an architecture map, a 30-day next-step plan, and a read on whether your stack is agent-ready. https://amalgam-inc.com/founder-review
+- **Expert Guidance**: 2 to 6 weeks on one critical path. You keep a critical-path plan and an agent-safe release checklist. https://amalgam-inc.com/expert-guidance
+- **Outcome Partnership**: Ongoing. Weekly operating review, live dashboards, and ongoing review of agent performance, cost, and guardrails. https://amalgam-inc.com/outcome-partnership
 
 ## How we build
 
-Every engagement runs on the Amalgam Operating System — six layers your team inherits:
+Every engagement runs on the Amalgam Operating System. Six layers your team inherits:
 
-1. **Read** — what's actually blocking the next move
-2. **Architect** — data, agents, APIs, and the contracts between them
-3. **Build** — software with guardrails from day one
-4. **Observe** — agents, humans, cost, and reliability in one view
-5. **Escalate** — precisely to humans, at the thresholds you set
-6. **Operate** — audit-ready, every day
+1. **Read**: what's actually blocking the next move.
+2. **Architect**: data, agents, APIs, and the contracts between them.
+3. **Build**: software with guardrails from day one.
+4. **Observe**: agents, humans, cost, and reliability in one view.
+5. **Escalate**: precisely to humans, at the thresholds you set.
+6. **Operate**: audit-ready, every day.
 
 https://amalgam-inc.com/#how-we-build
 
@@ -41,38 +41,38 @@ https://amalgam-inc.com/#trust-by-design
 - Agent-ready data layers (Postgres + pgvector, tool contracts)
 - AI features shipped to production (with evals, guardrails, rollback)
 - Modernizations and rebuilds without the death march
-- Founder reviews + architecture maps in 1–2 weeks
+- Founder reviews and architecture maps in 1 to 2 weeks
 - Team operating systems (delivery rhythm, escalation, observability)
 - Products rebuilt end-to-end (strategy, design, build, ship, operate)
 
 ## Proof
 
-- https://amalgam-inc.com/our-work/moodys — legacy systems modernized
-- https://amalgam-inc.com/our-work/barclays-bank-us — platform rebuilt with no downtime
-- https://amalgam-inc.com/our-work/sofi — AI feature shipped to production
-- https://amalgam-inc.com/our-work/premier-financial-alliance — advisors kept in the loop
-- https://amalgam-inc.com/our-work/pearlx — production health made visible
-- https://amalgam-inc.com/our-work/confinity — a team that runs itself
+- https://amalgam-inc.com/our-work/moodys: legacy systems modernized
+- https://amalgam-inc.com/our-work/barclays-bank-us: platform rebuilt with no downtime
+- https://amalgam-inc.com/our-work/sofi: AI feature shipped to production
+- https://amalgam-inc.com/our-work/premier-financial-alliance: advisors kept in the loop
+- https://amalgam-inc.com/our-work/pearlx: production health made visible
+- https://amalgam-inc.com/our-work/confinity: a team that runs itself
 
 ## Public surfaces
 
-- https://amalgam-inc.com/ — home
-- https://amalgam-inc.com/services — what we offer
-- https://amalgam-inc.com/our-work — case studies
-- https://amalgam-inc.com/research — research briefs (agents, AI systems, security, modernization)
-- https://amalgam-inc.com/about — who we are
-- https://amalgam-inc.com/roadmap — what we're building, next, and later
-- https://amalgam-inc.com/stack — the tools we reach for
-- https://amalgam-inc.com/manifesto — what we believe
-- https://amalgam-inc.com/contact — talk to us
+- https://amalgam-inc.com/: home
+- https://amalgam-inc.com/services: what we offer
+- https://amalgam-inc.com/our-work: case studies
+- https://amalgam-inc.com/research: research briefs (agents, AI systems, security, modernization)
+- https://amalgam-inc.com/about: who we are
+- https://amalgam-inc.com/roadmap: what we're building, next, and later
+- https://amalgam-inc.com/stack: the tools we reach for
+- https://amalgam-inc.com/manifesto: what we believe
+- https://amalgam-inc.com/contact: talk to us
 
 ## Three generations of software
 
 We build for the third generation:
 
-1. Software that responds (forms, dashboards, static apps)
-2. Software that assists (copilots, chat surfaces, smart search)
-3. **Software that operates** (agent-ready systems that plan, act, escalate, and stay audit-safe) — this is where Amalgam lives.
+1. Software that responds (forms, dashboards, static apps).
+2. Software that assists (copilots, chat surfaces, smart search).
+3. **Software that operates**: agent-ready systems that plan, act, escalate, and stay audit-safe. This is where Amalgam lives.
 
 ## Contact
 
