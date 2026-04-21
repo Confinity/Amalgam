@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
 3:I[4829,[],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":["$L2",null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"1NuVBrUurA3mq76iMp2Jw"}
+0:{"rsc":["$","$1","c",{"children":["$L2",null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"jYNW8SUit06ZB4H6FI_Yx"}
 5:null
 2:E{"digest":"NEXT_REDIRECT;replace;/research/claude-in-the-cloud-founder-setup-security;308;"}
