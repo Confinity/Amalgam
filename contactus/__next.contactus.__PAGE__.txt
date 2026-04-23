@@ -2,5 +2,5 @@
 2:I[164,["6297","static/chunks/app/contactus/page-7e5f339a7681453e.js"],"LegacyRedirectFallback"]
 3:I[4829,[],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"target":"/contact"}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"RgsDi_PrJXq7UnNKAwNN9"}
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"target":"/contact"}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"-jCiGHlOalFVUcuP9M_4o"}
 5:null
