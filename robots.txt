@@ -5,4 +5,4 @@ Disallow: /_next/
 Disallow: /next-move-backup
 
 Host: https://amalgam-inc.com
-Sitemap: https://amalgam-inc.com/sitemap.xml
+Sitemap: https://amalgam-inc.com/Amalgam/sitemap.xml
