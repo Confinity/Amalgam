@@ -2,5 +2,5 @@
 2:I[1670,["4124","static/chunks/app/launchpad/ai-readiness-checklist/page-b79f27c2d271e03f.js"],"LegacyRedirectFallback"]
 3:I[7577,[],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"target":"/next-move/ai-readiness-checklist"}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"l08nZm6GwWMAOvfjg2m25"}
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"target":"/next-move/ai-readiness-checklist"}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"TguWqLb-q65oa5AGGgBnY"}
 5:null
