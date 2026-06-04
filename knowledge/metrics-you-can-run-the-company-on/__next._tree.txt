@@ -1,4 +1,4 @@
 :HL["/Amalgam/_next/static/media/e4af272ccee01ff0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/Amalgam/_next/static/css/f322b2b9c3c750fa.css","style"]
 :HL["/Amalgam/_next/static/css/9148b4056fef56b3.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":20,"slots":{"children":{"name":"knowledge","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"metrics-you-can-run-the-company-on","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"TeiZ3Z7OE3VFe0v8jsU4i"}
+0:{"tree":{"name":"","param":null,"prefetchHints":20,"slots":{"children":{"name":"knowledge","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"metrics-you-can-run-the-company-on","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"r51aASNxXykEoDiBRzt-o"}
